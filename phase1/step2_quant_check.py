@@ -1,0 +1,249 @@
+# step2_quant_check.py
+# NOTE: Uses only ASCII in print() to avoid Windows cp1252 UnicodeEncodeError.
+# PURPOSE: Quantization sanity check — profile Qwen-1.5B in BF16 and in 4-bit on
+#          the same 50 docs, cluster with k=4, and compute Jaccard similarity
+#          of cluster assignments between the two runs.
+#
+# PASS CRITERION: Jaccard >= 0.95 means 4-bit quantization is safe for all models.
+# FAIL CRITERION: Jaccard < 0.95 means Llama-8B 4-bit data may be distorted.
+#
+# OUTPUTS:
+#   outputs/phase1/quant_check_bf16_labels.pkl
+#   outputs/phase1/quant_check_4bit_labels.pkl
+#   outputs/phase1/quant_check_result.json
+#
+# IMPORTANT: This script must finish before step3 profiling of Llama-8B begins.
+# IMPORTANT: BF16 Qwen-1.5B needs ~4GB VRAM. 4-bit needs ~1.5GB.
+
+import os
+import sys
+import json
+import pickle
+import numpy as np
+import torch
+from tqdm import tqdm
+from sklearn.cluster import KMeans
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+from datasets import load_dataset
+
+# ── paths ─────────────────────────────────────────────────────────────────────
+ROOT    = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUT_DIR = os.path.join(ROOT, "outputs", "phase1")
+os.makedirs(OUT_DIR, exist_ok=True)
+
+INDEX_PATH   = os.path.join(OUT_DIR, "dataset_index.json")
+OUT_BF16_PKL = os.path.join(OUT_DIR, "quant_check_bf16_labels.pkl")
+OUT_4BIT_PKL = os.path.join(OUT_DIR, "quant_check_4bit_labels.pkl")
+OUT_JSON     = os.path.join(OUT_DIR, "quant_check_result.json")
+
+# ── settings ──────────────────────────────────────────────────────────────────
+MODEL_ID   = "Qwen/Qwen2.5-1.5B"
+NUM_DOCS   = 50     # short run — only for the quant check
+SEQ_LEN    = 512    # truncate docs to this many tokens
+TOP_K      = 10     # top-k attended positions to histogram
+K_CLUSTERS = 4
+
+HF_CACHE = "d:\\.cache\\huggingface"
+os.environ["HF_HOME"] = HF_CACHE
+os.environ["SAFETENSORS_FAST_GPU"] = "1"
+
+
+# ── helpers ───────────────────────────────────────────────────────────────────
+
+def load_articles_from_index(index_path, num_docs):
+    """Load only the articles at the positions listed in dataset_index.json."""
+    with open(index_path) as f:
+        cfg = json.load(f)
+
+    ds = load_dataset(cfg["dataset"], cfg["config"], split=cfg["split"])
+
+    # Group all rows into articles (same logic as old-proj/data_utils.py)
+    all_articles = []
+    current = []
+    for row in ds:
+        text = row["text"].strip()
+        if text.startswith("= ") and text.endswith(" =") and text.count("=") == 2:
+            if current:
+                all_articles.append(" ".join(current))
+            current = [text]
+        elif text:
+            current.append(text)
+    if current:
+        all_articles.append(" ".join(current))
+    all_articles = [a for a in all_articles if len(a) > 100]
+
+    # Pick exactly the shared indices, capped at num_docs
+    indices = cfg["indices"][:num_docs]
+    selected = [all_articles[i] for i in indices if i < len(all_articles)]
+    print(f"Loaded {len(selected)} articles from shared index.")
+    return selected
+
+
+def extract_histograms(model, tokenizer, texts):
+    """Run model on each text, return list of dicts: (layer, head) -> histogram."""
+    device = next(model.parameters()).device
+    mask_upper = None   # built lazily when we know seq_len
+
+    all_patterns = []
+    for text in tqdm(texts, desc="  Profiling"):
+        tokens = tokenizer(
+            text, return_tensors="pt", truncation=True, max_length=SEQ_LEN
+        )
+        tokens = {k: v.to(device) for k, v in tokens.items()}
+        seq_len = tokens["input_ids"].shape[1]
+
+        if seq_len < 10:
+            continue
+
+        # Rebuild causal mask if sequence length changed
+        if mask_upper is None or mask_upper.shape[0] != seq_len:
+            mask_upper = torch.ones(seq_len, seq_len, dtype=torch.bool).triu(diagonal=1)
+
+        with torch.no_grad():
+            out = model(**tokens, output_attentions=True)
+
+        q_idx = torch.arange(seq_len).view(1, seq_len, 1)   # (1, S, 1)
+        patterns = {}
+
+        for layer_idx, layer_attn in enumerate(out.attentions):
+            if layer_attn is None:
+                continue
+            # layer_attn: (batch=1, heads, seq, seq) — cast to float32 for stability
+            attn = layer_attn[0].float().cpu()              # (H, S, S)
+            attn = attn.masked_fill(mask_upper, -1e9)       # mask future tokens
+
+            k = min(TOP_K, seq_len)
+            _, top_idx = attn.topk(k, dim=2)                # (H, S, k)
+            rel_off = top_idx - q_idx                       # (H, S, k)
+
+            for head_idx in range(attn.shape[0]):
+                offs = rel_off[head_idx].flatten().numpy()  # all (S*k) offsets
+                offs = offs[offs <= 0]                      # causal: only attend backwards
+                abs_off = np.abs(offs).astype(int)
+                abs_off = np.minimum(abs_off, SEQ_LEN - 1)
+                counts = np.bincount(abs_off, minlength=SEQ_LEN)[:SEQ_LEN].astype(float)
+                total = counts.sum()
+                patterns[(layer_idx, head_idx)] = counts / total if total > 0 else counts
+
+        all_patterns.append(patterns)
+
+    return all_patterns
+
+
+def cluster_labels(all_patterns):
+    """Run k=4 KMeans per (layer, head). Return dict (layer, head) -> cluster_id (int)."""
+    if not all_patterns:
+        return {}
+    keys = sorted(all_patterns[0].keys())
+    labels = {}
+    for layer, head in keys:
+        hists = np.array([d[(layer, head)] for d in all_patterns if (layer, head) in d])
+        k = min(K_CLUSTERS, len(hists))
+        km = KMeans(n_clusters=k, random_state=42, n_init=10)
+        km.fit(hists)
+        # Assign the dominant cluster (mode across all docs)
+        labels[(layer, head)] = int(np.bincount(km.labels_).argmax())
+    return labels
+
+
+def jaccard(labels_a, labels_b):
+    """Jaccard similarity of two (layer, head) -> cluster_id dicts."""
+    keys = set(labels_a) & set(labels_b)
+    if not keys:
+        return 0.0
+    match = sum(1 for k in keys if labels_a[k] == labels_b[k])
+    return match / len(keys)
+
+
+def load_model(quantize):
+    """Load Qwen-1.5B in BF16 (quantize=False) or 4-bit (quantize=True)."""
+    print(f"\nLoading {MODEL_ID}  quantize={quantize} ...")
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, trust_remote_code=True)
+    if tokenizer.pad_token is None:
+        tokenizer.pad_token = tokenizer.eos_token
+
+    if quantize:
+        bnb_cfg = BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_compute_dtype=torch.float16,
+            bnb_4bit_quant_type="nf4",
+            bnb_4bit_use_double_quant=True,
+        )
+        model = AutoModelForCausalLM.from_pretrained(
+            MODEL_ID,
+            quantization_config=bnb_cfg,
+            device_map="auto",
+            trust_remote_code=True,
+            attn_implementation="eager",
+        )
+    else:
+        dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
+        model = AutoModelForCausalLM.from_pretrained(
+            MODEL_ID,
+            torch_dtype=dtype,
+            device_map="auto",
+            trust_remote_code=True,
+            attn_implementation="eager",
+        )
+    model.eval()
+    return model, tokenizer
+
+
+# ── main ──────────────────────────────────────────────────────────────────────
+
+def main():
+    if not os.path.exists(INDEX_PATH):
+        print(f"[ERROR] dataset_index.json not found at {INDEX_PATH}")
+        print("        Run step1_generate_index.py first.")
+        sys.exit(1)
+
+    texts = load_articles_from_index(INDEX_PATH, NUM_DOCS)
+
+    results = {}
+
+    for quantize, pkl_path, tag in [
+        (False, OUT_BF16_PKL, "bf16"),
+        (True,  OUT_4BIT_PKL, "4bit"),
+    ]:
+        model, tok = load_model(quantize)
+        patterns   = extract_histograms(model, tok, texts)
+        labels     = cluster_labels(patterns)
+
+        with open(pkl_path, "wb") as f:
+            pickle.dump(labels, f)
+        print(f"  [{tag}] Saved labels ({len(labels)} heads) -> {pkl_path}")
+
+        results[tag] = labels
+        del model   # free VRAM before next load
+        torch.cuda.empty_cache()
+
+    # Compute Jaccard
+    j = jaccard(results["bf16"], results["4bit"])
+    verdict = "PASS" if j >= 0.95 else "FAIL"
+    note = (
+        "4-bit quantization does not distort cluster assignments. Llama-8B 4-bit data is valid."
+        if verdict == "PASS"
+        else "4-bit distorts attention signatures. Re-profile Llama-8B in mixed precision."
+    )
+
+    out = {
+        "model":             MODEL_ID,
+        "num_docs":          len(texts),
+        "k_clusters":        K_CLUSTERS,
+        "jaccard_similarity": round(j, 4),
+        "threshold":         0.95,
+        "verdict":           verdict,
+        "note":              note,
+    }
+    with open(OUT_JSON, "w") as f:
+        json.dump(out, f, indent=2)
+
+    print(f"\n--- Quantization Check Result ---")
+    print(f"  Jaccard similarity : {j:.4f}")
+    print(f"  Verdict            : {verdict}")
+    print(f"  Note               : {note}")
+    print(f"  Saved to           : {OUT_JSON}")
+
+
+if __name__ == "__main__":
+    main()

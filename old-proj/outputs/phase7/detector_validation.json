@@ -1,0 +1,23 @@
+{
+  "args": {
+    "tier2_path": "D:\\PROJECTS\\webstromprojects\\supertransformers\\phase7\\..\\outputs\\phase7\\tier2_heads.json",
+    "model": "Qwen/Qwen2.5-0.5B",
+    "seq_len": 512,
+    "num_positive": 100,
+    "num_negative": 200,
+    "ngram_n": 3,
+    "ngram_threshold": 0.3,
+    "freq_threshold": 0.05
+  },
+  "metrics": {
+    "tp": 100,
+    "fp": 147,
+    "tn": 53,
+    "fn": 0,
+    "precision": 0.4048582995951417,
+    "recall": 1.0,
+    "f1": 0.5763688760806917,
+    "specificity": 0.265,
+    "accuracy": 0.51
+  }
+}

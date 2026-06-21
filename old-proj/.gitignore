@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.env
+# Large pkl files — upload to Google Drive instead
+outputs/**/*.pkl
+outputs/**/*.pt
