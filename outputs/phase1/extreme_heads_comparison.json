@@ -1,0 +1,166 @@
+{
+  "metadata": {
+    "k_clusters": 4,
+    "top_n": 5,
+    "sink_metric": "hist[0:4].sum() -- BOS anchor distance 0-3",
+    "local_metric": "hist[1:10].sum() -- adjacent distance 1-9",
+    "retrieval_metric": "hist.std() -- proxy for selectivity (higher = more retrieval-like)",
+    "retrieval_note": "Proxy only. Replace with entropy-delta on live model when available."
+  },
+  "GPT-2": {
+    "total_layers": 24,
+    "num_docs": 5,
+    "num_heads": 384,
+    "top_sink": [
+      {
+        "layer": 3,
+        "head": 13,
+        "rel_depth": 0.1304,
+        "cluster": 1,
+        "sink": 0.4024,
+        "local": 0.811,
+        "retrieval": 0.012852
+      },
+      {
+        "layer": 3,
+        "head": 4,
+        "rel_depth": 0.1304,
+        "cluster": 1,
+        "sink": 0.4023,
+        "local": 0.8189,
+        "retrieval": 0.013
+      },
+      {
+        "layer": 3,
+        "head": 10,
+        "rel_depth": 0.1304,
+        "cluster": 1,
+        "sink": 0.4019,
+        "local": 0.784,
+        "retrieval": 0.012532
+      },
+      {
+        "layer": 3,
+        "head": 8,
+        "rel_depth": 0.1304,
+        "cluster": 1,
+        "sink": 0.4018,
+        "local": 0.7849,
+        "retrieval": 0.012536
+      },
+      {
+        "layer": 3,
+        "head": 15,
+        "rel_depth": 0.1304,
+        "cluster": 1,
+        "sink": 0.4018,
+        "local": 0.7712,
+        "retrieval": 0.012381
+      }
+    ],
+    "top_local": [
+      {
+        "layer": 3,
+        "head": 4,
+        "rel_depth": 0.1304,
+        "cluster": 1,
+        "sink": 0.4023,
+        "local": 0.8189,
+        "retrieval": 0.013
+      },
+      {
+        "layer": 3,
+        "head": 13,
+        "rel_depth": 0.1304,
+        "cluster": 1,
+        "sink": 0.4024,
+        "local": 0.811,
+        "retrieval": 0.012852
+      },
+      {
+        "layer": 3,
+        "head": 8,
+        "rel_depth": 0.1304,
+        "cluster": 1,
+        "sink": 0.4018,
+        "local": 0.7849,
+        "retrieval": 0.012536
+      },
+      {
+        "layer": 3,
+        "head": 10,
+        "rel_depth": 0.1304,
+        "cluster": 1,
+        "sink": 0.4019,
+        "local": 0.784,
+        "retrieval": 0.012532
+      },
+      {
+        "layer": 2,
+        "head": 5,
+        "rel_depth": 0.087,
+        "cluster": 1,
+        "sink": 0.4001,
+        "local": 0.7783,
+        "retrieval": 0.012484
+      }
+    ],
+    "top_retrieval": [
+      {
+        "layer": 3,
+        "head": 4,
+        "rel_depth": 0.1304,
+        "cluster": 1,
+        "sink": 0.4023,
+        "local": 0.8189,
+        "retrieval": 0.013
+      },
+      {
+        "layer": 3,
+        "head": 13,
+        "rel_depth": 0.1304,
+        "cluster": 1,
+        "sink": 0.4024,
+        "local": 0.811,
+        "retrieval": 0.012852
+      },
+      {
+        "layer": 3,
+        "head": 8,
+        "rel_depth": 0.1304,
+        "cluster": 1,
+        "sink": 0.4018,
+        "local": 0.7849,
+        "retrieval": 0.012536
+      },
+      {
+        "layer": 3,
+        "head": 10,
+        "rel_depth": 0.1304,
+        "cluster": 1,
+        "sink": 0.4019,
+        "local": 0.784,
+        "retrieval": 0.012532
+      },
+      {
+        "layer": 2,
+        "head": 10,
+        "rel_depth": 0.087,
+        "cluster": 1,
+        "sink": 0.3966,
+        "local": 0.7739,
+        "retrieval": 0.012504
+      }
+    ]
+  },
+  "Qwen-0.5B": {
+    "status": "missing"
+  },
+  "Qwen-1.5B": {
+    "status": "missing"
+  },
+  "Llama-8B": {
+    "status": "missing"
+  },
+  "verdict": "Insufficient data \u2014 need >= 2 models"
+}
