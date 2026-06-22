@@ -1,0 +1,32 @@
+{
+  "64": {
+    "streaming_llm": {
+      "ppl": 132.4368,
+      "time_sec": 25.85
+    },
+    "headgenome": {
+      "ppl": 9.9803,
+      "time_sec": 44.3
+    }
+  },
+  "128": {
+    "streaming_llm": {
+      "ppl": 114.6943,
+      "time_sec": 32.74
+    },
+    "headgenome": {
+      "ppl": 9.9803,
+      "time_sec": 35.8
+    }
+  },
+  "256": {
+    "streaming_llm": {
+      "ppl": 37.3889,
+      "time_sec": 34.49
+    },
+    "headgenome": {
+      "ppl": 9.9803,
+      "time_sec": 34.87
+    }
+  }
+}

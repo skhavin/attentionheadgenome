@@ -1,0 +1,12 @@
+{
+  "trained_gpt2": {
+    "avg_inertia": 0.3659,
+    "avg_silhouette": 0.4679
+  },
+  "random_gpt2": {
+    "avg_inertia": 0.0052,
+    "avg_silhouette": 0.2449
+  },
+  "verdict": "PASS",
+  "note": "Clusters are learned circuit behaviors, not softmax geometry artifacts."
+}

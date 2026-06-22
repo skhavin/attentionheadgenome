@@ -1,0 +1,110 @@
+{
+  "GPT-2": {
+    "cluster4_centroid_idx": 0,
+    "centroid_role_map": {
+      "sink": 1,
+      "local": 3,
+      "retrieval": 2
+    },
+    "cluster4_descriptor": {
+      "peak_position": 0,
+      "peak_value": 0.045,
+      "effective_width": 50,
+      "entropy": 5.491,
+      "bos_mass_0_3": 0.1172,
+      "local_mass_1_9": 0.1642,
+      "mid_mass_10_99": 0.4486,
+      "far_mass_100+": 0.3423
+    },
+    "inferred_label": "induction",
+    "reason": "Mid-range + local mass coexist \u2014 induction/composition pattern",
+    "valid_labels": [
+      "induction",
+      "composition",
+      "diffuse_background_noise",
+      "wide_local"
+    ],
+    "note": "Label assigned by automated heuristic. Inspect centroid shape manually and override if needed."
+  },
+  "Qwen-0.5B": {
+    "cluster4_centroid_idx": 1,
+    "centroid_role_map": {
+      "sink": 2,
+      "local": 0,
+      "retrieval": 3
+    },
+    "cluster4_descriptor": {
+      "peak_position": 0,
+      "peak_value": 0.0417,
+      "effective_width": 52,
+      "entropy": 5.5284,
+      "bos_mass_0_3": 0.1043,
+      "local_mass_1_9": 0.1515,
+      "mid_mass_10_99": 0.4515,
+      "far_mass_100+": 0.3553
+    },
+    "inferred_label": "induction",
+    "reason": "Mid-range + local mass coexist \u2014 induction/composition pattern",
+    "valid_labels": [
+      "induction",
+      "composition",
+      "diffuse_background_noise",
+      "wide_local"
+    ],
+    "note": "Label assigned by automated heuristic. Inspect centroid shape manually and override if needed."
+  },
+  "Qwen-1.5B": {
+    "cluster4_centroid_idx": 2,
+    "centroid_role_map": {
+      "sink": 1,
+      "local": 3,
+      "retrieval": 0
+    },
+    "cluster4_descriptor": {
+      "peak_position": 0,
+      "peak_value": 0.0492,
+      "effective_width": 42,
+      "entropy": 5.4259,
+      "bos_mass_0_3": 0.1227,
+      "local_mass_1_9": 0.1762,
+      "mid_mass_10_99": 0.4474,
+      "far_mass_100+": 0.3272
+    },
+    "inferred_label": "induction",
+    "reason": "Mid-range + local mass coexist \u2014 induction/composition pattern",
+    "valid_labels": [
+      "induction",
+      "composition",
+      "diffuse_background_noise",
+      "wide_local"
+    ],
+    "note": "Label assigned by automated heuristic. Inspect centroid shape manually and override if needed."
+  },
+  "Llama-3.2-1B": {
+    "cluster4_centroid_idx": 3,
+    "centroid_role_map": {
+      "sink": 0,
+      "local": 2,
+      "retrieval": 1
+    },
+    "cluster4_descriptor": {
+      "peak_position": 0,
+      "peak_value": 0.0496,
+      "effective_width": 40,
+      "entropy": 5.5366,
+      "bos_mass_0_3": 0.1172,
+      "local_mass_1_9": 0.1557,
+      "mid_mass_10_99": 0.4262,
+      "far_mass_100+": 0.3685
+    },
+    "inferred_label": "induction",
+    "reason": "Mid-range + local mass coexist \u2014 induction/composition pattern",
+    "valid_labels": [
+      "induction",
+      "composition",
+      "diffuse_background_noise",
+      "wide_local"
+    ],
+    "note": "Label assigned by automated heuristic. Inspect centroid shape manually and override if needed."
+  }
+}

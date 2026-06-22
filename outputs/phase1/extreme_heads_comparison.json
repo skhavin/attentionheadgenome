@@ -9,7 +9,7 @@
   },
   "GPT-2": {
     "total_layers": 24,
-    "num_docs": 5,
+    "num_docs": 300,
     "num_heads": 384,
     "top_sink": [
       {
@@ -17,45 +17,45 @@
         "head": 13,
         "rel_depth": 0.1304,
         "cluster": 1,
-        "sink": 0.4024,
-        "local": 0.811,
-        "retrieval": 0.012852
+        "sink": 0.4026,
+        "local": 0.8098,
+        "retrieval": 0.012839
       },
       {
         "layer": 3,
         "head": 4,
         "rel_depth": 0.1304,
         "cluster": 1,
-        "sink": 0.4023,
-        "local": 0.8189,
-        "retrieval": 0.013
+        "sink": 0.4025,
+        "local": 0.8181,
+        "retrieval": 0.012987
       },
       {
         "layer": 3,
         "head": 10,
         "rel_depth": 0.1304,
         "cluster": 1,
-        "sink": 0.4019,
-        "local": 0.784,
-        "retrieval": 0.012532
-      },
-      {
-        "layer": 3,
-        "head": 8,
-        "rel_depth": 0.1304,
-        "cluster": 1,
-        "sink": 0.4018,
-        "local": 0.7849,
-        "retrieval": 0.012536
+        "sink": 0.4022,
+        "local": 0.7834,
+        "retrieval": 0.012529
       },
       {
         "layer": 3,
         "head": 15,
         "rel_depth": 0.1304,
         "cluster": 1,
-        "sink": 0.4018,
-        "local": 0.7712,
-        "retrieval": 0.012381
+        "sink": 0.4021,
+        "local": 0.7728,
+        "retrieval": 0.012407
+      },
+      {
+        "layer": 3,
+        "head": 8,
+        "rel_depth": 0.1304,
+        "cluster": 1,
+        "sink": 0.402,
+        "local": 0.7864,
+        "retrieval": 0.012551
       }
     ],
     "top_local": [
@@ -64,45 +64,45 @@
         "head": 4,
         "rel_depth": 0.1304,
         "cluster": 1,
-        "sink": 0.4023,
-        "local": 0.8189,
-        "retrieval": 0.013
+        "sink": 0.4025,
+        "local": 0.8181,
+        "retrieval": 0.012987
       },
       {
         "layer": 3,
         "head": 13,
         "rel_depth": 0.1304,
         "cluster": 1,
-        "sink": 0.4024,
-        "local": 0.811,
-        "retrieval": 0.012852
+        "sink": 0.4026,
+        "local": 0.8098,
+        "retrieval": 0.012839
       },
       {
         "layer": 3,
         "head": 8,
         "rel_depth": 0.1304,
         "cluster": 1,
-        "sink": 0.4018,
-        "local": 0.7849,
-        "retrieval": 0.012536
+        "sink": 0.402,
+        "local": 0.7864,
+        "retrieval": 0.012551
       },
       {
         "layer": 3,
         "head": 10,
         "rel_depth": 0.1304,
         "cluster": 1,
-        "sink": 0.4019,
-        "local": 0.784,
-        "retrieval": 0.012532
+        "sink": 0.4022,
+        "local": 0.7834,
+        "retrieval": 0.012529
       },
       {
         "layer": 2,
         "head": 5,
         "rel_depth": 0.087,
         "cluster": 1,
-        "sink": 0.4001,
-        "local": 0.7783,
-        "retrieval": 0.012484
+        "sink": 0.3993,
+        "local": 0.7773,
+        "retrieval": 0.012468
       }
     ],
     "top_retrieval": [
@@ -111,56 +111,485 @@
         "head": 4,
         "rel_depth": 0.1304,
         "cluster": 1,
-        "sink": 0.4023,
-        "local": 0.8189,
-        "retrieval": 0.013
+        "sink": 0.4025,
+        "local": 0.8181,
+        "retrieval": 0.012987
       },
       {
         "layer": 3,
         "head": 13,
         "rel_depth": 0.1304,
         "cluster": 1,
-        "sink": 0.4024,
-        "local": 0.811,
-        "retrieval": 0.012852
+        "sink": 0.4026,
+        "local": 0.8098,
+        "retrieval": 0.012839
       },
       {
         "layer": 3,
         "head": 8,
         "rel_depth": 0.1304,
         "cluster": 1,
-        "sink": 0.4018,
-        "local": 0.7849,
-        "retrieval": 0.012536
+        "sink": 0.402,
+        "local": 0.7864,
+        "retrieval": 0.012551
       },
       {
         "layer": 3,
         "head": 10,
         "rel_depth": 0.1304,
         "cluster": 1,
-        "sink": 0.4019,
-        "local": 0.784,
-        "retrieval": 0.012532
+        "sink": 0.4022,
+        "local": 0.7834,
+        "retrieval": 0.012529
       },
       {
         "layer": 2,
         "head": 10,
         "rel_depth": 0.087,
         "cluster": 1,
-        "sink": 0.3966,
-        "local": 0.7739,
-        "retrieval": 0.012504
+        "sink": 0.3973,
+        "local": 0.7752,
+        "retrieval": 0.012514
       }
     ]
   },
   "Qwen-0.5B": {
-    "status": "missing"
+    "total_layers": 24,
+    "num_docs": 300,
+    "num_heads": 336,
+    "top_sink": [
+      {
+        "layer": 0,
+        "head": 0,
+        "rel_depth": 0.0,
+        "cluster": 2,
+        "sink": 0.4019,
+        "local": 0.7334,
+        "retrieval": 0.012126
+      },
+      {
+        "layer": 6,
+        "head": 4,
+        "rel_depth": 0.2609,
+        "cluster": 2,
+        "sink": 0.4005,
+        "local": 0.6501,
+        "retrieval": 0.01135
+      },
+      {
+        "layer": 1,
+        "head": 8,
+        "rel_depth": 0.0435,
+        "cluster": 2,
+        "sink": 0.3978,
+        "local": 0.7639,
+        "retrieval": 0.012588
+      },
+      {
+        "layer": 8,
+        "head": 8,
+        "rel_depth": 0.3478,
+        "cluster": 2,
+        "sink": 0.3956,
+        "local": 0.6494,
+        "retrieval": 0.011147
+      },
+      {
+        "layer": 3,
+        "head": 1,
+        "rel_depth": 0.1304,
+        "cluster": 2,
+        "sink": 0.395,
+        "local": 0.7371,
+        "retrieval": 0.012008
+      }
+    ],
+    "top_local": [
+      {
+        "layer": 2,
+        "head": 1,
+        "rel_depth": 0.087,
+        "cluster": 2,
+        "sink": 0.3667,
+        "local": 0.7772,
+        "retrieval": 0.012234
+      },
+      {
+        "layer": 1,
+        "head": 8,
+        "rel_depth": 0.0435,
+        "cluster": 2,
+        "sink": 0.3978,
+        "local": 0.7639,
+        "retrieval": 0.012588
+      },
+      {
+        "layer": 6,
+        "head": 6,
+        "rel_depth": 0.2609,
+        "cluster": 2,
+        "sink": 0.3847,
+        "local": 0.7509,
+        "retrieval": 0.012139
+      },
+      {
+        "layer": 0,
+        "head": 9,
+        "rel_depth": 0.0,
+        "cluster": 2,
+        "sink": 0.393,
+        "local": 0.7449,
+        "retrieval": 0.012187
+      },
+      {
+        "layer": 3,
+        "head": 1,
+        "rel_depth": 0.1304,
+        "cluster": 2,
+        "sink": 0.395,
+        "local": 0.7371,
+        "retrieval": 0.012008
+      }
+    ],
+    "top_retrieval": [
+      {
+        "layer": 1,
+        "head": 8,
+        "rel_depth": 0.0435,
+        "cluster": 2,
+        "sink": 0.3978,
+        "local": 0.7639,
+        "retrieval": 0.012588
+      },
+      {
+        "layer": 2,
+        "head": 1,
+        "rel_depth": 0.087,
+        "cluster": 2,
+        "sink": 0.3667,
+        "local": 0.7772,
+        "retrieval": 0.012234
+      },
+      {
+        "layer": 0,
+        "head": 9,
+        "rel_depth": 0.0,
+        "cluster": 2,
+        "sink": 0.393,
+        "local": 0.7449,
+        "retrieval": 0.012187
+      },
+      {
+        "layer": 6,
+        "head": 6,
+        "rel_depth": 0.2609,
+        "cluster": 2,
+        "sink": 0.3847,
+        "local": 0.7509,
+        "retrieval": 0.012139
+      },
+      {
+        "layer": 0,
+        "head": 0,
+        "rel_depth": 0.0,
+        "cluster": 2,
+        "sink": 0.4019,
+        "local": 0.7334,
+        "retrieval": 0.012126
+      }
+    ]
   },
   "Qwen-1.5B": {
-    "status": "missing"
+    "total_layers": 28,
+    "num_docs": 300,
+    "num_heads": 336,
+    "top_sink": [
+      {
+        "layer": 1,
+        "head": 1,
+        "rel_depth": 0.037,
+        "cluster": 1,
+        "sink": 0.3978,
+        "local": 0.7031,
+        "retrieval": 0.012582
+      },
+      {
+        "layer": 3,
+        "head": 2,
+        "rel_depth": 0.1111,
+        "cluster": 1,
+        "sink": 0.3909,
+        "local": 0.5589,
+        "retrieval": 0.010277
+      },
+      {
+        "layer": 6,
+        "head": 5,
+        "rel_depth": 0.2222,
+        "cluster": 1,
+        "sink": 0.3887,
+        "local": 0.7033,
+        "retrieval": 0.011667
+      },
+      {
+        "layer": 23,
+        "head": 9,
+        "rel_depth": 0.8519,
+        "cluster": 1,
+        "sink": 0.3871,
+        "local": 0.6097,
+        "retrieval": 0.010676
+      },
+      {
+        "layer": 11,
+        "head": 4,
+        "rel_depth": 0.4074,
+        "cluster": 1,
+        "sink": 0.386,
+        "local": 0.5648,
+        "retrieval": 0.01022
+      }
+    ],
+    "top_local": [
+      {
+        "layer": 1,
+        "head": 0,
+        "rel_depth": 0.037,
+        "cluster": 1,
+        "sink": 0.3586,
+        "local": 0.8266,
+        "retrieval": 0.012766
+      },
+      {
+        "layer": 0,
+        "head": 11,
+        "rel_depth": 0.0,
+        "cluster": 1,
+        "sink": 0.3566,
+        "local": 0.804,
+        "retrieval": 0.012425
+      },
+      {
+        "layer": 7,
+        "head": 7,
+        "rel_depth": 0.2593,
+        "cluster": 1,
+        "sink": 0.3694,
+        "local": 0.7066,
+        "retrieval": 0.011524
+      },
+      {
+        "layer": 6,
+        "head": 5,
+        "rel_depth": 0.2222,
+        "cluster": 1,
+        "sink": 0.3887,
+        "local": 0.7033,
+        "retrieval": 0.011667
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "rel_depth": 0.037,
+        "cluster": 1,
+        "sink": 0.3978,
+        "local": 0.7031,
+        "retrieval": 0.012582
+      }
+    ],
+    "top_retrieval": [
+      {
+        "layer": 1,
+        "head": 0,
+        "rel_depth": 0.037,
+        "cluster": 1,
+        "sink": 0.3586,
+        "local": 0.8266,
+        "retrieval": 0.012766
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "rel_depth": 0.037,
+        "cluster": 1,
+        "sink": 0.3978,
+        "local": 0.7031,
+        "retrieval": 0.012582
+      },
+      {
+        "layer": 0,
+        "head": 11,
+        "rel_depth": 0.0,
+        "cluster": 1,
+        "sink": 0.3566,
+        "local": 0.804,
+        "retrieval": 0.012425
+      },
+      {
+        "layer": 1,
+        "head": 4,
+        "rel_depth": 0.037,
+        "cluster": 3,
+        "sink": 0.3418,
+        "local": 0.4205,
+        "retrieval": 0.011912
+      },
+      {
+        "layer": 6,
+        "head": 5,
+        "rel_depth": 0.2222,
+        "cluster": 1,
+        "sink": 0.3887,
+        "local": 0.7033,
+        "retrieval": 0.011667
+      }
+    ]
   },
-  "Llama-8B": {
-    "status": "missing"
+  "Llama-3.2-1B": {
+    "total_layers": 16,
+    "num_docs": 300,
+    "num_heads": 512,
+    "top_sink": [
+      {
+        "layer": 2,
+        "head": 7,
+        "rel_depth": 0.1333,
+        "cluster": 0,
+        "sink": 0.4021,
+        "local": 0.7532,
+        "retrieval": 0.012317
+      },
+      {
+        "layer": 1,
+        "head": 11,
+        "rel_depth": 0.0667,
+        "cluster": 0,
+        "sink": 0.4006,
+        "local": 0.7141,
+        "retrieval": 0.011861
+      },
+      {
+        "layer": 4,
+        "head": 13,
+        "rel_depth": 0.2667,
+        "cluster": 0,
+        "sink": 0.3994,
+        "local": 0.6941,
+        "retrieval": 0.011616
+      },
+      {
+        "layer": 9,
+        "head": 28,
+        "rel_depth": 0.6,
+        "cluster": 0,
+        "sink": 0.3993,
+        "local": 0.6254,
+        "retrieval": 0.011514
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "rel_depth": 0.0667,
+        "cluster": 0,
+        "sink": 0.3992,
+        "local": 0.6599,
+        "retrieval": 0.011291
+      }
+    ],
+    "top_local": [
+      {
+        "layer": 0,
+        "head": 0,
+        "rel_depth": 0.0,
+        "cluster": 0,
+        "sink": 0.3972,
+        "local": 0.7908,
+        "retrieval": 0.012689
+      },
+      {
+        "layer": 2,
+        "head": 7,
+        "rel_depth": 0.1333,
+        "cluster": 0,
+        "sink": 0.4021,
+        "local": 0.7532,
+        "retrieval": 0.012317
+      },
+      {
+        "layer": 1,
+        "head": 10,
+        "rel_depth": 0.0667,
+        "cluster": 0,
+        "sink": 0.3655,
+        "local": 0.7193,
+        "retrieval": 0.011518
+      },
+      {
+        "layer": 1,
+        "head": 11,
+        "rel_depth": 0.0667,
+        "cluster": 0,
+        "sink": 0.4006,
+        "local": 0.7141,
+        "retrieval": 0.011861
+      },
+      {
+        "layer": 1,
+        "head": 17,
+        "rel_depth": 0.0667,
+        "cluster": 0,
+        "sink": 0.3947,
+        "local": 0.7097,
+        "retrieval": 0.011787
+      }
+    ],
+    "top_retrieval": [
+      {
+        "layer": 0,
+        "head": 0,
+        "rel_depth": 0.0,
+        "cluster": 0,
+        "sink": 0.3972,
+        "local": 0.7908,
+        "retrieval": 0.012689
+      },
+      {
+        "layer": 2,
+        "head": 7,
+        "rel_depth": 0.1333,
+        "cluster": 0,
+        "sink": 0.4021,
+        "local": 0.7532,
+        "retrieval": 0.012317
+      },
+      {
+        "layer": 1,
+        "head": 11,
+        "rel_depth": 0.0667,
+        "cluster": 0,
+        "sink": 0.4006,
+        "local": 0.7141,
+        "retrieval": 0.011861
+      },
+      {
+        "layer": 1,
+        "head": 17,
+        "rel_depth": 0.0667,
+        "cluster": 0,
+        "sink": 0.3947,
+        "local": 0.7097,
+        "retrieval": 0.011787
+      },
+      {
+        "layer": 4,
+        "head": 13,
+        "rel_depth": 0.2667,
+        "cluster": 0,
+        "sink": 0.3994,
+        "local": 0.6941,
+        "retrieval": 0.011616
+      }
+    ]
   },
-  "verdict": "Insufficient data \u2014 need >= 2 models"
+  "verdict": "Null Hypothesis (depths scattered; no universal law found)"
 }

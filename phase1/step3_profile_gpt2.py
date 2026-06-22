@@ -14,6 +14,10 @@
 
 import os
 import sys
+
+# Set cache directories BEFORE importing transformers
+os.environ["HF_HOME"] = "d:\\.cache\\huggingface"
+
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
@@ -21,8 +25,6 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 ROOT       = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR    = os.path.join(ROOT, "outputs", "phase1")
 INDEX_PATH = os.path.join(OUT_DIR, "dataset_index.json")
-
-os.environ["HF_HOME"] = "d:\\.cache\\huggingface"
 
 # ── settings ──────────────────────────────────────────────────────────────────
 MODEL_ID   = "gpt2-medium"

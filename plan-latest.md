@@ -41,14 +41,13 @@ Prove a universal, predictive cross-architecture taxonomy of attention heads ("H
 ### Correction 4 — 300-Doc Rule (Sample Symmetry)
 - Clusters don't converge until ~300 docs (proven by `old-proj/phase1/check_stability.py`).
 - GPT-2's 500-doc pkl is truncated to the first 300 indices from `dataset_index.json`.
-- Qwen-0.5B and Llama-8B must be **re-profiled** to 300 docs.
+- Qwen-0.5B and Llama-3.2-1B must be profiled to 300 docs.
 - All 4 models compare on the same 300 documents.
 
-### Correction 5 — Quantization Confound Check
-- Llama-8B runs in 4-bit. If its extreme heads look different, we can't tell if it's architecture or quantization noise.
-- **Fix:** Profile Qwen-1.5B twice on 50 docs: once in native BF16/FP16, once in 4-bit.
-- If head cluster Jaccard similarity > 95%, quantization is safe to use on Llama.
-- This check must pass before the 300-doc Llama re-profile begins.
+### Correction 5 — Precision Symmetry & Pivot to Llama-3.2-1B
+- **Quantization Confound:** Comparing a 4-bit model to BF16 models introduces noise and can shift KMeans boundaries (causing the Jaccard similarity sanity check to fail despite 99.999% attention pattern cosine similarity).
+- **Fix:** Pivot from Llama-8B (4-bit) to **Llama-3.2-1B** (`unsloth/Llama-3.2-1B`) in native precision (FP16/BF16).
+- Llama-3.2-1B fits comfortably in 8GB VRAM in native precision, maintains the official Llama-3 architecture family (RoPE, GQA, SwiGLU), and provides absolute precision symmetry across all profiled models (GPT-2, Qwen-0.5B, Qwen-1.5B, Llama-1B).
 
 ---
 
@@ -81,31 +80,12 @@ Prove a universal, predictive cross-architecture taxonomy of attention heads ("H
 
 ---
 
-### Step 1.1 — Quantization Sanity Check (Run First, ~20 min)
+### Step 1.1 — Quantization Sanity Check (Complete / Bypassed)
 **Script:** `phase1/step2_quant_check.py`
 
-- Profile **Qwen-1.5B only**, on **50 docs** from `dataset_index.json`.
-- Run **twice**: once in BF16/FP16, once in 4-bit (BitsAndBytes).
-- For each run, cluster with k=4 and record cluster labels per head.
-- Compute **Jaccard similarity** of cluster assignments between the two runs.
-
-**Pass/Fail Criterion:**
-- Jaccard > 0.95 → **PASS**: 4-bit quantization is safe. Llama-8B 4-bit data is valid.
-- Jaccard ≤ 0.95 → **FAIL**: 4-bit distorts attention signatures. Llama-8B must be profiled in a mixed-precision mode.
-
-**Outputs (both pkl + json):**
-- `outputs/phase1/quant_check_bf16_labels.pkl`
-- `outputs/phase1/quant_check_4bit_labels.pkl`
-- `outputs/phase1/quant_check_result.json`
-```json
-{
-  "model": "Qwen/Qwen2.5-1.5B",
-  "num_docs": 50,
-  "jaccard_similarity": 0.97,
-  "verdict": "PASS",
-  "note": "4-bit quantization does not distort cluster assignments"
-}
-```
+- We completed the quantization check on Qwen-1.5B.
+- **Finding:** 4-bit attention histograms have 99.999% cosine similarity to BF16, but KMeans decision boundaries are highly sensitive to small perturbations, resulting in a low cluster-overlap Jaccard similarity.
+- **Action:** Guided by this finding, we pivoted to Llama-3.2-1B in native precision, rendering 4-bit quantization unnecessary.
 
 ---
 
@@ -114,10 +94,10 @@ Prove a universal, predictive cross-architecture taxonomy of attention heads ("H
 
 | Model | Size | Old Data | Action |
 |---|---|---|---|
-| GPT-2 Medium | 345M | 500 docs ✅ | **Truncate** to first 300 indices from `dataset_index.json` |
+| GPT-2 Medium | 345M | 500 docs ✅ | **Re-profile** to 300 indices from `dataset_index.json` |
 | Qwen-0.5B | 500M | 50 docs ⚠️ | **Re-profile** to 300 docs |
 | Qwen-1.5B | 1.5B | None ❌ | **New profile** to 300 docs |
-| Llama-8B (4bit) | 8B | 50 docs ⚠️ | **Re-profile** to 300 docs (only if Step 1.1 passed) |
+| Llama-3.2-1B | 1.2B | None ❌ | **New profile** to 300 docs in native FP16/BF16 |
 
 **Each script outputs (both pkl and json):**
 - `outputs/phase1/{model_slug}_patterns.pkl` — raw histograms per (layer, head) per doc
@@ -134,7 +114,7 @@ Load all 4 model summaries. For each head compute:
 |---|---|---|
 | `sink_score` | `hist[0:4].sum()` | BOS anchor mass (corrected) |
 | `local_score` | `hist[1:10].sum()` | Adjacent token mass |
-| `retrieval_score` | entropy delta (standard vs. KV prompt) | Content-dependent collapse |
+| `retrieval_score` | entropy delta / selective std | Content-dependent collapse |
 | `rel_depth` | `layer / (total_layers - 1)` | Normalized 0.0 → 1.0 |
 
 Extract **top-5 per type per model**. Compare relative depths across models.
@@ -158,7 +138,7 @@ Extract **top-5 per type per model**. Compare relative depths across models.
   },
   "Qwen-0.5B": {},
   "Qwen-1.5B": {},
-  "Llama-8B": {},
+  "Llama-3.2-1B": {},
   "verdict": "Strong Genome"
 }
 ```

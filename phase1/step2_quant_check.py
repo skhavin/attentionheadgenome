@@ -130,29 +130,16 @@ def extract_histograms(model, tokenizer, texts):
     return all_patterns
 
 
-def cluster_labels(all_patterns):
-    """Run k=4 KMeans per (layer, head). Return dict (layer, head) -> cluster_id (int)."""
+def get_head_means(all_patterns):
+    """Compute mean histogram per head."""
     if not all_patterns:
         return {}
     keys = sorted(all_patterns[0].keys())
-    labels = {}
+    head_means = {}
     for layer, head in keys:
-        hists = np.array([d[(layer, head)] for d in all_patterns if (layer, head) in d])
-        k = min(K_CLUSTERS, len(hists))
-        km = KMeans(n_clusters=k, random_state=42, n_init=10)
-        km.fit(hists)
-        # Assign the dominant cluster (mode across all docs)
-        labels[(layer, head)] = int(np.bincount(km.labels_).argmax())
-    return labels
-
-
-def jaccard(labels_a, labels_b):
-    """Jaccard similarity of two (layer, head) -> cluster_id dicts."""
-    keys = set(labels_a) & set(labels_b)
-    if not keys:
-        return 0.0
-    match = sum(1 for k in keys if labels_a[k] == labels_b[k])
-    return match / len(keys)
+        hists = [d[(layer, head)] for d in all_patterns if (layer, head) in d]
+        head_means[(layer, head)] = np.mean(hists, axis=0)
+    return head_means
 
 
 def load_model(quantize):
@@ -199,26 +186,44 @@ def main():
 
     texts = load_articles_from_index(INDEX_PATH, NUM_DOCS)
 
-    results = {}
+    # 1. Profile BF16
+    model, tok = load_model(quantize=False)
+    patterns_bf16 = extract_histograms(model, tok, texts)
+    del model
+    torch.cuda.empty_cache()
 
-    for quantize, pkl_path, tag in [
-        (False, OUT_BF16_PKL, "bf16"),
-        (True,  OUT_4BIT_PKL, "4bit"),
-    ]:
-        model, tok = load_model(quantize)
-        patterns   = extract_histograms(model, tok, texts)
-        labels     = cluster_labels(patterns)
+    # 2. Profile 4-bit
+    model, tok = load_model(quantize=True)
+    patterns_4bit = extract_histograms(model, tok, texts)
+    del model
+    torch.cuda.empty_cache()
 
-        with open(pkl_path, "wb") as f:
-            pickle.dump(labels, f)
-        print(f"  [{tag}] Saved labels ({len(labels)} heads) -> {pkl_path}")
+    # 3. Compute mean histograms per head
+    head_means_bf16 = get_head_means(patterns_bf16)
+    head_means_4bit = get_head_means(patterns_4bit)
 
-        results[tag] = labels
-        del model   # free VRAM before next load
-        torch.cuda.empty_cache()
+    keys = sorted(head_means_bf16.keys())
+    X_bf16 = np.array([head_means_bf16[k] for k in keys])
+    X_4bit = np.array([head_means_4bit[k] for k in keys])
 
-    # Compute Jaccard
-    j = jaccard(results["bf16"], results["4bit"])
+    # 4. Fit KMeans on BF16
+    km = KMeans(n_clusters=K_CLUSTERS, random_state=42, n_init=10)
+    labels_bf16 = km.fit_predict(X_bf16)
+
+    # 5. Predict on 4-bit using BF16 centroids
+    labels_4bit = km.predict(X_4bit)
+
+    # Save labels mapping
+    bf16_label_dict = {keys[i]: int(labels_bf16[i]) for i in range(len(keys))}
+    fourbit_label_dict = {keys[i]: int(labels_4bit[i]) for i in range(len(keys))}
+
+    with open(OUT_BF16_PKL, "wb") as f:
+        pickle.dump(bf16_label_dict, f)
+    with open(OUT_4BIT_PKL, "wb") as f:
+        pickle.dump(fourbit_label_dict, f)
+
+    # Compute similarity (fraction of heads that fall in the same cluster)
+    j = float(np.mean(labels_bf16 == labels_4bit))
     verdict = "PASS" if j >= 0.95 else "FAIL"
     note = (
         "4-bit quantization does not distort cluster assignments. Llama-8B 4-bit data is valid."

@@ -43,7 +43,7 @@ MODEL_SLUGS = {
     "GPT-2":     "gpt2-medium",
     "Qwen-0.5B": "qwen2.5-0.5b",
     "Qwen-1.5B": "qwen2.5-1.5b",
-    "Llama-8B":  "llama-3.1-8b-4bit",
+    "Llama-3.2-1B": "llama-3.2-1b",
 }
 
 VALID_LABELS = [

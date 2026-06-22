@@ -1,0 +1,9 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B",
+  "num_docs": 50,
+  "k_clusters": 4,
+  "jaccard_similarity": 0.3363,
+  "threshold": 0.95,
+  "verdict": "FAIL",
+  "note": "4-bit distorts attention signatures. Re-profile Llama-8B in mixed precision."
+}
