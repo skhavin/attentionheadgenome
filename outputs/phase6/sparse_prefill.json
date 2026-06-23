@@ -1,0 +1,10 @@
+{
+  "qwen0.5b": {
+    "512": {
+      "sparse_ppl": 13.07,
+      "baseline_ppl": 11.71,
+      "flop_savings_pct": 70.1,
+      "seq_len": 4096
+    }
+  }
+}

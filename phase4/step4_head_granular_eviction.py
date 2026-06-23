@@ -134,10 +134,9 @@ class HeadGranularMaskHooks:
     'attention_mask' entry to include the per-head bias.
     """
 
-    def __init__(self, model, head_labels, num_heads, num_layers, cfg,
-                 window_size=WINDOW_SIZE, sink_size=SINK_SIZE):
+    def __init__(self, model, head_labels, num_heads, num_layers, cfg, budget, sink_size=SINK_SIZE):
         self.handles     = []
-        self.window_size = window_size
+        self.window_size = budget - sink_size
         self.sink_size   = sink_size
 
         for layer_idx in range(num_layers):
@@ -155,47 +154,56 @@ class HeadGranularMaskHooks:
         sink_size   = self.sink_size
 
         def pre_hook(module, args, kwargs):
-            # hidden_states is args[0]; we need the sequence length from KV cache
-            # We'll build the mask lazily inside — size determined at runtime
             hidden_states = args[0] if args else kwargs.get("hidden_states")
             if hidden_states is None:
                 return args, kwargs
 
-            # kv_len: use cache_position if available, else fall back
+            past_kv = kwargs.get("past_key_values")
+            q_len   = hidden_states.shape[1]
+            device  = hidden_states.device
+            dtype   = hidden_states.dtype
+
             cache_pos = kwargs.get("cache_position")
-            past_kv   = kwargs.get("past_key_values")
-            q_len     = hidden_states.shape[1]
-            device    = hidden_states.device
-            dtype     = hidden_states.dtype
-
             if cache_pos is not None and len(cache_pos) > 0:
-                # cache_position gives the absolute positions of the q tokens
-                # kv_len = last cache position + 1
                 kv_len = int(cache_pos[-1].item()) + 1
-            elif past_kv is not None and hasattr(past_kv, "get_seq_length"):
-                kv_seq = past_kv.get_seq_length()
-                kv_len = kv_seq + q_len
+                q_pos_1d = cache_pos
             else:
-                kv_len = q_len
+                if past_kv is not None and hasattr(past_kv, "get_seq_length"):
+                    kv_seq = past_kv.get_seq_length()
+                    kv_len = kv_seq + q_len
+                else:
+                    kv_len = q_len
+                q_pos_1d = torch.arange(kv_len - q_len, kv_len, device=device)
 
-            # Build role mask [1, num_heads, q_len, kv_len]
-            role_mask = torch.zeros(1, num_heads, q_len, kv_len,
-                                    dtype=dtype, device=device)
+            q_pos = q_pos_1d.unsqueeze(1)
+            k_pos = torch.arange(kv_len, device=device).unsqueeze(0)
+
+            causal_allow = q_pos >= k_pos
+            allow_sink_only = ((k_pos < sink_size) | ((q_pos - k_pos) < window_size)) & causal_allow
+            allow_local     = ((k_pos < sink_size) | ((q_pos - k_pos) < window_size)) & causal_allow
+            allow_full      = causal_allow
+
+            zero_t = torch.tensor(0.0, dtype=dtype, device=device)
+            inf_t  = torch.tensor(float("-inf"), dtype=dtype, device=device)
+
+            sink_mask  = torch.where(allow_sink_only, zero_t, inf_t)
+            local_mask = torch.where(allow_local, zero_t, inf_t)
+            full_mask  = torch.where(allow_full, zero_t, inf_t)
+
+            role_mask = torch.empty(1, num_heads, q_len, kv_len, dtype=dtype, device=device)
+
             for h in range(num_heads):
                 role = layer_roles.get(h, "local")
                 if role == "sink":
-                    if kv_len > sink_size:
-                        role_mask[0, h, :, sink_size:] = float("-inf")
+                    role_mask[0, h] = sink_mask
                 elif role == "local":
-                    cutoff = max(0, kv_len - window_size)
-                    if cutoff > 0:
-                        role_mask[0, h, :, :cutoff] = float("-inf")
-                # retrieval / induction: no masking
+                    role_mask[0, h] = local_mask
+                else:
+                    role_mask[0, h] = full_mask
 
             existing = kwargs.get("attention_mask")
             if existing is not None:
                 try:
-                    # existing: [B, 1, q, kv] or [B, 1, 1, kv]
                     combined = existing + role_mask
                     kwargs = dict(kwargs, attention_mask=combined)
                 except Exception:
@@ -249,18 +257,24 @@ class StreamingLLMMaskHooks:
 
             if cache_pos is not None and len(cache_pos) > 0:
                 kv_len = int(cache_pos[-1].item()) + 1
-            elif past_kv is not None and hasattr(past_kv, "get_seq_length"):
-                kv_seq = past_kv.get_seq_length()
-                kv_len = kv_seq + q_len
+                q_pos_1d = cache_pos
             else:
-                kv_len = q_len
+                if past_kv is not None and hasattr(past_kv, "get_seq_length"):
+                    kv_seq = past_kv.get_seq_length()
+                    kv_len = kv_seq + q_len
+                else:
+                    kv_len = q_len
+                q_pos_1d = torch.arange(kv_len - q_len, kv_len, device=device)
 
-            # Uniform mask across all heads
-            mask = torch.full((1, 1, q_len, kv_len), float("-inf"),
-                              dtype=dtype, device=device)
-            mask[..., :sink_size] = 0.0
-            recent_start = max(sink_size, kv_len - recent_size)
-            mask[..., recent_start:] = 0.0
+            q_pos = q_pos_1d.unsqueeze(1)
+            k_pos = torch.arange(kv_len, device=device).unsqueeze(0)
+
+            causal_allow = q_pos >= k_pos
+            allow = ((k_pos < sink_size) | ((q_pos - k_pos) < recent_size)) & causal_allow
+
+            zero_t = torch.tensor(0.0, dtype=dtype, device=device)
+            inf_t  = torch.tensor(float("-inf"), dtype=dtype, device=device)
+            mask = torch.where(allow, zero_t, inf_t).unsqueeze(0).unsqueeze(0)
 
             existing = kwargs.get("attention_mask")
             if existing is not None:
@@ -355,7 +369,7 @@ def eval_model(cfg, articles, device):
         print(f"    StreamingLLM PPL:         {sllm_ppl:.2f}")
 
         # ── HeadGenome head-granular mask ─────────────────────────────────────
-        hg_hooks = HeadGranularMaskHooks(model, head_labels, num_heads, num_layers, cfg)
+        hg_hooks = HeadGranularMaskHooks(model, head_labels, num_heads, num_layers, cfg, budget)
         t0 = time.time()
         hg_ppl = compute_ppl_with_mask(model, tok, articles, device)
         hg_time = time.time() - t0

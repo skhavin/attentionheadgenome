@@ -1,0 +1,96 @@
+{
+  "gpt2": {
+    "64": {
+      "baseline_full_attn": {
+        "ppl": 26.9756
+      },
+      "streaming_llm": {
+        "ppl": 188.8685,
+        "time_sec": 1.15
+      },
+      "headgenome_granular": {
+        "ppl": 169.8075,
+        "time_sec": 1.29
+      },
+      "improvement_x": 1.112,
+      "winner": "HeadGenome"
+    },
+    "128": {
+      "baseline_full_attn": {
+        "ppl": 26.9756
+      },
+      "streaming_llm": {
+        "ppl": 103.7918,
+        "time_sec": 1.14
+      },
+      "headgenome_granular": {
+        "ppl": 99.6705,
+        "time_sec": 1.27
+      },
+      "improvement_x": 1.041,
+      "winner": "HeadGenome"
+    },
+    "256": {
+      "baseline_full_attn": {
+        "ppl": 26.9756
+      },
+      "streaming_llm": {
+        "ppl": 28.9329,
+        "time_sec": 1.13
+      },
+      "headgenome_granular": {
+        "ppl": 28.8633,
+        "time_sec": 1.29
+      },
+      "improvement_x": 1.002,
+      "winner": "HeadGenome"
+    }
+  },
+  "qwen0.5b": {
+    "64": {
+      "baseline_full_attn": {
+        "ppl": 14.9659
+      },
+      "streaming_llm": {
+        "ppl": 18.5895,
+        "time_sec": 0.96
+      },
+      "headgenome_granular": {
+        "ppl": 18.5121,
+        "time_sec": 1.05
+      },
+      "improvement_x": 1.004,
+      "winner": "HeadGenome"
+    },
+    "128": {
+      "baseline_full_attn": {
+        "ppl": 14.9659
+      },
+      "streaming_llm": {
+        "ppl": 15.9626,
+        "time_sec": 0.94
+      },
+      "headgenome_granular": {
+        "ppl": 15.989,
+        "time_sec": 1.03
+      },
+      "improvement_x": 0.998,
+      "winner": "StreamingLLM"
+    },
+    "256": {
+      "baseline_full_attn": {
+        "ppl": 14.9659
+      },
+      "streaming_llm": {
+        "ppl": 15.0118,
+        "time_sec": 0.98
+      },
+      "headgenome_granular": {
+        "ppl": 15.0157,
+        "time_sec": 1.06
+      },
+      "improvement_x": 1.0,
+      "winner": "StreamingLLM"
+    }
+  }
+}
