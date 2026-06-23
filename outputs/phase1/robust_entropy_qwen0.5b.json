@@ -1,0 +1,2070 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B",
+  "n_pairs": 50,
+  "architecture": {
+    "L": 24,
+    "H": 14,
+    "kv": 2,
+    "gqa_group": 7
+  },
+  "thresholds": {
+    "retrieval": 0.3,
+    "induction": -0.5
+  },
+  "heads": {
+    "0_0": {
+      "delta": -0.03655,
+      "match_entropy": 2.17659,
+      "nonmatch_entropy": 2.14004,
+      "kv_group": 0
+    },
+    "0_1": {
+      "delta": -0.00081,
+      "match_entropy": 0.00761,
+      "nonmatch_entropy": 0.0068,
+      "kv_group": 0
+    },
+    "0_2": {
+      "delta": -0.14172,
+      "match_entropy": 2.23059,
+      "nonmatch_entropy": 2.08887,
+      "kv_group": 0
+    },
+    "0_3": {
+      "delta": -0.18037,
+      "match_entropy": 2.42947,
+      "nonmatch_entropy": 2.2491,
+      "kv_group": 0
+    },
+    "0_4": {
+      "delta": -0.04527,
+      "match_entropy": 1.62416,
+      "nonmatch_entropy": 1.57889,
+      "kv_group": 0
+    },
+    "0_5": {
+      "delta": 0.26883,
+      "match_entropy": 1.01396,
+      "nonmatch_entropy": 1.28279,
+      "kv_group": 0
+    },
+    "0_6": {
+      "delta": -0.06141,
+      "match_entropy": 1.46087,
+      "nonmatch_entropy": 1.39947,
+      "kv_group": 0
+    },
+    "0_7": {
+      "delta": 0.22043,
+      "match_entropy": 0.24631,
+      "nonmatch_entropy": 0.46674,
+      "kv_group": 1
+    },
+    "0_8": {
+      "delta": -0.09811,
+      "match_entropy": 1.73829,
+      "nonmatch_entropy": 1.64018,
+      "kv_group": 1
+    },
+    "0_9": {
+      "delta": 0.02331,
+      "match_entropy": 2.01811,
+      "nonmatch_entropy": 2.04142,
+      "kv_group": 1
+    },
+    "0_10": {
+      "delta": -0.12354,
+      "match_entropy": 2.40241,
+      "nonmatch_entropy": 2.27887,
+      "kv_group": 1
+    },
+    "0_11": {
+      "delta": -8e-05,
+      "match_entropy": 0.90037,
+      "nonmatch_entropy": 0.90029,
+      "kv_group": 1
+    },
+    "0_12": {
+      "delta": 0.03027,
+      "match_entropy": 2.02656,
+      "nonmatch_entropy": 2.05683,
+      "kv_group": 1
+    },
+    "0_13": {
+      "delta": -0.03005,
+      "match_entropy": 0.96688,
+      "nonmatch_entropy": 0.93683,
+      "kv_group": 1
+    },
+    "1_0": {
+      "delta": -0.05735,
+      "match_entropy": 1.08653,
+      "nonmatch_entropy": 1.02919,
+      "kv_group": 0
+    },
+    "1_1": {
+      "delta": -0.13374,
+      "match_entropy": 2.0569,
+      "nonmatch_entropy": 1.92316,
+      "kv_group": 0
+    },
+    "1_2": {
+      "delta": -0.09233,
+      "match_entropy": 1.82362,
+      "nonmatch_entropy": 1.73128,
+      "kv_group": 0
+    },
+    "1_3": {
+      "delta": -0.22153,
+      "match_entropy": 2.33117,
+      "nonmatch_entropy": 2.10964,
+      "kv_group": 0
+    },
+    "1_4": {
+      "delta": -0.04022,
+      "match_entropy": 1.28556,
+      "nonmatch_entropy": 1.24534,
+      "kv_group": 0
+    },
+    "1_5": {
+      "delta": -0.09293,
+      "match_entropy": 2.4211,
+      "nonmatch_entropy": 2.32817,
+      "kv_group": 0
+    },
+    "1_6": {
+      "delta": -0.01742,
+      "match_entropy": 1.62804,
+      "nonmatch_entropy": 1.61062,
+      "kv_group": 0
+    },
+    "1_7": {
+      "delta": -0.16194,
+      "match_entropy": 2.51252,
+      "nonmatch_entropy": 2.35059,
+      "kv_group": 1
+    },
+    "1_8": {
+      "delta": -0.01964,
+      "match_entropy": 1.67237,
+      "nonmatch_entropy": 1.65272,
+      "kv_group": 1
+    },
+    "1_9": {
+      "delta": -0.01328,
+      "match_entropy": 0.60393,
+      "nonmatch_entropy": 0.59064,
+      "kv_group": 1
+    },
+    "1_10": {
+      "delta": -0.05306,
+      "match_entropy": 2.42708,
+      "nonmatch_entropy": 2.37401,
+      "kv_group": 1
+    },
+    "1_11": {
+      "delta": 0.08495,
+      "match_entropy": 1.98486,
+      "nonmatch_entropy": 2.06981,
+      "kv_group": 1
+    },
+    "1_12": {
+      "delta": -0.06679,
+      "match_entropy": 2.33796,
+      "nonmatch_entropy": 2.27117,
+      "kv_group": 1
+    },
+    "1_13": {
+      "delta": -0.01683,
+      "match_entropy": 2.46519,
+      "nonmatch_entropy": 2.44836,
+      "kv_group": 1
+    },
+    "2_0": {
+      "delta": -0.03161,
+      "match_entropy": 1.2532,
+      "nonmatch_entropy": 1.22159,
+      "kv_group": 0
+    },
+    "2_1": {
+      "delta": -0.11679,
+      "match_entropy": 2.52567,
+      "nonmatch_entropy": 2.40888,
+      "kv_group": 0
+    },
+    "2_2": {
+      "delta": 0.57719,
+      "match_entropy": 1.0357,
+      "nonmatch_entropy": 1.61289,
+      "kv_group": 0
+    },
+    "2_3": {
+      "delta": -0.00384,
+      "match_entropy": 1.33925,
+      "nonmatch_entropy": 1.33541,
+      "kv_group": 0
+    },
+    "2_4": {
+      "delta": 0.0048,
+      "match_entropy": 1.84315,
+      "nonmatch_entropy": 1.84795,
+      "kv_group": 0
+    },
+    "2_5": {
+      "delta": -0.05304,
+      "match_entropy": 2.31962,
+      "nonmatch_entropy": 2.26658,
+      "kv_group": 0
+    },
+    "2_6": {
+      "delta": 0.03606,
+      "match_entropy": 1.57246,
+      "nonmatch_entropy": 1.60853,
+      "kv_group": 0
+    },
+    "2_7": {
+      "delta": -0.0247,
+      "match_entropy": 1.1956,
+      "nonmatch_entropy": 1.1709,
+      "kv_group": 1
+    },
+    "2_8": {
+      "delta": -0.02342,
+      "match_entropy": 1.00717,
+      "nonmatch_entropy": 0.98374,
+      "kv_group": 1
+    },
+    "2_9": {
+      "delta": -0.02541,
+      "match_entropy": 1.32324,
+      "nonmatch_entropy": 1.29783,
+      "kv_group": 1
+    },
+    "2_10": {
+      "delta": -0.014,
+      "match_entropy": 1.75779,
+      "nonmatch_entropy": 1.74379,
+      "kv_group": 1
+    },
+    "2_11": {
+      "delta": -0.01034,
+      "match_entropy": 1.6138,
+      "nonmatch_entropy": 1.60345,
+      "kv_group": 1
+    },
+    "2_12": {
+      "delta": -0.01834,
+      "match_entropy": 1.76499,
+      "nonmatch_entropy": 1.74665,
+      "kv_group": 1
+    },
+    "2_13": {
+      "delta": -0.10142,
+      "match_entropy": 1.81129,
+      "nonmatch_entropy": 1.70987,
+      "kv_group": 1
+    },
+    "3_0": {
+      "delta": -0.48197,
+      "match_entropy": 0.71966,
+      "nonmatch_entropy": 0.23769,
+      "kv_group": 0
+    },
+    "3_1": {
+      "delta": -0.04527,
+      "match_entropy": 2.10219,
+      "nonmatch_entropy": 2.05692,
+      "kv_group": 0
+    },
+    "3_2": {
+      "delta": -0.11054,
+      "match_entropy": 1.65544,
+      "nonmatch_entropy": 1.54489,
+      "kv_group": 0
+    },
+    "3_3": {
+      "delta": -0.21864,
+      "match_entropy": 1.27764,
+      "nonmatch_entropy": 1.05899,
+      "kv_group": 0
+    },
+    "3_4": {
+      "delta": -0.31466,
+      "match_entropy": 0.7819,
+      "nonmatch_entropy": 0.46725,
+      "kv_group": 0
+    },
+    "3_5": {
+      "delta": -0.11821,
+      "match_entropy": 0.19001,
+      "nonmatch_entropy": 0.0718,
+      "kv_group": 0
+    },
+    "3_6": {
+      "delta": -0.11845,
+      "match_entropy": 2.2412,
+      "nonmatch_entropy": 2.12275,
+      "kv_group": 0
+    },
+    "3_7": {
+      "delta": 0.00735,
+      "match_entropy": 1.05193,
+      "nonmatch_entropy": 1.05927,
+      "kv_group": 1
+    },
+    "3_8": {
+      "delta": 0.02612,
+      "match_entropy": 1.23712,
+      "nonmatch_entropy": 1.26323,
+      "kv_group": 1
+    },
+    "3_9": {
+      "delta": -0.09353,
+      "match_entropy": 1.12562,
+      "nonmatch_entropy": 1.03209,
+      "kv_group": 1
+    },
+    "3_10": {
+      "delta": -0.05442,
+      "match_entropy": 1.00305,
+      "nonmatch_entropy": 0.94863,
+      "kv_group": 1
+    },
+    "3_11": {
+      "delta": 0.05714,
+      "match_entropy": 0.84405,
+      "nonmatch_entropy": 0.90118,
+      "kv_group": 1
+    },
+    "3_12": {
+      "delta": 0.05497,
+      "match_entropy": 1.35505,
+      "nonmatch_entropy": 1.41002,
+      "kv_group": 1
+    },
+    "3_13": {
+      "delta": 0.01266,
+      "match_entropy": 1.48092,
+      "nonmatch_entropy": 1.49359,
+      "kv_group": 1
+    },
+    "4_0": {
+      "delta": 0.02014,
+      "match_entropy": 1.27661,
+      "nonmatch_entropy": 1.29675,
+      "kv_group": 0
+    },
+    "4_1": {
+      "delta": 0.00109,
+      "match_entropy": 1.60744,
+      "nonmatch_entropy": 1.60853,
+      "kv_group": 0
+    },
+    "4_2": {
+      "delta": -0.15172,
+      "match_entropy": 1.11782,
+      "nonmatch_entropy": 0.9661,
+      "kv_group": 0
+    },
+    "4_3": {
+      "delta": -0.16016,
+      "match_entropy": 2.10896,
+      "nonmatch_entropy": 1.9488,
+      "kv_group": 0
+    },
+    "4_4": {
+      "delta": 0.02796,
+      "match_entropy": 1.75292,
+      "nonmatch_entropy": 1.78087,
+      "kv_group": 0
+    },
+    "4_5": {
+      "delta": -0.01993,
+      "match_entropy": 1.17726,
+      "nonmatch_entropy": 1.15733,
+      "kv_group": 0
+    },
+    "4_6": {
+      "delta": -0.06022,
+      "match_entropy": 1.22,
+      "nonmatch_entropy": 1.15978,
+      "kv_group": 0
+    },
+    "4_7": {
+      "delta": 0.16759,
+      "match_entropy": 1.49828,
+      "nonmatch_entropy": 1.66587,
+      "kv_group": 1
+    },
+    "4_8": {
+      "delta": -0.21236,
+      "match_entropy": 1.19449,
+      "nonmatch_entropy": 0.98213,
+      "kv_group": 1
+    },
+    "4_9": {
+      "delta": -0.02909,
+      "match_entropy": 0.43874,
+      "nonmatch_entropy": 0.40965,
+      "kv_group": 1
+    },
+    "4_10": {
+      "delta": -0.07666,
+      "match_entropy": 2.12071,
+      "nonmatch_entropy": 2.04405,
+      "kv_group": 1
+    },
+    "4_11": {
+      "delta": -0.05719,
+      "match_entropy": 2.18308,
+      "nonmatch_entropy": 2.12589,
+      "kv_group": 1
+    },
+    "4_12": {
+      "delta": 0.04846,
+      "match_entropy": 0.53877,
+      "nonmatch_entropy": 0.58723,
+      "kv_group": 1
+    },
+    "4_13": {
+      "delta": -0.31157,
+      "match_entropy": 2.39672,
+      "nonmatch_entropy": 2.08514,
+      "kv_group": 1
+    },
+    "5_0": {
+      "delta": -0.54885,
+      "match_entropy": 0.79045,
+      "nonmatch_entropy": 0.24159,
+      "kv_group": 0
+    },
+    "5_1": {
+      "delta": 0.07445,
+      "match_entropy": 1.39192,
+      "nonmatch_entropy": 1.46637,
+      "kv_group": 0
+    },
+    "5_2": {
+      "delta": -0.86315,
+      "match_entropy": 1.51769,
+      "nonmatch_entropy": 0.65454,
+      "kv_group": 0
+    },
+    "5_3": {
+      "delta": -0.3395,
+      "match_entropy": 1.04108,
+      "nonmatch_entropy": 0.70159,
+      "kv_group": 0
+    },
+    "5_4": {
+      "delta": -0.28683,
+      "match_entropy": 1.44684,
+      "nonmatch_entropy": 1.16001,
+      "kv_group": 0
+    },
+    "5_5": {
+      "delta": -0.15954,
+      "match_entropy": 1.65427,
+      "nonmatch_entropy": 1.49474,
+      "kv_group": 0
+    },
+    "5_6": {
+      "delta": -0.15674,
+      "match_entropy": 1.52013,
+      "nonmatch_entropy": 1.36339,
+      "kv_group": 0
+    },
+    "5_7": {
+      "delta": 0.14976,
+      "match_entropy": 0.63359,
+      "nonmatch_entropy": 0.78335,
+      "kv_group": 1
+    },
+    "5_8": {
+      "delta": -0.29505,
+      "match_entropy": 2.07189,
+      "nonmatch_entropy": 1.77684,
+      "kv_group": 1
+    },
+    "5_9": {
+      "delta": 0.02766,
+      "match_entropy": 0.75756,
+      "nonmatch_entropy": 0.78522,
+      "kv_group": 1
+    },
+    "5_10": {
+      "delta": -0.37575,
+      "match_entropy": 1.86343,
+      "nonmatch_entropy": 1.48768,
+      "kv_group": 1
+    },
+    "5_11": {
+      "delta": 0.60551,
+      "match_entropy": 0.79306,
+      "nonmatch_entropy": 1.39856,
+      "kv_group": 1
+    },
+    "5_12": {
+      "delta": -0.21724,
+      "match_entropy": 1.94582,
+      "nonmatch_entropy": 1.72859,
+      "kv_group": 1
+    },
+    "5_13": {
+      "delta": 0.10689,
+      "match_entropy": 1.47649,
+      "nonmatch_entropy": 1.58338,
+      "kv_group": 1
+    },
+    "6_0": {
+      "delta": -0.37318,
+      "match_entropy": 1.11423,
+      "nonmatch_entropy": 0.74105,
+      "kv_group": 0
+    },
+    "6_1": {
+      "delta": -0.00126,
+      "match_entropy": 2.1478,
+      "nonmatch_entropy": 2.14654,
+      "kv_group": 0
+    },
+    "6_2": {
+      "delta": -0.07222,
+      "match_entropy": 2.00833,
+      "nonmatch_entropy": 1.93611,
+      "kv_group": 0
+    },
+    "6_3": {
+      "delta": 0.11016,
+      "match_entropy": 1.60833,
+      "nonmatch_entropy": 1.7185,
+      "kv_group": 0
+    },
+    "6_4": {
+      "delta": -0.08585,
+      "match_entropy": 1.44442,
+      "nonmatch_entropy": 1.35857,
+      "kv_group": 0
+    },
+    "6_5": {
+      "delta": -0.06891,
+      "match_entropy": 1.97051,
+      "nonmatch_entropy": 1.9016,
+      "kv_group": 0
+    },
+    "6_6": {
+      "delta": -0.11476,
+      "match_entropy": 1.93257,
+      "nonmatch_entropy": 1.81781,
+      "kv_group": 0
+    },
+    "6_7": {
+      "delta": -0.34298,
+      "match_entropy": 1.86983,
+      "nonmatch_entropy": 1.52685,
+      "kv_group": 1
+    },
+    "6_8": {
+      "delta": 0.0693,
+      "match_entropy": 1.91473,
+      "nonmatch_entropy": 1.98404,
+      "kv_group": 1
+    },
+    "6_9": {
+      "delta": -0.05111,
+      "match_entropy": 0.92033,
+      "nonmatch_entropy": 0.86922,
+      "kv_group": 1
+    },
+    "6_10": {
+      "delta": 0.14592,
+      "match_entropy": 1.15548,
+      "nonmatch_entropy": 1.3014,
+      "kv_group": 1
+    },
+    "6_11": {
+      "delta": -0.29385,
+      "match_entropy": 1.53068,
+      "nonmatch_entropy": 1.23683,
+      "kv_group": 1
+    },
+    "6_12": {
+      "delta": 0.12221,
+      "match_entropy": 1.22044,
+      "nonmatch_entropy": 1.34265,
+      "kv_group": 1
+    },
+    "6_13": {
+      "delta": -0.21801,
+      "match_entropy": 1.7205,
+      "nonmatch_entropy": 1.50249,
+      "kv_group": 1
+    },
+    "7_0": {
+      "delta": 0.11486,
+      "match_entropy": 1.03333,
+      "nonmatch_entropy": 1.14819,
+      "kv_group": 0
+    },
+    "7_1": {
+      "delta": 0.03996,
+      "match_entropy": 1.10493,
+      "nonmatch_entropy": 1.14489,
+      "kv_group": 0
+    },
+    "7_2": {
+      "delta": -0.07881,
+      "match_entropy": 1.45404,
+      "nonmatch_entropy": 1.37523,
+      "kv_group": 0
+    },
+    "7_3": {
+      "delta": -0.05389,
+      "match_entropy": 1.04359,
+      "nonmatch_entropy": 0.98969,
+      "kv_group": 0
+    },
+    "7_4": {
+      "delta": -0.1299,
+      "match_entropy": 1.13375,
+      "nonmatch_entropy": 1.00384,
+      "kv_group": 0
+    },
+    "7_5": {
+      "delta": 0.08409,
+      "match_entropy": 0.95874,
+      "nonmatch_entropy": 1.04282,
+      "kv_group": 0
+    },
+    "7_6": {
+      "delta": 0.07524,
+      "match_entropy": 0.91761,
+      "nonmatch_entropy": 0.99285,
+      "kv_group": 0
+    },
+    "7_7": {
+      "delta": -0.37453,
+      "match_entropy": 0.96199,
+      "nonmatch_entropy": 0.58746,
+      "kv_group": 1
+    },
+    "7_8": {
+      "delta": -0.26424,
+      "match_entropy": 0.50413,
+      "nonmatch_entropy": 0.2399,
+      "kv_group": 1
+    },
+    "7_9": {
+      "delta": 0.04813,
+      "match_entropy": 1.04694,
+      "nonmatch_entropy": 1.09507,
+      "kv_group": 1
+    },
+    "7_10": {
+      "delta": -0.06401,
+      "match_entropy": 1.22894,
+      "nonmatch_entropy": 1.16493,
+      "kv_group": 1
+    },
+    "7_11": {
+      "delta": -0.0011,
+      "match_entropy": 0.9254,
+      "nonmatch_entropy": 0.92429,
+      "kv_group": 1
+    },
+    "7_12": {
+      "delta": -0.06225,
+      "match_entropy": 1.581,
+      "nonmatch_entropy": 1.51875,
+      "kv_group": 1
+    },
+    "7_13": {
+      "delta": -0.43783,
+      "match_entropy": 1.58102,
+      "nonmatch_entropy": 1.14319,
+      "kv_group": 1
+    },
+    "8_0": {
+      "delta": -0.11705,
+      "match_entropy": 1.96142,
+      "nonmatch_entropy": 1.84437,
+      "kv_group": 0
+    },
+    "8_1": {
+      "delta": 0.06507,
+      "match_entropy": 1.50895,
+      "nonmatch_entropy": 1.57402,
+      "kv_group": 0
+    },
+    "8_2": {
+      "delta": -0.20308,
+      "match_entropy": 1.94102,
+      "nonmatch_entropy": 1.73793,
+      "kv_group": 0
+    },
+    "8_3": {
+      "delta": -0.00176,
+      "match_entropy": 0.00189,
+      "nonmatch_entropy": 0.00013,
+      "kv_group": 0
+    },
+    "8_4": {
+      "delta": 0.23279,
+      "match_entropy": 1.51681,
+      "nonmatch_entropy": 1.74961,
+      "kv_group": 0
+    },
+    "8_5": {
+      "delta": -0.00458,
+      "match_entropy": 1.64072,
+      "nonmatch_entropy": 1.63614,
+      "kv_group": 0
+    },
+    "8_6": {
+      "delta": 0.08641,
+      "match_entropy": 1.7481,
+      "nonmatch_entropy": 1.83451,
+      "kv_group": 0
+    },
+    "8_7": {
+      "delta": 0.01243,
+      "match_entropy": 0.37462,
+      "nonmatch_entropy": 0.38705,
+      "kv_group": 1
+    },
+    "8_8": {
+      "delta": -0.13997,
+      "match_entropy": 1.60408,
+      "nonmatch_entropy": 1.46412,
+      "kv_group": 1
+    },
+    "8_9": {
+      "delta": -0.24008,
+      "match_entropy": 1.88262,
+      "nonmatch_entropy": 1.64254,
+      "kv_group": 1
+    },
+    "8_10": {
+      "delta": -0.13541,
+      "match_entropy": 1.4837,
+      "nonmatch_entropy": 1.34829,
+      "kv_group": 1
+    },
+    "8_11": {
+      "delta": -0.21241,
+      "match_entropy": 1.7132,
+      "nonmatch_entropy": 1.50078,
+      "kv_group": 1
+    },
+    "8_12": {
+      "delta": 0.04708,
+      "match_entropy": 1.63247,
+      "nonmatch_entropy": 1.67954,
+      "kv_group": 1
+    },
+    "8_13": {
+      "delta": -0.04321,
+      "match_entropy": 1.64302,
+      "nonmatch_entropy": 1.59982,
+      "kv_group": 1
+    },
+    "9_0": {
+      "delta": -0.01689,
+      "match_entropy": 1.62316,
+      "nonmatch_entropy": 1.60628,
+      "kv_group": 0
+    },
+    "9_1": {
+      "delta": -0.33147,
+      "match_entropy": 1.59018,
+      "nonmatch_entropy": 1.25871,
+      "kv_group": 0
+    },
+    "9_2": {
+      "delta": -0.27269,
+      "match_entropy": 1.4546,
+      "nonmatch_entropy": 1.18191,
+      "kv_group": 0
+    },
+    "9_3": {
+      "delta": -0.21632,
+      "match_entropy": 2.0694,
+      "nonmatch_entropy": 1.85309,
+      "kv_group": 0
+    },
+    "9_4": {
+      "delta": -0.22286,
+      "match_entropy": 1.25996,
+      "nonmatch_entropy": 1.0371,
+      "kv_group": 0
+    },
+    "9_5": {
+      "delta": -0.17214,
+      "match_entropy": 1.65555,
+      "nonmatch_entropy": 1.48341,
+      "kv_group": 0
+    },
+    "9_6": {
+      "delta": -0.28393,
+      "match_entropy": 1.99694,
+      "nonmatch_entropy": 1.71301,
+      "kv_group": 0
+    },
+    "9_7": {
+      "delta": -0.00032,
+      "match_entropy": 0.00043,
+      "nonmatch_entropy": 0.00011,
+      "kv_group": 1
+    },
+    "9_8": {
+      "delta": -0.51474,
+      "match_entropy": 0.52957,
+      "nonmatch_entropy": 0.01483,
+      "kv_group": 1
+    },
+    "9_9": {
+      "delta": -0.0506,
+      "match_entropy": 0.05138,
+      "nonmatch_entropy": 0.00079,
+      "kv_group": 1
+    },
+    "9_10": {
+      "delta": -0.64862,
+      "match_entropy": 0.73353,
+      "nonmatch_entropy": 0.08491,
+      "kv_group": 1
+    },
+    "9_11": {
+      "delta": -0.38095,
+      "match_entropy": 0.84925,
+      "nonmatch_entropy": 0.4683,
+      "kv_group": 1
+    },
+    "9_12": {
+      "delta": -0.83384,
+      "match_entropy": 1.47679,
+      "nonmatch_entropy": 0.64295,
+      "kv_group": 1
+    },
+    "9_13": {
+      "delta": -0.33344,
+      "match_entropy": 0.58067,
+      "nonmatch_entropy": 0.24723,
+      "kv_group": 1
+    },
+    "10_0": {
+      "delta": -0.34828,
+      "match_entropy": 2.0723,
+      "nonmatch_entropy": 1.72401,
+      "kv_group": 0
+    },
+    "10_1": {
+      "delta": -0.33643,
+      "match_entropy": 0.99789,
+      "nonmatch_entropy": 0.66146,
+      "kv_group": 0
+    },
+    "10_2": {
+      "delta": -0.09325,
+      "match_entropy": 1.23134,
+      "nonmatch_entropy": 1.1381,
+      "kv_group": 0
+    },
+    "10_3": {
+      "delta": -0.08199,
+      "match_entropy": 1.92572,
+      "nonmatch_entropy": 1.84373,
+      "kv_group": 0
+    },
+    "10_4": {
+      "delta": -0.35013,
+      "match_entropy": 1.49814,
+      "nonmatch_entropy": 1.14801,
+      "kv_group": 0
+    },
+    "10_5": {
+      "delta": -0.07056,
+      "match_entropy": 2.19027,
+      "nonmatch_entropy": 2.11972,
+      "kv_group": 0
+    },
+    "10_6": {
+      "delta": -0.04024,
+      "match_entropy": 0.59105,
+      "nonmatch_entropy": 0.55081,
+      "kv_group": 0
+    },
+    "10_7": {
+      "delta": -0.44357,
+      "match_entropy": 2.22469,
+      "nonmatch_entropy": 1.78112,
+      "kv_group": 1
+    },
+    "10_8": {
+      "delta": 0.20313,
+      "match_entropy": 1.02601,
+      "nonmatch_entropy": 1.22914,
+      "kv_group": 1
+    },
+    "10_9": {
+      "delta": -0.1581,
+      "match_entropy": 2.20214,
+      "nonmatch_entropy": 2.04404,
+      "kv_group": 1
+    },
+    "10_10": {
+      "delta": -0.38467,
+      "match_entropy": 1.86191,
+      "nonmatch_entropy": 1.47724,
+      "kv_group": 1
+    },
+    "10_11": {
+      "delta": -0.04143,
+      "match_entropy": 1.55637,
+      "nonmatch_entropy": 1.51494,
+      "kv_group": 1
+    },
+    "10_12": {
+      "delta": -0.51185,
+      "match_entropy": 1.95251,
+      "nonmatch_entropy": 1.44066,
+      "kv_group": 1
+    },
+    "10_13": {
+      "delta": -0.27964,
+      "match_entropy": 1.99439,
+      "nonmatch_entropy": 1.71476,
+      "kv_group": 1
+    },
+    "11_0": {
+      "delta": -0.13775,
+      "match_entropy": 1.91355,
+      "nonmatch_entropy": 1.7758,
+      "kv_group": 0
+    },
+    "11_1": {
+      "delta": -0.43147,
+      "match_entropy": 0.54825,
+      "nonmatch_entropy": 0.11678,
+      "kv_group": 0
+    },
+    "11_2": {
+      "delta": -0.82567,
+      "match_entropy": 1.89366,
+      "nonmatch_entropy": 1.06799,
+      "kv_group": 0
+    },
+    "11_3": {
+      "delta": -0.39841,
+      "match_entropy": 1.78578,
+      "nonmatch_entropy": 1.38737,
+      "kv_group": 0
+    },
+    "11_4": {
+      "delta": -0.01627,
+      "match_entropy": 1.30532,
+      "nonmatch_entropy": 1.28905,
+      "kv_group": 0
+    },
+    "11_5": {
+      "delta": -0.02539,
+      "match_entropy": 2.0006,
+      "nonmatch_entropy": 1.97521,
+      "kv_group": 0
+    },
+    "11_6": {
+      "delta": -0.48057,
+      "match_entropy": 2.094,
+      "nonmatch_entropy": 1.61343,
+      "kv_group": 0
+    },
+    "11_7": {
+      "delta": -0.0,
+      "match_entropy": 4e-05,
+      "nonmatch_entropy": 3e-05,
+      "kv_group": 1
+    },
+    "11_8": {
+      "delta": -1.47622,
+      "match_entropy": 1.71519,
+      "nonmatch_entropy": 0.23896,
+      "kv_group": 1
+    },
+    "11_9": {
+      "delta": -0.31859,
+      "match_entropy": 0.32052,
+      "nonmatch_entropy": 0.00193,
+      "kv_group": 1
+    },
+    "11_10": {
+      "delta": -0.61502,
+      "match_entropy": 0.93921,
+      "nonmatch_entropy": 0.32418,
+      "kv_group": 1
+    },
+    "11_11": {
+      "delta": -0.00591,
+      "match_entropy": 0.00598,
+      "nonmatch_entropy": 6e-05,
+      "kv_group": 1
+    },
+    "11_12": {
+      "delta": -0.49391,
+      "match_entropy": 0.57878,
+      "nonmatch_entropy": 0.08487,
+      "kv_group": 1
+    },
+    "11_13": {
+      "delta": 0.0001,
+      "match_entropy": 0.00013,
+      "nonmatch_entropy": 0.00023,
+      "kv_group": 1
+    },
+    "12_0": {
+      "delta": 0.06249,
+      "match_entropy": 0.485,
+      "nonmatch_entropy": 0.54749,
+      "kv_group": 0
+    },
+    "12_1": {
+      "delta": 0.24671,
+      "match_entropy": 2.01256,
+      "nonmatch_entropy": 2.25926,
+      "kv_group": 0
+    },
+    "12_2": {
+      "delta": -0.62056,
+      "match_entropy": 1.99029,
+      "nonmatch_entropy": 1.36973,
+      "kv_group": 0
+    },
+    "12_3": {
+      "delta": -0.21099,
+      "match_entropy": 0.72728,
+      "nonmatch_entropy": 0.51629,
+      "kv_group": 0
+    },
+    "12_4": {
+      "delta": -0.12355,
+      "match_entropy": 1.57211,
+      "nonmatch_entropy": 1.44856,
+      "kv_group": 0
+    },
+    "12_5": {
+      "delta": -0.16921,
+      "match_entropy": 2.18864,
+      "nonmatch_entropy": 2.01943,
+      "kv_group": 0
+    },
+    "12_6": {
+      "delta": -0.08192,
+      "match_entropy": 2.11552,
+      "nonmatch_entropy": 2.03361,
+      "kv_group": 0
+    },
+    "12_7": {
+      "delta": -0.18608,
+      "match_entropy": 2.04359,
+      "nonmatch_entropy": 1.85751,
+      "kv_group": 1
+    },
+    "12_8": {
+      "delta": -0.41418,
+      "match_entropy": 1.79633,
+      "nonmatch_entropy": 1.38215,
+      "kv_group": 1
+    },
+    "12_9": {
+      "delta": -0.42019,
+      "match_entropy": 2.06373,
+      "nonmatch_entropy": 1.64354,
+      "kv_group": 1
+    },
+    "12_10": {
+      "delta": -0.22029,
+      "match_entropy": 1.89682,
+      "nonmatch_entropy": 1.67653,
+      "kv_group": 1
+    },
+    "12_11": {
+      "delta": -0.29527,
+      "match_entropy": 1.94246,
+      "nonmatch_entropy": 1.64719,
+      "kv_group": 1
+    },
+    "12_12": {
+      "delta": 0.11176,
+      "match_entropy": 1.67651,
+      "nonmatch_entropy": 1.78827,
+      "kv_group": 1
+    },
+    "12_13": {
+      "delta": -0.33934,
+      "match_entropy": 2.26286,
+      "nonmatch_entropy": 1.92352,
+      "kv_group": 1
+    },
+    "13_0": {
+      "delta": -0.70068,
+      "match_entropy": 1.95946,
+      "nonmatch_entropy": 1.25879,
+      "kv_group": 0
+    },
+    "13_1": {
+      "delta": -0.18353,
+      "match_entropy": 1.72207,
+      "nonmatch_entropy": 1.53854,
+      "kv_group": 0
+    },
+    "13_2": {
+      "delta": -0.93235,
+      "match_entropy": 1.10727,
+      "nonmatch_entropy": 0.17492,
+      "kv_group": 0
+    },
+    "13_3": {
+      "delta": 0.00629,
+      "match_entropy": 0.97846,
+      "nonmatch_entropy": 0.98476,
+      "kv_group": 0
+    },
+    "13_4": {
+      "delta": -0.07117,
+      "match_entropy": 1.89808,
+      "nonmatch_entropy": 1.8269,
+      "kv_group": 0
+    },
+    "13_5": {
+      "delta": -0.10166,
+      "match_entropy": 1.5019,
+      "nonmatch_entropy": 1.40024,
+      "kv_group": 0
+    },
+    "13_6": {
+      "delta": -0.97605,
+      "match_entropy": 1.76193,
+      "nonmatch_entropy": 0.78589,
+      "kv_group": 0
+    },
+    "13_7": {
+      "delta": -1.20777,
+      "match_entropy": 1.89316,
+      "nonmatch_entropy": 0.68539,
+      "kv_group": 1
+    },
+    "13_8": {
+      "delta": -0.67866,
+      "match_entropy": 0.80951,
+      "nonmatch_entropy": 0.13085,
+      "kv_group": 1
+    },
+    "13_9": {
+      "delta": -0.69751,
+      "match_entropy": 1.58322,
+      "nonmatch_entropy": 0.88571,
+      "kv_group": 1
+    },
+    "13_10": {
+      "delta": -0.60184,
+      "match_entropy": 2.28483,
+      "nonmatch_entropy": 1.68298,
+      "kv_group": 1
+    },
+    "13_11": {
+      "delta": -0.15884,
+      "match_entropy": 1.58265,
+      "nonmatch_entropy": 1.42381,
+      "kv_group": 1
+    },
+    "13_12": {
+      "delta": -0.38034,
+      "match_entropy": 1.00666,
+      "nonmatch_entropy": 0.62633,
+      "kv_group": 1
+    },
+    "13_13": {
+      "delta": -1.30472,
+      "match_entropy": 1.75171,
+      "nonmatch_entropy": 0.44699,
+      "kv_group": 1
+    },
+    "14_0": {
+      "delta": -0.82534,
+      "match_entropy": 2.11288,
+      "nonmatch_entropy": 1.28754,
+      "kv_group": 0
+    },
+    "14_1": {
+      "delta": 0.01717,
+      "match_entropy": 0.536,
+      "nonmatch_entropy": 0.55317,
+      "kv_group": 0
+    },
+    "14_2": {
+      "delta": -0.31111,
+      "match_entropy": 1.98343,
+      "nonmatch_entropy": 1.67232,
+      "kv_group": 0
+    },
+    "14_3": {
+      "delta": -0.5132,
+      "match_entropy": 1.71637,
+      "nonmatch_entropy": 1.20317,
+      "kv_group": 0
+    },
+    "14_4": {
+      "delta": -0.10042,
+      "match_entropy": 1.99905,
+      "nonmatch_entropy": 1.89864,
+      "kv_group": 0
+    },
+    "14_5": {
+      "delta": -0.56581,
+      "match_entropy": 1.99445,
+      "nonmatch_entropy": 1.42864,
+      "kv_group": 0
+    },
+    "14_6": {
+      "delta": -0.44012,
+      "match_entropy": 1.64802,
+      "nonmatch_entropy": 1.20789,
+      "kv_group": 0
+    },
+    "14_7": {
+      "delta": -0.38009,
+      "match_entropy": 2.21447,
+      "nonmatch_entropy": 1.83438,
+      "kv_group": 1
+    },
+    "14_8": {
+      "delta": -0.65264,
+      "match_entropy": 2.32666,
+      "nonmatch_entropy": 1.67403,
+      "kv_group": 1
+    },
+    "14_9": {
+      "delta": -0.70938,
+      "match_entropy": 2.00472,
+      "nonmatch_entropy": 1.29533,
+      "kv_group": 1
+    },
+    "14_10": {
+      "delta": 0.02488,
+      "match_entropy": 0.68912,
+      "nonmatch_entropy": 0.714,
+      "kv_group": 1
+    },
+    "14_11": {
+      "delta": -0.10671,
+      "match_entropy": 1.74301,
+      "nonmatch_entropy": 1.63629,
+      "kv_group": 1
+    },
+    "14_12": {
+      "delta": -0.33707,
+      "match_entropy": 2.08993,
+      "nonmatch_entropy": 1.75286,
+      "kv_group": 1
+    },
+    "14_13": {
+      "delta": -0.71368,
+      "match_entropy": 2.26498,
+      "nonmatch_entropy": 1.5513,
+      "kv_group": 1
+    },
+    "15_0": {
+      "delta": -0.25282,
+      "match_entropy": 2.32103,
+      "nonmatch_entropy": 2.06821,
+      "kv_group": 0
+    },
+    "15_1": {
+      "delta": -0.33,
+      "match_entropy": 1.62466,
+      "nonmatch_entropy": 1.29466,
+      "kv_group": 0
+    },
+    "15_2": {
+      "delta": 0.04757,
+      "match_entropy": 0.77921,
+      "nonmatch_entropy": 0.82679,
+      "kv_group": 0
+    },
+    "15_3": {
+      "delta": -0.05875,
+      "match_entropy": 1.88407,
+      "nonmatch_entropy": 1.82531,
+      "kv_group": 0
+    },
+    "15_4": {
+      "delta": -0.36253,
+      "match_entropy": 2.02736,
+      "nonmatch_entropy": 1.66483,
+      "kv_group": 0
+    },
+    "15_5": {
+      "delta": -0.41757,
+      "match_entropy": 1.94057,
+      "nonmatch_entropy": 1.523,
+      "kv_group": 0
+    },
+    "15_6": {
+      "delta": -0.73054,
+      "match_entropy": 1.7671,
+      "nonmatch_entropy": 1.03656,
+      "kv_group": 0
+    },
+    "15_7": {
+      "delta": -0.51301,
+      "match_entropy": 2.04494,
+      "nonmatch_entropy": 1.53193,
+      "kv_group": 1
+    },
+    "15_8": {
+      "delta": -0.4617,
+      "match_entropy": 1.87888,
+      "nonmatch_entropy": 1.41718,
+      "kv_group": 1
+    },
+    "15_9": {
+      "delta": -0.53079,
+      "match_entropy": 1.94841,
+      "nonmatch_entropy": 1.41761,
+      "kv_group": 1
+    },
+    "15_10": {
+      "delta": -0.71292,
+      "match_entropy": 2.06271,
+      "nonmatch_entropy": 1.34979,
+      "kv_group": 1
+    },
+    "15_11": {
+      "delta": -0.54748,
+      "match_entropy": 2.1593,
+      "nonmatch_entropy": 1.61182,
+      "kv_group": 1
+    },
+    "15_12": {
+      "delta": -0.90027,
+      "match_entropy": 1.10877,
+      "nonmatch_entropy": 0.2085,
+      "kv_group": 1
+    },
+    "15_13": {
+      "delta": -0.50855,
+      "match_entropy": 1.69409,
+      "nonmatch_entropy": 1.18555,
+      "kv_group": 1
+    },
+    "16_0": {
+      "delta": -0.17827,
+      "match_entropy": 0.53516,
+      "nonmatch_entropy": 0.35689,
+      "kv_group": 0
+    },
+    "16_1": {
+      "delta": -0.0329,
+      "match_entropy": 0.03656,
+      "nonmatch_entropy": 0.00366,
+      "kv_group": 0
+    },
+    "16_2": {
+      "delta": -0.29319,
+      "match_entropy": 0.54929,
+      "nonmatch_entropy": 0.25609,
+      "kv_group": 0
+    },
+    "16_3": {
+      "delta": -0.48625,
+      "match_entropy": 0.5221,
+      "nonmatch_entropy": 0.03585,
+      "kv_group": 0
+    },
+    "16_4": {
+      "delta": 0.15974,
+      "match_entropy": 0.1613,
+      "nonmatch_entropy": 0.32104,
+      "kv_group": 0
+    },
+    "16_5": {
+      "delta": 0.27073,
+      "match_entropy": 0.54832,
+      "nonmatch_entropy": 0.81904,
+      "kv_group": 0
+    },
+    "16_6": {
+      "delta": -0.38116,
+      "match_entropy": 0.58976,
+      "nonmatch_entropy": 0.20861,
+      "kv_group": 0
+    },
+    "16_7": {
+      "delta": -0.71236,
+      "match_entropy": 1.18291,
+      "nonmatch_entropy": 0.47055,
+      "kv_group": 1
+    },
+    "16_8": {
+      "delta": -0.11563,
+      "match_entropy": 0.71894,
+      "nonmatch_entropy": 0.60331,
+      "kv_group": 1
+    },
+    "16_9": {
+      "delta": -0.20401,
+      "match_entropy": 0.21955,
+      "nonmatch_entropy": 0.01554,
+      "kv_group": 1
+    },
+    "16_10": {
+      "delta": -0.14982,
+      "match_entropy": 1.54172,
+      "nonmatch_entropy": 1.3919,
+      "kv_group": 1
+    },
+    "16_11": {
+      "delta": 0.14479,
+      "match_entropy": 1.31555,
+      "nonmatch_entropy": 1.46034,
+      "kv_group": 1
+    },
+    "16_12": {
+      "delta": -0.55594,
+      "match_entropy": 0.78958,
+      "nonmatch_entropy": 0.23364,
+      "kv_group": 1
+    },
+    "16_13": {
+      "delta": -0.85861,
+      "match_entropy": 1.58046,
+      "nonmatch_entropy": 0.72185,
+      "kv_group": 1
+    },
+    "17_0": {
+      "delta": 0.08766,
+      "match_entropy": 1.87452,
+      "nonmatch_entropy": 1.96219,
+      "kv_group": 0
+    },
+    "17_1": {
+      "delta": -0.41152,
+      "match_entropy": 1.55872,
+      "nonmatch_entropy": 1.1472,
+      "kv_group": 0
+    },
+    "17_2": {
+      "delta": -0.09101,
+      "match_entropy": 1.78784,
+      "nonmatch_entropy": 1.69683,
+      "kv_group": 0
+    },
+    "17_3": {
+      "delta": -0.00137,
+      "match_entropy": 1.89844,
+      "nonmatch_entropy": 1.89707,
+      "kv_group": 0
+    },
+    "17_4": {
+      "delta": 0.23228,
+      "match_entropy": 1.24983,
+      "nonmatch_entropy": 1.48211,
+      "kv_group": 0
+    },
+    "17_5": {
+      "delta": 0.25778,
+      "match_entropy": 0.30777,
+      "nonmatch_entropy": 0.56555,
+      "kv_group": 0
+    },
+    "17_6": {
+      "delta": 0.35474,
+      "match_entropy": 0.38577,
+      "nonmatch_entropy": 0.74051,
+      "kv_group": 0
+    },
+    "17_7": {
+      "delta": -0.16002,
+      "match_entropy": 0.60913,
+      "nonmatch_entropy": 0.44912,
+      "kv_group": 1
+    },
+    "17_8": {
+      "delta": -0.24094,
+      "match_entropy": 1.0028,
+      "nonmatch_entropy": 0.76187,
+      "kv_group": 1
+    },
+    "17_9": {
+      "delta": -0.20833,
+      "match_entropy": 1.08534,
+      "nonmatch_entropy": 0.87701,
+      "kv_group": 1
+    },
+    "17_10": {
+      "delta": -0.23501,
+      "match_entropy": 1.32565,
+      "nonmatch_entropy": 1.09064,
+      "kv_group": 1
+    },
+    "17_11": {
+      "delta": -0.45946,
+      "match_entropy": 1.66654,
+      "nonmatch_entropy": 1.20707,
+      "kv_group": 1
+    },
+    "17_12": {
+      "delta": -0.37133,
+      "match_entropy": 0.72688,
+      "nonmatch_entropy": 0.35555,
+      "kv_group": 1
+    },
+    "17_13": {
+      "delta": -0.27268,
+      "match_entropy": 0.89535,
+      "nonmatch_entropy": 0.62268,
+      "kv_group": 1
+    },
+    "18_0": {
+      "delta": -0.26523,
+      "match_entropy": 0.66567,
+      "nonmatch_entropy": 0.40045,
+      "kv_group": 0
+    },
+    "18_1": {
+      "delta": -0.40152,
+      "match_entropy": 1.02514,
+      "nonmatch_entropy": 0.62362,
+      "kv_group": 0
+    },
+    "18_2": {
+      "delta": -0.25973,
+      "match_entropy": 1.60536,
+      "nonmatch_entropy": 1.34563,
+      "kv_group": 0
+    },
+    "18_3": {
+      "delta": -0.12085,
+      "match_entropy": 1.1375,
+      "nonmatch_entropy": 1.01665,
+      "kv_group": 0
+    },
+    "18_4": {
+      "delta": -0.27611,
+      "match_entropy": 1.73256,
+      "nonmatch_entropy": 1.45646,
+      "kv_group": 0
+    },
+    "18_5": {
+      "delta": -0.24521,
+      "match_entropy": 1.06534,
+      "nonmatch_entropy": 0.82013,
+      "kv_group": 0
+    },
+    "18_6": {
+      "delta": -0.47841,
+      "match_entropy": 1.89019,
+      "nonmatch_entropy": 1.41178,
+      "kv_group": 0
+    },
+    "18_7": {
+      "delta": -0.30339,
+      "match_entropy": 1.43574,
+      "nonmatch_entropy": 1.13236,
+      "kv_group": 1
+    },
+    "18_8": {
+      "delta": -0.25744,
+      "match_entropy": 1.3513,
+      "nonmatch_entropy": 1.09385,
+      "kv_group": 1
+    },
+    "18_9": {
+      "delta": -0.43538,
+      "match_entropy": 1.87218,
+      "nonmatch_entropy": 1.4368,
+      "kv_group": 1
+    },
+    "18_10": {
+      "delta": -0.3893,
+      "match_entropy": 1.90362,
+      "nonmatch_entropy": 1.51432,
+      "kv_group": 1
+    },
+    "18_11": {
+      "delta": -0.49682,
+      "match_entropy": 1.62999,
+      "nonmatch_entropy": 1.13317,
+      "kv_group": 1
+    },
+    "18_12": {
+      "delta": -0.33977,
+      "match_entropy": 1.68015,
+      "nonmatch_entropy": 1.34038,
+      "kv_group": 1
+    },
+    "18_13": {
+      "delta": -0.37868,
+      "match_entropy": 1.28081,
+      "nonmatch_entropy": 0.90213,
+      "kv_group": 1
+    },
+    "19_0": {
+      "delta": -0.12542,
+      "match_entropy": 1.58575,
+      "nonmatch_entropy": 1.46033,
+      "kv_group": 0
+    },
+    "19_1": {
+      "delta": -0.34179,
+      "match_entropy": 1.48438,
+      "nonmatch_entropy": 1.14259,
+      "kv_group": 0
+    },
+    "19_2": {
+      "delta": -0.53338,
+      "match_entropy": 1.0249,
+      "nonmatch_entropy": 0.49153,
+      "kv_group": 0
+    },
+    "19_3": {
+      "delta": -0.04288,
+      "match_entropy": 1.06741,
+      "nonmatch_entropy": 1.02452,
+      "kv_group": 0
+    },
+    "19_4": {
+      "delta": -0.28528,
+      "match_entropy": 1.92711,
+      "nonmatch_entropy": 1.64183,
+      "kv_group": 0
+    },
+    "19_5": {
+      "delta": -0.3274,
+      "match_entropy": 1.90952,
+      "nonmatch_entropy": 1.58212,
+      "kv_group": 0
+    },
+    "19_6": {
+      "delta": -0.44377,
+      "match_entropy": 1.6949,
+      "nonmatch_entropy": 1.25113,
+      "kv_group": 0
+    },
+    "19_7": {
+      "delta": -0.46547,
+      "match_entropy": 1.4791,
+      "nonmatch_entropy": 1.01364,
+      "kv_group": 1
+    },
+    "19_8": {
+      "delta": -0.13473,
+      "match_entropy": 1.09386,
+      "nonmatch_entropy": 0.95913,
+      "kv_group": 1
+    },
+    "19_9": {
+      "delta": -0.24377,
+      "match_entropy": 1.77356,
+      "nonmatch_entropy": 1.52978,
+      "kv_group": 1
+    },
+    "19_10": {
+      "delta": -0.63719,
+      "match_entropy": 1.81249,
+      "nonmatch_entropy": 1.1753,
+      "kv_group": 1
+    },
+    "19_11": {
+      "delta": -0.13048,
+      "match_entropy": 1.47712,
+      "nonmatch_entropy": 1.34664,
+      "kv_group": 1
+    },
+    "19_12": {
+      "delta": -0.20606,
+      "match_entropy": 2.12592,
+      "nonmatch_entropy": 1.91986,
+      "kv_group": 1
+    },
+    "19_13": {
+      "delta": -0.0991,
+      "match_entropy": 1.11897,
+      "nonmatch_entropy": 1.01988,
+      "kv_group": 1
+    },
+    "20_0": {
+      "delta": 0.04812,
+      "match_entropy": 1.33693,
+      "nonmatch_entropy": 1.38505,
+      "kv_group": 0
+    },
+    "20_1": {
+      "delta": -0.01076,
+      "match_entropy": 1.21602,
+      "nonmatch_entropy": 1.20526,
+      "kv_group": 0
+    },
+    "20_2": {
+      "delta": -0.28727,
+      "match_entropy": 2.04794,
+      "nonmatch_entropy": 1.76067,
+      "kv_group": 0
+    },
+    "20_3": {
+      "delta": -0.03624,
+      "match_entropy": 1.09276,
+      "nonmatch_entropy": 1.05652,
+      "kv_group": 0
+    },
+    "20_4": {
+      "delta": -0.113,
+      "match_entropy": 1.22653,
+      "nonmatch_entropy": 1.11353,
+      "kv_group": 0
+    },
+    "20_5": {
+      "delta": -0.28988,
+      "match_entropy": 1.49009,
+      "nonmatch_entropy": 1.20021,
+      "kv_group": 0
+    },
+    "20_6": {
+      "delta": -0.47008,
+      "match_entropy": 1.87714,
+      "nonmatch_entropy": 1.40706,
+      "kv_group": 0
+    },
+    "20_7": {
+      "delta": -0.27941,
+      "match_entropy": 1.65452,
+      "nonmatch_entropy": 1.37511,
+      "kv_group": 1
+    },
+    "20_8": {
+      "delta": -0.48486,
+      "match_entropy": 0.94923,
+      "nonmatch_entropy": 0.46437,
+      "kv_group": 1
+    },
+    "20_9": {
+      "delta": -0.41277,
+      "match_entropy": 1.68519,
+      "nonmatch_entropy": 1.27242,
+      "kv_group": 1
+    },
+    "20_10": {
+      "delta": -0.35437,
+      "match_entropy": 0.97309,
+      "nonmatch_entropy": 0.61872,
+      "kv_group": 1
+    },
+    "20_11": {
+      "delta": -0.10991,
+      "match_entropy": 0.25994,
+      "nonmatch_entropy": 0.15004,
+      "kv_group": 1
+    },
+    "20_12": {
+      "delta": -0.35514,
+      "match_entropy": 1.36077,
+      "nonmatch_entropy": 1.00563,
+      "kv_group": 1
+    },
+    "20_13": {
+      "delta": 0.09868,
+      "match_entropy": 1.61643,
+      "nonmatch_entropy": 1.71511,
+      "kv_group": 1
+    },
+    "21_0": {
+      "delta": -0.33422,
+      "match_entropy": 1.75339,
+      "nonmatch_entropy": 1.41917,
+      "kv_group": 0
+    },
+    "21_1": {
+      "delta": -0.07308,
+      "match_entropy": 1.50829,
+      "nonmatch_entropy": 1.43521,
+      "kv_group": 0
+    },
+    "21_2": {
+      "delta": 0.08436,
+      "match_entropy": 1.08022,
+      "nonmatch_entropy": 1.16458,
+      "kv_group": 0
+    },
+    "21_3": {
+      "delta": 0.15214,
+      "match_entropy": 1.13315,
+      "nonmatch_entropy": 1.28528,
+      "kv_group": 0
+    },
+    "21_4": {
+      "delta": 0.03161,
+      "match_entropy": 0.95175,
+      "nonmatch_entropy": 0.98337,
+      "kv_group": 0
+    },
+    "21_5": {
+      "delta": 0.01038,
+      "match_entropy": 0.95937,
+      "nonmatch_entropy": 0.96975,
+      "kv_group": 0
+    },
+    "21_6": {
+      "delta": -0.20591,
+      "match_entropy": 1.48852,
+      "nonmatch_entropy": 1.28261,
+      "kv_group": 0
+    },
+    "21_7": {
+      "delta": 0.03538,
+      "match_entropy": 0.90494,
+      "nonmatch_entropy": 0.94032,
+      "kv_group": 1
+    },
+    "21_8": {
+      "delta": 0.01987,
+      "match_entropy": 1.11082,
+      "nonmatch_entropy": 1.13069,
+      "kv_group": 1
+    },
+    "21_9": {
+      "delta": 0.03135,
+      "match_entropy": 0.28007,
+      "nonmatch_entropy": 0.31142,
+      "kv_group": 1
+    },
+    "21_10": {
+      "delta": -0.08024,
+      "match_entropy": 0.78807,
+      "nonmatch_entropy": 0.70783,
+      "kv_group": 1
+    },
+    "21_11": {
+      "delta": -0.00439,
+      "match_entropy": 1.00166,
+      "nonmatch_entropy": 0.99727,
+      "kv_group": 1
+    },
+    "21_12": {
+      "delta": -0.17051,
+      "match_entropy": 1.52788,
+      "nonmatch_entropy": 1.35737,
+      "kv_group": 1
+    },
+    "21_13": {
+      "delta": 0.05541,
+      "match_entropy": 0.86379,
+      "nonmatch_entropy": 0.91919,
+      "kv_group": 1
+    },
+    "22_0": {
+      "delta": -0.11307,
+      "match_entropy": 2.18891,
+      "nonmatch_entropy": 2.07584,
+      "kv_group": 0
+    },
+    "22_1": {
+      "delta": -0.03695,
+      "match_entropy": 1.86807,
+      "nonmatch_entropy": 1.83112,
+      "kv_group": 0
+    },
+    "22_2": {
+      "delta": -0.09062,
+      "match_entropy": 1.97627,
+      "nonmatch_entropy": 1.88565,
+      "kv_group": 0
+    },
+    "22_3": {
+      "delta": 0.00519,
+      "match_entropy": 1.90083,
+      "nonmatch_entropy": 1.90602,
+      "kv_group": 0
+    },
+    "22_4": {
+      "delta": 0.02217,
+      "match_entropy": 2.05466,
+      "nonmatch_entropy": 2.07684,
+      "kv_group": 0
+    },
+    "22_5": {
+      "delta": 0.06812,
+      "match_entropy": 1.7925,
+      "nonmatch_entropy": 1.86062,
+      "kv_group": 0
+    },
+    "22_6": {
+      "delta": -0.00569,
+      "match_entropy": 2.11864,
+      "nonmatch_entropy": 2.11295,
+      "kv_group": 0
+    },
+    "22_7": {
+      "delta": -0.05129,
+      "match_entropy": 1.81299,
+      "nonmatch_entropy": 1.76171,
+      "kv_group": 1
+    },
+    "22_8": {
+      "delta": -0.02693,
+      "match_entropy": 1.73958,
+      "nonmatch_entropy": 1.71265,
+      "kv_group": 1
+    },
+    "22_9": {
+      "delta": 0.04703,
+      "match_entropy": 1.66887,
+      "nonmatch_entropy": 1.7159,
+      "kv_group": 1
+    },
+    "22_10": {
+      "delta": 0.07004,
+      "match_entropy": 1.62986,
+      "nonmatch_entropy": 1.6999,
+      "kv_group": 1
+    },
+    "22_11": {
+      "delta": 0.03648,
+      "match_entropy": 1.89828,
+      "nonmatch_entropy": 1.93476,
+      "kv_group": 1
+    },
+    "22_12": {
+      "delta": -0.22526,
+      "match_entropy": 1.36952,
+      "nonmatch_entropy": 1.14426,
+      "kv_group": 1
+    },
+    "22_13": {
+      "delta": -0.03994,
+      "match_entropy": 1.85044,
+      "nonmatch_entropy": 1.81049,
+      "kv_group": 1
+    },
+    "23_0": {
+      "delta": 0.05346,
+      "match_entropy": 2.07332,
+      "nonmatch_entropy": 2.12678,
+      "kv_group": 0
+    },
+    "23_1": {
+      "delta": 0.00289,
+      "match_entropy": 0.06059,
+      "nonmatch_entropy": 0.06348,
+      "kv_group": 0
+    },
+    "23_2": {
+      "delta": -0.13771,
+      "match_entropy": 2.12462,
+      "nonmatch_entropy": 1.98691,
+      "kv_group": 0
+    },
+    "23_3": {
+      "delta": 0.04346,
+      "match_entropy": 1.88725,
+      "nonmatch_entropy": 1.93071,
+      "kv_group": 0
+    },
+    "23_4": {
+      "delta": 0.08256,
+      "match_entropy": 1.49535,
+      "nonmatch_entropy": 1.57791,
+      "kv_group": 0
+    },
+    "23_5": {
+      "delta": 0.09107,
+      "match_entropy": 1.46184,
+      "nonmatch_entropy": 1.55291,
+      "kv_group": 0
+    },
+    "23_6": {
+      "delta": -0.23705,
+      "match_entropy": 1.50922,
+      "nonmatch_entropy": 1.27217,
+      "kv_group": 0
+    },
+    "23_7": {
+      "delta": -0.02159,
+      "match_entropy": 1.96099,
+      "nonmatch_entropy": 1.9394,
+      "kv_group": 1
+    },
+    "23_8": {
+      "delta": -0.01198,
+      "match_entropy": 1.92157,
+      "nonmatch_entropy": 1.90959,
+      "kv_group": 1
+    },
+    "23_9": {
+      "delta": -0.00959,
+      "match_entropy": 1.91209,
+      "nonmatch_entropy": 1.9025,
+      "kv_group": 1
+    },
+    "23_10": {
+      "delta": -0.00223,
+      "match_entropy": 1.9406,
+      "nonmatch_entropy": 1.93837,
+      "kv_group": 1
+    },
+    "23_11": {
+      "delta": 0.05016,
+      "match_entropy": 1.86093,
+      "nonmatch_entropy": 1.91109,
+      "kv_group": 1
+    },
+    "23_12": {
+      "delta": -0.05823,
+      "match_entropy": 1.80099,
+      "nonmatch_entropy": 1.74276,
+      "kv_group": 1
+    },
+    "23_13": {
+      "delta": 0.05806,
+      "match_entropy": 1.8846,
+      "nonmatch_entropy": 1.94266,
+      "kv_group": 1
+    }
+  },
+  "threshold_sensitivity": {
+    "0.15": {
+      "retrieval": 14,
+      "induction": 112
+    },
+    "0.2": {
+      "retrieval": 11,
+      "induction": 85
+    },
+    "0.25": {
+      "retrieval": 6,
+      "induction": 55
+    },
+    "0.3": {
+      "retrieval": 3,
+      "induction": 36
+    },
+    "0.35": {
+      "retrieval": 3,
+      "induction": 25
+    },
+    "0.4": {
+      "retrieval": 2,
+      "induction": 19
+    },
+    "0.45": {
+      "retrieval": 2,
+      "induction": 11
+    }
+  },
+  "delta_stats": {
+    "mean": -0.18097,
+    "std": 0.26816,
+    "p90": 0.06871,
+    "p95": 0.12786,
+    "max": 0.60551,
+    "min": -1.47622
+  }
+}

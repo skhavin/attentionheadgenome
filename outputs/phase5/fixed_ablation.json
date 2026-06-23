@@ -1,0 +1,40 @@
+{
+  "model": "gpt2-medium",
+  "hook_type": "c_proj_pre_hook (fixed)",
+  "head_counts": {
+    "sink": 15,
+    "local": 311,
+    "retrieval": 13,
+    "induction": 45
+  },
+  "results": {
+    "retrieval_ablation_niah": {
+      "baseline": 1.0,
+      "ablated": 1.0,
+      "delta": 0.0,
+      "n_heads_ablated": 13,
+      "hook_type": "c_proj_pre_hook"
+    },
+    "induction_ablation_prefix": {
+      "baseline": 1.0,
+      "ablated": 1.0,
+      "delta": 0.0,
+      "n_heads_ablated": 45,
+      "hook_type": "c_proj_pre_hook"
+    },
+    "local_ablation_ppl": {
+      "baseline": 14.06,
+      "ablated": 258.95,
+      "delta": 244.88,
+      "n_heads_ablated": 311,
+      "hook_type": "c_proj_pre_hook"
+    },
+    "sink_ablation_ppl": {
+      "baseline": 14.06,
+      "ablated": 213.43,
+      "delta": 199.36,
+      "n_heads_ablated": 15,
+      "hook_type": "c_proj_pre_hook"
+    }
+  }
+}

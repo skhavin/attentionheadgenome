@@ -1,0 +1,39 @@
+{
+  "model": "gpt2-medium",
+  "device": "cuda",
+  "head_counts": {
+    "sink": 15,
+    "local": 311,
+    "retrieval": 13,
+    "induction": 45
+  },
+  "niah_items": 10,
+  "induction_items": 10,
+  "wikitext_passages": 5,
+  "results": {
+    "retrieval_ablation_niah": {
+      "baseline": 1.0,
+      "ablated": 1.0,
+      "delta": 0.0,
+      "n_heads_ablated": 13
+    },
+    "induction_ablation_prefix": {
+      "baseline": 1.0,
+      "ablated": 1.0,
+      "delta": 0.0,
+      "n_heads_ablated": 45
+    },
+    "local_ablation_ppl": {
+      "baseline": 12.23,
+      "ablated": 211.7,
+      "delta": 199.47,
+      "n_heads_ablated": 311
+    },
+    "sink_ablation_ppl": {
+      "baseline": 12.23,
+      "ablated": 12.32,
+      "delta": 0.09,
+      "n_heads_ablated": 15
+    }
+  }
+}

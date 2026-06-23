@@ -1,0 +1,102 @@
+{
+  "source_file": "llama1b_retrieval_entropy.json",
+  "n_pairs": 20,
+  "architecture": {
+    "num_layers": 16,
+    "num_q_heads": 32,
+    "num_kv_heads": 8,
+    "gqa_group_size": 4
+  },
+  "clean_heads": 512,
+  "total_heads": 512,
+  "delta_stats": {
+    "mean": -0.20124,
+    "std": 0.26619,
+    "p90": 0.07008,
+    "p95": 0.15305,
+    "max": 0.31416,
+    "min": -1.13342
+  },
+  "retrieval_sweep": {
+    "0.1": {
+      "n_retrieval": 40,
+      "pct": 7.81
+    },
+    "0.12": {
+      "n_retrieval": 36,
+      "pct": 7.03
+    },
+    "0.15": {
+      "n_retrieval": 27,
+      "pct": 5.27
+    },
+    "0.17": {
+      "n_retrieval": 24,
+      "pct": 4.69
+    },
+    "0.2": {
+      "n_retrieval": 18,
+      "pct": 3.52
+    },
+    "0.22": {
+      "n_retrieval": 14,
+      "pct": 2.73
+    },
+    "0.25": {
+      "n_retrieval": 9,
+      "pct": 1.76
+    },
+    "0.27": {
+      "n_retrieval": 8,
+      "pct": 1.56
+    },
+    "0.3": {
+      "n_retrieval": 1,
+      "pct": 0.2
+    },
+    "0.35": {
+      "n_retrieval": 0,
+      "pct": 0.0
+    }
+  },
+  "induction_sweep": {
+    "-0.2": {
+      "n_induction": 217,
+      "pct": 42.38
+    },
+    "-0.25": {
+      "n_induction": 183,
+      "pct": 35.74
+    },
+    "-0.3": {
+      "n_induction": 155,
+      "pct": 30.27
+    },
+    "-0.35": {
+      "n_induction": 130,
+      "pct": 25.39
+    },
+    "-0.4": {
+      "n_induction": 110,
+      "pct": 21.48
+    },
+    "-0.45": {
+      "n_induction": 89,
+      "pct": 17.38
+    },
+    "-0.5": {
+      "n_induction": 76,
+      "pct": 14.84
+    },
+    "-0.55": {
+      "n_induction": 57,
+      "pct": 11.13
+    },
+    "-0.6": {
+      "n_induction": 44,
+      "pct": 8.59
+    }
+  },
+  "verdict": "diffuse",
+  "conclusion": "DIFFUSE RETRIEVAL: 18 heads at delta>0.20 vs 1 at delta>0.30. Llama distributes retrieval broadly \u2014 GQA group sharing prevents single-head specialization."
+}

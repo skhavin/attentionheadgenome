@@ -1,0 +1,72 @@
+{
+  "gpt2": {
+    "64": {
+      "streaming_llm": {
+        "ppl": 42.8868,
+        "time_sec": 14.0
+      },
+      "headgenome": {
+        "ppl": 76.8255,
+        "time_sec": 13.75
+      },
+      "improvement_x": 0.56
+    },
+    "128": {
+      "streaming_llm": {
+        "ppl": 52.9741,
+        "time_sec": 13.3
+      },
+      "headgenome": {
+        "ppl": 103.5795,
+        "time_sec": 19.96
+      },
+      "improvement_x": 0.51
+    },
+    "256": {
+      "streaming_llm": {
+        "ppl": 23.8394,
+        "time_sec": 25.61
+      },
+      "headgenome": {
+        "ppl": 34.3469,
+        "time_sec": 28.22
+      },
+      "improvement_x": 0.69
+    }
+  },
+  "qwen0.5b": {
+    "64": {
+      "streaming_llm": {
+        "ppl": 154.5578,
+        "time_sec": 49.39
+      },
+      "headgenome": {
+        "ppl": 221.73,
+        "time_sec": 26.26
+      },
+      "improvement_x": 0.7
+    },
+    "128": {
+      "streaming_llm": {
+        "ppl": 130.6315,
+        "time_sec": 39.71
+      },
+      "headgenome": {
+        "ppl": 262.767,
+        "time_sec": 36.45
+      },
+      "improvement_x": 0.5
+    },
+    "256": {
+      "streaming_llm": {
+        "ppl": 37.3248,
+        "time_sec": 23.94
+      },
+      "headgenome": {
+        "ppl": 58.392,
+        "time_sec": 23.97
+      },
+      "improvement_x": 0.64
+    }
+  }
+}

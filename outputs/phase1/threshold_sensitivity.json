@@ -1,0 +1,103 @@
+{
+  "thresholds": [
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45
+  ],
+  "models": {
+    "gpt2": {
+      "0.15": {
+        "retrieval": 28,
+        "induction": 156
+      },
+      "0.2": {
+        "retrieval": 22,
+        "induction": 122
+      },
+      "0.25": {
+        "retrieval": 17,
+        "induction": 83
+      },
+      "0.3": {
+        "retrieval": 12,
+        "induction": 59
+      },
+      "0.35": {
+        "retrieval": 11,
+        "induction": 47
+      },
+      "0.4": {
+        "retrieval": 8,
+        "induction": 32
+      },
+      "0.45": {
+        "retrieval": 7,
+        "induction": 24
+      }
+    },
+    "qwen0.5b": {
+      "0.15": {
+        "retrieval": 14,
+        "induction": 112
+      },
+      "0.2": {
+        "retrieval": 11,
+        "induction": 85
+      },
+      "0.25": {
+        "retrieval": 6,
+        "induction": 55
+      },
+      "0.3": {
+        "retrieval": 3,
+        "induction": 36
+      },
+      "0.35": {
+        "retrieval": 3,
+        "induction": 25
+      },
+      "0.4": {
+        "retrieval": 2,
+        "induction": 19
+      },
+      "0.45": {
+        "retrieval": 2,
+        "induction": 11
+      }
+    },
+    "qwen1.5b": {
+      "0.15": {
+        "retrieval": 30,
+        "induction": 102
+      },
+      "0.2": {
+        "retrieval": 20,
+        "induction": 80
+      },
+      "0.25": {
+        "retrieval": 11,
+        "induction": 61
+      },
+      "0.3": {
+        "retrieval": 6,
+        "induction": 41
+      },
+      "0.35": {
+        "retrieval": 3,
+        "induction": 23
+      },
+      "0.4": {
+        "retrieval": 2,
+        "induction": 17
+      },
+      "0.45": {
+        "retrieval": 2,
+        "induction": 13
+      }
+    }
+  }
+}
