@@ -1,0 +1,11 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "torch_version": "2.7.1+cu118",
+  "settings": {
+    "seq_len": 4096,
+    "window": 512,
+    "new_tokens": 64,
+    "runs": 10
+  },
+  "models": {}
+}
