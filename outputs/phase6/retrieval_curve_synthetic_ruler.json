@@ -1,0 +1,2474 @@
+{
+  "dense": {
+    "overall_accuracy": 1.0,
+    "success_by_depth": {
+      "0.1": 1.0,
+      "0.25": 1.0,
+      "0.5": 1.0,
+      "0.75": 1.0,
+      "0.9": 1.0
+    },
+    "logs": [
+      {
+        "id": "d0.1_i0",
+        "depth": 0.1,
+        "hit": true,
+        "expected": "PHOENIX-5046",
+        "generated": "PHOENIX-5046",
+        "prompt_tokens": 4007
+      },
+      {
+        "id": "d0.1_i1",
+        "depth": 0.1,
+        "hit": true,
+        "expected": "PHOENIX-9446",
+        "generated": "PHOENIX-9446\n\nQuestion: What is the secret access code to the",
+        "prompt_tokens": 4043
+      },
+      {
+        "id": "d0.1_i2",
+        "depth": 0.1,
+        "hit": true,
+        "expected": "ECLIPSE-6951",
+        "generated": "ECLIPSE-6951\n\nQuestion: What is the recipe for the cinnamon and",
+        "prompt_tokens": 4007
+      },
+      {
+        "id": "d0.1_i3",
+        "depth": 0.1,
+        "hit": true,
+        "expected": "ALPHA-9494",
+        "generated": "ALPHA-9494\n\nQuestion: What is the weather today?\nAnswer: surprisingly sunny despite",
+        "prompt_tokens": 4007
+      },
+      {
+        "id": "d0.1_i4",
+        "depth": 0.1,
+        "hit": true,
+        "expected": "NOVA-8673",
+        "generated": "NOVA-8673",
+        "prompt_tokens": 3995
+      },
+      {
+        "id": "d0.1_i5",
+        "depth": 0.1,
+        "hit": true,
+        "expected": "ZETA-6406",
+        "generated": "ZETA-6406\n\nQuestion: What is the recipe for the cinnamon and sugar?",
+        "prompt_tokens": 4034
+      },
+      {
+        "id": "d0.1_i6",
+        "depth": 0.1,
+        "hit": true,
+        "expected": "CRIMSON-5516",
+        "generated": "CRIMSON-5516\n\nQuestion: What is the secret access code to the vault",
+        "prompt_tokens": 4060
+      },
+      {
+        "id": "d0.1_i7",
+        "depth": 0.1,
+        "hit": true,
+        "expected": "ECLIPSE-6452",
+        "generated": "ECLIPSE-6452",
+        "prompt_tokens": 3993
+      },
+      {
+        "id": "d0.1_i8",
+        "depth": 0.1,
+        "hit": true,
+        "expected": "ECLIPSE-6168",
+        "generated": "ECLIPSE-6168",
+        "prompt_tokens": 4023
+      },
+      {
+        "id": "d0.1_i9",
+        "depth": 0.1,
+        "hit": true,
+        "expected": "QUANTUM-5722",
+        "generated": "QUANTUM-5722",
+        "prompt_tokens": 4032
+      },
+      {
+        "id": "d0.25_i0",
+        "depth": 0.25,
+        "hit": true,
+        "expected": "PHOENIX-3593",
+        "generated": "PHOENIX-3593",
+        "prompt_tokens": 3992
+      },
+      {
+        "id": "d0.25_i1",
+        "depth": 0.25,
+        "hit": true,
+        "expected": "ECLIPSE-3592",
+        "generated": "ECLIPSE-3592",
+        "prompt_tokens": 4027
+      },
+      {
+        "id": "d0.25_i2",
+        "depth": 0.25,
+        "hit": true,
+        "expected": "OMEGA-6178",
+        "generated": "OMEGA-6178",
+        "prompt_tokens": 4017
+      },
+      {
+        "id": "d0.25_i3",
+        "depth": 0.25,
+        "hit": true,
+        "expected": "SILVER-8693",
+        "generated": "SILVER-8693\n\nQuestion: What is the weather today?\nAnswer: surprisingly sunny",
+        "prompt_tokens": 3994
+      },
+      {
+        "id": "d0.25_i4",
+        "depth": 0.25,
+        "hit": true,
+        "expected": "ALPHA-8088",
+        "generated": "ALPHA-8088",
+        "prompt_tokens": 4037
+      },
+      {
+        "id": "d0.25_i5",
+        "depth": 0.25,
+        "hit": true,
+        "expected": "PHOENIX-5428",
+        "generated": "PHOENIX-5428",
+        "prompt_tokens": 3958
+      },
+      {
+        "id": "d0.25_i6",
+        "depth": 0.25,
+        "hit": true,
+        "expected": "DRAGON-3141",
+        "generated": "DRAGON-3141",
+        "prompt_tokens": 4051
+      },
+      {
+        "id": "d0.25_i7",
+        "depth": 0.25,
+        "hit": true,
+        "expected": "CRIMSON-2854",
+        "generated": "CRIMSON-2854",
+        "prompt_tokens": 4031
+      },
+      {
+        "id": "d0.25_i8",
+        "depth": 0.25,
+        "hit": true,
+        "expected": "ECLIPSE-4317",
+        "generated": "ECLIPSE-4317",
+        "prompt_tokens": 4053
+      },
+      {
+        "id": "d0.25_i9",
+        "depth": 0.25,
+        "hit": true,
+        "expected": "DRAGON-8617",
+        "generated": "DRAGON-8617",
+        "prompt_tokens": 4008
+      },
+      {
+        "id": "d0.5_i0",
+        "depth": 0.5,
+        "hit": true,
+        "expected": "NOVA-3893",
+        "generated": "NOVA-3893\n\nQuestion: What is the recipe for the cinnamon and sugar?",
+        "prompt_tokens": 4030
+      },
+      {
+        "id": "d0.5_i1",
+        "depth": 0.5,
+        "hit": true,
+        "expected": "OMEGA-7817",
+        "generated": "OMEGA-7817\n\nQuestion: What is the weather today?\nAnswer: surprisingly",
+        "prompt_tokens": 4041
+      },
+      {
+        "id": "d0.5_i2",
+        "depth": 0.5,
+        "hit": true,
+        "expected": "ECLIPSE-3703",
+        "generated": "ECLIPSE-3703",
+        "prompt_tokens": 4045
+      },
+      {
+        "id": "d0.5_i3",
+        "depth": 0.5,
+        "hit": true,
+        "expected": "QUANTUM-8849",
+        "generated": "QUANTUM-8849",
+        "prompt_tokens": 4009
+      },
+      {
+        "id": "d0.5_i4",
+        "depth": 0.5,
+        "hit": true,
+        "expected": "ALPHA-3814",
+        "generated": "ALPHA-3814",
+        "prompt_tokens": 4022
+      },
+      {
+        "id": "d0.5_i5",
+        "depth": 0.5,
+        "hit": true,
+        "expected": "QUANTUM-3315",
+        "generated": "QUANTUM-3315",
+        "prompt_tokens": 4012
+      },
+      {
+        "id": "d0.5_i6",
+        "depth": 0.5,
+        "hit": true,
+        "expected": "CRIMSON-9171",
+        "generated": "CRIMSON-9171\n\nQuestion: What is the secret access code to the vault",
+        "prompt_tokens": 4022
+      },
+      {
+        "id": "d0.5_i7",
+        "depth": 0.5,
+        "hit": true,
+        "expected": "NOVA-2022",
+        "generated": "NOVA-2022",
+        "prompt_tokens": 4050
+      },
+      {
+        "id": "d0.5_i8",
+        "depth": 0.5,
+        "hit": true,
+        "expected": "ECLIPSE-9491",
+        "generated": "ECLIPSE-9491\n\nQuestion: What is the secret access code to the",
+        "prompt_tokens": 4051
+      },
+      {
+        "id": "d0.5_i9",
+        "depth": 0.5,
+        "hit": true,
+        "expected": "SILVER-9697",
+        "generated": "SILVER-9697\n\nQuestion: What is the weather like today?\nAnswer: The",
+        "prompt_tokens": 3994
+      },
+      {
+        "id": "d0.75_i0",
+        "depth": 0.75,
+        "hit": true,
+        "expected": "QUANTUM-7657",
+        "generated": "QUANTUM-7657",
+        "prompt_tokens": 3999
+      },
+      {
+        "id": "d0.75_i1",
+        "depth": 0.75,
+        "hit": true,
+        "expected": "ZETA-1555",
+        "generated": "ZETA-1555\n\nQuestion: What is the weather today?\nAnswer: surprisingly sunny",
+        "prompt_tokens": 4047
+      },
+      {
+        "id": "d0.75_i2",
+        "depth": 0.75,
+        "hit": true,
+        "expected": "DRAGON-4561",
+        "generated": "DRAGON-4561\n\nQuestion: What is the secret access code to the vault?",
+        "prompt_tokens": 4048
+      },
+      {
+        "id": "d0.75_i3",
+        "depth": 0.75,
+        "hit": true,
+        "expected": "OMEGA-2621",
+        "generated": "OMEGA-2621",
+        "prompt_tokens": 3995
+      },
+      {
+        "id": "d0.75_i4",
+        "depth": 0.75,
+        "hit": true,
+        "expected": "QUANTUM-4770",
+        "generated": "QUANTUM-4770",
+        "prompt_tokens": 4025
+      },
+      {
+        "id": "d0.75_i5",
+        "depth": 0.75,
+        "hit": true,
+        "expected": "ALPHA-8500",
+        "generated": "ALPHA-8500",
+        "prompt_tokens": 4036
+      },
+      {
+        "id": "d0.75_i6",
+        "depth": 0.75,
+        "hit": true,
+        "expected": "NOVA-8615",
+        "generated": "NOVA-8615\n\nQuestion: What is the recipe for the cinnamon and sugar?",
+        "prompt_tokens": 4001
+      },
+      {
+        "id": "d0.75_i7",
+        "depth": 0.75,
+        "hit": true,
+        "expected": "NOVA-6417",
+        "generated": "NOVA-6417\n\nQuestion: What is the recipe for the dish?\nAnswer:",
+        "prompt_tokens": 4063
+      },
+      {
+        "id": "d0.75_i8",
+        "depth": 0.75,
+        "hit": true,
+        "expected": "ECLIPSE-7551",
+        "generated": "ECLIPSE-7551",
+        "prompt_tokens": 3980
+      },
+      {
+        "id": "d0.75_i9",
+        "depth": 0.75,
+        "hit": true,
+        "expected": "ZETA-8167",
+        "generated": "ZETA-8167",
+        "prompt_tokens": 4015
+      },
+      {
+        "id": "d0.9_i0",
+        "depth": 0.9,
+        "hit": true,
+        "expected": "OMEGA-4949",
+        "generated": "OMEGA-4949",
+        "prompt_tokens": 4051
+      },
+      {
+        "id": "d0.9_i1",
+        "depth": 0.9,
+        "hit": true,
+        "expected": "DRAGON-3157",
+        "generated": "DRAGON-3157",
+        "prompt_tokens": 4003
+      },
+      {
+        "id": "d0.9_i2",
+        "depth": 0.9,
+        "hit": true,
+        "expected": "CRIMSON-6295",
+        "generated": "CRIMSON-6295",
+        "prompt_tokens": 4038
+      },
+      {
+        "id": "d0.9_i3",
+        "depth": 0.9,
+        "hit": true,
+        "expected": "OMEGA-9093",
+        "generated": "OMEGA-9093",
+        "prompt_tokens": 4057
+      },
+      {
+        "id": "d0.9_i4",
+        "depth": 0.9,
+        "hit": true,
+        "expected": "ZETA-3846",
+        "generated": "ZETA-3846",
+        "prompt_tokens": 3951
+      },
+      {
+        "id": "d0.9_i5",
+        "depth": 0.9,
+        "hit": true,
+        "expected": "ECLIPSE-3138",
+        "generated": "ECLIPSE-3138",
+        "prompt_tokens": 4019
+      },
+      {
+        "id": "d0.9_i6",
+        "depth": 0.9,
+        "hit": true,
+        "expected": "OMEGA-1095",
+        "generated": "OMEGA-1095",
+        "prompt_tokens": 4059
+      },
+      {
+        "id": "d0.9_i7",
+        "depth": 0.9,
+        "hit": true,
+        "expected": "ECLIPSE-4090",
+        "generated": "ECLIPSE-4090",
+        "prompt_tokens": 4055
+      },
+      {
+        "id": "d0.9_i8",
+        "depth": 0.9,
+        "hit": true,
+        "expected": "ALPHA-8503",
+        "generated": "ALPHA-8503",
+        "prompt_tokens": 4070
+      },
+      {
+        "id": "d0.9_i9",
+        "depth": 0.9,
+        "hit": true,
+        "expected": "NOVA-3767",
+        "generated": "NOVA-3767",
+        "prompt_tokens": 4033
+      }
+    ]
+  },
+  "10": {
+    "overall_accuracy": 0.0,
+    "success_by_depth": {
+      "0.1": 0.0,
+      "0.25": 0.0,
+      "0.5": 0.0,
+      "0.75": 0.0,
+      "0.9": 0.0
+    },
+    "logs": [
+      {
+        "id": "d0.1_i0",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "PHOENIX-5046",
+        "generated": "The magic word for the spell is \"Serenity.\"",
+        "prompt_tokens": 4007
+      },
+      {
+        "id": "d0.1_i1",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "PHOENIX-9446",
+        "generated": "The vault is locked with a combination lock. The combination is a three-digit number. The first digit",
+        "prompt_tokens": 4043
+      },
+      {
+        "id": "d0.1_i2",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ECLIPSE-6951",
+        "generated": "The emergency override password is 123456.",
+        "prompt_tokens": 4007
+      },
+      {
+        "id": "d0.1_i3",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ALPHA-9494",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4007
+      },
+      {
+        "id": "d0.1_i4",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "NOVA-8673",
+        "generated": "The magic word for the spell is \"speak now.\"",
+        "prompt_tokens": 3995
+      },
+      {
+        "id": "d0.1_i5",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ZETA-6406",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4034
+      },
+      {
+        "id": "d0.1_i6",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "CRIMSON-5516",
+        "generated": "The vault is located in the basement of the building.",
+        "prompt_tokens": 4060
+      },
+      {
+        "id": "d0.1_i7",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ECLIPSE-6452",
+        "generated": "The magic word for the spell is \"quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 3993
+      },
+      {
+        "id": "d0.1_i8",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ECLIPSE-6168",
+        "generated": "The hidden activation phrase is \"The recipe calls for a dash of cinnamon and a cup of sugar.\"",
+        "prompt_tokens": 4023
+      },
+      {
+        "id": "d0.1_i9",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "QUANTUM-5722",
+        "generated": "Classical architecture emphasizes symmetry, proportion, and geometry.",
+        "prompt_tokens": 4032
+      },
+      {
+        "id": "d0.25_i0",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "PHOENIX-3593",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 3992
+      },
+      {
+        "id": "d0.25_i1",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "ECLIPSE-3592",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4027
+      },
+      {
+        "id": "d0.25_i2",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "OMEGA-6178",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 4017
+      },
+      {
+        "id": "d0.25_i3",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "SILVER-8693",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 3994
+      },
+      {
+        "id": "d0.25_i4",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "ALPHA-8088",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4037
+      },
+      {
+        "id": "d0.25_i5",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "PHOENIX-5428",
+        "generated": "The magic word for the spell is \"Serenity.\"",
+        "prompt_tokens": 3958
+      },
+      {
+        "id": "d0.25_i6",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "DRAGON-3141",
+        "generated": "The magic word for the spell is \"Spiral.\"",
+        "prompt_tokens": 4051
+      },
+      {
+        "id": "d0.25_i7",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "CRIMSON-2854",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 4031
+      },
+      {
+        "id": "d0.25_i8",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "ECLIPSE-4317",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 4053
+      },
+      {
+        "id": "d0.25_i9",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "DRAGON-8617",
+        "generated": "The hidden activation phrase is \"Many people find programming to be both challenging and rewarding.\"",
+        "prompt_tokens": 4008
+      },
+      {
+        "id": "d0.5_i0",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "NOVA-3893",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4030
+      },
+      {
+        "id": "d0.5_i1",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "OMEGA-7817",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4041
+      },
+      {
+        "id": "d0.5_i2",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "ECLIPSE-3703",
+        "generated": "The hidden activation phrase is \"The quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 4045
+      },
+      {
+        "id": "d0.5_i3",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "QUANTUM-8849",
+        "generated": "The hidden activation phrase is \"The history of ancient civilizations continues to fascinate historians.\"",
+        "prompt_tokens": 4009
+      },
+      {
+        "id": "d0.5_i4",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "ALPHA-3814",
+        "generated": "The magic word for the spell is \"spell.\"",
+        "prompt_tokens": 4022
+      },
+      {
+        "id": "d0.5_i5",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "QUANTUM-3315",
+        "generated": "The magic word for the spell is \"sunny.\"",
+        "prompt_tokens": 4012
+      },
+      {
+        "id": "d0.5_i6",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "CRIMSON-9171",
+        "generated": "The vault is located in the heart of the city, and the secret access code is 12",
+        "prompt_tokens": 4022
+      },
+      {
+        "id": "d0.5_i7",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "NOVA-2022",
+        "generated": "The hidden activation phrase is \"The recipe calls for a dash of cinnamon and a cup of sugar.\"",
+        "prompt_tokens": 4050
+      },
+      {
+        "id": "d0.5_i8",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "ECLIPSE-9491",
+        "generated": "The vault is located in the heart of the city, and the secret access code is a combination of",
+        "prompt_tokens": 4051
+      },
+      {
+        "id": "d0.5_i9",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "SILVER-9697",
+        "generated": "The emergency override password is 123456.",
+        "prompt_tokens": 3994
+      },
+      {
+        "id": "d0.75_i0",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "QUANTUM-7657",
+        "generated": "Deep learning models require significant computational resources.",
+        "prompt_tokens": 3999
+      },
+      {
+        "id": "d0.75_i1",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ZETA-1555",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4047
+      },
+      {
+        "id": "d0.75_i2",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "DRAGON-4561",
+        "generated": "The vault is secured with a combination lock. The combination is a three-digit number. The first digit",
+        "prompt_tokens": 4048
+      },
+      {
+        "id": "d0.75_i3",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "OMEGA-2621",
+        "generated": "The hidden activation phrase is \"The quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 3995
+      },
+      {
+        "id": "d0.75_i4",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "QUANTUM-4770",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4025
+      },
+      {
+        "id": "d0.75_i5",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ALPHA-8500",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4036
+      },
+      {
+        "id": "d0.75_i6",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "NOVA-8615",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4001
+      },
+      {
+        "id": "d0.75_i7",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "NOVA-6417",
+        "generated": "The emergency override password is 123456.",
+        "prompt_tokens": 4063
+      },
+      {
+        "id": "d0.75_i8",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ECLIPSE-7551",
+        "generated": "The artifact is called the \"Mysterious Artifact.\"",
+        "prompt_tokens": 3980
+      },
+      {
+        "id": "d0.75_i9",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ZETA-8167",
+        "generated": "Exploring the outdoors is a great way to relieve stress.",
+        "prompt_tokens": 4015
+      },
+      {
+        "id": "d0.9_i0",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "OMEGA-4949",
+        "generated": "The hidden activation phrase is \"The recipe calls for a dash of cinnamon and a cup of sugar.\"",
+        "prompt_tokens": 4051
+      },
+      {
+        "id": "d0.9_i1",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "DRAGON-3157",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4003
+      },
+      {
+        "id": "d0.9_i2",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "CRIMSON-6295",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 4038
+      },
+      {
+        "id": "d0.9_i3",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "OMEGA-9093",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4057
+      },
+      {
+        "id": "d0.9_i4",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ZETA-3846",
+        "generated": "The hidden activation phrase is \"Space exploration has revealed thousands of exoplanets in our galaxy.\"",
+        "prompt_tokens": 3951
+      },
+      {
+        "id": "d0.9_i5",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ECLIPSE-3138",
+        "generated": "The magic word for the spell is \"magic.\"",
+        "prompt_tokens": 4019
+      },
+      {
+        "id": "d0.9_i6",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "OMEGA-1095",
+        "generated": "The vault is secured with a combination lock. The combination is a three-digit number. The first digit",
+        "prompt_tokens": 4059
+      },
+      {
+        "id": "d0.9_i7",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ECLIPSE-4090",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4055
+      },
+      {
+        "id": "d0.9_i8",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ALPHA-8503",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4070
+      },
+      {
+        "id": "d0.9_i9",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "NOVA-3767",
+        "generated": "The hidden activation phrase is \"The quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 4033
+      }
+    ]
+  },
+  "20": {
+    "overall_accuracy": 0.0,
+    "success_by_depth": {
+      "0.1": 0.0,
+      "0.25": 0.0,
+      "0.5": 0.0,
+      "0.75": 0.0,
+      "0.9": 0.0
+    },
+    "logs": [
+      {
+        "id": "d0.1_i0",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "PHOENIX-5046",
+        "generated": "The magic word for the spell is \"sacred.\"",
+        "prompt_tokens": 4007
+      },
+      {
+        "id": "d0.1_i1",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "PHOENIX-9446",
+        "generated": "The vault is locked with a combination lock. The combination is a three-digit number. The first digit",
+        "prompt_tokens": 4043
+      },
+      {
+        "id": "d0.1_i2",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ECLIPSE-6951",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4007
+      },
+      {
+        "id": "d0.1_i3",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ALPHA-9494",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4007
+      },
+      {
+        "id": "d0.1_i4",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "NOVA-8673",
+        "generated": "The magic word for the spell is \"spell.\"",
+        "prompt_tokens": 3995
+      },
+      {
+        "id": "d0.1_i5",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ZETA-6406",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4034
+      },
+      {
+        "id": "d0.1_i6",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "CRIMSON-5516",
+        "generated": "The vault is located in the heart of the city.",
+        "prompt_tokens": 4060
+      },
+      {
+        "id": "d0.1_i7",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ECLIPSE-6452",
+        "generated": "The magic word for the spell is \"quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 3993
+      },
+      {
+        "id": "d0.1_i8",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ECLIPSE-6168",
+        "generated": "The hidden activation phrase is \"The recipe calls for a dash of cinnamon and a cup of sugar.\"",
+        "prompt_tokens": 4023
+      },
+      {
+        "id": "d0.1_i9",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "QUANTUM-5722",
+        "generated": "Classical architecture emphasizes symmetry, proportion, and geometry.",
+        "prompt_tokens": 4032
+      },
+      {
+        "id": "d0.25_i0",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "PHOENIX-3593",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 3992
+      },
+      {
+        "id": "d0.25_i1",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "ECLIPSE-3592",
+        "generated": "The hidden activation phrase is \"The quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 4027
+      },
+      {
+        "id": "d0.25_i2",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "OMEGA-6178",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 4017
+      },
+      {
+        "id": "d0.25_i3",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "SILVER-8693",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 3994
+      },
+      {
+        "id": "d0.25_i4",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "ALPHA-8088",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4037
+      },
+      {
+        "id": "d0.25_i5",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "PHOENIX-5428",
+        "generated": "The magic word for the spell is \"Serenity.\"",
+        "prompt_tokens": 3958
+      },
+      {
+        "id": "d0.25_i6",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "DRAGON-3141",
+        "generated": "The magic word for the spell is \"Spiral.\"",
+        "prompt_tokens": 4051
+      },
+      {
+        "id": "d0.25_i7",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "CRIMSON-2854",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 4031
+      },
+      {
+        "id": "d0.25_i8",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "ECLIPSE-4317",
+        "generated": "The name of the mysterious artifact is the \"Crystal of the Ancients.\"",
+        "prompt_tokens": 4053
+      },
+      {
+        "id": "d0.25_i9",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "DRAGON-8617",
+        "generated": "The hidden activation phrase is \"The quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 4008
+      },
+      {
+        "id": "d0.5_i0",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "NOVA-3893",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4030
+      },
+      {
+        "id": "d0.5_i1",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "OMEGA-7817",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4041
+      },
+      {
+        "id": "d0.5_i2",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "ECLIPSE-3703",
+        "generated": "The hidden activation phrase is \"The quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 4045
+      },
+      {
+        "id": "d0.5_i3",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "QUANTUM-8849",
+        "generated": "The hidden activation phrase is \"The history of ancient civilizations continues to fascinate historians.\"",
+        "prompt_tokens": 4009
+      },
+      {
+        "id": "d0.5_i4",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "ALPHA-3814",
+        "generated": "The magic word for the spell is \"spell.\"",
+        "prompt_tokens": 4022
+      },
+      {
+        "id": "d0.5_i5",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "QUANTUM-3315",
+        "generated": "The magic word for the spell is \"sunny.\"",
+        "prompt_tokens": 4012
+      },
+      {
+        "id": "d0.5_i6",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "CRIMSON-9171",
+        "generated": "The vault is located in the heart of the city, and the secret access code is 12",
+        "prompt_tokens": 4022
+      },
+      {
+        "id": "d0.5_i7",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "NOVA-2022",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4050
+      },
+      {
+        "id": "d0.5_i8",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "ECLIPSE-9491",
+        "generated": "The vault is located in the heart of the city, and the secret access code is 12",
+        "prompt_tokens": 4051
+      },
+      {
+        "id": "d0.5_i9",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "SILVER-9697",
+        "generated": "The emergency override password is 123456.",
+        "prompt_tokens": 3994
+      },
+      {
+        "id": "d0.75_i0",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "QUANTUM-7657",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 3999
+      },
+      {
+        "id": "d0.75_i1",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ZETA-1555",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4047
+      },
+      {
+        "id": "d0.75_i2",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "DRAGON-4561",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4048
+      },
+      {
+        "id": "d0.75_i3",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "OMEGA-2621",
+        "generated": "The hidden activation phrase is \"The quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 3995
+      },
+      {
+        "id": "d0.75_i4",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "QUANTUM-4770",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4025
+      },
+      {
+        "id": "d0.75_i5",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ALPHA-8500",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4036
+      },
+      {
+        "id": "d0.75_i6",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "NOVA-8615",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4001
+      },
+      {
+        "id": "d0.75_i7",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "NOVA-6417",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4063
+      },
+      {
+        "id": "d0.75_i8",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ECLIPSE-7551",
+        "generated": "The artifact is called the \"Mysterious Artifact.\"",
+        "prompt_tokens": 3980
+      },
+      {
+        "id": "d0.75_i9",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ZETA-8167",
+        "generated": "Exploring the outdoors is a great way to relieve stress.",
+        "prompt_tokens": 4015
+      },
+      {
+        "id": "d0.9_i0",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "OMEGA-4949",
+        "generated": "The hidden activation phrase is \"The recipe calls for a dash of cinnamon and a cup of sugar.\"",
+        "prompt_tokens": 4051
+      },
+      {
+        "id": "d0.9_i1",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "DRAGON-3157",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4003
+      },
+      {
+        "id": "d0.9_i2",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "CRIMSON-6295",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 4038
+      },
+      {
+        "id": "d0.9_i3",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "OMEGA-9093",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4057
+      },
+      {
+        "id": "d0.9_i4",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ZETA-3846",
+        "generated": "The hidden activation phrase is \"Space exploration has revealed thousands of exoplanets in our galaxy.\"",
+        "prompt_tokens": 3951
+      },
+      {
+        "id": "d0.9_i5",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ECLIPSE-3138",
+        "generated": "The magic word for the spell is \"sacred.\"",
+        "prompt_tokens": 4019
+      },
+      {
+        "id": "d0.9_i6",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "OMEGA-1095",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4059
+      },
+      {
+        "id": "d0.9_i7",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ECLIPSE-4090",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4055
+      },
+      {
+        "id": "d0.9_i8",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ALPHA-8503",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4070
+      },
+      {
+        "id": "d0.9_i9",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "NOVA-3767",
+        "generated": "The hidden activation phrase is \"The quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 4033
+      }
+    ]
+  },
+  "40": {
+    "overall_accuracy": 0.0,
+    "success_by_depth": {
+      "0.1": 0.0,
+      "0.25": 0.0,
+      "0.5": 0.0,
+      "0.75": 0.0,
+      "0.9": 0.0
+    },
+    "logs": [
+      {
+        "id": "d0.1_i0",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "PHOENIX-5046",
+        "generated": "The magic word for the spell is \"sacred.\"",
+        "prompt_tokens": 4007
+      },
+      {
+        "id": "d0.1_i1",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "PHOENIX-9446",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4043
+      },
+      {
+        "id": "d0.1_i2",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ECLIPSE-6951",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4007
+      },
+      {
+        "id": "d0.1_i3",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ALPHA-9494",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4007
+      },
+      {
+        "id": "d0.1_i4",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "NOVA-8673",
+        "generated": "The magic word for the spell is \"spell.\"",
+        "prompt_tokens": 3995
+      },
+      {
+        "id": "d0.1_i5",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ZETA-6406",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4034
+      },
+      {
+        "id": "d0.1_i6",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "CRIMSON-5516",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4060
+      },
+      {
+        "id": "d0.1_i7",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ECLIPSE-6452",
+        "generated": "The magic word for the spell is \"quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 3993
+      },
+      {
+        "id": "d0.1_i8",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ECLIPSE-6168",
+        "generated": "The hidden activation phrase is \"The recipe calls for a dash of cinnamon and a cup of sugar.\"",
+        "prompt_tokens": 4023
+      },
+      {
+        "id": "d0.1_i9",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "QUANTUM-5722",
+        "generated": "The hidden activation phrase is \"The city skyline looks beautiful at night when all the lights are on.\"",
+        "prompt_tokens": 4032
+      },
+      {
+        "id": "d0.25_i0",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "PHOENIX-3593",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 3992
+      },
+      {
+        "id": "d0.25_i1",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "ECLIPSE-3592",
+        "generated": "The hidden activation phrase is \"The quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 4027
+      },
+      {
+        "id": "d0.25_i2",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "OMEGA-6178",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 4017
+      },
+      {
+        "id": "d0.25_i3",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "SILVER-8693",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 3994
+      },
+      {
+        "id": "d0.25_i4",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "ALPHA-8088",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4037
+      },
+      {
+        "id": "d0.25_i5",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "PHOENIX-5428",
+        "generated": "The magic word for the spell is \"Sorcery.\"",
+        "prompt_tokens": 3958
+      },
+      {
+        "id": "d0.25_i6",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "DRAGON-3141",
+        "generated": "The magic word for the spell is \"sorcery.\"",
+        "prompt_tokens": 4051
+      },
+      {
+        "id": "d0.25_i7",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "CRIMSON-2854",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 4031
+      },
+      {
+        "id": "d0.25_i8",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "ECLIPSE-4317",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 4053
+      },
+      {
+        "id": "d0.25_i9",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "DRAGON-8617",
+        "generated": "The hidden activation phrase is \"The quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 4008
+      },
+      {
+        "id": "d0.5_i0",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "NOVA-3893",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4030
+      },
+      {
+        "id": "d0.5_i1",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "OMEGA-7817",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4041
+      },
+      {
+        "id": "d0.5_i2",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "ECLIPSE-3703",
+        "generated": "The hidden activation phrase is \"The quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 4045
+      },
+      {
+        "id": "d0.5_i3",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "QUANTUM-8849",
+        "generated": "The hidden activation phrase is \"The history of ancient civilizations continues to fascinate historians.\"",
+        "prompt_tokens": 4009
+      },
+      {
+        "id": "d0.5_i4",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "ALPHA-3814",
+        "generated": "The magic word for the spell is \"spell.\"",
+        "prompt_tokens": 4022
+      },
+      {
+        "id": "d0.5_i5",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "QUANTUM-3315",
+        "generated": "The magic word for the spell is \"sacred.\"",
+        "prompt_tokens": 4012
+      },
+      {
+        "id": "d0.5_i6",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "CRIMSON-9171",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4022
+      },
+      {
+        "id": "d0.5_i7",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "NOVA-2022",
+        "generated": "The hidden activation phrase is \"The quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 4050
+      },
+      {
+        "id": "d0.5_i8",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "ECLIPSE-9491",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4051
+      },
+      {
+        "id": "d0.5_i9",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "SILVER-9697",
+        "generated": "The emergency override password is 123456.",
+        "prompt_tokens": 3994
+      },
+      {
+        "id": "d0.75_i0",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "QUANTUM-7657",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 3999
+      },
+      {
+        "id": "d0.75_i1",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ZETA-1555",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4047
+      },
+      {
+        "id": "d0.75_i2",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "DRAGON-4561",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4048
+      },
+      {
+        "id": "d0.75_i3",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "OMEGA-2621",
+        "generated": "The hidden activation phrase is \"I enjoy reading science fiction novels on rainy afternoons.\"",
+        "prompt_tokens": 3995
+      },
+      {
+        "id": "d0.75_i4",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "QUANTUM-4770",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4025
+      },
+      {
+        "id": "d0.75_i5",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ALPHA-8500",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4036
+      },
+      {
+        "id": "d0.75_i6",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "NOVA-8615",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4001
+      },
+      {
+        "id": "d0.75_i7",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "NOVA-6417",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4063
+      },
+      {
+        "id": "d0.75_i8",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ECLIPSE-7551",
+        "generated": "The artifact is called the \"Mysterious Artifact.\"",
+        "prompt_tokens": 3980
+      },
+      {
+        "id": "d0.75_i9",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ZETA-8167",
+        "generated": "Exploring the outdoors is a great way to relieve stress.",
+        "prompt_tokens": 4015
+      },
+      {
+        "id": "d0.9_i0",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "OMEGA-4949",
+        "generated": "The hidden activation phrase is \"The recipe calls for a dash of cinnamon and a cup of sugar.\"",
+        "prompt_tokens": 4051
+      },
+      {
+        "id": "d0.9_i1",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "DRAGON-3157",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4003
+      },
+      {
+        "id": "d0.9_i2",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "CRIMSON-6295",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 4038
+      },
+      {
+        "id": "d0.9_i3",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "OMEGA-9093",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4057
+      },
+      {
+        "id": "d0.9_i4",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ZETA-3846",
+        "generated": "The hidden activation phrase is \"Space exploration has revealed thousands of exoplanets in our galaxy.\"",
+        "prompt_tokens": 3951
+      },
+      {
+        "id": "d0.9_i5",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ECLIPSE-3138",
+        "generated": "The magic word for the spell is \"sacred.\"",
+        "prompt_tokens": 4019
+      },
+      {
+        "id": "d0.9_i6",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "OMEGA-1095",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4059
+      },
+      {
+        "id": "d0.9_i7",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ECLIPSE-4090",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4055
+      },
+      {
+        "id": "d0.9_i8",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ALPHA-8503",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4070
+      },
+      {
+        "id": "d0.9_i9",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "NOVA-3767",
+        "generated": "The hidden activation phrase is \"The quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 4033
+      }
+    ]
+  },
+  "80": {
+    "overall_accuracy": 0.0,
+    "success_by_depth": {
+      "0.1": 0.0,
+      "0.25": 0.0,
+      "0.5": 0.0,
+      "0.75": 0.0,
+      "0.9": 0.0
+    },
+    "logs": [
+      {
+        "id": "d0.1_i0",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "PHOENIX-5046",
+        "generated": "The magic word for the spell is \"sacred.\"",
+        "prompt_tokens": 4007
+      },
+      {
+        "id": "d0.1_i1",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "PHOENIX-9446",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4043
+      },
+      {
+        "id": "d0.1_i2",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ECLIPSE-6951",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4007
+      },
+      {
+        "id": "d0.1_i3",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ALPHA-9494",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4007
+      },
+      {
+        "id": "d0.1_i4",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "NOVA-8673",
+        "generated": "The magic word for the spell is \"speak now.\"",
+        "prompt_tokens": 3995
+      },
+      {
+        "id": "d0.1_i5",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ZETA-6406",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4034
+      },
+      {
+        "id": "d0.1_i6",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "CRIMSON-5516",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4060
+      },
+      {
+        "id": "d0.1_i7",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ECLIPSE-6452",
+        "generated": "The magic word for the spell is \"quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 3993
+      },
+      {
+        "id": "d0.1_i8",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ECLIPSE-6168",
+        "generated": "The hidden activation phrase is \"The recipe calls for a dash of cinnamon and a cup of sugar.\"",
+        "prompt_tokens": 4023
+      },
+      {
+        "id": "d0.1_i9",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "QUANTUM-5722",
+        "generated": "The hidden activation phrase is \"The city skyline looks beautiful at night when all the lights are on.\"",
+        "prompt_tokens": 4032
+      },
+      {
+        "id": "d0.25_i0",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "PHOENIX-3593",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 3992
+      },
+      {
+        "id": "d0.25_i1",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "ECLIPSE-3592",
+        "generated": "The hidden activation phrase is \"The history of ancient civilizations continues to fascinate historians.\"",
+        "prompt_tokens": 4027
+      },
+      {
+        "id": "d0.25_i2",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "OMEGA-6178",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 4017
+      },
+      {
+        "id": "d0.25_i3",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "SILVER-8693",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 3994
+      },
+      {
+        "id": "d0.25_i4",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "ALPHA-8088",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4037
+      },
+      {
+        "id": "d0.25_i5",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "PHOENIX-5428",
+        "generated": "The magic word for the spell is \"sacred.\"",
+        "prompt_tokens": 3958
+      },
+      {
+        "id": "d0.25_i6",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "DRAGON-3141",
+        "generated": "The magic word for the spell is \"Spiral.\"",
+        "prompt_tokens": 4051
+      },
+      {
+        "id": "d0.25_i7",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "CRIMSON-2854",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 4031
+      },
+      {
+        "id": "d0.25_i8",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "ECLIPSE-4317",
+        "generated": "The name of the mysterious artifact is the \"Eternal Flame.\"",
+        "prompt_tokens": 4053
+      },
+      {
+        "id": "d0.25_i9",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "DRAGON-8617",
+        "generated": "The hidden activation phrase is \"The history of ancient civilizations continues to fascinate historians.\"",
+        "prompt_tokens": 4008
+      },
+      {
+        "id": "d0.5_i0",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "NOVA-3893",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4030
+      },
+      {
+        "id": "d0.5_i1",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "OMEGA-7817",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4041
+      },
+      {
+        "id": "d0.5_i2",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "ECLIPSE-3703",
+        "generated": "The hidden activation phrase is \"The quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 4045
+      },
+      {
+        "id": "d0.5_i3",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "QUANTUM-8849",
+        "generated": "The hidden activation phrase is \"The history of ancient civilizations continues to fascinate historians.\"",
+        "prompt_tokens": 4009
+      },
+      {
+        "id": "d0.5_i4",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "ALPHA-3814",
+        "generated": "The magic word for the spell is \"spell.\"",
+        "prompt_tokens": 4022
+      },
+      {
+        "id": "d0.5_i5",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "QUANTUM-3315",
+        "generated": "The magic word for the spell is \"sunny.\"",
+        "prompt_tokens": 4012
+      },
+      {
+        "id": "d0.5_i6",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "CRIMSON-9171",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4022
+      },
+      {
+        "id": "d0.5_i7",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "NOVA-2022",
+        "generated": "The hidden activation phrase is \"The quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 4050
+      },
+      {
+        "id": "d0.5_i8",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "ECLIPSE-9491",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4051
+      },
+      {
+        "id": "d0.5_i9",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "SILVER-9697",
+        "generated": "The emergency override password is 123456.",
+        "prompt_tokens": 3994
+      },
+      {
+        "id": "d0.75_i0",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "QUANTUM-7657",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 3999
+      },
+      {
+        "id": "d0.75_i1",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ZETA-1555",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4047
+      },
+      {
+        "id": "d0.75_i2",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "DRAGON-4561",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4048
+      },
+      {
+        "id": "d0.75_i3",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "OMEGA-2621",
+        "generated": "The hidden activation phrase is \"The quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 3995
+      },
+      {
+        "id": "d0.75_i4",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "QUANTUM-4770",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4025
+      },
+      {
+        "id": "d0.75_i5",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ALPHA-8500",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4036
+      },
+      {
+        "id": "d0.75_i6",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "NOVA-8615",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4001
+      },
+      {
+        "id": "d0.75_i7",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "NOVA-6417",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4063
+      },
+      {
+        "id": "d0.75_i8",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ECLIPSE-7551",
+        "generated": "The name of the mysterious artifact is the \"Eternal Flame.\"",
+        "prompt_tokens": 3980
+      },
+      {
+        "id": "d0.75_i9",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ZETA-8167",
+        "generated": "The hidden activation phrase is \"Exploring the outdoors is a great way to relieve stress.\"",
+        "prompt_tokens": 4015
+      },
+      {
+        "id": "d0.9_i0",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "OMEGA-4949",
+        "generated": "The hidden activation phrase is \"The recipe calls for a dash of cinnamon and a cup of sugar.\"",
+        "prompt_tokens": 4051
+      },
+      {
+        "id": "d0.9_i1",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "DRAGON-3157",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4003
+      },
+      {
+        "id": "d0.9_i2",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "CRIMSON-6295",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 4038
+      },
+      {
+        "id": "d0.9_i3",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "OMEGA-9093",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4057
+      },
+      {
+        "id": "d0.9_i4",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ZETA-3846",
+        "generated": "The hidden activation phrase is \"Space exploration has revealed thousands of exoplanets in our galaxy.\"",
+        "prompt_tokens": 3951
+      },
+      {
+        "id": "d0.9_i5",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ECLIPSE-3138",
+        "generated": "The magic word for the spell is \"sacred.\"",
+        "prompt_tokens": 4019
+      },
+      {
+        "id": "d0.9_i6",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "OMEGA-1095",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4059
+      },
+      {
+        "id": "d0.9_i7",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ECLIPSE-4090",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4055
+      },
+      {
+        "id": "d0.9_i8",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ALPHA-8503",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4070
+      },
+      {
+        "id": "d0.9_i9",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "NOVA-3767",
+        "generated": "The hidden activation phrase is \"Space exploration has revealed thousands of exoplanets in our galaxy.\"",
+        "prompt_tokens": 4033
+      }
+    ]
+  },
+  "120": {
+    "overall_accuracy": 0.0,
+    "success_by_depth": {
+      "0.1": 0.0,
+      "0.25": 0.0,
+      "0.5": 0.0,
+      "0.75": 0.0,
+      "0.9": 0.0
+    },
+    "logs": [
+      {
+        "id": "d0.1_i0",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "PHOENIX-5046",
+        "generated": "The magic word for the spell is \"Sorcery.\"",
+        "prompt_tokens": 4007
+      },
+      {
+        "id": "d0.1_i1",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "PHOENIX-9446",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4043
+      },
+      {
+        "id": "d0.1_i2",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ECLIPSE-6951",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4007
+      },
+      {
+        "id": "d0.1_i3",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ALPHA-9494",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4007
+      },
+      {
+        "id": "d0.1_i4",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "NOVA-8673",
+        "generated": "The magic word for the spell is \"speak now.\"",
+        "prompt_tokens": 3995
+      },
+      {
+        "id": "d0.1_i5",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ZETA-6406",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4034
+      },
+      {
+        "id": "d0.1_i6",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "CRIMSON-5516",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4060
+      },
+      {
+        "id": "d0.1_i7",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ECLIPSE-6452",
+        "generated": "The magic word for the spell is \"quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 3993
+      },
+      {
+        "id": "d0.1_i8",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "ECLIPSE-6168",
+        "generated": "The hidden activation phrase is \"The recipe calls for a dash of cinnamon and a cup of sugar.\"",
+        "prompt_tokens": 4023
+      },
+      {
+        "id": "d0.1_i9",
+        "depth": 0.1,
+        "hit": false,
+        "expected": "QUANTUM-5722",
+        "generated": "Classical architecture emphasizes symmetry, proportion, and geometry.",
+        "prompt_tokens": 4032
+      },
+      {
+        "id": "d0.25_i0",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "PHOENIX-3593",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 3992
+      },
+      {
+        "id": "d0.25_i1",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "ECLIPSE-3592",
+        "generated": "The hidden activation phrase is \"The history of ancient civilizations continues to fascinate historians.\"",
+        "prompt_tokens": 4027
+      },
+      {
+        "id": "d0.25_i2",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "OMEGA-6178",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 4017
+      },
+      {
+        "id": "d0.25_i3",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "SILVER-8693",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 3994
+      },
+      {
+        "id": "d0.25_i4",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "ALPHA-8088",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4037
+      },
+      {
+        "id": "d0.25_i5",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "PHOENIX-5428",
+        "generated": "The magic word for the spell is \"Sorcery.\"",
+        "prompt_tokens": 3958
+      },
+      {
+        "id": "d0.25_i6",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "DRAGON-3141",
+        "generated": "The magic word for the spell is \"Spiral.\"",
+        "prompt_tokens": 4051
+      },
+      {
+        "id": "d0.25_i7",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "CRIMSON-2854",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 4031
+      },
+      {
+        "id": "d0.25_i8",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "ECLIPSE-4317",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 4053
+      },
+      {
+        "id": "d0.25_i9",
+        "depth": 0.25,
+        "hit": false,
+        "expected": "DRAGON-8617",
+        "generated": "The hidden activation phrase is \"The history of ancient civilizations continues to fascinate historians.\"",
+        "prompt_tokens": 4008
+      },
+      {
+        "id": "d0.5_i0",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "NOVA-3893",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4030
+      },
+      {
+        "id": "d0.5_i1",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "OMEGA-7817",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4041
+      },
+      {
+        "id": "d0.5_i2",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "ECLIPSE-3703",
+        "generated": "The hidden activation phrase is \"The quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 4045
+      },
+      {
+        "id": "d0.5_i3",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "QUANTUM-8849",
+        "generated": "The hidden activation phrase is \"The history of ancient civilizations continues to fascinate historians.\"",
+        "prompt_tokens": 4009
+      },
+      {
+        "id": "d0.5_i4",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "ALPHA-3814",
+        "generated": "The magic word for the spell is \"magic.\"",
+        "prompt_tokens": 4022
+      },
+      {
+        "id": "d0.5_i5",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "QUANTUM-3315",
+        "generated": "The magic word for the spell is \"sunny.\"",
+        "prompt_tokens": 4012
+      },
+      {
+        "id": "d0.5_i6",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "CRIMSON-9171",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4022
+      },
+      {
+        "id": "d0.5_i7",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "NOVA-2022",
+        "generated": "The hidden activation phrase is \"The quick brown fox jumps over the lazy dog.\"",
+        "prompt_tokens": 4050
+      },
+      {
+        "id": "d0.5_i8",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "ECLIPSE-9491",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4051
+      },
+      {
+        "id": "d0.5_i9",
+        "depth": 0.5,
+        "hit": false,
+        "expected": "SILVER-9697",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 3994
+      },
+      {
+        "id": "d0.75_i0",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "QUANTUM-7657",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 3999
+      },
+      {
+        "id": "d0.75_i1",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ZETA-1555",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4047
+      },
+      {
+        "id": "d0.75_i2",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "DRAGON-4561",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4048
+      },
+      {
+        "id": "d0.75_i3",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "OMEGA-2621",
+        "generated": "The hidden activation phrase is \"I enjoy reading science fiction novels on rainy afternoons.\"",
+        "prompt_tokens": 3995
+      },
+      {
+        "id": "d0.75_i4",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "QUANTUM-4770",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4025
+      },
+      {
+        "id": "d0.75_i5",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ALPHA-8500",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4036
+      },
+      {
+        "id": "d0.75_i6",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "NOVA-8615",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4001
+      },
+      {
+        "id": "d0.75_i7",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "NOVA-6417",
+        "generated": "The emergency override password is 1234.",
+        "prompt_tokens": 4063
+      },
+      {
+        "id": "d0.75_i8",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ECLIPSE-7551",
+        "generated": "The name of the mysterious artifact is the \"Eternal Flame.\"",
+        "prompt_tokens": 3980
+      },
+      {
+        "id": "d0.75_i9",
+        "depth": 0.75,
+        "hit": false,
+        "expected": "ZETA-8167",
+        "generated": "Exploring the outdoors is a great way to relieve stress.",
+        "prompt_tokens": 4015
+      },
+      {
+        "id": "d0.9_i0",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "OMEGA-4949",
+        "generated": "The hidden activation phrase is \"The recipe calls for a dash of cinnamon and a cup of sugar.\"",
+        "prompt_tokens": 4051
+      },
+      {
+        "id": "d0.9_i1",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "DRAGON-3157",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4003
+      },
+      {
+        "id": "d0.9_i2",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "CRIMSON-6295",
+        "generated": "The name of the mysterious artifact is the \"Mysterious Artifact.\"",
+        "prompt_tokens": 4038
+      },
+      {
+        "id": "d0.9_i3",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "OMEGA-9093",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4057
+      },
+      {
+        "id": "d0.9_i4",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ZETA-3846",
+        "generated": "The hidden activation phrase is \"Space exploration has revealed thousands of exoplanets in our galaxy.\"",
+        "prompt_tokens": 3951
+      },
+      {
+        "id": "d0.9_i5",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ECLIPSE-3138",
+        "generated": "The magic word for the spell is \"sorcery.\"",
+        "prompt_tokens": 4019
+      },
+      {
+        "id": "d0.9_i6",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "OMEGA-1095",
+        "generated": "The secret access code to the vault is 1234.",
+        "prompt_tokens": 4059
+      },
+      {
+        "id": "d0.9_i7",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ECLIPSE-4090",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4055
+      },
+      {
+        "id": "d0.9_i8",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "ALPHA-8503",
+        "generated": "The hidden activation phrase is \"The weather today is surprisingly sunny despite the forecast.\"",
+        "prompt_tokens": 4070
+      },
+      {
+        "id": "d0.9_i9",
+        "depth": 0.9,
+        "hit": false,
+        "expected": "NOVA-3767",
+        "generated": "The hidden activation phrase is \"Space exploration has revealed thousands of exoplanets in our galaxy.\"",
+        "prompt_tokens": 4033
+      }
+    ]
+  }
+}
