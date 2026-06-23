@@ -13,8 +13,8 @@ This report presents the empirical findings and validation of the **HeadGenome**
 |---|---|---|---|
 | **GPT-2 Silhouette** | 0.2449 (random) | **0.4679** | ✅ Measured |
 | **Llama-1B PPL @ Budget 64** (SLLM baseline) | 132.44 | **9.98** | ✅ Measured (13.3x better) |
-| **Local Ablation PPL** (baseline 12.23) | — | **211.70** (+199.47) | ✅ Measured |
-| **Sink Ablation PPL** (baseline 12.23) | — | **12.32** (+0.09) | ✅ Measured |
+| **Local Ablation PPL** (baseline 14.06) | — | **258.95** (+244.89) | ✅ Measured |
+| **Sink Ablation PPL** (baseline 14.06) | — | **213.43** (+199.37) | ✅ Measured |
 | **Llama Diffuse Retrieval** | 1 head @ δ>0.30 | **18 heads @ δ>0.20** | ✅ Measured |
 | **Decode FLOP Savings @ N=4096** (GPT-2) | O(N) per head | **84.3%*** | ⚠️ Theoretically Derived |
 
@@ -261,8 +261,8 @@ However, the local and sink ablations successfully proved causality by causing m
 
 ## 13. Conclusions
 
-1. **The taxonomy is real**: GPT-2 silhouette 0.4679 vs 0.2449 random, and causal ablation confirms local heads are the backbone (PPL 12→212).
-2. **Sink heads are no-ops**: Ablating all 15 sink heads causes ≤0.09 PPL change.
+1. **The taxonomy is real**: GPT-2 silhouette 0.4679 vs 0.2449 random, and causal ablation confirms local heads are the backbone (PPL 14→258).
+2. **Sink heads are necessary for stability**: Ablating all 15 sink heads causes severe degradation (+199.36 PPL change), proving they are not no-ops and track essential local structure.
 3. **Retrieval exists but is architecture-dependent**: Strong and specialized in MHA (GPT-2), diffuse in GQA (Llama), rare but present in small GQA (Qwen).
 4. **The 13x win on Llama is real**: 9.98 vs 132.44 PPL at budget=64. But it works specifically because Llama concentrates critical heads in only a few layers.
 5. **GPT-2/Qwen need head-granularity routing**: The layer-level policy over-preserves and underperforms StreamingLLM. Head-level sparse eviction is the next engineering milestone.
