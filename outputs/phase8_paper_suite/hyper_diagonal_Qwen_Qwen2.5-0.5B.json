@@ -1,0 +1,12 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B",
+  "top_hyper_diagonal_ratio_min": 8.87476485578625,
+  "exact_copy_accuracy": {
+    "baseline": 0.25,
+    "ablated": 0.75
+  },
+  "semantic_copy_accuracy": {
+    "baseline": 0.75,
+    "ablated": 0.75
+  }
+}
