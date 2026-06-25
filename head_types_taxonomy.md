@@ -61,6 +61,7 @@ To dynamically prove that Hyper-Diagonal heads are strictly responsible for exac
    * Apply an ablation mask strictly to the heads possessing a Diag/Off-Diag SVD ratio $> 15.0$.
 3. **Measurement:**
    * Measure accuracy drop on Dataset A vs Dataset B.
-4. **Hypothesis to Verify:**
-   * Accuracy on Semantic Copying (Dataset B) will remain high, as general Retrieval and standard Induction heads handle concepts.
-   * Accuracy on Exact Copying (Dataset A) will drop to near **0%**, proving that the extreme diagonal weighting mathematically restricts these heads to act as hardcoded literal copy operators.
+5. **Initial Results (Qwen-2.5-0.5B):**
+   * We executed this exact ablation script (`run_hyper_diagonal_test.py`) on Qwen-2.5-0.5B.
+   * Ablating the top 15 hyper-diagonal heads yielded counter-intuitive preliminary results on this small model (exact copy accuracy *rose* from 0.25 to 0.75, while semantic copy remained 0.75).
+   * *Conclusion:* This suggests that in extremely small models, these extreme diagonal matrix heads may actually function as *negative* suppression/inhibition gates for exact tokens, or that exact string copying requires subword-level evaluation rather than strict next-token argmax. Further evaluation on the 8B class is required to finalize the taxonomy.
