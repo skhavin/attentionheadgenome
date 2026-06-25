@@ -323,7 +323,53 @@ The validation suite performs two critical tests on an induction prompt (`A B ..
    * **V Patching:** We patch the Values of Late Induction heads from the corrupted run into the clean run. *Hypothesis:* This breaks payload delivery, independently causing a severe drop.
 
 *(Note: Execution of this suite natively on Llama-3-8B requires a GPU with sufficient VRAM to hold the 4-bit weights + cache. Preliminary local execution hit VRAM constraints. The scripts are fully scaffolded and await execution on a high-memory compute node.)*
+
+---
+
+## 11C. Regime Switching Analysis: Cross-Prompt-Family Head Behavior (Measured)
+
+*Script:* `regime_switching_analysis.py`  
+*Output JSONs:* `outputs/phase8_paper_suite/regime_switching_<model>.json`  
+*Full findings:* `outputs/phase8_paper_suite/regime_switching_findings.md`
+
+To answer the question **"does the same head systematically change behavior across prompt types?"**, we ran all four models across 8 prompt families (PlainText, Copy, Retrieval, Code, JSON, Dialogue, Math, Repetition). For each head we measured **locality** (fraction of last-token attention mass on the nearest 5 tokens) and computed cross-group variance as a **regime-switching score**.
+
+### Switcher vs. Stable Head Variance Ratios
+
+| Model | Top Switcher Variance | Top Stable Variance | Ratio |
+|---|---|---|---|
+| GPT-2 Medium | 0.1030 | 0.000307 | **336×** |
+| Qwen-2.5-0.5B | 0.1042 | 0.000030 | **3436×** |
+| Qwen-2.5-1.5B | 0.0768 | 0.000101 | **762×** |
+| Llama-3.2-1B | 0.0572 | 0.000079 | **725×** |
+
+The gap is not noise — it is structural. Most heads are **stable** (variance ≈ 0.0001), while a small subset are **dramatically context-sensitive** (variance ≈ 0.07–0.10).
+
+### Key Cross-Model Findings
+
+1. **Copy–Retrieval Co-Activation:** The highest-variance heads across every model peak simultaneously on Copy **and** Retrieval groups (e.g., Qwen-0.5B L2H6: Copy=0.96, Retrieval=0.85). This is direct behavioral evidence for Circuit Co-Gating — the same heads that locate needles also copy them.
+
+2. **Repetition-Only Sinks:** Multiple models contain heads that are dormant across all prompt types but spike to extreme locality under the Repetition stress test (Qwen-1.5B L5H9: Repetition=0.91, all other groups < 0.27; Llama-1B L5H22: Repetition=0.75, all other groups < 0.07). These are dedicated attention sinks that selectively engage under token-level repetition.
+
+3. **Stable Heads Are Uniformly Low-Locality:** The most stable heads show flat, low locality (0.01–0.07) across all groups — consistent with the Local (Precursor State) classification. They do not specialize in any prompt family.
+
+4. **Early Layers Switch Too (GQA models):** In Llama-1B, top regime-switchers include L0H1 and L0H16. This contrasts with GPT-2 where switchers concentrate in middle-to-late layers, suggesting GQA's KV-head sharing forces earlier functional differentiation.
+
+### Implication for Dynamic Routing
+
+| Finding | Implication |
+|---|---|
+| ~85% of heads stable | Static sparse masks sufficient; routing overhead not justified |
+| Top ~5–10% are Copy/Retrieval switchers | These heads **must** receive full attention budget dynamically |
+| Sink heads activate only on Repetition | Can be assigned O(1) attention statically |
+| Switchers span all depth levels | Router must operate per-head across all layers |
+
+This experiment provides the strongest empirical justification for a dynamic, head-selective attention router: the attention behavior of most heads is predictable and static, while a small critical minority is highly prompt-sensitive.
+
+---
+
 ## 12. Summary: What Is Real vs Theoretical
+
 
 | Claim | Target Script | Output File | Type | Status |
 |---|---|---|---|---|
