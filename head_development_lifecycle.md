@@ -1,6 +1,6 @@
 # The Attention Head Developmental Lifecycle
 
-This document explicitly details the newly discovered, mathematically continuous developmental maturation cycle of attention heads. It outlines how attention heads evolve from basic routers into specialized circuits, transitioning the HeadGenome taxonomy from a static classification system to an evolutionary biological model.
+This document explicitly details the newly discovered, mathematically continuous developmental maturation cycle of attention heads. It outlines how attention heads evolve from basic routers into specialized circuits, transitioning the HeadGenome taxonomy from a static classification system to a developmental structural model.
 
 ---
 
@@ -12,15 +12,15 @@ This document explicitly details the newly discovered, mathematically continuous
 * **The Result:** There is a universal, massive positive correlation ($r = 0.63$ to $0.73$, $p = 1.92 \times 10^{-127}$) between a head's relative depth in the network and its V/Q ratio. 
 * **Meaning:** Early heads act strictly as "query-dominant locators" searching for context. Deep heads act strictly as "value-dominant delivery systems" outputting retrieved payloads.
 
-## 2. The Stem Cell Hypothesis (Local Heads)
+## 2. The Precursor State Hypothesis (Local Heads)
 **The Mechanism:** Not all heads are specialized. The vast majority of a Transformer (80-85%) consists of Local Heads.
 * **Execution Script:** `outputs/final_artifacts/analyze_patterns.py`
 * **Output Data:** `outputs/final_artifacts/emerging_patterns_report.md`
 * **Methodology:** By mapping static SVD and entropy patterns, we determined that Local heads possess completely neutral structural profiles.
-* **Meaning:** Local heads operate as undifferentiated "stem cells". They form the base syntactic trunk of the network. They process local sliding-window grammar. When a network scales, it doesn't create entirely new head types; it forces specific deep Local heads to specialize.
+* **Meaning:** Local heads operate as undifferentiated "precursor states". They form the base syntactic trunk of the network. They process local sliding-window grammar. When a network scales, it doesn't create entirely new head types; it forces specific deep Local heads to specialize.
 
-## 3. The Evolutionary Bifurcation Principle
-**The Mechanism:** When a stem cell (Local head) is forced to mature deep in the network to handle complex long-range dependencies, its trajectory is not a straight line. It undergoes a severe functional bifurcation.
+## 3. The Structural Bifurcation Principle
+**The Mechanism:** When a precursor state (Local head) is forced to mature deep in the network to handle complex long-range dependencies, its trajectory is not a straight line. It undergoes a severe functional bifurcation.
 * **Execution Script:** `outputs/final_artifacts/plot_second_axis.py`
 * **Output Data:** `outputs/final_artifacts/second_axis_curve.png`
 * **Methodology:** We plotted the continuous V/Q developmental axis against the dynamic entropy-collapse metric ($\Delta$).

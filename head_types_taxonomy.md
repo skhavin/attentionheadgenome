@@ -11,12 +11,12 @@ This document comprehensively outlines the functional attention head taxonomy di
 * **Methodology:** Classified via static mass accumulation. A head is a Sink if it overwhelmingly allocates attention to the first token (or BOS token) across diverse distributions, regardless of the prompt's linguistic structure.
 * **Verification:** Causal ablation of the 15 Sink heads in GPT-2 degraded perplexity by +199.37 points (`outputs/phase5/fixed_ablation.json`), proving they are necessary for baseline coherence.
 
-## 2. Local Heads (The "Stem Cells")
+## 2. Local Heads (The "Precursor State")
 **Function:** The default routing backbone of the model. They process syntactic grammar and immediate neighboring token relationships (e.g., subject-verb agreement).
 * **Execution Script:** `phase1/step2_threshold_sensitivity.py` and `outputs/final_artifacts/paper_analysis_suite.py`
 * **Output Data:** `outputs/phase1/gpt2_mechanistic_labels.json`
 * **Methodology:** Classified by neutral dynamic entropy. These heads show no massive entropy collapse ($\Delta \approx 0$) when presented with a specific structural task (like Needle-In-A-Haystack or Induction). They operate on a sliding window.
-* **Verification:** Ablating Local heads destroys model coherence instantly (+244.89 PPL on GPT-2). They act as the "developmental stem cells" from which specialized heads evolve.
+* **Verification:** Ablating Local heads destroys model coherence instantly (+244.89 PPL on GPT-2). They act as the "precursor state" from which specialized heads evolve.
 
 ## 3. Retrieval Heads
 **Function:** Broad contextual locators. They scan the entire context window to find semantically relevant needles.
@@ -38,8 +38,8 @@ This document comprehensively outlines the functional attention head taxonomy di
 * **Output Data:** `outputs/phase8_paper_suite/statistical_suite_results.json`
 * **Methodology:** Separated from Early Induction via the same K-Means clustering. Late Induction heads reside extremely deep in the network ($> 0.5$ relative depth) and are highly value-dominant (high V/Q), reflecting their role as "delivery mechanisms."
 
-## 6. Hyper-Diagonal "Hard" Induction Heads (Exact String Copying)
-**Function:** A distinct outlier sub-population responsible for exact, character-for-character string copying (e.g., URLs, absolute UUIDs, exact variable names) rather than semantic copying.
+## 6. Hyper-Diagonal Heads (Hypothesized Exact String Copying)
+**Function:** A distinct outlier sub-population hypothesized to be responsible for exact, character-for-character string copying (e.g., URLs, absolute UUIDs, exact variable names) rather than semantic copying.
 * **Execution Script:** `outputs/final_artifacts/analyze_patterns.py`
 * **Output Data:** `outputs/final_artifacts/emerging_patterns_report.md`
 * **Methodology:** Identified by analyzing the Singular Value Decomposition (SVD) of the weight matrices. These 41 isolated heads possess an extreme Diagonal-to-Off-Diagonal weight matrix ratio of **18.27** (compared to the model average of ~4.0).
@@ -48,7 +48,7 @@ This document comprehensively outlines the functional attention head taxonomy di
 
 ## 7. Experimental Design: Proving Hyper-Diagonal Copying
 
-To dynamically prove that Hyper-Diagonal heads are strictly responsible for exact copying across all models, we have scaffolded the following experiment (implemented in `outputs/phase8_paper_suite/causal_patching_scaffold.py`):
+To dynamically test if Hyper-Diagonal heads are responsible for exact copying across all models, we have scaffolded the following experiment (implemented in `outputs/phase8_paper_suite/causal_patching_scaffold.py`):
 
 ### The Exact vs. Semantic Copy Experiment
 **Goal:** Prove that ablating Hyper-Diagonal heads selectively destroys exact string copying while leaving semantic retrieval intact.
@@ -61,6 +61,9 @@ To dynamically prove that Hyper-Diagonal heads are strictly responsible for exac
    * Apply an ablation mask strictly to the heads possessing a Diag/Off-Diag SVD ratio $> 15.0$.
 3. **Measurement:**
    * Measure accuracy drop on Dataset A vs Dataset B.
+4. **Hypothesis to Verify:**
+   * Accuracy on Semantic Copying (Dataset B) will remain high, as general Retrieval and standard Induction heads handle concepts.
+   * Accuracy on Exact Copying (Dataset A) will drop to near **0%**, testing if the extreme diagonal weighting mathematically restricts these heads to act as hardcoded literal copy operators.
 5. **Initial Results (Qwen-2.5-0.5B):**
    * We executed this exact ablation script (`run_hyper_diagonal_test.py`) on Qwen-2.5-0.5B.
    * Ablating the top 15 hyper-diagonal heads yielded counter-intuitive preliminary results on this small model (exact copy accuracy *rose* from 0.25 to 0.75, while semantic copy remained 0.75).

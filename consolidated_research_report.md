@@ -11,26 +11,29 @@ Based on recent multi-variate analysis, the narrative of this research naturally
 
 # Part I: The Science (Interpretability)
 
-**Core Thesis:** Attention heads follow a universal developmental lifecycle. The four previously identified types (Sink, Local, Retrieval, Induction) are not independent circuits, but rather phases of a continuous maturation process. Local heads function as "developmental stem cells" that bifurcate into Retrieval or Induction at a critical specialization point. 
+**Core Thesis:** Transformer heads occupy a low-dimensional developmental manifold. Static geometry predicts a head's developmental stage, dynamic probes identify its functional specialization, and sparse compression algorithms can exploit this specialization.
 
-## The Developmental Lifecycle
-Our most compelling finding is a continuous, quantitative, cross-architecture mechanism underlying attention head development.
+## 1. The V/Q Developmental Scaling Law
+Our strongest structural finding is a continuous, quantitative, cross-architecture mechanism underlying attention head development.
 
-* **The V/Q Scaling Law:** There is a remarkably strong positive correlation between a head's relative depth and its $||V|| / ||Q||$ weight norm ratio. This scaling law holds strictly across all models ($r = 0.63$ to $0.73$) with global statistical significance ($p = 1.92 \times 10^{-127}$). Early layers focus on "querying" (low V/Q), while deep layers focus on "payload delivery" (high V/Q).
-* **The Bifurcation Finding:** Plotting the V/Q ratio against dynamic entropy-collapse reveals that the developmental track is not a straight line, but a branching tree. 
-  * Heads transition sequentially: **Sink $\to$ Local**.
-  * Once a head matures into a generalized Local head, the trajectory **bifurcates**. 
-  * Branch A specializes into **Retrieval** (highest V/Q, positive entropy collapse $\Delta > 0.30$).
-  * Branch B specializes into **Induction** (slightly lower V/Q, negative entropy collapse $\Delta < -0.50$).
+* **The V/Q Scaling Law:** There is a massive, universal positive correlation between a head's relative depth and its $||V|| / ||Q||$ weight norm ratio. This scaling law holds strictly across all models (GPT-2 $r=0.681$, Qwen-0.5B $r=0.734$, Qwen-1.5B $r=0.647$, Llama-1B $r=0.635$) with global statistical significance ($p = 1.92 \times 10^{-127}$). Early layers focus on "querying" (low V/Q locators), while deep layers focus on "payload delivery" (high V/Q systems).
 
-## Head Subtypes & Structural Evidence
-The Induction and Local classes decompose into further developmentally ordered regimes.
+## 2. The Developmental Manifold
+The four functional head types (Sink, Local, Retrieval, Induction) are not independent discrete circuits, but rather stable regions of a continuous developmental manifold.
+* Heads transition sequentially: **Sink $\to$ Local**.
+* Local heads occupy the **branching region** of the developmental manifold.
+* Once a head matures into a generalized Local head, its trajectory structurally bifurcates.
+* **Branch A (Retrieval):** The head pushes V/Q to the absolute maximum and exhibits positive entropy collapse ($\Delta > 0.30$).
+* **Branch B (Induction):** The head maintains high V/Q but reverses its entropy trajectory, exhibiting severe negative entropy collapse ($\Delta < -0.50$).
 
-* **Early vs. Late Induction:** Across all four model families, induction heads separate into two structurally stable subtypes. Early induction heads are query-dominant and occur at lower relative depths, while late induction heads are value-dominant and occur substantially deeper in the network. This split replicates independently inside GPT-2, Qwen-2.5, and Llama-3.2 models, and is predicted by V/Q ratio alone with 80.8% accuracy. These results provide **strong evidence for a universal structural split**.
+## 3. Functional Specialization & Subtypes
+The Induction branch decomposes into further developmentally ordered regimes.
+
+* **Early vs. Late Induction Split:** Across all four model families, induction heads separate into two structurally stable subtypes. Early induction heads are query-dominant and occur at lower relative depths, while late induction heads are value-dominant and occur substantially deeper in the network. This split provides **strong evidence for a universal structural split**.
 * **Mechanistic Hypothesis:** We hypothesize that the early regime supports prefix matching, while the late regime supports payload transfer. *Note: Causal Q/K/V patching is required to validate this mechanistic interpretation.*
 * **Bootstrap Stability:** Resampling confirms the split is structurally robust (ARI = $0.741 \pm 0.289$).
 * **Depth-Only Null Control:** While depth alone predicts the Early/Late split with 87.9% accuracy, the V/Q ratio and weight features contain independent structural signal that increases predictive accuracy to **91.1%**.
-* **Hyper-Diagonal "Hard" Induction:** We identified a distinct outlier sub-population of 41 heads with an extreme Diag/Off-Diag SVD ratio of 18.27 (vs ~4.0 average). We hypothesize these are "Hard Induction" heads responsible for exact string copying (e.g., URLs, IDs).
+* **Hyper-Diagonal Induction Hypothesis:** We identified a distinct outlier sub-population of 41 heads with an extreme Diag/Off-Diag SVD ratio of 18.27. We hypothesize these are "Hard Induction" heads responsible for exact string copying. Dynamic validation is pending.
 
 ## 1. Executive Summary & Core Results
 
@@ -100,7 +103,7 @@ The savings plateau at large N because the critical (retrieval+induction) heads 
 
 ---
 
-## 4. Critical Methodological Finding: Two-Axis Taxonomy (Measured)
+## 4. Dynamic Probing & Histogram Invisibility (Measured)
 
 All KMeans clusters collapse to the same steepness-of-decay profile when cross-referenced against mechanistic labels:
 
@@ -112,7 +115,7 @@ All KMeans clusters collapse to the same steepness-of-decay profile when cross-r
 | C3 (n=80) | 2 | 69 | 4 | 5 | local |
 
 > [!IMPORTANT]
-> Retrieval and induction heads are histogram-invisible. Functional classification requires a second axis: synthetic entropy-collapse probing. This **Histogram Invisibility Theorem** demonstrates that weight clustering alone fails to separate functional roles, serving as proof that static weights $\neq$ function.
+> **Histogram Invisibility** demonstrates that weight clustering alone fails to separate functional roles. Functional classification requires a second axis: dynamic probing. This explains why static weights map to geometry, but dynamic probes are required to map to function.
 
 ---
 
@@ -183,7 +186,7 @@ Leave-One-Model-Out cross-validation, Random Forest on SVD/norm/entropy weight f
 
 # Part II: The Engineering (Systems)
 
-**Core Thesis:** By understanding the runtime taxonomy of attention heads, we can heavily compress attention during both Prefill and Decode phases without requiring retraining.
+**Core Thesis:** By understanding the functional specialization of attention heads across the developmental manifold, we can exploit this geometry to heavily compress attention during both Prefill and Decode phases.
 
 ## 8. Phase 4A: Decode KV Eviction on Llama-3.2-1B (Measured)
 

@@ -1,12 +1,12 @@
-# The HeadGenome Theorems & Laws
+# The HeadGenome Empirical Findings
 **Empirical Verification & Methodology Document**
 
-This document serves as the absolute ground-truth verification of the 7 core laws discovered during the HeadGenome project. Every law listed below is backed by real, measured data obtained through explicit computational methodology, without theoretical hallucinations.
+This document serves as the absolute ground-truth verification of the 7 core empirical findings discovered during the HeadGenome project. Every finding listed below is backed by real, measured data obtained through explicit computational methodology.
 
 ---
 
-## 1. The Histogram Invisibility Theorem
-**The Core Law:** Static Weights $\neq$ Real-Time Workflow. Mapping the functional ecology of a Transformer cannot be done by analyzing idle parameters; it requires a second axis of dynamic, synthetic entropy-collapse probing.
+## Finding 1: Histogram Invisibility
+**The Core Observation:** Static Weights $\neq$ Real-Time Workflow. Mapping the functional ecology of a Transformer cannot be done by analyzing idle parameters; it requires a second axis of dynamic, synthetic entropy-collapse probing.
 
 ### Verification Data
 * **Data File:** `outputs/phase8_paper_suite/statistical_suite_results.json` and `outputs/phase2/cluster_metrics.json`
@@ -16,8 +16,8 @@ This document serves as the absolute ground-truth verification of the 7 core law
 
 ---
 
-## 2. The $||V||/||Q||$ Developmental Scaling Law
-**The Core Law:** Transformers utilize a temporal structural pipeline. Early layers are strictly query-dominant "locators" (low $||V|| / ||Q||$), while deep layers mature into value-dominant "payload delivery systems" (high $||V|| / ||Q||$).
+## Finding 2: The $||V||/||Q||$ Developmental Scaling Law
+**The Core Observation:** Transformers utilize a temporal structural pipeline. Early layers are strictly query-dominant "locators" (low $||V|| / ||Q||$), while deep layers mature into value-dominant "payload delivery systems" (high $||V|| / ||Q||$).
 
 ### Verification Data
 * **Data File:** `outputs/phase8_paper_suite/statistical_suite_results.json`
@@ -27,8 +27,8 @@ This document serves as the absolute ground-truth verification of the 7 core law
 
 ---
 
-## 3. The Evolutionary Bifurcation Principle
-**The Core Law:** All heads start as basic information routers (Sinks $\to$ Local). Once a head matures, its developmental trajectory hits a hard branching point into either Branch A (Retrieval) or Branch B (Induction).
+## Finding 3: The Developmental Bifurcation Principle
+**The Core Observation:** All heads start as basic information routers (Sinks $\to$ Local). Once a head matures, its developmental trajectory hits a hard branching point into either Branch A (Retrieval) or Branch B (Induction).
 
 ### Verification Data
 * **Data File:** `outputs/phase1/gpt2_mechanistic_labels.json` and `outputs/phase1/robust_entropy_gpt2.json`
@@ -38,8 +38,8 @@ This document serves as the absolute ground-truth verification of the 7 core law
 
 ---
 
-## 4. The Perplexity (PPL) Illusion
-**The Core Law:** Local fluency $\neq$ Contextual reasoning. Perplexity is a superficial metric that completely masks the catastrophic collapse of long-range routing circuits.
+## Finding 4: The Perplexity (PPL) Illusion
+**The Core Observation:** Local fluency $\neq$ Contextual reasoning. Perplexity is a superficial metric that completely masks the catastrophic collapse of long-range routing circuits.
 
 ### Verification Data
 * **Data File:** `outputs/phase6/sparse_prefill.json` and `outputs/phase6/ruler_comprehensive.json`
@@ -49,8 +49,8 @@ This document serves as the absolute ground-truth verification of the 7 core law
 
 ---
 
-## 5. The Geometric Law of Locality Leakage
-**The Core Law:** If a needle's distance to the generation prompt falls inside the local sliding window $W$, the model succeeds via local leakage. The moment the prompt scales outside $W$, retrieval drops off a 0% cliff.
+## Finding 5: The Geometric Principle of Locality Leakage
+**The Core Observation:** If a needle's distance to the generation prompt falls inside the local sliding window $W$, the model succeeds via local leakage. The moment the prompt scales outside $W$, retrieval drops off a 0% cliff.
 
 ### Verification Data
 * **Data File:** `outputs/phase6/ruler_comprehensive.json`
@@ -64,8 +64,8 @@ This document serves as the absolute ground-truth verification of the 7 core law
 
 ---
 
-## 6. The Positional Confound of Cache Eviction
-**The Core Law:** Context eviction introduces a spatial shifting effect that fundamentally breaks Absolute Position Embeddings. Cache eviction mechanisms are structurally dependent on relative positioning frameworks like RoPE.
+## Finding 6: The Positional Confound of Cache Eviction
+**The Core Observation:** Context eviction introduces a spatial shifting effect that fundamentally breaks Absolute Position Embeddings. Cache eviction mechanisms are structurally dependent on relative positioning frameworks like RoPE.
 
 ### Verification Data
 * **Data File:** `outputs/phase4/routing_policy_results.json` and internal GPT-2 debug logs.
@@ -75,8 +75,8 @@ This document serves as the absolute ground-truth verification of the 7 core law
 
 ---
 
-## 7. The Law of Circuit Co-Gating (The 0% Cliff Theorem)
-**The Core Law:** Information routing in a Transformer is a non-linear logical AND gate. Long-range capabilities depend on a strict intersection of complementary sub-circuits (Locators + Copiers). 
+## Finding 7: Circuit Co-Gating (The 0% Cliff)
+**The Core Observation:** Information routing in a Transformer is a non-linear logical AND gate. Long-range capabilities depend on a strict intersection of complementary sub-circuits (Locators + Copiers). 
 
 ### Verification Data
 * **Data File:** `outputs/phase6/retrieval_curve_synthetic_ruler.json`
