@@ -1,0 +1,11 @@
+{
+  "num_hyper_diagonal_heads": 0,
+  "exact_copy_accuracy": {
+    "baseline": 0.75,
+    "ablated": 0.75
+  },
+  "semantic_copy_accuracy": {
+    "baseline": 0.75,
+    "ablated": 0.75
+  }
+}
