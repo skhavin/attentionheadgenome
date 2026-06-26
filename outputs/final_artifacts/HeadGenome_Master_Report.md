@@ -194,6 +194,23 @@ graph TD
 
 *Figure 6: HeadGenome Atlas — Anatomical Specialization Across Architectures. This visualization abandons abstract statistics to render the literal 2D physical matrix (Layers $\times$ Heads) of every model. Each of the 1,568 dots represents a specific physical attention head. By reading from top (Layer 0) to bottom, the anatomical maturation becomes instantly visible: models begin with structural Sinks (purple) or undifferentiated Local precursors (faded green). Deeper into the network architecture, highly specialized cognitive routing circuits—Retrieval (blue) and Early/Late Induction (orange/red)—differentiate out of the precursor pool. This provides a literal, head-by-head mapping of how transformer architectures physically organize their internal processing.*
 
+### 3.3 Statistical Grounding of Spatial Enrichment
+
+To mathematically validate the visual progression shown in the HeadGenome Atlas, we computed the empirical Mean Relative Depth and 95% Confidence Intervals (CI) for all functional classes. 
+
+| Head Type | n | Mean Relative Depth | 95% CI |
+|---|---|---|---|
+| Sink | 28 | 0.406 | [0.319, 0.494] |
+| Local | 1,319 | 0.472 | [0.456, 0.489] |
+| Retrieval | 23 | 0.495 | [0.399, 0.591] |
+| Early Induction | 74 | 0.361 | [0.341, 0.381] |
+| Late Induction | 124 | 0.603 | [0.586, 0.619] |
+
+Pairwise Mann-Whitney U tests confirm that the spatial enrichment of highly specialized cognitive circuits is statistically significant. The Late Induction circuit is definitively deeper than the Early Induction circuit ($p=4.17 \times 10^{-32}$), confirming the architectural bifurcation. Late Induction is also structurally distinct from the Local precursor pool ($p=3.39 \times 10^{-5}$) and Sinks ($p=2.11 \times 10^{-8}$). 
+
+> [!CAUTION]
+> **A Note on "Maturation":** While the terminology of "developmental waves" and "maturation" is a highly effective analogy for spatial progression down the forward-pass, these statistics reflect **spatial enrichment** (where circuits live at inference time), not chronological developmental lineage during backpropagation training. Claims of exact lineage require tracing checkpoints over training time.
+
 ## 3.1 The Metric of Dynamic Specialization: Entropy Collapse ($\Delta$)
 
 To measure dynamic specialization, we define Attention Entropy for head $h$ at token step $t$:
