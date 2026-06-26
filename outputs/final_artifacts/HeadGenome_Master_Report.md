@@ -302,7 +302,7 @@ Where:
 *Note:* These numbers represent theoretical geometric ceilings based directly on our empirical regime-switching findings (Section 4.1), which proved that ~85% of heads exhibit no dynamic regime-switching capability and thus do not require full $O(N)$ computational attention mass.
 
 ### 6.5 Empirical Hardware Validation
-To empirically validate these theoretical FLOP ceilings, we ran a direct wall-clock prefill measurement on an NVIDIA A100-80GB GPU using Qwen-2.5-0.5B at sequence length $N=4096$. By enforcing a sliding window mask ($W=512$) using a custom PyTorch causal block-masking implementation to simulate the theoretical reduction for the ~85% of non-critical heads:
+To empirically validate these theoretical FLOP ceilings, we ran a direct wall-clock prefill measurement on an NVIDIA RTX 3050 Laptop GPU using Qwen-2.5-0.5B at sequence length $N=4096$. By enforcing a sliding window mask ($W=512$) using a custom PyTorch causal block-masking implementation to simulate the theoretical reduction for the ~85% of non-critical heads:
 * **Dense $O(N^2)$ Prefill Time:** $2688.36$ ms
 * **HeadGenome Sparse Prefill Time:** $734.01$ ms
 * **Empirical Speedup:** **3.66x** reduction in raw wall-clock compute time on a single sequence.
