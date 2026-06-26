@@ -15,10 +15,6 @@ We demonstrate that transformer attention heads are not homogeneous units, nor a
 
 This report serves as the mathematical and empirical sequel to early mechanistic discoveries of induction heads in isolated, attention-only toy models. By mapping the full attention ecology across production-grade LLMs (GPT-2, Qwen-2.5, Llama-3.2), we expose the "Perplexity Illusion"—where models maintain local linguistic fluency despite a total collapse of long-range routing—and formally map the structural circuit co-gating that dictates how retrieval and induction sub-species interact.
 
-![HeadGenome Map](headgenome_map.png)
-
-*Figure 1: Spatial Distribution of Functional Attention Head Types Across Transformer Architectures. The empirical absolute layer coordinates for all 1,568 analyzed heads. A Kruskal-Wallis test across the five classes confirms massive spatial enrichment ($H=535.83, p=1.19 \times 10^{-114}$). Notably, Late Induction heads (Layer $17.8 \pm 4.8$) are significantly enriched in deeper layers relative to Early Induction (Layer $5.2 \pm 3.8$), Sinks (Layer $7.9 \pm 5.8$), and Local Precursors (Layer $9.8 \pm 6.1$). Note: The density of points varies across columns because architectures possess different numbers of total heads (e.g., Llama-3.2-1B has 512, while GPT-2 has 192).*
-
 ---
 
 ## Introduction: The Unified Field Theory of Attention
@@ -132,7 +128,7 @@ This massive, cross-architectural scaling law confirms that attention heads matu
 
 ![V/Q Developmental Scaling Law](developmental_curve.png) 
 
-*Figure 2: The V/Q Spatial Scaling Law. The black dashed line tracks the sequential spatial progression of the species centroids from Sink (early) $\rightarrow$ Local (mid) $\rightarrow$ Retrieval/Induction (deep). Note: This 2D projection collapses the full multi-dimensional manifold; the overlap of Sink and Retrieval centroids here occurs because they separate fundamentally on the orthogonal dynamic entropy axis (see Fig 4). The background scatter exhibits high variance in early layers, which is why global linear regression ($r \approx 0.63 - 0.73$ per architecture, calculated using bootstrap resampling $B=10,000$ to guarantee stability) is required to formally prove the cross-architectural scaling law.*
+*Figure 1: The V/Q Spatial Scaling Law. The black dashed line tracks the sequential spatial progression of the species centroids from Sink (early) $\rightarrow$ Local (mid) $\rightarrow$ Retrieval/Induction (deep). Note: This 2D projection collapses the full multi-dimensional manifold; the overlap of Sink and Retrieval centroids here occurs because they separate fundamentally on the orthogonal dynamic entropy axis (see Fig 3). The background scatter exhibits high variance in early layers, which is why global linear regression ($r \approx 0.63 - 0.73$ per architecture, calculated using bootstrap resampling $B=10,000$ to guarantee stability) is required to formally prove the cross-architectural scaling law.*
 
 ---
 
@@ -176,19 +172,23 @@ graph TD
     Ind --> LInd
 ```
 
-*Figure 3: Functional Phylogenetic Tree. The structural organization inferred from fully trained models, demonstrating the split from undifferentiated Local processors into highly specialized routing mechanics.*
+*Figure 2: Functional Phylogenetic Tree. The structural organization inferred from fully trained models, demonstrating the split from undifferentiated Local processors into highly specialized routing mechanics.*
 
 ![The Structural Flow of Attention Heads](developmental_sankey.png)
 
-*Figure 4: The Structural Flow of Attention Heads (Sankey). Widths are proportional to the global cross-architectural head counts. ~84% of heads terminate spatial progression as Local Precursors, while ~12% split into specialized Retrieval and Induction mechanisms.*
+*Figure 3: The Structural Flow of Attention Heads (Sankey). Widths are proportional to the global cross-architectural head counts. ~84% of heads terminate spatial progression as Local Precursors, while ~12% split into specialized Retrieval and Induction mechanisms.*
 
 ![The Structural Bifurcation Manifold](second_axis_curve.png)
 
-*Figure 5: The Structural Bifurcation Manifold (Second Axis). This visualizes the core finding: a linear spatial progression from Sink to Local, followed by a violent functional bifurcation into Retrieval ($\Delta > 0.3$) and Induction ($\Delta < -0.5$).*
+*Figure 4: The Structural Bifurcation Manifold (Second Axis). This visualizes the core finding: a linear spatial progression from Sink to Local, followed by a violent functional bifurcation into Retrieval ($\Delta > 0.3$) and Induction ($\Delta < -0.5$).*
 *Key empirical clarifications:*
 * *(1) **Sink $\Delta$ Deficit:** Sink heads appear at small negative $\Delta$ because their baseline attention is already completely collapsed onto the BOS token; the task probe cannot mathematically collapse them further.*
 * *(2) **Hyper-Diagonal Outliers:** The extreme outliers in the Induction cluster ($\Delta < -1.0$) represent the hyper-diagonal negative-suppression gates identified in Section 3.6.*
 * *(3) **Local Cluster Variance:** The massive variance inside the Local cluster (spanning $\Delta$ from -0.5 to +0.3) is consistent with the hypothesis that the "Local" state is a highly plastic, undifferentiated precursor state rather than a perfectly rigid mechanism, allowing dynamic routing to branch outward.*
+
+![HeadGenome Map](headgenome_map.png)
+
+*Figure 5: Spatial Distribution of Functional Attention Head Types Across Transformer Architectures. The empirical relative depth coordinates for the exact 1,568 head classifications. A Kruskal-Wallis test across the five classes confirms massive spatial enrichment ($H=64.13, p=3.93 \times 10^{-13}$). Notably, Late Induction heads (Depth $0.78 \pm 0.12$) are significantly enriched in deeper layers relative to Early Induction (Depth $0.36 \pm 0.14$), Sinks (Depth $0.29 \pm 0.27$), and Local Precursors (Depth $0.48 \pm 0.29$). Note: The density of points varies across columns because architectures possess different numbers of total heads.*
 
 ## 3.1 The Metric of Dynamic Specialization: Entropy Collapse ($\Delta$)
 
