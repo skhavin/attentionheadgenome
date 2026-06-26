@@ -109,7 +109,7 @@ We correlated this ratio against the head's relative depth in the network ($laye
 **Global Statistical Significance:** $p = 1.92 \times 10^{-127}$.
 This massive, cross-architectural scaling law confirms that attention heads mature systematically across depth. 
 
-![V/Q Developmental Scaling Law](outputs\final_artifacts\developmental_curve.png) 
+![V/Q Developmental Scaling Law](developmental_curve.png) 
 
 *Figure 1: The V/Q Developmental Scaling Law. The black dashed line tracks the sequential developmental progression of the species centroids from Sink (early) $\rightarrow$ Local (mid) $\rightarrow$ Retrieval/Induction (deep). Note: This 2D projection collapses the full multi-dimensional manifold; the overlap of Sink and Retrieval centroids here occurs because they separate fundamentally on the orthogonal dynamic entropy axis (see Fig 2). The background scatter exhibits high variance in early layers, which is why global linear regression ($r \approx 0.63 - 0.73$ per architecture, with bootstrapped confidence intervals not shown for visual clarity) is required to formally prove the cross-architectural scaling law.*
 
@@ -119,7 +119,7 @@ This massive, cross-architectural scaling law confirms that attention heads matu
 
 Based on the V/Q scaling law and dynamic entropy measurements, we classify the functional taxonomy of attention heads. The four head types are not independent discrete circuits; they represent stable regions of a continuous developmental manifold.
 
-![The Structural Bifurcation Manifold](outputs\final_artifacts\second_axis_curve.png)
+![The Structural Bifurcation Manifold](second_axis_curve.png)
 
 *Figure 2: The Structural Bifurcation Manifold (Second Axis). This visualizes the core finding: a linear maturation from Sink to Local, followed by a violent functional bifurcation into Retrieval ($\Delta > 0.3$) and Induction ($\Delta < -0.5$).* 
 *Key empirical clarifications:*
@@ -296,7 +296,7 @@ Where:
 * **Qwen-2.5-1.5B:** 88.3% reduction in FLOPs
 * **Llama-3.2-1B:** 84.3% reduction in FLOPs
 
-![Theoretical Scaling Curves](../../phase4/scaling_curves.png)
+![Theoretical Scaling Curves](../phase4/scaling_curves.png)
 
 *Note:* These numbers represent theoretical geometric ceilings based directly on our empirical regime-switching findings (Section 4.1), which proved that ~85% of heads exhibit no dynamic regime-switching capability and thus do not require full $O(N)$ computational attention mass.
 
