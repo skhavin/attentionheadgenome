@@ -188,7 +188,7 @@ graph TD
 
 ![HeadGenome Map](headgenome_map.png)
 
-*Figure 5: Spatial Distribution of Functional Attention Head Types Across Transformer Architectures. The empirical relative depth coordinates for the exact 1,568 head classifications. A Kruskal-Wallis test across the five classes confirms massive spatial enrichment ($H=64.13, p=3.93 \times 10^{-13}$). Notably, Late Induction heads (Depth $0.78 \pm 0.12$) are significantly enriched in deeper layers relative to Early Induction (Depth $0.36 \pm 0.14$), Sinks (Depth $0.29 \pm 0.27$), and Local Precursors (Depth $0.48 \pm 0.29$). Note: The density of points varies across columns because architectures possess different numbers of total heads.*
+*Figure 5: HeadGenome Map — Spatial Distribution of Functional Attention Head Types Across Transformer Architectures. All 1,568 heads are classified via the canonical Phase 1 entropy-collapse thresholds (retrieval $\Delta \geq 0.3$; induction $\Delta \leq -0.5$; sink $H_{match} < 0.1$) stored in `outputs/canonical_labels.json`. Counts: Sink (n=28), Local (n=1,319), Retrieval (n=23), Early Induction (n=74), Late Induction (n=124). The Kruskal–Wallis test confirms significant spatial enrichment ($H=37.80, p=1.23 \times 10^{-7}$). Late Induction heads (Depth $0.60 \pm 0.09$) are significantly enriched in deeper layers relative to Early Induction (Depth $0.36 \pm 0.09$), Sinks (Depth $0.41 \pm 0.24$), and Local Precursors (Depth $0.47 \pm 0.31$). Sink heads rendered as hollow circles for visibility. Note: Llama-3.2-1B shows zero Sink heads — consistent with its RoPE positional encoding, which does not produce APE-style BOS attention collapse.*
 
 ## 3.1 The Metric of Dynamic Specialization: Entropy Collapse ($\Delta$)
 
@@ -371,12 +371,18 @@ To empirically validate these theoretical FLOP ceilings, we ran a direct wall-cl
 ### 6.6 Cross-Architecture Taxonomy Summary
 To anchor the theoretical FLOP scaling predictions with hard numbers, the following master lookup table shows the exact empirical breakdown of head types across the 1,568 analyzed heads:
 
-| Model Architecture | Total Heads | Sink Heads ($f_{sink}$) | Local Heads ($f_{local}$) | Critical Heads ($f_{crit}$) |
-|---|---|---|---|---|
-| GPT-2 Medium (355M) | 384 | 15 (3.9%) | 311 (81.0%) | 58 (15.1%) |
-| Qwen-2.5-0.5B | 384 | 12 (3.1%) | 344 (89.6%) | 28 (7.3%) |
-| Qwen-2.5-1.5B | 448 | 16 (3.6%) | 381 (85.0%) | 51 (11.4%) |
-| Llama-3.2-1B | 352 | 11 (3.1%) | 286 (81.3%) | 55 (15.6%) |
+| Model Architecture | Total Heads | Sink (n) | Local (n) | Retrieval (n) | Induction (n) |
+|---|---|---|---|---|---|
+| GPT-2 Medium (355M) | 384 | 15 (3.9%) | 311 (81.0%) | 13 (3.4%) | 45 (11.7%) |
+| Qwen-2.5-0.5B | 336 | 9 (2.7%) | 288 (85.7%) | 3 (0.9%) | 36 (10.7%) |
+| Qwen-2.5-1.5B | 336 | 4 (1.2%) | 285 (84.8%) | 6 (1.8%) | 41 (12.2%) |
+| Llama-3.2-1B | 512 | 0 (0.0%) | 435 (84.9%) | 1 (0.2%) | 76 (14.8%) |
+| **Cross-Arch Total** | **1,568** | **28 (1.8%)** | **1,319 (84.1%)** | **23 (1.5%)** | **198 (12.6%)** |
+
+> [!NOTE]
+> Llama-3.2-1B exhibits zero Sink heads. This is consistent with its Rotary Position Embedding (RoPE) architecture, which does not produce the absolute-position anchoring that creates BOS-collapsing sink patterns in GPT-2 (APE). This is a mechanistically meaningful cross-architecture finding, not a classification artifact.
+>
+> Classification source: `outputs/canonical_labels.json`. All figures use this identical file.
 
 *(Note: Critical Heads is the sum of Retrieval and Induction heads, which must maintain full $O(N)$ attention.)*
 
