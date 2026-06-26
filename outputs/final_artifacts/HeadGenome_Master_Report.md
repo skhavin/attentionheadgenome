@@ -4,17 +4,20 @@
 **Models Analyzed:** GPT-2 Medium (355M), Qwen-2.5-0.5B, Qwen-2.5-1.5B, Llama-3.2-1B
 **Total Heads Analyzed:** 1,568 Attention Heads
 
+> [!WARNING]
+> **Caution on Terminology:** Throughout this report, we use terms like 'progression', 'maturation', and 'hierarchy'. These describe a cross-sectional spatial organization observed across network depth in fully trained models. This is NOT a temporal observation of individual heads developing over training checkpoints.
+
 ---
 
 ## Executive Summary
 
-We demonstrate that transformer attention heads are not homogeneous units, nor are they static discrete circuits. Rather, they occupy a low-dimensional developmental manifold. As information flows deeper into the network, heads undergo a systematic structural maturation governed by their $||W_V||_F / ||W_Q||_F$ scaling law ($p = 1.92 \times 10^{-127}$), culminating in a sharp functional bifurcation into specialized locating (Retrieval) and copying (Induction) circuits.
+We demonstrate that transformer attention heads are not homogeneous units, nor are they static discrete circuits. Rather, they occupy a low-dimensional structural manifold. As information flows deeper into the network, heads undergo a systematic spatial progression governed by their $||W_V||_F / ||W_Q||_F$ scaling law ($p = 1.92 \times 10^{-127}$), culminating in a sharp functional bifurcation into specialized locating (Retrieval) and copying (Induction) circuits.
 
 This report serves as the mathematical and empirical sequel to early mechanistic discoveries of induction heads in isolated, attention-only toy models. By mapping the full attention ecology across production-grade LLMs (GPT-2, Qwen-2.5, Llama-3.2), we expose the "Perplexity Illusion"—where models maintain local linguistic fluency despite a total collapse of long-range routing—and formally map the structural circuit co-gating that dictates how retrieval and induction sub-species interact.
 
 ![HeadGenome Map](headgenome_map.png)
 
-*Figure 1: Spatial Distribution of Functional Attention Head Types Across Transformer Architectures. The empirical relative depth coordinates for all 1,568 analyzed heads. A Kruskal-Wallis test across the five classes confirms massive spatial enrichment ($H=574.80, p=4.41 \times 10^{-123}$). Notably, Late Induction heads ($0.77 \pm 0.14$) are significantly enriched in deeper layers relative to Early Induction ($0.23 \pm 0.16$), Sinks ($0.35 \pm 0.25$), and Local Precursors ($0.45 \pm 0.26$).*
+*Figure 1: Spatial Distribution of Functional Attention Head Types Across Transformer Architectures. The empirical relative depth coordinates for all 1,568 analyzed heads. A Kruskal-Wallis test across the five classes confirms massive spatial enrichment ($H=574.80, p=4.41 \times 10^{-123}$). Notably, Late Induction heads ($0.77 \pm 0.14$) are significantly enriched in deeper layers relative to Early Induction ($0.23 \pm 0.16$), Sinks ($0.35 \pm 0.25$), and Local Precursors ($0.45 \pm 0.26$). Note: The density of points varies across columns because architectures possess different numbers of total heads (e.g., Llama-3.2-1B has 512, while GPT-2 has 192).*
 
 ---
 
@@ -129,21 +132,59 @@ This massive, cross-architectural scaling law confirms that attention heads matu
 
 ![V/Q Developmental Scaling Law](developmental_curve.png) 
 
-*Figure 2: The V/Q Developmental Scaling Law. The black dashed line tracks the sequential developmental progression of the species centroids from Sink (early) $\rightarrow$ Local (mid) $\rightarrow$ Retrieval/Induction (deep). Note: This 2D projection collapses the full multi-dimensional manifold; the overlap of Sink and Retrieval centroids here occurs because they separate fundamentally on the orthogonal dynamic entropy axis (see Fig 4). The background scatter exhibits high variance in early layers, which is why global linear regression ($r \approx 0.63 - 0.73$ per architecture, calculated using bootstrap resampling $B=10,000$ to guarantee stability) is required to formally prove the cross-architectural scaling law.*
+*Figure 2: The V/Q Spatial Scaling Law. The black dashed line tracks the sequential spatial progression of the species centroids from Sink (early) $\rightarrow$ Local (mid) $\rightarrow$ Retrieval/Induction (deep). Note: This 2D projection collapses the full multi-dimensional manifold; the overlap of Sink and Retrieval centroids here occurs because they separate fundamentally on the orthogonal dynamic entropy axis (see Fig 4). The background scatter exhibits high variance in early layers, which is why global linear regression ($r \approx 0.63 - 0.73$ per architecture, calculated using bootstrap resampling $B=10,000$ to guarantee stability) is required to formally prove the cross-architectural scaling law.*
 
 ---
 
-# PART III: The Developmental Manifold & Functional Taxonomy
+# PART III: The Structural Manifold & Functional Taxonomy
 
-Based on the V/Q scaling law and dynamic entropy measurements, we classify the functional taxonomy of attention heads. The four head types are not independent discrete circuits; they represent stable regions of a continuous developmental manifold.
+Based on the V/Q scaling law and dynamic entropy measurements, we classify the functional taxonomy of attention heads. The four head types are not independent discrete circuits; they represent stable regions of a continuous structural manifold.
 
-![The Developmental Flow of Attention Heads](developmental_sankey.png)
+## 3.1 Taxonomy Hierarchy & Cell Differentiation
 
-*Figure 3: The Developmental Flow of Attention Heads (Sankey). Widths are proportional to the global cross-architectural head counts. ~84% of heads terminate development as Local Precursors, while ~12% split into specialized Retrieval and Induction mechanisms.*
+Much like biological cell differentiation, attention heads branch from stable, generic precursors into specialized structural endpoints.
+
+```mermaid
+graph TD
+    classDef stem fill:#2ecc71,stroke:#27ae60,stroke-width:2px,color:#fff;
+    classDef sink fill:#9b59b6,stroke:#8e44ad,stroke-width:2px,color:#fff;
+    classDef ret fill:#3498db,stroke:#2980b9,stroke-width:2px,color:#fff;
+    classDef ind fill:#e74c3c,stroke:#c0392b,stroke-width:2px,color:#fff;
+    classDef early fill:#f39c12,stroke:#d35400,stroke-width:2px,color:#fff;
+    classDef late fill:#c0392b,stroke:#922b21,stroke-width:2px,color:#fff;
+    classDef root fill:#7f8c8d,stroke:#95a5a6,stroke-width:2px,color:#fff;
+
+    Root[Root Attention Input]:::root
+    
+    Local[Local Precursor Cell<br><i>Highly Plastic, Broad Scope</i><br>Mean Depth: 0.45]:::stem
+    
+    Root --> Local
+    
+    Sink[Sink Cell<br><i>BOS Grounding</i><br>Mean Depth: 0.35]:::sink
+    Local --> Sink
+    
+    Ret[Retrieval Cell<br><i>Massive Entropy Drop</i><br>Mean Depth: 0.47]:::ret
+    Local --> Ret
+    
+    Ind[Induction Cell<br><i>Structural Copying</i>]:::ind
+    Local --> Ind
+    
+    EInd[Early Induction<br><i>Prefix Matching</i><br>Mean Depth: 0.23]:::early
+    LInd[Late Induction<br><i>Payload Copying</i><br>Mean Depth: 0.77]:::late
+    
+    Ind --> EInd
+    Ind --> LInd
+```
+
+*Figure 3: Functional Phylogenetic Tree. The structural organization inferred from fully trained models, demonstrating the split from undifferentiated Local processors into highly specialized routing mechanics.*
+
+![The Structural Flow of Attention Heads](developmental_sankey.png)
+
+*Figure 4: The Structural Flow of Attention Heads (Sankey). Widths are proportional to the global cross-architectural head counts. ~84% of heads terminate spatial progression as Local Precursors, while ~12% split into specialized Retrieval and Induction mechanisms.*
 
 ![The Structural Bifurcation Manifold](second_axis_curve.png)
 
-*Figure 4: The Structural Bifurcation Manifold (Second Axis). This visualizes the core finding: a linear maturation from Sink to Local, followed by a violent functional bifurcation into Retrieval ($\Delta > 0.3$) and Induction ($\Delta < -0.5$).* 
+*Figure 5: The Structural Bifurcation Manifold (Second Axis). This visualizes the core finding: a linear spatial progression from Sink to Local, followed by a violent functional bifurcation into Retrieval ($\Delta > 0.3$) and Induction ($\Delta < -0.5$).*
 *Key empirical clarifications:*
 * *(1) **Sink $\Delta$ Deficit:** Sink heads appear at small negative $\Delta$ because their baseline attention is already completely collapsed onto the BOS token; the task probe cannot mathematically collapse them further.*
 * *(2) **Hyper-Diagonal Outliers:** The extreme outliers in the Induction cluster ($\Delta < -1.0$) represent the hyper-diagonal negative-suppression gates identified in Section 3.6.*

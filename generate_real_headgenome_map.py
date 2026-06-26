@@ -78,12 +78,13 @@ ax1.set_ylabel("Relative Network Depth", fontsize=12, fontweight='bold')
 ax1.set_title("Spatial Distribution Across Architectures", fontsize=14, fontweight='bold')
 ax1.set_ylim(-0.05, 1.05)
 
-legend_elements = [Patch(facecolor=colors[k], label=k) for k in colors.keys()]
-ax1.legend(handles=legend_elements, loc='upper left', title="Head Taxonomy")
-
 # Panel 2: KDE Density
 from scipy.stats import gaussian_kde
 y_grid = np.linspace(-0.05, 1.05, 200)
+
+sample_sizes = {}
+for label in classes:
+    sample_sizes[label] = len(df[df["refined_label"] == label])
 
 for label, color in colors.items():
     subset = df[df["refined_label"] == label]
@@ -92,6 +93,9 @@ for label, color in colors.items():
         density = kde(y_grid)
         ax2.plot(density, y_grid, color=color, label=label)
         ax2.fill_betweenx(y_grid, 0, density, color=color, alpha=0.3)
+
+legend_elements = [Patch(facecolor=colors[k], label=f"{k} (n={sample_sizes[k]})") for k in colors.keys()]
+ax1.legend(handles=legend_elements, loc='upper left', title="Head Taxonomy")
 
 ax2.set_ylim(-0.05, 1.05)
 ax2.set_xlabel("Density", fontsize=12, fontweight='bold')
