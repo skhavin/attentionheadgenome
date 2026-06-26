@@ -222,6 +222,15 @@ We measure this as $\Delta = H_{task} - H_{baseline}$.
 * Positive $\Delta$ (e.g., $+0.30$): The head drastically sharpens its focus (Retrieval).
 * Negative $\Delta$ (e.g., $-0.50$): The head drastically broadens its focus or changes its pattern (Induction).
 
+### 3.1.1 Empirical Classification Pipeline
+
+The entire taxonomy mapping was generated empirically using the script `canonical_classification.py`. This pipeline ingested raw task-evaluation metrics (`outputs/phase1/robust_entropy_<model>.json`) and applied absolute mathematical thresholds to isolate the specific functional sub-types. Every head among the 1,568 analyzed was categorized into `outputs/canonical_labels.json` (the exact source file for the Atlas visualization) using these rules:
+
+1.  **Sink Heads:** Identified by absolute baseline match entropy $H_{match} < 0.1$. These heads exhibit permanently collapsed attention onto the BOS token regardless of the prompt.
+2.  **Retrieval Heads:** Discovered via the Needle-In-A-Haystack (NIAH) task. They are defined by an entropy collapse threshold of $\Delta \geq 0.3$, meaning they drastically sharpen their attention to extract hidden factual "needles."
+3.  **Induction Heads:** Discovered via the repetitive Sequence Continuation task. They are defined by an entropy broadening threshold of $\Delta \leq -0.5$. The pipeline further splits them into **Early Induction** (Relative Depth $< 0.5$) and **Late Induction** (Relative Depth $\geq 0.5$).
+4.  **Local Precursors:** The default state. Any head that fails to meet the strict threshold criteria for Sink, Retrieval, or Induction is classified as Local.
+
 ## 3.2 Sink Heads (Phase 1: Infancy)
 **Function:** Stable attention sinks that absorb excess attention mass when no highly relevant contextual information is present. This prevents attention dilution across random tokens, allowing the network to "ignore" irrelevant steps.
 * **Execution Script:** `phase1/step2_threshold_sensitivity.py` and `phase1/step3_profile_llama.py`
