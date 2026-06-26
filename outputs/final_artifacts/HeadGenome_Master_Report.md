@@ -192,7 +192,7 @@ graph TD
 
 ![HeadGenome Atlas](headgenome_atlas.png)
 
-*Figure 6: HeadGenome Atlas — Anatomical Reorganization of Attention Heads. This 3-panel visualization merges spatial distribution, statistical trajectories, and anatomical reality. **Panel A (Scatter):** Re-plots the cross-architecture distribution from Figure 5. **Panel B (Density Trajectory):** Depth density curves overlaid with empirical mean centroids, tracing the "developmental wave" of computation deeper into the network. **Panel C (Anatomical Maturation):** A direct structural mapping of all 384 attention heads within GPT-2 Medium across its 24 layers. This anatomically precise grid allows the reader to visually trace the progressive differentiation from undifferentiated Local precursors (faded green) into specialized cognitive circuits (Retrieval, Induction) as depth increases.*
+*Figure 6: HeadGenome Atlas — Anatomical Specialization Across Architectures. This visualization abandons abstract statistics to render the literal 2D physical matrix (Layers $\times$ Heads) of every model. Each of the 1,568 dots represents a specific physical attention head. By reading from top (Layer 0) to bottom, the anatomical maturation becomes instantly visible: models begin with structural Sinks (purple) or undifferentiated Local precursors (faded green). Deeper into the network architecture, highly specialized cognitive routing circuits—Retrieval (blue) and Early/Late Induction (orange/red)—differentiate out of the precursor pool. This provides a literal, head-by-head mapping of how transformer architectures physically organize their internal processing.*
 
 ## 3.1 The Metric of Dynamic Specialization: Entropy Collapse ($\Delta$)
 
