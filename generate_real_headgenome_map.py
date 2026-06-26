@@ -41,13 +41,13 @@ def refine_label(row):
 df["refined_label"] = df.apply(refine_label, axis=1)
 
 # Statistical Analysis
-print("--- Statistical Distribution of Relative Depth ---")
+print("--- Statistical Distribution of Absolute Layers ---")
 classes = ["Sink", "Local", "Retrieval", "Early Induction", "Late Induction"]
 groups = []
 for cls in classes:
-    depths = df[df["refined_label"] == cls]["relative_depth"].values
-    groups.append(depths)
-    print(f"{cls:<15}: {np.mean(depths):.2f} ± {np.std(depths):.2f}")
+    layers = df[df["refined_label"] == cls]["layer"].values
+    groups.append(layers)
+    print(f"{cls:<15}: Layer {np.mean(layers):.1f} ± {np.std(layers):.1f}")
 
 h_stat, p_val = stats.kruskal(*groups)
 print(f"\nKruskal-Wallis Test: H={h_stat:.2f}, p={p_val:.2e}")
@@ -67,20 +67,25 @@ for i, model in enumerate(models_to_plot):
         if len(sub_subset) == 0:
             continue
             
-        depths = sub_subset["relative_depth"].values
+        layers = sub_subset["layer"].values
         # Add slight jitter to x-axis to prevent total overlap
-        x_jitter = np.random.normal(i, 0.08, len(depths))
-        ax1.scatter(x_jitter, depths, c=color, s=25, alpha=0.7, edgecolors='none')
+        x_jitter = np.random.normal(i, 0.08, len(layers))
+        # Add slight jitter to y-axis (layer) so discrete layers don't overlap perfectly
+        y_jitter = layers + np.random.normal(0, 0.15, len(layers))
+        
+        ax1.scatter(x_jitter, y_jitter, c=color, s=25, alpha=0.7, edgecolors='none')
 
 ax1.set_xticks(range(len(models_to_plot)))
 ax1.set_xticklabels(models_to_plot, fontsize=12, fontweight='bold')
-ax1.set_ylabel("Relative Network Depth", fontsize=12, fontweight='bold')
+ax1.set_ylabel("Absolute Network Layer", fontsize=12, fontweight='bold')
 ax1.set_title("Spatial Distribution Across Architectures", fontsize=14, fontweight='bold')
-ax1.set_ylim(-0.05, 1.05)
+
+max_layer = df["layer"].max()
+ax1.set_ylim(-1, max_layer + 2)
 
 # Panel 2: KDE Density
 from scipy.stats import gaussian_kde
-y_grid = np.linspace(-0.05, 1.05, 200)
+y_grid = np.linspace(-1, max_layer + 2, 200)
 
 sample_sizes = {}
 for label in classes:
@@ -89,7 +94,7 @@ for label in classes:
 for label, color in colors.items():
     subset = df[df["refined_label"] == label]
     if len(subset) > 1:
-        kde = gaussian_kde(subset["relative_depth"])
+        kde = gaussian_kde(subset["layer"])
         density = kde(y_grid)
         ax2.plot(density, y_grid, color=color, label=label)
         ax2.fill_betweenx(y_grid, 0, density, color=color, alpha=0.3)
@@ -97,7 +102,7 @@ for label, color in colors.items():
 legend_elements = [Patch(facecolor=colors[k], label=f"{k} (n={sample_sizes[k]})") for k in colors.keys()]
 ax1.legend(handles=legend_elements, loc='upper left', title="Head Taxonomy")
 
-ax2.set_ylim(-0.05, 1.05)
+ax2.set_ylim(-1, max_layer + 2)
 ax2.set_xlabel("Density", fontsize=12, fontweight='bold')
 ax2.set_title("Global Density", fontsize=14, fontweight='bold')
 ax2.set_yticks([]) # Hide y-ticks on the second axis

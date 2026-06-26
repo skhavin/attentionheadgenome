@@ -17,7 +17,7 @@ This report serves as the mathematical and empirical sequel to early mechanistic
 
 ![HeadGenome Map](headgenome_map.png)
 
-*Figure 1: Spatial Distribution of Functional Attention Head Types Across Transformer Architectures. The empirical relative depth coordinates for all 1,568 analyzed heads. A Kruskal-Wallis test across the five classes confirms massive spatial enrichment ($H=574.80, p=4.41 \times 10^{-123}$). Notably, Late Induction heads ($0.77 \pm 0.14$) are significantly enriched in deeper layers relative to Early Induction ($0.23 \pm 0.16$), Sinks ($0.35 \pm 0.25$), and Local Precursors ($0.45 \pm 0.26$). Note: The density of points varies across columns because architectures possess different numbers of total heads (e.g., Llama-3.2-1B has 512, while GPT-2 has 192).*
+*Figure 1: Spatial Distribution of Functional Attention Head Types Across Transformer Architectures. The empirical absolute layer coordinates for all 1,568 analyzed heads. A Kruskal-Wallis test across the five classes confirms massive spatial enrichment ($H=535.83, p=1.19 \times 10^{-114}$). Notably, Late Induction heads (Layer $17.8 \pm 4.8$) are significantly enriched in deeper layers relative to Early Induction (Layer $5.2 \pm 3.8$), Sinks (Layer $7.9 \pm 5.8$), and Local Precursors (Layer $9.8 \pm 6.1$). Note: The density of points varies across columns because architectures possess different numbers of total heads (e.g., Llama-3.2-1B has 512, while GPT-2 has 192).*
 
 ---
 
@@ -156,21 +156,21 @@ graph TD
 
     Root[Root Attention Input]:::root
     
-    Local[Local Precursor Cell<br><i>Highly Plastic, Broad Scope</i><br>Mean Depth: 0.45]:::stem
+    Local[Local Precursor Cell<br><i>Highly Plastic, Broad Scope</i><br>Mean Layer: 9.8]:::stem
     
     Root --> Local
     
-    Sink[Sink Cell<br><i>BOS Grounding</i><br>Mean Depth: 0.35]:::sink
+    Sink[Sink Cell<br><i>BOS Grounding</i><br>Mean Layer: 7.9]:::sink
     Local --> Sink
     
-    Ret[Retrieval Cell<br><i>Massive Entropy Drop</i><br>Mean Depth: 0.47]:::ret
+    Ret[Retrieval Cell<br><i>Massive Entropy Drop</i><br>Mean Layer: 10.2]:::ret
     Local --> Ret
     
     Ind[Induction Cell<br><i>Structural Copying</i>]:::ind
     Local --> Ind
     
-    EInd[Early Induction<br><i>Prefix Matching</i><br>Mean Depth: 0.23]:::early
-    LInd[Late Induction<br><i>Payload Copying</i><br>Mean Depth: 0.77]:::late
+    EInd[Early Induction<br><i>Prefix Matching</i><br>Mean Layer: 5.2]:::early
+    LInd[Late Induction<br><i>Payload Copying</i><br>Mean Layer: 17.8]:::late
     
     Ind --> EInd
     Ind --> LInd
