@@ -12,6 +12,10 @@ We demonstrate that transformer attention heads are not homogeneous units, nor a
 
 This report serves as the mathematical and empirical sequel to early mechanistic discoveries of induction heads in isolated, attention-only toy models. By mapping the full attention ecology across production-grade LLMs (GPT-2, Qwen-2.5, Llama-3.2), we expose the "Perplexity Illusion"—where models maintain local linguistic fluency despite a total collapse of long-range routing—and formally map the structural circuit co-gating that dictates how retrieval and induction sub-species interact.
 
+![HeadGenome Map](headgenome_map.png)
+
+*Figure 1: Spatial Distribution of Functional Attention Head Types Across Transformer Architectures. The empirical relative depth coordinates for all 1,568 analyzed heads. A Kruskal-Wallis test across the five classes confirms massive spatial enrichment ($H=574.80, p=4.41 \times 10^{-123}$). Notably, Late Induction heads ($0.77 \pm 0.14$) are significantly enriched in deeper layers relative to Early Induction ($0.23 \pm 0.16$), Sinks ($0.35 \pm 0.25$), and Local Precursors ($0.45 \pm 0.26$).*
+
 ---
 
 ## Introduction: The Unified Field Theory of Attention
@@ -125,7 +129,7 @@ This massive, cross-architectural scaling law confirms that attention heads matu
 
 ![V/Q Developmental Scaling Law](developmental_curve.png) 
 
-*Figure 1: The V/Q Developmental Scaling Law. The black dashed line tracks the sequential developmental progression of the species centroids from Sink (early) $\rightarrow$ Local (mid) $\rightarrow$ Retrieval/Induction (deep). Note: This 2D projection collapses the full multi-dimensional manifold; the overlap of Sink and Retrieval centroids here occurs because they separate fundamentally on the orthogonal dynamic entropy axis (see Fig 2). The background scatter exhibits high variance in early layers, which is why global linear regression ($r \approx 0.63 - 0.73$ per architecture, calculated using bootstrap resampling $B=10,000$ to guarantee stability) is required to formally prove the cross-architectural scaling law.*
+*Figure 2: The V/Q Developmental Scaling Law. The black dashed line tracks the sequential developmental progression of the species centroids from Sink (early) $\rightarrow$ Local (mid) $\rightarrow$ Retrieval/Induction (deep). Note: This 2D projection collapses the full multi-dimensional manifold; the overlap of Sink and Retrieval centroids here occurs because they separate fundamentally on the orthogonal dynamic entropy axis (see Fig 4). The background scatter exhibits high variance in early layers, which is why global linear regression ($r \approx 0.63 - 0.73$ per architecture, calculated using bootstrap resampling $B=10,000$ to guarantee stability) is required to formally prove the cross-architectural scaling law.*
 
 ---
 
@@ -135,11 +139,7 @@ Based on the V/Q scaling law and dynamic entropy measurements, we classify the f
 
 ![The Developmental Flow of Attention Heads](developmental_sankey.png)
 
-*Figure 2: The Developmental Flow of Attention Heads (Sankey). Widths are proportional to the global cross-architectural head counts. ~84% of heads terminate development as Local Precursors, while ~12% split into specialized Retrieval and Induction mechanisms.*
-
-![The HeadGenome Map](headgenome_map.png)
-
-*Figure 3: The HeadGenome Map. A structural side-by-side layering of the 1,568 analyzed heads across models, visually capturing the strict progression from Sinks (early) to Local (mid) to the Retrieval/Induction bifurcation (deep).*
+*Figure 3: The Developmental Flow of Attention Heads (Sankey). Widths are proportional to the global cross-architectural head counts. ~84% of heads terminate development as Local Precursors, while ~12% split into specialized Retrieval and Induction mechanisms.*
 
 ![The Structural Bifurcation Manifold](second_axis_curve.png)
 
