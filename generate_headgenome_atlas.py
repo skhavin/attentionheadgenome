@@ -5,7 +5,8 @@ Creates the 3-panel iconic HeadGenome Atlas.
 
 Panel A: Scatter plot (the evidence)
 Panel B: Density plot + Trajectory Means (statistical summary)
-Panel C: Simplified functional circuit (structural meaning)
+Panel C: The "Transformer Anatomy" showing GPT-2 Medium's exact 24x16 
+         head grid, vividly illustrating specialization emerging across depth.
 """
 import json
 import numpy as np
@@ -34,7 +35,7 @@ for model in models:
             label = "Local"
         elif label == "sink":
             label = "Sink"
-        rows.append({"model": model, "depth": depth, "label": label})
+        rows.append({"model": model, "depth": depth, "label": label, "layer": info["layer"], "head_idx": info["head_idx"]})
 
 # ── 2. Config & Stats ────────────────────────────────────────────────────────
 CLASSES = ["Sink", "Local", "Early Induction", "Retrieval", "Late Induction"]
@@ -67,16 +68,15 @@ total_n = sum(n_by_class.values())
 groups = [np.array(depths_by_class[c]) for c in CLASSES]
 H, p = kruskal(*groups)
 k = len(CLASSES)
-eta_sq = (H - k + 1) / (total_n - k)  # Eta-squared effect size
-print(f"Kruskal-Wallis: H={H:.2f}, p={p:.2e}, eta^2={eta_sq:.4f}")
+eta_sq = (H - k + 1) / (total_n - k)
 
 # ── 3. Figure Layout ─────────────────────────────────────────────────────────
 fig = plt.figure(figsize=(18, 9), facecolor="#f8f9fa")
-gs = fig.add_gridspec(1, 3, width_ratios=[2.5, 1.2, 1.5], wspace=0.15)
+gs = fig.add_gridspec(1, 3, width_ratios=[2.5, 1.2, 1.7], wspace=0.15)
 
 ax1 = fig.add_subplot(gs[0])  # Scatter
 ax2 = fig.add_subplot(gs[1])  # Density
-ax3 = fig.add_subplot(gs[2])  # Circuit
+ax3 = fig.add_subplot(gs[2])  # Transformer Anatomy
 
 ax1.set_facecolor("#ffffff")
 ax2.set_facecolor("#ffffff")
@@ -153,7 +153,7 @@ ax2.set_xlim(0, 1.35)
 ax2.set_xlabel("Norm. Density", fontsize=11, fontweight="bold")
 ax2.set_title("B. Global Depth Trajectory", fontsize=14, fontweight="bold", loc="left")
 ax2.set_yticks([0.0, 0.2, 0.4, 0.6, 0.8, 1.0])
-ax2.set_yticklabels([]) # Hide labels to stick right next to ax1
+ax2.set_yticklabels([]) # Hide labels
 ax2.tick_params(axis="y", left=False)
 ax2.grid(axis="y", linestyle="--", alpha=0.35, color="#cccccc")
 ax2.spines[["top", "right", "left"]].set_visible(False)
@@ -165,58 +165,82 @@ traj_y = []
 for label in traj_order:
     if label in means:
         y_val = means[label]
-        x_val = 1.15  # Plot the means on the right side of the density plot
+        x_val = 1.15
         traj_x.append(x_val)
         traj_y.append(y_val)
-        ax2.scatter(x_val, y_val, color=COLORS[label], s=80, zorder=10, edgecolor="black")
+        
+        # Hollow for sink
+        if label == "Sink":
+            ax2.scatter(x_val, y_val, facecolor="none", edgecolor=COLORS[label], s=100, zorder=10, linewidth=2.5)
+        else:
+            ax2.scatter(x_val, y_val, color=COLORS[label], s=100, zorder=10, edgecolor="white", linewidth=1.5)
+        
         ax2.text(x_val + 0.05, y_val, f"Mean: {y_val:.2f}", va="center", fontsize=9, fontweight="bold", color=COLORS[label])
 
-ax2.plot(traj_x, traj_y, color="black", linestyle="--", linewidth=2, alpha=0.6, zorder=5)
+ax2.plot(traj_x, traj_y, color="#7f8c8d", linestyle="--", linewidth=2.5, alpha=0.7, zorder=5)
 
-# ── 6. Panel C: Functional Circuit ───────────────────────────────────────────
+# ── 6. Panel C: Transformer Anatomy (GPT-2 Stack) ────────────────────────────
 ax3.axis("off")
-ax3.set_title("C. Functional Maturation Circuit", fontsize=14, fontweight="bold", loc="left")
+ax3.set_title("C. Anatomical Maturation (GPT-2)", fontsize=14, fontweight="bold", loc="left")
 
-# Draw rectangles manually
-def draw_box(ax, center, text, color, width=0.4, height=0.1):
-    x, y = center
-    box = mpatches.FancyBboxPatch((x - width/2, y - height/2), width, height,
-                                  boxstyle="round,pad=0.02", ec="black", fc=color, alpha=0.85)
-    ax.add_patch(box)
-    ax.text(x, y, text, ha="center", va="center", color="white", fontweight="bold", fontsize=12)
+gpt2_rows = [r for r in rows if r["model"] == "GPT-2"]
+num_layers = 24
+num_heads = 16
 
-def draw_arrow(ax, start, end):
-    ax.annotate("", xy=end, xytext=start,
-                arrowprops=dict(arrowstyle="->", lw=2, color="gray", shrinkA=10, shrinkB=10))
+# Draw Input block
+y_offset = 0.95
+ax3.text(0.5, y_offset, "Input Sequence", ha="center", va="center", fontsize=11, fontweight="bold", color="black", 
+         bbox=dict(facecolor="#ecf0f1", edgecolor="#bdc3c7", boxstyle="round,pad=0.3"))
 
-# Coordinates
-C_IN  = (0.5, 0.9)
-C_LOC = (0.5, 0.7)
-C_RET = (0.2, 0.45)
-C_E_I = (0.8, 0.55)
-C_L_I = (0.8, 0.35)
-C_OUT = (0.5, 0.1)
+# Draw downward arrow
+ax3.annotate("", xy=(0.5, y_offset - 0.04), xytext=(0.5, y_offset - 0.01),
+             arrowprops=dict(arrowstyle="->", lw=2, color="gray"))
 
-ax3.text(C_IN[0], C_IN[1], "Input Sequence", ha="center", va="center", fontsize=12, fontweight="bold", color="#333333")
-draw_box(ax3, C_LOC, "Local Precursor\n(Context Broadening)", COLORS["Local"])
-draw_box(ax3, C_RET, "Retrieval\n(Semantic Match)", COLORS["Retrieval"], width=0.35)
-draw_box(ax3, C_E_I, "Early Induction\n(Prefix Match)", COLORS["Early Induction"], width=0.35)
-draw_box(ax3, C_L_I, "Late Induction\n(Payload Copy)", COLORS["Late Induction"], width=0.35)
-ax3.text(C_OUT[0], C_OUT[1], "Output Predictions", ha="center", va="center", fontsize=12, fontweight="bold", color="#333333")
+# Grid parameters
+grid_top = y_offset - 0.07
+grid_bottom = 0.1
+layer_height = (grid_top - grid_bottom) / (num_layers - 1)
 
-draw_arrow(ax3, C_IN, (C_LOC[0], C_LOC[1]+0.05))
-draw_arrow(ax3, (C_LOC[0], C_LOC[1]-0.05), (C_RET[0], C_RET[1]+0.05))
-draw_arrow(ax3, (C_LOC[0], C_LOC[1]-0.05), (C_E_I[0]-0.1, C_E_I[1]+0.05))
-draw_arrow(ax3, (C_E_I[0], C_E_I[1]-0.05), (C_L_I[0], C_L_I[1]+0.05))
-draw_arrow(ax3, (C_RET[0], C_RET[1]-0.05), (C_OUT[0]-0.05, C_OUT[1]+0.02))
-draw_arrow(ax3, (C_L_I[0], C_L_I[1]-0.05), (C_OUT[0]+0.05, C_OUT[1]+0.02))
+# Draw the exact head matrix
+for layer in range(num_layers):
+    layer_heads = [r for r in gpt2_rows if r["layer"] == layer]
+    
+    y_pos = grid_top - layer * layer_height
+    
+    # Layer label
+    ax3.text(0.05, y_pos, f"L{layer}", ha="right", va="center", fontsize=8, color="#7f8c8d", fontweight="bold")
+    
+    for head_idx in range(num_heads):
+        # find the head
+        head_data = next((h for h in layer_heads if h["head_idx"] == head_idx), None)
+        x_pos = 0.15 + (head_idx / (num_heads - 1)) * 0.75
+        
+        if head_data:
+            label = head_data["label"]
+            color = COLORS[label]
+            if label == "Sink":
+                ax3.scatter(x_pos, y_pos, facecolor="none", edgecolor=color, s=45, linewidth=1.5, zorder=10)
+            elif label == "Local":
+                ax3.scatter(x_pos, y_pos, color=color, s=30, alpha=0.3, edgecolors="none", zorder=5)
+            else:
+                ax3.scatter(x_pos, y_pos, color=color, s=50, alpha=0.9, edgecolors="white", linewidth=0.5, zorder=10)
 
-ax3.set_xlim(0, 1)
-ax3.set_ylim(0, 1)
+# Draw downward arrow to output
+ax3.annotate("", xy=(0.5, grid_bottom - 0.04), xytext=(0.5, grid_bottom - 0.01),
+             arrowprops=dict(arrowstyle="->", lw=2, color="gray"))
 
-# ── Save ─────────────────────────────────────────────────────────────────────
+# Draw Output block
+ax3.text(0.5, grid_bottom - 0.07, "Output Representation", ha="center", va="center", fontsize=11, fontweight="bold", color="black",
+         bbox=dict(facecolor="#ecf0f1", edgecolor="#bdc3c7", boxstyle="round,pad=0.3"))
+
+# Add connecting flow lines down the sides to emphasize "depth"
+ax3.annotate("", xy=(0.95, grid_bottom + 0.05), xytext=(0.95, grid_top - 0.05),
+             arrowprops=dict(arrowstyle="->", lw=4, color="#bdc3c7", alpha=0.5))
+ax3.text(0.98, (grid_top + grid_bottom)/2, "Depth\nProgression", ha="center", va="center", rotation=-90, fontsize=10, color="#7f8c8d", fontweight="bold")
+
+# ── 7. Save ──────────────────────────────────────────────────────────────────
 plt.suptitle(
-    "HeadGenome Atlas: Progressive Reorganization of Attention Heads",
+    "HeadGenome Atlas: Anatomical Reorganization of Attention Heads",
     fontsize=18, fontweight="bold", y=1.02
 )
 plt.figtext(
