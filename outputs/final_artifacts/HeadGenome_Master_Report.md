@@ -270,12 +270,12 @@ Within the Induction branch, Unsupervised K-Means ($K=2$) identified two stable,
 * **Output Data:** `outputs/phase8_paper_suite/statistical_suite_results.json`
 * **Verification:** Bootstrap stability resampling verified the structural robustness of this split (Adjusted Rand Index = $0.741 \pm 0.289$).
 
-## 3.6 Hyper-Diagonal Heads (Hypothesized Exact String Copying)
+## 3.6 Hyper-Diagonal Heads (An Anomaly Requiring Further Study)
 By analyzing the Singular Value Decomposition (SVD), we identified a distinct outlier sub-population of 41 heads with an extreme Diagonal-to-Off-Diagonal weight matrix ratio of **18.27** (compared to the model average of ~4.0).
 
 * **Execution Script:** `analyze_patterns.py` and `run_hyper_diagonal_test.py`
-* **Initial Findings:** We hypothesized these heads strictly handle character-for-character exact string copying (e.g., URLs, UUIDs). However, dynamic ablation on Qwen-2.5-0.5B revealed a counter-intuitive finding: ablating these heads *increased* exact copy accuracy from 25% to 75%. In small models, these extreme diagonal matrices may actually function as *negative* suppression/inhibition gates (Anti-Induction).
-**Mechanistic Paradox:** Because these heads act as strict negative gates, they must sharply focus their attention mass directly on the repeating token to inhibit it downstream, resulting in a measured entropy collapse that visually mimics positive copying circuits. 
+* **Initial Findings & Reversal:** We originally hypothesized these heads strictly handle character-for-character exact string copying (e.g., URLs, UUIDs). However, dynamic ablation on Qwen-2.5-0.5B revealed a paradoxical result: ablating these heads *increased* exact copy accuracy from 25% to 75%. 
+* **Conclusion:** This contradicts our initial copying hypothesis. The ablation result suggests these heads may actually function as *negative* suppression or inhibition gates (Anti-Induction) in small models. Rather than enforcing a verified mechanistic story here, we note this extreme structural anomaly as a highly specific behavior that requires dedicated future research to properly interpret. 
 
 ---
 
@@ -409,8 +409,11 @@ To anchor the theoretical FLOP scaling predictions with hard numbers, the follow
 | Llama-3.2-1B | 512 | 0 (0.0%) | 435 (84.9%) | 1 (0.2%) | 76 (14.8%) |
 | **Cross-Arch Total** | **1,568** | **28 (1.8%)** | **1,319 (84.1%)** | **23 (1.5%)** | **198 (12.6%)** |
 
+> [!CAUTION]
+> **Small Sample Sizes in Architectural Splits:** While the cross-architecture totals provide robust statistical confidence (e.g., $N=1{,}568$), breaking these down into per-architecture percentages for the highly specialized Sink ($n=28$) and Retrieval ($n=23$) classes results in single-digit raw counts. For example, claiming "0.2% of Llama heads are Retrieval" sounds authoritative but represents literally $n=1$ head. Similarly, Qwen-2.5-1.5B has $n=4$ Sinks and $n=6$ Retrieval heads. Readers should interpret per-model percentage variances among these specialized classes as highly volatile due to the extreme rarity of the structures, rather than as confident architectural laws.
+
 > [!NOTE]
-> Llama-3.2-1B exhibits zero Sink heads. This is consistent with its Rotary Position Embedding (RoPE) architecture, which does not produce the absolute-position anchoring that creates BOS-collapsing sink patterns in GPT-2 (APE). This is a mechanistically meaningful cross-architecture finding, not a classification artifact.
+> Llama-3.2-1B exhibits zero Sink heads ($n=0$). This is consistent with its Rotary Position Embedding (RoPE) architecture, which does not produce the absolute-position anchoring that creates BOS-collapsing sink patterns in GPT-2 (APE). This is a mechanistically meaningful cross-architecture finding, not a classification artifact.
 >
 > Classification source: `outputs/canonical_labels.json`. All figures use this identical file.
 
