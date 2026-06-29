@@ -90,11 +90,11 @@ def generate_figure():
         ax.text(0.5, 0.14, "V/Q SCALING (Pearson r)", ha="center", va="center", fontsize=10, fontweight="bold", color=m["color"])
         ax.text(0.5, 0.06, f"r = {m['r']}", ha="center", va="center", fontsize=18, fontweight="bold", color=TEXT)
 
-    fig.suptitle("Figure 9: The Cross-Domain / Data-Independence Proof\n"
+    fig.suptitle("Figure 10: The Cross-Domain / Data-Independence Proof\n"
                  "The V/Q spatial scaling law remains rigorously stable (r ≈ 0.65-0.73) despite massive divergence in training data, language, and tokenization.", 
                  fontsize=15, fontweight="bold", y=1.08)
                  
-    out_path = os.path.join(OUT_DIR, "figure9_cross_domain.png")
+    out_path = os.path.join(OUT_DIR, "figure10_cross_domain.png")
     plt.savefig(out_path, dpi=200, bbox_inches="tight")
     plt.close()
     print(f"Saved {out_path}")
