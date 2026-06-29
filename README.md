@@ -50,21 +50,41 @@ attentionheadgenome/
 
 The core arguments of the HeadGenome Project are proven in the following generated figures:
 
-### 1. The Lexical Anatomy (Figure 7)
+### 1. The HeadGenome Atlas
+A comprehensive architectural map showing exactly where functional head types emerge across network depth and across different model scales.
+<p align="center">
+  <img src="outputs/final_artifacts/headgenome_atlas.png" width="100%">
+</p>
+
+### 2. The Entropy-Collapse Scatterplot
+Proving the clear functional clustering of attention heads based on their behavior across structural and semantic stress tests.
+<p align="center">
+  <img src="outputs/final_artifacts/headgenome_map.png" width="80%">
+</p>
+
+### 3. The Lexical Anatomy (Figure 7)
 Demonstrates the massive difference in natural-language token distributions preferred by each of the four Head categories.
-*(Located at: `outputs/phase9_semantics/figure7_lexical_anatomy.png`)*
+<p align="center">
+  <img src="outputs/phase9_semantics/figure7_lexical_anatomy.png" width="100%">
+</p>
 
-### 2. The Initialization Null / Training Emergence (Figure 8)
+### 4. The Initialization Null / Training Emergence (Figure 8)
 Proves that the V/Q scaling law is absent in randomly initialized (untrained) networks, establishing it as an emergent property of gradient descent.
-*(Located at: `outputs/phase10_universality/figure8_vq_emergence.png`)*
+<p align="center">
+  <img src="outputs/phase10_universality/figure8_vq_emergence.png" width="100%">
+</p>
 
-### 3. The Permutation Null (Figure 9)
+### 5. The Permutation Null (Figure 9)
 Shows that when models are fed perfectly shuffled gibberish tokens (destroying syntax and meaning), Induction heads actually *strengthen* their structural firing, while Retrieval heads attenuate, proving functional specialization is structurally hardcoded, not semantically guessed.
-*(Located at: `outputs/phase11_permutation_null/figure9_permutation_null.png`)*
+<p align="center">
+  <img src="outputs/phase11_permutation_null/figure9_permutation_null.png" width="100%">
+</p>
 
-### 4. The Cross-Domain Proof (Figure 10)
+### 6. The Cross-Domain Proof (Figure 10)
 Maps the V/Q scaling Pearson correlation across WebText (GPT-2), Multilingual/Code (Qwen), and Multilingual/Math (Llama) to definitively prove that the taxonomy is entirely data-agnostic.
-*(Located at: `outputs/phase11_universality/figure10_cross_domain.png`)*
+<p align="center">
+  <img src="outputs/phase11_universality/figure10_cross_domain.png" width="100%">
+</p>
 
 ## 🚀 Getting Started
 
