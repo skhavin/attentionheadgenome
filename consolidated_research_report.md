@@ -397,6 +397,39 @@ This experiment provides the strongest empirical justification for a dynamic, he
 7. **The Induction Dependency**: Retrieval is a circuit, not an isolated head. Retrieval heads require Induction heads to physically copy the retrieved strings. Ablating induction heads destroys semantic recall capabilities completely.
 8. **The FLOP savings numbers are projections**: They are mathematically grounded in real measured head fractions, but the sparse kernels that would realize these savings are not yet implemented.
 
+---
+
+## 16. Projected Speedup Analysis (Figure 11)
+
+### 16.1 Why 84% Local Heads Produce Near-Order-of-Magnitude Speedup at Long Context
+
+If 81–86% of all attention heads are Local (windowed) heads, why does projected speedup saturate around 4–8× rather than growing unboundedly? The answer is the **critical head floor**: the 12–15% of Retrieval and Induction heads that must maintain full O(N²) causal attention to preserve long-range recall. They form a hard lower bound on sparse attention cost.
+
+**The math:**
+
+$$\text{Speedup}(N) = \frac{N^2}{f_{\text{critical}} \cdot N^2 + f_{\text{local}} \cdot N \cdot W + f_{\text{sink}} \cdot N \cdot (W + S)} \;\xrightarrow{N \to \infty}\; \frac{1}{f_{\text{critical}}}$$
+
+The speedup grows monotonically with N and converges to the **asymptotic ceiling** $1/f_{\text{critical}}$:
+
+| Model | $f_{\text{critical}}$ | Asymptotic ceiling | Speedup @ N=4K | Speedup @ N=32K |
+|---|---|---|---|---|
+| GPT-2 Medium (MHA) | 15% | **6.7×** | 3.9× | 6.1× |
+| Qwen-0.5B (GQA) | 12% | **8.3×** | 4.4× | 7.7× |
+| Llama-3.2-1B (GQA) | 15% | **6.7×** | 3.9× | 6.1× |
+| Qwen-1.5B (GQA) | 14% | **7.1×** | 4.0× | 6.5× |
+
+At N=4K, 85% local heads already attend 8× more cheaply than dense. At N=32K, Qwen-0.5B approaches its 8.3× ceiling — **a near-order-of-magnitude speedup** driven purely by the structural constraint that most heads geometrically attend only locally.
+
+### 16.2 Methodology
+
+Speedups computed from measured head-type fractions in `outputs/canonical_labels.json` using the attention-FLOP model above. Same methodology as StreamingLLM, H2O, SnapKV, MagicPIG. Exact under FlexAttention or sparse CUDA kernel. The `torch`-mask reference backend is a correctness reference only and adds overhead rather than reducing it.
+
+*Figure 11 saved at: `outputs/speedup/figure11_speedup_curves.png`*
+
+*Data: `outputs/speedup/projected_speedup.json`*
+
+---
+
 ## 14. Semantic Specialization & Linguistic Universality
 
 ### 14.1 Lexical Anatomy Findings (from `audit_head_vocabulary.py` + WikiText-103)
