@@ -397,47 +397,32 @@ This experiment provides the strongest empirical justification for a dynamic, he
 7. **The Induction Dependency**: Retrieval is a circuit, not an isolated head. Retrieval heads require Induction heads to physically copy the retrieved strings. Ablating induction heads destroys semantic recall capabilities completely.
 8. **The FLOP savings numbers are projections**: They are mathematically grounded in real measured head fractions, but the sparse kernels that would realize these savings are not yet implemented.
 
----
+## 14. Semantic Specialization & Linguistic Universality
 
-# Appendix: Methodology & Data Lineage
-All statistical claims regarding the developmental lifecycle, the V/Q scaling law, and early/late subtypes were rigorously computed programmatically.
+### 14.1 Lexical Anatomy Findings (from `audit_head_vocabulary.py` + WikiText-103)
 
-* **Execution Suite:** `outputs/final_artifacts/paper_analysis_suite.py`
-* **Raw Results File:** `outputs/phase8_paper_suite/statistical_suite_results.json`
-* **Data Sources:** `outputs/phase3/weight_features.json`, `gpt2_mechanistic_labels.json`, and dynamic entropy probes.
-* **Methods:** Logistic Regression Cross-Validation (Null Control), K-Means (Replication), Resampling ARI (Stability), and OLS/Pearson/Spearman (V/Q Law).
-
-*Note: Remaining dynamic validation experiments (Q/K Patching, V Patching, Attention Target Analysis, URL generalization, and Circuit Isolation) have been explicitly outlined and scaffolded in `outputs/phase8_paper_suite/causal_patching_scaffold.py` for GPU execution.*
-
-
----
-
-## Phase 9: Lexical Anatomy Findings (from `audit_head_vocabulary.py` + WikiText-103)
-
-### Key Inferences from Figure 7
-
-#### 1. Sink Heads as Punctuation Dumps (GPT-2 / Qwen)
+#### 14.1.1 Sink Heads as Punctuation Dumps (GPT-2 / Qwen)
 Across GPT-2 and Qwen, **Sink heads** consistently direct the largest fraction of their
 attention mass toward punctuation tokens (commas, periods) and the BOS-equivalent first
 token. This corroborates the entropy-based classification: Sink heads are not semantically
 active—they function as low-entropy "parking spots" for residual attention mass that is not
 needed for any active computation.
 
-#### 2. Induction Heads Show Higher Lexical Focus
+#### 14.1.2 Induction Heads Show Higher Lexical Focus
 Induction heads exhibit a **higher top-1 token dominance** than Local heads on average
 (~18% vs ~16% for GPT-2). While both are modest, the Induction heads display greater
 consistency: across all sequences, they reliably focus on the repetition payload token
 (`dog` in `[...fox jumps over the lazy dog. The quick...]`). This confirms their
 mechanistic role as backward-looking pattern matchers.
 
-#### 3. Local Heads Are Truly Diffuse — The Grammar Engine Hypothesis Confirmed
+#### 14.1.3 Local Heads Are Truly Diffuse — The Grammar Engine Hypothesis Confirmed
 Local heads show the **highest variance** in top-1 token dominance, with some heads
 reaching 47-52% focus on a single word class (articles: `the`, `a`) and others spread
 across the full vocabulary. This is direct evidence that the "Local" category is not
 homogeneous: it contains both narrow-purpose syntactic anchorers (article trackers,
 preposition heads) and genuinely diffuse contextual integrators.
 
-#### 4. Llama-3.2-1B: BOS-Parking as a Universal Mechanism
+#### 14.1.4 Llama-3.2-1B: BOS-Parking as a Universal Mechanism
 Llama-3.2-1B shows a **dramatic anomaly**: 90%+ of all heads (Local AND Induction)
 park >80% of their attention mass on the `<|begin_of_text|>` special token. This is the
 RoPE-architecture equivalent of the BOS-sink phenomenon. Without an Absolute Position
@@ -446,27 +431,28 @@ its de-facto structural anchor: the mandatory BOS marker. This provides strong e
 that the **attention-parking mechanism is architecturally universal** — only the specific
 token used as the sink changes between APE (first position) and RoPE (`<|bos|>`) models.
 
-#### 5. Retrieval Heads Prefer Proper Nouns / Sentence Starts
+#### 14.1.5 Retrieval Heads Prefer Proper Nouns / Sentence Starts
 Where identifiable (GPT-2, Qwen), Retrieval heads show a disproportionate preference for
 **capitalized / sentence-start tokens** and **prepositions** relative to other labels.
 This is consistent with the hypothesis that these heads act as semantic fact-extractors:
 in WikiText-103 (an encyclopedic corpus), proper nouns and the beginning of named-entity
 phrases are the most information-dense tokens.
 
-#### 6. Cross-Architecture Universality Confirmed
+#### 14.1.6 Cross-Architecture Universality Confirmed
 The token-category heatmap (Panel E) shows that the **vocabulary fingerprint of each
 head type is conserved across GPT-2 and Qwen**, despite different tokenizers, training
 sets, and parameter counts. Sink, Local, Retrieval, and Induction heads each occupy a
 distinct and reproducible region of token-category space. This is the lexical-level proof
 of the architectural universality claim.
 
-
 *Figure 7 saved at: `outputs/phase9_semantics\figure7_lexical_anatomy.png`*
 
 
 ---
 
-## Phase 10: The Untrained Null (Proof of Training Emergence)
+## 15. The Emergence of Structure (Data Independence & Initialization Null)
+
+### 15.1 The Untrained Null (Proof of Training Emergence)
 
 A critical skeptical hypothesis is that the HeadGenome taxonomy—specifically the cross-architectural scaling of the $V/Q$ norm ratio—might merely be an artifact of the transformer architecture's initialization, rather than an emergent property of optimization.
 
@@ -474,7 +460,7 @@ To test this, we introduced the **Initialization Null** experiment.
 
 We instantiated a standard GPT-2 Medium model from config, entirely bypassing the pretrained weights (i.e., randomly initialized `W_q`, `W_k`, `W_v` matrices using standard PyTorch init). We then calculated the $V/Q$ ratio across all depth layers for this untrained network and plotted it alongside our four trained architectures.
 
-### Findings (Figure 8)
+#### 15.1.1 Findings (Figure 8)
 1. **The Trained Universality:** The trained models (GPT-2, Qwen-0.5B, Qwen-1.5B, Llama-3.2-1B) form remarkably coincident, monotonically increasing polynomial curves. Regardless of the underlying corpus or architectural nuances (GQA vs MHA), training forces heads at depth to aggressively scale up their Value matrices relative to their Query matrices.
 2. **The Untrained Null:** The randomly initialized GPT-2 model completely fails to exhibit this structure. Its $V/Q$ ratio forms a flat, noisy horizontal line (slope $\approx 0$) around $1.0$, completely invariant to depth.
 
@@ -485,13 +471,13 @@ We instantiated a standard GPT-2 Medium model from config, entirely bypassing th
 
 ---
 
-## Phase 11: Data Independence (The Permutation Null & Cross-Domain Proof)
+### 15.2 Data Independence (The Permutation Null & Cross-Domain Proof)
 
 A rigorous reviewer will note a remaining gap: *“All four models were optimized on next-token prediction over human text. The structural topology might simply reflect the model learning English statistics—e.g., that later layers need to read more broadly from context to predict the next word—making this a property of language, not transformer geometry.”*
 
 To definitively prove that the HeadGenome taxonomy is independent of linguistic semantics, we conducted two distinct proofs.
 
-### 11.1 The Permutation Null (Figure 9)
+#### 15.2.1 The Permutation Null (Figure 9)
 We subjected GPT-2 to the exact same Induction (Repetition) and Retrieval (Needle) stress-tests used in Phase 1, but we constructed the input sequences by **randomly shuffling WikiText tokens**. This preserves the marginal token frequencies (keeping embeddings in-distribution) but completely destroys all syntax, grammar, and semantic meaning.
 
 *   **Induction Heads (Orange):** Show equal or greater entropy-collapse magnitude on shuffled token sequences (points at or above $y=x$ in Panel A), confirming they detect structural repetition independent of semantic content. The removal of semantic distraction actually sharpens their mechanistic firing.
@@ -500,7 +486,7 @@ We subjected GPT-2 to the exact same Induction (Repetition) and Retrieval (Needl
 
 *Figure 9 (The Permutation Null) is saved at: `outputs/phase11_permutation_null/figure9_permutation_null.png`*
 
-### 11.2 The Cross-Domain Proof (Figure 10)
+#### 15.2.2 The Cross-Domain Proof (Figure 10)
 Our four profiled models were trained on massively divergent regimes:
 *   **GPT-2 Medium:** WebText (40 Billion tokens), exclusively English, 50k BPE tokenizer.
 *   **Qwen-2.5 (0.5B & 1.5B):** Qwen-Corpus (18 Trillion tokens), multilingual + heavily dense in computer code, 151k tokenizer.
@@ -513,3 +499,17 @@ The Pearson $r$ values cluster tightly together: **0.681, 0.734, 0.647, 0.635**.
 If the spatial stratification of the HeadGenome were a byproduct of English syntax, it would distort when shifting to 18 Trillion tokens of code and multilingual data. Because the law survives intact across extreme domain shifts, we conclude it is definitively **data-agnostic**.
 
 *Figure 10 (The Cross-Domain Proof) is saved at: `outputs/phase11_universality/figure10_cross_domain.png`*
+
+---
+
+# Appendix: Methodology & Data Lineage
+All statistical claims regarding the developmental lifecycle, the V/Q scaling law, and early/late subtypes were rigorously computed programmatically.
+
+* **Execution Suite:** `outputs/final_artifacts/paper_analysis_suite.py`
+* **Raw Results File:** `outputs/phase8_paper_suite/statistical_suite_results.json`
+* **Data Sources:** `outputs/phase3/weight_features.json`, `gpt2_mechanistic_labels.json`, and dynamic entropy probes.
+* **Methods:** Logistic Regression Cross-Validation (Null Control), K-Means (Replication), Resampling ARI (Stability), and OLS/Pearson/Spearman (V/Q Law).
+
+*Note: Remaining dynamic validation experiments (Q/K Patching, V Patching, Attention Target Analysis, URL generalization, and Circuit Isolation) have been explicitly outlined and scaffolded in `outputs/phase8_paper_suite/causal_patching_scaffold.py` for GPU execution.*
+
+
