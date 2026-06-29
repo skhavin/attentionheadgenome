@@ -86,6 +86,12 @@ Maps the V/Q scaling Pearson correlation across WebText (GPT-2), Multilingual/Co
   <img src="outputs/phase11_universality/figure10_cross_domain.png" width="100%">
 </p>
 
+### 7. Projected Speedup Curves (Figure 11)
+Real projected TTFT (prefill) and TPOT (decode) speedups across all 4 architectures, computed from empirically measured head-type fractions. At N=4096, Qwen achieves **4.4× prefill speedup**; GPT-2 and Llama achieve **~3.9×**. At N=32K, Qwen scales to **7.7×**.
+<p align="center">
+  <img src="outputs/speedup/figure11_speedup_curves.png" width="100%">
+</p>
+
 ## 🚀 Getting Started
 
 To reproduce the analysis or run the `headgenome` routing policies:

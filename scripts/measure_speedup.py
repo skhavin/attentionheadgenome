@@ -16,7 +16,7 @@ import os, sys, json, time
 import torch
 
 # Allow importing from lib/
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "lib"))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "lib")))
 
 os.environ["HF_HOME"]          = r"d:\.cache\huggingface"
 os.environ["PYTHONIOENCODING"] = "utf-8"
@@ -26,12 +26,14 @@ from headgenome.benchmarks.speed import measure_ttft, measure_e2e
 from headgenome.benchmarks.ppl   import measure_ppl
 from headgenome.benchmarks.niah  import run_niah
 
-OUT_DIR = os.path.join(os.path.dirname(__file__), "outputs", "speedup")
+OUT_DIR = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")), "outputs", "speedup")
 os.makedirs(OUT_DIR, exist_ok=True)
 
 # ── Models to test (in order of size) ─────────────────────────────────────────
 MODELS = [
+    "openai-community/gpt2-medium",
     "Qwen/Qwen2.5-0.5B",
+    "meta-llama/Llama-3.2-1B",
     "Qwen/Qwen2.5-1.5B",
 ]
 
@@ -68,7 +70,11 @@ def run_model(model_id: str, all_results: dict):
     hg = HeadGenome(model_id, dtype="bf16", device=device)
     tok = hg.tokenizer
 
-    prompt = build_prompt(tok, SEQ_LEN)
+    target_seq = SEQ_LEN
+    if "gpt2" in model_id.lower():
+        target_seq = 950
+
+    prompt = build_prompt(tok, target_seq)
     actual_len = tok(prompt, return_tensors="pt")["input_ids"].shape[1]
     print(f"  Prompt length: {actual_len} tokens")
 
@@ -78,10 +84,14 @@ def run_model(model_id: str, all_results: dict):
     print(f"\n[1/3] Dense Baseline")
     torch.cuda.reset_peak_memory_stats()
 
+    haystack = 300
+    if "gpt2" in model_id.lower():
+        haystack = 50
+
     dense_ttft = measure_ttft(hg.model, tok, prompt, device=device, warmup=WARMUP, runs=RUNS)
     dense_e2e  = measure_e2e(hg.model, tok, prompt, new_tokens=NEW_TOKENS, device=device, warmup=WARMUP, runs=max(RUNS//2, 3))
     dense_ppl  = measure_ppl(hg.model, tok, seq_len=512, device=device)
-    dense_niah = run_niah(hg.model, tok, num_samples=NIAH_N, device=device)
+    dense_niah = run_niah(hg.model, tok, num_samples=NIAH_N, haystack_sentences=haystack, device=device)
 
     model_results["dense"] = {
         "ttft_ms_mean":   dense_ttft["ttft_ms_mean"],
@@ -115,7 +125,7 @@ def run_model(model_id: str, all_results: dict):
     hg_ttft = measure_ttft(hg.model, tok, prompt, device=device, warmup=WARMUP, runs=RUNS)
     hg_e2e  = measure_e2e(hg.model, tok, prompt, new_tokens=NEW_TOKENS, device=device, warmup=WARMUP, runs=max(RUNS//2, 3))
     hg_ppl  = measure_ppl(hg.model, tok, seq_len=512, device=device)
-    hg_niah = run_niah(hg.model, tok, num_samples=NIAH_N, device=device)
+    hg_niah = run_niah(hg.model, tok, num_samples=NIAH_N, haystack_sentences=haystack, device=device)
 
     model_results["headgenome"] = {
         "ttft_ms_mean":   hg_ttft["ttft_ms_mean"],
