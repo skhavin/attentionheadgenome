@@ -60,6 +60,13 @@ def main():
     model = AutoModelForCausalLM.from_pretrained(MODEL_ID, device_map="auto")
     model.eval()
 
+    # Load untrained control
+    print("Initializing untrained control model...")
+    from transformers import AutoConfig
+    config = AutoConfig.from_pretrained(MODEL_ID)
+    untrained_model = AutoModelForCausalLM.from_config(config)
+    untrained_model.eval()
+
     inputs = tokenizer(PROMPT, return_tensors="pt").to(model.device)
     input_ids = inputs["input_ids"][0].tolist()
     tokens = [tokenizer.decode([idx]) for idx in input_ids]
@@ -68,29 +75,33 @@ def main():
 
     with torch.no_grad():
         outputs = model(**inputs, use_cache=True, output_attentions=False)
+        outputs_untrained = untrained_model(**inputs.to(untrained_model.device), use_cache=True, output_attentions=False)
     
-    past_kv = outputs.past_key_values # tuple of length n_layers
-    # Each element: (key, value) of shape (batch, num_heads, seq_len, head_dim)
+    past_kv = outputs.past_key_values
+    past_kv_untrained = outputs_untrained.past_key_values
 
-    fig = plt.figure(figsize=(20, 16), facecolor="#0F0F0F")
+    fig = plt.figure(figsize=(24, 12), facecolor="#0F0F0F")
     fig.suptitle("KV Cache Geometry (PCA Projection of Key Vectors)\nHow Different Head Types See the Same Text", 
-                 color="white", fontsize=24, fontweight="bold", y=0.95)
+                 color="white", fontsize=24, fontweight="bold", y=0.98)
+
+    # 5 panels: 1 row of 3, 1 row of 2 (centered, but we can just use 2x3 grid and leave last empty)
+    panels = list(HEADS.items())
+    panels.append(("Untrained Control", HEADS["Retrieval"])) # Use same layer/head as retrieval for control
 
     plot_idx = 1
-    for name, (layer, head) in HEADS.items():
+    for name, (layer, head) in panels:
         print(f"Processing {name} head (L{layer} H{head})...")
         
-        # Extract Key vectors: shape (seq_len, head_dim)
-        # NOTE: For GQA models (Qwen, Llama), the head index in past_kv is the 
-        # KV-group index, not the query-head index. For GPT-2 (MHA), they are 1:1.
-        # If extending to GQA, map `head` -> `head // (num_q_heads // num_kv_heads)`.
-        K = past_kv[layer][0][0, head, :, :].cpu().numpy().astype(np.float32)
+        # Extract Key vectors
+        if name == "Untrained Control":
+            K = past_kv_untrained[layer][0][0, head, :, :].cpu().numpy().astype(np.float32)
+        else:
+            K = past_kv[layer][0][0, head, :, :].cpu().numpy().astype(np.float32)
         
-        # Reduce to 3D via PCA
         pca = PCA(n_components=3, random_state=42)
         K_3d = pca.fit_transform(K)
         
-        ax = fig.add_subplot(2, 2, plot_idx, projection='3d')
+        ax = fig.add_subplot(2, 3, plot_idx, projection='3d')
         ax.set_facecolor("#1A1A2E")
         ax.xaxis.set_pane_color((0.1, 0.1, 0.18, 1.0))
         ax.yaxis.set_pane_color((0.1, 0.1, 0.18, 1.0))
@@ -102,14 +113,11 @@ def main():
         ax.zaxis.line.set_color("#333355")
         ax.tick_params(colors="white")
 
-        # Scatter plot
         legend_handles = {}
         for i in range(len(tokens)):
             color, label = get_token_color(i, tokens[i])
-            # Draw point
             ax.scatter(K_3d[i, 0], K_3d[i, 1], K_3d[i, 2], c=color, s=50, alpha=0.8, edgecolors="white", linewidth=0.5)
             
-            # Connect consecutive tokens with a thin line to show the sequence path
             if i > 0:
                 ax.plot([K_3d[i-1, 0], K_3d[i, 0]], 
                         [K_3d[i-1, 1], K_3d[i, 1]], 
@@ -119,20 +127,19 @@ def main():
             if label not in legend_handles:
                 legend_handles[label] = color
                 
-        # Annotate specific tokens to make it readable
-        # Only annotate punctuation, first token, and entities to avoid clutter
         for i in range(len(tokens)):
             color, label = get_token_color(i, tokens[i])
             if label in ["First Token", "Punctuation", "Key Entities (fox/dog)"]:
-                # add slight offset
                 ax.text(K_3d[i, 0], K_3d[i, 1], K_3d[i, 2]+0.02, tokens[i].strip(), 
                         color="white", fontsize=8, alpha=0.8)
 
         var_explained = sum(pca.explained_variance_ratio_) * 100
-        ax.set_title(f"{name} Head (L{layer} H{head})\nExplained Var: {var_explained:.1f}%", 
-                     color="white", fontsize=16, pad=10)
+        title = f"{name} Head (L{layer} H{head})\nExplained Var: {var_explained:.1f}%"
+        if name == "Untrained Control":
+            title = f"Untrained Control (Random L{layer} H{head})\nExplained Var: {var_explained:.1f}%"
+            
+        ax.set_title(title, color="white", fontsize=16, pad=10)
         
-        # Add legend only to the first plot
         if plot_idx == 1:
             import matplotlib.patches as mpatches
             patches = [mpatches.Patch(color=c, label=l) for l, c in legend_handles.items()]
@@ -140,7 +147,7 @@ def main():
 
         plot_idx += 1
 
-    plt.tight_layout(rect=[0, 0, 1, 0.93])
+    plt.tight_layout(rect=[0, 0, 1, 0.95])
     out_path = os.path.join(OUT_DIR, "figure12_kv_geometry.png")
     plt.savefig(out_path, dpi=200)
     print(f"\nSaved visualization to {out_path}")

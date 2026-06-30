@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KV Cache Geometry Explorer - HeadGenome</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: ['class', '[data-theme="dark"]'],
+            theme: {
+                extend: {
+                    colors: {
+                        sink: '#ef4444',     // red-500
+                        local: '#3b82f6',    // blue-500
+                        retrieval: '#a855f7', // purple-500
+                        induction: '#f97316', // orange-500
+                        unknown: '#9ca3af'    // gray-400
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { transition: background-color 0.3s, color 0.3s; }
+        .theme-dark { background-color: #0f172a; color: #f8fafc; }
+        .theme-light { background-color: #f8fafc; color: #0f172a; }
+        
+        .panel { transition: background-color 0.3s, border-color 0.3s; }
+        .theme-dark .panel { background-color: #1e293b; border-color: #334155; }
+        .theme-light .panel { background-color: #ffffff; border-color: #e2e8f0; }
+
+        select { transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+        .theme-dark select { background-color: #0f172a; border-color: #334155; color: white; }
+        .theme-light select { background-color: #f1f5f9; border-color: #cbd5e1; color: black; }
+        
+        #plot-container { height: 75vh; width: 100%; border-radius: 0.5rem; overflow: hidden; }
+        
+        /* Category specific styling for dropdown options */
+        option[data-class="sink"] { color: #ef4444; font-weight: bold; }
+        option[data-class="local"] { color: #3b82f6; font-weight: bold; }
+        option[data-class="retrieval"] { color: #a855f7; font-weight: bold; }
+        option[data-class="induction"] { color: #f97316; font-weight: bold; }
+        
+        /* Loading overlay */
+        #loading {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.9); z-index: 50;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+    </style>
+</head>
+<body class="theme-dark h-screen flex flex-col font-sans">
+    
+    <div id="loading">
+        <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-500 mb-4"></div>
+        <h2 class="text-xl font-semibold text-white">Loading KV Geometry Data...</h2>
+        <p class="text-gray-400 mt-2">Loading all 1,568 heads across 4 architectures (~15MB)</p>
+    </div>
+
+    <!-- Header -->
+    <header class="panel border-b px-6 py-4 flex justify-between items-center shadow-sm z-10 relative">
+        <div>
+            <h1 class="text-2xl font-bold tracking-tight">The HeadGenome Project</h1>
+            <p class="text-sm opacity-70 mt-1">Interactive KV Cache Geometry Explorer (3D PCA Projection)</p>
+        </div>
+        
+        <div class="flex items-center gap-6">
+            <div class="flex gap-4 text-sm">
+                <span class="flex items-center gap-1"><div class="w-3 h-3 rounded-full bg-sink"></div> Sink</span>
+                <span class="flex items-center gap-1"><div class="w-3 h-3 rounded-full bg-local"></div> Local</span>
+                <span class="flex items-center gap-1"><div class="w-3 h-3 rounded-full bg-retrieval"></div> Retrieval</span>
+                <span class="flex items-center gap-1"><div class="w-3 h-3 rounded-full bg-induction"></div> Induction</span>
+            </div>
+            <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-slate-700 transition">
+                <svg id="moon-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <svg id="sun-icon" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Controls -->
+    <div class="panel border-b px-6 py-3 flex gap-4 items-end shadow-sm z-0 relative">
+        <div class="flex flex-col gap-1 w-48">
+            <label class="text-xs font-semibold opacity-70 uppercase">Model</label>
+            <select id="model-select" class="w-full rounded border px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></select>
+        </div>
+        <div class="flex flex-col gap-1 w-48">
+            <label class="text-xs font-semibold opacity-70 uppercase">Filter by Class</label>
+            <select id="class-filter" class="w-full rounded border px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="all">All Heads</option>
+                <option value="sink">Sink Heads</option>
+                <option value="local">Local Heads</option>
+                <option value="retrieval">Retrieval Heads</option>
+                <option value="induction">Induction Heads</option>
+            </select>
+        </div>
+        <div class="flex flex-col gap-1 w-64">
+            <label class="text-xs font-semibold opacity-70 uppercase">Head Select</label>
+            <select id="head-select" class="w-full rounded border px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></select>
+        </div>
+        <div class="ml-auto flex items-end h-full mb-1">
+            <span id="head-info" class="text-sm font-medium px-4 py-1 rounded-full border"></span>
+        </div>
+    </div>
+
+    <!-- Main Plot Area -->
+    <main class="flex-1 p-6 overflow-hidden flex items-center justify-center relative">
+        <div id="plot-container" class="panel border shadow-lg relative"></div>
+        
+        <div class="absolute bottom-10 left-10 panel border rounded p-4 shadow-xl opacity-90 max-w-sm pointer-events-none">
+            <h3 class="font-bold text-sm mb-2">Color Mapping</h3>
+            <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
+                <span class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-red-500"></div> First Token</span>
+                <span class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-purple-500"></div> Punctuation</span>
+                <span class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-gray-500"></div> Stopwords</span>
+                <span class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-cyan-500"></div> Fox / Dog</span>
+                <span class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-emerald-500"></div> Attributes / Actions</span>
+                <span class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-blue-500"></div> Other Words</span>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let db = null;
+        let isDark = true;
+        let currentPlotData = null;
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const body = document.body;
+
+        const colorMap = {
+            "First Token": "#EF4444",
+            "Punctuation": "#A855F7",
+            "Stopwords": "#6B7280",
+            "Key Entities (fox/dog)": "#06B6D4",
+            "Attributes/Actions": "#10B981",
+            "Other Words": "#3B82F6"
+        };
+
+        const classColorMap = {
+            "sink": "#ef4444",
+            "local": "#3b82f6",
+            "retrieval": "#a855f7",
+            "induction": "#f97316",
+            "unknown": "#9ca3af"
+        };
+
+        function toggleTheme() {
+            isDark = !isDark;
+            body.className = isDark ? 'theme-dark h-screen flex flex-col font-sans' : 'theme-light h-screen flex flex-col font-sans';
+            body.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            
+            if (isDark) {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+            
+            if (currentPlotData) renderPlot();
+        }
+        themeToggle.addEventListener('click', toggleTheme);
+
+        async function init() {
+            try {
+                const response = await fetch('all_kv_geometry.json');
+                db = await response.json();
+                
+                document.getElementById('loading').style.display = 'none';
+                
+                const modelSelect = document.getElementById('model-select');
+                Object.keys(db.models).forEach(model => {
+                    const option = document.createElement('option');
+                    option.value = model;
+                    option.textContent = model;
+                    modelSelect.appendChild(option);
+                });
+
+                modelSelect.addEventListener('change', updateHeadDropdown);
+                document.getElementById('class-filter').addEventListener('change', updateHeadDropdown);
+                document.getElementById('head-select').addEventListener('change', renderPlot);
+
+                updateHeadDropdown();
+                
+            } catch (error) {
+                console.error("Failed to load data:", error);
+                document.getElementById('loading').innerHTML = `
+                    <div class="text-red-500 font-bold text-xl mb-2">Failed to load data</div>
+                    <p class="text-gray-400">Ensure all_kv_geometry.json is in the same directory.</p>
+                `;
+            }
+        }
+
+        function updateHeadDropdown() {
+            const model = document.getElementById('model-select').value;
+            const filter = document.getElementById('class-filter').value;
+            const headSelect = document.getElementById('head-select');
+            
+            headSelect.innerHTML = '';
+            const modelData = db.models[model];
+            
+            for (let l = 0; l < modelData.num_layers; l++) {
+                for (let h = 0; h < modelData.num_heads; h++) {
+                    const key = `${l}_${h}`;
+                    const headData = modelData.heads[key];
+                    const label = headData.label;
+                    
+                    if (filter === 'all' || filter === label) {
+                        const option = document.createElement('option');
+                        option.value = key;
+                        option.setAttribute('data-class', label);
+                        option.textContent = `Layer ${l}, Head ${h} [${label.toUpperCase()}]`;
+                        headSelect.appendChild(option);
+                    }
+                }
+            }
+            
+            if (headSelect.options.length > 0) {
+                headSelect.selectedIndex = 0;
+                renderPlot();
+            } else {
+                Plotly.purge('plot-container');
+                document.getElementById('head-info').textContent = "No heads match filter.";
+                document.getElementById('head-info').className = "text-sm font-medium px-4 py-1 rounded-full border border-gray-500 text-gray-500";
+            }
+        }
+
+        function renderPlot() {
+            const model = document.getElementById('model-select').value;
+            const headKey = document.getElementById('head-select').value;
+            if (!model || !headKey) return;
+
+            const modelData = db.models[model];
+            const headData = modelData.heads[headKey];
+            currentPlotData = headData;
+
+            // Update Info Badge
+            const infoBadge = document.getElementById('head-info');
+            infoBadge.textContent = `${headData.label.toUpperCase()} HEAD (Var: ${headData.var}%)`;
+            infoBadge.style.borderColor = classColorMap[headData.label] || '#9ca3af';
+            infoBadge.style.color = classColorMap[headData.label] || '#9ca3af';
+
+            const tokens = modelData.tokens;
+            const categories = modelData.categories;
+            
+            // Build Plotly traces
+            const traces = [];
+            
+            // Trace 1: The connecting line path (draw first so it's under points)
+            traces.push({
+                type: 'scatter3d',
+                mode: 'lines',
+                x: headData.x,
+                y: headData.y,
+                z: headData.z,
+                line: {
+                    color: isDark ? 'rgba(100, 116, 139, 0.4)' : 'rgba(148, 163, 184, 0.4)',
+                    width: 2
+                },
+                hoverinfo: 'none',
+                showlegend: false
+            });
+
+            // Trace 2: The points, colored by category
+            // We group them by category for the legend
+            const categoryGroups = {};
+            for (let i = 0; i < tokens.length; i++) {
+                const cat = categories[i];
+                if (!categoryGroups[cat]) categoryGroups[cat] = { x: [], y: [], z: [], text: [], marker: { color: colorMap[cat], size: 6, line: { color: isDark ? '#fff' : '#000', width: 0.5 } } };
+                
+                categoryGroups[cat].x.push(headData.x[i]);
+                categoryGroups[cat].y.push(headData.y[i]);
+                categoryGroups[cat].z.push(headData.z[i]);
+                categoryGroups[cat].text.push(`Token ${i}: "${tokens[i].trim()}"`);
+            }
+
+            for (const [cat, data] of Object.entries(categoryGroups)) {
+                traces.push({
+                    name: cat,
+                    type: 'scatter3d',
+                    mode: 'markers+text',
+                    x: data.x,
+                    y: data.y,
+                    z: data.z,
+                    text: data.text,
+                    textposition: 'top right',
+                    hoverinfo: 'text',
+                    marker: data.marker,
+                    showlegend: false // legend handled in custom UI overlay
+                });
+            }
+
+            const bgColor = isDark ? '#1e293b' : '#ffffff';
+            const fgColor = isDark ? '#f8fafc' : '#0f172a';
+            const gridColor = isDark ? '#334155' : '#e2e8f0';
+
+            const layout = {
+                paper_bgcolor: bgColor,
+                plot_bgcolor: bgColor,
+                font: { color: fgColor, family: 'Inter, sans-serif' },
+                margin: { l: 0, r: 0, b: 0, t: 0 },
+                scene: {
+                    xaxis: { title: 'PC 1', gridcolor: gridColor, zerolinecolor: gridColor, backgroundcolor: isDark ? '#0f172a' : '#f8fafc', showbackground: true },
+                    yaxis: { title: 'PC 2', gridcolor: gridColor, zerolinecolor: gridColor, backgroundcolor: isDark ? '#0f172a' : '#f8fafc', showbackground: true },
+                    zaxis: { title: 'PC 3', gridcolor: gridColor, zerolinecolor: gridColor, backgroundcolor: isDark ? '#0f172a' : '#f8fafc', showbackground: true },
+                    camera: {
+                        eye: {x: 1.5, y: 1.5, z: 1.2}
+                    }
+                }
+            };
+
+            Plotly.newPlot('plot-container', traces, layout, {responsive: true, displayModeBar: false});
+        }
+
+        init();
+    </script>
+</body>
+</html>
