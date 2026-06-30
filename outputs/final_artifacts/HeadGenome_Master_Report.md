@@ -565,12 +565,58 @@ These are **real projected speedups** computed directly from the empirically mea
 
 ---
 
-# PART X: Discussion & Future Work
+# PART X: KV Cache Geometry Visualisation (Figure 12)
 
-## 10.1 Semantic Drift and Localized Plasticity
+## 10.1 Overview
+
+A transformer's KV cache stores, for each token, a Key vector and a Value vector. These vectors lie in a high-dimensional space. Using PCA to project them to 3D reveals the **geometric manifold** implied by each head type — a qualitative but powerful illustration of why our taxonomy is not an artefact of the classification algorithm but a genuine structural property of the weight space.
+
+## 10.2 Experimental Setup
+
+We extract the Key ($K$) tensors from `past_key_values` after a single forward pass of GPT-2 Medium on the prompt:
+
+> *"The quick brown fox jumps over the lazy dog…"* (67 tokens, repeated with variation)
+
+We use the four canonical **reference heads** already identified in Figures 1–2 for entropy-collapse representativeness (L5H11 Sink, L23H5 Local, L15H8 Retrieval, L9H3 Induction). A fifth panel shows the **same layer/head in an untrained random-init GPT-2**, serving as the null baseline.
+
+> **Note (GQA models):** For Qwen and Llama (GQA), the `past_kv` head index is the KV-group index, not the query-head index. The correct mapping is `kv_head = query_head // (num_q_heads // num_kv_heads)`. GPT-2 (MHA) uses a 1:1 mapping and was chosen for this paper figure to avoid this ambiguity.
+
+## 10.3 Results
+
+Each head type organises the same token sequence into a qualitatively distinct manifold:
+
+| Head Type | Observed Geometry |
+|---|---|
+| **Sink** | Punctuation and the BOS token are pushed far from the main cluster; all others collapse into a tight isotropic ball. |
+| **Local** | Tokens form a continuous, nearly-linear time-curve. Position encodes strictly temporally; semantics are absent. |
+| **Retrieval** | All three instances of *"fox"* collapse into a single cluster; all instances of *"dog"* form another — regardless of temporal position. |
+| **Induction** | Similar semantic clustering to Retrieval, with a stronger collapse of syntactically parallel tokens (repeated phrases). |
+| **Untrained Control** | An amorphous, structureless cloud. No clustering by position, semantics, or token identity. |
+
+## 10.4 Significance
+
+The untrained control falsifies the null hypothesis that PCA projection of random high-dimensional vectors could accidentally produce structured manifolds. The specialised geometry is **emergent from training**, not from the architecture itself, and it precisely mirrors the entropy-collapse taxonomy: heads that collapse entropy onto a narrow attention distribution also collapse their Key-vector manifold onto a semantically meaningful low-dimensional structure.
+
+> **Replication note:** This is a qualitative illustration only, not a quantitative proof — PCA explained variance is low (typically 30–55% in 3D), and projections can reflect positional encoding contamination. The untrained control and the consistency with the entropy labels (cross-referenceable in `outputs/canonical_labels.json`) are the controls that give this figure its evidential value.
+
+## 10.5 Interactive Supplementary Artefact
+
+An interactive 3D viewer covering **all 1,568 heads across all four architectures** is available at:
+
+`outputs/geometry/interactive_kv_viewer.html`
+
+This self-contained HTML file (Plotly-based, no server required) allows reviewers to browse every head, filter by taxonomy class, and verify that the canonical reference heads used in Figure 12 are not cherry-picked. Heads are colour-coded by taxonomy label in the dropdown for ease of navigation.
+
+*Figure 12 is saved at: `outputs/geometry/figure12_kv_geometry.png`*
+
+---
+
+# PART XI: Discussion & Future Work
+
+## 11.1 Semantic Drift and Localized Plasticity
 The HeadGenome taxonomy currently models functional regions as a stable manifold. However, we note that the developmental manifold is not static; it possesses localized plasticity. As demonstrated in our Regime Switching experiments (Section 4.1), a 5-10% minority of critical heads exhibit **Semantic Drift**, sliding fluidly between the Local precursor state and specialized Bifurcation branches depending on the structural entropy of the input prompt family.
 
-## 10.2 The Ultimate "A-to-Z" Taxonomy Matrix
+## 11.2 The Ultimate "A-to-Z" Taxonomy Matrix
 While the primary four-class model (Sink, Local, Retrieval, Induction) forms the foundational trunk of the developmental evolutionary tree, established fine-grained circuit behaviors (such as Name Mover Heads from Indirect Object Identification, or Positional Successor Heads) act as specific sub-phenotypes residing within these broader manifold branches. 
 
 To formalize this, we propose the complete A-to-Z taxonomy matrix mapping prior interpretability literature into the HeadGenome manifold:

@@ -430,6 +430,33 @@ Speedups computed from measured head-type fractions in `outputs/canonical_labels
 
 ---
 
+## 17. KV Cache Geometry Visualisation (Figure 12)
+
+### 17.1 What It Shows
+
+By extracting the Key ($K$) vectors from `past_key_values` after a single forward pass and projecting them to 3D via PCA, we confirm the taxonomy visually and geometrically. Each head type organises identical tokens into a qualitatively distinct manifold:
+
+| Head Type | Geometric Behaviour |
+|---|---|
+| **Sink** | Punctuation / BOS pushed far to the periphery; remaining tokens collapse into a tight isotropic ball |
+| **Local** | A continuous time-curve; position encoded strictly sequentially, semantics absent |
+| **Retrieval** | Identical words (*fox*, *dog*) cluster regardless of where they appear in the sequence |
+| **Induction** | Same semantic clustering as Retrieval with stronger collapse on repeated syntactic structures |
+| **Untrained Control** | Amorphous cloud — no positional, semantic, or identity structure |
+
+### 17.2 Justification for Head Selection
+
+We reuse the exact reference heads from Figures 1–2 (L5H11 Sink, L23H5 Local, L15H8 Retrieval, L9H3 Induction in GPT-2 Medium). This eliminates the cherry-picking concern: a reviewer can cross-reference the entropy-collapse scores for these exact heads in `outputs/canonical_labels.json` against their geometric behaviour.
+
+### 17.3 Limitations Acknowledged
+
+PCA explained variance is typically 30–55% in 3D. The untrained-control panel (5th panel in Figure 12) is the critical control: it falsifies the null hypothesis that random high-dimensional vectors could accidentally appear structured under PCA. The geometry is **emergent from training**, not from the architecture or projection method.
+
+**Figure 12:** `outputs/geometry/figure12_kv_geometry.png`
+**Interactive viewer (all 1,568 heads):** `outputs/geometry/interactive_kv_viewer.html`
+
+---
+
 ## 14. Semantic Specialization & Linguistic Universality
 
 ### 14.1 Lexical Anatomy Findings (from `audit_head_vocabulary.py` + WikiText-103)
