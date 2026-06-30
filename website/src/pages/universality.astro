@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Layout title="Architecture Universality" description="The HeadGenome taxonomy is architecture-intrinsic — not a property of data, language, or training distribution.">
+<div class="page-hero">
+  <p class="overline">Architecture Universality</p>
+  <h1>The taxonomy survives everything we threw at it.</h1>
+  <p>Untrained controls. Permutation nulls. Cross-domain training. The four-class structure is not a property of language — it is a property of the transformer geometry itself.</p>
+</div>
+
+<div class="section">
+
+  <div class="big-claim reveal">
+    <p class="claim-text">
+      "All four models were trained on human language. Couldn't the structure be a property of English?"
+    </p>
+    <p class="claim-answer">No. Here is the proof.</p>
+  </div>
+
+  <hr/>
+
+  <h2 class="reveal">Proof 1 — Untrained vs Trained (Figure 8)</h2>
+  <p class="reveal" style="color:var(--muted);margin-bottom:2rem">
+    A randomly-initialised GPT-2 has no meaningful V/Q structure — the ratio is flat, noisy, and shows no monotonic trend. After training, the same architecture develops the same law to p ≈ 10⁻¹²⁷. The structure emerges from gradient descent on prediction objectives, not from the architecture initialisation alone.
+  </p>
+  <figure class="figure reveal">
+    <img src={`${base}/figures/fig8_universality.png`} alt="Untrained vs trained V/Q emergence" loading="lazy" />
+    <figcaption>Figure 8 · V/Q ratio in a random-init GPT-2 (top) vs. trained GPT-2 (bottom). The monotonic law is absent before training and appears universally after it.</figcaption>
+  </figure>
+
+  <hr/>
+
+  <h2 class="reveal">Proof 2 — Permutation Null (Figure 9)</h2>
+  <p class="reveal" style="color:var(--muted);margin-bottom:2rem">
+    We feed the trained model <em>randomly shuffled token sequences</em> — same vocabulary, same sequence lengths, but destroying all linguistic structure. The entropy-collapse probe still recovers the same four head classes. The V/Q scaling law still holds. Specialisation survives destruction of language statistics within a trained model.
+  </p>
+  <div class="callout reveal">
+    <strong>What this proves:</strong> The permutation null (Panel A) proves specialisation survives destruction of linguistic structure <em>within</em> a trained model. It separates "learned by this model on this language" from "emergent from training dynamics regardless of input."
+  </div>
+  <figure class="figure reveal">
+    <img src={`${base}/figures/fig9_permutation.png`} alt="Permutation null experiment" loading="lazy" />
+    <figcaption>Figure 9 · Entropy-collapse probe scores on natural vs. randomly-shuffled sequences. Induction heads (orange) show equal or greater scores on shuffled sequences — they are not language detectors, they are pattern-copy detectors. Scatter in Local heads is a predicted outcome of their "plastic precursor" role.</figcaption>
+  </figure>
+
+  <hr/>
+
+  <h2 class="reveal">Proof 3 — Cross-Domain Proof (Figure 10)</h2>
+  <p class="reveal" style="color:var(--muted);margin-bottom:2rem">
+    GPT-2 was trained on WebText (web text). Qwen was trained on a multilingual mix. Llama on a curated instruction corpus. Despite radically different training distributions, all four models obey the same V/Q scaling law with the same slope. The cross-domain law governing specialisation is stable across radically different training distributions.
+  </p>
+  <figure class="figure reveal">
+    <img src={`${base}/figures/fig10_crossdomain.png`} alt="Cross-domain proof" loading="lazy" />
+    <figcaption>Figure 10 · V/Q scaling law overlaid across all four architectures. The slope is consistent despite different model sizes, attention mechanisms (MHA vs GQA), and training data.</figcaption>
+  </figure>
+
+  <div class="callout reveal">
+    <strong>Together, these three proofs establish:</strong>
+    The taxonomy is architecture-intrinsic — not a data artefact, not a language artefact, not a cherry-picked result. It is a structural property of how transformers specialise under gradient descent on prediction objectives.
+  </div>
+
+</div>
+</Layout>
+
+<style>
+.section { max-width:960px; margin:0 auto; padding:3rem 2.5rem 6rem; }
+.section h2 { font-size:clamp(1.4rem,3vw,2rem); font-weight:800; letter-spacing:-.03em; margin-bottom:1rem; }
+.overline { font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:1.5rem; display:block; }
+.big-claim {
+  background: var(--faint); border-radius: var(--radius); padding: 2.5rem;
+  margin: 3rem 0; border: 1px solid var(--border);
+}
+.claim-text {
+  font-size: 1.2rem; font-style: italic; color: var(--muted);
+  margin-bottom: 1rem; line-height: 1.5;
+}
+.claim-answer {
+  font-size: 1.5rem; font-weight: 800; color: var(--local);
+}
+</style>

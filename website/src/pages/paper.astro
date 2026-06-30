@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Layout title="Paper & Code" description="Access the HeadGenome paper, code, data, and BibTeX citation.">
+<div class="page-hero">
+  <p class="overline">Paper, Code & Citation</p>
+  <h1>Open science, reproducible results.</h1>
+  <p>All code, data, and trained artefacts are publicly available. Every figure in the paper can be reproduced from the provided scripts.</p>
+</div>
+
+<div class="section">
+  <div class="resource-grid reveal">
+    <a href="https://github.com/skhavin/attentionheadgenome" target="_blank" class="resource-card">
+      <div class="resource-icon">📦</div>
+      <strong>GitHub Repository</strong>
+      <p>Full source code, phase scripts, and reproducibility instructions</p>
+      <span class="resource-link">github.com/skhavin/attentionheadgenome →</span>
+    </a>
+    <a href={`${base}/explorer`} class="resource-card">
+      <div class="resource-icon">🔬</div>
+      <strong>Head Explorer</strong>
+      <p>Interactive browser for all 1,568 heads across 4 architectures</p>
+      <span class="resource-link">Browse interactively →</span>
+    </a>
+    <a href="https://github.com/skhavin/attentionheadgenome/blob/master/outputs/final_artifacts/HeadGenome_Master_Report.md" target="_blank" class="resource-card">
+      <div class="resource-icon">📄</div>
+      <strong>Master Report</strong>
+      <p>Full written report with all sections, figures, and analysis</p>
+      <span class="resource-link">Read on GitHub →</span>
+    </a>
+    <a href="https://github.com/skhavin/attentionheadgenome/blob/master/outputs/canonical_labels.json" target="_blank" class="resource-card">
+      <div class="resource-icon">&#128193;</div>
+      <strong>canonical_labels.json</strong>
+      <p>Machine-readable head taxonomy for all 1,568 heads</p>
+      <span class="resource-link">Download JSON →</span>
+    </a>
+  </div>
+
+  <hr/>
+
+  <h2 class="reveal">Reproduce the Results</h2>
+  <div class="reveal">
+  <div class="code-block">
+    <pre><code>git clone https://github.com/skhavin/attentionheadgenome
+cd attentionheadgenome
+
+# Phase 1: generate head taxonomy
+python phase1/step1_generate_index.py
+
+# Generate all figures
+python scripts/visualize_kv_geometry.py
+python scripts/compute_speedup_curves.py
+
+# Run the interactive explorer
+open outputs/geometry/interactive_kv_viewer.html</code></pre>
+  </div>
+  </div>
+
+  <hr/>
+
+  <h2 class="reveal">BibTeX Citation</h2>
+  <div class="reveal">
+  <div class="code-block">
+    <pre><code set:html={`@article&#123;khavin2025headgenome,\n  title     = &#123;HeadGenome: A Universal Taxonomy of Attention Heads in Transformer Language Models&#125;,\n  author    = &#123;Khavin, S.&#125;,\n  year      = &#123;2025&#125;,\n  note      = &#123;Preprint. Code: https://github.com/skhavin/attentionheadgenome&#125;,\n&#125;`}></code></pre>
+  </div>
+  </div>
+
+  <hr/>
+
+  <h2 class="reveal">Key Results Summary</h2>
+  <div class="reveal">
+  <table class="data-table">
+    <thead>
+      <tr><th>Result</th><th>Value</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Total heads classified</td><td>1,568</td><td><span class="badge badge-measured">Measured</span></td></tr>
+      <tr><td>V/Q scaling law p-value</td><td>1.92 × 10⁻¹²⁷</td><td><span class="badge badge-measured">Measured</span></td></tr>
+      <tr><td>Retrieval+Induction co-ablation recovery</td><td>96.5%</td><td><span class="badge badge-measured">Measured</span></td></tr>
+      <tr><td>KV-cache compression (Llama-3.2-1B)</td><td>13.3×</td><td><span class="badge badge-measured">Measured</span></td></tr>
+      <tr><td>FLOP savings at N=4K</td><td>3.9–4.4×</td><td><span class="badge badge-projected">Projected</span></td></tr>
+      <tr><td>FLOP savings at N=32K</td><td>6.1–7.7×</td><td><span class="badge badge-projected">Projected</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+</Layout>
+
+<style>
+.section { max-width:960px; margin:0 auto; padding:3rem 2.5rem 6rem; }
+.section h2 { font-size:clamp(1.4rem,3vw,2rem); font-weight:800; letter-spacing:-.03em; margin-bottom:1.25rem; }
+.overline { font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:1.5rem; display:block; }
+.resource-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+  gap: 1.25rem; margin-bottom: 2rem;
+}
+.resource-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.75rem;
+  text-decoration: none; color: var(--text);
+  display: flex; flex-direction: column; gap: .5rem;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.resource-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,.25); border-color: var(--local); }
+.resource-icon { font-size: 1.8rem; }
+.resource-card strong { font-size:1rem; font-weight:700; }
+.resource-card p { font-size:.85rem; color:var(--muted); flex:1; }
+.resource-link { font-size:.8rem; color:var(--local); margin-top:.5rem; }
+.code-block {
+  background: #0d1117; border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 1.5rem 1.75rem; overflow-x: auto; margin-bottom: 1rem;
+}
+.code-block pre { margin: 0; }
+.code-block code {
+  font-family: var(--mono); font-size: .85rem; line-height: 1.8;
+  color: #e6edf3;
+}
+</style>

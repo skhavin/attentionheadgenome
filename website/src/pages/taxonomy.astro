@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Layout title="The Taxonomy" description="The V/Q scaling law, bifurcation axis, and HeadGenome atlas.">
+<div class="page-hero">
+  <p class="overline">The HeadGenome Taxonomy</p>
+  <h1>One probe. Four classes. Every architecture.</h1>
+  <p>Using only the ratio of value-norm to query-norm (V/Q) and an entropy-collapse probe on 200 prompts, we recover a four-class taxonomy with a p-value of 10⁻¹²⁷ — across GPT-2, Qwen-0.5B, Qwen-1.5B, and Llama-3.2-1B.</p>
+</div>
+
+<div class="section">
+  <h2 class="reveal">The V/Q Scaling Law (Figure 1)</h2>
+  <p class="reveal" style="color:var(--muted);margin-bottom:2rem">
+    The V/Q ratio — the ratio of the head's value-vector norm to its query-vector norm — rises monotonically with relative depth across all four architectures. Early-layer heads are query-dominated (high Q, low V → local attention). Late-layer heads are value-dominated (high V, low Q → global retrieval). This is not a hypothesis; it is a measured law with p ≈ 1.92×10⁻¹²⁷.
+  </p>
+  <figure class="figure reveal">
+    <img src={`${base}/figures/fig1_vq_scaling.png`} alt="V/Q scaling law across layers" loading="lazy" />
+    <figcaption>Figure 1 · V/Q ratio vs. relative depth for all 1,568 heads. The monotonic rise is universal — the same slope appears in MHA (GPT-2) and GQA (Qwen, Llama) architectures.</figcaption>
+  </figure>
+
+  <hr/>
+
+  <h2 class="reveal">The Bifurcation Axis (Figure 2)</h2>
+  <p class="reveal" style="color:var(--muted);margin-bottom:2rem">
+    At intermediate depths (~40–60% of the network), the developmental manifold bifurcates. Most heads continue as Local precursors; a minority split into Retrieval or Induction specialisations. The bifurcation axis is the second axis of variation in the taxonomy — orthogonal to the V/Q scaling law.
+  </p>
+  <figure class="figure reveal">
+    <img src={`${base}/figures/fig2_bifurcation.png`} alt="Bifurcation axis" loading="lazy" />
+    <figcaption>Figure 2 · The bifurcation axis. Retrieval and Induction heads peel away from the Local trajectory at a characteristic depth, driven by entropy-collapse on different query targets.</figcaption>
+  </figure>
+
+  <hr/>
+
+  <h2 class="reveal">The HeadGenome Atlas (Figure 3)</h2>
+  <p class="reveal" style="color:var(--muted);margin-bottom:2rem">
+    Projecting all 1,568 heads onto the (V/Q, entropy) plane produces the HeadGenome atlas — a 2D map in which the four classes occupy non-overlapping, reproducible regions across every model tested.
+  </p>
+  <figure class="figure reveal">
+    <img src={`${base}/figures/atlas.png`} alt="HeadGenome atlas" loading="lazy" />
+    <figcaption>Figure 3 · The HeadGenome Atlas. Each dot is one attention head, coloured by its taxonomy class. The four clusters are geometrically separated and architecture-invariant.</figcaption>
+  </figure>
+
+  <hr/>
+
+  <h2 class="reveal">Head Counts by Architecture</h2>
+  <div class="reveal">
+  <table class="data-table">
+    <thead>
+      <tr><th>Model</th><th>Total</th><th><span class="pill pill-sink">Sink</span></th><th><span class="pill pill-local">Local</span></th><th><span class="pill pill-retrieval">Retrieval</span></th><th><span class="pill pill-induction">Induction</span></th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>GPT-2 Medium</strong> (MHA)</td><td>384</td><td>15</td><td>311</td><td>13</td><td>45</td></tr>
+      <tr><td><strong>Qwen-0.5B</strong> (GQA)</td><td>336</td><td>9</td><td>288</td><td>3</td><td>36</td></tr>
+      <tr><td><strong>Qwen-1.5B</strong> (GQA)</td><td>336</td><td>4</td><td>285</td><td>6</td><td>41</td></tr>
+      <tr><td><strong>Llama-3.2-1B</strong> (GQA)</td><td>512</td><td>0</td><td>435</td><td>1</td><td>76</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout reveal">
+    <strong>Why 81–86% Local?</strong> Local heads are the "default" state of the developmental manifold. Specialising into Retrieval or Induction requires specific training signal — the model needs tasks that reward long-range recall. Most heads never receive enough such signal to cross the bifurcation point.
+  </div>
+</div>
+</Layout>
+
+<style>
+.section { max-width:960px; margin:0 auto; padding:3rem 2.5rem 6rem; }
+.section h2 { font-size:clamp(1.4rem,3vw,2rem); font-weight:800; letter-spacing:-.03em; margin-bottom:1rem; }
+.overline { font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:1.5rem; display:block; }
+</style>

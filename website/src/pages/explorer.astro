@@ -1,0 +1,211 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Layout title="Head Explorer" description="Browse all 1,568 attention heads across four architectures. Filter by class. Verify the taxonomy yourself.">
+<div class="page-hero">
+  <p class="overline">Interactive Head Explorer</p>
+  <h1>Verify the taxonomy yourself.</h1>
+  <p>Browse all 1,568 attention heads across GPT-2, Qwen-0.5B, Qwen-1.5B, and Llama-3.2-1B. Filter by functional class. Click any head to see its entropy, depth, and V/Q ratio. This is our anti-cherry-picking guarantee.</p>
+</div>
+
+<div class="explorer-wrap">
+  <div class="explorer-controls">
+    <div class="ctrl-group">
+      <label for="sel-model">Architecture</label>
+      <select id="sel-model"></select>
+    </div>
+    <div class="ctrl-group">
+      <label for="sel-class">Class filter</label>
+      <select id="sel-class">
+        <option value="all">All classes</option>
+        <option value="sink">Sink</option>
+        <option value="local">Local</option>
+        <option value="retrieval">Retrieval</option>
+        <option value="induction">Induction</option>
+      </select>
+    </div>
+    <div class="ctrl-group ctrl-search">
+      <label for="search-head">Jump to L/H</label>
+      <input id="search-head" type="text" placeholder="e.g. 5_11" />
+    </div>
+    <div class="ctrl-stats" id="ctrl-stats"></div>
+  </div>
+
+  <div class="explorer-body">
+    <div id="head-grid"></div>
+    <aside id="head-detail">
+      <p class="detail-empty">Select a head to view its profile →</p>
+    </aside>
+  </div>
+</div>
+
+</Layout>
+
+<script>
+  const BASE = '/attentionheadgenome';
+  const C = { sink:'#ef4444', local:'#3b82f6', retrieval:'#a855f7', induction:'#f97316', unknown:'#9ca3af' };
+  const BG = { sink:'rgba(239,68,68,.12)', local:'rgba(59,130,246,.12)', retrieval:'rgba(168,85,247,.12)', induction:'rgba(249,115,22,.12)' };
+
+  let db = null;
+
+  fetch(`${BASE}/canonical_labels.json`)
+    .then(r => r.json())
+    .then(data => {
+      db = data;
+      const selModel = document.getElementById('sel-model');
+      Object.keys(data.models).forEach(m => {
+        const o = document.createElement('option');
+        o.value = o.textContent = m;
+        selModel.appendChild(o);
+      });
+      selModel.addEventListener('change', render);
+      document.getElementById('sel-class').addEventListener('change', render);
+      document.getElementById('search-head').addEventListener('input', handleSearch);
+      render();
+    });
+
+  function render() {
+    const model = document.getElementById('sel-model').value;
+    const filter = document.getElementById('sel-class').value;
+    const mdata = db.models[model];
+    const grid = document.getElementById('head-grid');
+    grid.innerHTML = '';
+    let shown = 0, total = 0;
+
+    const nlayers = mdata.n_layers;
+    for (let l = 0; l < nlayers; l++) {
+      const row = document.createElement('div');
+      row.className = 'grid-row';
+      const lbl = document.createElement('span');
+      lbl.className = 'row-label';
+      lbl.textContent = `L${l}`;
+      row.appendChild(lbl);
+      const cells = document.createElement('div');
+      cells.className = 'row-cells';
+
+      const keys = Object.entries(mdata.heads).filter(([k, v]) => v.layer === l);
+      keys.forEach(([key, hd]) => {
+        total++;
+        if (filter !== 'all' && filter !== hd.label) return;
+        shown++;
+        const cell = document.createElement('button');
+        cell.className = 'head-cell';
+        cell.style.background = BG[hd.label] || '#1a2540';
+        cell.style.borderColor = C[hd.label] || '#1f2e4a';
+        cell.title = `L${hd.layer} H${hd.head_idx} · ${hd.label} · V/Q delta: ${hd.delta?.toFixed(3) ?? '—'}`;
+        cell.dataset.key = key;
+        cell.dataset.model = model;
+        cell.textContent = hd.head_idx;
+        cell.addEventListener('click', () => showDetail(model, key));
+        cells.appendChild(cell);
+      });
+      row.appendChild(cells);
+      if (cells.children.length) grid.appendChild(row);
+    }
+
+    document.getElementById('ctrl-stats').textContent = `Showing ${shown} / ${total} heads`;
+  }
+
+  function showDetail(model, key) {
+    const hd = db.models[model].heads[key];
+    if (!hd) return;
+    const detail = document.getElementById('head-detail');
+    detail.innerHTML = `
+      <div class="detail-header" style="border-left: 3px solid ${C[hd.label]}; padding-left:.75rem; margin-bottom:1.25rem">
+        <div class="detail-title">Layer ${hd.layer}, Head ${hd.head_idx}</div>
+        <div class="detail-model">${model}</div>
+      </div>
+      <div class="detail-pill" style="background:${BG[hd.label]};color:${C[hd.label]};border:1px solid ${C[hd.label]};border-radius:2rem;padding:.25rem .75rem;display:inline-block;font-size:.8rem;font-weight:700;margin-bottom:1.5rem">${hd.label.toUpperCase()}</div>
+      <dl class="detail-dl">
+        <dt>Relative depth</dt><dd>${(hd.relative_depth * 100).toFixed(1)}%</dd>
+        <dt>V/Q Δ (delta)</dt><dd>${hd.delta?.toFixed(4) ?? '—'}</dd>
+        <dt>Match entropy</dt><dd>${hd.match_entropy?.toFixed(4) ?? '—'}</dd>
+        <dt>Head index</dt><dd>${hd.head_idx}</dd>
+        <dt>Layer</dt><dd>${hd.layer}</dd>
+      </dl>
+      <div class="detail-interp">
+        <strong>Interpretation:</strong> ${interp(hd.label)}
+      </div>
+    `;
+    // highlight selected
+    document.querySelectorAll('.head-cell.selected').forEach(c => c.classList.remove('selected'));
+    document.querySelector(`[data-key="${key}"][data-model="${model}"]`)?.classList.add('selected');
+  }
+
+  function interp(label) {
+    return {
+      sink: 'This head acts as an attention sink. It directs the majority of its attention mass to punctuation tokens and the BOS token, functioning as a low-entropy parking spot for residual attention.',
+      local: 'This head attends within a local sliding window. It encodes positional context rather than semantic content, and is the most common head type (~83% of all heads).',
+      retrieval: 'This head performs long-range semantic retrieval. It can reach to semantically relevant tokens anywhere in the context window. Its ablation destroys recall capability.',
+      induction: 'This head copies retrieved content from the Retrieval circuit into the residual stream. It cannot function without Retrieval heads providing the source signal.',
+    }[label] ?? 'Unknown head type.';
+  }
+
+  function handleSearch() {
+    const val = document.getElementById('search-head').value.trim();
+    const model = document.getElementById('sel-model').value;
+    if (!val || !db) return;
+    const key = val;
+    if (db.models[model]?.heads[key]) showDetail(model, key);
+  }
+</script>
+
+<style>
+.page-hero { max-width:960px; margin:0 auto; padding:9rem 2.5rem 3rem; }
+.page-hero h1 { font-size:clamp(2rem,5vw,3.5rem); font-weight:900; letter-spacing:-.04em; line-height:1.1; margin-bottom:1rem; }
+.page-hero p { color:var(--muted); font-size:1.1rem; max-width:640px; }
+.overline { font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:1.5rem; display:block; }
+
+.explorer-wrap { max-width: 1200px; margin: 0 auto; padding: 0 2.5rem 6rem; }
+.explorer-controls {
+  display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.ctrl-group { display: flex; flex-direction: column; gap: .3rem; }
+.ctrl-group label { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); }
+.ctrl-group select, .ctrl-group input {
+  background: var(--bg); border: 1px solid var(--border); color: var(--text);
+  border-radius: .4rem; padding: .4rem .8rem; font-size: .85rem;
+  min-width: 160px; outline: none; font-family: var(--font);
+}
+.ctrl-group input { font-family: var(--mono); }
+.ctrl-stats { margin-left: auto; align-self: center; font-size: .8rem; color: var(--muted); }
+
+.explorer-body {
+  display: grid; grid-template-columns: 1fr 280px; gap: 1.5rem; align-items: start;
+}
+@media (max-width: 900px) { .explorer-body { grid-template-columns: 1fr; } }
+
+#head-grid {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.25rem;
+  max-height: 65vh; overflow-y: auto;
+}
+.grid-row { display: flex; align-items: center; gap: .5rem; margin-bottom: .4rem; }
+.row-label { font-size: .7rem; font-family: var(--mono); color: var(--muted); min-width: 2.5rem; }
+.row-cells { display: flex; flex-wrap: wrap; gap: .3rem; }
+.head-cell {
+  width: 28px; height: 28px; border-radius: .35rem; border: 1px solid;
+  font-size: .65rem; font-family: var(--mono); font-weight: 600;
+  cursor: pointer; color: var(--text); transition: transform .1s, box-shadow .1s;
+  display: flex; align-items: center; justify-content: center;
+}
+.head-cell:hover { transform: scale(1.2); box-shadow: 0 4px 12px rgba(0,0,0,.3); z-index:1; position:relative; }
+.head-cell.selected { outline: 2px solid white; outline-offset: 2px; }
+
+aside#head-detail {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.5rem;
+  position: sticky; top: 5rem;
+}
+.detail-empty { color: var(--muted); font-size: .9rem; }
+.detail-title { font-size: 1.2rem; font-weight: 800; }
+.detail-model { font-size: .8rem; color: var(--muted); }
+.detail-dl { display: grid; grid-template-columns: 1fr 1fr; gap: .4rem .75rem; font-size: .85rem; margin-bottom: 1.25rem; }
+.detail-dl dt { color: var(--muted); }
+.detail-dl dd { font-family: var(--mono); font-weight: 600; }
+.detail-interp { font-size: .82rem; color: var(--muted); line-height: 1.6; border-top: 1px solid var(--border); padding-top: 1rem; }
+</style>
