@@ -6,13 +6,13 @@ across all 4 architectures for an interactive HTML viewer.
 """
 
 import os
+os.environ["HF_HOME"] = r"d:\.cache\huggingface"
+
 import json
 import torch
 import numpy as np
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from sklearn.decomposition import PCA
-
-os.environ["HF_HOME"] = r"d:\.cache\huggingface"
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "outputs", "geometry")
 os.makedirs(OUT_DIR, exist_ok=True)
@@ -20,7 +20,7 @@ os.makedirs(OUT_DIR, exist_ok=True)
 MODELS = [
     "openai-community/gpt2-medium",
     "Qwen/Qwen2.5-0.5B",
-    "meta-llama/Llama-3.2-1B",
+    "unsloth/Llama-3.2-1B",
     "Qwen/Qwen2.5-1.5B"
 ]
 
@@ -59,9 +59,12 @@ def main():
     for model_id in MODELS:
         print(f"\nProcessing {model_id}...")
         try:
+            print(f"  Loading tokenizer...")
             tokenizer = AutoTokenizer.from_pretrained(model_id)
-            model = AutoModelForCausalLM.from_pretrained(model_id).to("cuda")
+            print(f"  Loading model...")
+            model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.bfloat16).to("cuda")
             model.eval()
+            print(f"  Model loaded!")
 
             inputs = tokenizer(PROMPT, return_tensors="pt").to(model.device)
             input_ids = inputs["input_ids"][0].tolist()
@@ -99,7 +102,7 @@ def main():
                 for head in range(num_q_heads):
                     kv_head = head // heads_per_kv
                     # Extract K vectors
-                    K = past_kv[layer][0][0, kv_head, :, :].cpu().numpy().astype(np.float32)
+                    K = past_kv[layer][0][0, kv_head, :, :].float().cpu().numpy()
                     
                     pca = PCA(n_components=3, random_state=42)
                     K_3d = pca.fit_transform(K)
