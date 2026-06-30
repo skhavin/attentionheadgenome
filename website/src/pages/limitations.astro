@@ -1,80 +1,45 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Limitations" description="Known limitations, open questions, and what HeadGenome does not claim.">
-<div class="page-hero">
-  <p class="overline">Limitations & Open Questions</p>
-  <h1>What we don't claim.</h1>
-  <p>A visible limitations section is a credibility signal, not a weakness. These are real constraints on the current results.</p>
+<Layout title="Limitations" description="What HeadGenome does not claim. Known constraints on current results.">
+<div class="page-top">
+  <p class="eyebrow">Limitations & Open Questions</p>
+  <h1>What we<br/>don't claim.</h1>
+  <p class="lead">A visible limitations section is a credibility signal. These are real constraints on the current results.</p>
 </div>
-
 <div class="section">
   <div class="limit-list">
-
-    <div class="limit-item reveal">
-      <div class="limit-icon">🔬</div>
-      <div>
-        <h3>Models up to 1.5B parameters</h3>
-        <p>All causal ablation and KV-cache experiments were run on models ≤ 1.5B parameters. Whether the same four-class taxonomy holds at 7B, 70B, or 400B is an open empirical question. The V/Q scaling law appears in every architecture we tested, but extrapolation to frontier-scale models is untested.</p>
+    {[
+      { n: '01', title: 'Models up to 1.5B parameters', body: 'All causal ablation and KV-cache experiments were run on models ≤ 1.5B parameters. Whether the same four-class taxonomy holds at 7B, 70B, or 400B is an open empirical question. The V/Q scaling law appears in every architecture we tested, but extrapolation to frontier-scale models is untested.' },
+      { n: '02', title: 'FLOP savings are FLOP-model projections', body: 'The 4–8× FLOP savings numbers are FLOP-model projections — mathematically grounded in real measured head fractions, not measured wall-clock speedups. Realising these projections requires a sparse kernel backend (FlexAttention or custom CUDA). The 13.3× KV-cache compression was directly measured on Llama-3.2-1B hardware.' },
+      { n: '03', title: 'Rare head counts are small', body: 'Retrieval heads are rare (1–13 per model). Statistical conclusions about Retrieval head behaviour rest on small within-architecture sample sizes. Cross-architecture consistency is strong, but within-architecture variance estimates have wide confidence intervals.' },
+      { n: '04', title: 'Hyper-diagonal heads are unresolved', body: 'A small number of heads (~1–2% in GPT-2 Medium) sit at the boundary between Local and Retrieval. These exhibit context-dependent switching between local and global attention patterns. They are classified as Local by our probe but may warrant a fifth class in a more refined taxonomy.' },
+      { n: '05', title: 'KV geometry is qualitative', body: 'The PCA projections in Figure 12 are a qualitative illustration, not a quantitative proof. PCA explained variance is typically 30–55% in 3D. The untrained-control panel is the key control, but positional encoding contamination of the projection cannot be fully ruled out.' },
+      { n: '06', title: 'GQA head-indexing caveat', body: 'For GQA models (Qwen, Llama), KV-cache head indices map to KV-groups, not individual query heads. Our analysis correctly maps through the group structure (kv_head = query_head // group_size), but the effective granularity is coarser in GQA architectures than in MHA architectures like GPT-2.' },
+    ].map(l => (
+      <div class="limit-item reveal">
+        <span class="limit-n">{l.n}</span>
+        <div>
+          <h3>{l.title}</h3>
+          <p>{l.body}</p>
+        </div>
       </div>
-    </div>
-
-    <div class="limit-item reveal">
-      <div class="limit-icon">📊</div>
-      <p class="overline">Important distinction</p>
-      <div>
-        <h3>FLOP savings are theoretical projections</h3>
-        <p>The 4–8× FLOP savings numbers are FLOP-model projections — mathematically grounded in real measured head fractions, but not measured wall-clock speedups. Realising these projections requires a sparse kernel backend (FlexAttention or custom CUDA). The current PyTorch-mask reference backend adds overhead rather than reducing it.</p>
-        <p style="margin-top:.75rem">The <strong>13.3× KV-cache compression</strong> was directly measured on Llama-3.2-1B hardware.</p>
-      </div>
-    </div>
-
-    <div class="limit-item reveal">
-      <div class="limit-icon">📉</div>
-      <div>
-        <h3>Rare head counts are small</h3>
-        <p>Retrieval heads are rare (1–13 per model). Statistical conclusions about Retrieval head behaviour rest on small sample sizes within each architecture. Cross-architecture consistency is strong, but within-architecture variance estimates have wide confidence intervals.</p>
-      </div>
-    </div>
-
-    <div class="limit-item reveal">
-      <div class="limit-icon">🔀</div>
-      <div>
-        <h3>Hyper-diagonal heads are unresolved</h3>
-        <p>A small number of heads (≈1–2% in GPT-2 Medium) sit at the boundary between Local and Retrieval on the V/Q axis. These "hyper-diagonal" heads exhibit context-dependent switching between local and global attention patterns. They are classified as Local by our probe but may warrant a fifth class in a more refined taxonomy.</p>
-      </div>
-    </div>
-
-    <div class="limit-item reveal">
-      <div class="limit-icon">🧪</div>
-      <div>
-        <h3>KV geometry is qualitative only</h3>
-        <p>The PCA projections in Figure 12 are a qualitative illustration of geometric structure, not a quantitative proof. PCA explained variance is typically 30–55% in 3D — substantial geometric information is discarded. The untrained control panel is the key control, but positional encoding contamination of the projection cannot be fully ruled out.</p>
-      </div>
-    </div>
-
-    <div class="limit-item reveal">
-      <div class="limit-icon">🌐</div>
-      <div>
-        <h3>GQA head-indexing caveat</h3>
-        <p>For GQA models (Qwen, Llama), KV-cache head indices map to KV-groups, not to individual query heads. Our analysis correctly maps through the group structure (<code>kv_head = query_head // group_size</code>), but this means the effective granularity of head-level analysis is coarser in GQA architectures than in MHA architectures like GPT-2.</p>
-      </div>
-    </div>
-
+    ))}
   </div>
 </div>
 </Layout>
 
 <style>
-.section { max-width:860px; margin:0 auto; padding:3rem 2.5rem 6rem; }
-.overline { font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:1.5rem; display:block; }
-.limit-list { display:flex; flex-direction:column; gap:2rem; }
+.section { max-width:820px; margin:0 auto; padding:3rem 2.5rem 8rem; }
+.limit-list { display:flex; flex-direction:column; }
 .limit-item {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 1.75rem;
-  display: flex; gap: 1.25rem; align-items: flex-start;
+  display: grid; grid-template-columns: 2.5rem 1fr;
+  gap: 0 1.5rem; padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
 }
-.limit-icon { font-size:1.75rem; flex-shrink:0; }
-.limit-item h3 { font-size:1rem; font-weight:700; margin-bottom:.5rem; }
-.limit-item p { font-size:.9rem; color:var(--muted); line-height:1.65; }
+.limit-item:last-child { border-bottom: none; }
+.limit-n { font-size: .7rem; font-family: var(--mono); color: var(--text-3); padding-top: .2rem; }
+.limit-item h3 { font-size: 1.05rem; font-weight: 400; letter-spacing: -.02em; margin-bottom: .5rem; }
+.limit-item p { font-size: .9rem; color: var(--text-2); font-weight: 300; line-height: 1.7; margin: 0; }
 </style>

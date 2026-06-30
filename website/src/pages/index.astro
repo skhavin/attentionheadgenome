@@ -2,294 +2,422 @@
 import Layout from '../layouts/Layout.astro';
 const base = import.meta.env.BASE_URL;
 ---
-<Layout title="HeadGenome" description="Attention heads are not interchangeable. We mapped what each one does — across 1,568 heads and four architectures.">
+<Layout title="The HeadGenome Project" description="A structural and behavioral taxonomy of attention heads in large language models.">
 
-<!-- ── HERO ─────────────────────────────────────────────────────── -->
-<section class="landing-hero">
-  <div class="hero-text">
-    <p class="hero-eyebrow">Nature · Vol. 2025</p>
-    <h1>Attention heads are&nbsp;<br/>not interchangeable.</h1>
-    <p class="hero-sub">
-      We classified every attention head in four transformer architectures
-      into one of four functional types — using nothing but the model's own behaviour.
-      The taxonomy is <strong>universal</strong>, <strong>architecture-intrinsic</strong>,
-      and <strong>actionable</strong>.
+<!-- ── HERO ──────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow reveal">Mechanistic Interpretability · 2025</p>
+    <h1 class="hero-title reveal">The HeadGenome<br/>Project</h1>
+    <p class="hero-sub reveal">
+      A structural and behavioral taxonomy of attention heads<br/>
+      in large language models.
     </p>
-    <div class="hero-actions">
-      <a href={`${base}/taxonomy`} class="btn-primary">Explore the findings →</a>
-      <a href={`${base}/explorer`} class="btn-secondary">Head Explorer</a>
-    </div>
-  </div>
 
-  <!-- Live atlas canvas -->
-  <div class="atlas-wrap reveal">
-    <canvas id="atlas-canvas" role="img" aria-label="HeadGenome atlas: 1568 attention heads coloured by type"></canvas>
-    <p class="atlas-caption">1,568 heads · 4 architectures · 4 functional classes</p>
+    <!-- README-style key findings list -->
+    <ol class="findings-list reveal">
+      <li>
+        <strong>The V/Q Spatial Scaling Law</strong>
+        <span>An attention head's functional role is strictly governed by its ‖W_V‖/‖W_Q‖ norm ratio — a mathematically inevitable spatial progression through network depth.</span>
+      </li>
+      <li>
+        <strong>Circuit Co-Gating</strong>
+        <span>Retrieval heads and Induction heads cannot function independently. They form a co-dependent pipeline: 0% recovery ablating either alone, 96.5% ablating both together.</span>
+      </li>
+      <li>
+        <strong>Architecture-Intrinsic Universality</strong>
+        <span>The taxonomy survives shuffled tokens, cross-domain training (English, Code, Math), and untrained-control comparison. It is a geometric property of transformers, not of language.</span>
+      </li>
+      <li>
+        <strong>The Perplexity Illusion</strong>
+        <span>A model can preserve near-perfect perplexity while its long-range retrieval has completely collapsed. Standard evaluation metrics are blind to this failure mode.</span>
+      </li>
+    </ol>
+
+    <div class="hero-actions reveal">
+      <a href={`${base}/taxonomy`} class="hero-btn-primary">Explore the findings</a>
+      <a href={`${base}/explorer`} class="hero-btn-secondary">Browse 1,568 heads</a>
+    </div>
   </div>
 </section>
 
-<!-- ── HEADLINE STATS ─────────────────────────────────────────── -->
-<section class="section">
-  <p class="overline reveal">The four headline results</p>
+<!-- ── HEADLINE NUMBERS ───────────────────────────────────────────────────── -->
+<section class="numbers-section">
   <div class="stat-grid">
     <div class="stat-card c-blue reveal">
       <div class="stat-num">1,568</div>
-      <div class="stat-label">Attention heads classified across GPT-2, Qwen-0.5B, Qwen-1.5B & Llama-3.2-1B</div>
+      <div class="stat-label">Attention heads classified<br/>across four architectures</div>
     </div>
-    <div class="stat-card c-purple reveal" style="animation-delay:.07s">
+    <div class="stat-card c-purple reveal">
       <div class="stat-num">96.5%</div>
-      <div class="stat-label">Retrieval + Induction co-ablation recovery — <em>zero</em> recovery with either class alone</div>
+      <div class="stat-label">Retrieval + Induction<br/>co-ablation recovery</div>
     </div>
-    <div class="stat-card c-orange reveal" style="animation-delay:.14s">
+    <div class="stat-card c-orange reveal">
       <div class="stat-num">13.3×</div>
-      <div class="stat-label">KV-cache compression on Llama-3.2-1B (measured, not projected)</div>
+      <div class="stat-label">KV-cache compression<br/>measured on Llama-3.2-1B</div>
     </div>
-    <div class="stat-card c-red reveal" style="animation-delay:.21s">
-      <div class="stat-num">p≈10⁻¹²⁷</div>
-      <div class="stat-label">V/Q ratio scaling law significance — across all four architectures</div>
+    <div class="stat-card c-red reveal">
+      <div class="stat-num">10⁻¹²⁷</div>
+      <div class="stat-label">V/Q scaling law<br/>p-value</div>
     </div>
   </div>
 </section>
 
-<!-- ── PLAIN-ENGLISH EXPLAINER ───────────────────────────────── -->
-<section class="section section-dark">
-  <div class="two-col">
-    <div class="reveal">
-      <p class="overline">What is a head?</p>
-      <h2>Transformers have eyes. We mapped what they're looking at.</h2>
+<!-- ── ATLAS ──────────────────────────────────────────────────────────────── -->
+<section class="atlas-section">
+  <div class="atlas-inner">
+    <div class="atlas-text reveal">
+      <p class="eyebrow">The HeadGenome Atlas</p>
+      <h2>Every head, mapped.</h2>
       <p>
-        Every transformer layer has dozens of <strong>attention heads</strong>. Each head decides
-        which tokens to "look at" when processing each word. The standard assumption is
-        that heads are interchangeable — you can prune any one of them with similar cost.
+        Projecting all 1,568 heads onto the (V/Q ratio, entropy) plane produces a 2D map
+        in which the four functional classes occupy non-overlapping, reproducible regions
+        across every model tested — GPT-2 (MHA), Qwen-0.5B, Qwen-1.5B, and Llama-3.2-1B (GQA).
       </p>
-      <p style="margin-top:1rem">
-        HeadGenome shows this is wrong. The same four functional types emerge <em>independently</em>
-        in every architecture we tested — determined entirely by what the head learned to do,
-        not what it was told to do.
-      </p>
+      <div class="type-pills">
+        <span class="pill pill-sink">Sink</span>
+        <span class="pill pill-local">Local</span>
+        <span class="pill pill-retrieval">Retrieval</span>
+        <span class="pill pill-induction">Induction</span>
+      </div>
     </div>
-    <div class="type-cards reveal">
-      <div class="type-card">
-        <span class="pill pill-sink">● Sink</span>
-        <p>Absorbs residual attention mass. Targets punctuation and the first token. Structurally inert.</p>
-      </div>
-      <div class="type-card">
-        <span class="pill pill-local">● Local</span>
-        <p>Attends to a sliding window of nearby tokens. The backbone of positional context. 81–86% of all heads.</p>
-      </div>
-      <div class="type-card">
-        <span class="pill pill-retrieval">● Retrieval</span>
-        <p>Reaches anywhere in the sequence to retrieve semantically relevant past tokens. Critical for recall.</p>
-      </div>
-      <div class="type-card">
-        <span class="pill pill-induction">● Induction</span>
-        <p>Copies retrieved content forward in the residual stream. The execution engine for retrieval.</p>
-      </div>
+    <div class="atlas-fig reveal">
+      <canvas id="atlas-canvas" role="img" aria-label="Animated HeadGenome atlas"></canvas>
+      <p class="atlas-caption">1,568 heads assembling into their learned positions — animated on load</p>
     </div>
   </div>
 </section>
 
-<!-- ── NAVIGATION DOORS ──────────────────────────────────────── -->
-<section class="section">
-  <p class="overline reveal">Choose your depth</p>
-  <div class="doors reveal">
-    <a href={`${base}/taxonomy`} class="door">
-      <span class="door-icon">📐</span>
-      <strong>What did we find?</strong>
-      <p>The V/Q scaling law, bifurcation axis, and the HeadGenome atlas</p>
-    </a>
-    <a href={`${base}/universality`} class="door">
-      <span class="door-icon">🌐</span>
-      <strong>How sure are we?</strong>
-      <p>Untrained controls, permutation nulls, and cross-architecture proof</p>
-    </a>
-    <a href={`${base}/causal`} class="door">
-      <span class="door-icon">⚡</span>
-      <strong>Do they actually matter?</strong>
-      <p>Ablation studies, co-gating circuits, the perplexity illusion</p>
-    </a>
-    <a href={`${base}/systems`} class="door">
-      <span class="door-icon">🚀</span>
-      <strong>Why does this matter?</strong>
-      <p>13.3× KV-cache compression and projected 4–8× FLOP savings</p>
-    </a>
-    <a href={`${base}/explorer`} class="door door-highlight">
-      <span class="door-icon">🔬</span>
-      <strong>Explore it yourself</strong>
-      <p>Browse all 1,568 heads by model, layer, and class</p>
-    </a>
+<!-- ── VISUAL EVIDENCE ────────────────────────────────────────────────────── -->
+<section class="evidence-section">
+  <div class="evidence-inner">
+    <p class="eyebrow reveal">Visual evidence · Figures 1–12</p>
+    <p class="evidence-intro reveal">
+      Every claim in HeadGenome is backed by a figure. Here is the complete visual story —
+      mirroring the structure of the master report.
+    </p>
+
+    {[
+      {
+        n: '1', title: 'The V/Q Spatial Scaling Law',
+        src: `${base}/figures/fig1_vq_scaling.png`,
+        caption: 'The ‖W_V‖/‖W_Q‖ norm ratio rises monotonically with depth across all four architectures. p ≈ 1.92 × 10⁻¹²⁷.',
+      },
+      {
+        n: '2', title: 'The Bifurcation Axis',
+        src: `${base}/figures/fig2_bifurcation.png`,
+        caption: 'At 40–60% depth, the developmental manifold splits: most heads remain Local; a minority specialise into Retrieval or Induction.',
+      },
+      {
+        n: '3', title: 'The HeadGenome Atlas',
+        src: `${base}/figures/atlas.png`,
+        caption: 'All 1,568 heads projected onto the (V/Q, entropy) plane. Four non-overlapping clusters — architecture-invariant.',
+      },
+      {
+        n: '3b', title: 'The Entropy-Collapse Scatterplot',
+        src: `${base}/figures/fig3_scatter.png`,
+        caption: 'Functional clustering of attention heads based on behaviour across structural and semantic stress tests.',
+      },
+      {
+        n: '7', title: 'Lexical Anatomy',
+        src: `${base}/figures/fig7_lexical.png`,
+        caption: 'Top attended vocabulary items by head type on WikiText-103. Sink heads target punctuation; Induction heads show maximum focus.',
+      },
+      {
+        n: '8', title: 'The Initialization Null',
+        src: `${base}/figures/fig8_universality.png`,
+        caption: 'Random-init GPT-2 (top) has no V/Q structure. Trained GPT-2 (bottom) develops the universal law. Structure is emergent from gradient descent.',
+      },
+      {
+        n: '9', title: 'The Permutation Null',
+        src: `${base}/figures/fig9_permutation.png`,
+        caption: 'Induction heads fire equally on shuffled gibberish — proving they are structural pattern detectors, not language detectors.',
+      },
+      {
+        n: '10', title: 'The Cross-Domain Proof',
+        src: `${base}/figures/fig10_crossdomain.png`,
+        caption: 'V/Q scaling law across WebText (GPT-2), multilingual (Qwen), and instruction (Llama). Same slope, different training universes.',
+      },
+      {
+        n: '11', title: 'Projected Speedup Curves',
+        src: `${base}/figures/fig11_speedup.png`,
+        caption: 'FLOP-model projections from measured head fractions. Qwen-0.5B reaches 7.7× at N=32K; bounded by the critical-head ceiling.',
+      },
+      {
+        n: '12', title: 'KV Cache Geometry',
+        src: `${base}/figures/fig12_geometry.png`,
+        caption: '3D PCA of Key vectors: Local heads form time-curves, Retrieval heads cluster semantically, untrained controls are amorphous clouds.',
+      },
+    ].map(f => (
+      <div class="evidence-item reveal">
+        <div class="evidence-meta">
+          <span class="evidence-n">Figure {f.n}</span>
+          <h3 class="evidence-title">{f.title}</h3>
+          <p class="evidence-caption">{f.caption}</p>
+        </div>
+        <figure class="evidence-fig">
+          <img src={f.src} alt={f.title} loading="lazy" />
+        </figure>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- ── NAVIGATION ─────────────────────────────────────────────────────────── -->
+<section class="nav-doors">
+  <div class="nav-doors-inner">
+    <div class="door-grid reveal">
+      {[
+        { href: `${base}/taxonomy`,     no: '01', label: 'Taxonomy',         sub: 'V/Q law · bifurcation · atlas' },
+        { href: `${base}/universality`, no: '02', label: 'Universality',     sub: 'Untrained null · permutation · cross-domain' },
+        { href: `${base}/causal`,       no: '03', label: 'Causal Mechanics', sub: 'Co-gating · 96.5% · perplexity illusion' },
+        { href: `${base}/systems`,      no: '04', label: 'Systems Impact',   sub: '13.3× KV compression · FLOP projections' },
+        { href: `${base}/explorer`,     no: '05', label: 'Head Explorer',    sub: 'All 1,568 heads · interactive 3D', hl: true },
+        { href: `${base}/report`,       no: '06', label: 'Full Report',      sub: 'Complete technical write-up' },
+      ].map(d => (
+        <a href={d.href} class={`door ${d.hl ? 'door-hl' : ''}`}>
+          <span class="door-no">{d.no}</span>
+          <span class="door-label">{d.label}</span>
+          <span class="door-sub">{d.sub}</span>
+        </a>
+      ))}
+    </div>
   </div>
 </section>
 
 </Layout>
 
-<!-- ── ATLAS CANVAS ANIMATION ───────────────────────────────── -->
 <script>
-  const base = document.querySelector('base')?.href ?? '';
-  fetch('/attentionheadgenome/canonical_labels.json')
+  const BASE = (document.querySelector('meta[name="base"]') as any)?.content
+    ?? '/attentionheadgenome';
+
+  fetch(`${BASE}/canonical_labels.json`)
     .then(r => r.json())
     .then(data => {
-      const canvas = document.getElementById('atlas-canvas');
+      const canvas = document.getElementById('atlas-canvas') as HTMLCanvasElement;
       if (!canvas) return;
-      const ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext('2d')!;
 
-      const C = { sink: '#ef4444', local: '#3b82f6', retrieval: '#a855f7', induction: '#f97316' };
+      const isDark = () => document.documentElement.getAttribute('data-theme') === 'dark';
+      const C: Record<string, () => string> = {
+        sink:      () => isDark() ? '#ff6b6b' : '#c0392b',
+        local:     () => isDark() ? '#5ac8fa' : '#2c5282',
+        retrieval: () => isDark() ? '#bf5af2' : '#6b46c1',
+        induction: () => isDark() ? '#ff9f0a' : '#c05621',
+      };
 
-      // Build flat list of heads with target positions
-      const heads = [];
       const models = Object.entries(data.models);
-      const modelCount = models.length;
-
-      models.forEach(([name, mdata], mi) => {
-        const nlayers = mdata.n_layers;
-        const nheads = mdata.n_heads ?? (Object.keys(mdata.heads).length / nlayers);
-        
-        Object.entries(mdata.heads).forEach(([key, hd]) => {
-          const layer = hd.layer;
-          const hidx = hd.head_idx;
+      const heads: any[] = [];
+      models.forEach(([, mdata]: any, mi) => {
+        const nL = mdata.n_layers;
+        const allH = Object.values(mdata.heads) as any[];
+        const maxH = Math.max(...allH.map((h: any) => h.head_idx));
+        allH.forEach((hd: any) => {
           heads.push({
             label: hd.label,
-            tx: ((mi + 0.5) / modelCount) + (hidx / (nheads * modelCount * 0.9)) - 0.02,
-            ty: (layer + 0.5) / nlayers,
+            tx: (mi + (hd.head_idx + 0.5) / (maxH + 1)) / models.length,
+            ty: (hd.layer + 0.5) / nL,
             x: Math.random(), y: Math.random(),
-            color: C[hd.label] || '#94a3b8'
           });
         });
       });
 
-      let animFrame = 0;
-      const totalFrames = 90;
-      let raf;
+      let frame = 0; const FRAMES = 90;
+      const ease = (t: number) => t < 0.5 ? 2*t*t : -1+(4-2*t)*t;
 
       function resize() {
-        const dpr = window.devicePixelRatio || 1;
-        const rect = canvas.getBoundingClientRect();
-        canvas.width = rect.width * dpr;
-        canvas.height = rect.height * dpr;
+        const dpr = devicePixelRatio || 1;
+        const r = canvas.getBoundingClientRect();
+        canvas.width = r.width * dpr; canvas.height = r.height * dpr;
         ctx.scale(dpr, dpr);
       }
       resize();
-      window.addEventListener('resize', () => { resize(); animFrame = 0; });
-
-      function ease(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
+      window.addEventListener('resize', () => { resize(); frame = 0; animate(); }, { passive: true });
 
       function draw() {
         const w = canvas.getBoundingClientRect().width;
         const h = canvas.getBoundingClientRect().height;
         ctx.clearRect(0, 0, w, h);
-        const p = Math.min(animFrame / totalFrames, 1);
-        const ep = ease(p);
-
+        const ep = ease(Math.min(frame / FRAMES, 1));
         heads.forEach(hd => {
           const x = (hd.x + (hd.tx - hd.x) * ep) * w;
           const y = (hd.y + (hd.ty - hd.y) * ep) * h;
           ctx.beginPath();
-          ctx.arc(x, y, 3.5, 0, Math.PI * 2);
-          ctx.fillStyle = hd.color + (p < 1 ? Math.floor(200 + 55 * p).toString(16) : '');
+          ctx.arc(x, y, 3, 0, Math.PI * 2);
+          ctx.fillStyle = C[hd.label]?.() ?? '#888';
+          ctx.globalAlpha = 0.25 + 0.75 * ep;
           ctx.fill();
         });
-
-        animFrame++;
-        if (animFrame <= totalFrames + 10) raf = requestAnimationFrame(draw);
+        ctx.globalAlpha = 1;
       }
 
-      // Start when visible
-      const obs = new IntersectionObserver(entries => {
-        if (entries[0].isIntersecting) { animFrame = 0; draw(); obs.disconnect(); }
+      let raf: number;
+      function animate() {
+        draw(); frame++;
+        if (frame <= FRAMES + 5) raf = requestAnimationFrame(animate);
+      }
+
+      const obs = new IntersectionObserver(es => {
+        if (es[0].isIntersecting) { frame = 0; animate(); obs.disconnect(); }
       });
       obs.observe(canvas);
+
+      document.getElementById('theme-btn')?.addEventListener('click', () => {
+        setTimeout(() => { frame = 0; animate(); }, 80);
+      });
     })
-    .catch(() => {}); // graceful - canvas just stays empty
+    .catch(() => {});
 </script>
 
-<style>
-/* ── Landing-specific styles ──── */
-.landing-hero {
-  min-height: 100vh;
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 8rem 2.5rem 4rem;
-  max-width: 1100px; margin: 0 auto; gap: 4rem;
-}
-@media (min-width: 900px) {
-  .landing-hero { flex-direction: row; align-items: center; }
-}
-.hero-text { flex: 1; max-width: 580px; }
-.hero-eyebrow {
-  font-size: .8rem; font-weight: 600; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--local); margin-bottom: 1.25rem;
-}
-.landing-hero h1 {
-  font-size: clamp(2.4rem, 6vw, 4rem);
-  font-weight: 900; letter-spacing: -.04em; line-height: 1.05;
-  margin-bottom: 1.5rem;
-}
-.landing-hero h1 em { color: var(--local); font-style: normal; }
-.hero-sub {
-  font-size: 1.15rem; color: var(--muted); margin-bottom: 2.5rem; line-height: 1.7;
-}
-.hero-sub strong { color: var(--text); }
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+<meta name="base" content="/attentionheadgenome" />
 
-.btn-primary {
-  background: var(--local); color: white;
-  padding: .75rem 1.75rem; border-radius: 2rem;
-  text-decoration: none; font-weight: 600; font-size: .95rem;
-  transition: opacity .2s, transform .2s;
-  display: inline-block;
+<style>
+/* ── Hero ────────────────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 8rem 2.5rem 5rem;
+  text-align: center;
+  background: radial-gradient(ellipse 100% 50% at 50% -5%, rgba(0,113,227,.08) 0%, transparent 65%);
 }
-.btn-primary:hover { opacity: .85; transform: translateY(-2px); }
-.btn-secondary {
-  border: 1px solid var(--border); color: var(--text);
-  padding: .75rem 1.75rem; border-radius: 2rem;
-  text-decoration: none; font-weight: 500; font-size: .95rem;
+[data-theme="light"] .hero {
+  background: radial-gradient(ellipse 100% 50% at 50% -5%, rgba(0,113,227,.04) 0%, transparent 65%);
+}
+.hero-inner { max-width: 720px; }
+.hero-eyebrow {
+  font-size: .72rem; font-weight: 500; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--text-3);
+  margin-bottom: 2.5rem; display: block;
+}
+.hero-title {
+  font-size: clamp(3rem, 9vw, 7rem);
+  font-weight: 200; letter-spacing: -.05em; line-height: 1.0;
+  margin-bottom: 1.75rem; font-family: var(--font);
+}
+.hero-sub {
+  font-size: 1.2rem; color: var(--text-2); font-weight: 300;
+  line-height: 1.6; margin-bottom: 3.5rem;
+}
+
+/* README-style numbered findings */
+.findings-list {
+  list-style: none; counter-reset: findings;
+  text-align: left; margin: 0 0 3rem;
+  display: flex; flex-direction: column; gap: 1.25rem;
+}
+.findings-list li {
+  counter-increment: findings;
+  display: grid; grid-template-columns: 1.6rem 1fr;
+  gap: 0 1rem; font-size: .9rem; line-height: 1.55;
+  align-items: baseline;
+}
+.findings-list li::before {
+  content: counter(findings);
+  font-size: .72rem; font-weight: 500; color: var(--accent);
+  font-family: var(--mono); padding-top: .15rem;
+}
+.findings-list strong {
+  display: block; font-weight: 500; color: var(--text); margin-bottom: .2rem;
+  font-size: .9rem;
+}
+.findings-list span { color: var(--text-2); font-weight: 300; }
+.findings-list li > span { /* wraps strong + text */ grid-column: 2; }
+/* re-structure so strong and span stack */
+.findings-list li { display: grid; grid-template-columns: 1.6rem 1fr; gap: 0 1rem; }
+.findings-list li strong { grid-column: 2; }
+.findings-list li > :not(strong):not(::before) { grid-column: 2; }
+
+.hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.hero-btn-primary {
+  background: var(--accent); color: white;
+  padding: .75rem 2rem; border-radius: 2rem;
+  text-decoration: none; font-size: .95rem; font-weight: 400;
+  transition: opacity .2s, transform .2s;
+}
+.hero-btn-primary:hover { opacity: .85; transform: translateY(-1px); }
+.hero-btn-secondary {
+  border: 1px solid var(--border-med); color: var(--text);
+  padding: .75rem 2rem; border-radius: 2rem;
+  text-decoration: none; font-size: .95rem; font-weight: 300;
   transition: background .2s;
 }
-.btn-secondary:hover { background: var(--faint); }
+.hero-btn-secondary:hover { background: var(--bg2); }
 
-.atlas-wrap { flex: 1; min-width: 300px; }
-.atlas-caption {
-  text-align: center; font-size: .8rem; color: var(--muted); margin-top: .75rem;
-}
+/* ── Numbers ─────────────────────────────────────────────────────── */
+.numbers-section { max-width: 960px; margin: 0 auto; padding: 0 2rem 8rem; }
 
-.section-dark { background: var(--bg2); }
-.two-col {
-  display: grid; grid-template-columns: 1fr; gap: 3rem;
-  max-width: 960px; margin: 0 auto; padding: 5rem 2.5rem;
+/* ── Atlas section ───────────────────────────────────────────────── */
+.atlas-section { background: var(--bg2); padding: 8rem 2.5rem; }
+.atlas-inner {
+  max-width: 1000px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: center;
 }
-@media (min-width: 760px) { .two-col { grid-template-columns: 1fr 1fr; align-items: start; } }
-.two-col h2 {
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  font-weight: 800; letter-spacing: -.03em; margin-bottom: 1rem;
+@media (max-width: 760px) { .atlas-inner { grid-template-columns: 1fr; gap: 3rem; } }
+.atlas-text h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 200; letter-spacing: -.04em; margin-bottom: 1.25rem; line-height: 1.15;
 }
-.two-col p { color: var(--muted); }
-.type-cards { display: flex; flex-direction: column; gap: 1rem; }
-.type-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 1.1rem 1.25rem;
+.atlas-text p { color: var(--text-2); font-weight: 300; line-height: 1.7; margin-bottom: 1.5rem; }
+.type-pills { display: flex; flex-wrap: wrap; gap: .5rem; }
+#atlas-canvas {
+  width: 100%; height: 320px; display: block;
+  border-radius: var(--radius); background: var(--bg);
+  border: 1px solid var(--border);
 }
-.type-card .pill { margin-bottom: .5rem; }
-.type-card p { font-size: .88rem; color: var(--muted); margin: 0; }
+.atlas-caption { font-size: .75rem; color: var(--text-3); margin-top: .75rem; text-align: center; }
 
-.overline {
-  font-size: .75rem; font-weight: 700; letter-spacing: .1em;
-  text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; display: block;
-}
-
-.doors {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1.25rem; margin-top: 1rem;
+/* ── Nav doors ───────────────────────────────────────────────────── */
+.nav-doors { padding: 8rem 2.5rem; }
+.nav-doors-inner { max-width: 960px; margin: 0 auto; }
+.door-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1px; background: var(--border); border-radius: var(--radius);
+  overflow: hidden; margin-top: 0;
 }
 .door {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 1.75rem 1.5rem;
+  background: var(--bg); padding: 2rem 2rem 1.75rem;
   text-decoration: none; color: var(--text);
-  transition: transform .2s, box-shadow .2s, border-color .2s;
-  display: flex; flex-direction: column; gap: .5rem;
+  display: flex; flex-direction: column; gap: .35rem;
+  transition: background .2s;
 }
-.door:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.25); border-color: var(--local); }
-.door-highlight { border-color: var(--local); }
-.door-icon { font-size: 1.6rem; }
-.door strong { font-size: 1rem; font-weight: 700; }
-.door p { font-size: .85rem; color: var(--muted); margin: 0; }
+[data-theme="dark"] .door { background: var(--bg2); }
+.door:hover { background: var(--surface); backdrop-filter: var(--glass-blur); }
+.door-hl { background: var(--bg2) !important; }
+[data-theme="dark"] .door-hl { background: #0d0d0d !important; }
+.door-no { font-size: .65rem; font-family: var(--mono); color: var(--accent); font-weight: 500; }
+.door-label { font-size: 1.05rem; font-weight: 400; letter-spacing: -.02em; }
+.door-sub { font-size: .78rem; color: var(--text-3); font-weight: 300; line-height: 1.4; }
+
+/* ── Evidence / figures story ────────────────────────────────── */
+.evidence-section { padding: 8rem 2.5rem; }
+.evidence-inner { max-width: 900px; margin: 0 auto; }
+.evidence-intro {
+  color: var(--text-2); font-weight: 300; font-size: 1rem;
+  margin-bottom: 5rem; max-width: 560px;
+}
+.evidence-item {
+  display: grid; grid-template-columns: 220px 1fr; gap: 4rem;
+  align-items: start; padding: 5rem 0; border-top: 1px solid var(--border);
+}
+.evidence-item:last-child { border-bottom: 1px solid var(--border); }
+@media (max-width: 760px) {
+  .evidence-item { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+.evidence-meta { position: sticky; top: 6rem; }
+.evidence-n {
+  font-size: .65rem; font-family: var(--mono); font-weight: 500;
+  color: var(--text-3); letter-spacing: .08em; display: block; margin-bottom: .5rem;
+}
+.evidence-title {
+  font-size: 1.15rem; font-weight: 400; letter-spacing: -.025em;
+  margin-bottom: .75rem; line-height: 1.3;
+}
+.evidence-caption {
+  font-size: .82rem; color: var(--text-3); font-weight: 300; line-height: 1.6;
+}
+.evidence-fig { margin: 0; }
+.evidence-fig img {
+  width: 100%; border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
 </style>
