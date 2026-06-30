@@ -92,6 +92,15 @@ Real projected TTFT (prefill) and TPOT (decode) speedups across all 4 architectu
   <img src="outputs/speedup/figure11_speedup_curves.png" width="100%">
 </p>
 
+### 8. The Geometric Manifold of the KV Cache (Figure 12)
+By extracting and projecting the internal Key ($K$) vectors into 3D space using PCA, we visually confirm our structural taxonomy. This plot shows how the four different head types physically map the *exact same sentence* in their KV cache memory:
+- **Local Heads** strictly encode absolute position, forming a continuous linear time-curve.
+- **Sink Heads** isolate and banish punctuation and the first token far away from semantic space.
+- **Retrieval & Induction Heads** cluster tokens by pure semantic/syntactic meaning (e.g. collapsing all instances of "fox" and "dog" together) irrespective of where they appear in the sequence.
+<p align="center">
+  <img src="outputs/geometry/figure12_kv_geometry.png" width="100%">
+</p>
+
 ## 🚀 Getting Started
 
 To reproduce the analysis or run the `headgenome` routing policies:
