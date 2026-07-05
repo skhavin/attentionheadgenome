@@ -716,8 +716,8 @@ Through the fully automated extraction, profiling, and ablation of 1,568 attenti
 
 Our core findings:
 1. **The Taxonomy Continuum**: Heads separate into functional archetypes driven by fundamental variables like Depth, V/Q ratio, and Output Norm.
-2. **Causal Redundancy (Law 2 Falsified)**: The hypothesis that Induction heads rely on a single Retrieval head bottleneck is definitively false. Ablating the full retrieval circuit causes the Induction head to *increase* its attention to the target needle.
-3. **Polysemantic Multiplexing**: Individual Local heads multiplex structural and lexical routing simultaneously, generalized across totally separate domains.
+2. **The Retrieval Bottleneck Falsified (Law 2)**: We found no evidence that Induction heads strictly rely on a Retrieval head bottleneck. Causal ablations of the full retrieval circuit produced no statistically significant degradation in reasoning given the noise band.
+3. **Polysemantic Multiplexing (Law 4)**: The true signal of polysemantic multiplexing is L0 sparsity, not qualitative interpretability. We mathematically proved that true head output contains sparse, deeply structured low-dimensional sub-features by comparing it against a strict temporal-shuffled Null SAE. Qualitative feature-tracking on rare words was explicitly identified and falsified as a statistical illusion.
 4. **The Sink Falsification**: Contrary to our own Phase 1 hypotheses, Sink routing is not a safe, cheap "rest" state. Restricting Sink heads catastrophically destroys global reasoning. 
 
 ---
@@ -739,7 +739,7 @@ To avoid the trap of assuming a single bottleneck, we identified **all 6 Retriev
 *   **Full Retrieval Circuit Ablation (All 6 Heads):** Logit drop of **8.36% ± 9.03%**.
 
 **Conclusion: FALSIFIED.** 
-The reasoning circuit is massively parallel and redundant. Ablating a single Retrieval head has zero statistical effect. Even severing all 6 known Retrieval heads only degrades the logit by ~8% on average (with massive variance), meaning the Induction head continually finds alternative pathways to aggregate the context. The "co-gating" strict bottleneck theory is completely false. 
+We found no evidence of a single-head or even full-circuit bottleneck at the scale we tested. While ablating all 6 known Retrieval heads degrades the logit by ~8% on average, this drop is not statistically distinguishable from zero given the prompt-to-prompt variance ($p = 0.107$, $n=5$). The effect size is small relative to the noise band. We cannot definitively prove massive redundancy without a much larger sample size, but the core hypothesis—that Induction heads strictly rely on a rigid "co-gating" Retrieval bottleneck—is completely unsupported by the evidence. 
 
 ---
 
