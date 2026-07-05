@@ -71,14 +71,41 @@ print(f"Induction Head L{INDUCTION_LAYER}H{INDUCTION_HEAD} Attention to Needle: 
 print(f"Logit Probability of 'BLUE': {prob_base*100:.2f}% (Rank: {rank_base})")
 
 # ---------------------------------------------------------
-# RUN 2: ABLATION (MULTIPLE HEADS)
+# RUN 2: ABLATION (SINGLE HEAD L0H9)
 # ---------------------------------------------------------
-print(f"\n--- ABLATING ALL RETRIEVAL HEADS: {RETRIEVAL_HEADS} ---")
+print(f"\n--- ABLATING SINGLE RETRIEVAL HEAD: {RETRIEVAL_HEADS[0]} ---")
 head_dim = model.config.hidden_size // model.config.num_attention_heads
 
-# Store original weights so we can restore them later
+# Store original weights
 orig_weights = {}
 
+# Ablate only L0H9
+L, H = RETRIEVAL_HEADS[0]
+start = H * head_dim
+end = (H + 1) * head_dim
+weight = model.model.layers[L].self_attn.o_proj.weight.data
+orig_weights[L] = weight.clone()
+weight[:, start:end] = 0.0
+
+with torch.no_grad():
+    out_abl_single = model(**ids, output_attentions=True)
+
+# Restore weights
+model.model.layers[L].self_attn.o_proj.weight.data.copy_(orig_weights[L])
+
+attn_abl_single = out_abl_single.attentions[INDUCTION_LAYER][0, INDUCTION_HEAD, -1, needle_pos].item()
+probs_single = torch.softmax(out_abl_single.logits[0, -1, :], dim=-1)
+prob_abl_single = probs_single[target_token_id].item()
+
+print(f"Induction Head Attention (Single Ablated): {attn_abl_single*100:.2f}% (Drop: {((attn_base - attn_abl_single)/attn_base)*100:.2f}%)")
+print(f"Logit Prob 'BLUE' (Single Ablated): {prob_abl_single*100:.2f}% (Drop: {(prob_base - prob_abl_single)*100:.2f}%)")
+
+# ---------------------------------------------------------
+# RUN 3: ABLATION (ALL 6 RETRIEVAL HEADS)
+# ---------------------------------------------------------
+print(f"\n--- ABLATING ALL 6 RETRIEVAL HEADS: {RETRIEVAL_HEADS} ---")
+
+orig_weights = {}
 for L, H in RETRIEVAL_HEADS:
     start = H * head_dim
     end = (H + 1) * head_dim
@@ -90,26 +117,18 @@ for L, H in RETRIEVAL_HEADS:
     weight[:, start:end] = 0.0
 
 with torch.no_grad():
-    out_abl = model(**ids, output_attentions=True)
+    out_abl_multi = model(**ids, output_attentions=True)
 
 # Restore weights
 for L, w in orig_weights.items():
     model.model.layers[L].self_attn.o_proj.weight.data.copy_(w)
 
-# Induction head attention from last token to needle
-attn_abl = out_abl.attentions[INDUCTION_LAYER][0, INDUCTION_HEAD, -1, needle_pos].item()
+attn_abl_multi = out_abl_multi.attentions[INDUCTION_LAYER][0, INDUCTION_HEAD, -1, needle_pos].item()
+probs_multi = torch.softmax(out_abl_multi.logits[0, -1, :], dim=-1)
+prob_abl_multi = probs_multi[target_token_id].item()
 
-# Logit prob for BLUE
-logits_abl = out_abl.logits[0, -1, :]
-probs_abl = torch.softmax(logits_abl, dim=-1)
-prob_abl = probs_abl[target_token_id].item()
-rank_abl = (probs_abl > prob_abl).sum().item() + 1
-
-print(f"Induction Head L{INDUCTION_LAYER}H{INDUCTION_HEAD} Attention to Needle: {attn_abl*100:.2f}%")
-print(f"Logit Probability of 'BLUE': {prob_abl*100:.2f}% (Rank: {rank_abl})")
-
-print("\n--- CAUSAL EFFECT ---")
-attn_drop = attn_base - attn_abl
-prob_drop = prob_base - prob_abl
-print(f"Attention Drop: {attn_drop*100:.2f}%")
+print(f"Induction Head Attention (Multi Ablated): {attn_abl_multi*100:.2f}% (Drop: {((attn_base - attn_abl_multi)/attn_base)*100:.2f}%)")
+print(f"Logit Prob 'BLUE' (Multi Ablated): {prob_abl_multi*100:.2f}% (Drop: {(prob_base - prob_abl_multi)*100:.2f}%)")
+prob_drop = prob_base - prob_abl_multi
+print(f"Attention Drop: {(attn_base - attn_abl_multi)*100:.2f}%")
 print(f"Probability Drop: {prob_drop*100:.2f}%")

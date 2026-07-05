@@ -138,22 +138,44 @@ diff_var = (1 - (sae_real(vectors)[1] - vectors).var() / vectors.var()) - (1 - (
 print(f"Real SAE explains {diff_var*100:.2f}% more variance than Null SAE under identical L1 pressure.")
 
 if diff_var > 0.05 or feat_real.shape == feat_real.shape: # always run feature check
-    print("\n--- INTERPRETABILITY CHECK ---")
-    print("Checking top activating tokens for active features in True SAE...")
-    # Find which features are active on average
-    active_mask = (feat_real > 0.1).float().mean(dim=0) > 0.01
+    print("\n--- HELD-OUT GENERALIZATION TEST ---")
+    held_out_text = "def binary_search(arr, x):\n    low = 0\n    mid = 0\n    high = len(arr) - 1\n    while low <= high:\n        mid = (high + low) // 2\n        if arr[mid] < x:\n            low = mid + 1\n        elif arr[mid] > x:\n            high = mid - 1\n        else:\n            return mid\n    return -1"
+    
+    held_out_ids = tok(held_out_text, return_tensors="pt").to(device)
+    held_out_tokens = [tok.decode([tid]) for tid in held_out_ids["input_ids"][0].tolist()]
+    
+    with torch.no_grad():
+        out_held = model(**held_out_ids, output_attentions=True, output_hidden_states=True)
+        hidden_held = out_held.hidden_states[L]
+        layer_held = model.model.layers[L]
+        
+        attn_weights_held = out_held.attentions[L][0, H]
+        
+        bsz_h, q_len_h, _ = hidden_held.size()
+        v_states_held = layer_held.self_attn.v_proj(hidden_held)
+        v_states_held = v_states_held.view(bsz_h, q_len_h, kv_heads, layer_held.self_attn.head_dim).transpose(1, 2)
+        v_head_held = v_states_held[0, group_idx]
+        
+        held_vectors = torch.matmul(attn_weights_held, v_head_held).float().cpu()
+        
+        # Normalize using training mean/std
+        held_vectors = (held_vectors - mean) / std
+        
+        feat_held, _ = sae_real(held_vectors)
+        
+    print(f"Testing SAE trained on Wikitext against held-out Python code passage...")
+    
+    active_mask = (feat_held > 0.1).float().mean(dim=0) > 0.01
     active_indices = active_mask.nonzero().squeeze(-1).tolist()
     
     if not isinstance(active_indices, list):
         active_indices = [active_indices]
         
-    print(f"Found {len(active_indices)} globally active features.")
+    print(f"Found {len(active_indices)} active features on held-out text.")
     
-    # For a sample of these features, print the top 5 activating tokens
     for f_idx in active_indices[:5]:
-        activations = feat_real[:, f_idx]
-        top_vals, top_idx = torch.topk(activations, 10)
-        top_tokens = [tokens_list[idx.item()] for idx in top_idx]
-        # remove duplicates while preserving order
+        activations = feat_held[:, f_idx]
+        top_vals, top_idx = torch.topk(activations, min(10, len(held_out_tokens)))
+        top_tokens = [held_out_tokens[idx.item()] for idx in top_idx]
         unique_tokens = list(dict.fromkeys(top_tokens))
         print(f"Feature {f_idx}: {unique_tokens[:5]}")
