@@ -22,20 +22,36 @@ import AcademyLayout from '../../layouts/AcademyLayout.astro';
       </div>
       
       <div class="roadmap-nodes">
-        <a href="/attentionheadgenome/academy/part1-fundamentals" class="roadmap-node">
-          <h3>LLMs & Tokens</h3>
+        <a href="/attentionheadgenome/academy/part1-fundamentals" class="roadmap-node left">
+          <div class="node-content">
+            <span class="node-num">01</span>
+            <h3>LLMs & Tokens</h3>
+          </div>
+          <div class="node-anchor"></div>
         </a>
-        <div class="roadmap-dot"></div>
-        <a href="/attentionheadgenome/academy/part1-fundamentals" class="roadmap-node">
-          <h3>Embeddings & Position</h3>
+        
+        <a href="/attentionheadgenome/academy/part1-fundamentals" class="roadmap-node right">
+          <div class="node-anchor"></div>
+          <div class="node-content">
+            <span class="node-num">02</span>
+            <h3>Embeddings & Position</h3>
+          </div>
         </a>
-        <div class="roadmap-dot"></div>
-        <a href="/attentionheadgenome/academy/part2-attention-mechanics" class="roadmap-node">
-          <h3>Attention & Softmax</h3>
+        
+        <a href="/attentionheadgenome/academy/part2-attention-mechanics" class="roadmap-node left">
+          <div class="node-content">
+            <span class="node-num">03</span>
+            <h3>Attention & Softmax</h3>
+          </div>
+          <div class="node-anchor"></div>
         </a>
-        <div class="roadmap-dot"></div>
-        <a href="/attentionheadgenome/academy/part3-math-foundations" class="roadmap-node">
-          <h3>Entropy & Math Tools</h3>
+        
+        <a href="/attentionheadgenome/academy/part3-math-foundations" class="roadmap-node right">
+          <div class="node-anchor"></div>
+          <div class="node-content">
+            <span class="node-num">04</span>
+            <h3>Entropy & Math Tools</h3>
+          </div>
         </a>
       </div>
     </div>
@@ -47,20 +63,36 @@ import AcademyLayout from '../../layouts/AcademyLayout.astro';
       </div>
       
       <div class="roadmap-nodes">
-        <a href="/attentionheadgenome/academy/part4-head-species" class="roadmap-node">
-          <h3>Sink Heads</h3>
+        <a href="/attentionheadgenome/academy/part4-head-species" class="roadmap-node left">
+          <div class="node-content">
+            <span class="node-num">05</span>
+            <h3>Sink Heads</h3>
+          </div>
+          <div class="node-anchor"></div>
         </a>
-        <div class="roadmap-dot"></div>
-        <a href="/attentionheadgenome/academy/part4-head-species" class="roadmap-node">
-          <h3>Local Heads</h3>
+        
+        <a href="/attentionheadgenome/academy/part4-head-species" class="roadmap-node right">
+          <div class="node-anchor"></div>
+          <div class="node-content">
+            <span class="node-num">06</span>
+            <h3>Local Heads</h3>
+          </div>
         </a>
-        <div class="roadmap-dot"></div>
-        <a href="/attentionheadgenome/academy/part4-head-species" class="roadmap-node">
-          <h3>Retrieval Heads</h3>
+        
+        <a href="/attentionheadgenome/academy/part4-head-species" class="roadmap-node left">
+          <div class="node-content">
+            <span class="node-num">07</span>
+            <h3>Retrieval Heads</h3>
+          </div>
+          <div class="node-anchor"></div>
         </a>
-        <div class="roadmap-dot"></div>
-        <a href="/attentionheadgenome/academy/part4-head-species" class="roadmap-node">
-          <h3>Induction Heads</h3>
+        
+        <a href="/attentionheadgenome/academy/part4-head-species" class="roadmap-node right">
+          <div class="node-anchor"></div>
+          <div class="node-content">
+            <span class="node-num">08</span>
+            <h3>Induction Heads</h3>
+          </div>
         </a>
       </div>
     </div>
@@ -72,16 +104,28 @@ import AcademyLayout from '../../layouts/AcademyLayout.astro';
       </div>
       
       <div class="roadmap-nodes">
-        <a href="/attentionheadgenome/academy/part5-experimental-findings" class="roadmap-node">
-          <h3>The V/Q Law & Co-Gating</h3>
+        <a href="/attentionheadgenome/academy/part5-experimental-findings" class="roadmap-node left">
+          <div class="node-content">
+            <span class="node-num">09</span>
+            <h3>The V/Q Law & Co-Gating</h3>
+          </div>
+          <div class="node-anchor"></div>
         </a>
-        <div class="roadmap-dot"></div>
-        <a href="/attentionheadgenome/academy/part6-systems-engineering" class="roadmap-node">
-          <h3>KV Cache Routing</h3>
+        
+        <a href="/attentionheadgenome/academy/part6-systems-engineering" class="roadmap-node right">
+          <div class="node-anchor"></div>
+          <div class="node-content">
+            <span class="node-num">10</span>
+            <h3>KV Cache Routing</h3>
+          </div>
         </a>
-        <div class="roadmap-dot"></div>
-        <a href="/attentionheadgenome/academy/part7-architecture-differences" class="roadmap-node">
-          <h3>Architecture Differences</h3>
+        
+        <a href="/attentionheadgenome/academy/part7-architecture-differences" class="roadmap-node left">
+          <div class="node-content">
+            <span class="node-num">11</span>
+            <h3>Architecture Differences</h3>
+          </div>
+          <div class="node-anchor"></div>
         </a>
       </div>
     </div>
@@ -122,7 +166,7 @@ import AcademyLayout from '../../layouts/AcademyLayout.astro';
   .roadmap-section {
     position: relative;
     z-index: 10;
-    margin-bottom: 5rem;
+    margin-bottom: 6rem;
   }
   
   .roadmap-badge {
@@ -138,40 +182,71 @@ import AcademyLayout from '../../layouts/AcademyLayout.astro';
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     box-shadow: var(--shadow-sm);
   }
   
   .roadmap-nodes {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2.5rem;
   }
   
   .roadmap-node {
-    display: block;
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--border-med);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    box-shadow: var(--shadow-sm);
+    position: relative;
   }
   
-  .roadmap-node:hover {
-    transform: translateY(-2px) scale(1.02);
+  .roadmap-node.left {
+    justify-content: flex-end;
+    padding-right: 50%;
+  }
+  .roadmap-node.right {
+    justify-content: flex-start;
+    padding-left: 50%;
+  }
+  
+  .node-content {
+    background: var(--bg2);
+    border: 1px solid var(--border-med);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-xs);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 240px;
+  }
+  .roadmap-node.left .node-content {
+    margin-right: 20px;
+  }
+  .roadmap-node.right .node-content {
+    margin-left: 20px;
+  }
+  
+  .node-num {
+    font-size: 0.75rem;
+    font-family: var(--mono);
+    color: var(--accent);
+    font-weight: 600;
+    opacity: 0.8;
+  }
+  
+  .roadmap-node:hover .node-content {
+    transform: translateY(-2px);
     border-color: var(--accent);
     background: var(--surface);
     box-shadow: var(--shadow-md);
   }
   
-  .roadmap-node h3 {
+  .node-content h3 {
     margin: 0 !important;
-    font-size: 1.15rem !important;
-    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
     color: var(--text) !important;
     transition: color 0.2s;
   }
@@ -180,13 +255,43 @@ import AcademyLayout from '../../layouts/AcademyLayout.astro';
     color: var(--accent) !important;
   }
   
-  .roadmap-dot {
-    width: 8px;
-    height: 8px;
+  .node-anchor {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: var(--bg);
+    border: 2px solid var(--border-med);
     border-radius: 50%;
+    z-index: 2;
+    transition: all 0.3s ease;
+  }
+  
+  .roadmap-node:hover .node-anchor {
+    border-color: var(--accent);
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+  }
+
+  /* Connecting lines from node to center */
+  .roadmap-node::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 1px;
     background: var(--border-med);
-    margin: 0 auto;
-    position: relative;
     z-index: 1;
+    transition: background 0.3s;
+  }
+  .roadmap-node.left::before {
+    right: 50%;
+  }
+  .roadmap-node.right::before {
+    left: 50%;
+  }
+  .roadmap-node:hover::before {
+    background: var(--accent);
   }
 </style>
