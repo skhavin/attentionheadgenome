@@ -114,7 +114,7 @@ def build_dashboard():
             xanchor="left",
             y=0.99,
             yanchor="top",
-            font=dict(color="#000000")
+            font=dict(color="#ffffff")
         )],
         scene=dict(
             xaxis_title='Mean Attention Distance (Tokens)',
