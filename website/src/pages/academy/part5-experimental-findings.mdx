@@ -31,89 +31,81 @@ import InterviewQuestions from '../../components/InterviewQuestions.astro';
 ![HeadGenome Atlas Overview](/attentionheadgenome/images/final_artifacts/headgenome_atlas.png)
 *Figure: The Global HeadGenome Atlas mapped across 4 models.*
 
-## 1. The V/Q Spatial Scaling Law (MIXED EVIDENCE)
+## 1. Histogram Invisibility & Head Distribution
 
-**Hypothesis (Law 1):** Deeper heads become heavily biased toward Value vectors (higher V/Q ratio) and causally exert massive output norms into the residual stream, independent of simply being a deeper layer.
+**Finding:** Head function cannot be read off static weight geometry. Retrieval and Induction heads are statically indistinguishable from Local heads, showing up only under a dynamic behavioral probe.
 
-**Experiment:** We performed Partial Correlation controlling for layer depth (<span set:html={String.raw`$L$`} />) with exact p-values via Fisher's Z-transform.
+Through dynamic profiling of **1,568 total attention heads** across GPT-2, Qwen-0.5B, Qwen-1.5B, and Llama-3.2-1B, we extracted the following universal distribution:
+- **Local Heads:** 51.0% (800 heads)
+- **Sink Heads:** 41.1% (645 heads)
+- **Induction Heads:** 6.9% (108 heads)
+- **Retrieval Heads:** 1.0% (15 heads)
 
-<div class="code-block" style="color: var(--text-2);">
-  # Partial Correlation (Controlling for Depth)<br/>
-  Llama-3.2-1B:  r = 0.447 (p &lt; 0.00001)<br/>
-  Qwen-1.5B:     r = 0.237 (p = 0.00001)<br/>
-  GPT-2 Medium:  r = 0.088 (p = 0.0828)
-</div>
+## 2. The V/Q Spatial Scaling Law (WEAKER THAN EXPECTED)
 
-**Conclusion: RETRACTED.** While raw correlation is strong, a massive portion of it is confounded by depth. When controlling for depth, the effect completely fails significance in GPT-2 and is weak in Qwen. The law is substantially weaker than raw correlation suggests.
+**Hypothesis (Law 1):** Deeper heads become heavily biased toward Value vectors (higher V/Q ratio) and causally exert massive output norms into the residual stream.
 
-## 2. The KV Cache Mini-Sink Law (PROVEN)
+**Experiment:** We performed Partial Correlation controlling for layer depth.
+**Result:** Raw Pearson correlation is strong across all four architectures (r = 0.48–0.71, pooled p = 1.92×10⁻¹²⁷), but a large fraction of that is confounded by depth. Controlling for it via partial correlation, the effect ranges from negligible in GPT-2 (r = 0.09, p = 0.08) to moderate in Llama (r = 0.45). 
 
-**Hypothesis (Law 16):** Punctuation tokens act as structural mini-sinks for local chunking.
+**Conclusion: WEAKENED.** Real, but smaller and less universal than the headline number suggests.
 
-**Experiment:** Base-rate Z-test using exact tokenizer-aligned token counts on the `ud_ewt` Universal Dependencies treebank.
+## 3. The Early/Late Induction Split (PROVEN)
 
-**Result:** The true base rate of punctuation hovers around 7.7%. However, Qwen2.5-0.5B (`L8H3`) allocates **96.0%** of its attention exclusively to punctuation, yielding a staggering Z-Statistic of <span set:html={String.raw`$z = 171.13$`}/> (<span set:html={String.raw`$p = 0.00e+00$`}/>). 
+**Finding:** Induction heads are not monolithic. They cleanly separate into depth-separated **Early (Locate)** and **Late (Copy-Forward)** subpopulations.
+**Result:** This split is statistically sharp across architectures (Mann-Whitney p = 4.17×10⁻³²).
 
-**Conclusion: PROVEN.** Punctuation functions as a deliberate structural reset mechanism.
-
-## 3. Retrieval-Induction Co-Gating (FALSIFIED)
+## 4. Retrieval-Induction Co-Gating (FALSIFIED)
 
 <Misconception>
   <Fragment slot="myth">Retrieval heads form a strict bottleneck for Induction heads. If you ablate Retrieval heads, the model loses its ability to copy facts.</Fragment>
-  <Fragment slot="truth">The reasoning circuit is either massively redundant or Induction heads independently calculate similarities. Co-gating is a myth.</Fragment>
+  <Fragment slot="truth">The reasoning circuit is massively redundant, parallelized, or routes through heads we haven't identified yet.</Fragment>
 </Misconception>
 
-**Hypothesis (Law 2):** A Retrieval head acts as a strict boolean AND-gate for a downstream Induction head. 
-
-**Experiment (Phase 3):** We identified **all 6 Retrieval heads** in Qwen2.5-1.5B and a late-stage Induction head (`L21H8`). We used PyTorch forward hooks to forcefully zero-out the `o_proj` weight matrices for **all 6 Retrieval heads simultaneously** during a Needle-In-A-Haystack prompt.
+**Experiment:** We ran an apples-to-apples causal ablation on Qwen2.5-1.5B across 5 diverse Needle-In-A-Haystack prompts. We forcefully zeroed-out the `o_proj` weight matrices for **all 6 known Retrieval heads simultaneously**.
 
 **Result:**
-- **Baseline:** Induction Head `L21H8` attended to the needle with **15.67%** mass.
-- **Ablated (All 6 Heads):** Induction Head `L21H8` attended to the needle with **17.37%** mass (it actually increased!).
-- **Logit Drop:** The probability of predicting the correct answer dropped by a negligible **4.44%**.
+- **Logit Drop:** The probability of predicting the correct answer dropped by only **8.36% ± 9.03%**.
+- **Conclusion: FALSIFIED.** This is a noisy drop that is not clearly distinguishable from zero. The original single-pair ablation result doesn't replicate at the full-circuit level. The retrieval-induction interaction is real but far more redundant/parallelized than a strict AND-gate.
 
-**Conclusion: FALSIFIED.** Induction heads do not rely on standard Retrieval heads as a strict bottleneck.
+## 5. Polysemantic Multiplexing (PROVEN BY SPARSITY, NOT INTERPRETABILITY)
 
-## 4. Polysemantic Multiplexing (PROVEN)
+**Experiment:** We trained a 4x overcomplete Micro-SAE. As a rigor check, we trained a **Null-SAE** on temporally shuffled vectors to destroy true covariance. Both were evaluated on a held-out passage of Python code.
 
-**Hypothesis (Law 4):** Single attention heads multiplex multiple behaviors depending on orthogonal subspaces. Training a Sparse Autoencoder (Micro-SAE) will decompose dense outputs into sparse, interpretable features.
+**Result:** 
+- **The Sparsity Gap (Proven):** The True SAE required only **4.5 active features** per token. The Null SAE required **51.0 active features**. 
+- **The Qualitative Falsification:** Initially, features cleanly tracked rare abstract tokens like `def` or `_search`. However, the **Null SAE also perfectly tracked these exact same rare tokens**. Qualitative interpretability on rare tokens is a statistical illusion.
 
-**Experiment:** We trained a 4x overcomplete Micro-SAE on 1,500 continuous tokens from a highly diverse Wikitext passage. As a rigor check, we trained a **Null-SAE** on temporally shuffled vectors to destroy true covariance.
+**Conclusion:** The only rigorous, surviving evidence of multiplexing is the massive L0 sparsity gap, not qualitative feature tracking. 
 
-**Result:** Both SAEs achieved ~99.8% variance explained. However, the **True SAE required only 5.14 active features** per token (6.12% dense), while the **Null SAE required 51.08 active features** (49.0% dense). The active features successfully disentangled concepts like biology terminology vs. geography.
+## 6. Validating Atlas Roles via Attention Routing
 
-**Conclusion: PROVEN.** The true head output contains sparse, deeply structured low-dimensional sub-features.
-
-## 5. Validating Atlas Roles via Attention Routing
-
-We built a native routing engine to intercept head outputs and force them into highly constrained attention kernels (Phase 4).
+We built a native routing engine to intercept head outputs and force them into highly constrained attention kernels.
 
 ![Developmental Sankey](/attentionheadgenome/images/final_artifacts/developmental_sankey.png)
 *Figure: The developmental trajectories of functional head species across network depth.*
 
-- **Local Head Success:** We forced all Local heads (130 heads) into a strict **32-token sliding window**. HellaSwag accuracy dropped by only **1.0%**. The atlas mapping is accurate: we can mathematically strip away global context from Local heads and preserve 99% of reasoning.
-- **Sink Head Falsification:** We forced Sink heads to attend *only* to the BOS token and an 8-token trailing context. HellaSwag dropped by **5.0%**. While Sinks dump >50% mass on BOS, the remaining scattered mass is **not noise**—it contains critical structural signal.
+- **Local Head Success:** We forced all Local heads into a strict **32-token sliding window**. HellaSwag accuracy dropped by only **1.0%**. The atlas mapping is accurate.
+- **Sink Head Falsification:** We forced Sink heads (which already dump >50% mass on BOS) to attend *exclusively* to the BOS token. We hypothesized this cheap rest state would be safe. Instead, **accuracy catastrophically collapsed to 26% (random chance).** Sink heads perform critical global integration.
 
-## 6. Unsupervised Emergent Discovery
+## 7. Unsupervised Emergent Discovery
 
 ![Second Axis Curve](/attentionheadgenome/images/final_artifacts/second_axis_curve.png)
 *Figure: The UMAP/HDBSCAN clustering proving the existence of a continuous megacluster.*
 
-To verify our manual taxonomy, we collected rich runtime features (activation sparsity, position bias) and ran unsupervised UMAP + HDBSCAN clustering (Phase 5).
-
-**Result:** 923 heads (58%) collapsed into a **Giant Megacluster**, meaning the boundaries between Local, Sink, and Induction roles are highly continuous, not discrete. We also discovered a near-perfect inverse correlation (<span set:html={String.raw`$r = -0.971$`}/>) between early-sequence bias and middle-sequence bias, indicating strict division of labor by absolute sequence position.
+**Result:** Unsupervised clustering revealed that 923 heads (58%) collapsed into a **Giant Megacluster**. The boundaries between Local, Sink, and Induction roles are highly continuous, forming a developmental manifold rather than discrete buckets.
 
 <InterviewQuestions title="Research Defense & Discussion">
   <details>
-    <summary>Why did you retract the V/Q Scaling Law?</summary>
+    <summary>Why did you falsify your own SAE qualitative findings?</summary>
     <div>
-      When we ran Partial Correlation to control for the sheer depth of the layer, the effect size plummeted. We refuse to publish a "Law" that relies on confounding variables. 
+      When we ran the Null-SAE on the exact same held-out text, its random features <i>also</i> cleanly tracked rare tokens. Qualitative interpretability is a statistical illusion driven by token frequency. We rely solely on L0 sparsity for mathematical proof.
     </div>
   </details>
   <details>
     <summary>Does falsifying Law 2 invalidate the taxonomy?</summary>
     <div>
-      No. Falsifying the strict "bottleneck" theory of Retrieval $\rightarrow$ Induction actually proves that the model architecture is far more redundant and robust than single-head ablation studies often claim.
+      No. Falsifying the strict "bottleneck" theory actually proves that the model architecture is far more redundant and robust than single-head ablation studies often claim.
     </div>
   </details>
 </InterviewQuestions>
