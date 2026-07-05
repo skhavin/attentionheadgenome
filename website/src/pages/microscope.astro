@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Layout title="3D Microscope" description="A living, 3D interactive visualization of attention head species across all architectures.">
+
+<div class="explorer-header">
+  <p class="eyebrow">Interactive</p>
+  <h1>The Transformer Galaxy</h1>
+  <p class="lead">
+    A 3D representation of every attention head. Explore the functional embedding space where
+    Sink, Local, Retrieval, and Induction heads separate structurally.
+  </p>
+  
+  <div class="view-switcher" style="margin-top: 1.5rem;">
+    <a href={`${base}/explorer`} class="btn-outline">View KV Geometry Explorer</a>
+    <a href={`${base}/microscope`} class="btn-outline active">View 3D Microscope (Galaxy)</a>
+  </div>
+</div>
+
+<div class="iframe-wrap">
+  <iframe
+    src={`${base}/microscope.html`}
+    title="Interactive 3D Microscope Explorer"
+    class="explorer-iframe"
+    loading="lazy"
+    allow="fullscreen"
+  ></iframe>
+</div>
+
+</Layout>
+
+<style>
+.explorer-header {
+  padding: 10rem 2.5rem 3rem;
+  max-width: 700px; margin: 0 auto; text-align: center;
+}
+.explorer-header h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 200; letter-spacing: -.04em; margin-bottom: 1.25rem; line-height: 1.1;
+}
+.lead { color: var(--text-2); font-weight: 300; line-height: 1.65; }
+
+.view-switcher {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+}
+.btn-outline {
+  padding: 0.5rem 1rem; border: 1px solid var(--border); border-radius: var(--radius);
+  color: var(--text); text-decoration: none; font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+.btn-outline:hover {
+  background: var(--bg2); border-color: var(--text-2);
+}
+.btn-outline.active {
+  background: var(--text); color: var(--bg); border-color: var(--text);
+}
+
+.iframe-wrap {
+  width: 100%; padding: 0 1.5rem 4rem;
+}
+.explorer-iframe {
+  width: 100%; height: 90vh;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--bg2); display: block;
+  box-shadow: var(--shadow-md);
+}
+</style>
