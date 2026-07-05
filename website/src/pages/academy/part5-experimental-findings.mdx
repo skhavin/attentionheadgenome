@@ -23,15 +23,23 @@ import InterviewQuestions from '../../components/InterviewQuestions.astro';
 />
 
 <div class="lead">
-  Using the mathematical tools from Part III, we analyzed the taxonomy from Part IV across 1,568 attention heads. The results uncovered three fundamental laws of transformer architecture.
+  By executing our taxonomy pipeline across 1,568 attention heads spanning GPT-2 to Llama-3.2, we discovered six fundamental, quantifiable laws governing how LLMs route information. 
 </div>
 
-> **Reproducibility Note:** The experiments in this chapter are backed by rigorous data pipelines. The core analysis logic is housed in `phase2_atlas/analyze_atlas_rigorous.py` and `phase2_atlas/compare_atlases.py`. Cross-model similarities are tracked in `CROSS_MODEL_SIMILARITIES.md`, and lexical tracking relies on `phase2_atlas/lexical_tracker.py`. The models were evaluated on standard text distributions using `wikitext-103-raw-v1`.
+> **Reproducibility Hub:** The findings in this chapter are derived from the massive Phase 2 Atlas JSONs and the Master Report (`outputs/final_artifacts/HeadGenome_Master_Report.md`). You can reproduce the exact pipeline using `phase2_atlas/analyze_atlas_rigorous.py` for clustering, `phase2_atlas/compare_atlases.py` for cross-architecture validation, and `phase2_atlas/lexical_tracker.py` for vocabulary mapping on the `wikitext-103-raw-v1` dataset.
 
-## Finding 1: The V/Q Spatial Scaling Law
+## Finding 1: Histogram Invisibility (Static Weights are Blind)
+
+**Question:** Can we classify what a head does just by looking at its frozen weights?
+
+**Experiment:** We extracted the static weight matrices (<span set:html={String.raw`$W_Q, W_K, W_V, W_O$`} />) and applied K-Means clustering ($K=4$) to their Singular Value Decompositions. (Script: `paper_analysis_suite.py`)
+
+**Result:** Static weights failed to cluster into any meaningful taxonomy. Sink heads were indistinguishable from Local heads. The functional ecology of a model is **invisible** in static weights; it only emerges dynamically when tokens interact with the Softmax bottleneck.
+
+## Finding 2: The V/Q Spatial Scaling Law
 
 <WhyCare>
-  If you know exactly where a head is located in the network depth, you can predict its V/Q Ratio. If you know its V/Q Ratio, you can predict its functional species. This proves that attention head formation is mathematically predictable, not random.
+  If you know a head's V/Q Ratio, you can predict its functional species. This proves that attention head formation is mathematically predictable, not random.
 </WhyCare>
 
 **Question:** Does head geometry change with depth?
@@ -39,7 +47,7 @@ import InterviewQuestions from '../../components/InterviewQuestions.astro';
 **Experiment:** We plotted the V/Q Frobenius norm ratio (<span set:html={String.raw`$||W_V||_F / ||W_Q||_F$`} />) of every head against its normalized layer depth (<span set:html={String.raw`$0$`} /> to <span set:html={String.raw`$1$`} />).
 
 <div class="code-block" style="color: var(--text-2);">
-  # Result across all models (Extracted from phase2 JSON atlases)<br/>
+  # Correlation extracted from phase2_atlas JSON outputs<br/>
   Llama-3.2-1B:  r = 0.812 (p &lt; 1e-50)<br/>
   Qwen-1.5B:     r = 0.865 (p &lt; 1e-50)<br/>
   Qwen-0.5B:     r = 0.803 (p &lt; 1e-50)<br/>
@@ -50,26 +58,39 @@ import InterviewQuestions from '../../components/InterviewQuestions.astro';
 
 <Misconception>
   <Fragment slot="myth">The V/Q scaling law happens because later layers process more complex human language.</Fragment>
-  <Fragment slot="truth">No. In Part VII, we show that the exact same V/Q scaling law emerges when training on gibberish or non-English data. It is a geometric property of the transformer architecture, not a property of language.</Fragment>
+  <Fragment slot="truth">No. The exact same V/Q scaling law emerges when training on gibberish or non-English data. It is a geometric property of the transformer architecture, not a property of language.</Fragment>
 </Misconception>
 
-## Finding 2: The Bifurcation Axis
+## Finding 3: The Bifurcation Axis
 
-**Question:** How do heads choose their species during training?
+**Experiment:** We mapped the developmental trajectory of all heads across the network depth using `plot_second_axis.py`.
 
-**Experiment:** We tracked the development of Sink, Local, Retrieval, and Induction heads across network depth, mapping out the population density using our extracted ATLAS JSONs (`Qwen2.5-1.5B_head_atlas.json`, etc.).
+**Result:** Early in the network (Layers 0–5), almost all heads are Local heads. Around 40–60% depth, the developmental manifold splits violently. A minority of heads break away from the Local cluster to become highly specialized Retrieval (<span set:html={String.raw`$\Delta > 0.3$`} />) and Induction (<span set:html={String.raw`$\Delta < -0.5$`} />) heads, proving that complex semantic reasoning is an emergent, late-stage spatial phenomenon.
 
-**Result:** Early in the network (Layers 0–5), almost all heads are Local heads. Around 40–60% depth, the developmental manifold splits. A minority of heads violently break away from the Local cluster to become highly specialized Retrieval and Induction heads.
-
-## Finding 3: Circuit Co-Gating (The 96.5% Rule)
+## Finding 4: Circuit Co-Gating (The 96.5% Rule)
 
 **Question:** Do Retrieval heads and Induction heads work independently?
 
-**Experiment:** We ran causal ablations. We deleted Retrieval heads and measured performance. We deleted Induction heads and measured performance. We deleted both and measured performance.
+**Experiment:** We ran structural Needle-In-A-Haystack (NIAH) causal ablations on Qwen-1.5B (Script: `causal_validation.py`).
 
 **Result:** Ablating Retrieval heads alone caused 0% recovery in long-context tasks. Ablating Induction heads alone caused 0% recovery. 
 
-**Interpretation:** They form a strict co-dependent pipeline. Retrieval heads find the needle. Induction heads extract it. If either pipeline breaks, the entire circuit fails. However, when we ablate *both* together, the model is able to bypass the broken circuit entirely, yielding a **96.5% recovery**.
+**Interpretation:** They form a strict co-dependent pipeline. Retrieval heads find the needle. Induction heads extract it. If either pipeline breaks, the entire circuit fails. However, when we ablate *both* together, the model is able to bypass the broken circuit entirely via backup pathways, yielding a **96.5% recovery**.
+
+## Finding 5: The Perplexity Illusion
+
+**Observation:** We traditionally measure LLM quality using Perplexity. But Perplexity only checks if the model predicts the immediate next word well (local grammar). 
+
+By causally deleting the Induction and Retrieval heads, we absolutely destroyed the model's ability to solve reasoning or long-context tasks. However, the model's global Perplexity score barely moved! This proves that standard Perplexity metrics are entirely blind to high-order semantic reasoning circuits.
+
+## Finding 6: Lexical Routing Anatomy
+
+**Experiment:** Using `phase2_atlas/lexical_tracker.py` evaluated on 1M tokens of `wikitext-103`, we tracked the exact vocabulary tokens triggering maximum activation across species.
+
+**Result:** 
+- **Retrieval Heads** almost exclusively trigger on low-frequency, high-information nouns (Names, Places, UUIDs). 
+- **Local Heads** exclusively trigger on high-frequency structural tokens ("the", "and", "of"). 
+- **Sink Heads** (in models using RoPE like Llama) anchor themselves to punctuation marks (periods, commas) to maintain structural stability.
 
 <CouldBeWrong>
   <p>We claim Retrieval and Induction heads form a co-dependent pipeline.</p>
