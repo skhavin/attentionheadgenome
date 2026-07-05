@@ -1,0 +1,112 @@
+---
+interface Props {
+  difficulty: "Beginner" | "Intermediate" | "Advanced" | "Research";
+  links: { title: string; url: string }[];
+}
+const { difficulty, links } = Astro.props;
+
+const diffColor = 
+  difficulty === "Beginner" ? "var(--local)" :
+  difficulty === "Intermediate" ? "var(--induction)" :
+  difficulty === "Advanced" ? "var(--retrieval)" :
+  "var(--sink)";
+
+const diffDots = 
+  difficulty === "Beginner" ? "●○○○○" :
+  difficulty === "Intermediate" ? "●●○○○" :
+  difficulty === "Advanced" ? "●●●○○" :
+  "★★★★☆";
+---
+
+<div class="prereq-container">
+  
+  <div class="prereq-section">
+    <span class="prereq-label">Difficulty</span>
+    <div class="diff-badge" style={`color: ${diffColor}; border-color: ${diffColor}40; background: ${diffColor}10;`}>
+      <span style="font-size: 0.7em; margin-right: 0.2rem;">{diffDots}</span>
+      {difficulty}
+    </div>
+  </div>
+
+  <div class="prereq-section" style="align-items: flex-end;">
+    <span class="prereq-label">Prerequisites</span>
+    <div class="prereq-links">
+      {links.length === 0 && <span style="font-size: 0.85rem; color: var(--text-3); font-style: italic;">None</span>}
+      {links.map(link => (
+        <a href={link.url} class="prereq-link">
+          <span style="color: var(--accent);">✓</span> {link.title}
+        </a>
+      ))}
+    </div>
+  </div>
+
+</div>
+
+<style>
+  .prereq-container {
+    margin: 1.5rem 0 3rem;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--bg2);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .prereq-container {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  .prereq-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .prereq-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .diff-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.8rem;
+    border-radius: 2rem;
+    border: 1px solid;
+    font-size: 0.85rem;
+    font-weight: 500;
+    width: max-content;
+  }
+  .prereq-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  @media (min-width: 768px) {
+    .prereq-links { justify-content: flex-end; }
+  }
+  .prereq-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 2rem;
+    background: var(--bg);
+    border: 1px solid var(--border-med);
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--text-2);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .prereq-link:hover {
+    color: var(--text);
+    border-color: var(--accent);
+    background: var(--surface);
+  }
+</style>

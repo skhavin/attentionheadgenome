@@ -1,0 +1,49 @@
+---
+---
+<div class="misconception callout">
+  <h4 class="callout-title">
+    <span style="font-size: 1.1em; margin-right: 0.35rem;">❌</span> Common Misconception
+  </h4>
+  <div class="myth">
+    <slot name="myth" />
+  </div>
+  <div class="truth">
+    <strong>✅ Actually:</strong>
+    <slot name="truth" />
+  </div>
+</div>
+
+<style>
+  .misconception.callout {
+    border-left-color: var(--sink);
+    background: var(--bg2);
+    margin: 2.5rem 0;
+  }
+  .callout-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--sink);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+  }
+  .myth {
+    color: var(--text-2);
+    font-size: 0.95rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-med);
+  }
+  .truth {
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .truth strong {
+    color: #34d399; /* emerald */
+    margin-right: 0.5rem;
+  }
+</style>

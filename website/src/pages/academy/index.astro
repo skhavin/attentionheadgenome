@@ -1,0 +1,192 @@
+---
+import AcademyLayout from '../../layouts/AcademyLayout.astro';
+---
+
+<AcademyLayout title="Visual Roadmap">
+  
+  <div class="roadmap-header">
+    <h1 class="hero-title reveal">HeadGenome Academy</h1>
+    <p class="hero-sub reveal">
+      The interactive research handbook. Follow the path from absolute basics to state-of-the-art transformer discoveries.
+    </p>
+  </div>
+
+  <div class="roadmap-container reveal">
+    
+    <div class="roadmap-line"></div>
+
+    <!-- Section 1 -->
+    <div class="roadmap-section">
+      <div class="roadmap-badge" style="color: var(--local); border-color: rgba(44,82,130,0.3); background: rgba(44,82,130,0.1);">
+        Foundations
+      </div>
+      
+      <div class="roadmap-nodes">
+        <a href="/attentionheadgenome/academy/part1-fundamentals" class="roadmap-node">
+          <h3>LLMs & Tokens</h3>
+        </a>
+        <div class="roadmap-dot"></div>
+        <a href="/attentionheadgenome/academy/part1-fundamentals" class="roadmap-node">
+          <h3>Embeddings & Position</h3>
+        </a>
+        <div class="roadmap-dot"></div>
+        <a href="/attentionheadgenome/academy/part2-attention-mechanics" class="roadmap-node">
+          <h3>Attention & Softmax</h3>
+        </a>
+        <div class="roadmap-dot"></div>
+        <a href="/attentionheadgenome/academy/part3-math-foundations" class="roadmap-node">
+          <h3>Entropy & Math Tools</h3>
+        </a>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="roadmap-section">
+      <div class="roadmap-badge" style="color: var(--retrieval); border-color: rgba(107,70,193,0.3); background: rgba(107,70,193,0.1);">
+        HeadGenome Taxonomy
+      </div>
+      
+      <div class="roadmap-nodes">
+        <a href="/attentionheadgenome/academy/part4-head-species" class="roadmap-node">
+          <h3>Sink Heads</h3>
+        </a>
+        <div class="roadmap-dot"></div>
+        <a href="/attentionheadgenome/academy/part4-head-species" class="roadmap-node">
+          <h3>Local Heads</h3>
+        </a>
+        <div class="roadmap-dot"></div>
+        <a href="/attentionheadgenome/academy/part4-head-species" class="roadmap-node">
+          <h3>Retrieval Heads</h3>
+        </a>
+        <div class="roadmap-dot"></div>
+        <a href="/attentionheadgenome/academy/part4-head-species" class="roadmap-node">
+          <h3>Induction Heads</h3>
+        </a>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="roadmap-section" style="margin-bottom: 0;">
+      <div class="roadmap-badge" style="color: #34d399; border-color: rgba(52,211,153,0.3); background: rgba(52,211,153,0.1);">
+        Discoveries & Systems
+      </div>
+      
+      <div class="roadmap-nodes">
+        <a href="/attentionheadgenome/academy/part5-experimental-findings" class="roadmap-node">
+          <h3>The V/Q Law & Co-Gating</h3>
+        </a>
+        <div class="roadmap-dot"></div>
+        <a href="/attentionheadgenome/academy/part6-systems-engineering" class="roadmap-node">
+          <h3>KV Cache Routing</h3>
+        </a>
+        <div class="roadmap-dot"></div>
+        <a href="/attentionheadgenome/academy/part7-architecture-differences" class="roadmap-node">
+          <h3>Architecture Differences</h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</AcademyLayout>
+
+<style>
+  .roadmap-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  .roadmap-header .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    margin-bottom: 1rem;
+  }
+  
+  .roadmap-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+  
+  .roadmap-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--local) 0%, var(--retrieval) 50%, #34d399 100%);
+    transform: translateX(-50%);
+    opacity: 0.3;
+    z-index: 0;
+  }
+  
+  .roadmap-section {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 5rem;
+  }
+  
+  .roadmap-badge {
+    display: inline-block;
+    padding: 0.3rem 1.2rem;
+    border-radius: 2rem;
+    border: 1px solid;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--bg);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .roadmap-nodes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .roadmap-node {
+    display: block;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border-med);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .roadmap-node:hover {
+    transform: translateY(-2px) scale(1.02);
+    border-color: var(--accent);
+    background: var(--surface);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .roadmap-node h3 {
+    margin: 0 !important;
+    font-size: 1.15rem !important;
+    font-weight: 600 !important;
+    color: var(--text) !important;
+    transition: color 0.2s;
+  }
+  
+  .roadmap-node:hover h3 {
+    color: var(--accent) !important;
+  }
+  
+  .roadmap-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border-med);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+</style>

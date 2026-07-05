@@ -1,0 +1,123 @@
+---
+import AcademyLayout from '../../layouts/AcademyLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Prerequisites from '../../components/Prerequisites.astro';
+import Connections from '../../components/Connections.astro';
+import InterviewQuestions from '../../components/InterviewQuestions.astro';
+---
+
+<AcademyLayout title="The HeadGenome Story">
+  
+  <Breadcrumbs partTitle="START HERE" chapterTitle="The HeadGenome Story" />
+
+  <h1>The HeadGenome Story</h1>
+
+  <Prerequisites 
+    difficulty="Beginner" 
+    links={[]}
+  />
+
+  <p class="lead">
+    This project didn't start with a desire to invent a taxonomy. It started with a frustrating problem: trying to make large language models run faster during long-context generation without destroying their intelligence.
+  </p>
+
+  <h2>The Memory Problem</h2>
+  <p>
+    I wanted to make transformers faster. Specifically, when you feed a massive document into an LLM, the model has to memorize the past representations of every single word in what is called the <strong>KV Cache</strong>. Eventually, you run out of GPU memory.
+  </p>
+
+  <p>
+    To fix this, I tried <strong>KV Cache eviction</strong>: simply deleting the memory of tokens that seemed unimportant. 
+  </p>
+
+  <div class="story-failure">
+    <h4 class="sf-title">
+      <span style="font-size: 1.1em; margin-right: 0.35rem;">❌</span> The Failure
+    </h4>
+    <div class="sf-content">
+      When I deleted tokens, the model suddenly forgot how to do basic reasoning or find specific facts, even if it could still speak grammatically correct English.
+    </div>
+  </div>
+
+  <h2>Why did it fail?</h2>
+  <p>
+    I realized that standard KV eviction algorithms assume that the "importance" of a token is universal. If a token is unimportant to one attention head, the algorithms assume it is unimportant to <em>all</em> attention heads. 
+  </p>
+  <p>
+    But as I probed deeper into the architecture, I found this was entirely false. Different attention heads behaved completely differently. Some heads only cared about the last 5 words. Other heads were actively scanning paragraphs from 10 pages ago looking for a specific name.
+  </p>
+
+  <h2>The Entropy Breakthrough</h2>
+  <p>
+    I needed a mathematical way to measure this behavior. That led to <strong>entropy probing</strong>. By measuring the entropy (the "spread") of a head's attention distribution over thousands of prompts, I could mathematically prove which heads were focused and which were diffuse.
+  </p>
+
+  <p>
+    This mapping naturally clustered the heads into a taxonomy. Instead of viewing a transformer as a monolith of 1,000 identical heads, I could now map its "genome":
+  </p>
+  <ul>
+    <li><strong>Sink Heads</strong> that park on the first token to stabilize the math.</li>
+    <li><strong>Local Heads</strong> that only look at local grammar.</li>
+    <li><strong>Retrieval Heads</strong> that scan the entire document for specific facts.</li>
+    <li><strong>Induction Heads</strong> that copy patterns.</li>
+  </ul>
+
+  <h2>The Validation</h2>
+  <p>
+    Once the taxonomy was built, everything clicked. I discovered the <strong>V/Q Scaling Law</strong> (heads become more value-heavy deeper in the network). I discovered the <strong>Retrieval-Induction Circuit</strong> (how the model finds a fact and actually copies it into the output).
+  </p>
+  
+  <p>
+    And finally, I went back to the original problem: KV Cache Eviction. This time, instead of deleting tokens blindly, I used the taxonomy. I gave the Local heads a tiny 32-token window, but let the Retrieval heads keep the full document. The result? The model preserved its reasoning capabilities while massively reducing compute.
+  </p>
+
+  <InterviewQuestions title="Reviewer Discussion">
+    <details>
+      <summary>How does this differ from the 2022 Induction Head discovery?</summary>
+      <div>
+        Anthropic's 2022 discovery focused deeply on a single specific circuit (Induction Heads) and its role in in-context learning. HeadGenome attempts to map the <em>entire</em> functional manifold of the model, showing how Induction heads interleave with Retrieval and Local heads in a macro-architecture.
+      </div>
+    </details>
+    <details>
+      <summary>Is this a chronological narrative or a scientific proof?</summary>
+      <div>
+        This page is the chronological narrative of the research process. The actual mathematical proofs, falsifications, and rigorous null-hypothesis testing are detailed in the subsequent chapters (Part IV and V).
+      </div>
+    </details>
+  </InterviewQuestions>
+
+  <Connections 
+    links={[
+      { title: "Next Chapter: How Transformers Understand Language", url: "/attentionheadgenome/academy/part1-fundamentals" }
+    ]}
+  />
+
+</AcademyLayout>
+
+<style>
+  .story-failure {
+    border: 1px solid var(--sink);
+    background: rgba(192, 57, 43, 0.05);
+    border-radius: var(--radius-sm);
+    padding: 1.5rem;
+    margin: 2.5rem 0;
+  }
+  [data-theme="dark"] .story-failure {
+    background: rgba(255, 107, 107, 0.05);
+  }
+  .sf-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--sink);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+  }
+  .sf-content {
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+</style>

@@ -1,0 +1,165 @@
+---
+import AcademyLayout from '../../layouts/AcademyLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Prerequisites from '../../components/Prerequisites.astro';
+import WhyCare from '../../components/WhyCare.astro';
+import Misconception from '../../components/Misconception.astro';
+import CouldBeWrong from '../../components/CouldBeWrong.astro';
+import Connections from '../../components/Connections.astro';
+import InterviewQuestions from '../../components/InterviewQuestions.astro';
+---
+
+<AcademyLayout title="The Mathematics of Attention">
+  
+  <Breadcrumbs partTitle="PART II: Mechanics" chapterTitle="The Mathematics of Attention" />
+
+  <h1>The Mathematics of Attention</h1>
+
+  <Prerequisites 
+    difficulty="Intermediate" 
+    links={[
+      { title: "LLMs & Tokens", url: "/attentionheadgenome/academy/part1-fundamentals" },
+      { title: "Embeddings", url: "/attentionheadgenome/academy/part1-fundamentals" }
+    ]}
+  />
+
+  <div class="lead">
+    Attention is the mechanism that allows every token in a sequence to decide which previous tokens matter the most to its current context.
+  </div>
+
+  <h2>1. What is a Transformer Layer?</h2>
+  
+  <p>
+    A transformer is just a stack of identical layers. Each layer edits the token vectors as they pass through.
+  </p>
+  <div class="code-block" style="color: var(--accent-2);">
+    Input vectors<br>
+    ↓<br>
+    Attention (Mixes information between tokens)<br>
+    ↓<br>
+    Residual connection<br>
+    ↓<br>
+    MLP (Mixes information within a single token)<br>
+    ↓<br>
+    Next layer
+  </div>
+
+  <h2>2. Attention from First Principles (Q, K, V)</h2>
+
+  <WhyCare>
+    The entire HeadGenome Taxonomy (Part IV) relies on understanding what information a head is looking for (Query) and what it copies (Value). 
+  </WhyCare>
+
+  <p>
+    Consider the sentence: <code>"John hid the key inside the blue box. Where is the key?"</code>
+  </p>
+  <p>
+    When the model reaches the question mark, the Attention mechanism allows that final token to look back at relevant earlier tokens (like "John", "hid", and "box"). To do this mathematically, the transformer creates three vectors for every token:
+  </p>
+  <ul>
+    <li><strong>Query (Q):</strong> What am I looking for?</li>
+    <li><strong>Key (K):</strong> What do I contain?</li>
+    <li><strong>Value (V):</strong> What information should I hand over if selected?</li>
+  </ul>
+
+  <div class="code-block" style="color: #34d399;">
+    # PyTorch implementation<br>
+    q = x @ W_q<br>
+    k = x @ W_k<br>
+    v = x @ W_v
+  </div>
+
+  <h2>3. The Attention Score & Softmax</h2>
+
+  <p>
+    To find out how much token A should attend to token B, we take the dot product of Token A's Query and Token B's Key.
+  </p>
+
+  <div class="formula-block">
+    $S = \frac{QK^T}{\sqrt{d_{head}}}$
+  </div>
+
+  <p>
+    We divide by $\sqrt{d_{head}}$ because large vectors create large dot products. Without scaling, the subsequent softmax operation becomes too sharp and unstable.
+  </p>
+
+  <h3>Applying Softmax</h3>
+  <p>
+    We then pass the raw scores $S$ through a <code>softmax</code> function to convert them into probabilities (which sum to 1.0).
+  </p>
+  <div class="code-block">
+    <span style="color: var(--text-3);"># Raw Scores:</span><br>
+    cat: 8, mat: 2, the: 1<br><br>
+    <span style="color: var(--text-3);"># After Softmax:</span><br>
+    cat: 0.95, mat: 0.03, the: 0.02
+  </div>
+
+  <Misconception>
+    <Fragment slot="myth">Attention acts as the model's memory.</Fragment>
+    <Fragment slot="truth">Attention computes weighted information flow. The actual "memory" of a specific conversation is stored in the hidden states and the KV cache.</Fragment>
+  </Misconception>
+
+  <h2>4. Causal Masking</h2>
+  <p>
+    Language models predict the future. Therefore, they must not be allowed to look into the future during training. We apply a <strong>Causal Mask</strong> by setting all future token positions to $-\infty$. After softmax, these become exactly $0$.
+  </p>
+
+  <h2>5. Multi-Head Attention</h2>
+  
+  <p>
+    Instead of doing this once, the model splits the calculation across multiple <strong>Heads</strong>. 
+  </p>
+  <p>
+    One head might track grammar (Local Head). Another might track names (Retrieval Head). Another might just park on the first token (Sink Head). Our central claim is that optimization methods shouldn't treat all these heads identically.
+  </p>
+
+  <InterviewQuestions title="Research Defense & Discussion">
+    <details>
+      <summary>Why use Softmax instead of something linear?</summary>
+      <div>
+        Softmax enforces a strict competition for attention. If a head allocates 90% of its capacity to one token, it only has 10% left for the rest. This probability distribution is mathematically required for our Entropy measurements in Part III.
+      </div>
+    </details>
+    <details>
+      <summary>Why use QK dot product similarity instead of Cosine similarity?</summary>
+      <div>
+        Dot product incorporates magnitude. In transformers, a Key vector with a large magnitude mathematically forces the network to pay more attention to it, acting as a "confidence" weight. Cosine similarity normalizes magnitude away, destroying this critical confidence signal.
+      </div>
+    </details>
+    <details>
+      <summary>Does FlashAttention change the $O(N^2)$ mathematical complexity?</summary>
+      <div>
+        No. FlashAttention is an exact algorithmic rewrite that reduces memory bandwidth (HBM to SRAM transfers). The FLOPs (mathematical operations) are still strictly $O(N^2)$.
+      </div>
+    </details>
+  </InterviewQuestions>
+
+  <Connections 
+    links={[
+      { title: "Next Chapter: Measuring Attention (Entropy)", url: "/attentionheadgenome/academy/part3-math-foundations" }
+    ]}
+  />
+
+<style>
+  .code-block {
+    background: var(--bg2);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-med);
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+  }
+  .formula-block {
+    text-align: center;
+    font-size: 1.4rem;
+    font-family: serif;
+    color: var(--text);
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+</style>
+</AcademyLayout>

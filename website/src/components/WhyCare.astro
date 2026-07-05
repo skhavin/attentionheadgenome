@@ -1,0 +1,33 @@
+---
+---
+<div class="why-care callout">
+  <h4 class="callout-title">
+    <span style="font-size: 1.1em; margin-right: 0.35rem;">💡</span> Why should I care?
+  </h4>
+  <div class="callout-content">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .why-care.callout {
+    border-left-color: var(--accent);
+    background: var(--bg2);
+    margin: 2.5rem 0;
+  }
+  .callout-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+  }
+  .callout-content {
+    color: var(--text-2);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+</style>

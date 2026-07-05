@@ -1,0 +1,97 @@
+---
+interface Props {
+  title?: string;
+}
+const { title = "Research Defense & Discussion" } = Astro.props;
+---
+
+<div class="interview-questions">
+  <div class="iq-header">
+    <div class="iq-dot"></div>
+    <h3 class="iq-title">{title}</h3>
+  </div>
+  <div class="iq-content">
+    <slot />
+  </div>
+</div>
+
+<style is:global>
+  .interview-questions {
+    margin: 4rem 0 2rem;
+    border: 1px solid var(--border-med);
+    border-radius: var(--radius);
+    background: var(--bg2);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+  .iq-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .iq-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--sink); /* Red dot */
+    box-shadow: 0 0 8px var(--sink);
+  }
+  .iq-title {
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase;
+    color: var(--text) !important;
+    margin: 0 !important;
+  }
+  .iq-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  /* Styling the details tags inside this component */
+  .iq-content details {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg);
+    transition: all 0.2s ease;
+  }
+  .iq-content details[open] {
+    background: var(--bg2);
+    border-color: var(--border-med);
+  }
+  .iq-content summary {
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    color: var(--text);
+  }
+  .iq-content summary::-webkit-details-marker {
+    display: none;
+  }
+  .iq-content summary::before {
+    content: "►";
+    font-size: 0.65rem;
+    margin-right: 0.75rem;
+    color: var(--accent);
+    transition: transform 0.2s;
+  }
+  .iq-content details[open] summary::before {
+    transform: rotate(90deg);
+  }
+  .iq-content details > div {
+    padding: 0 1.25rem 1.25rem 2.6rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-2);
+  }
+</style>

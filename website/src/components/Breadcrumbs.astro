@@ -1,0 +1,44 @@
+---
+interface Props {
+  partTitle: string;
+  chapterTitle: string;
+}
+const { partTitle, chapterTitle } = Astro.props;
+---
+<div class="breadcrumbs">
+  <a href="/attentionheadgenome/academy">HeadGenome Academy</a>
+  <span class="divider">/</span>
+  <span class="part">{partTitle}</span>
+  <span class="divider">/</span>
+  <span class="chapter">{chapterTitle}</span>
+</div>
+
+<style>
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+  }
+  .breadcrumbs a {
+    color: var(--text-3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .breadcrumbs a:hover {
+    color: var(--accent);
+  }
+  .divider {
+    color: var(--border-med);
+  }
+  .part {
+    color: var(--text-2);
+  }
+  .chapter {
+    color: var(--accent);
+  }
+</style>

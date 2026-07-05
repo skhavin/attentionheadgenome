@@ -1,0 +1,179 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.replace(/\/$/, "");
+
+const menu = [
+  {
+    part: "START HERE",
+    links: [
+      { url: "/attentionheadgenome/academy", title: "Visual Roadmap", diff: "Beginner", time: "1 min" },
+      { url: "/attentionheadgenome/academy/the-story", title: "The HeadGenome Story", diff: "Beginner", time: "5 min" },
+    ]
+  },
+  {
+    part: "PART I: Fundamentals",
+    links: [
+      { url: "/attentionheadgenome/academy/part1-fundamentals", title: "How Transformers Understand Language", diff: "Beginner", time: "10 min" },
+    ]
+  },
+  {
+    part: "PART II: Mechanics",
+    links: [
+      { url: "/attentionheadgenome/academy/part2-attention-mechanics", title: "Mathematics of Attention", diff: "Intermediate", time: "15 min" },
+    ]
+  },
+  {
+    part: "PART III: Math Foundations",
+    links: [
+      { url: "/attentionheadgenome/academy/part3-math-foundations", title: "Measuring Attention", diff: "Advanced", time: "20 min" },
+    ]
+  },
+  {
+    part: "PART IV: Taxonomy",
+    links: [
+      { url: "/attentionheadgenome/academy/part4-head-species", title: "The Four Head Species", diff: "Research", time: "15 min" },
+    ]
+  },
+  {
+    part: "PART V: Findings",
+    links: [
+      { url: "/attentionheadgenome/academy/part5-experimental-findings", title: "What We Discovered", diff: "Research", time: "25 min" },
+    ]
+  },
+  {
+    part: "PART VI: Systems",
+    links: [
+      { url: "/attentionheadgenome/academy/part6-systems-engineering", title: "Engineering Faster Models", diff: "Advanced", time: "15 min" },
+    ]
+  },
+  {
+    part: "PART VII: Architecture",
+    links: [
+      { url: "/attentionheadgenome/academy/part7-architecture-differences", title: "Architecture Differences", diff: "Advanced", time: "10 min" },
+    ]
+  },
+  {
+    part: "PART VIII: Reviewer & Discussion",
+    links: [
+      { url: "/attentionheadgenome/academy/part8-reviewer-defense", title: "Critical Questions", diff: "Research", time: "15 min" },
+    ]
+  }
+];
+
+const getDiffDot = (diff: string) => {
+  if (diff === "Beginner") return "var(--local)";
+  if (diff === "Intermediate") return "var(--induction)";
+  if (diff === "Advanced") return "var(--retrieval)";
+  return "var(--sink)";
+};
+---
+
+<aside class="sidebar-wrapper hidden md:flex">
+  <nav class="sidebar-nav">
+    {menu.map((section) => (
+      <div class="sidebar-section">
+        <h2 class="sidebar-heading">
+          <span style="color: var(--accent); margin-right: 0.25rem;">📘</span> {section.part}
+        </h2>
+        <ul class="sidebar-list">
+          {section.links.map((link) => {
+            const isActive = currentPath === link.url;
+            return (
+              <li>
+                <a 
+                  href={link.url}
+                  class={`sidebar-link ${isActive ? 'active' : ''}`}
+                >
+                  <div class="sidebar-meta">
+                    <span style={`color: ${getDiffDot(link.diff)}; font-size: 0.6rem;`}>●</span> 
+                    {link.diff} <span style="opacity: 0.3; margin: 0 0.25rem;">•</span> {link.time}
+                  </div>
+                  <div class="sidebar-title">
+                    {link.title}
+                  </div>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    ))}
+  </nav>
+</aside>
+
+<style>
+  .sidebar-wrapper {
+    width: 280px;
+    border-right: 1px solid var(--border);
+    background: var(--bg);
+    position: sticky;
+    top: 52px;
+    height: calc(100vh - 52px);
+    overflow-y: auto;
+    flex-direction: column;
+  }
+  .sidebar-nav {
+    padding: 2rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .sidebar-heading {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-left: 0.5rem;
+  }
+  .sidebar-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .sidebar-link {
+    display: block;
+    padding: 0.6rem 0.75rem;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: background 0.2s, border 0.2s;
+  }
+  .sidebar-link:hover {
+    background: var(--bg2);
+    border-color: var(--border);
+  }
+  .sidebar-link.active {
+    background: var(--bg2);
+    border-color: var(--border-med);
+    box-shadow: var(--shadow-xs);
+  }
+  .sidebar-meta {
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--text-3);
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .sidebar-title {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-2);
+    letter-spacing: -0.01em;
+  }
+  .sidebar-link:hover .sidebar-title {
+    color: var(--text);
+  }
+  .sidebar-link.active .sidebar-title {
+    color: var(--accent);
+    font-weight: 500;
+  }
+</style>

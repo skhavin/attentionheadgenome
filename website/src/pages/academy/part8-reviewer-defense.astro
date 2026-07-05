@@ -1,0 +1,101 @@
+---
+import AcademyLayout from '../../layouts/AcademyLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Prerequisites from '../../components/Prerequisites.astro';
+import WhyCare from '../../components/WhyCare.astro';
+import Misconception from '../../components/Misconception.astro';
+import CouldBeWrong from '../../components/CouldBeWrong.astro';
+import Connections from '../../components/Connections.astro';
+import InterviewQuestions from '../../components/InterviewQuestions.astro';
+---
+
+<AcademyLayout title="Critical Questions & Reviewer Defense">
+  
+  <Breadcrumbs partTitle="PART VIII: Reviewer & Discussion" chapterTitle="Critical Questions" />
+
+  <h1>Critical Questions & Reviewer Defense</h1>
+
+  <Prerequisites 
+    difficulty="Research" 
+    links={[
+      { title: "What We Discovered", url: "/attentionheadgenome/academy/part5-experimental-findings" }
+    ]}
+  />
+
+  <div class="lead">
+    Rigorous science requires anticipating its own flaws. This chapter contains the most common critical questions from peer reviewers, interviewers, and skeptics regarding the HeadGenome taxonomy.
+  </div>
+
+  <h2>1. Methodological Limitations</h2>
+
+  <p>
+    <strong>Q: Does the taxonomy hold up for models larger than 1.5B parameters?</strong>
+  </p>
+  <p>
+    <em>A:</em> While we tested models across 124M (GPT-2), 500M (Qwen), 1B (Llama), and 1.5B (Qwen) parameters and found identical taxonomy distributions, we have not yet tested 7B, 70B, or 405B parameter models. It is entirely possible that massive models develop a fifth or sixth species of head (e.g., highly complex multi-hop reasoning heads) that do not exist at the 1B scale.
+  </p>
+
+  <p>
+    <strong>Q: Why did you test on WikiText-103 instead of modern instruction data?</strong>
+  </p>
+  <p>
+    <em>A:</em> Entropy profiling requires a continuous, long-context stream of text to observe natural attention dynamics. Instruction data (which is highly bursty and formatted as short Q&A pairs) can artificially force heads into extreme behaviors. WikiText-103 provides a neutral baseline. However, the exact datasets used to trigger the profiling could bias the measured entropy thresholds.
+  </p>
+
+  <h2>2. Theoretical Pushback</h2>
+
+  <p>
+    <strong>Q: You claim Induction heads and Retrieval heads form a strict pipeline. Could the 0% ablation recovery just be catastrophic interference?</strong>
+  </p>
+  <p>
+    <em>A:</em> Yes. When you ablate a head by zeroing its output, you alter the magnitude of the residual stream. This out-of-distribution shock could break downstream layers, causing the 0% recovery, rather than actually breaking a logical circuit. We attempted to mitigate this using Mean Ablation, but Activation Patching (causal scrubbing) is required to definitively prove the pipeline theory.
+  </p>
+
+  <p>
+    <strong>Q: The V/Q law measures the Frobenius norm. Could a few massive outlier weights be skewing the norm, masking the true geometric structure?</strong>
+  </p>
+  <p>
+    <em>A:</em> The Frobenius norm is sensitive to outliers. However, when we verified the V/Q ratio using Spectral Norm ($L_2$ norm), the monotonic progression across depth remained identical. The structural shift from Query-dominance to Value-dominance is robust across norm definitions.
+  </p>
+
+  <h2>3. Systems & Engineering</h2>
+
+  <p>
+    <strong>Q: Taxonomy-Aware KV Routing sounds great on paper. Does it actually save wall-clock time in vLLM or TensorRT-LLM?</strong>
+  </p>
+  <p>
+    <em>A:</em> It saves theoretical VRAM allocations, which allows for larger batch sizes. However, standard FlashAttention kernels assume homogeneous KV cache sizes across all heads. To realize actual wall-clock speedups, someone needs to write a heterogeneous Triton kernel that can process different KV lengths for different heads without causing massive thread divergence on the GPU.
+  </p>
+
+  <Misconception>
+    <Fragment slot="myth">The HeadGenome Project proves we fully understand how Transformers work.</Fragment>
+    <Fragment slot="truth">Not at all. We have mapped the macro-biology (the organs and species). But the micro-biology (how specific neurons inside the MLP layers interact with these heads) remains largely a black box. This taxonomy is a foundation for future mechanistic interpretability, not the conclusion of it.</Fragment>
+  </Misconception>
+
+  <h2>4. Open Problems & Future Work</h2>
+  
+  <ul>
+    <li><strong>Taxonomy-Informed Initialization:</strong> Can we pre-initialize a model's V/Q ratios to match the mature scaling law, thereby accelerating training convergence?</li>
+    <li><strong>MoE Taxonomy:</strong> Does Mixture of Experts (MoE) routing behavior correlate with the head taxonomy in the preceding layer?</li>
+    <li><strong>Cross-Lingual Heads:</strong> Do Retrieval heads in a multilingual model operate in a universal semantic subspace, or are they tied to specific languages?</li>
+  </ul>
+
+  <div style="margin-top: 4rem; padding: 2rem; background: var(--bg2); border: 1px dashed var(--border-med); border-radius: var(--radius); text-align: center;">
+    <h3 style="margin-top: 0;">End of the Academy</h3>
+    <p style="color: var(--text-2); font-size: 0.95rem; margin-bottom: 1.5rem;">You have reached the end of the interactive textbook. We hope this resource has demystified the inner workings of attention mechanisms.</p>
+    <a href="/attentionheadgenome/academy" style="display: inline-block; padding: 0.6rem 1.5rem; background: var(--accent); color: white; border-radius: 2rem; text-decoration: none; font-size: 0.9rem; font-weight: 500;">Return to Roadmap</a>
+  </div>
+
+<style>
+  .code-block {
+    background: var(--bg2);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-med);
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    margin: 2rem 0;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+  }
+</style>
+</AcademyLayout>

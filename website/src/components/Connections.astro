@@ -1,0 +1,55 @@
+---
+interface Props {
+  links: { title: string; url: string }[];
+}
+const { links } = Astro.props;
+---
+<div class="connections">
+  <h4 class="connections-title">Related Chapters</h4>
+  <div class="connections-grid">
+    {links.map(link => (
+      <a href={link.url} class="connection-link">
+        <span style="color: var(--accent); margin-right: 0.25rem;">→</span> {link.title}
+      </a>
+    ))}
+  </div>
+</div>
+
+<style>
+  .connections {
+    margin-top: 5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .connections-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+  .connections-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .connection-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-sm);
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    color: var(--text-2);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, border 0.2s, color 0.2s;
+  }
+  .connection-link:hover {
+    background: var(--surface);
+    border-color: var(--border-med);
+    color: var(--text);
+  }
+</style>

@@ -1,0 +1,147 @@
+---
+import AcademyLayout from '../../layouts/AcademyLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Prerequisites from '../../components/Prerequisites.astro';
+import WhyCare from '../../components/WhyCare.astro';
+import Misconception from '../../components/Misconception.astro';
+import CouldBeWrong from '../../components/CouldBeWrong.astro';
+import Connections from '../../components/Connections.astro';
+import InterviewQuestions from '../../components/InterviewQuestions.astro';
+---
+
+<AcademyLayout title="How Transformers Understand Language">
+  
+  <Breadcrumbs partTitle="PART I: Fundamentals" chapterTitle="How Transformers Understand Language" />
+
+  <h1>How Transformers Understand Language</h1>
+
+  <Prerequisites 
+    difficulty="Beginner" 
+    links={[]}
+  />
+
+  <div class="lead">
+    A language model does not "think" like a human. It does not have logic, reasoning, or common sense out of the box. At its absolute core, a language model only does one thing: <strong>predict the next token</strong>.
+  </div>
+
+  <h2>1. What is a Language Model?</h2>
+  <WhyCare>
+    Before diving into advanced attention mechanics, you must understand the core objective of the model. Everything in a transformer—from attention heads to KV caches—is optimized solely to reduce the error on next-token prediction.
+  </WhyCare>
+
+  <p>
+    If you give the model the phrase:
+    <code>"The cat sat on the ___"</code>
+  </p>
+  <p>
+    The model outputs a probability distribution over its entire vocabulary, placing the highest probability on words like <code>mat</code>, <code>floor</code>, or <code>bed</code>.
+  </p>
+
+  <Misconception>
+    <Fragment slot="myth">Language models are trained to answer questions or have dialogue.</Fragment>
+    <Fragment slot="truth">Models are only trained to predict the next token. "Chat" behavior is artificially created by fine-tuning the model on documents formatted as a transcript (e.g., <code>User: Hello \n Assistant: Hi there!</code>). The model is just predicting the next token in the transcript.</Fragment>
+  </Misconception>
+
+  <h2>2. Tokens and Tokenization</h2>
+
+  <p>
+    Models do not read text character-by-character, nor do they read word-by-word. They read <strong>tokens</strong>.
+  </p>
+  <p>
+    A tokenizer splits text into subword chunks using algorithms like BPE (Byte-Pair Encoding). For example:
+  </p>
+  
+  <div class="code-block" style="color: var(--accent-2);">
+    "The cat sat on the mat" 
+    <br/>
+    <span style="color: var(--text-3);">↓</span>
+    <br/>
+    ["The", " cat", " sat", " on", " the", " mat"]
+  </div>
+
+  <p>
+    Each token is assigned an integer ID from a vocabulary (e.g., <code>1024</code>, <code>319</code>).
+  </p>
+
+  <h3>The BOS Token (Crucial for HeadGenome)</h3>
+  <p>
+    Most models prepend a special token at the very beginning of the prompt, called the <strong>BOS</strong> (Beginning of Sequence) token.
+  </p>
+  <p>
+    In Llama and Qwen, it acts as an anchor. In Part IV, we will discover that <strong>Sink Heads</strong> dump all their attention onto this exact token to stabilize the model's math.
+  </p>
+
+  <h2>3. Embeddings</h2>
+
+  <p>
+    A token ID is just a meaningless number. How does the model know that "cat" and "dog" are similar concepts? It uses an <strong>Embedding Matrix</strong>.
+  </p>
+  
+  <div class="code-block">
+    x_i = E[token_i]
+  </div>
+
+  <p>
+    The embedding matrix $E$ translates the integer into a high-dimensional vector (usually 4,096 dimensions). During training, the model learns to place words with similar meanings close together in this 4,096-dimensional space.
+  </p>
+
+  <h2>4. Sequence Order & Position Encoding</h2>
+
+  <WhyCare>
+    Understanding positional encoding is critical for Part VII. The way a model tracks position dictates whether it will completely break during KV Cache eviction or survive it.
+  </WhyCare>
+
+  <p>
+    By default, a transformer does not know the order of the tokens. Without positional information, <code>"dog bites man"</code> looks exactly the same mathematically as <code>"man bites dog"</code>.
+  </p>
+
+  <h3>Absolute Positional Embeddings (GPT-2)</h3>
+  <p>
+    Older models like GPT-2 use absolute embeddings. They literally add a specific "Position 1" vector to the first token, and a "Position 2" vector to the second token.
+  </p>
+
+  <h3>Rotary Position Embeddings (RoPE - Llama/Qwen)</h3>
+  <p>
+    Modern models use RoPE. Instead of adding a vector, RoPE <em>rotates</em> the token's vector in multi-dimensional space based on its position. 
+  </p>
+  
+  <CouldBeWrong>
+    <p>We claim that absolute positional embeddings are the reason GPT-2 fails catastrophicly during KV Cache Eviction, whereas Llama survives.</p>
+    <p><strong>Alternative Explanation:</strong> Maybe GPT-2 fails simply because it was trained on much less data or uses older layer-norm structures, not because of its positional embeddings.</p>
+    <p><strong>Experiment to verify:</strong> Train two identical 1B parameter models from scratch—one with RoPE and one with absolute embeddings—and subject both to KV cache eviction.</p>
+  </CouldBeWrong>
+
+  <InterviewQuestions title="Research Defense & Discussion">
+    <details>
+      <summary>Why do models use subword tokens instead of characters or full words?</summary>
+      <div>
+        Full words lead to an infinite vocabulary size (e.g., handling typos, conjugation, names). Character-level models have a tiny vocabulary (26 letters) but require massive sequence lengths, making $O(N^2)$ attention impossibly expensive. Subwords (BPE) strike the perfect balance.
+      </div>
+    </details>
+    <details>
+      <summary>Why does RoPE matter for KV cache eviction?</summary>
+      <div>
+        Absolute embeddings bake the <em>absolute</em> sequence index directly into the vector. If you evict tokens, the absolute indices of the remaining tokens become disjointed. RoPE only cares about <em>relative</em> distance ($i - j$) during the attention dot product. If you evict middle tokens, RoPE mathematically preserves the relative distances of the remaining tokens much more gracefully.
+      </div>
+    </details>
+  </InterviewQuestions>
+
+  <Connections 
+    links={[
+      { title: "Next Chapter: The Mathematics of Attention", url: "/attentionheadgenome/academy/part2-attention-mechanics" }
+    ]}
+  />
+
+<style>
+  .code-block {
+    background: var(--bg2);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-med);
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+  }
+</style>
+</AcademyLayout>

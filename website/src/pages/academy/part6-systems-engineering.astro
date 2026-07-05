@@ -1,0 +1,126 @@
+---
+import AcademyLayout from '../../layouts/AcademyLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Prerequisites from '../../components/Prerequisites.astro';
+import WhyCare from '../../components/WhyCare.astro';
+import Misconception from '../../components/Misconception.astro';
+import CouldBeWrong from '../../components/CouldBeWrong.astro';
+import Connections from '../../components/Connections.astro';
+import InterviewQuestions from '../../components/InterviewQuestions.astro';
+---
+
+<AcademyLayout title="Engineering Faster Models">
+  
+  <Breadcrumbs partTitle="PART VI: Systems" chapterTitle="Engineering Faster Models" />
+
+  <h1>Engineering Faster Models</h1>
+
+  <Prerequisites 
+    difficulty="Advanced" 
+    links={[
+      { title: "The Four Head Species", url: "/attentionheadgenome/academy/part4-head-species" }
+    ]}
+  />
+
+  <div class="lead">
+    Discovering the taxonomy was purely scientific. But how can we use this biology to make models faster? We introduce <strong>Taxonomy-Aware KV Cache Routing</strong>.
+  </div>
+
+  <h2>1. The Problem: The KV Cache Bottleneck</h2>
+
+  <WhyCare>
+    The KV Cache is the single biggest bottleneck in modern LLM inference. A 100K context window can require gigabytes of VRAM just to store the memory of past tokens. If we can compress it safely, we can run massive models on cheap hardware.
+  </WhyCare>
+
+  <p>
+    Standard transformers treat every attention head identically. When they generate a new token, they save that token's Key and Value vectors into VRAM for <em>every single head</em>. 
+  </p>
+
+  <h2>2. The Solution: Taxonomy-Aware Routing</h2>
+
+  <p>
+    In Part IV, we learned that <strong>Local Heads</strong> only look at the last 5-30 tokens. So why are we saving 100,000 tokens of memory for them?
+  </p>
+  <p>
+    In contrast, <strong>Retrieval Heads</strong> look at the entire document. They need the full 100,000 token memory.
+  </p>
+
+  <p>
+    Instead of one massive, uniform KV cache, we split the routing logic based on the HeadGenome taxonomy:
+  </p>
+
+  <div class="code-block">
+    <span style="color: var(--local);">if head.type == "Local":</span><br>
+    &nbsp;&nbsp;cache.capacity = 32  <span style="color: var(--text-3);"># Evict everything older than 32 tokens</span><br><br>
+    <span style="color: var(--sink);">elif head.type == "Sink":</span><br>
+    &nbsp;&nbsp;cache.capacity = 4   <span style="color: var(--text-3);"># Only save the BOS token and punctuation</span><br><br>
+    <span style="color: var(--retrieval);">elif head.type == "Retrieval":</span><br>
+    &nbsp;&nbsp;cache.capacity = MAX <span style="color: var(--text-3);"># Save everything</span>
+  </div>
+
+  <h2>3. The Results: 13.3× Compression</h2>
+
+  <p>
+    Because Local heads make up over 80% of the network, aggressively evicting their memory yields massive RAM savings.
+  </p>
+  <p>
+    By applying this routing logic to Llama-3.2-1B, we achieved a <strong>13.3× reduction</strong> in KV Cache size. The model maintained identical Perplexity scores and suffered only a 0.5% drop in long-range retrieval accuracy.
+  </p>
+
+  <Misconception>
+    <Fragment slot="myth">If we delete tokens from the KV Cache, the model will forget those words entirely.</Fragment>
+    <Fragment slot="truth">The KV Cache only stores memory for <em>Attention</em>. The actual semantic knowledge of the word is still stored in the residual stream and MLP layers. Local heads only need recent tokens to ensure grammar; Retrieval heads are the ones that actually extract the distant facts.</Fragment>
+  </Misconception>
+
+  <h2>4. The Perplexity Illusion</h2>
+  
+  <p>
+    During this phase, we discovered a terrifying flaw in how AI labs evaluate models.
+  </p>
+  <p>
+    We ran an experiment where we intentionally destroyed the KV Cache for Retrieval heads, but left Local heads intact. The model completely failed the Needle-In-A-Haystack test (0% accuracy). 
+  </p>
+  <p>
+    However, when we measured its <strong>Perplexity</strong> (the standard metric used to claim a model is "good"), the score barely moved. <strong>Standard evaluation metrics are blind to catastrophic long-range reasoning failures</strong>, so long as the model maintains local grammar.
+  </p>
+
+  <CouldBeWrong>
+    <p>We claim Taxonomy-Aware KV Routing is a viable system-level optimization.</p>
+    <p><strong>Alternative Explanation:</strong> While it saves VRAM theoretically, the overhead of branching logic (if Local vs if Retrieval) on the GPU kernel might destroy the actual latency benefits in production environments like vLLM.</p>
+    <p><strong>Experiment to verify:</strong> Write a custom Triton/CUDA kernel that physically separates the KV blocks in HBM, and measure the wall-clock Time-To-First-Token (TTFT) against standard FlashAttention.</p>
+  </CouldBeWrong>
+
+  <InterviewQuestions title="Research Defense & Discussion">
+    <details>
+      <summary>How does this compare to Sparse Attention or Sliding Window Attention (SWA)?</summary>
+      <div>
+        SWA enforces a local window on <em>every</em> head. This catastrophically destroys Retrieval heads. Our method is heterogeneous: it applies SWA <em>only</em> to the Local species, while leaving Retrieval heads fully dense.
+      </div>
+    </details>
+    <details>
+      <summary>Can this routing be applied dynamically?</summary>
+      <div>
+        Yes. In a production system, you don't need to manually label heads. You can compute the V/Q ratio at load time, automatically partition the KV cache buffers on the GPU, and route the tensors dynamically based on the geometric signatures.
+      </div>
+    </details>
+  </InterviewQuestions>
+
+  <Connections 
+    links={[
+      { title: "Next Chapter: Architecture Differences", url: "/attentionheadgenome/academy/part7-architecture-differences" }
+    ]}
+  />
+
+<style>
+  .code-block {
+    background: var(--bg2);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-med);
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    margin: 2rem 0;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+  }
+</style>
+</AcademyLayout>
