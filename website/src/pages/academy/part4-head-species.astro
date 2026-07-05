@@ -87,7 +87,7 @@ import InterviewQuestions from '../../components/InterviewQuestions.astro';
   </p>
 
   <CouldBeWrong>
-    <p>We classify heads into four rigid species using strict entropy thresholds (e.g., $\Delta H \geq 0.3$).</p>
+    <p>We classify heads into four rigid species using strict entropy thresholds (e.g., {"$\\Delta H \\geq 0.3$"}).</p>
     <p><strong>Alternative Explanation:</strong> The taxonomy might actually be a continuous spectrum. A head could be 70% Local and 30% Retrieval, and our rigid thresholds are artificially forcing them into buckets.</p>
     <p><strong>Experiment to verify:</strong> Run a UMAP projection on the raw feature matrix without K-Means to see if the heads form discrete islands or a continuous megacluster. (Spoiler: We actually did this in Part V, and found a continuous megacluster!).</p>
   </CouldBeWrong>

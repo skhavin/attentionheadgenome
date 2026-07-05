@@ -10,6 +10,12 @@ const base = import.meta.env.BASE_URL;
   <meta name="description" content={description} />
   <title>{title} · HeadGenome</title>
   <link rel="stylesheet" href={`${base}/styles/global.css`} />
+  
+  <!-- KaTeX for Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsEw4214jD618s9OqO1rAh+9qM06OStOq2mLO1G9iZ/9dG/vY6eS6m2rO8" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-M51wQ3K8OIVb/M/iTjV9F+Lh9f16RjDk0eL92lD2EnyD9TfA4WfPq9+E0Z+i7FzE" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-d+75o+b4A+F+F8R/H6G7X8nC5m+i/86s2rFk+56m8QeI5l8x3W8Z3wK7p8w5g6F/" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}] });"></script>
 </head>
 <body>
   <nav class="nav" id="nav">
