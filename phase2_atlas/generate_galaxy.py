@@ -132,7 +132,7 @@ def build_dashboard():
     
     out_path = "website/public/microscope.html"
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
-    fig.write_html(out_path, include_plotlyjs="cdn")
+    fig.write_html(out_path, include_plotlyjs="cdn", config={'scrollZoom': False})
     print(f"Generated microscope dashboard at {out_path}")
 
 if __name__ == "__main__":
