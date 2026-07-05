@@ -37,15 +37,15 @@ import InterviewQuestions from '../../components/InterviewQuestions.astro';
     <strong>Question:</strong> Does head geometry change with depth?
   </p>
   <p>
-    <strong>Experiment:</strong> We plotted the V/Q Frobenius norm ratio ({"$||W_V||_F / ||W_Q||_F$"}) of every head against its normalized layer depth ($0$ to $1$).
+    <strong>Experiment:</strong> We plotted the V/Q Frobenius norm ratio (<span set:html="$||W_V||_F / ||W_Q||_F$"></span>) of every head against its normalized layer depth (<span set:html="$0$"></span> to <span set:html="$1$"></span>).
   </p>
   
   <div class="code-block" style="color: var(--text-2);">
     # Result across all models<br>
-    Llama-3.2-1B:  r = 0.812 (p < 1e-50)<br>
-    Qwen-1.5B:     r = 0.865 (p < 1e-50)<br>
-    Qwen-0.5B:     r = 0.803 (p < 1e-50)<br>
-    GPT-2:         r = 0.771 (p < 1e-50)
+    Llama-3.2-1B:  r = 0.812 (p &lt; 1e-50)<br>
+    Qwen-1.5B:     r = 0.865 (p &lt; 1e-50)<br>
+    Qwen-0.5B:     r = 0.803 (p &lt; 1e-50)<br>
+    GPT-2:         r = 0.771 (p &lt; 1e-50)
   </div>
 
   <p>
@@ -94,7 +94,7 @@ import InterviewQuestions from '../../components/InterviewQuestions.astro';
     <details>
       <summary>Why didn't you use KL Divergence instead of Entropy?</summary>
       <div>
-        KL Divergence measures the difference between two distributions (e.g., {"$P || Q$"}). Our task wasn't to compare a head to a baseline distribution, but to measure the absolute shape (focus vs. diffusion) of the single distribution $P$. Entropy is the mathematically correct tool for this single-distribution measurement.
+        KL Divergence measures the difference between two distributions (e.g., <span set:html="$P || Q$"></span>). Our task wasn't to compare a head to a baseline distribution, but to measure the absolute shape (focus vs. diffusion) of the single distribution <span set:html="$P$"></span>. Entropy is the mathematically correct tool for this single-distribution measurement.
       </div>
     </details>
     <details>

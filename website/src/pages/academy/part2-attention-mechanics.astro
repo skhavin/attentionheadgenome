@@ -75,17 +75,15 @@ import InterviewQuestions from '../../components/InterviewQuestions.astro';
     To find out how much token A should attend to token B, we take the dot product of Token A's Query and Token B's Key.
   </p>
 
-  <div class="formula-block">
-    $$S = &#92;frac{QK^T}{&#92;sqrt{d_{head}}}$$
-  </div>
+  <div class="formula-block" set:html="$$S = \\frac{QK^T}{\\sqrt{d_{head}}}$$"></div>
 
   <p>
-    We divide by $&#92;sqrt{d_{head}}$ because large vectors create large dot products. Without scaling, the subsequent softmax operation becomes too sharp and unstable.
+    We divide by <span set:html="$\\sqrt{d_{head}}$"></span> because large vectors create large dot products. Without scaling, the subsequent softmax operation becomes too sharp and unstable.
   </p>
 
   <h3>Applying Softmax</h3>
   <p>
-    We then pass the raw scores $S$ through a <code>softmax</code> function to convert them into probabilities (which sum to 1.0).
+    We then pass the raw scores <span set:html="$S$"></span> through a <code>softmax</code> function to convert them into probabilities (which sum to 1.0).
   </p>
   <div class="code-block">
     <span style="color: var(--text-3);"># Raw Scores:</span><br>
@@ -101,7 +99,7 @@ import InterviewQuestions from '../../components/InterviewQuestions.astro';
 
   <h2>4. Causal Masking</h2>
   <p>
-    Language models predict the future. Therefore, they must not be allowed to look into the future during training. We apply a <strong>Causal Mask</strong> by setting all future token positions to $-&#92;infty$. After softmax, these become exactly $0$.
+    Language models predict the future. Therefore, they must not be allowed to look into the future during training. We apply a <strong>Causal Mask</strong> by setting all future token positions to <span set:html="$-\\infty$"></span>. After softmax, these become exactly <span set:html="$0$"></span>.
   </p>
 
   <h2>5. Multi-Head Attention</h2>
@@ -127,9 +125,9 @@ import InterviewQuestions from '../../components/InterviewQuestions.astro';
       </div>
     </details>
     <details>
-      <summary>Does FlashAttention change the $O(N^2)$ mathematical complexity?</summary>
+      <summary>Does FlashAttention change the <span set:html="$O(N^2)$"></span> mathematical complexity?</summary>
       <div>
-        No. FlashAttention is an exact algorithmic rewrite that reduces memory bandwidth (HBM to SRAM transfers). The FLOPs (mathematical operations) are still strictly $O(N^2)$.
+        No. FlashAttention is an exact algorithmic rewrite that reduces memory bandwidth (HBM to SRAM transfers). The FLOPs (mathematical operations) are still strictly <span set:html="$O(N^2)$"></span>.
       </div>
     </details>
   </InterviewQuestions>
