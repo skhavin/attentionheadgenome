@@ -30,105 +30,77 @@ RETRIEVAL_HEADS = [(0, 9), (5, 5), (11, 6), (11, 11), (12, 5), (26, 11)]
 INDUCTION_LAYER = 21
 INDUCTION_HEAD = 8
 
-# Synthetic Needle-In-A-Haystack Prompt
-prompt = "The secret color is BLUE. The weather is nice. I went to the store. Later, he asked for it. The secret color is"
-# Tokenize
-ids = tok(prompt, return_tensors="pt").to(device)
-input_ids = ids["input_ids"][0].tolist()
+prompts_data = [
+    ("The secret color is BLUE. The weather is nice. I went to the store. Later, he asked for it. The secret color is", " BLUE"),
+    ("My favorite animal is the TIGER. Let's talk about cars. Mathematics is fun. In the end, he remembered. My favorite animal is the", " TIGER"),
+    ("The password to the vault is APPLE. She bought some shoes. The sky was cloudy. He tried to log in. The password to the vault is", " APPLE"),
+    ("The hidden city is ATLANTIS. Books are on the table. The cat slept. They searched the map. The hidden city is", " ATLANTIS"),
+    ("Her maiden name is SMITH. The computer was slow. It started raining. He filled out the form. Her maiden name is", " SMITH"),
+]
 
-target_str = " BLUE"
-target_token_id = tok.encode(target_str, add_special_tokens=False)[0]
+import numpy as np
 
-needle_pos = -1
-for i, tid in enumerate(input_ids):
-    if tid == target_token_id:
-        needle_pos = i
-        break
+results = {
+    "base_prob": [],
+    "single_drop": [],
+    "multi_drop": [],
+}
 
-if needle_pos == -1:
-    print("Error: Could not find needle token in prompt.")
-    sys.exit(1)
-
-print(f"Needle token found at position {needle_pos}: {tok.decode([target_token_id])}")
-
-# ---------------------------------------------------------
-# RUN 1: BASELINE
-# ---------------------------------------------------------
-with torch.no_grad():
-    out_base = model(**ids, output_attentions=True)
-
-# Induction head attention from last token to needle
-attn_base = out_base.attentions[INDUCTION_LAYER][0, INDUCTION_HEAD, -1, needle_pos].item()
-
-# Logit prob for BLUE
-logits = out_base.logits[0, -1, :]
-probs = torch.softmax(logits, dim=-1)
-prob_base = probs[target_token_id].item()
-rank_base = (probs > prob_base).sum().item() + 1
-
-print("\n--- BASELINE ---")
-print(f"Induction Head L{INDUCTION_LAYER}H{INDUCTION_HEAD} Attention to Needle: {attn_base*100:.2f}%")
-print(f"Logit Probability of 'BLUE': {prob_base*100:.2f}% (Rank: {rank_base})")
-
-# ---------------------------------------------------------
-# RUN 2: ABLATION (SINGLE HEAD L0H9)
-# ---------------------------------------------------------
-print(f"\n--- ABLATING SINGLE RETRIEVAL HEAD: {RETRIEVAL_HEADS[0]} ---")
 head_dim = model.config.hidden_size // model.config.num_attention_heads
 
-# Store original weights
-orig_weights = {}
-
-# Ablate only L0H9
-L, H = RETRIEVAL_HEADS[0]
-start = H * head_dim
-end = (H + 1) * head_dim
-weight = model.model.layers[L].self_attn.o_proj.weight.data
-orig_weights[L] = weight.clone()
-weight[:, start:end] = 0.0
-
-with torch.no_grad():
-    out_abl_single = model(**ids, output_attentions=True)
-
-# Restore weights
-model.model.layers[L].self_attn.o_proj.weight.data.copy_(orig_weights[L])
-
-attn_abl_single = out_abl_single.attentions[INDUCTION_LAYER][0, INDUCTION_HEAD, -1, needle_pos].item()
-probs_single = torch.softmax(out_abl_single.logits[0, -1, :], dim=-1)
-prob_abl_single = probs_single[target_token_id].item()
-
-print(f"Induction Head Attention (Single Ablated): {attn_abl_single*100:.2f}% (Drop: {((attn_base - attn_abl_single)/attn_base)*100:.2f}%)")
-print(f"Logit Prob 'BLUE' (Single Ablated): {prob_abl_single*100:.2f}% (Drop: {(prob_base - prob_abl_single)*100:.2f}%)")
-
-# ---------------------------------------------------------
-# RUN 3: ABLATION (ALL 6 RETRIEVAL HEADS)
-# ---------------------------------------------------------
-print(f"\n--- ABLATING ALL 6 RETRIEVAL HEADS: {RETRIEVAL_HEADS} ---")
-
-orig_weights = {}
-for L, H in RETRIEVAL_HEADS:
+for prompt, target_str in prompts_data:
+    ids = tok(prompt, return_tensors="pt").to(device)
+    input_ids = ids["input_ids"][0].tolist()
+    target_token_id = tok.encode(target_str, add_special_tokens=False)[0]
+    
+    needle_pos = -1
+    for i, tid in enumerate(input_ids):
+        if tid == target_token_id:
+            needle_pos = i
+            break
+            
+    if needle_pos == -1:
+        continue
+        
+    # Baseline
+    with torch.no_grad():
+        out_base = model(**ids, output_attentions=True)
+    prob_base = torch.softmax(out_base.logits[0, -1, :], dim=-1)[target_token_id].item()
+    results["base_prob"].append(prob_base)
+    
+    # Single
+    L, H = RETRIEVAL_HEADS[0]
     start = H * head_dim
     end = (H + 1) * head_dim
     weight = model.model.layers[L].self_attn.o_proj.weight.data
-    
-    if L not in orig_weights:
-        orig_weights[L] = weight.clone()
-        
+    w_orig = weight.clone()
     weight[:, start:end] = 0.0
+    
+    with torch.no_grad():
+        out_single = model(**ids, output_attentions=True)
+    prob_single = torch.softmax(out_single.logits[0, -1, :], dim=-1)[target_token_id].item()
+    results["single_drop"].append(prob_base - prob_single)
+    
+    model.model.layers[L].self_attn.o_proj.weight.data.copy_(w_orig)
+    
+    # Multi
+    orig_weights = {}
+    for L, H in RETRIEVAL_HEADS:
+        s = H * head_dim
+        e = (H + 1) * head_dim
+        w = model.model.layers[L].self_attn.o_proj.weight.data
+        if L not in orig_weights: orig_weights[L] = w.clone()
+        w[:, s:e] = 0.0
+        
+    with torch.no_grad():
+        out_multi = model(**ids, output_attentions=True)
+    prob_multi = torch.softmax(out_multi.logits[0, -1, :], dim=-1)[target_token_id].item()
+    results["multi_drop"].append(prob_base - prob_multi)
+    
+    for L, w in orig_weights.items():
+        model.model.layers[L].self_attn.o_proj.weight.data.copy_(w)
 
-with torch.no_grad():
-    out_abl_multi = model(**ids, output_attentions=True)
-
-# Restore weights
-for L, w in orig_weights.items():
-    model.model.layers[L].self_attn.o_proj.weight.data.copy_(w)
-
-attn_abl_multi = out_abl_multi.attentions[INDUCTION_LAYER][0, INDUCTION_HEAD, -1, needle_pos].item()
-probs_multi = torch.softmax(out_abl_multi.logits[0, -1, :], dim=-1)
-prob_abl_multi = probs_multi[target_token_id].item()
-
-print(f"Induction Head Attention (Multi Ablated): {attn_abl_multi*100:.2f}% (Drop: {((attn_base - attn_abl_multi)/attn_base)*100:.2f}%)")
-print(f"Logit Prob 'BLUE' (Multi Ablated): {prob_abl_multi*100:.2f}% (Drop: {(prob_base - prob_abl_multi)*100:.2f}%)")
-prob_drop = prob_base - prob_abl_multi
-print(f"Attention Drop: {(attn_base - attn_abl_multi)*100:.2f}%")
-print(f"Probability Drop: {prob_drop*100:.2f}%")
+print("\n--- STATISTICAL ROBUSTNESS CHECK ---")
+print(f"Base Prob: {np.mean(results['base_prob'])*100:.2f}% ± {np.std(results['base_prob'])*100:.2f}%")
+print(f"Single Head Drop: {np.mean(results['single_drop'])*100:.2f}% ± {np.std(results['single_drop'])*100:.2f}%")
+print(f"6-Head Circuit Drop: {np.mean(results['multi_drop'])*100:.2f}% ± {np.std(results['multi_drop'])*100:.2f}%")

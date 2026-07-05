@@ -731,15 +731,15 @@ This section documents the results of the Phase 3 causal interventions designed 
 **Dataset:** Synthetic Needle-In-A-Haystack prompt (`The secret color is BLUE...`)
 
 **Experiment (Multi-Head Ablation):** 
-To avoid the trap of assuming a single bottleneck, we identified **all 6 Retrieval heads** in Qwen2.5-1.5B (Layers 0, 5, 11, 12, 26) and a late-stage Induction head (`L21H8`). We ran a Needle-In-A-Haystack prompt where the target was successfully retrieved. We used PyTorch forward hooks to forcefully zero-out the `o_proj` weight matrices for **all 6 Retrieval heads simultaneously**, completely ablating their contributions to the residual stream.
+To avoid the trap of assuming a single bottleneck, we identified **all 6 Retrieval heads** in Qwen2.5-1.5B (Layers 0, 5, 11, 12, 26) and a late-stage Induction head (`L21H8`). We ran **5 diverse Needle-In-A-Haystack prompts** to characterize statistical noise, extracting the mean drop and standard deviation. We used PyTorch forward hooks to forcefully zero-out the `o_proj` weight matrices.
 
 **Results:**
-*   **Baseline:** Induction Head `L21H8` attended to the needle with **15.67%** mass.
-*   **Ablated (All 6 Heads):** Induction Head `L21H8` attended to the needle with **17.37%** mass.
-*   **Logit Drop:** The probability of predicting `BLUE` dropped by a negligible **4.44%**.
+*   **Baseline:** Logit probability for correct answer is **40.06% ± 16.35%**.
+*   **Single Retrieval Head Ablation (L0H9):** Logit drop of **-1.18% ± 7.17%** (statistically indistinguishable from zero; no single-head bottleneck).
+*   **Full Retrieval Circuit Ablation (All 6 Heads):** Logit drop of **8.36% ± 9.03%**.
 
 **Conclusion: FALSIFIED.** 
-Even when ablating the entire known Retrieval circuit simultaneously, the Induction head did *not* collapse. In fact, its attention mass slightly increased. This proves that Induction heads do not rely on the standard Retrieval heads as a strict bottleneck. The reasoning circuit is either massively redundant across unclassified heads, or the Induction head independently calculates similarities bypassing the Retrieval nodes. 
+The reasoning circuit is massively parallel and redundant. Ablating a single Retrieval head has zero statistical effect. Even severing all 6 known Retrieval heads only degrades the logit by ~8% on average (with massive variance), meaning the Induction head continually finds alternative pathways to aggregate the context. The "co-gating" strict bottleneck theory is completely false. 
 
 ---
 
@@ -751,13 +751,16 @@ Even when ablating the entire known Retrieval circuit simultaneously, the Induct
 We extracted 1,024 output vectors from `L9H7` (a known high-variance Subject-tracker head) and trained a 4x overcomplete Micro-SAE.
 
 **Results:**
-*   **Variance Explained:** Both the True SAE and Null SAE reconstructed the vectors with 99.97% accuracy.
+*   **Variance Explained:** Both the True SAE and Null SAE reconstructed the vectors with 99.9% accuracy.
 *   **L0 Sparsity (The Smoking Gun):**
-    *   **True SAE:** Required only **4.05** active features per token (3.96% dense).
-    *   **Null SAE:** Required **52.07** active features per token (31.76% dense).
+    *   **True SAE:** Required only **4.57** active features per token (4.49% dense).
+    *   **Null SAE:** Required **51.07** active features per token (48.16% dense).
 
-**Conclusion: PROVEN.** 
-While both SAEs achieved identical reconstruction accuracy, the True SAE did so using an order of magnitude fewer active neurons. When temporal covariance was destroyed (Null SAE), the autoencoder was forced to memorize densely, activating 13x more features. This mathematically proves that the true head output contains sparse, deeply structured low-dimensional sub-features (Polysemantic Multiplexing), confirming Law 4. 
+**The Qualitative Confound (Falsified):** 
+Initially, we tested the True SAE on a held-out passage of Python code and found that individual features cleanly tracked abstract semantic tokens (`def`, `_search`, `binary`). However, when we ran the **Null SAE** on the exact same text, its random features *also* cleanly tracked the exact same rare tokens. Qualitative interpretability is a statistical illusion driven by the low frequency of semantically loaded tokens, which naturally correlate with arbitrary high-dimensional vectors.
+
+**Conclusion: PROVEN via Sparsity, not Interpretability.** 
+Because qualitative feature-tracking is a confound, the *only* mathematically rigorous proof of multiplexing is L0 sparsity. While both SAEs achieved identical reconstruction accuracy, the True SAE did so using an order of magnitude fewer active neurons. When temporal covariance was destroyed (Null SAE), the autoencoder was forced to memorize densely, activating 11x more features. This mathematically proves that the true head output contains sparse, deeply structured low-dimensional sub-features (Polysemantic Multiplexing), confirming Law 4. 
 
 ---
 

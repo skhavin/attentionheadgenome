@@ -163,7 +163,7 @@ if diff_var > 0.05 or feat_real.shape == feat_real.shape: # always run feature c
         
         feat_held, _ = sae_real(held_vectors)
         
-    print(f"Testing SAE trained on Wikitext against held-out Python code passage...")
+    print(f"Testing True SAE against held-out Python code passage...")
     
     active_mask = (feat_held > 0.1).float().mean(dim=0) > 0.01
     active_indices = active_mask.nonzero().squeeze(-1).tolist()
@@ -178,4 +178,20 @@ if diff_var > 0.05 or feat_real.shape == feat_real.shape: # always run feature c
         top_vals, top_idx = torch.topk(activations, min(10, len(held_out_tokens)))
         top_tokens = [held_out_tokens[idx.item()] for idx in top_idx]
         unique_tokens = list(dict.fromkeys(top_tokens))
-        print(f"Feature {f_idx}: {unique_tokens[:5]}")
+        print(f"True Feature {f_idx}: {unique_tokens[:5]}")
+        
+    print(f"\nTesting NULL SAE against held-out Python code passage...")
+    with torch.no_grad():
+        feat_null_held, _ = sae_null(held_vectors)
+        
+    active_mask_null = (feat_null_held > 0.1).float().mean(dim=0) > 0.01
+    active_indices_null = active_mask_null.nonzero().squeeze(-1).tolist()
+    if not isinstance(active_indices_null, list): active_indices_null = [active_indices_null]
+    
+    print(f"Found {len(active_indices_null)} active features in Null SAE on held-out text.")
+    for f_idx in active_indices_null[:5]:
+        activations = feat_null_held[:, f_idx]
+        top_vals, top_idx = torch.topk(activations, min(10, len(held_out_tokens)))
+        top_tokens = [held_out_tokens[idx.item()] for idx in top_idx]
+        unique_tokens = list(dict.fromkeys(top_tokens))
+        print(f"Null Feature {f_idx}: {unique_tokens[:5]}")
