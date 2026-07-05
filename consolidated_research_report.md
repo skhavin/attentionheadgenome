@@ -572,7 +572,8 @@ All statistical claims regarding the developmental lifecycle, the V/Q scaling la
 
 *Note: Remaining dynamic validation experiments (Q/K Patching, V Patching, Attention Target Analysis, URL generalization, and Circuit Isolation) have been explicitly outlined and scaffolded in `outputs/phase8_paper_suite/causal_patching_scaffold.py` for GPU execution.*
 
-
+
+
 
 ## Phase 4: Validating Atlas Roles via Attention Routing (Workstream 2)
 
@@ -847,4 +848,4 @@ By strictly adhering to causal testing and null-distribution baselines, we avoid
 
 The rigorous data gathered in Workstream 1 and Workstream 2 have been visualized using the \outputs/final_artifacts/generate_visualizations.py\ script. The resulting high-resolution plots are saved at:
 
-1. **Routing Validation Performance:** \outputs/final_artifacts/visualizations/routing_validation.png2. **Taxonomy Distribution:** \outputs/final_artifacts/visualizations/taxonomy_distribution.png3. **Emergent UMAP Clusters:** \outputs/final_artifacts/visualizations/umap_clusters.png
+1. **Routing Validation Performance:** ![Routing Validation Performance](outputs/final_artifacts/visualizations/routing_validation.png)2. **Taxonomy Distribution:** ![Taxonomy Distribution](outputs/final_artifacts/visualizations/taxonomy_distribution.png)3. **Emergent UMAP Clusters:** ![Emergent UMAP Clusters](outputs/final_artifacts/visualizations/umap_clusters.png)

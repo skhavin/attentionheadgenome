@@ -820,6 +820,8 @@ By strictly adhering to causal testing and null-distribution baselines, we succe
 **Code Path**: \phase2_atlas/step18_routing_engine.py\, \phase2_atlas/step19_routing_validation.py\  
 **Datasets**: WikiText-103, HellaSwag, ARC-Easy  
 
+![Routing Validation](visualizations/routing_validation.png)
+
 We executed a rigorous, pre-registered intervention to validate whether the structural head roles discovered in the atlas truly dictate model behavior. We built a native (n \cdot w)$ routing engine for Qwen2.5-0.5B that intercepts head outputs during the forward pass and forces them into highly constrained attention kernels.
 
 ### 1. The Local Head Success
@@ -836,6 +838,8 @@ For heads classified as **Sink** (67 heads), we forced them to attend *only* to 
 
 ## Phase 5: Unsupervised Emergent Discovery (Workstream 1)
 
+![Taxonomy Distribution](visualizations/taxonomy_distribution.png)
+![Emergent UMAP Clusters](visualizations/umap_clusters.png)
 **Code Path**: \phase2_atlas/step15_rich_features.py\, \phase2_atlas/step16_emergent_discovery.py\  
 
 To verify if our manual 4-class taxonomy was missing sub-structures, we collected rich runtime features (activation sparsity, position bias, inter-layer correlation) across 1,568 heads across all four models, and ran UMAP + HDBSCAN clustering.
