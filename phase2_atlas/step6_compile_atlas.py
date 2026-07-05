@@ -16,6 +16,7 @@ PHASE1_FILE = {
     "gpt2-medium": "outputs/phase1/robust_entropy_gpt2.json",
     "Qwen2.5-0.5B": "outputs/phase1/robust_entropy_qwen0.5b.json",
     "Qwen2.5-1.5B": "outputs/phase1/robust_entropy_qwen1.5b.json",
+    "Llama-3.2-1B": "outputs/phase1/llama1b_retrieval_entropy.json",
 }.get(SAFE_MODEL, None)
 
 DIST_FILE   = f"outputs/phase2_atlas/{SAFE_MODEL}_distance_profile.json"

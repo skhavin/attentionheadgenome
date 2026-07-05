@@ -2,10 +2,7 @@ import subprocess
 import sys
 
 MODELS = [
-    "gpt2-medium",
-    "Qwen/Qwen2.5-0.5B",
-    "Qwen/Qwen2.5-1.5B",
-    "meta-llama/Llama-3.2-1B"
+    "unsloth/Llama-3.2-1B"
 ]
 
 SCRIPTS = [

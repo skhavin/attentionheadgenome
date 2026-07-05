@@ -1,0 +1,4613 @@
+{
+  "model": "Llama-3.2-1B",
+  "heads": {
+    "0_0": {
+      "position_bias": {
+        "early_third": 0.4878,
+        "middle_third": 0.2784,
+        "late_third": 0.2337
+      },
+      "activation_sparsity": 0.1028,
+      "inter_layer_corr": 0.2161
+    },
+    "0_1": {
+      "position_bias": {
+        "early_third": 0.6807,
+        "middle_third": 0.1754,
+        "late_third": 0.1439
+      },
+      "activation_sparsity": 0.0551,
+      "inter_layer_corr": 0.9586
+    },
+    "0_2": {
+      "position_bias": {
+        "early_third": 0.3948,
+        "middle_third": 0.3002,
+        "late_third": 0.305
+      },
+      "activation_sparsity": 0.1149,
+      "inter_layer_corr": 0.1675
+    },
+    "0_3": {
+      "position_bias": {
+        "early_third": 0.8495,
+        "middle_third": 0.0842,
+        "late_third": 0.0663
+      },
+      "activation_sparsity": 0.0453,
+      "inter_layer_corr": 0.9639
+    },
+    "0_4": {
+      "position_bias": {
+        "early_third": 0.7557,
+        "middle_third": 0.139,
+        "late_third": 0.1053
+      },
+      "activation_sparsity": 0.05,
+      "inter_layer_corr": 0.8914
+    },
+    "0_5": {
+      "position_bias": {
+        "early_third": 0.7499,
+        "middle_third": 0.1446,
+        "late_third": 0.1056
+      },
+      "activation_sparsity": 0.0595,
+      "inter_layer_corr": 0.9521
+    },
+    "0_6": {
+      "position_bias": {
+        "early_third": 0.737,
+        "middle_third": 0.148,
+        "late_third": 0.1151
+      },
+      "activation_sparsity": 0.0468,
+      "inter_layer_corr": 0.9788
+    },
+    "0_7": {
+      "position_bias": {
+        "early_third": 0.6846,
+        "middle_third": 0.1758,
+        "late_third": 0.1396
+      },
+      "activation_sparsity": 0.0526,
+      "inter_layer_corr": 0.8474
+    },
+    "0_8": {
+      "position_bias": {
+        "early_third": 0.7784,
+        "middle_third": 0.1441,
+        "late_third": 0.0774
+      },
+      "activation_sparsity": 0.0463,
+      "inter_layer_corr": 0.4561
+    },
+    "0_9": {
+      "position_bias": {
+        "early_third": 0.7795,
+        "middle_third": 0.1377,
+        "late_third": 0.0829
+      },
+      "activation_sparsity": 0.0325,
+      "inter_layer_corr": 0.6835
+    },
+    "0_10": {
+      "position_bias": {
+        "early_third": 0.7509,
+        "middle_third": 0.1467,
+        "late_third": 0.1024
+      },
+      "activation_sparsity": 0.0386,
+      "inter_layer_corr": 0.8838
+    },
+    "0_11": {
+      "position_bias": {
+        "early_third": 0.6762,
+        "middle_third": 0.2157,
+        "late_third": 0.1081
+      },
+      "activation_sparsity": 0.1118,
+      "inter_layer_corr": 0.6499
+    },
+    "0_12": {
+      "position_bias": {
+        "early_third": 0.9044,
+        "middle_third": 0.0641,
+        "late_third": 0.0315
+      },
+      "activation_sparsity": 0.0369,
+      "inter_layer_corr": 0.9592
+    },
+    "0_13": {
+      "position_bias": {
+        "early_third": 0.9134,
+        "middle_third": 0.062,
+        "late_third": 0.0246
+      },
+      "activation_sparsity": 0.036,
+      "inter_layer_corr": 0.9859
+    },
+    "0_14": {
+      "position_bias": {
+        "early_third": 0.9004,
+        "middle_third": 0.0687,
+        "late_third": 0.0309
+      },
+      "activation_sparsity": 0.0337,
+      "inter_layer_corr": 0.7288
+    },
+    "0_15": {
+      "position_bias": {
+        "early_third": 0.7979,
+        "middle_third": 0.1462,
+        "late_third": 0.0559
+      },
+      "activation_sparsity": 0.047,
+      "inter_layer_corr": 0.7074
+    },
+    "0_16": {
+      "position_bias": {
+        "early_third": 0.8308,
+        "middle_third": 0.0944,
+        "late_third": 0.0748
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.7897
+    },
+    "0_17": {
+      "position_bias": {
+        "early_third": 0.6099,
+        "middle_third": 0.2348,
+        "late_third": 0.1554
+      },
+      "activation_sparsity": 0.0613,
+      "inter_layer_corr": 0.8301
+    },
+    "0_18": {
+      "position_bias": {
+        "early_third": 0.8905,
+        "middle_third": 0.0772,
+        "late_third": 0.0323
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9911
+    },
+    "0_19": {
+      "position_bias": {
+        "early_third": 0.8929,
+        "middle_third": 0.0686,
+        "late_third": 0.0385
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9823
+    },
+    "0_20": {
+      "position_bias": {
+        "early_third": 0.6506,
+        "middle_third": 0.2415,
+        "late_third": 0.1079
+      },
+      "activation_sparsity": 0.1125,
+      "inter_layer_corr": 0.6887
+    },
+    "0_21": {
+      "position_bias": {
+        "early_third": 0.6847,
+        "middle_third": 0.2253,
+        "late_third": 0.0901
+      },
+      "activation_sparsity": 0.1045,
+      "inter_layer_corr": 0.0192
+    },
+    "0_22": {
+      "position_bias": {
+        "early_third": 0.8376,
+        "middle_third": 0.1145,
+        "late_third": 0.0479
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9221
+    },
+    "0_23": {
+      "position_bias": {
+        "early_third": 0.5945,
+        "middle_third": 0.2685,
+        "late_third": 0.137
+      },
+      "activation_sparsity": 0.1274,
+      "inter_layer_corr": -0.0878
+    },
+    "0_24": {
+      "position_bias": {
+        "early_third": 0.6299,
+        "middle_third": 0.2041,
+        "late_third": 0.166
+      },
+      "activation_sparsity": 0.0679,
+      "inter_layer_corr": 0.9014
+    },
+    "0_25": {
+      "position_bias": {
+        "early_third": 0.6258,
+        "middle_third": 0.2286,
+        "late_third": 0.1455
+      },
+      "activation_sparsity": 0.1345,
+      "inter_layer_corr": 0.3818
+    },
+    "0_26": {
+      "position_bias": {
+        "early_third": 0.663,
+        "middle_third": 0.1914,
+        "late_third": 0.1455
+      },
+      "activation_sparsity": 0.0845,
+      "inter_layer_corr": 0.8321
+    },
+    "0_27": {
+      "position_bias": {
+        "early_third": 0.7289,
+        "middle_third": 0.1586,
+        "late_third": 0.1125
+      },
+      "activation_sparsity": 0.0593,
+      "inter_layer_corr": 0.7155
+    },
+    "0_28": {
+      "position_bias": {
+        "early_third": 0.8721,
+        "middle_third": 0.09,
+        "late_third": 0.0378
+      },
+      "activation_sparsity": 0.0279,
+      "inter_layer_corr": 0.7731
+    },
+    "0_29": {
+      "position_bias": {
+        "early_third": 0.9753,
+        "middle_third": 0.0175,
+        "late_third": 0.0072
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9842
+    },
+    "0_30": {
+      "position_bias": {
+        "early_third": 0.9305,
+        "middle_third": 0.0446,
+        "late_third": 0.0249
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9984
+    },
+    "0_31": {
+      "position_bias": {
+        "early_third": 0.9821,
+        "middle_third": 0.0118,
+        "late_third": 0.0061
+      },
+      "activation_sparsity": 0.0295,
+      "inter_layer_corr": 0.9855
+    },
+    "1_0": {
+      "position_bias": {
+        "early_third": 0.8469,
+        "middle_third": 0.0855,
+        "late_third": 0.0676
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9909
+    },
+    "1_1": {
+      "position_bias": {
+        "early_third": 0.8264,
+        "middle_third": 0.0916,
+        "late_third": 0.0821
+      },
+      "activation_sparsity": 0.0339,
+      "inter_layer_corr": 0.9253
+    },
+    "1_2": {
+      "position_bias": {
+        "early_third": 0.9128,
+        "middle_third": 0.058,
+        "late_third": 0.0292
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9828
+    },
+    "1_3": {
+      "position_bias": {
+        "early_third": 0.8145,
+        "middle_third": 0.1078,
+        "late_third": 0.0777
+      },
+      "activation_sparsity": 0.0337,
+      "inter_layer_corr": 0.9606
+    },
+    "1_4": {
+      "position_bias": {
+        "early_third": 0.9253,
+        "middle_third": 0.04,
+        "late_third": 0.0347
+      },
+      "activation_sparsity": 0.0301,
+      "inter_layer_corr": 0.9967
+    },
+    "1_5": {
+      "position_bias": {
+        "early_third": 0.9093,
+        "middle_third": 0.0491,
+        "late_third": 0.0416
+      },
+      "activation_sparsity": 0.0374,
+      "inter_layer_corr": 0.9947
+    },
+    "1_6": {
+      "position_bias": {
+        "early_third": 0.9396,
+        "middle_third": 0.0356,
+        "late_third": 0.0248
+      },
+      "activation_sparsity": 0.0292,
+      "inter_layer_corr": 0.9962
+    },
+    "1_7": {
+      "position_bias": {
+        "early_third": 0.9715,
+        "middle_third": 0.0199,
+        "late_third": 0.0086
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.986
+    },
+    "1_8": {
+      "position_bias": {
+        "early_third": 0.8536,
+        "middle_third": 0.1065,
+        "late_third": 0.0399
+      },
+      "activation_sparsity": 0.0297,
+      "inter_layer_corr": 0.4674
+    },
+    "1_9": {
+      "position_bias": {
+        "early_third": 0.9382,
+        "middle_third": 0.0444,
+        "late_third": 0.0174
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9975
+    },
+    "1_10": {
+      "position_bias": {
+        "early_third": 0.7054,
+        "middle_third": 0.1797,
+        "late_third": 0.115
+      },
+      "activation_sparsity": 0.0372,
+      "inter_layer_corr": 0.9789
+    },
+    "1_11": {
+      "position_bias": {
+        "early_third": 0.804,
+        "middle_third": 0.1077,
+        "late_third": 0.0883
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.8546
+    },
+    "1_12": {
+      "position_bias": {
+        "early_third": 0.8961,
+        "middle_third": 0.0754,
+        "late_third": 0.0286
+      },
+      "activation_sparsity": 0.031,
+      "inter_layer_corr": 0.7152
+    },
+    "1_13": {
+      "position_bias": {
+        "early_third": 0.9459,
+        "middle_third": 0.0294,
+        "late_third": 0.0247
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9812
+    },
+    "1_14": {
+      "position_bias": {
+        "early_third": 0.9407,
+        "middle_third": 0.0384,
+        "late_third": 0.0209
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9275
+    },
+    "1_15": {
+      "position_bias": {
+        "early_third": 0.9106,
+        "middle_third": 0.0582,
+        "late_third": 0.0312
+      },
+      "activation_sparsity": 0.0312,
+      "inter_layer_corr": 0.7095
+    },
+    "1_16": {
+      "position_bias": {
+        "early_third": 0.874,
+        "middle_third": 0.0682,
+        "late_third": 0.0578
+      },
+      "activation_sparsity": 0.0316,
+      "inter_layer_corr": 0.9539
+    },
+    "1_17": {
+      "position_bias": {
+        "early_third": 0.8767,
+        "middle_third": 0.0704,
+        "late_third": 0.053
+      },
+      "activation_sparsity": 0.0286,
+      "inter_layer_corr": 0.9944
+    },
+    "1_18": {
+      "position_bias": {
+        "early_third": 0.9415,
+        "middle_third": 0.0299,
+        "late_third": 0.0286
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.998
+    },
+    "1_19": {
+      "position_bias": {
+        "early_third": 0.9143,
+        "middle_third": 0.0552,
+        "late_third": 0.0305
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.975
+    },
+    "1_20": {
+      "position_bias": {
+        "early_third": 0.7443,
+        "middle_third": 0.1286,
+        "late_third": 0.1271
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9412
+    },
+    "1_21": {
+      "position_bias": {
+        "early_third": 0.9214,
+        "middle_third": 0.0486,
+        "late_third": 0.0301
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9942
+    },
+    "1_22": {
+      "position_bias": {
+        "early_third": 0.9117,
+        "middle_third": 0.0607,
+        "late_third": 0.0276
+      },
+      "activation_sparsity": 0.0324,
+      "inter_layer_corr": 0.9172
+    },
+    "1_23": {
+      "position_bias": {
+        "early_third": 0.9009,
+        "middle_third": 0.0584,
+        "late_third": 0.0407
+      },
+      "activation_sparsity": 0.0308,
+      "inter_layer_corr": 0.9714
+    },
+    "1_24": {
+      "position_bias": {
+        "early_third": 0.956,
+        "middle_third": 0.0243,
+        "late_third": 0.0197
+      },
+      "activation_sparsity": 0.0305,
+      "inter_layer_corr": 0.7352
+    },
+    "1_25": {
+      "position_bias": {
+        "early_third": 0.9046,
+        "middle_third": 0.0459,
+        "late_third": 0.0495
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9897
+    },
+    "1_26": {
+      "position_bias": {
+        "early_third": 0.9213,
+        "middle_third": 0.0401,
+        "late_third": 0.0386
+      },
+      "activation_sparsity": 0.0286,
+      "inter_layer_corr": 0.9812
+    },
+    "1_27": {
+      "position_bias": {
+        "early_third": 0.9482,
+        "middle_third": 0.0262,
+        "late_third": 0.0256
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.958
+    },
+    "1_28": {
+      "position_bias": {
+        "early_third": 0.7786,
+        "middle_third": 0.1516,
+        "late_third": 0.0698
+      },
+      "activation_sparsity": 0.046,
+      "inter_layer_corr": 0.9839
+    },
+    "1_29": {
+      "position_bias": {
+        "early_third": 0.8124,
+        "middle_third": 0.1349,
+        "late_third": 0.0528
+      },
+      "activation_sparsity": 0.0428,
+      "inter_layer_corr": 0.9855
+    },
+    "1_30": {
+      "position_bias": {
+        "early_third": 0.8484,
+        "middle_third": 0.0853,
+        "late_third": 0.0663
+      },
+      "activation_sparsity": 0.0288,
+      "inter_layer_corr": 0.9979
+    },
+    "1_31": {
+      "position_bias": {
+        "early_third": 0.8654,
+        "middle_third": 0.0816,
+        "late_third": 0.053
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.991
+    },
+    "2_0": {
+      "position_bias": {
+        "early_third": 0.9014,
+        "middle_third": 0.0586,
+        "late_third": 0.0401
+      },
+      "activation_sparsity": 0.0292,
+      "inter_layer_corr": 0.9928
+    },
+    "2_1": {
+      "position_bias": {
+        "early_third": 0.9553,
+        "middle_third": 0.0259,
+        "late_third": 0.0189
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.8157
+    },
+    "2_2": {
+      "position_bias": {
+        "early_third": 0.9469,
+        "middle_third": 0.0299,
+        "late_third": 0.0232
+      },
+      "activation_sparsity": 0.0288,
+      "inter_layer_corr": 0.9246
+    },
+    "2_3": {
+      "position_bias": {
+        "early_third": 0.9799,
+        "middle_third": 0.0124,
+        "late_third": 0.0077
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9651
+    },
+    "2_4": {
+      "position_bias": {
+        "early_third": 0.774,
+        "middle_third": 0.1498,
+        "late_third": 0.0762
+      },
+      "activation_sparsity": 0.0349,
+      "inter_layer_corr": 0.9968
+    },
+    "2_5": {
+      "position_bias": {
+        "early_third": 0.8686,
+        "middle_third": 0.0956,
+        "late_third": 0.0358
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9899
+    },
+    "2_6": {
+      "position_bias": {
+        "early_third": 0.8932,
+        "middle_third": 0.0799,
+        "late_third": 0.0269
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9974
+    },
+    "2_7": {
+      "position_bias": {
+        "early_third": 0.777,
+        "middle_third": 0.1211,
+        "late_third": 0.1019
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9874
+    },
+    "2_8": {
+      "position_bias": {
+        "early_third": 0.9645,
+        "middle_third": 0.0198,
+        "late_third": 0.0157
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9937
+    },
+    "2_9": {
+      "position_bias": {
+        "early_third": 0.9409,
+        "middle_third": 0.0319,
+        "late_third": 0.0272
+      },
+      "activation_sparsity": 0.0334,
+      "inter_layer_corr": 0.9656
+    },
+    "2_10": {
+      "position_bias": {
+        "early_third": 0.9377,
+        "middle_third": 0.0437,
+        "late_third": 0.0186
+      },
+      "activation_sparsity": 0.0282,
+      "inter_layer_corr": 0.9726
+    },
+    "2_11": {
+      "position_bias": {
+        "early_third": 0.9389,
+        "middle_third": 0.0352,
+        "late_third": 0.0259
+      },
+      "activation_sparsity": 0.0291,
+      "inter_layer_corr": 0.9962
+    },
+    "2_12": {
+      "position_bias": {
+        "early_third": 0.8695,
+        "middle_third": 0.0796,
+        "late_third": 0.0509
+      },
+      "activation_sparsity": 0.0291,
+      "inter_layer_corr": 0.7294
+    },
+    "2_13": {
+      "position_bias": {
+        "early_third": 0.9086,
+        "middle_third": 0.0582,
+        "late_third": 0.0332
+      },
+      "activation_sparsity": 0.0288,
+      "inter_layer_corr": 0.9812
+    },
+    "2_14": {
+      "position_bias": {
+        "early_third": 0.952,
+        "middle_third": 0.0371,
+        "late_third": 0.0109
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9961
+    },
+    "2_15": {
+      "position_bias": {
+        "early_third": 0.9454,
+        "middle_third": 0.0394,
+        "late_third": 0.0152
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9763
+    },
+    "2_16": {
+      "position_bias": {
+        "early_third": 0.8917,
+        "middle_third": 0.066,
+        "late_third": 0.0423
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9683
+    },
+    "2_17": {
+      "position_bias": {
+        "early_third": 0.8911,
+        "middle_third": 0.0643,
+        "late_third": 0.0446
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9821
+    },
+    "2_18": {
+      "position_bias": {
+        "early_third": 0.9223,
+        "middle_third": 0.0452,
+        "late_third": 0.0325
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9928
+    },
+    "2_19": {
+      "position_bias": {
+        "early_third": 0.7937,
+        "middle_third": 0.1487,
+        "late_third": 0.0576
+      },
+      "activation_sparsity": 0.0346,
+      "inter_layer_corr": 0.9329
+    },
+    "2_20": {
+      "position_bias": {
+        "early_third": 0.9837,
+        "middle_third": 0.0135,
+        "late_third": 0.0028
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9945
+    },
+    "2_21": {
+      "position_bias": {
+        "early_third": 0.9671,
+        "middle_third": 0.0191,
+        "late_third": 0.0138
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.8704
+    },
+    "2_22": {
+      "position_bias": {
+        "early_third": 0.9441,
+        "middle_third": 0.0292,
+        "late_third": 0.0266
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.8797
+    },
+    "2_23": {
+      "position_bias": {
+        "early_third": 0.9375,
+        "middle_third": 0.0344,
+        "late_third": 0.0281
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9299
+    },
+    "2_24": {
+      "position_bias": {
+        "early_third": 0.8743,
+        "middle_third": 0.0842,
+        "late_third": 0.0414
+      },
+      "activation_sparsity": 0.0299,
+      "inter_layer_corr": 0.7287
+    },
+    "2_25": {
+      "position_bias": {
+        "early_third": 0.8022,
+        "middle_third": 0.1076,
+        "late_third": 0.0903
+      },
+      "activation_sparsity": 0.0309,
+      "inter_layer_corr": 0.9974
+    },
+    "2_26": {
+      "position_bias": {
+        "early_third": 0.9532,
+        "middle_third": 0.0379,
+        "late_third": 0.0089
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9789
+    },
+    "2_27": {
+      "position_bias": {
+        "early_third": 0.9302,
+        "middle_third": 0.0426,
+        "late_third": 0.0272
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9471
+    },
+    "2_28": {
+      "position_bias": {
+        "early_third": 0.9347,
+        "middle_third": 0.0395,
+        "late_third": 0.0259
+      },
+      "activation_sparsity": 0.0288,
+      "inter_layer_corr": 0.7936
+    },
+    "2_29": {
+      "position_bias": {
+        "early_third": 0.9385,
+        "middle_third": 0.0424,
+        "late_third": 0.0192
+      },
+      "activation_sparsity": 0.0284,
+      "inter_layer_corr": 0.8427
+    },
+    "2_30": {
+      "position_bias": {
+        "early_third": 0.9173,
+        "middle_third": 0.0459,
+        "late_third": 0.0369
+      },
+      "activation_sparsity": 0.0376,
+      "inter_layer_corr": 0.8517
+    },
+    "2_31": {
+      "position_bias": {
+        "early_third": 0.8058,
+        "middle_third": 0.1133,
+        "late_third": 0.0809
+      },
+      "activation_sparsity": 0.0567,
+      "inter_layer_corr": 0.9269
+    },
+    "3_0": {
+      "position_bias": {
+        "early_third": 0.8704,
+        "middle_third": 0.0923,
+        "late_third": 0.0373
+      },
+      "activation_sparsity": 0.0285,
+      "inter_layer_corr": 0.9928
+    },
+    "3_1": {
+      "position_bias": {
+        "early_third": 0.9096,
+        "middle_third": 0.0625,
+        "late_third": 0.0278
+      },
+      "activation_sparsity": 0.0347,
+      "inter_layer_corr": 0.869
+    },
+    "3_2": {
+      "position_bias": {
+        "early_third": 0.8291,
+        "middle_third": 0.1048,
+        "late_third": 0.0661
+      },
+      "activation_sparsity": 0.0392,
+      "inter_layer_corr": 0.8875
+    },
+    "3_3": {
+      "position_bias": {
+        "early_third": 0.9224,
+        "middle_third": 0.0437,
+        "late_third": 0.034
+      },
+      "activation_sparsity": 0.0335,
+      "inter_layer_corr": 0.9639
+    },
+    "3_4": {
+      "position_bias": {
+        "early_third": 0.9569,
+        "middle_third": 0.0251,
+        "late_third": 0.018
+      },
+      "activation_sparsity": 0.0282,
+      "inter_layer_corr": 0.9626
+    },
+    "3_5": {
+      "position_bias": {
+        "early_third": 0.849,
+        "middle_third": 0.082,
+        "late_third": 0.069
+      },
+      "activation_sparsity": 0.0403,
+      "inter_layer_corr": 0.8954
+    },
+    "3_6": {
+      "position_bias": {
+        "early_third": 0.8547,
+        "middle_third": 0.0855,
+        "late_third": 0.0598
+      },
+      "activation_sparsity": 0.0292,
+      "inter_layer_corr": 0.9964
+    },
+    "3_7": {
+      "position_bias": {
+        "early_third": 0.8692,
+        "middle_third": 0.0723,
+        "late_third": 0.0585
+      },
+      "activation_sparsity": 0.0317,
+      "inter_layer_corr": 0.9233
+    },
+    "3_8": {
+      "position_bias": {
+        "early_third": 0.7231,
+        "middle_third": 0.1615,
+        "late_third": 0.1155
+      },
+      "activation_sparsity": 0.0462,
+      "inter_layer_corr": 0.9608
+    },
+    "3_9": {
+      "position_bias": {
+        "early_third": 0.85,
+        "middle_third": 0.1082,
+        "late_third": 0.0418
+      },
+      "activation_sparsity": 0.0312,
+      "inter_layer_corr": 0.9526
+    },
+    "3_10": {
+      "position_bias": {
+        "early_third": 0.814,
+        "middle_third": 0.1024,
+        "late_third": 0.0837
+      },
+      "activation_sparsity": 0.0342,
+      "inter_layer_corr": 0.9533
+    },
+    "3_11": {
+      "position_bias": {
+        "early_third": 0.8101,
+        "middle_third": 0.1006,
+        "late_third": 0.0893
+      },
+      "activation_sparsity": 0.0313,
+      "inter_layer_corr": 0.9824
+    },
+    "3_12": {
+      "position_bias": {
+        "early_third": 0.8908,
+        "middle_third": 0.0778,
+        "late_third": 0.0314
+      },
+      "activation_sparsity": 0.0338,
+      "inter_layer_corr": 0.9544
+    },
+    "3_13": {
+      "position_bias": {
+        "early_third": 0.8489,
+        "middle_third": 0.102,
+        "late_third": 0.0492
+      },
+      "activation_sparsity": 0.0385,
+      "inter_layer_corr": 0.8821
+    },
+    "3_14": {
+      "position_bias": {
+        "early_third": 0.8684,
+        "middle_third": 0.0868,
+        "late_third": 0.0447
+      },
+      "activation_sparsity": 0.0479,
+      "inter_layer_corr": 0.9575
+    },
+    "3_15": {
+      "position_bias": {
+        "early_third": 0.807,
+        "middle_third": 0.1164,
+        "late_third": 0.0766
+      },
+      "activation_sparsity": 0.0488,
+      "inter_layer_corr": 0.9525
+    },
+    "3_16": {
+      "position_bias": {
+        "early_third": 0.8522,
+        "middle_third": 0.0775,
+        "late_third": 0.0703
+      },
+      "activation_sparsity": 0.039,
+      "inter_layer_corr": 0.9889
+    },
+    "3_17": {
+      "position_bias": {
+        "early_third": 0.8164,
+        "middle_third": 0.0947,
+        "late_third": 0.0889
+      },
+      "activation_sparsity": 0.0301,
+      "inter_layer_corr": 0.9834
+    },
+    "3_18": {
+      "position_bias": {
+        "early_third": 0.8407,
+        "middle_third": 0.0828,
+        "late_third": 0.0765
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9157
+    },
+    "3_19": {
+      "position_bias": {
+        "early_third": 0.764,
+        "middle_third": 0.1202,
+        "late_third": 0.1158
+      },
+      "activation_sparsity": 0.0302,
+      "inter_layer_corr": 0.9212
+    },
+    "3_20": {
+      "position_bias": {
+        "early_third": 0.9042,
+        "middle_third": 0.0678,
+        "late_third": 0.0279
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9911
+    },
+    "3_21": {
+      "position_bias": {
+        "early_third": 0.8181,
+        "middle_third": 0.1114,
+        "late_third": 0.0705
+      },
+      "activation_sparsity": 0.0305,
+      "inter_layer_corr": 0.8227
+    },
+    "3_22": {
+      "position_bias": {
+        "early_third": 0.7869,
+        "middle_third": 0.1507,
+        "late_third": 0.0624
+      },
+      "activation_sparsity": 0.0526,
+      "inter_layer_corr": 0.9397
+    },
+    "3_23": {
+      "position_bias": {
+        "early_third": 0.8459,
+        "middle_third": 0.0868,
+        "late_third": 0.0673
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.904
+    },
+    "3_24": {
+      "position_bias": {
+        "early_third": 0.8526,
+        "middle_third": 0.0835,
+        "late_third": 0.0639
+      },
+      "activation_sparsity": 0.0378,
+      "inter_layer_corr": 0.9817
+    },
+    "3_25": {
+      "position_bias": {
+        "early_third": 0.9105,
+        "middle_third": 0.059,
+        "late_third": 0.0305
+      },
+      "activation_sparsity": 0.049,
+      "inter_layer_corr": 0.8688
+    },
+    "3_26": {
+      "position_bias": {
+        "early_third": 0.8881,
+        "middle_third": 0.0623,
+        "late_third": 0.0496
+      },
+      "activation_sparsity": 0.0307,
+      "inter_layer_corr": 0.911
+    },
+    "3_27": {
+      "position_bias": {
+        "early_third": 0.9075,
+        "middle_third": 0.0575,
+        "late_third": 0.035
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9637
+    },
+    "3_28": {
+      "position_bias": {
+        "early_third": 0.7184,
+        "middle_third": 0.1739,
+        "late_third": 0.1077
+      },
+      "activation_sparsity": 0.0536,
+      "inter_layer_corr": 0.7931
+    },
+    "3_29": {
+      "position_bias": {
+        "early_third": 0.7738,
+        "middle_third": 0.1415,
+        "late_third": 0.0847
+      },
+      "activation_sparsity": 0.0414,
+      "inter_layer_corr": 0.8603
+    },
+    "3_30": {
+      "position_bias": {
+        "early_third": 0.763,
+        "middle_third": 0.1399,
+        "late_third": 0.0971
+      },
+      "activation_sparsity": 0.0569,
+      "inter_layer_corr": 0.8425
+    },
+    "3_31": {
+      "position_bias": {
+        "early_third": 0.7742,
+        "middle_third": 0.1378,
+        "late_third": 0.0881
+      },
+      "activation_sparsity": 0.0712,
+      "inter_layer_corr": 0.8979
+    },
+    "4_0": {
+      "position_bias": {
+        "early_third": 0.9294,
+        "middle_third": 0.0494,
+        "late_third": 0.0212
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9935
+    },
+    "4_1": {
+      "position_bias": {
+        "early_third": 0.7652,
+        "middle_third": 0.1634,
+        "late_third": 0.0714
+      },
+      "activation_sparsity": 0.0578,
+      "inter_layer_corr": 0.9
+    },
+    "4_2": {
+      "position_bias": {
+        "early_third": 0.8666,
+        "middle_third": 0.0837,
+        "late_third": 0.0497
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.8938
+    },
+    "4_3": {
+      "position_bias": {
+        "early_third": 0.9173,
+        "middle_third": 0.0564,
+        "late_third": 0.0263
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9701
+    },
+    "4_4": {
+      "position_bias": {
+        "early_third": 0.7714,
+        "middle_third": 0.1308,
+        "late_third": 0.0978
+      },
+      "activation_sparsity": 0.051,
+      "inter_layer_corr": 0.9361
+    },
+    "4_5": {
+      "position_bias": {
+        "early_third": 0.7415,
+        "middle_third": 0.1489,
+        "late_third": 0.1096
+      },
+      "activation_sparsity": 0.0343,
+      "inter_layer_corr": 0.9026
+    },
+    "4_6": {
+      "position_bias": {
+        "early_third": 0.7855,
+        "middle_third": 0.1403,
+        "late_third": 0.0743
+      },
+      "activation_sparsity": 0.0362,
+      "inter_layer_corr": 0.9959
+    },
+    "4_7": {
+      "position_bias": {
+        "early_third": 0.7391,
+        "middle_third": 0.1458,
+        "late_third": 0.1151
+      },
+      "activation_sparsity": 0.058,
+      "inter_layer_corr": 0.9164
+    },
+    "4_8": {
+      "position_bias": {
+        "early_third": 0.7423,
+        "middle_third": 0.1809,
+        "late_third": 0.0768
+      },
+      "activation_sparsity": 0.0719,
+      "inter_layer_corr": 0.9494
+    },
+    "4_9": {
+      "position_bias": {
+        "early_third": 0.796,
+        "middle_third": 0.1208,
+        "late_third": 0.0832
+      },
+      "activation_sparsity": 0.0337,
+      "inter_layer_corr": 0.9761
+    },
+    "4_10": {
+      "position_bias": {
+        "early_third": 0.7916,
+        "middle_third": 0.1476,
+        "late_third": 0.0608
+      },
+      "activation_sparsity": 0.0532,
+      "inter_layer_corr": 0.9498
+    },
+    "4_11": {
+      "position_bias": {
+        "early_third": 0.812,
+        "middle_third": 0.1037,
+        "late_third": 0.0843
+      },
+      "activation_sparsity": 0.0286,
+      "inter_layer_corr": 0.9739
+    },
+    "4_12": {
+      "position_bias": {
+        "early_third": 0.721,
+        "middle_third": 0.1421,
+        "late_third": 0.137
+      },
+      "activation_sparsity": 0.0323,
+      "inter_layer_corr": 0.9409
+    },
+    "4_13": {
+      "position_bias": {
+        "early_third": 0.6853,
+        "middle_third": 0.1687,
+        "late_third": 0.146
+      },
+      "activation_sparsity": 0.0469,
+      "inter_layer_corr": 0.8728
+    },
+    "4_14": {
+      "position_bias": {
+        "early_third": 0.8335,
+        "middle_third": 0.0868,
+        "late_third": 0.0797
+      },
+      "activation_sparsity": 0.0371,
+      "inter_layer_corr": 0.9514
+    },
+    "4_15": {
+      "position_bias": {
+        "early_third": 0.7931,
+        "middle_third": 0.1381,
+        "late_third": 0.0688
+      },
+      "activation_sparsity": 0.0535,
+      "inter_layer_corr": 0.8823
+    },
+    "4_16": {
+      "position_bias": {
+        "early_third": 0.9058,
+        "middle_third": 0.0585,
+        "late_third": 0.0358
+      },
+      "activation_sparsity": 0.0292,
+      "inter_layer_corr": 0.9757
+    },
+    "4_17": {
+      "position_bias": {
+        "early_third": 0.725,
+        "middle_third": 0.1566,
+        "late_third": 0.1184
+      },
+      "activation_sparsity": 0.0628,
+      "inter_layer_corr": 0.8257
+    },
+    "4_18": {
+      "position_bias": {
+        "early_third": 0.8492,
+        "middle_third": 0.0841,
+        "late_third": 0.0667
+      },
+      "activation_sparsity": 0.0332,
+      "inter_layer_corr": 0.8979
+    },
+    "4_19": {
+      "position_bias": {
+        "early_third": 0.9185,
+        "middle_third": 0.0552,
+        "late_third": 0.0263
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9784
+    },
+    "4_20": {
+      "position_bias": {
+        "early_third": 0.9041,
+        "middle_third": 0.0711,
+        "late_third": 0.0248
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9849
+    },
+    "4_21": {
+      "position_bias": {
+        "early_third": 0.9459,
+        "middle_third": 0.0306,
+        "late_third": 0.0236
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9353
+    },
+    "4_22": {
+      "position_bias": {
+        "early_third": 0.7916,
+        "middle_third": 0.1394,
+        "late_third": 0.069
+      },
+      "activation_sparsity": 0.0424,
+      "inter_layer_corr": 0.831
+    },
+    "4_23": {
+      "position_bias": {
+        "early_third": 0.77,
+        "middle_third": 0.147,
+        "late_third": 0.083
+      },
+      "activation_sparsity": 0.07,
+      "inter_layer_corr": 0.9712
+    },
+    "4_24": {
+      "position_bias": {
+        "early_third": 0.7182,
+        "middle_third": 0.153,
+        "late_third": 0.1287
+      },
+      "activation_sparsity": 0.0453,
+      "inter_layer_corr": 0.7813
+    },
+    "4_25": {
+      "position_bias": {
+        "early_third": 0.8104,
+        "middle_third": 0.1119,
+        "late_third": 0.0777
+      },
+      "activation_sparsity": 0.0313,
+      "inter_layer_corr": 0.8124
+    },
+    "4_26": {
+      "position_bias": {
+        "early_third": 0.7381,
+        "middle_third": 0.1355,
+        "late_third": 0.1264
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9087
+    },
+    "4_27": {
+      "position_bias": {
+        "early_third": 0.7254,
+        "middle_third": 0.1729,
+        "late_third": 0.1017
+      },
+      "activation_sparsity": 0.0593,
+      "inter_layer_corr": 0.7647
+    },
+    "4_28": {
+      "position_bias": {
+        "early_third": 0.9073,
+        "middle_third": 0.0615,
+        "late_third": 0.0311
+      },
+      "activation_sparsity": 0.0308,
+      "inter_layer_corr": 0.9581
+    },
+    "4_29": {
+      "position_bias": {
+        "early_third": 0.9475,
+        "middle_third": 0.0357,
+        "late_third": 0.0168
+      },
+      "activation_sparsity": 0.0292,
+      "inter_layer_corr": 0.9703
+    },
+    "4_30": {
+      "position_bias": {
+        "early_third": 0.935,
+        "middle_third": 0.0434,
+        "late_third": 0.0216
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9324
+    },
+    "4_31": {
+      "position_bias": {
+        "early_third": 0.8002,
+        "middle_third": 0.1124,
+        "late_third": 0.0874
+      },
+      "activation_sparsity": 0.035,
+      "inter_layer_corr": 0.8677
+    },
+    "5_0": {
+      "position_bias": {
+        "early_third": 0.8349,
+        "middle_third": 0.1201,
+        "late_third": 0.045
+      },
+      "activation_sparsity": 0.0317,
+      "inter_layer_corr": 0.9661
+    },
+    "5_1": {
+      "position_bias": {
+        "early_third": 0.8375,
+        "middle_third": 0.1167,
+        "late_third": 0.0458
+      },
+      "activation_sparsity": 0.0324,
+      "inter_layer_corr": 0.9791
+    },
+    "5_2": {
+      "position_bias": {
+        "early_third": 0.735,
+        "middle_third": 0.1537,
+        "late_third": 0.1113
+      },
+      "activation_sparsity": 0.0522,
+      "inter_layer_corr": 0.8628
+    },
+    "5_3": {
+      "position_bias": {
+        "early_third": 0.7192,
+        "middle_third": 0.163,
+        "late_third": 0.1177
+      },
+      "activation_sparsity": 0.0485,
+      "inter_layer_corr": 0.982
+    },
+    "5_4": {
+      "position_bias": {
+        "early_third": 0.7912,
+        "middle_third": 0.1537,
+        "late_third": 0.055
+      },
+      "activation_sparsity": 0.0425,
+      "inter_layer_corr": 0.9315
+    },
+    "5_5": {
+      "position_bias": {
+        "early_third": 0.9232,
+        "middle_third": 0.0591,
+        "late_third": 0.0178
+      },
+      "activation_sparsity": 0.0295,
+      "inter_layer_corr": 0.9136
+    },
+    "5_6": {
+      "position_bias": {
+        "early_third": 0.8282,
+        "middle_third": 0.1251,
+        "late_third": 0.0467
+      },
+      "activation_sparsity": 0.0348,
+      "inter_layer_corr": 0.7852
+    },
+    "5_7": {
+      "position_bias": {
+        "early_third": 0.9288,
+        "middle_third": 0.0573,
+        "late_third": 0.0139
+      },
+      "activation_sparsity": 0.028,
+      "inter_layer_corr": 0.956
+    },
+    "5_8": {
+      "position_bias": {
+        "early_third": 0.9469,
+        "middle_third": 0.0401,
+        "late_third": 0.013
+      },
+      "activation_sparsity": 0.0308,
+      "inter_layer_corr": 0.9406
+    },
+    "5_9": {
+      "position_bias": {
+        "early_third": 0.9695,
+        "middle_third": 0.0226,
+        "late_third": 0.0079
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9834
+    },
+    "5_10": {
+      "position_bias": {
+        "early_third": 0.9682,
+        "middle_third": 0.0265,
+        "late_third": 0.0053
+      },
+      "activation_sparsity": 0.0292,
+      "inter_layer_corr": 0.9984
+    },
+    "5_11": {
+      "position_bias": {
+        "early_third": 0.9956,
+        "middle_third": 0.0037,
+        "late_third": 0.0007
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9978
+    },
+    "5_12": {
+      "position_bias": {
+        "early_third": 0.7867,
+        "middle_third": 0.1311,
+        "late_third": 0.0823
+      },
+      "activation_sparsity": 0.04,
+      "inter_layer_corr": 0.9856
+    },
+    "5_13": {
+      "position_bias": {
+        "early_third": 0.7083,
+        "middle_third": 0.163,
+        "late_third": 0.1287
+      },
+      "activation_sparsity": 0.0548,
+      "inter_layer_corr": 0.9734
+    },
+    "5_14": {
+      "position_bias": {
+        "early_third": 0.7524,
+        "middle_third": 0.1324,
+        "late_third": 0.1152
+      },
+      "activation_sparsity": 0.0302,
+      "inter_layer_corr": 0.9614
+    },
+    "5_15": {
+      "position_bias": {
+        "early_third": 0.7734,
+        "middle_third": 0.1375,
+        "late_third": 0.0891
+      },
+      "activation_sparsity": 0.0414,
+      "inter_layer_corr": 0.8479
+    },
+    "5_16": {
+      "position_bias": {
+        "early_third": 0.6721,
+        "middle_third": 0.1995,
+        "late_third": 0.1284
+      },
+      "activation_sparsity": 0.0662,
+      "inter_layer_corr": 0.9237
+    },
+    "5_17": {
+      "position_bias": {
+        "early_third": 0.6849,
+        "middle_third": 0.2119,
+        "late_third": 0.1032
+      },
+      "activation_sparsity": 0.0959,
+      "inter_layer_corr": 0.822
+    },
+    "5_18": {
+      "position_bias": {
+        "early_third": 0.7827,
+        "middle_third": 0.1406,
+        "late_third": 0.0767
+      },
+      "activation_sparsity": 0.0378,
+      "inter_layer_corr": 0.9363
+    },
+    "5_19": {
+      "position_bias": {
+        "early_third": 0.7717,
+        "middle_third": 0.138,
+        "late_third": 0.0903
+      },
+      "activation_sparsity": 0.0318,
+      "inter_layer_corr": 0.8577
+    },
+    "5_20": {
+      "position_bias": {
+        "early_third": 0.6768,
+        "middle_third": 0.1915,
+        "late_third": 0.1318
+      },
+      "activation_sparsity": 0.0604,
+      "inter_layer_corr": 0.7721
+    },
+    "5_21": {
+      "position_bias": {
+        "early_third": 0.9087,
+        "middle_third": 0.0641,
+        "late_third": 0.0271
+      },
+      "activation_sparsity": 0.0318,
+      "inter_layer_corr": 0.9376
+    },
+    "5_22": {
+      "position_bias": {
+        "early_third": 0.877,
+        "middle_third": 0.0889,
+        "late_third": 0.0341
+      },
+      "activation_sparsity": 0.0342,
+      "inter_layer_corr": 0.7326
+    },
+    "5_23": {
+      "position_bias": {
+        "early_third": 0.8682,
+        "middle_third": 0.0977,
+        "late_third": 0.0341
+      },
+      "activation_sparsity": 0.0299,
+      "inter_layer_corr": 0.8144
+    },
+    "5_24": {
+      "position_bias": {
+        "early_third": 0.7632,
+        "middle_third": 0.1676,
+        "late_third": 0.0692
+      },
+      "activation_sparsity": 0.0523,
+      "inter_layer_corr": 0.7455
+    },
+    "5_25": {
+      "position_bias": {
+        "early_third": 0.6814,
+        "middle_third": 0.1917,
+        "late_third": 0.1269
+      },
+      "activation_sparsity": 0.057,
+      "inter_layer_corr": 0.815
+    },
+    "5_26": {
+      "position_bias": {
+        "early_third": 0.8312,
+        "middle_third": 0.1103,
+        "late_third": 0.0586
+      },
+      "activation_sparsity": 0.0382,
+      "inter_layer_corr": 0.9887
+    },
+    "5_27": {
+      "position_bias": {
+        "early_third": 0.7754,
+        "middle_third": 0.1504,
+        "late_third": 0.0742
+      },
+      "activation_sparsity": 0.0455,
+      "inter_layer_corr": 0.7331
+    },
+    "5_28": {
+      "position_bias": {
+        "early_third": 0.7445,
+        "middle_third": 0.1536,
+        "late_third": 0.102
+      },
+      "activation_sparsity": 0.0344,
+      "inter_layer_corr": 0.9408
+    },
+    "5_29": {
+      "position_bias": {
+        "early_third": 0.7326,
+        "middle_third": 0.1575,
+        "late_third": 0.1099
+      },
+      "activation_sparsity": 0.0616,
+      "inter_layer_corr": 0.9134
+    },
+    "5_30": {
+      "position_bias": {
+        "early_third": 0.7555,
+        "middle_third": 0.1578,
+        "late_third": 0.0867
+      },
+      "activation_sparsity": 0.0566,
+      "inter_layer_corr": 0.9299
+    },
+    "5_31": {
+      "position_bias": {
+        "early_third": 0.7792,
+        "middle_third": 0.1277,
+        "late_third": 0.0931
+      },
+      "activation_sparsity": 0.0385,
+      "inter_layer_corr": 0.8343
+    },
+    "6_0": {
+      "position_bias": {
+        "early_third": 0.6504,
+        "middle_third": 0.1818,
+        "late_third": 0.1678
+      },
+      "activation_sparsity": 0.0531,
+      "inter_layer_corr": 0.9587
+    },
+    "6_1": {
+      "position_bias": {
+        "early_third": 0.731,
+        "middle_third": 0.1688,
+        "late_third": 0.1001
+      },
+      "activation_sparsity": 0.0466,
+      "inter_layer_corr": 0.8407
+    },
+    "6_2": {
+      "position_bias": {
+        "early_third": 0.6378,
+        "middle_third": 0.1876,
+        "late_third": 0.1747
+      },
+      "activation_sparsity": 0.0482,
+      "inter_layer_corr": 0.8485
+    },
+    "6_3": {
+      "position_bias": {
+        "early_third": 0.6633,
+        "middle_third": 0.187,
+        "late_third": 0.1497
+      },
+      "activation_sparsity": 0.0666,
+      "inter_layer_corr": 0.9872
+    },
+    "6_4": {
+      "position_bias": {
+        "early_third": 0.7471,
+        "middle_third": 0.1773,
+        "late_third": 0.0757
+      },
+      "activation_sparsity": 0.0426,
+      "inter_layer_corr": 0.8137
+    },
+    "6_5": {
+      "position_bias": {
+        "early_third": 0.7143,
+        "middle_third": 0.1635,
+        "late_third": 0.1222
+      },
+      "activation_sparsity": 0.0364,
+      "inter_layer_corr": 0.9138
+    },
+    "6_6": {
+      "position_bias": {
+        "early_third": 0.7808,
+        "middle_third": 0.1245,
+        "late_third": 0.0947
+      },
+      "activation_sparsity": 0.0364,
+      "inter_layer_corr": 0.7856
+    },
+    "6_7": {
+      "position_bias": {
+        "early_third": 0.6735,
+        "middle_third": 0.2028,
+        "late_third": 0.1237
+      },
+      "activation_sparsity": 0.0641,
+      "inter_layer_corr": 0.9449
+    },
+    "6_8": {
+      "position_bias": {
+        "early_third": 0.8238,
+        "middle_third": 0.106,
+        "late_third": 0.0702
+      },
+      "activation_sparsity": 0.0308,
+      "inter_layer_corr": 0.7272
+    },
+    "6_9": {
+      "position_bias": {
+        "early_third": 0.8242,
+        "middle_third": 0.0834,
+        "late_third": 0.0924
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9834
+    },
+    "6_10": {
+      "position_bias": {
+        "early_third": 0.9411,
+        "middle_third": 0.0416,
+        "late_third": 0.0173
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9327
+    },
+    "6_11": {
+      "position_bias": {
+        "early_third": 0.9274,
+        "middle_third": 0.0385,
+        "late_third": 0.0341
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.869
+    },
+    "6_12": {
+      "position_bias": {
+        "early_third": 0.7837,
+        "middle_third": 0.1465,
+        "late_third": 0.0698
+      },
+      "activation_sparsity": 0.0418,
+      "inter_layer_corr": 0.9892
+    },
+    "6_13": {
+      "position_bias": {
+        "early_third": 0.7658,
+        "middle_third": 0.1339,
+        "late_third": 0.1003
+      },
+      "activation_sparsity": 0.0297,
+      "inter_layer_corr": 0.9611
+    },
+    "6_14": {
+      "position_bias": {
+        "early_third": 0.8392,
+        "middle_third": 0.1109,
+        "late_third": 0.0499
+      },
+      "activation_sparsity": 0.0338,
+      "inter_layer_corr": 0.8901
+    },
+    "6_15": {
+      "position_bias": {
+        "early_third": 0.7251,
+        "middle_third": 0.1605,
+        "late_third": 0.1143
+      },
+      "activation_sparsity": 0.0444,
+      "inter_layer_corr": 0.908
+    },
+    "6_16": {
+      "position_bias": {
+        "early_third": 0.7477,
+        "middle_third": 0.1557,
+        "late_third": 0.0966
+      },
+      "activation_sparsity": 0.0378,
+      "inter_layer_corr": 0.9341
+    },
+    "6_17": {
+      "position_bias": {
+        "early_third": 0.7612,
+        "middle_third": 0.1425,
+        "late_third": 0.0963
+      },
+      "activation_sparsity": 0.0431,
+      "inter_layer_corr": 0.9287
+    },
+    "6_18": {
+      "position_bias": {
+        "early_third": 0.7743,
+        "middle_third": 0.1488,
+        "late_third": 0.0768
+      },
+      "activation_sparsity": 0.0453,
+      "inter_layer_corr": 0.8878
+    },
+    "6_19": {
+      "position_bias": {
+        "early_third": 0.6807,
+        "middle_third": 0.2016,
+        "late_third": 0.1177
+      },
+      "activation_sparsity": 0.0895,
+      "inter_layer_corr": 0.8219
+    },
+    "6_20": {
+      "position_bias": {
+        "early_third": 0.7845,
+        "middle_third": 0.1505,
+        "late_third": 0.065
+      },
+      "activation_sparsity": 0.0435,
+      "inter_layer_corr": 0.7158
+    },
+    "6_21": {
+      "position_bias": {
+        "early_third": 0.6723,
+        "middle_third": 0.2115,
+        "late_third": 0.1162
+      },
+      "activation_sparsity": 0.0908,
+      "inter_layer_corr": 0.6623
+    },
+    "6_22": {
+      "position_bias": {
+        "early_third": 0.6823,
+        "middle_third": 0.1828,
+        "late_third": 0.1349
+      },
+      "activation_sparsity": 0.0477,
+      "inter_layer_corr": 0.8808
+    },
+    "6_23": {
+      "position_bias": {
+        "early_third": 0.7101,
+        "middle_third": 0.1605,
+        "late_third": 0.1294
+      },
+      "activation_sparsity": 0.0292,
+      "inter_layer_corr": 0.8672
+    },
+    "6_24": {
+      "position_bias": {
+        "early_third": 0.712,
+        "middle_third": 0.1805,
+        "late_third": 0.1075
+      },
+      "activation_sparsity": 0.0504,
+      "inter_layer_corr": 0.9013
+    },
+    "6_25": {
+      "position_bias": {
+        "early_third": 0.7725,
+        "middle_third": 0.1433,
+        "late_third": 0.0842
+      },
+      "activation_sparsity": 0.0446,
+      "inter_layer_corr": 0.901
+    },
+    "6_26": {
+      "position_bias": {
+        "early_third": 0.7895,
+        "middle_third": 0.138,
+        "late_third": 0.0725
+      },
+      "activation_sparsity": 0.0369,
+      "inter_layer_corr": 0.945
+    },
+    "6_27": {
+      "position_bias": {
+        "early_third": 0.8193,
+        "middle_third": 0.119,
+        "late_third": 0.0617
+      },
+      "activation_sparsity": 0.033,
+      "inter_layer_corr": 0.9653
+    },
+    "6_28": {
+      "position_bias": {
+        "early_third": 0.786,
+        "middle_third": 0.1393,
+        "late_third": 0.0746
+      },
+      "activation_sparsity": 0.04,
+      "inter_layer_corr": 0.9832
+    },
+    "6_29": {
+      "position_bias": {
+        "early_third": 0.7177,
+        "middle_third": 0.1839,
+        "late_third": 0.0984
+      },
+      "activation_sparsity": 0.0775,
+      "inter_layer_corr": 0.925
+    },
+    "6_30": {
+      "position_bias": {
+        "early_third": 0.7054,
+        "middle_third": 0.1908,
+        "late_third": 0.1037
+      },
+      "activation_sparsity": 0.0534,
+      "inter_layer_corr": 0.9436
+    },
+    "6_31": {
+      "position_bias": {
+        "early_third": 0.6441,
+        "middle_third": 0.2312,
+        "late_third": 0.1247
+      },
+      "activation_sparsity": 0.0832,
+      "inter_layer_corr": 0.8756
+    },
+    "7_0": {
+      "position_bias": {
+        "early_third": 0.6644,
+        "middle_third": 0.209,
+        "late_third": 0.1265
+      },
+      "activation_sparsity": 0.0615,
+      "inter_layer_corr": 0.941
+    },
+    "7_1": {
+      "position_bias": {
+        "early_third": 0.6746,
+        "middle_third": 0.2099,
+        "late_third": 0.1155
+      },
+      "activation_sparsity": 0.0682,
+      "inter_layer_corr": 0.8786
+    },
+    "7_2": {
+      "position_bias": {
+        "early_third": 0.7802,
+        "middle_third": 0.162,
+        "late_third": 0.0578
+      },
+      "activation_sparsity": 0.0506,
+      "inter_layer_corr": 0.8639
+    },
+    "7_3": {
+      "position_bias": {
+        "early_third": 0.8238,
+        "middle_third": 0.1279,
+        "late_third": 0.0483
+      },
+      "activation_sparsity": 0.0344,
+      "inter_layer_corr": 0.9555
+    },
+    "7_4": {
+      "position_bias": {
+        "early_third": 0.6594,
+        "middle_third": 0.191,
+        "late_third": 0.1496
+      },
+      "activation_sparsity": 0.0652,
+      "inter_layer_corr": 0.8378
+    },
+    "7_5": {
+      "position_bias": {
+        "early_third": 0.9378,
+        "middle_third": 0.0492,
+        "late_third": 0.0129
+      },
+      "activation_sparsity": 0.0329,
+      "inter_layer_corr": 0.9724
+    },
+    "7_6": {
+      "position_bias": {
+        "early_third": 0.8682,
+        "middle_third": 0.0919,
+        "late_third": 0.04
+      },
+      "activation_sparsity": 0.0335,
+      "inter_layer_corr": 0.9865
+    },
+    "7_7": {
+      "position_bias": {
+        "early_third": 0.7285,
+        "middle_third": 0.1533,
+        "late_third": 0.1182
+      },
+      "activation_sparsity": 0.0292,
+      "inter_layer_corr": 0.931
+    },
+    "7_8": {
+      "position_bias": {
+        "early_third": 0.7911,
+        "middle_third": 0.131,
+        "late_third": 0.0779
+      },
+      "activation_sparsity": 0.0321,
+      "inter_layer_corr": 0.8454
+    },
+    "7_9": {
+      "position_bias": {
+        "early_third": 0.9587,
+        "middle_third": 0.029,
+        "late_third": 0.0123
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.8688
+    },
+    "7_10": {
+      "position_bias": {
+        "early_third": 0.7923,
+        "middle_third": 0.1533,
+        "late_third": 0.0544
+      },
+      "activation_sparsity": 0.0493,
+      "inter_layer_corr": 0.9418
+    },
+    "7_11": {
+      "position_bias": {
+        "early_third": 0.7421,
+        "middle_third": 0.1785,
+        "late_third": 0.0794
+      },
+      "activation_sparsity": 0.0506,
+      "inter_layer_corr": 0.8768
+    },
+    "7_12": {
+      "position_bias": {
+        "early_third": 0.9265,
+        "middle_third": 0.0513,
+        "late_third": 0.0221
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.8962
+    },
+    "7_13": {
+      "position_bias": {
+        "early_third": 0.7452,
+        "middle_third": 0.1832,
+        "late_third": 0.0716
+      },
+      "activation_sparsity": 0.0566,
+      "inter_layer_corr": 0.7134
+    },
+    "7_14": {
+      "position_bias": {
+        "early_third": 0.6932,
+        "middle_third": 0.2108,
+        "late_third": 0.096
+      },
+      "activation_sparsity": 0.0805,
+      "inter_layer_corr": 0.8787
+    },
+    "7_15": {
+      "position_bias": {
+        "early_third": 0.6927,
+        "middle_third": 0.2098,
+        "late_third": 0.0975
+      },
+      "activation_sparsity": 0.0624,
+      "inter_layer_corr": 0.9494
+    },
+    "7_16": {
+      "position_bias": {
+        "early_third": 0.6297,
+        "middle_third": 0.211,
+        "late_third": 0.1593
+      },
+      "activation_sparsity": 0.0717,
+      "inter_layer_corr": 0.9291
+    },
+    "7_17": {
+      "position_bias": {
+        "early_third": 0.6247,
+        "middle_third": 0.2312,
+        "late_third": 0.1441
+      },
+      "activation_sparsity": 0.09,
+      "inter_layer_corr": 0.9392
+    },
+    "7_18": {
+      "position_bias": {
+        "early_third": 0.8174,
+        "middle_third": 0.1349,
+        "late_third": 0.0478
+      },
+      "activation_sparsity": 0.0431,
+      "inter_layer_corr": 0.9741
+    },
+    "7_19": {
+      "position_bias": {
+        "early_third": 0.7453,
+        "middle_third": 0.1648,
+        "late_third": 0.0899
+      },
+      "activation_sparsity": 0.0343,
+      "inter_layer_corr": 0.9238
+    },
+    "7_20": {
+      "position_bias": {
+        "early_third": 0.8348,
+        "middle_third": 0.1086,
+        "late_third": 0.0567
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9852
+    },
+    "7_21": {
+      "position_bias": {
+        "early_third": 0.7693,
+        "middle_third": 0.1469,
+        "late_third": 0.0838
+      },
+      "activation_sparsity": 0.0441,
+      "inter_layer_corr": 0.6735
+    },
+    "7_22": {
+      "position_bias": {
+        "early_third": 0.8396,
+        "middle_third": 0.1086,
+        "late_third": 0.0518
+      },
+      "activation_sparsity": 0.0292,
+      "inter_layer_corr": 0.8791
+    },
+    "7_23": {
+      "position_bias": {
+        "early_third": 0.7681,
+        "middle_third": 0.1648,
+        "late_third": 0.0672
+      },
+      "activation_sparsity": 0.0449,
+      "inter_layer_corr": 0.8247
+    },
+    "7_24": {
+      "position_bias": {
+        "early_third": 0.759,
+        "middle_third": 0.1698,
+        "late_third": 0.0712
+      },
+      "activation_sparsity": 0.0438,
+      "inter_layer_corr": 0.978
+    },
+    "7_25": {
+      "position_bias": {
+        "early_third": 0.727,
+        "middle_third": 0.1804,
+        "late_third": 0.0926
+      },
+      "activation_sparsity": 0.0614,
+      "inter_layer_corr": 0.9345
+    },
+    "7_26": {
+      "position_bias": {
+        "early_third": 0.7289,
+        "middle_third": 0.1905,
+        "late_third": 0.0806
+      },
+      "activation_sparsity": 0.0553,
+      "inter_layer_corr": 0.8357
+    },
+    "7_27": {
+      "position_bias": {
+        "early_third": 0.7726,
+        "middle_third": 0.1585,
+        "late_third": 0.0689
+      },
+      "activation_sparsity": 0.0514,
+      "inter_layer_corr": 0.9584
+    },
+    "7_28": {
+      "position_bias": {
+        "early_third": 0.935,
+        "middle_third": 0.0496,
+        "late_third": 0.0154
+      },
+      "activation_sparsity": 0.0313,
+      "inter_layer_corr": 0.9665
+    },
+    "7_29": {
+      "position_bias": {
+        "early_third": 0.9213,
+        "middle_third": 0.0577,
+        "late_third": 0.021
+      },
+      "activation_sparsity": 0.0292,
+      "inter_layer_corr": 0.66
+    },
+    "7_30": {
+      "position_bias": {
+        "early_third": 0.9049,
+        "middle_third": 0.0705,
+        "late_third": 0.0245
+      },
+      "activation_sparsity": 0.0301,
+      "inter_layer_corr": 0.9937
+    },
+    "7_31": {
+      "position_bias": {
+        "early_third": 0.6603,
+        "middle_third": 0.1942,
+        "late_third": 0.1455
+      },
+      "activation_sparsity": 0.0595,
+      "inter_layer_corr": 0.9629
+    },
+    "8_0": {
+      "position_bias": {
+        "early_third": 0.7562,
+        "middle_third": 0.1613,
+        "late_third": 0.0825
+      },
+      "activation_sparsity": 0.047,
+      "inter_layer_corr": 0.8425
+    },
+    "8_1": {
+      "position_bias": {
+        "early_third": 0.7529,
+        "middle_third": 0.1641,
+        "late_third": 0.083
+      },
+      "activation_sparsity": 0.05,
+      "inter_layer_corr": 0.8146
+    },
+    "8_2": {
+      "position_bias": {
+        "early_third": 0.7184,
+        "middle_third": 0.1898,
+        "late_third": 0.0918
+      },
+      "activation_sparsity": 0.0666,
+      "inter_layer_corr": 0.9023
+    },
+    "8_3": {
+      "position_bias": {
+        "early_third": 0.7826,
+        "middle_third": 0.149,
+        "late_third": 0.0684
+      },
+      "activation_sparsity": 0.0576,
+      "inter_layer_corr": 0.9363
+    },
+    "8_4": {
+      "position_bias": {
+        "early_third": 0.7807,
+        "middle_third": 0.1557,
+        "late_third": 0.0636
+      },
+      "activation_sparsity": 0.0402,
+      "inter_layer_corr": 0.8052
+    },
+    "8_5": {
+      "position_bias": {
+        "early_third": 0.7241,
+        "middle_third": 0.1798,
+        "late_third": 0.0961
+      },
+      "activation_sparsity": 0.048,
+      "inter_layer_corr": 0.9501
+    },
+    "8_6": {
+      "position_bias": {
+        "early_third": 0.7375,
+        "middle_third": 0.1719,
+        "late_third": 0.0907
+      },
+      "activation_sparsity": 0.0534,
+      "inter_layer_corr": 0.6768
+    },
+    "8_7": {
+      "position_bias": {
+        "early_third": 0.7294,
+        "middle_third": 0.1758,
+        "late_third": 0.0948
+      },
+      "activation_sparsity": 0.0571,
+      "inter_layer_corr": 0.9453
+    },
+    "8_8": {
+      "position_bias": {
+        "early_third": 0.7488,
+        "middle_third": 0.1334,
+        "late_third": 0.1179
+      },
+      "activation_sparsity": 0.036,
+      "inter_layer_corr": 0.9078
+    },
+    "8_9": {
+      "position_bias": {
+        "early_third": 0.6461,
+        "middle_third": 0.1991,
+        "late_third": 0.1548
+      },
+      "activation_sparsity": 0.0462,
+      "inter_layer_corr": 0.8804
+    },
+    "8_10": {
+      "position_bias": {
+        "early_third": 0.7012,
+        "middle_third": 0.2067,
+        "late_third": 0.0921
+      },
+      "activation_sparsity": 0.0948,
+      "inter_layer_corr": 0.9075
+    },
+    "8_11": {
+      "position_bias": {
+        "early_third": 0.6041,
+        "middle_third": 0.2247,
+        "late_third": 0.1713
+      },
+      "activation_sparsity": 0.0793,
+      "inter_layer_corr": 0.9952
+    },
+    "8_12": {
+      "position_bias": {
+        "early_third": 0.6653,
+        "middle_third": 0.2176,
+        "late_third": 0.117
+      },
+      "activation_sparsity": 0.0562,
+      "inter_layer_corr": 0.5221
+    },
+    "8_13": {
+      "position_bias": {
+        "early_third": 0.6541,
+        "middle_third": 0.2245,
+        "late_third": 0.1214
+      },
+      "activation_sparsity": 0.0864,
+      "inter_layer_corr": 0.6379
+    },
+    "8_14": {
+      "position_bias": {
+        "early_third": 0.6704,
+        "middle_third": 0.2008,
+        "late_third": 0.1288
+      },
+      "activation_sparsity": 0.0425,
+      "inter_layer_corr": 0.6073
+    },
+    "8_15": {
+      "position_bias": {
+        "early_third": 0.7084,
+        "middle_third": 0.2002,
+        "late_third": 0.0914
+      },
+      "activation_sparsity": 0.0748,
+      "inter_layer_corr": 0.6694
+    },
+    "8_16": {
+      "position_bias": {
+        "early_third": 0.7393,
+        "middle_third": 0.1304,
+        "late_third": 0.1303
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9253
+    },
+    "8_17": {
+      "position_bias": {
+        "early_third": 0.9377,
+        "middle_third": 0.0411,
+        "late_third": 0.0212
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9935
+    },
+    "8_18": {
+      "position_bias": {
+        "early_third": 0.9551,
+        "middle_third": 0.0322,
+        "late_third": 0.0127
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.8139
+    },
+    "8_19": {
+      "position_bias": {
+        "early_third": 0.9247,
+        "middle_third": 0.0456,
+        "late_third": 0.0298
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9586
+    },
+    "8_20": {
+      "position_bias": {
+        "early_third": 0.8922,
+        "middle_third": 0.0748,
+        "late_third": 0.033
+      },
+      "activation_sparsity": 0.0304,
+      "inter_layer_corr": 0.9623
+    },
+    "8_21": {
+      "position_bias": {
+        "early_third": 0.854,
+        "middle_third": 0.1065,
+        "late_third": 0.0396
+      },
+      "activation_sparsity": 0.0313,
+      "inter_layer_corr": 0.9601
+    },
+    "8_22": {
+      "position_bias": {
+        "early_third": 0.6524,
+        "middle_third": 0.2159,
+        "late_third": 0.1317
+      },
+      "activation_sparsity": 0.0588,
+      "inter_layer_corr": 0.916
+    },
+    "8_23": {
+      "position_bias": {
+        "early_third": 0.7528,
+        "middle_third": 0.1687,
+        "late_third": 0.0785
+      },
+      "activation_sparsity": 0.0385,
+      "inter_layer_corr": 0.8638
+    },
+    "8_24": {
+      "position_bias": {
+        "early_third": 0.7678,
+        "middle_third": 0.1609,
+        "late_third": 0.0714
+      },
+      "activation_sparsity": 0.0542,
+      "inter_layer_corr": 0.9441
+    },
+    "8_25": {
+      "position_bias": {
+        "early_third": 0.7917,
+        "middle_third": 0.1449,
+        "late_third": 0.0634
+      },
+      "activation_sparsity": 0.0523,
+      "inter_layer_corr": 0.957
+    },
+    "8_26": {
+      "position_bias": {
+        "early_third": 0.5765,
+        "middle_third": 0.2175,
+        "late_third": 0.206
+      },
+      "activation_sparsity": 0.0439,
+      "inter_layer_corr": 0.8301
+    },
+    "8_27": {
+      "position_bias": {
+        "early_third": 0.7769,
+        "middle_third": 0.1532,
+        "late_third": 0.0699
+      },
+      "activation_sparsity": 0.0464,
+      "inter_layer_corr": 0.9749
+    },
+    "8_28": {
+      "position_bias": {
+        "early_third": 0.7928,
+        "middle_third": 0.1294,
+        "late_third": 0.0778
+      },
+      "activation_sparsity": 0.0307,
+      "inter_layer_corr": 0.9047
+    },
+    "8_29": {
+      "position_bias": {
+        "early_third": 0.5595,
+        "middle_third": 0.2731,
+        "late_third": 0.1674
+      },
+      "activation_sparsity": 0.0831,
+      "inter_layer_corr": 0.684
+    },
+    "8_30": {
+      "position_bias": {
+        "early_third": 0.8586,
+        "middle_third": 0.101,
+        "late_third": 0.0403
+      },
+      "activation_sparsity": 0.0316,
+      "inter_layer_corr": 0.9952
+    },
+    "8_31": {
+      "position_bias": {
+        "early_third": 0.8261,
+        "middle_third": 0.1195,
+        "late_third": 0.0544
+      },
+      "activation_sparsity": 0.0387,
+      "inter_layer_corr": 0.9722
+    },
+    "9_0": {
+      "position_bias": {
+        "early_third": 0.6821,
+        "middle_third": 0.2175,
+        "late_third": 0.1004
+      },
+      "activation_sparsity": 0.1021,
+      "inter_layer_corr": 0.808
+    },
+    "9_1": {
+      "position_bias": {
+        "early_third": 0.6617,
+        "middle_third": 0.198,
+        "late_third": 0.1403
+      },
+      "activation_sparsity": 0.0331,
+      "inter_layer_corr": 0.7903
+    },
+    "9_2": {
+      "position_bias": {
+        "early_third": 0.7611,
+        "middle_third": 0.1625,
+        "late_third": 0.0763
+      },
+      "activation_sparsity": 0.0451,
+      "inter_layer_corr": 0.9152
+    },
+    "9_3": {
+      "position_bias": {
+        "early_third": 0.6712,
+        "middle_third": 0.2134,
+        "late_third": 0.1154
+      },
+      "activation_sparsity": 0.0727,
+      "inter_layer_corr": 0.9665
+    },
+    "9_4": {
+      "position_bias": {
+        "early_third": 0.5859,
+        "middle_third": 0.2466,
+        "late_third": 0.1675
+      },
+      "activation_sparsity": 0.0825,
+      "inter_layer_corr": 0.8647
+    },
+    "9_5": {
+      "position_bias": {
+        "early_third": 0.6201,
+        "middle_third": 0.2235,
+        "late_third": 0.1565
+      },
+      "activation_sparsity": 0.0776,
+      "inter_layer_corr": 0.925
+    },
+    "9_6": {
+      "position_bias": {
+        "early_third": 0.6397,
+        "middle_third": 0.2097,
+        "late_third": 0.1506
+      },
+      "activation_sparsity": 0.0494,
+      "inter_layer_corr": 0.6627
+    },
+    "9_7": {
+      "position_bias": {
+        "early_third": 0.6692,
+        "middle_third": 0.1981,
+        "late_third": 0.1327
+      },
+      "activation_sparsity": 0.0529,
+      "inter_layer_corr": 0.9738
+    },
+    "9_8": {
+      "position_bias": {
+        "early_third": 0.9609,
+        "middle_third": 0.0308,
+        "late_third": 0.0084
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9697
+    },
+    "9_9": {
+      "position_bias": {
+        "early_third": 0.8562,
+        "middle_third": 0.1026,
+        "late_third": 0.0412
+      },
+      "activation_sparsity": 0.028,
+      "inter_layer_corr": 0.8281
+    },
+    "9_10": {
+      "position_bias": {
+        "early_third": 0.9466,
+        "middle_third": 0.0398,
+        "late_third": 0.0136
+      },
+      "activation_sparsity": 0.0281,
+      "inter_layer_corr": 0.8512
+    },
+    "9_11": {
+      "position_bias": {
+        "early_third": 0.6951,
+        "middle_third": 0.1668,
+        "late_third": 0.1381
+      },
+      "activation_sparsity": 0.0462,
+      "inter_layer_corr": 0.9262
+    },
+    "9_12": {
+      "position_bias": {
+        "early_third": 0.5083,
+        "middle_third": 0.2378,
+        "late_third": 0.2539
+      },
+      "activation_sparsity": 0.0533,
+      "inter_layer_corr": 0.5513
+    },
+    "9_13": {
+      "position_bias": {
+        "early_third": 0.5656,
+        "middle_third": 0.3043,
+        "late_third": 0.1301
+      },
+      "activation_sparsity": 0.1306,
+      "inter_layer_corr": 0.6704
+    },
+    "9_14": {
+      "position_bias": {
+        "early_third": 0.5854,
+        "middle_third": 0.2493,
+        "late_third": 0.1654
+      },
+      "activation_sparsity": 0.0823,
+      "inter_layer_corr": 0.4524
+    },
+    "9_15": {
+      "position_bias": {
+        "early_third": 0.6266,
+        "middle_third": 0.2382,
+        "late_third": 0.1352
+      },
+      "activation_sparsity": 0.0954,
+      "inter_layer_corr": 0.6906
+    },
+    "9_16": {
+      "position_bias": {
+        "early_third": 0.9098,
+        "middle_third": 0.067,
+        "late_third": 0.0231
+      },
+      "activation_sparsity": 0.0297,
+      "inter_layer_corr": 0.9519
+    },
+    "9_17": {
+      "position_bias": {
+        "early_third": 0.9808,
+        "middle_third": 0.0135,
+        "late_third": 0.0057
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.8517
+    },
+    "9_18": {
+      "position_bias": {
+        "early_third": 0.8517,
+        "middle_third": 0.0981,
+        "late_third": 0.0502
+      },
+      "activation_sparsity": 0.0376,
+      "inter_layer_corr": 0.8307
+    },
+    "9_19": {
+      "position_bias": {
+        "early_third": 0.8042,
+        "middle_third": 0.1152,
+        "late_third": 0.0806
+      },
+      "activation_sparsity": 0.0314,
+      "inter_layer_corr": 0.9555
+    },
+    "9_20": {
+      "position_bias": {
+        "early_third": 0.6529,
+        "middle_third": 0.2046,
+        "late_third": 0.1425
+      },
+      "activation_sparsity": 0.0683,
+      "inter_layer_corr": 0.9662
+    },
+    "9_21": {
+      "position_bias": {
+        "early_third": 0.8472,
+        "middle_third": 0.1044,
+        "late_third": 0.0484
+      },
+      "activation_sparsity": 0.0295,
+      "inter_layer_corr": 0.9348
+    },
+    "9_22": {
+      "position_bias": {
+        "early_third": 0.7808,
+        "middle_third": 0.1317,
+        "late_third": 0.0875
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.936
+    },
+    "9_23": {
+      "position_bias": {
+        "early_third": 0.7295,
+        "middle_third": 0.1712,
+        "late_third": 0.0993
+      },
+      "activation_sparsity": 0.0784,
+      "inter_layer_corr": 0.9061
+    },
+    "9_24": {
+      "position_bias": {
+        "early_third": 0.8522,
+        "middle_third": 0.1112,
+        "late_third": 0.0366
+      },
+      "activation_sparsity": 0.0307,
+      "inter_layer_corr": 0.9385
+    },
+    "9_25": {
+      "position_bias": {
+        "early_third": 0.6905,
+        "middle_third": 0.1956,
+        "late_third": 0.1139
+      },
+      "activation_sparsity": 0.0489,
+      "inter_layer_corr": 0.7365
+    },
+    "9_26": {
+      "position_bias": {
+        "early_third": 0.6058,
+        "middle_third": 0.2218,
+        "late_third": 0.1723
+      },
+      "activation_sparsity": 0.0605,
+      "inter_layer_corr": 0.8148
+    },
+    "9_27": {
+      "position_bias": {
+        "early_third": 0.8137,
+        "middle_third": 0.1296,
+        "late_third": 0.0567
+      },
+      "activation_sparsity": 0.0298,
+      "inter_layer_corr": 0.9738
+    },
+    "9_28": {
+      "position_bias": {
+        "early_third": 0.6435,
+        "middle_third": 0.1835,
+        "late_third": 0.173
+      },
+      "activation_sparsity": 0.0304,
+      "inter_layer_corr": 0.9042
+    },
+    "9_29": {
+      "position_bias": {
+        "early_third": 0.7241,
+        "middle_third": 0.1496,
+        "late_third": 0.1263
+      },
+      "activation_sparsity": 0.0555,
+      "inter_layer_corr": 0.9934
+    },
+    "9_30": {
+      "position_bias": {
+        "early_third": 0.7236,
+        "middle_third": 0.1577,
+        "late_third": 0.1187
+      },
+      "activation_sparsity": 0.076,
+      "inter_layer_corr": 0.9214
+    },
+    "9_31": {
+      "position_bias": {
+        "early_third": 0.7879,
+        "middle_third": 0.1288,
+        "late_third": 0.0833
+      },
+      "activation_sparsity": 0.0366,
+      "inter_layer_corr": 0.8066
+    },
+    "10_0": {
+      "position_bias": {
+        "early_third": 0.7963,
+        "middle_third": 0.1116,
+        "late_third": 0.0921
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9913
+    },
+    "10_1": {
+      "position_bias": {
+        "early_third": 0.9616,
+        "middle_third": 0.029,
+        "late_third": 0.0094
+      },
+      "activation_sparsity": 0.0292,
+      "inter_layer_corr": 0.9893
+    },
+    "10_2": {
+      "position_bias": {
+        "early_third": 0.9859,
+        "middle_third": 0.0095,
+        "late_third": 0.0047
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9702
+    },
+    "10_3": {
+      "position_bias": {
+        "early_third": 0.8582,
+        "middle_third": 0.074,
+        "late_third": 0.0677
+      },
+      "activation_sparsity": 0.0314,
+      "inter_layer_corr": 0.925
+    },
+    "10_4": {
+      "position_bias": {
+        "early_third": 0.7143,
+        "middle_third": 0.1569,
+        "late_third": 0.1288
+      },
+      "activation_sparsity": 0.0319,
+      "inter_layer_corr": 0.9481
+    },
+    "10_5": {
+      "position_bias": {
+        "early_third": 0.7935,
+        "middle_third": 0.1081,
+        "late_third": 0.0984
+      },
+      "activation_sparsity": 0.0305,
+      "inter_layer_corr": 0.927
+    },
+    "10_6": {
+      "position_bias": {
+        "early_third": 0.9566,
+        "middle_third": 0.0316,
+        "late_third": 0.0119
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9929
+    },
+    "10_7": {
+      "position_bias": {
+        "early_third": 0.7261,
+        "middle_third": 0.1575,
+        "late_third": 0.1164
+      },
+      "activation_sparsity": 0.0456,
+      "inter_layer_corr": 0.9922
+    },
+    "10_8": {
+      "position_bias": {
+        "early_third": 0.6655,
+        "middle_third": 0.1896,
+        "late_third": 0.1449
+      },
+      "activation_sparsity": 0.0493,
+      "inter_layer_corr": 0.9092
+    },
+    "10_9": {
+      "position_bias": {
+        "early_third": 0.6607,
+        "middle_third": 0.2141,
+        "late_third": 0.1252
+      },
+      "activation_sparsity": 0.0618,
+      "inter_layer_corr": 0.8817
+    },
+    "10_10": {
+      "position_bias": {
+        "early_third": 0.7346,
+        "middle_third": 0.1713,
+        "late_third": 0.094
+      },
+      "activation_sparsity": 0.0632,
+      "inter_layer_corr": 0.6894
+    },
+    "10_11": {
+      "position_bias": {
+        "early_third": 0.6886,
+        "middle_third": 0.1876,
+        "late_third": 0.1238
+      },
+      "activation_sparsity": 0.0471,
+      "inter_layer_corr": 0.8986
+    },
+    "10_12": {
+      "position_bias": {
+        "early_third": 0.7203,
+        "middle_third": 0.1753,
+        "late_third": 0.1043
+      },
+      "activation_sparsity": 0.0459,
+      "inter_layer_corr": 0.8557
+    },
+    "10_13": {
+      "position_bias": {
+        "early_third": 0.853,
+        "middle_third": 0.1049,
+        "late_third": 0.0421
+      },
+      "activation_sparsity": 0.033,
+      "inter_layer_corr": 0.8995
+    },
+    "10_14": {
+      "position_bias": {
+        "early_third": 0.9132,
+        "middle_third": 0.0659,
+        "late_third": 0.0209
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9545
+    },
+    "10_15": {
+      "position_bias": {
+        "early_third": 0.8018,
+        "middle_third": 0.1318,
+        "late_third": 0.0664
+      },
+      "activation_sparsity": 0.039,
+      "inter_layer_corr": 0.937
+    },
+    "10_16": {
+      "position_bias": {
+        "early_third": 0.6374,
+        "middle_third": 0.1936,
+        "late_third": 0.1689
+      },
+      "activation_sparsity": 0.0479,
+      "inter_layer_corr": 0.9605
+    },
+    "10_17": {
+      "position_bias": {
+        "early_third": 0.6774,
+        "middle_third": 0.1643,
+        "late_third": 0.1584
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.8423
+    },
+    "10_18": {
+      "position_bias": {
+        "early_third": 0.8015,
+        "middle_third": 0.1265,
+        "late_third": 0.072
+      },
+      "activation_sparsity": 0.0353,
+      "inter_layer_corr": 0.9071
+    },
+    "10_19": {
+      "position_bias": {
+        "early_third": 0.7497,
+        "middle_third": 0.1422,
+        "late_third": 0.1081
+      },
+      "activation_sparsity": 0.0336,
+      "inter_layer_corr": 0.9031
+    },
+    "10_20": {
+      "position_bias": {
+        "early_third": 0.9652,
+        "middle_third": 0.0267,
+        "late_third": 0.008
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.983
+    },
+    "10_21": {
+      "position_bias": {
+        "early_third": 0.8761,
+        "middle_third": 0.0919,
+        "late_third": 0.032
+      },
+      "activation_sparsity": 0.034,
+      "inter_layer_corr": 0.9658
+    },
+    "10_22": {
+      "position_bias": {
+        "early_third": 0.9017,
+        "middle_third": 0.0684,
+        "late_third": 0.0299
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.99
+    },
+    "10_23": {
+      "position_bias": {
+        "early_third": 0.969,
+        "middle_third": 0.0252,
+        "late_third": 0.0058
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9694
+    },
+    "10_24": {
+      "position_bias": {
+        "early_third": 0.8872,
+        "middle_third": 0.0834,
+        "late_third": 0.0295
+      },
+      "activation_sparsity": 0.0307,
+      "inter_layer_corr": 0.9819
+    },
+    "10_25": {
+      "position_bias": {
+        "early_third": 0.8714,
+        "middle_third": 0.0942,
+        "late_third": 0.0344
+      },
+      "activation_sparsity": 0.0324,
+      "inter_layer_corr": 0.7581
+    },
+    "10_26": {
+      "position_bias": {
+        "early_third": 0.9302,
+        "middle_third": 0.0497,
+        "late_third": 0.0201
+      },
+      "activation_sparsity": 0.0286,
+      "inter_layer_corr": 0.9478
+    },
+    "10_27": {
+      "position_bias": {
+        "early_third": 0.7965,
+        "middle_third": 0.1313,
+        "late_third": 0.0722
+      },
+      "activation_sparsity": 0.0331,
+      "inter_layer_corr": 0.9701
+    },
+    "10_28": {
+      "position_bias": {
+        "early_third": 0.7312,
+        "middle_third": 0.1531,
+        "late_third": 0.1157
+      },
+      "activation_sparsity": 0.0592,
+      "inter_layer_corr": 0.9206
+    },
+    "10_29": {
+      "position_bias": {
+        "early_third": 0.7801,
+        "middle_third": 0.1207,
+        "late_third": 0.0992
+      },
+      "activation_sparsity": 0.0347,
+      "inter_layer_corr": 0.9909
+    },
+    "10_30": {
+      "position_bias": {
+        "early_third": 0.908,
+        "middle_third": 0.0637,
+        "late_third": 0.0283
+      },
+      "activation_sparsity": 0.0303,
+      "inter_layer_corr": 0.9386
+    },
+    "10_31": {
+      "position_bias": {
+        "early_third": 0.8437,
+        "middle_third": 0.102,
+        "late_third": 0.0543
+      },
+      "activation_sparsity": 0.0348,
+      "inter_layer_corr": 0.8024
+    },
+    "11_0": {
+      "position_bias": {
+        "early_third": 0.8773,
+        "middle_third": 0.0886,
+        "late_third": 0.0341
+      },
+      "activation_sparsity": 0.0391,
+      "inter_layer_corr": 0.7016
+    },
+    "11_1": {
+      "position_bias": {
+        "early_third": 0.8736,
+        "middle_third": 0.0851,
+        "late_third": 0.0413
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.8725
+    },
+    "11_2": {
+      "position_bias": {
+        "early_third": 0.8802,
+        "middle_third": 0.083,
+        "late_third": 0.0368
+      },
+      "activation_sparsity": 0.0349,
+      "inter_layer_corr": 0.8492
+    },
+    "11_3": {
+      "position_bias": {
+        "early_third": 0.7891,
+        "middle_third": 0.142,
+        "late_third": 0.0688
+      },
+      "activation_sparsity": 0.0447,
+      "inter_layer_corr": 0.9271
+    },
+    "11_4": {
+      "position_bias": {
+        "early_third": 0.8609,
+        "middle_third": 0.0983,
+        "late_third": 0.0409
+      },
+      "activation_sparsity": 0.0321,
+      "inter_layer_corr": 0.9686
+    },
+    "11_5": {
+      "position_bias": {
+        "early_third": 0.8897,
+        "middle_third": 0.0783,
+        "late_third": 0.0321
+      },
+      "activation_sparsity": 0.0298,
+      "inter_layer_corr": 0.5538
+    },
+    "11_6": {
+      "position_bias": {
+        "early_third": 0.9445,
+        "middle_third": 0.0385,
+        "late_third": 0.017
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.8391
+    },
+    "11_7": {
+      "position_bias": {
+        "early_third": 0.9345,
+        "middle_third": 0.0442,
+        "late_third": 0.0213
+      },
+      "activation_sparsity": 0.0286,
+      "inter_layer_corr": 0.9805
+    },
+    "11_8": {
+      "position_bias": {
+        "early_third": 0.6621,
+        "middle_third": 0.1834,
+        "late_third": 0.1544
+      },
+      "activation_sparsity": 0.0422,
+      "inter_layer_corr": 0.8418
+    },
+    "11_9": {
+      "position_bias": {
+        "early_third": 0.6761,
+        "middle_third": 0.1702,
+        "late_third": 0.1536
+      },
+      "activation_sparsity": 0.0487,
+      "inter_layer_corr": 0.9063
+    },
+    "11_10": {
+      "position_bias": {
+        "early_third": 0.6683,
+        "middle_third": 0.1698,
+        "late_third": 0.1618
+      },
+      "activation_sparsity": 0.0307,
+      "inter_layer_corr": 0.7661
+    },
+    "11_11": {
+      "position_bias": {
+        "early_third": 0.7568,
+        "middle_third": 0.1248,
+        "late_third": 0.1183
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9432
+    },
+    "11_12": {
+      "position_bias": {
+        "early_third": 0.9652,
+        "middle_third": 0.0242,
+        "late_third": 0.0106
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9777
+    },
+    "11_13": {
+      "position_bias": {
+        "early_third": 0.9568,
+        "middle_third": 0.0312,
+        "late_third": 0.012
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9385
+    },
+    "11_14": {
+      "position_bias": {
+        "early_third": 0.9292,
+        "middle_third": 0.0497,
+        "late_third": 0.0211
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9428
+    },
+    "11_15": {
+      "position_bias": {
+        "early_third": 0.9294,
+        "middle_third": 0.0421,
+        "late_third": 0.0285
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9602
+    },
+    "11_16": {
+      "position_bias": {
+        "early_third": 0.8002,
+        "middle_third": 0.1141,
+        "late_third": 0.0857
+      },
+      "activation_sparsity": 0.0435,
+      "inter_layer_corr": 0.9725
+    },
+    "11_17": {
+      "position_bias": {
+        "early_third": 0.7741,
+        "middle_third": 0.1336,
+        "late_third": 0.0923
+      },
+      "activation_sparsity": 0.0446,
+      "inter_layer_corr": 0.8744
+    },
+    "11_18": {
+      "position_bias": {
+        "early_third": 0.9374,
+        "middle_third": 0.0431,
+        "late_third": 0.0196
+      },
+      "activation_sparsity": 0.0311,
+      "inter_layer_corr": 0.9406
+    },
+    "11_19": {
+      "position_bias": {
+        "early_third": 0.8015,
+        "middle_third": 0.1225,
+        "late_third": 0.076
+      },
+      "activation_sparsity": 0.0442,
+      "inter_layer_corr": 0.8814
+    },
+    "11_20": {
+      "position_bias": {
+        "early_third": 0.9005,
+        "middle_third": 0.0636,
+        "late_third": 0.0359
+      },
+      "activation_sparsity": 0.0285,
+      "inter_layer_corr": 0.9327
+    },
+    "11_21": {
+      "position_bias": {
+        "early_third": 0.8269,
+        "middle_third": 0.1106,
+        "late_third": 0.0625
+      },
+      "activation_sparsity": 0.0309,
+      "inter_layer_corr": 0.7731
+    },
+    "11_22": {
+      "position_bias": {
+        "early_third": 0.8398,
+        "middle_third": 0.1063,
+        "late_third": 0.0539
+      },
+      "activation_sparsity": 0.0384,
+      "inter_layer_corr": 0.6217
+    },
+    "11_23": {
+      "position_bias": {
+        "early_third": 0.8581,
+        "middle_third": 0.0953,
+        "late_third": 0.0465
+      },
+      "activation_sparsity": 0.0328,
+      "inter_layer_corr": 0.8792
+    },
+    "11_24": {
+      "position_bias": {
+        "early_third": 0.8606,
+        "middle_third": 0.0927,
+        "late_third": 0.0467
+      },
+      "activation_sparsity": 0.0325,
+      "inter_layer_corr": 0.9644
+    },
+    "11_25": {
+      "position_bias": {
+        "early_third": 0.8115,
+        "middle_third": 0.1299,
+        "late_third": 0.0586
+      },
+      "activation_sparsity": 0.0535,
+      "inter_layer_corr": 0.9117
+    },
+    "11_26": {
+      "position_bias": {
+        "early_third": 0.9449,
+        "middle_third": 0.0401,
+        "late_third": 0.0151
+      },
+      "activation_sparsity": 0.0347,
+      "inter_layer_corr": 0.9703
+    },
+    "11_27": {
+      "position_bias": {
+        "early_third": 0.8362,
+        "middle_third": 0.1069,
+        "late_third": 0.0569
+      },
+      "activation_sparsity": 0.0439,
+      "inter_layer_corr": 0.9436
+    },
+    "11_28": {
+      "position_bias": {
+        "early_third": 0.8082,
+        "middle_third": 0.1042,
+        "late_third": 0.0876
+      },
+      "activation_sparsity": 0.0344,
+      "inter_layer_corr": 0.9098
+    },
+    "11_29": {
+      "position_bias": {
+        "early_third": 0.8195,
+        "middle_third": 0.0935,
+        "late_third": 0.087
+      },
+      "activation_sparsity": 0.0302,
+      "inter_layer_corr": 0.9686
+    },
+    "11_30": {
+      "position_bias": {
+        "early_third": 0.7547,
+        "middle_third": 0.1318,
+        "late_third": 0.1135
+      },
+      "activation_sparsity": 0.0359,
+      "inter_layer_corr": 0.981
+    },
+    "11_31": {
+      "position_bias": {
+        "early_third": 0.8009,
+        "middle_third": 0.1031,
+        "late_third": 0.096
+      },
+      "activation_sparsity": 0.0355,
+      "inter_layer_corr": 0.9913
+    },
+    "12_0": {
+      "position_bias": {
+        "early_third": 0.7898,
+        "middle_third": 0.1232,
+        "late_third": 0.087
+      },
+      "activation_sparsity": 0.0342,
+      "inter_layer_corr": 0.6319
+    },
+    "12_1": {
+      "position_bias": {
+        "early_third": 0.7351,
+        "middle_third": 0.1258,
+        "late_third": 0.1391
+      },
+      "activation_sparsity": 0.0308,
+      "inter_layer_corr": 0.8182
+    },
+    "12_2": {
+      "position_bias": {
+        "early_third": 0.8471,
+        "middle_third": 0.1074,
+        "late_third": 0.0455
+      },
+      "activation_sparsity": 0.0351,
+      "inter_layer_corr": 0.8682
+    },
+    "12_3": {
+      "position_bias": {
+        "early_third": 0.6689,
+        "middle_third": 0.168,
+        "late_third": 0.1631
+      },
+      "activation_sparsity": 0.0406,
+      "inter_layer_corr": 0.9522
+    },
+    "12_4": {
+      "position_bias": {
+        "early_third": 0.8994,
+        "middle_third": 0.0741,
+        "late_third": 0.0265
+      },
+      "activation_sparsity": 0.0381,
+      "inter_layer_corr": 0.9804
+    },
+    "12_5": {
+      "position_bias": {
+        "early_third": 0.9075,
+        "middle_third": 0.0547,
+        "late_third": 0.0379
+      },
+      "activation_sparsity": 0.029,
+      "inter_layer_corr": 0.5677
+    },
+    "12_6": {
+      "position_bias": {
+        "early_third": 0.861,
+        "middle_third": 0.1024,
+        "late_third": 0.0367
+      },
+      "activation_sparsity": 0.06,
+      "inter_layer_corr": 0.8419
+    },
+    "12_7": {
+      "position_bias": {
+        "early_third": 0.9421,
+        "middle_third": 0.0401,
+        "late_third": 0.0178
+      },
+      "activation_sparsity": 0.0293,
+      "inter_layer_corr": 0.9838
+    },
+    "12_8": {
+      "position_bias": {
+        "early_third": 0.8369,
+        "middle_third": 0.0871,
+        "late_third": 0.076
+      },
+      "activation_sparsity": 0.029,
+      "inter_layer_corr": 0.8123
+    },
+    "12_9": {
+      "position_bias": {
+        "early_third": 0.674,
+        "middle_third": 0.1911,
+        "late_third": 0.1348
+      },
+      "activation_sparsity": 0.0591,
+      "inter_layer_corr": 0.906
+    },
+    "12_10": {
+      "position_bias": {
+        "early_third": 0.8301,
+        "middle_third": 0.1219,
+        "late_third": 0.0481
+      },
+      "activation_sparsity": 0.0367,
+      "inter_layer_corr": 0.7627
+    },
+    "12_11": {
+      "position_bias": {
+        "early_third": 0.8693,
+        "middle_third": 0.0842,
+        "late_third": 0.0466
+      },
+      "activation_sparsity": 0.0337,
+      "inter_layer_corr": 0.5017
+    },
+    "12_12": {
+      "position_bias": {
+        "early_third": 0.9647,
+        "middle_third": 0.0257,
+        "late_third": 0.0096
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9892
+    },
+    "12_13": {
+      "position_bias": {
+        "early_third": 0.9279,
+        "middle_third": 0.0534,
+        "late_third": 0.0186
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.8795
+    },
+    "12_14": {
+      "position_bias": {
+        "early_third": 0.9706,
+        "middle_third": 0.0219,
+        "late_third": 0.0075
+      },
+      "activation_sparsity": 0.0284,
+      "inter_layer_corr": 0.9
+    },
+    "12_15": {
+      "position_bias": {
+        "early_third": 0.9282,
+        "middle_third": 0.0558,
+        "late_third": 0.0159
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.7936
+    },
+    "12_16": {
+      "position_bias": {
+        "early_third": 0.8967,
+        "middle_third": 0.0569,
+        "late_third": 0.0464
+      },
+      "activation_sparsity": 0.0296,
+      "inter_layer_corr": 0.9755
+    },
+    "12_17": {
+      "position_bias": {
+        "early_third": 0.8527,
+        "middle_third": 0.08,
+        "late_third": 0.0673
+      },
+      "activation_sparsity": 0.0318,
+      "inter_layer_corr": 0.9803
+    },
+    "12_18": {
+      "position_bias": {
+        "early_third": 0.9485,
+        "middle_third": 0.0379,
+        "late_third": 0.0137
+      },
+      "activation_sparsity": 0.028,
+      "inter_layer_corr": 0.9966
+    },
+    "12_19": {
+      "position_bias": {
+        "early_third": 0.714,
+        "middle_third": 0.1588,
+        "late_third": 0.1272
+      },
+      "activation_sparsity": 0.044,
+      "inter_layer_corr": 0.9332
+    },
+    "12_20": {
+      "position_bias": {
+        "early_third": 0.8061,
+        "middle_third": 0.1032,
+        "late_third": 0.0907
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9312
+    },
+    "12_21": {
+      "position_bias": {
+        "early_third": 0.74,
+        "middle_third": 0.1366,
+        "late_third": 0.1233
+      },
+      "activation_sparsity": 0.039,
+      "inter_layer_corr": 0.7447
+    },
+    "12_22": {
+      "position_bias": {
+        "early_third": 0.6547,
+        "middle_third": 0.1732,
+        "late_third": 0.1721
+      },
+      "activation_sparsity": 0.0376,
+      "inter_layer_corr": 0.6161
+    },
+    "12_23": {
+      "position_bias": {
+        "early_third": 0.7686,
+        "middle_third": 0.1258,
+        "late_third": 0.1056
+      },
+      "activation_sparsity": 0.0352,
+      "inter_layer_corr": 0.9256
+    },
+    "12_24": {
+      "position_bias": {
+        "early_third": 0.852,
+        "middle_third": 0.098,
+        "late_third": 0.05
+      },
+      "activation_sparsity": 0.0419,
+      "inter_layer_corr": 0.9565
+    },
+    "12_25": {
+      "position_bias": {
+        "early_third": 0.8053,
+        "middle_third": 0.1154,
+        "late_third": 0.0793
+      },
+      "activation_sparsity": 0.0339,
+      "inter_layer_corr": 0.9846
+    },
+    "12_26": {
+      "position_bias": {
+        "early_third": 0.7772,
+        "middle_third": 0.1313,
+        "late_third": 0.0914
+      },
+      "activation_sparsity": 0.0454,
+      "inter_layer_corr": 0.9675
+    },
+    "12_27": {
+      "position_bias": {
+        "early_third": 0.7731,
+        "middle_third": 0.1387,
+        "late_third": 0.0882
+      },
+      "activation_sparsity": 0.0428,
+      "inter_layer_corr": 0.9284
+    },
+    "12_28": {
+      "position_bias": {
+        "early_third": 0.9496,
+        "middle_third": 0.0338,
+        "late_third": 0.0166
+      },
+      "activation_sparsity": 0.0292,
+      "inter_layer_corr": 0.6828
+    },
+    "12_29": {
+      "position_bias": {
+        "early_third": 0.9578,
+        "middle_third": 0.0306,
+        "late_third": 0.0115
+      },
+      "activation_sparsity": 0.0286,
+      "inter_layer_corr": 0.833
+    },
+    "12_30": {
+      "position_bias": {
+        "early_third": 0.935,
+        "middle_third": 0.0411,
+        "late_third": 0.0238
+      },
+      "activation_sparsity": 0.0297,
+      "inter_layer_corr": 0.5659
+    },
+    "12_31": {
+      "position_bias": {
+        "early_third": 0.9669,
+        "middle_third": 0.0249,
+        "late_third": 0.0082
+      },
+      "activation_sparsity": 0.0294,
+      "inter_layer_corr": 0.8338
+    },
+    "13_0": {
+      "position_bias": {
+        "early_third": 0.9724,
+        "middle_third": 0.0204,
+        "late_third": 0.0072
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.998
+    },
+    "13_1": {
+      "position_bias": {
+        "early_third": 0.9662,
+        "middle_third": 0.0239,
+        "late_third": 0.01
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.8033
+    },
+    "13_2": {
+      "position_bias": {
+        "early_third": 0.9715,
+        "middle_third": 0.0212,
+        "late_third": 0.0073
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9917
+    },
+    "13_3": {
+      "position_bias": {
+        "early_third": 0.9147,
+        "middle_third": 0.0525,
+        "late_third": 0.0328
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9915
+    },
+    "13_4": {
+      "position_bias": {
+        "early_third": 0.9452,
+        "middle_third": 0.0375,
+        "late_third": 0.0173
+      },
+      "activation_sparsity": 0.0286,
+      "inter_layer_corr": 0.6897
+    },
+    "13_5": {
+      "position_bias": {
+        "early_third": 0.7856,
+        "middle_third": 0.1364,
+        "late_third": 0.078
+      },
+      "activation_sparsity": 0.0463,
+      "inter_layer_corr": 0.6862
+    },
+    "13_6": {
+      "position_bias": {
+        "early_third": 0.968,
+        "middle_third": 0.0204,
+        "late_third": 0.0116
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.3638
+    },
+    "13_7": {
+      "position_bias": {
+        "early_third": 0.9341,
+        "middle_third": 0.0432,
+        "late_third": 0.0227
+      },
+      "activation_sparsity": 0.0282,
+      "inter_layer_corr": 0.9938
+    },
+    "13_8": {
+      "position_bias": {
+        "early_third": 0.7866,
+        "middle_third": 0.1119,
+        "late_third": 0.1015
+      },
+      "activation_sparsity": 0.0291,
+      "inter_layer_corr": 0.9857
+    },
+    "13_9": {
+      "position_bias": {
+        "early_third": 0.8175,
+        "middle_third": 0.0931,
+        "late_third": 0.0894
+      },
+      "activation_sparsity": 0.0292,
+      "inter_layer_corr": 0.849
+    },
+    "13_10": {
+      "position_bias": {
+        "early_third": 0.7395,
+        "middle_third": 0.14,
+        "late_third": 0.1205
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.8049
+    },
+    "13_11": {
+      "position_bias": {
+        "early_third": 0.6954,
+        "middle_third": 0.1824,
+        "late_third": 0.1221
+      },
+      "activation_sparsity": 0.0393,
+      "inter_layer_corr": 0.326
+    },
+    "13_12": {
+      "position_bias": {
+        "early_third": 0.9757,
+        "middle_third": 0.0151,
+        "late_third": 0.0092
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9877
+    },
+    "13_13": {
+      "position_bias": {
+        "early_third": 0.8709,
+        "middle_third": 0.0831,
+        "late_third": 0.0461
+      },
+      "activation_sparsity": 0.0337,
+      "inter_layer_corr": 0.925
+    },
+    "13_14": {
+      "position_bias": {
+        "early_third": 0.8699,
+        "middle_third": 0.0904,
+        "late_third": 0.0397
+      },
+      "activation_sparsity": 0.0441,
+      "inter_layer_corr": 0.9062
+    },
+    "13_15": {
+      "position_bias": {
+        "early_third": 0.7399,
+        "middle_third": 0.143,
+        "late_third": 0.1171
+      },
+      "activation_sparsity": 0.0406,
+      "inter_layer_corr": 0.7969
+    },
+    "13_16": {
+      "position_bias": {
+        "early_third": 0.899,
+        "middle_third": 0.0749,
+        "late_third": 0.0261
+      },
+      "activation_sparsity": 0.0407,
+      "inter_layer_corr": 0.9724
+    },
+    "13_17": {
+      "position_bias": {
+        "early_third": 0.8631,
+        "middle_third": 0.0831,
+        "late_third": 0.0538
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.961
+    },
+    "13_18": {
+      "position_bias": {
+        "early_third": 0.9462,
+        "middle_third": 0.0336,
+        "late_third": 0.0202
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.5889
+    },
+    "13_19": {
+      "position_bias": {
+        "early_third": 0.9734,
+        "middle_third": 0.0182,
+        "late_third": 0.0084
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.4717
+    },
+    "13_20": {
+      "position_bias": {
+        "early_third": 0.9536,
+        "middle_third": 0.0347,
+        "late_third": 0.0118
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9918
+    },
+    "13_21": {
+      "position_bias": {
+        "early_third": 0.9727,
+        "middle_third": 0.0211,
+        "late_third": 0.0062
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9439
+    },
+    "13_22": {
+      "position_bias": {
+        "early_third": 0.9475,
+        "middle_third": 0.0414,
+        "late_third": 0.011
+      },
+      "activation_sparsity": 0.0288,
+      "inter_layer_corr": 0.983
+    },
+    "13_23": {
+      "position_bias": {
+        "early_third": 0.8979,
+        "middle_third": 0.0651,
+        "late_third": 0.037
+      },
+      "activation_sparsity": 0.0292,
+      "inter_layer_corr": 0.9765
+    },
+    "13_24": {
+      "position_bias": {
+        "early_third": 0.8811,
+        "middle_third": 0.0626,
+        "late_third": 0.0563
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.7251
+    },
+    "13_25": {
+      "position_bias": {
+        "early_third": 0.8428,
+        "middle_third": 0.0751,
+        "late_third": 0.0821
+      },
+      "activation_sparsity": 0.0292,
+      "inter_layer_corr": 0.2146
+    },
+    "13_26": {
+      "position_bias": {
+        "early_third": 0.8702,
+        "middle_third": 0.0688,
+        "late_third": 0.061
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.8855
+    },
+    "13_27": {
+      "position_bias": {
+        "early_third": 0.8416,
+        "middle_third": 0.0808,
+        "late_third": 0.0776
+      },
+      "activation_sparsity": 0.0292,
+      "inter_layer_corr": 0.4187
+    },
+    "13_28": {
+      "position_bias": {
+        "early_third": 0.7307,
+        "middle_third": 0.1596,
+        "late_third": 0.1097
+      },
+      "activation_sparsity": 0.0602,
+      "inter_layer_corr": 0.6739
+    },
+    "13_29": {
+      "position_bias": {
+        "early_third": 0.7677,
+        "middle_third": 0.1148,
+        "late_third": 0.1175
+      },
+      "activation_sparsity": 0.0292,
+      "inter_layer_corr": 0.8312
+    },
+    "13_30": {
+      "position_bias": {
+        "early_third": 0.6633,
+        "middle_third": 0.1904,
+        "late_third": 0.1463
+      },
+      "activation_sparsity": 0.0557,
+      "inter_layer_corr": 0.5633
+    },
+    "13_31": {
+      "position_bias": {
+        "early_third": 0.871,
+        "middle_third": 0.0896,
+        "late_third": 0.0393
+      },
+      "activation_sparsity": 0.0347,
+      "inter_layer_corr": 0.8546
+    },
+    "14_0": {
+      "position_bias": {
+        "early_third": 0.945,
+        "middle_third": 0.0358,
+        "late_third": 0.0193
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.2717
+    },
+    "14_1": {
+      "position_bias": {
+        "early_third": 0.7454,
+        "middle_third": 0.1471,
+        "late_third": 0.1075
+      },
+      "activation_sparsity": 0.0322,
+      "inter_layer_corr": 0.8268
+    },
+    "14_2": {
+      "position_bias": {
+        "early_third": 0.9705,
+        "middle_third": 0.0218,
+        "late_third": 0.0076
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.2644
+    },
+    "14_3": {
+      "position_bias": {
+        "early_third": 0.9678,
+        "middle_third": 0.0254,
+        "late_third": 0.0068
+      },
+      "activation_sparsity": 0.0284,
+      "inter_layer_corr": 0.2332
+    },
+    "14_4": {
+      "position_bias": {
+        "early_third": 0.7809,
+        "middle_third": 0.1214,
+        "late_third": 0.0977
+      },
+      "activation_sparsity": 0.0329,
+      "inter_layer_corr": 0.6322
+    },
+    "14_5": {
+      "position_bias": {
+        "early_third": 0.6977,
+        "middle_third": 0.1611,
+        "late_third": 0.1411
+      },
+      "activation_sparsity": 0.0486,
+      "inter_layer_corr": 0.7944
+    },
+    "14_6": {
+      "position_bias": {
+        "early_third": 0.6487,
+        "middle_third": 0.2011,
+        "late_third": 0.1502
+      },
+      "activation_sparsity": 0.0503,
+      "inter_layer_corr": 0.7839
+    },
+    "14_7": {
+      "position_bias": {
+        "early_third": 0.8488,
+        "middle_third": 0.082,
+        "late_third": 0.0692
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.8685
+    },
+    "14_8": {
+      "position_bias": {
+        "early_third": 0.9258,
+        "middle_third": 0.0472,
+        "late_third": 0.0269
+      },
+      "activation_sparsity": 0.0285,
+      "inter_layer_corr": 0.1969
+    },
+    "14_9": {
+      "position_bias": {
+        "early_third": 0.9642,
+        "middle_third": 0.0261,
+        "late_third": 0.0098
+      },
+      "activation_sparsity": 0.0286,
+      "inter_layer_corr": 0.9868
+    },
+    "14_10": {
+      "position_bias": {
+        "early_third": 0.7504,
+        "middle_third": 0.1444,
+        "late_third": 0.1052
+      },
+      "activation_sparsity": 0.0393,
+      "inter_layer_corr": 0.9063
+    },
+    "14_11": {
+      "position_bias": {
+        "early_third": 0.9619,
+        "middle_third": 0.0285,
+        "late_third": 0.0097
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.3855
+    },
+    "14_12": {
+      "position_bias": {
+        "early_third": 0.9743,
+        "middle_third": 0.0193,
+        "late_third": 0.0064
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.8577
+    },
+    "14_13": {
+      "position_bias": {
+        "early_third": 0.9311,
+        "middle_third": 0.0454,
+        "late_third": 0.0236
+      },
+      "activation_sparsity": 0.0308,
+      "inter_layer_corr": 0.9917
+    },
+    "14_14": {
+      "position_bias": {
+        "early_third": 0.9657,
+        "middle_third": 0.0256,
+        "late_third": 0.0087
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.0016
+    },
+    "14_15": {
+      "position_bias": {
+        "early_third": 0.9609,
+        "middle_third": 0.0294,
+        "late_third": 0.0097
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9768
+    },
+    "14_16": {
+      "position_bias": {
+        "early_third": 0.924,
+        "middle_third": 0.0553,
+        "late_third": 0.0207
+      },
+      "activation_sparsity": 0.0282,
+      "inter_layer_corr": 0.9903
+    },
+    "14_17": {
+      "position_bias": {
+        "early_third": 0.8075,
+        "middle_third": 0.1475,
+        "late_third": 0.0451
+      },
+      "activation_sparsity": 0.0701,
+      "inter_layer_corr": 0.9361
+    },
+    "14_18": {
+      "position_bias": {
+        "early_third": 0.6119,
+        "middle_third": 0.256,
+        "late_third": 0.1321
+      },
+      "activation_sparsity": 0.1054,
+      "inter_layer_corr": 0.5535
+    },
+    "14_19": {
+      "position_bias": {
+        "early_third": 0.6843,
+        "middle_third": 0.1813,
+        "late_third": 0.1343
+      },
+      "activation_sparsity": 0.0406,
+      "inter_layer_corr": 0.5005
+    },
+    "14_20": {
+      "position_bias": {
+        "early_third": 0.9553,
+        "middle_third": 0.0356,
+        "late_third": 0.0092
+      },
+      "activation_sparsity": 0.0284,
+      "inter_layer_corr": 0.9773
+    },
+    "14_21": {
+      "position_bias": {
+        "early_third": 0.9636,
+        "middle_third": 0.028,
+        "late_third": 0.0084
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9539
+    },
+    "14_22": {
+      "position_bias": {
+        "early_third": 0.9517,
+        "middle_third": 0.0352,
+        "late_third": 0.0131
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9872
+    },
+    "14_23": {
+      "position_bias": {
+        "early_third": 0.924,
+        "middle_third": 0.0527,
+        "late_third": 0.0234
+      },
+      "activation_sparsity": 0.0305,
+      "inter_layer_corr": 0.2813
+    },
+    "14_24": {
+      "position_bias": {
+        "early_third": 0.7089,
+        "middle_third": 0.1516,
+        "late_third": 0.1395
+      },
+      "activation_sparsity": 0.0448,
+      "inter_layer_corr": 0.8014
+    },
+    "14_25": {
+      "position_bias": {
+        "early_third": 0.4865,
+        "middle_third": 0.2522,
+        "late_third": 0.2613
+      },
+      "activation_sparsity": 0.0812,
+      "inter_layer_corr": 0.9858
+    },
+    "14_26": {
+      "position_bias": {
+        "early_third": 0.8076,
+        "middle_third": 0.1171,
+        "late_third": 0.0753
+      },
+      "activation_sparsity": 0.0467,
+      "inter_layer_corr": 0.7148
+    },
+    "14_27": {
+      "position_bias": {
+        "early_third": 0.6823,
+        "middle_third": 0.1943,
+        "late_third": 0.1234
+      },
+      "activation_sparsity": 0.0505,
+      "inter_layer_corr": 0.5016
+    },
+    "14_28": {
+      "position_bias": {
+        "early_third": 0.9706,
+        "middle_third": 0.0213,
+        "late_third": 0.0081
+      },
+      "activation_sparsity": 0.0278,
+      "inter_layer_corr": 0.9898
+    },
+    "14_29": {
+      "position_bias": {
+        "early_third": 0.9728,
+        "middle_third": 0.0207,
+        "late_third": 0.0065
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9898
+    },
+    "14_30": {
+      "position_bias": {
+        "early_third": 0.9728,
+        "middle_third": 0.0199,
+        "late_third": 0.0073
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.992
+    },
+    "14_31": {
+      "position_bias": {
+        "early_third": 0.968,
+        "middle_third": 0.0239,
+        "late_third": 0.0081
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": 0.9863
+    },
+    "15_0": {
+      "position_bias": {
+        "early_third": 0.6122,
+        "middle_third": 0.2115,
+        "late_third": 0.1763
+      },
+      "activation_sparsity": 0.0462,
+      "inter_layer_corr": null
+    },
+    "15_1": {
+      "position_bias": {
+        "early_third": 0.704,
+        "middle_third": 0.1606,
+        "late_third": 0.1355
+      },
+      "activation_sparsity": 0.035,
+      "inter_layer_corr": null
+    },
+    "15_2": {
+      "position_bias": {
+        "early_third": 0.6786,
+        "middle_third": 0.1681,
+        "late_third": 0.1533
+      },
+      "activation_sparsity": 0.0319,
+      "inter_layer_corr": null
+    },
+    "15_3": {
+      "position_bias": {
+        "early_third": 0.7362,
+        "middle_third": 0.1471,
+        "late_third": 0.1167
+      },
+      "activation_sparsity": 0.0398,
+      "inter_layer_corr": null
+    },
+    "15_4": {
+      "position_bias": {
+        "early_third": 0.9381,
+        "middle_third": 0.0465,
+        "late_third": 0.0154
+      },
+      "activation_sparsity": 0.0292,
+      "inter_layer_corr": null
+    },
+    "15_5": {
+      "position_bias": {
+        "early_third": 0.8594,
+        "middle_third": 0.0861,
+        "late_third": 0.0545
+      },
+      "activation_sparsity": 0.0302,
+      "inter_layer_corr": null
+    },
+    "15_6": {
+      "position_bias": {
+        "early_third": 0.6584,
+        "middle_third": 0.2032,
+        "late_third": 0.1384
+      },
+      "activation_sparsity": 0.0633,
+      "inter_layer_corr": null
+    },
+    "15_7": {
+      "position_bias": {
+        "early_third": 0.9065,
+        "middle_third": 0.0688,
+        "late_third": 0.0247
+      },
+      "activation_sparsity": 0.0327,
+      "inter_layer_corr": null
+    },
+    "15_8": {
+      "position_bias": {
+        "early_third": 0.6114,
+        "middle_third": 0.2278,
+        "late_third": 0.1607
+      },
+      "activation_sparsity": 0.0704,
+      "inter_layer_corr": null
+    },
+    "15_9": {
+      "position_bias": {
+        "early_third": 0.9094,
+        "middle_third": 0.0496,
+        "late_third": 0.041
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": null
+    },
+    "15_10": {
+      "position_bias": {
+        "early_third": 0.9294,
+        "middle_third": 0.0383,
+        "late_third": 0.0323
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": null
+    },
+    "15_11": {
+      "position_bias": {
+        "early_third": 0.6748,
+        "middle_third": 0.1643,
+        "late_third": 0.1609
+      },
+      "activation_sparsity": 0.035,
+      "inter_layer_corr": null
+    },
+    "15_12": {
+      "position_bias": {
+        "early_third": 0.9002,
+        "middle_third": 0.0728,
+        "late_third": 0.0269
+      },
+      "activation_sparsity": 0.0384,
+      "inter_layer_corr": null
+    },
+    "15_13": {
+      "position_bias": {
+        "early_third": 0.9098,
+        "middle_third": 0.0583,
+        "late_third": 0.0319
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": null
+    },
+    "15_14": {
+      "position_bias": {
+        "early_third": 0.3543,
+        "middle_third": 0.3087,
+        "late_third": 0.3369
+      },
+      "activation_sparsity": 0.1155,
+      "inter_layer_corr": null
+    },
+    "15_15": {
+      "position_bias": {
+        "early_third": 0.8163,
+        "middle_third": 0.1045,
+        "late_third": 0.0792
+      },
+      "activation_sparsity": 0.0315,
+      "inter_layer_corr": null
+    },
+    "15_16": {
+      "position_bias": {
+        "early_third": 0.9651,
+        "middle_third": 0.0268,
+        "late_third": 0.008
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": null
+    },
+    "15_17": {
+      "position_bias": {
+        "early_third": 0.9605,
+        "middle_third": 0.0274,
+        "late_third": 0.0121
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": null
+    },
+    "15_18": {
+      "position_bias": {
+        "early_third": 0.8756,
+        "middle_third": 0.0727,
+        "late_third": 0.0516
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": null
+    },
+    "15_19": {
+      "position_bias": {
+        "early_third": 0.9215,
+        "middle_third": 0.0605,
+        "late_third": 0.018
+      },
+      "activation_sparsity": 0.0354,
+      "inter_layer_corr": null
+    },
+    "15_20": {
+      "position_bias": {
+        "early_third": 0.9668,
+        "middle_third": 0.0258,
+        "late_third": 0.0074
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": null
+    },
+    "15_21": {
+      "position_bias": {
+        "early_third": 0.9709,
+        "middle_third": 0.0208,
+        "late_third": 0.0083
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": null
+    },
+    "15_22": {
+      "position_bias": {
+        "early_third": 0.9491,
+        "middle_third": 0.0352,
+        "late_third": 0.0157
+      },
+      "activation_sparsity": 0.0281,
+      "inter_layer_corr": null
+    },
+    "15_23": {
+      "position_bias": {
+        "early_third": 0.5325,
+        "middle_third": 0.2209,
+        "late_third": 0.2466
+      },
+      "activation_sparsity": 0.0548,
+      "inter_layer_corr": null
+    },
+    "15_24": {
+      "position_bias": {
+        "early_third": 0.5438,
+        "middle_third": 0.2252,
+        "late_third": 0.231
+      },
+      "activation_sparsity": 0.0537,
+      "inter_layer_corr": null
+    },
+    "15_25": {
+      "position_bias": {
+        "early_third": 0.5815,
+        "middle_third": 0.1968,
+        "late_third": 0.2216
+      },
+      "activation_sparsity": 0.0526,
+      "inter_layer_corr": null
+    },
+    "15_26": {
+      "position_bias": {
+        "early_third": 0.6912,
+        "middle_third": 0.1673,
+        "late_third": 0.1415
+      },
+      "activation_sparsity": 0.0382,
+      "inter_layer_corr": null
+    },
+    "15_27": {
+      "position_bias": {
+        "early_third": 0.9014,
+        "middle_third": 0.0595,
+        "late_third": 0.0391
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": null
+    },
+    "15_28": {
+      "position_bias": {
+        "early_third": 0.8983,
+        "middle_third": 0.0623,
+        "late_third": 0.0394
+      },
+      "activation_sparsity": 0.0302,
+      "inter_layer_corr": null
+    },
+    "15_29": {
+      "position_bias": {
+        "early_third": 0.9736,
+        "middle_third": 0.0191,
+        "late_third": 0.0073
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": null
+    },
+    "15_30": {
+      "position_bias": {
+        "early_third": 0.9701,
+        "middle_third": 0.0215,
+        "late_third": 0.0084
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": null
+    },
+    "15_31": {
+      "position_bias": {
+        "early_third": 0.973,
+        "middle_third": 0.0199,
+        "late_third": 0.0071
+      },
+      "activation_sparsity": 0.0277,
+      "inter_layer_corr": null
+    }
+  }
+}

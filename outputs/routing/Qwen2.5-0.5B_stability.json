@@ -1,0 +1,1688 @@
+{
+  "model": "Qwen2.5-0.5B",
+  "stability_threshold": 0.85,
+  "routing_map": {
+    "0_0": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "0_1": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "0_2": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "0_3": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "0_4": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "0_5": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "0_6": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "0_7": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "0_8": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "0_9": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "0_10": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "0_11": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "0_12": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "0_13": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "1_0": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "1_1": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "1_2": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "1_3": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "1_4": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "1_5": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "1_6": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "1_7": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "1_8": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "1_9": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "1_10": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "1_11": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "1_12": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "1_13": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "2_0": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "2_1": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "2_2": {
+      "class": "Retrieval",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "2_3": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "2_4": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "2_5": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "2_6": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "2_7": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "2_8": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "2_9": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "2_10": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "2_11": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "2_12": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "2_13": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "3_0": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "3_1": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "3_2": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "3_3": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "3_4": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "3_5": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "3_6": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "3_7": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "3_8": {
+      "class": "Sink",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "3_9": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "3_10": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "3_11": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "3_12": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "3_13": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "4_0": {
+      "class": "Local",
+      "stability": 0.25,
+      "routing": "FULL_SOFTMAX"
+    },
+    "4_1": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "4_2": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "4_3": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "4_4": {
+      "class": "Sink",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "4_5": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "4_6": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "4_7": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "4_8": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "4_9": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "4_10": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "4_11": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "4_12": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "4_13": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "5_0": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "5_1": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "5_2": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "5_3": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "5_4": {
+      "class": "Sink",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "5_5": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "5_6": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "5_7": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "5_8": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "5_9": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "5_10": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "5_11": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "5_12": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "5_13": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "6_0": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "6_1": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "6_2": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "6_3": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "6_4": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "6_5": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "6_6": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "6_7": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "6_8": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "6_9": {
+      "class": "Sink",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "6_10": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "6_11": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "6_12": {
+      "class": "Local",
+      "stability": 0.25,
+      "routing": "FULL_SOFTMAX"
+    },
+    "6_13": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "7_0": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "7_1": {
+      "class": "Local",
+      "stability": 0.25,
+      "routing": "FULL_SOFTMAX"
+    },
+    "7_2": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "7_3": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "7_4": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "7_5": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "7_6": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "7_7": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "7_8": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "7_9": {
+      "class": "Local",
+      "stability": 0.25,
+      "routing": "FULL_SOFTMAX"
+    },
+    "7_10": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "7_11": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "7_12": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "7_13": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "8_0": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "8_1": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "8_2": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "8_3": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "8_4": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "8_5": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "8_6": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "8_7": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "8_8": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "8_9": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "8_10": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "8_11": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "8_12": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "8_13": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "9_0": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "9_1": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "9_2": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "9_3": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "9_4": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "9_5": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "9_6": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "9_7": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "9_8": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "9_9": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "9_10": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "9_11": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "9_12": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "9_13": {
+      "class": "Local",
+      "stability": 0.25,
+      "routing": "FULL_SOFTMAX"
+    },
+    "10_0": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "10_1": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "10_2": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "10_3": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "10_4": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "10_5": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "10_6": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "10_7": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "10_8": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "10_9": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "10_10": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "10_11": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "10_12": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "10_13": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "11_0": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "11_1": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "11_2": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "11_3": {
+      "class": "Sink",
+      "stability": 0.25,
+      "routing": "FULL_SOFTMAX"
+    },
+    "11_4": {
+      "class": "Sink",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "11_5": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "11_6": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "11_7": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "11_8": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "11_9": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "11_10": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "11_11": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "11_12": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "11_13": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "12_0": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "12_1": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "12_2": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "12_3": {
+      "class": "Local",
+      "stability": 0.25,
+      "routing": "FULL_SOFTMAX"
+    },
+    "12_4": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "12_5": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "12_6": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "12_7": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "12_8": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "12_9": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "12_10": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "12_11": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "12_12": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "12_13": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "13_0": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "13_1": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "13_2": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "13_3": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "13_4": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "13_5": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "13_6": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "13_7": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "13_8": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "13_9": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "13_10": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "13_11": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "13_12": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "13_13": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "14_0": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "14_1": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "14_2": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "14_3": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "14_4": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "14_5": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "14_6": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "14_7": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "14_8": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "14_9": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "14_10": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "14_11": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "14_12": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "14_13": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "15_0": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "15_1": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "15_2": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "15_3": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "15_4": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "15_5": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "15_6": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "15_7": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "15_8": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "15_9": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "15_10": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "15_11": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "15_12": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "15_13": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "16_0": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "16_1": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "16_2": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "16_3": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "16_4": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "16_5": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "16_6": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "16_7": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "16_8": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "16_9": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "16_10": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "16_11": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "16_12": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "16_13": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "17_0": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "17_1": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "17_2": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "17_3": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "17_4": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "17_5": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "17_6": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "17_7": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "17_8": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "17_9": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "17_10": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "17_11": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "17_12": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "17_13": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "18_0": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "18_1": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "18_2": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "18_3": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "18_4": {
+      "class": "Sink",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "18_5": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "18_6": {
+      "class": "Local",
+      "stability": 0.25,
+      "routing": "FULL_SOFTMAX"
+    },
+    "18_7": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "18_8": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "18_9": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "18_10": {
+      "class": "Local",
+      "stability": 0.25,
+      "routing": "FULL_SOFTMAX"
+    },
+    "18_11": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "18_12": {
+      "class": "Local",
+      "stability": 0.25,
+      "routing": "FULL_SOFTMAX"
+    },
+    "18_13": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "19_0": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "19_1": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "19_2": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "19_3": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "19_4": {
+      "class": "Local",
+      "stability": 0.25,
+      "routing": "FULL_SOFTMAX"
+    },
+    "19_5": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "19_6": {
+      "class": "Local",
+      "stability": 0.25,
+      "routing": "FULL_SOFTMAX"
+    },
+    "19_7": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "19_8": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "19_9": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "19_10": {
+      "class": "Induction",
+      "stability": 1.0,
+      "routing": "FULL_SOFTMAX"
+    },
+    "19_11": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "19_12": {
+      "class": "Local",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "19_13": {
+      "class": "Local",
+      "stability": 0.25,
+      "routing": "FULL_SOFTMAX"
+    },
+    "20_0": {
+      "class": "Local",
+      "stability": 0.25,
+      "routing": "FULL_SOFTMAX"
+    },
+    "20_1": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "20_2": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "20_3": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "20_4": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "20_5": {
+      "class": "Local",
+      "stability": 0.25,
+      "routing": "FULL_SOFTMAX"
+    },
+    "20_6": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "20_7": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "20_8": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "20_9": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "20_10": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "20_11": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "20_12": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "20_13": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "21_0": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "21_1": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "21_2": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "21_3": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "21_4": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "21_5": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "21_6": {
+      "class": "Local",
+      "stability": 0.5,
+      "routing": "FULL_SOFTMAX"
+    },
+    "21_7": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "21_8": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "21_9": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "21_10": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "21_11": {
+      "class": "Sink",
+      "stability": 0.75,
+      "routing": "FULL_SOFTMAX"
+    },
+    "21_12": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "21_13": {
+      "class": "Sink",
+      "stability": 1.0,
+      "routing": "BOS_ROUTE"
+    },
+    "22_0": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "22_1": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "22_2": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "22_3": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "22_4": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "22_5": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "22_6": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "22_7": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "22_8": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "22_9": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "22_10": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "22_11": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "22_12": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "22_13": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "23_0": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "23_1": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "23_2": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "23_3": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "23_4": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "23_5": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "23_6": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "23_7": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "23_8": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "23_9": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "23_10": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "23_11": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "23_12": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    },
+    "23_13": {
+      "class": "Local",
+      "stability": 1.0,
+      "routing": "WINDOW_32"
+    }
+  },
+  "n_stable": 219,
+  "n_ambiguous": 117
+}

@@ -1,0 +1,55 @@
+{
+  "baseline": {
+    "ppl": 15.471610290154294,
+    "hellaswag": 0.43,
+    "arc": 0.58
+  },
+  "exp_A": {
+    "ppl": 17.88084392155476,
+    "hellaswag": 0.42,
+    "arc": 0.57,
+    "dppl": 2.4092336314004665,
+    "dhs": -1.0000000000000009,
+    "darc": -1.0000000000000009,
+    "n_window": 130,
+    "n_bos": 0,
+    "n_full": 206,
+    "verdict": "GRAY ZONE: partial generalization, minor degradation"
+  },
+  "exp_B": {
+    "ppl": 18.250682791507312,
+    "hellaswag": 0.38,
+    "arc": 0.57,
+    "dppl": 2.779072501353019,
+    "dhs": -4.999999999999999,
+    "darc": -1.0000000000000009,
+    "n_window": 0,
+    "n_bos": 67,
+    "n_full": 269,
+    "verdict": "FAILURE: domain-specific roles, routing degrades OOD"
+  },
+  "exp_C": {
+    "ppl": 21.84498737688886,
+    "hellaswag": 0.38,
+    "arc": 0.58,
+    "dppl": 6.373377086734566,
+    "dhs": -4.999999999999999,
+    "darc": 0.0,
+    "n_window": 130,
+    "n_bos": 67,
+    "n_full": 139,
+    "verdict": "FAILURE: domain-specific roles, routing degrades OOD"
+  },
+  "exp_D": {
+    "ppl": 21.84498737688886,
+    "hellaswag": 0.38,
+    "arc": 0.58,
+    "dppl": 6.373377086734566,
+    "dhs": -4.999999999999999,
+    "darc": 0.0,
+    "n_window": 130,
+    "n_bos": 67,
+    "n_full": 139,
+    "verdict": "FAILURE: domain-specific roles, routing degrades OOD"
+  }
+}

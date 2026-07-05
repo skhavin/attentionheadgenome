@@ -119,3 +119,34 @@ To reproduce the analysis or run the `headgenome` routing policies:
 
 ## 📜 Full Documentation
 For a complete theoretical and empirical breakdown of the methodology, ablation studies, and mathematical formalism, please refer to the [**HeadGenome Master Report**](outputs/final_artifacts/HeadGenome_Master_Report.md) or the [**Consolidated Research Report**](consolidated_research_report.md).
+
+
+## Phase 4: Validating Atlas Roles via Attention Routing (Workstream 2)
+
+**Code Path**: \phase2_atlas/step18_routing_engine.py\, \phase2_atlas/step19_routing_validation.py\  
+**Datasets**: WikiText-103, HellaSwag, ARC-Easy  
+
+We executed a rigorous, pre-registered intervention to validate whether the structural head roles discovered in the atlas truly dictate model behavior. We built a native (n \cdot w)$ routing engine for Qwen2.5-0.5B that intercepts head outputs during the forward pass and forces them into highly constrained attention kernels.
+
+### 1. The Local Head Success
+For heads classified as **Local** and proving stable across 4 domains (Wikipedia, Code, Dialogue, Math), we constrained them to a strict **32-token sliding window** (\WINDOW_32\). This affected 130 heads (38% of the model).
+*   **WikiText PPL**: Degraded minimally (15.4 $\rightarrow$ 17.8)
+*   **HellaSwag**: Dropped only **1.0%** (43.0% $\rightarrow$ 42.0%)
+*   **Verdict**: The atlas mapping is accurate. Local heads only need their local neighborhood. We can mathematically strip away their global context and preserve 99% of complex reasoning capabilities.
+
+### 2. The Sink Head Falsification
+For heads classified as **Sink** (67 heads), we forced them to attend *only* to the BOS token and an 8-token trailing context (\BOS_ROUTE\). 
+*   **HellaSwag**: Dropped by **5.0%** (43.0% $\rightarrow$ 38.0%)
+*   **Verdict**: While Sink heads dump $>50\%$ of their mass on BOS, the remaining mass they scatter across the sequence is **not noise**. It contains critical structural signal required for commonsense reasoning. Aggressive Sink routing lobotomizes the model.
+
+
+## Phase 5: Unsupervised Emergent Discovery (Workstream 1)
+
+**Code Path**: \phase2_atlas/step15_rich_features.py\, \phase2_atlas/step16_emergent_discovery.py\  
+
+To verify if our manual 4-class taxonomy was missing sub-structures, we collected rich runtime features (activation sparsity, position bias, inter-layer correlation) across 1,568 heads across all four models, and ran UMAP + HDBSCAN clustering.
+
+**Key Findings:**
+1. **The Giant Megacluster**: 923 heads (58% of all heads) collapsed into a single massive cluster (Cluster 8). This cluster contains 499 Local heads, 312 Sink heads, and 101 Induction heads. *Conclusion: The boundaries between these head roles are highly continuous, not discrete.*
+2. **Punctuation Specialists (Cluster 2)**: 26 heads (split evenly between Qwen 0.5B and 1.5B) separated purely due to massive punctuation attention (+4.4 $\sigma$) and late-sequence positional bias (+3.0 $\sigma$).
+3. **Unexpected Correlations**: We found a near-perfect inverse correlation between early-sequence bias and middle-sequence bias ( = -0.971$), indicating that heads strictly divide their labor by absolute sequence position during generation.

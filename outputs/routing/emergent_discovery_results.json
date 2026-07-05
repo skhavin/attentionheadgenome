@@ -1,0 +1,718 @@
+{
+  "n_heads": 1568,
+  "n_features": 18,
+  "pca_variance_explained": [
+    0.46990822962761736,
+    0.13075543776090995,
+    0.08715206459227728,
+    0.0605107812340556,
+    0.05663013965276004,
+    0.04858651825405515,
+    0.038077256225583396,
+    0.030732424371764214,
+    0.03015679036193077,
+    0.016070355155832317
+  ],
+  "n_emergent_clusters": 13,
+  "clusters": {
+    "0": {
+      "n": 31,
+      "label_distribution": {
+        "Local": 4,
+        "Sink": 27
+      },
+      "model_distribution": {
+        "Qwen2.5-0.5B": 3,
+        "Llama-3.2-1B": 28
+      },
+      "feature_centroids": {
+        "entropy_delta": -0.1962,
+        "bos_mass": 0.6675,
+        "local_mass": 0.0148,
+        "long_range_mass": 0.7734,
+        "mean_distance": 103.994,
+        "vq_ratio": 0.8903,
+        "mean_output_norm": 1.3958,
+        "nsubj_mass": 0.1819,
+        "obj_mass": 0.0061,
+        "punct_mass": 0.0735,
+        "mean_max_attn": 0.6709,
+        "mean_entropy": 1.6675,
+        "entropy_no_bos_delta": -0.0572,
+        "pos_bias_early": 0.9261,
+        "pos_bias_middle": 0.0482,
+        "pos_bias_late": 0.0257,
+        "activation_sparsity": 0.0295,
+        "inter_layer_corr": 0.073
+      },
+      "top_distinguishing": [
+        [
+          "inter_layer_corr",
+          -2.123
+        ],
+        [
+          "pos_bias_middle",
+          -1.1604
+        ],
+        [
+          "pos_bias_early",
+          1.0731
+        ],
+        [
+          "mean_distance",
+          0.9472
+        ],
+        [
+          "bos_mass",
+          0.9154
+        ]
+      ]
+    },
+    "1": {
+      "n": 22,
+      "label_distribution": {
+        "Local": 22
+      },
+      "model_distribution": {
+        "gpt2-medium": 3,
+        "Qwen2.5-0.5B": 19
+      },
+      "feature_centroids": {
+        "entropy_delta": -0.0017,
+        "bos_mass": 0.0955,
+        "local_mass": 0.0254,
+        "long_range_mass": 0.6889,
+        "mean_distance": 78.5543,
+        "vq_ratio": 1.6379,
+        "mean_output_norm": 3.9979,
+        "nsubj_mass": 0.0918,
+        "obj_mass": 0.021,
+        "punct_mass": 0.0842,
+        "mean_max_attn": 0.1678,
+        "mean_entropy": 3.6099,
+        "entropy_no_bos_delta": 0.0124,
+        "pos_bias_early": 0.739,
+        "pos_bias_middle": 0.2035,
+        "pos_bias_late": 0.0575,
+        "activation_sparsity": 0.1363,
+        "inter_layer_corr": 0.2347
+      },
+      "top_distinguishing": [
+        [
+          "vq_ratio",
+          2.3002
+        ],
+        [
+          "activation_sparsity",
+          1.9499
+        ],
+        [
+          "inter_layer_corr",
+          -1.5789
+        ],
+        [
+          "mean_entropy",
+          1.5074
+        ],
+        [
+          "mean_max_attn",
+          -1.4139
+        ]
+      ]
+    },
+    "2": {
+      "n": 26,
+      "label_distribution": {
+        "Local": 26
+      },
+      "model_distribution": {
+        "Qwen2.5-0.5B": 13,
+        "Qwen2.5-1.5B": 13
+      },
+      "feature_centroids": {
+        "entropy_delta": -0.0132,
+        "bos_mass": 0.0968,
+        "local_mass": 0.0108,
+        "long_range_mass": 0.1146,
+        "mean_distance": 15.855,
+        "vq_ratio": 0.8892,
+        "mean_output_norm": 2.9218,
+        "nsubj_mass": 0.0306,
+        "obj_mass": 0.0017,
+        "punct_mass": 0.8103,
+        "mean_max_attn": 0.8382,
+        "mean_entropy": 0.6201,
+        "entropy_no_bos_delta": 0.002,
+        "pos_bias_early": 0.4259,
+        "pos_bias_middle": 0.2792,
+        "pos_bias_late": 0.2949,
+        "activation_sparsity": 0.1012,
+        "inter_layer_corr": 0.298
+      },
+      "top_distinguishing": [
+        [
+          "punct_mass",
+          4.4643
+        ],
+        [
+          "pos_bias_late",
+          3.0271
+        ],
+        [
+          "pos_bias_early",
+          -2.428
+        ],
+        [
+          "long_range_mass",
+          -2.3575
+        ],
+        [
+          "nsubj_mass",
+          -2.2917
+        ]
+      ]
+    },
+    "3": {
+      "n": 48,
+      "label_distribution": {
+        "Local": 48
+      },
+      "model_distribution": {
+        "gpt2-medium": 24,
+        "Qwen2.5-0.5B": 15,
+        "Qwen2.5-1.5B": 5,
+        "Llama-3.2-1B": 4
+      },
+      "feature_centroids": {
+        "entropy_delta": -0.0644,
+        "bos_mass": 0.0429,
+        "local_mass": 0.0645,
+        "long_range_mass": 0.523,
+        "mean_distance": 57.1374,
+        "vq_ratio": 0.4774,
+        "mean_output_norm": 1.5423,
+        "nsubj_mass": 0.0806,
+        "obj_mass": 0.0369,
+        "punct_mass": 0.1449,
+        "mean_max_attn": 0.1267,
+        "mean_entropy": 3.8398,
+        "entropy_no_bos_delta": 0.0044,
+        "pos_bias_early": 0.6651,
+        "pos_bias_middle": 0.2402,
+        "pos_bias_late": 0.0948,
+        "activation_sparsity": 0.1477,
+        "inter_layer_corr": 0.2292
+      },
+      "top_distinguishing": [
+        [
+          "activation_sparsity",
+          2.2416
+        ],
+        [
+          "mean_entropy",
+          1.7491
+        ],
+        [
+          "obj_mass",
+          1.6975
+        ],
+        [
+          "inter_layer_corr",
+          -1.5975
+        ],
+        [
+          "mean_max_attn",
+          -1.5928
+        ]
+      ]
+    },
+    "4": {
+      "n": 44,
+      "label_distribution": {
+        "Local": 44
+      },
+      "model_distribution": {
+        "gpt2-medium": 26,
+        "Qwen2.5-0.5B": 11,
+        "Qwen2.5-1.5B": 5,
+        "Llama-3.2-1B": 2
+      },
+      "feature_centroids": {
+        "entropy_delta": -0.012,
+        "bos_mass": 0.0498,
+        "local_mass": 0.5454,
+        "long_range_mass": 0.0675,
+        "mean_distance": 10.9475,
+        "vq_ratio": 0.5098,
+        "mean_output_norm": 2.2595,
+        "nsubj_mass": 0.0451,
+        "obj_mass": 0.0433,
+        "punct_mass": 0.2803,
+        "mean_max_attn": 0.434,
+        "mean_entropy": 1.8263,
+        "entropy_no_bos_delta": -0.009,
+        "pos_bias_early": 0.4298,
+        "pos_bias_middle": 0.3028,
+        "pos_bias_late": 0.2674,
+        "activation_sparsity": 0.1352,
+        "inter_layer_corr": 0.3565
+      },
+      "top_distinguishing": [
+        [
+          "local_mass",
+          4.5313
+        ],
+        [
+          "pos_bias_late",
+          2.6261
+        ],
+        [
+          "long_range_mass",
+          -2.5864
+        ],
+        [
+          "pos_bias_early",
+          -2.401
+        ],
+        [
+          "mean_distance",
+          -2.3293
+        ]
+      ]
+    },
+    "5": {
+      "n": 29,
+      "label_distribution": {
+        "Local": 27,
+        "Retrieval": 2
+      },
+      "model_distribution": {
+        "gpt2-medium": 2,
+        "Qwen2.5-0.5B": 16,
+        "Qwen2.5-1.5B": 11
+      },
+      "feature_centroids": {
+        "entropy_delta": -0.0167,
+        "bos_mass": 0.0261,
+        "local_mass": 0.1078,
+        "long_range_mass": 0.377,
+        "mean_distance": 39.8807,
+        "vq_ratio": 0.5343,
+        "mean_output_norm": 2.467,
+        "nsubj_mass": 0.0306,
+        "obj_mass": 0.0129,
+        "punct_mass": 0.4947,
+        "mean_max_attn": 0.2652,
+        "mean_entropy": 2.8912,
+        "entropy_no_bos_delta": -0.0093,
+        "pos_bias_early": 0.5273,
+        "pos_bias_middle": 0.283,
+        "pos_bias_late": 0.1897,
+        "activation_sparsity": 0.1561,
+        "inter_layer_corr": 0.2269
+      },
+      "top_distinguishing": [
+        [
+          "activation_sparsity",
+          2.4569
+        ],
+        [
+          "nsubj_mass",
+          -2.2909
+        ],
+        [
+          "punct_mass",
+          2.2881
+        ],
+        [
+          "pos_bias_middle",
+          1.8053
+        ],
+        [
+          "pos_bias_early",
+          -1.7188
+        ]
+      ]
+    },
+    "6": {
+      "n": 32,
+      "label_distribution": {
+        "Local": 24,
+        "Induction": 1,
+        "Sink": 7
+      },
+      "model_distribution": {
+        "gpt2-medium": 32
+      },
+      "feature_centroids": {
+        "entropy_delta": -0.268,
+        "bos_mass": 0.4092,
+        "local_mass": 0.017,
+        "long_range_mass": 0.6714,
+        "mean_distance": 79.8894,
+        "vq_ratio": 1.2338,
+        "mean_output_norm": 35.5209,
+        "nsubj_mass": 0.1548,
+        "obj_mass": 0.0134,
+        "punct_mass": 0.1627,
+        "mean_max_attn": 0.4485,
+        "mean_entropy": 2.326,
+        "entropy_no_bos_delta": -0.01,
+        "pos_bias_early": 0.8822,
+        "pos_bias_middle": 0.0808,
+        "pos_bias_late": 0.037,
+        "activation_sparsity": 0.037,
+        "inter_layer_corr": 0.6887
+      },
+      "top_distinguishing": [
+        [
+          "mean_output_norm",
+          3.0097
+        ],
+        [
+          "vq_ratio",
+          1.1738
+        ],
+        [
+          "pos_bias_early",
+          0.7656
+        ],
+        [
+          "pos_bias_middle",
+          -0.7484
+        ],
+        [
+          "pos_bias_late",
+          -0.7301
+        ]
+      ]
+    },
+    "7": {
+      "n": 20,
+      "label_distribution": {
+        "Local": 19,
+        "Induction": 1
+      },
+      "model_distribution": {
+        "Llama-3.2-1B": 20
+      },
+      "feature_centroids": {
+        "entropy_delta": -0.2294,
+        "bos_mass": 0.1772,
+        "local_mass": 0.0552,
+        "long_range_mass": 0.333,
+        "mean_distance": 41.6335,
+        "vq_ratio": 0.8163,
+        "mean_output_norm": 1.2468,
+        "nsubj_mass": 0.066,
+        "obj_mass": 0.0094,
+        "punct_mass": 0.0878,
+        "mean_max_attn": 0.4579,
+        "mean_entropy": 2.0356,
+        "entropy_no_bos_delta": 0.0196,
+        "pos_bias_early": 0.6239,
+        "pos_bias_middle": 0.2,
+        "pos_bias_late": 0.176,
+        "activation_sparsity": 0.0534,
+        "inter_layer_corr": 0.2443
+      },
+      "top_distinguishing": [
+        [
+          "nsubj_mass",
+          -1.5546
+        ],
+        [
+          "inter_layer_corr",
+          -1.5466
+        ],
+        [
+          "pos_bias_late",
+          1.2951
+        ],
+        [
+          "long_range_mass",
+          -1.2944
+        ],
+        [
+          "mean_distance",
+          -1.2487
+        ]
+      ]
+    },
+    "8": {
+      "n": 923,
+      "label_distribution": {
+        "Local": 499,
+        "Sink": 312,
+        "Induction": 101,
+        "Retrieval": 11
+      },
+      "model_distribution": {
+        "gpt2-medium": 217,
+        "Qwen2.5-0.5B": 182,
+        "Qwen2.5-1.5B": 226,
+        "Llama-3.2-1B": 298
+      },
+      "feature_centroids": {
+        "entropy_delta": -0.2027,
+        "bos_mass": 0.4164,
+        "local_mass": 0.0593,
+        "long_range_mass": 0.5894,
+        "mean_distance": 75.3902,
+        "vq_ratio": 0.8194,
+        "mean_output_norm": 2.6795,
+        "nsubj_mass": 0.1429,
+        "obj_mass": 0.0148,
+        "punct_mass": 0.1589,
+        "mean_max_attn": 0.4514,
+        "mean_entropy": 2.3398,
+        "entropy_no_bos_delta": 0.0344,
+        "pos_bias_early": 0.7644,
+        "pos_bias_middle": 0.1456,
+        "pos_bias_late": 0.09,
+        "activation_sparsity": 0.0547,
+        "inter_layer_corr": 0.7927
+      },
+      "top_distinguishing": [
+        [
+          "inter_layer_corr",
+          0.2988
+        ],
+        [
+          "mean_max_attn",
+          -0.1816
+        ],
+        [
+          "mean_entropy",
+          0.1722
+        ],
+        [
+          "mean_output_norm",
+          -0.1427
+        ],
+        [
+          "activation_sparsity",
+          -0.1424
+        ]
+      ]
+    },
+    "9": {
+      "n": 84,
+      "label_distribution": {
+        "Sink": 78,
+        "Local": 4,
+        "Induction": 2
+      },
+      "model_distribution": {
+        "gpt2-medium": 24,
+        "Qwen2.5-0.5B": 24,
+        "Qwen2.5-1.5B": 23,
+        "Llama-3.2-1B": 13
+      },
+      "feature_centroids": {
+        "entropy_delta": -0.2125,
+        "bos_mass": 0.6545,
+        "local_mass": 0.0082,
+        "long_range_mass": 0.8036,
+        "mean_distance": 105.4659,
+        "vq_ratio": 1.0525,
+        "mean_output_norm": 4.6123,
+        "nsubj_mass": 0.1897,
+        "obj_mass": 0.0052,
+        "punct_mass": 0.0823,
+        "mean_max_attn": 0.684,
+        "mean_entropy": 1.5336,
+        "entropy_no_bos_delta": -0.0288,
+        "pos_bias_early": 0.9302,
+        "pos_bias_middle": 0.0497,
+        "pos_bias_late": 0.0201,
+        "activation_sparsity": 0.0316,
+        "inter_layer_corr": 0.8351
+      },
+      "top_distinguishing": [
+        [
+          "pos_bias_middle",
+          -1.1408
+        ],
+        [
+          "pos_bias_early",
+          1.1019
+        ],
+        [
+          "nsubj_mass",
+          1.0215
+        ],
+        [
+          "mean_distance",
+          0.999
+        ],
+        [
+          "long_range_mass",
+          0.9949
+        ]
+      ]
+    },
+    "10": {
+      "n": 105,
+      "label_distribution": {
+        "Sink": 102,
+        "Local": 3
+      },
+      "model_distribution": {
+        "Qwen2.5-0.5B": 16,
+        "Qwen2.5-1.5B": 7,
+        "Llama-3.2-1B": 82
+      },
+      "feature_centroids": {
+        "entropy_delta": -0.0696,
+        "bos_mass": 0.7814,
+        "local_mass": 0.0094,
+        "long_range_mass": 0.8134,
+        "mean_distance": 113.4846,
+        "vq_ratio": 0.552,
+        "mean_output_norm": 0.6298,
+        "nsubj_mass": 0.1878,
+        "obj_mass": 0.0039,
+        "punct_mass": 0.068,
+        "mean_max_attn": 0.7878,
+        "mean_entropy": 1.119,
+        "entropy_no_bos_delta": 0.0007,
+        "pos_bias_early": 0.9385,
+        "pos_bias_middle": 0.0413,
+        "pos_bias_late": 0.0203,
+        "activation_sparsity": 0.0299,
+        "inter_layer_corr": 0.8859
+      },
+      "top_distinguishing": [
+        [
+          "bos_mass",
+          1.351
+        ],
+        [
+          "mean_distance",
+          1.2813
+        ],
+        [
+          "mean_max_attn",
+          1.2805
+        ],
+        [
+          "pos_bias_middle",
+          -1.248
+        ],
+        [
+          "pos_bias_early",
+          1.1599
+        ]
+      ]
+    },
+    "11": {
+      "n": 22,
+      "label_distribution": {
+        "Sink": 22
+      },
+      "model_distribution": {
+        "gpt2-medium": 8,
+        "Qwen2.5-0.5B": 6,
+        "Qwen2.5-1.5B": 2,
+        "Llama-3.2-1B": 6
+      },
+      "feature_centroids": {
+        "entropy_delta": -0.6684,
+        "bos_mass": 0.8668,
+        "local_mass": 0.0017,
+        "long_range_mass": 0.8603,
+        "mean_distance": 117.8078,
+        "vq_ratio": 0.695,
+        "mean_output_norm": 2.1112,
+        "nsubj_mass": 0.2067,
+        "obj_mass": 0.0007,
+        "punct_mass": 0.062,
+        "mean_max_attn": 0.8781,
+        "mean_entropy": 0.6384,
+        "entropy_no_bos_delta": 0.0006,
+        "pos_bias_early": 0.9623,
+        "pos_bias_middle": 0.028,
+        "pos_bias_late": 0.0097,
+        "activation_sparsity": 0.0299,
+        "inter_layer_corr": 0.913
+      },
+      "top_distinguishing": [
+        [
+          "entropy_delta",
+          -1.6908
+        ],
+        [
+          "bos_mass",
+          1.6779
+        ],
+        [
+          "mean_max_attn",
+          1.6726
+        ],
+        [
+          "mean_entropy",
+          -1.6164
+        ],
+        [
+          "mean_distance",
+          1.4336
+        ]
+      ]
+    },
+    "12": {
+      "n": 22,
+      "label_distribution": {
+        "Sink": 22
+      },
+      "model_distribution": {
+        "gpt2-medium": 6,
+        "Qwen2.5-0.5B": 5,
+        "Qwen2.5-1.5B": 6,
+        "Llama-3.2-1B": 5
+      },
+      "feature_centroids": {
+        "entropy_delta": -1.0443,
+        "bos_mass": 0.6648,
+        "local_mass": 0.0055,
+        "long_range_mass": 0.808,
+        "mean_distance": 104.1151,
+        "vq_ratio": 0.8006,
+        "mean_output_norm": 2.2127,
+        "nsubj_mass": 0.198,
+        "obj_mass": 0.0028,
+        "punct_mass": 0.0728,
+        "mean_max_attn": 0.6901,
+        "mean_entropy": 1.587,
+        "entropy_no_bos_delta": -0.0092,
+        "pos_bias_early": 0.9336,
+        "pos_bias_middle": 0.0487,
+        "pos_bias_late": 0.0176,
+        "activation_sparsity": 0.0296,
+        "inter_layer_corr": 0.8449
+      },
+      "top_distinguishing": [
+        [
+          "entropy_delta",
+          -3.024
+        ],
+        [
+          "nsubj_mass",
+          1.1942
+        ],
+        [
+          "pos_bias_middle",
+          -1.1535
+        ],
+        [
+          "pos_bias_early",
+          1.126
+        ],
+        [
+          "long_range_mass",
+          1.0163
+        ]
+      ]
+    }
+  }
+}
