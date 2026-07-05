@@ -218,7 +218,7 @@ $H(A_{h, t}) = -\sum_{j=1}^{t} A_{h, t, j} \log_2(A_{h, t, j})$
 
 When faced with a specific task (e.g., retrieving a hidden needle or completing a repeating pattern), a specialized head will collapse its attention mass onto a single target token, causing a massive drop in entropy relative to its baseline processing state.
 
-We measure this as $\Delta = H_{task} - H_{baseline}$.
+We measure this as $\Delta = H_{baseline} - H_{task}$. *(Note: An earlier draft printed this backward as $H_{task} - H_{baseline}$. All reported values and classifications use the corrected, code-matching definition throughout.)*
 * Positive $\Delta$ (e.g., $+0.30$): The head drastically sharpens its focus (Retrieval).
 * Negative $\Delta$ (e.g., $-0.50$): The head drastically broadens its focus or changes its pattern (Induction).
 
