@@ -189,3 +189,10 @@ To verify if our manual 4-class taxonomy was missing sub-structures, we collecte
 1. **The Giant Megacluster**: 923 heads (58% of all heads) collapsed into a single massive cluster (Cluster 8). This cluster contains 499 Local heads, 312 Sink heads, and 101 Induction heads. *Conclusion: The boundaries between these head roles are highly continuous, not discrete.*
 2. **Punctuation Specialists (Cluster 2)**: 26 heads (split evenly between Qwen 0.5B and 1.5B) separated purely due to massive punctuation attention (+4.4 $\sigma$) and late-sequence positional bias (+3.0 $\sigma$).
 3. **Unexpected Correlations**: We found a near-perfect inverse correlation between early-sequence bias and middle-sequence bias ( = -0.971$), indicating that heads strictly divide their labor by absolute sequence position during generation.
+
+
+## Visualizations of Phase 4 and Phase 5 Findings
+
+The rigorous data gathered in Workstream 1 and Workstream 2 have been visualized using the \outputs/final_artifacts/generate_visualizations.py\ script. The resulting high-resolution plots are saved at:
+
+1. **Routing Validation Performance:** \outputs/final_artifacts/visualizations/routing_validation.png2. **Taxonomy Distribution:** \outputs/final_artifacts/visualizations/taxonomy_distribution.png3. **Emergent UMAP Clusters:** \outputs/final_artifacts/visualizations/umap_clusters.png

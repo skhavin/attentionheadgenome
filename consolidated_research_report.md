@@ -841,3 +841,10 @@ While both SAEs achieved identical reconstruction accuracy, the True SAE did so 
 
 ## Final Phase 3 Summary
 By strictly adhering to causal testing and null-distribution baselines, we avoided confirming hypotheses through confirmation bias. We successfully falsified the fragile "single-head co-gating" hypothesis (Law 2), while proving that attention heads utilize profound mathematical multiplexing in their vector outputs (Law 4).
+
+
+## Visualizations of Phase 4 and Phase 5 Findings
+
+The rigorous data gathered in Workstream 1 and Workstream 2 have been visualized using the \outputs/final_artifacts/generate_visualizations.py\ script. The resulting high-resolution plots are saved at:
+
+1. **Routing Validation Performance:** \outputs/final_artifacts/visualizations/routing_validation.png2. **Taxonomy Distribution:** \outputs/final_artifacts/visualizations/taxonomy_distribution.png3. **Emergent UMAP Clusters:** \outputs/final_artifacts/visualizations/umap_clusters.png
