@@ -1,0 +1,103 @@
+---
+layout: ../../layouts/AcademyLayout.astro
+title: "The Four Head Species"
+---
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Prerequisites from '../../components/Prerequisites.astro';
+import WhyCare from '../../components/WhyCare.astro';
+import Misconception from '../../components/Misconception.astro';
+import CouldBeWrong from '../../components/CouldBeWrong.astro';
+import Connections from '../../components/Connections.astro';
+import InterviewQuestions from '../../components/InterviewQuestions.astro';
+
+<Breadcrumbs partTitle="PART IV: Taxonomy" chapterTitle="The Four Head Species" />
+
+# The Four Head Species
+
+<Prerequisites 
+  difficulty="Research" 
+  links={[
+    { title: "Attention & Softmax", url: "/attentionheadgenome/academy/part2-attention-mechanics" },
+    { title: "Entropy", url: "/attentionheadgenome/academy/part3-math-foundations" }
+  ]}
+/>
+
+<div class="lead">
+  After measuring the entropy of 1,568 attention heads across millions of tokens, we discovered that attention heads are not interchangeable. They cluster into four distinct behavioral species.
+</div>
+
+> **Reproducibility Note:** All taxonomy clusters and JSON data mapping every single head in Llama, Qwen, and GPT-2 can be found in `public/data/`. The script responsible for rigorously classifying these heads is located at `phase2_atlas/analyze_atlas_rigorous.py`.
+
+## 1. Sink Heads (The Stabilizers)
+
+<WhyCare>
+  If you randomly delete tokens during long-context generation, you might accidentally delete the token a Sink head is using as an anchor. If that happens, the model's math explodes and it immediately generates gibberish.
+</WhyCare>
+
+Sink heads allocate nearly 100% of their attention to the very first token in the prompt (the BOS token) or to punctuation marks like periods and commas. 
+
+They do not care about semantic meaning. Their job is to act as a "parking spot." When an attention head doesn't find anything interesting to look at, it has to put its probability mass *somewhere* (because Softmax must sum to 1.0). It dumps that mass into the Sink head to avoid polluting the residual stream.
+
+<div class="code-block" style="color: var(--sink);">
+  # Sink Head Attention Profile<br/>
+  BOS: 0.98<br/>
+  cat: 0.00<br/>
+  sat: 0.01<br/>
+  mat: 0.01
+</div>
+
+## 2. Local Heads (The Grammar Window)
+
+Local heads are the most common species (comprising over 80% of all heads). They only look at the immediate local window (e.g., the last 5 to 30 tokens).
+
+Their job is local coherence, grammar, and syntax. They ensure the sentence flows naturally. Because language is highly localized, these heads are largely responsible for the model's excellent Perplexity scores.
+
+<Misconception>
+  <Fragment slot="myth">Local heads are the "leftover" class and aren't as important as Reasoning heads.</Fragment>
+  <Fragment slot="truth">Local heads preserve the statistical fluency of the model. Without them, the model loses the ability to form coherent sentences, even if it knows the facts.</Fragment>
+</Misconception>
+
+## 3. Retrieval Heads (The Fact Finders)
+
+Retrieval heads are rare, powerful, and highly specialized. They scan the entire document, completely ignoring local grammar, to locate specific semantic facts.
+
+<div class="code-block" style="color: var(--retrieval);">
+  Prompt: "The secret code is 8492. [1,000 words] What is the code?"<br/><br/>
+  # Retrieval Head Attention Profile<br/>
+  8492: 0.94<br/>
+  BOS: 0.01<br/>
+  Local window: 0.05
+</div>
+
+## 4. Induction Heads (The Copiers)
+
+Induction heads were famously discovered by Anthropic in 2022. They look for repeated patterns. If the model sees `A → B` earlier in the prompt, and now sees `A`, the Induction head will attend to `B`.
+
+In HeadGenome, we found that Induction heads work in tandem with Retrieval heads. They act as the "payload delivery" mechanism.
+
+<CouldBeWrong>
+  <p>We classify heads into four rigid species using strict entropy thresholds (e.g., <span set:html={String.raw`$\Delta H \geq 0.3$`} />).</p>
+  <p><strong>Alternative Explanation:</strong> The taxonomy might actually be a continuous spectrum. A head could be 70% Local and 30% Retrieval, and our rigid thresholds are artificially forcing them into buckets.</p>
+  <p><strong>Experiment to verify:</strong> Run a UMAP projection on the raw feature matrix without K-Means to see if the heads form discrete islands or a continuous megacluster. (Spoiler: We actually did this in Part V, and found a continuous megacluster!).</p>
+</CouldBeWrong>
+
+<InterviewQuestions title="Research Defense & Discussion">
+  <details>
+    <summary>Are Sink/Local/Retrieval/Induction exhaustive?</summary>
+    <div>
+      No. In Phase 2, we discovered an outlier class called <strong>Hyper-Diagonal Heads</strong> (41 heads that exclusively attend to the exact current token). The current taxonomy covers 98% of heads, but there are always highly specialized outliers.
+    </div>
+  </details>
+  <details>
+    <summary>Why do Llama Sink heads behave differently than GPT-2 Sink heads?</summary>
+    <div>
+      GPT-2 uses Absolute Positional Embeddings, making the first token mathematically unique. Llama uses RoPE, which only cares about relative distances. Since RoPE cannot easily target "Absolute Position 0", Llama Sink heads instead target punctuation marks (commas and periods) as localized structural anchors.
+    </div>
+  </details>
+</InterviewQuestions>
+
+<Connections 
+  links={[
+    { title: "Next Chapter: What We Discovered", url: "/attentionheadgenome/academy/part5-experimental-findings" }
+  ]}
+/>

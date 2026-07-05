@@ -1,0 +1,93 @@
+---
+layout: ../../layouts/AcademyLayout.astro
+title: "Measuring Attention"
+---
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Prerequisites from '../../components/Prerequisites.astro';
+import WhyCare from '../../components/WhyCare.astro';
+import Misconception from '../../components/Misconception.astro';
+import CouldBeWrong from '../../components/CouldBeWrong.astro';
+import Connections from '../../components/Connections.astro';
+import InterviewQuestions from '../../components/InterviewQuestions.astro';
+
+<Breadcrumbs partTitle="PART III: Math Foundations" chapterTitle="Measuring Attention" />
+
+# Measuring Attention
+
+<Prerequisites 
+  difficulty="Advanced" 
+  links={[
+    { title: "Attention & Softmax", url: "/attentionheadgenome/academy/part2-attention-mechanics" }
+  ]}
+/>
+
+<div class="lead">
+  To understand what a head is doing, we cannot just look at the raw attention scores. We need to mathematically quantify its behavior across thousands of prompts. 
+</div>
+
+## 1. Entropy (Focus vs. Diffusion)
+
+<WhyCare>
+  Entropy is the exact mathematical tool HeadGenome uses to discover Sink and Retrieval heads. Without entropy, it is impossible to distinguish a head that finds a needle in a haystack from a head that just copies local grammar.
+</WhyCare>
+
+After the `softmax` operation (discussed in Part II), an attention head outputs a probability distribution. Entropy ($H$) measures the "spread" of this distribution.
+
+<div class="formula-block" set:html={String.raw`$$H(p) = -\sum_{j} p_j \log_2(p_j)$$`}></div>
+
+- **Low Entropy:** The head is highly focused. It places almost all of its probability mass (e.g., <span set:html={String.raw`$99\%$`} />) on a single token.
+- **High Entropy:** The head is highly diffuse. It spreads its attention evenly across many tokens (e.g., <span set:html={String.raw`$1\%$`} /> on 100 different tokens).
+
+### Normalized Entropy
+Because raw entropy naturally increases as the sequence length gets longer, HeadGenome uses **Normalized Entropy** by dividing by <span set:html={String.raw`$\log_2(T)$`} />, where <span set:html={String.raw`$T$`} /> is the number of tokens. This ensures our measurements are strictly bounded between <span set:html={String.raw`$0$`} /> (perfect focus) and <span set:html={String.raw`$1$`} /> (perfect uniform diffusion).
+
+<Misconception>
+  <Fragment slot="myth">Low entropy always means a head is doing something complex or useful.</Fragment>
+  <Fragment slot="truth">A Sink head has extremely low entropy (it focuses entirely on the BOS token), but it serves a structural, mathematical stabilizing function, not a semantic reasoning function. Entropy measures <em>focus</em>, not necessarily <em>intelligence</em>.</Fragment>
+</Misconception>
+
+## 2. The Frobenius Norm & V/Q Ratio
+
+While entropy measures the *dynamic behavior* of a head during generation, we also want to measure the *static geometry* of the head's weights.
+
+The **Frobenius Norm** ($||M||_F$) measures the total magnitude (or "strength") of a matrix. It is calculated by squaring every value in the matrix, adding them up, and taking the square root.
+
+By taking the Frobenius norm of the Value matrix ($W_V$) and dividing it by the Frobenius norm of the Query matrix ($W_Q$), we get the **V/Q Ratio**.
+
+<div class="formula-block" set:html={String.raw`$$V/Q = \frac{||W_V||_F}{||W_Q||_F}$$`}></div>
+
+- **Low V/Q Ratio:** The head has massive Query weights. It is optimized for "searching" and "routing."
+- **High V/Q Ratio:** The head has massive Value weights. It is optimized for "payload delivery."
+
+<CouldBeWrong>
+  <p>We claim the V/Q Ratio dictates a head's functional role (searching vs. delivering).</p>
+  <p><strong>Alternative Explanation:</strong> The V/Q Ratio might just be an artifact of LayerNorm scaling deeper in the network, and the true functional role is dictated by the Key ($W_K$) matrix interaction.</p>
+  <p><strong>Experiment to verify:</strong> Test if normalising the weight matrices by their layer's scaling factor destroys the V/Q progression.</p>
+</CouldBeWrong>
+
+## 3. Statistical Rigor (Pearson & p-values)
+
+When we plot the V/Q ratio against the layer depth, we see a strong correlation. But is it real? We use the **Pearson Correlation Coefficient ($r$)** to measure the linear strength. 
+
+More importantly, we use **p-values** to measure the probability that this correlation happened by random chance. In HeadGenome, we demand astronomical statistical significance ($p &lt; 10^{-50}$) before declaring a "Law".
+
+<InterviewQuestions title="Research Defense & Discussion">
+  <details>
+    <summary>Why use Entropy instead of just looking at the Maximum Attention weight?</summary>
+    <div>
+      Max attention only tells you about the highest peak. A head could have a max attention of 0.40, but the remaining 0.60 could be uniformly spread (high entropy) or concentrated on just two other tokens (low entropy). Entropy captures the entire shape of the distribution, which is necessary to detect multi-token induction heads.
+    </div>
+  </details>
+  <details>
+    <summary>Why use K-Means for clustering?</summary>
+    <div>
+      We actually used K-Means in an attempt to <em>falsify</em> the hypothesis that static weights alone dictate behavior. K-Means on the SVD/Frobenius features failed to recover the taxonomy, proving that dynamic probing (entropy) is required to classify heads.
+    </div>
+  </details>
+</InterviewQuestions>
+
+<Connections 
+  links={[
+    { title: "Next Chapter: The Four Head Species", url: "/attentionheadgenome/academy/part4-head-species" }
+  ]}
+/>
