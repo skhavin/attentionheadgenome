@@ -1,21 +1,33 @@
 """
-Experiment 0: The Temporal Handoff — Bulletproof Edition
-=====================================================
-Implements all four gate criteria defined in HeadGenome_Part3_Plan.md:
-1. Retrieval heads tested on NIAH task (not just arithmetic)
-2. Per-prompt Wilcoxon signed-rank test for statistical validity
-3. Control group (Local/Sink heads) tested to verify Induction-specificity via Mann-Whitney U
-4. Pre-registered numeric pass thresholds applied before any interpretation
+Experiment 0: The Temporal Handoff — nMAD Edition
+==================================================
+Metric: Normalized Mean Attention Distance (nMAD)
+
+  nMAD_h = sum_j(alpha[h, t, j] * (t - j)) / t
+
+where t = last active token index (seq_len - 1 in Prefill, single new token index in Decode).
+Division by t makes nMAD in [0,1] regardless of context length, enabling direct
+Prefill/Decode comparison without sequence-length confound.
 
 Pre-registered thresholds (DO NOT CHANGE after running):
-  - Induction PASS: Decode/Prefill ratio > 2.0 AND Wilcoxon p < 0.05 AND Mann-Whitney vs control p < 0.05
-  - Retrieval PASS: Prefill/Decode ratio > 1.5 on NIAH task AND Wilcoxon p < 0.05
+  Induction PASS:
+    - Decode nMAD / Prefill nMAD > 1.5
+    - Wilcoxon signed-rank (per-prompt Decode > Prefill): p < 0.05
+    - Mann-Whitney U (Induction shift > Control shift): p < 0.05
+  NIAH cross-task:
+    - Same nMAD shift > 1.5 on NIAH prompts
+
+Partial-pass rule (pre-registered):
+  If criteria 1-3 pass but NIAH (criterion 4) fails:
+    -> Classified as "task-specific, arithmetic domain only"
+    -> Experiments 1-3 restricted to arithmetic until NIAH replication succeeds.
+  If any of criteria 1-3 fail:
+    -> HARD GATE FAILED. Do NOT proceed to Experiments 1-3.
 """
 import os
 import sys
 import json
 import torch
-import torch.nn.functional as F
 import numpy as np
 import random
 from tqdm import tqdm
@@ -29,372 +41,400 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 ARITH_DATASET_PATH = "headgenome2_circuits/datasets/arithmetic.json"
 
 # ============================================================
-# Pre-registered Thresholds (locked before running)
+# Pre-registered Thresholds — locked before running
 # ============================================================
-INDUCTION_DECODE_PREFILL_THRESHOLD = 2.0
-RETRIEVAL_PREFILL_DECODE_THRESHOLD = 1.5
-P_VALUE_THRESHOLD = 0.05
+NMAD_RATIO_THRESHOLD = 1.5       # Decode nMAD / Prefill nMAD must exceed this
+P_VALUE_THRESHOLD    = 0.05
 
 # ============================================================
-# NIAH Task Builder
+# NIAH Dataset Builder
 # ============================================================
-def build_niah_dataset(n=50):
-    """Build a minimal NIAH dataset: a long prefix containing a UUID, 
-    followed by a 'find the UUID' query to force Retrieval head engagement."""
+def build_niah_dataset(n: int = 50, seed: int = 42) -> list:
+    """
+    Builds N NIAH prompts. Each prompt has a 40-token filler context with a
+    5-digit numeric UUID embedded, then a retrieval query. Forces Retrieval
+    head engagement for the cross-task validation criterion.
+    """
+    random.seed(seed)
+    words = ["the", "cat", "sat", "on", "mat", "a", "in", "by", "of", "and"]
     data = []
     for _ in range(n):
-        uuid = f"{random.randint(10000,99999)}-{random.randint(10000,99999)}"
-        filler = " ".join([random.choice(["The", "cat", "sat", "on", "a", "mat"]) for _ in range(40)])
-        prompt = f"{filler} The target code is {uuid}. {filler} What is the target code? It is"
+        uuid = f"{random.randint(10000, 99999)}-{random.randint(10000, 99999)}"
+        pre  = " ".join(random.choices(words, k=20))
+        post = " ".join(random.choices(words, k=20))
+        prompt = f"{pre} The target code is {uuid}. {post} What is the target code? It is"
         data.append({"prompt": prompt, "uuid": uuid})
     return data
 
 # ============================================================
-# Phase Activation Hook
+# nMAD Computation Hook
 # ============================================================
-class PhaseActivationHook:
+class NMADHook:
     """
-    Hooks the input to o_proj to calculate the L2 norm of each head's contribution
-    to the residual stream: || W_O^h * x_h ||_2
-    
-    Phase is determined strictly by seq_len:
-      - seq_len > 1 → Prefill (parallel processing of the full prompt)
-      - seq_len == 1 → Decode (single autoregressive step)
-    
-    Returns per-prompt-per-phase norms so we can compute per-prompt ratios for statistics.
-    """
-    def __init__(self, num_heads, head_dim):
-        self.num_heads = num_heads
-        self.head_dim = head_dim
-        self.hooks = []
-        # dict[(layer, head)] -> {"prefill": [per_prompt_norm,...], "decode": [per_prompt_norm,...]}
-        self.norms = {}
-        self._current_prompt_id = 0
-        self._in_prompt = {"prefill": None, "decode": None}
+    Registers forward pre-hooks on every self_attn module to capture the full
+    attention weight tensor. Computes per-head nMAD at the last active token,
+    split by phase (Prefill: seq_len > 1 / Decode: seq_len == 1).
 
-    def _create_hook(self, layer_idx):
-        def hook(module, input):
-            x = input[0]  # (batch, seq_len, hidden_size)
-            seq_len = x.shape[1]
+    nMAD_h = (sum_j alpha[h, t, j] * (t - j)) / t
+    where t = last active token index (0-indexed).
+
+    Values are accumulated per-prompt via flush_prompt(), giving
+      self.norms[(layer, head)]["prefill"] = [prompt_0_nmad, prompt_1_nmad, ...]
+      self.norms[(layer, head)]["decode"]  = [prompt_0_nmad, ...]
+    (one value per prompt, averaged over any multi-step Decode passes)
+    """
+    def __init__(self, num_layers: int, num_heads: int):
+        self.num_layers = num_layers
+        self.num_heads  = num_heads
+        self._hooks     = []
+        self.norms: dict = {}
+        self._buf: dict  = {"prefill": {}, "decode": {}}  # accumulate within a prompt
+
+    def _hook_fn(self, layer_idx: int):
+        def hook(module, args, kwargs, output):
+            # output from Qwen2Attention is (hidden_states, attn_weights, past_kv)
+            # attn_weights shape: (batch, heads, seq, seq) — only present when
+            # output_attentions=True; HF returns None otherwise.
+            attn_weights = None
+            if isinstance(output, tuple):
+                for item in output:
+                    if isinstance(item, torch.Tensor) and item.ndim == 4:
+                        attn_weights = item
+                        break
+            if attn_weights is None:
+                return  # model was called without output_attentions; skip
+
+            _, num_heads, seq_len, _ = attn_weights.shape
+            t = seq_len - 1                   # last active token index
+            if t == 0:
+                return                        # single-token edge case: distance is 0
+
             phase = "prefill" if seq_len > 1 else "decode"
 
-            W_O = module.weight  # (hidden_size, hidden_size)
+            # distances shape: (seq_len,)  — distance of each past token from t
+            distances = torch.arange(t, -1, -1, dtype=attn_weights.dtype,
+                                     device=attn_weights.device)  # [t, t-1, ..., 0]
 
-            for h in range(self.num_heads):
-                start = h * self.head_dim
-                end = start + self.head_dim
-                x_h = x[:, :, start:end]           # (batch, seq_len, head_dim)
-                W_O_h = W_O[:, start:end]            # (hidden_size, head_dim)
-                head_out = F.linear(x_h, W_O_h)     # (batch, seq_len, hidden_size)
-                norm = torch.linalg.norm(head_out, dim=-1).mean().item()
+            # alpha[:, :, t, :] shape: (batch=1, heads, seq_len)
+            alpha = attn_weights[0, :, t, :]  # (heads, seq_len)
 
+            # raw_mad per head: (heads,)
+            raw_mad = (alpha * distances).sum(dim=-1)
+
+            # normalize by t to get nMAD in [0, 1]
+            nmad = (raw_mad / t).cpu().numpy()
+
+            buf = self._buf[phase]
+            for h in range(num_heads):
                 key = (layer_idx, h)
-                if key not in self.norms:
-                    self.norms[key] = {"prefill": [], "decode": []}
-
-                # We append per-prompt. Since a single generate() call
-                # produces exactly one Prefill pass and one (or more) Decode passes,
-                # we take the mean of any multi-step Decode norms per prompt.
-                # To do this cleanly, we accumulate within a prompt buffer.
-                if self._in_prompt[phase] is None:
-                    self._in_prompt[phase] = {}
-                buf = self._in_prompt[phase]
                 if key not in buf:
                     buf[key] = []
-                buf[key].append(norm)
+                buf[key].append(float(nmad[h]))
 
-            return (x,)
         return hook
 
-    def flush_prompt(self):
-        """Call after each prompt's generate() to finalize per-prompt norms."""
-        for phase in ["prefill", "decode"]:
-            if self._in_prompt[phase] is not None:
-                for key, norms in self._in_prompt[phase].items():
-                    self.norms[key][phase].append(np.mean(norms))
-                self._in_prompt[phase] = None
-
-    def register(self, model):
+    def register(self, model) -> None:
         for layer_idx, layer in enumerate(model.model.layers):
-            handle = layer.self_attn.o_proj.register_forward_pre_hook(self._create_hook(layer_idx))
-            self.hooks.append(handle)
+            handle = layer.self_attn.register_forward_hook(
+                self._hook_fn(layer_idx),
+                with_kwargs=True
+            )
+            self._hooks.append(handle)
 
-    def remove(self):
-        for h in self.hooks:
+    def flush_prompt(self) -> None:
+        """Call once after each prompt's generate() to commit per-prompt averages."""
+        for phase in ("prefill", "decode"):
+            for key, vals in self._buf[phase].items():
+                if key not in self.norms:
+                    self.norms[key] = {"prefill": [], "decode": []}
+                self.norms[key][phase].append(float(np.mean(vals)))
+            self._buf[phase] = {}
+
+    def remove(self) -> None:
+        for h in self._hooks:
             h.remove()
-        self.hooks = []
+        self._hooks = []
 
 # ============================================================
 # Head Population Classifier
 # ============================================================
-def classify_heads(model, tokenizer, dataset, num_heads, device, num_samples=50):
+def classify_heads(model, tokenizer, dataset: list,
+                   num_heads: int, device) -> tuple[list, list]:
     """
-    Classify heads into four populations using attention patterns on the arithmetic task:
-      - Induction/Counting: high attention mass on operand tokens (from last position)
-      - Retrieval: high attention mass on distant content tokens (from middle positions)
-      - Local: attention mass concentrated on immediately preceding tokens
-      - Sink: attention mass concentrated on position 0
-    Returns separate lists of (layer, head) tuples for each population.
+    Classifies heads into Induction-candidates and Local/Sink control using
+    static attention patterns on the arithmetic dataset.
+
+    Induction/Counting: high attention from last token to distant content.
+    Local/Sink: high attention from last token to immediate neighbors or token 0.
+
+    Returns (induction_heads, control_heads) as lists of (layer, head) tuples.
     """
     num_layers = model.config.num_hidden_layers
-    
-    induction_masses = torch.zeros((num_layers, num_heads), device=device)
-    local_masses = torch.zeros((num_layers, num_heads), device=device)
-    sink_masses = torch.zeros((num_layers, num_heads), device=device)
-    
-    valid_count = 0
-    for item in dataset[:num_samples]:
-        prompt = item["prompt"]
-        inputs = tokenizer(prompt, return_tensors="pt").to(device)
-        input_ids = inputs.input_ids
-        seq_len = input_ids.shape[1]
+    induction_scores = np.zeros((num_layers, num_heads))
+    local_scores     = np.zeros((num_layers, num_heads))
+    sink_scores      = np.zeros((num_layers, num_heads))
+    count = 0
 
-        with torch.no_grad():
-            outputs = model(**inputs)
-        
-        attentions = outputs.attentions
-        last_idx = seq_len - 1
-        valid_count += 1
-
-        for l in range(num_layers):
-            attn = attentions[l][0]  # (heads, seq, seq)
-            # Induction: from last token to all non-adjacent tokens
-            induction_masses[l] += attn[:, last_idx, max(0, last_idx-3):].mean(dim=-1)
-            # Local: from last token to the 3 most recent tokens
-            local_masses[l] += attn[:, last_idx, max(0, last_idx-3):last_idx].mean(dim=-1)
-            # Sink: attention mass on token 0
-            sink_masses[l] += attn[:, last_idx, 0]
-
-    induction_masses /= valid_count
-    local_masses /= valid_count
-    sink_masses /= valid_count
-
-    flat_i = induction_masses.flatten().cpu().numpy()
-    flat_l = local_masses.flatten().cpu().numpy()
-    flat_s = sink_masses.flatten().cpu().numpy()
-
-    top_i = [(int(idx // num_heads), int(idx % num_heads)) for idx in np.argsort(flat_i)[::-1][:10]]
-    # Control group: highest-ranked Local + Sink heads, excluding any overlap with Induction
-    top_l = [(int(idx // num_heads), int(idx % num_heads)) for idx in np.argsort(flat_l)[::-1][:10]]
-    top_s = [(int(idx // num_heads), int(idx % num_heads)) for idx in np.argsort(flat_s)[::-1][:10]]
-
-    induction_set = set(top_i)
-    control_heads = list(set(top_l + top_s) - induction_set)[:10]
-
-    return top_i, control_heads
-
-# ============================================================
-# Core Measurement
-# ============================================================
-def measure_phase_norms(model, tokenizer, dataset, target_heads, label, device):
-    """
-    Runs generate() on each prompt, tracking per-prompt Prefill and Decode norms
-    for the specified head population. Returns two arrays of per-prompt norms.
-    """
-    num_heads = model.config.num_attention_heads
-    head_dim = model.config.hidden_size // num_heads
-
-    tracker = PhaseActivationHook(num_heads, head_dim)
-    tracker.register(model)
-
-    for item in tqdm(dataset, desc=f"Measuring {label}"):
+    for item in tqdm(dataset, desc="Classifying heads"):
         inputs = tokenizer(item["prompt"], return_tensors="pt").to(device)
         with torch.no_grad():
-            model.generate(**inputs, max_new_tokens=2, pad_token_id=tokenizer.eos_token_id)
+            out = model(**inputs)
+
+        if out.attentions is None:
+            raise RuntimeError("Model must be called with output_attentions=True for classification.")
+
+        seq_len = inputs.input_ids.shape[1]
+        t = seq_len - 1
+        count += 1
+
+        for l, attn in enumerate(out.attentions):
+            a = attn[0, :, t, :]  # (heads, seq)
+            # Induction: mass on tokens more than 3 positions back
+            far_mass = a[:, :max(0, t - 3)].sum(-1)
+            induction_scores[l] += far_mass.cpu().numpy()
+            # Local: mass on the 3 immediately preceding tokens
+            near = a[:, max(0, t-3):t]
+            local_scores[l]     += near.sum(-1).cpu().numpy() if near.shape[-1] > 0 else 0
+            # Sink: mass on position 0
+            sink_scores[l]      += a[:, 0].cpu().numpy()
+
+    induction_scores /= count
+    local_scores     /= count
+    sink_scores      /= count
+
+    flat_i = induction_scores.flatten()
+    flat_l = local_scores.flatten()
+    flat_s = sink_scores.flatten()
+
+    top_i = sorted(np.argsort(flat_i)[::-1][:10])
+    top_l = list(np.argsort(flat_l)[::-1][:10])
+    top_s = list(np.argsort(flat_s)[::-1][:10])
+
+    induction_heads = [(int(idx // num_heads), int(idx % num_heads)) for idx in top_i]
+    induction_set   = set(map(tuple, induction_heads))
+    control_raw     = list(set(top_l + top_s))
+    control_heads   = [
+        (int(idx // num_heads), int(idx % num_heads))
+        for idx in control_raw
+        if (int(idx // num_heads), int(idx % num_heads)) not in induction_set
+    ][:10]
+
+    return induction_heads, control_heads
+
+# ============================================================
+# nMAD Measurement
+# ============================================================
+def measure_nmad(model, tokenizer, dataset: list,
+                 target_heads: list, label: str, device) -> tuple[np.ndarray, np.ndarray]:
+    """
+    Runs generate() on each prompt (max_new_tokens=2 to guarantee one real Decode step),
+    hooks attention weights, computes per-prompt nMAD for target_heads, returns
+    (per_prompt_prefill_nmad, per_prompt_decode_nmad) arrays of shape (N_prompts,).
+    """
+    num_layers = model.config.num_hidden_layers
+    num_heads  = model.config.num_attention_heads
+
+    tracker = NMADHook(num_layers, num_heads)
+    tracker.register(model)
+
+    for item in tqdm(dataset, desc=f"nMAD [{label}]"):
+        inputs = tokenizer(item["prompt"], return_tensors="pt").to(device)
+        with torch.no_grad():
+            model.generate(
+                **inputs,
+                max_new_tokens=2,
+                pad_token_id=tokenizer.eos_token_id,
+                output_attentions=True,
+                return_dict_in_generate=True,
+            )
         tracker.flush_prompt()
 
     tracker.remove()
 
-    # Aggregate per-prompt norms across the specified heads
-    per_prompt_prefill = []
-    per_prompt_decode = []
     n_prompts = len(dataset)
-
+    pf_list, dc_list = [], []
     for h in target_heads:
-        if h in tracker.norms:
-            pf = tracker.norms[h]["prefill"]
-            dc = tracker.norms[h]["decode"]
+        key = tuple(h)
+        if key in tracker.norms:
+            pf = tracker.norms[key]["prefill"]
+            dc = tracker.norms[key]["decode"]
             if len(pf) == n_prompts and len(dc) == n_prompts:
-                per_prompt_prefill.append(pf)
-                per_prompt_decode.append(dc)
+                pf_list.append(pf)
+                dc_list.append(dc)
 
-    if not per_prompt_prefill:
+    if not pf_list:
+        print(f"  WARNING [{label}]: No valid per-prompt norms found for target heads.")
         return np.array([]), np.array([])
 
-    # Mean across heads, per prompt
-    per_prompt_prefill = np.mean(per_prompt_prefill, axis=0)
-    per_prompt_decode = np.mean(per_prompt_decode, axis=0)
-    return per_prompt_prefill, per_prompt_decode
+    return np.mean(pf_list, axis=0), np.mean(dc_list, axis=0)
 
 # ============================================================
-# Statistical Evaluation
+# Gate Evaluator
 # ============================================================
-def evaluate_gate(name, per_prompt_a, per_prompt_b, ratio_threshold, a_label, b_label):
+def evaluate_gate(name: str, prefill: np.ndarray, decode: np.ndarray,
+                  ratio_threshold: float) -> dict:
     """
-    Applies the pre-registered gate criteria:
-      - Mean ratio of a vs b
-      - One-sided Wilcoxon signed-rank test (a > b)
-    Returns a dict of results.
+    Applies pre-registered criteria:
+      - Mean Decode/Prefill nMAD ratio > ratio_threshold
+      - Wilcoxon signed-rank (Decode > Prefill, per prompt): p < P_VALUE_THRESHOLD
     """
-    if len(per_prompt_a) == 0 or len(per_prompt_b) == 0:
-        return {"gate": False, "reason": "Empty norms — heads not engaged on this task."}
+    if len(prefill) == 0 or len(decode) == 0:
+        return {"name": name, "gate": False, "reason": "Empty — heads not engaged on task."}
 
-    ratios = per_prompt_a / (per_prompt_b + 1e-9)
-    mean_ratio = float(np.mean(ratios))
-    std_ratio = float(np.std(ratios))
+    ratios   = decode / (prefill + 1e-9)
+    mean_r   = float(np.mean(ratios))
+    std_r    = float(np.std(ratios))
+    mean_pf  = float(np.mean(prefill))
+    mean_dc  = float(np.mean(decode))
 
     try:
-        stat, p_val = wilcoxon(per_prompt_a, per_prompt_b, alternative="greater")
+        _, p_wil = wilcoxon(decode, prefill, alternative="greater")
     except Exception:
-        p_val = 1.0
-        stat = 0.0
+        p_wil = 1.0
 
-    print(f"\n  [{name}] {a_label} vs {b_label}")
-    print(f"    Mean {a_label}: {np.mean(per_prompt_a):.4f} ± {np.std(per_prompt_a):.4f}")
-    print(f"    Mean {b_label}: {np.mean(per_prompt_b):.4f} ± {np.std(per_prompt_b):.4f}")
-    print(f"    Mean Ratio ({a_label}/{b_label}): {mean_ratio:.2f} ± {std_ratio:.2f}")
-    print(f"    Wilcoxon p-value ({a_label} > {b_label}): {p_val:.4f}")
-    print(f"    Threshold: ratio > {ratio_threshold}, p < {P_VALUE_THRESHOLD}")
+    ratio_pass   = mean_r > ratio_threshold
+    wilcoxon_pass = p_wil < P_VALUE_THRESHOLD
 
-    ratio_pass = mean_ratio > ratio_threshold
-    wilcoxon_pass = p_val < P_VALUE_THRESHOLD
+    print(f"\n  [{name}]")
+    print(f"    Prefill nMAD : {mean_pf:.4f}")
+    print(f"    Decode  nMAD : {mean_dc:.4f}")
+    print(f"    Ratio (D/P)  : {mean_r:.2f} ± {std_r:.2f}  (threshold > {ratio_threshold})")
+    print(f"    Wilcoxon p   : {p_wil:.4f}  (threshold < {P_VALUE_THRESHOLD})")
+    print(f"    ratio_pass={ratio_pass}  wilcoxon_pass={wilcoxon_pass}")
 
     return {
-        "name": name,
-        "mean_a": float(np.mean(per_prompt_a)),
-        "mean_b": float(np.mean(per_prompt_b)),
-        "mean_ratio": mean_ratio,
-        "std_ratio": std_ratio,
-        "wilcoxon_p": float(p_val),
-        "ratio_threshold": ratio_threshold,
-        "ratio_pass": ratio_pass,
-        "wilcoxon_pass": wilcoxon_pass,
-        "gate": ratio_pass and wilcoxon_pass
+        "name":          name,
+        "mean_prefill":  mean_pf,
+        "mean_decode":   mean_dc,
+        "mean_ratio":    mean_r,
+        "std_ratio":     std_r,
+        "wilcoxon_p":    float(p_wil),
+        "ratio_pass":    bool(ratio_pass),
+        "wilcoxon_pass": bool(wilcoxon_pass),
+        "gate":          bool(ratio_pass and wilcoxon_pass),
     }
 
 # ============================================================
 # Main
 # ============================================================
-def run_experiment_0(model_key="qwen-0.5b", n_prompts=50):
-    print(f"\nLoading {model_key} for Experiment 0 (Bulletproof Edition)...")
+def run_experiment_0(model_key: str = "qwen-0.5b", n_prompts: int = 50) -> None:
+    print(f"\n{'='*60}")
+    print(f"Experiment 0 (nMAD Edition) — {model_key}")
+    print(f"Pre-registered thresholds: ratio>{NMAD_RATIO_THRESHOLD}, p<{P_VALUE_THRESHOLD}")
+    print(f"{'='*60}")
+
     model, tokenizer = load_model_and_tokenizer(model_key, output_attentions=True)
-    device = model.device
+    device    = model.device
     num_heads = model.config.num_attention_heads
 
+    # Datasets
     with open(ARITH_DATASET_PATH) as f:
         arith_dataset = json.load(f)[:n_prompts]
-
     niah_dataset = build_niah_dataset(n_prompts)
 
-    print("\n--- Step 1: Classifying Head Populations ---")
+    # Step 1: Classify head populations
+    print("\n--- Step 1: Classifying Head Populations (arithmetic prompts) ---")
     induction_heads, control_heads = classify_heads(
         model, tokenizer, arith_dataset, num_heads, device
     )
-    print(f"  Induction/Counting Heads: {induction_heads[:5]}  (top 5)")
-    print(f"  Control (Local/Sink) Heads: {control_heads[:5]}  (top 5)")
+    print(f"  Induction candidates : {induction_heads[:5]}")
+    print(f"  Control (Local/Sink) : {control_heads[:5]}")
 
-    # Criterion 3: Control group for Mann-Whitney U
-    print("\n--- Step 2: Measuring Phase Norms on Arithmetic (Induction + Control) ---")
-    induction_prefill_arith, induction_decode_arith = measure_phase_norms(
-        model, tokenizer, arith_dataset, induction_heads, "Induction/Arith", device
-    )
-    control_prefill_arith, control_decode_arith = measure_phase_norms(
-        model, tokenizer, arith_dataset, control_heads, "Control/Arith", device
-    )
+    # Step 2: nMAD on arithmetic
+    print("\n--- Step 2: nMAD Measurement — Arithmetic ---")
+    ind_pf_arith, ind_dc_arith  = measure_nmad(model, tokenizer, arith_dataset,
+                                                induction_heads, "Induction/Arith", device)
+    ctl_pf_arith, ctl_dc_arith  = measure_nmad(model, tokenizer, arith_dataset,
+                                                control_heads,   "Control/Arith",   device)
 
-    # Criterion 1: Retrieval on NIAH (proper task)
-    print("\n--- Step 3: Measuring Phase Norms on NIAH (Induction + Control for comparison) ---")
-    induction_prefill_niah, induction_decode_niah = measure_phase_norms(
-        model, tokenizer, niah_dataset, induction_heads, "Induction/NIAH", device
-    )
-    control_prefill_niah, control_decode_niah = measure_phase_norms(
-        model, tokenizer, niah_dataset, control_heads, "Control/NIAH", device
-    )
+    # Step 3: nMAD on NIAH
+    print("\n--- Step 3: nMAD Measurement — NIAH ---")
+    ind_pf_niah, ind_dc_niah    = measure_nmad(model, tokenizer, niah_dataset,
+                                                induction_heads, "Induction/NIAH",  device)
 
-    print("\n========== EXPERIMENT 0 RESULTS ==========")
+    # Step 4: Statistical evaluation
+    print("\n" + "="*60)
+    print("EXPERIMENT 0 RESULTS")
+    print("="*60)
 
-    # Criterion A: Induction is Decode-dominant (Arithmetic)
-    result_induction = evaluate_gate(
-        "Induction Decode-Dominance (Arithmetic)",
-        induction_decode_arith, induction_prefill_arith,
-        INDUCTION_DECODE_PREFILL_THRESHOLD,
-        "Decode", "Prefill"
-    )
+    r_ind_arith = evaluate_gate("Induction / Arithmetic",
+                                ind_pf_arith, ind_dc_arith, NMAD_RATIO_THRESHOLD)
+    r_ctl_arith = evaluate_gate("Control / Arithmetic  [should NOT pass]",
+                                ctl_pf_arith, ctl_dc_arith, NMAD_RATIO_THRESHOLD)
+    r_ind_niah  = evaluate_gate("Induction / NIAH (cross-task)",
+                                ind_pf_niah,  ind_dc_niah,  NMAD_RATIO_THRESHOLD)
 
-    # Criterion B: Control is NOT Decode-dominant (specificity check)
-    result_control = evaluate_gate(
-        "Control Decode-Dominance (Arithmetic) — Should FAIL",
-        control_decode_arith, control_prefill_arith,
-        INDUCTION_DECODE_PREFILL_THRESHOLD,
-        "Decode", "Prefill"
-    )
+    # Mann-Whitney specificity: Induction shift > Control shift?
+    mwu_p = 1.0
+    mwu_pass = False
+    if len(ind_pf_arith) > 0 and len(ctl_pf_arith) > 0:
+        ind_shift = ind_dc_arith / (ind_pf_arith + 1e-9)
+        ctl_shift = ctl_dc_arith / (ctl_pf_arith + 1e-9)
+        try:
+            _, mwu_p = mannwhitneyu(ind_shift, ctl_shift, alternative="greater")
+        except Exception:
+            mwu_p = 1.0
+        mwu_pass = bool(mwu_p < P_VALUE_THRESHOLD)
+        print(f"\n  Mann-Whitney U (Induction shift > Control shift): p = {mwu_p:.4f}  pass={mwu_pass}")
 
-    # Criterion C: Mann-Whitney to prove Induction is more Decode-dominant than Control
-    if len(induction_decode_arith) > 0 and len(control_decode_arith) > 0:
-        induction_ratios = induction_decode_arith / (induction_prefill_arith + 1e-9)
-        control_ratios = control_decode_arith / (control_prefill_arith + 1e-9)
-        _, mwu_p = mannwhitneyu(induction_ratios, control_ratios, alternative="greater")
-        print(f"\n  Mann-Whitney U (Induction > Control Decode Ratio): p = {mwu_p:.4f}")
-        mwu_pass = mwu_p < P_VALUE_THRESHOLD
+    # Gate decision
+    core_pass = r_ind_arith["gate"] and mwu_pass          # criteria 1-3
+    niah_pass = r_ind_niah["gate"]                         # criterion 4
+
+    print("\n" + "="*60)
+    print("FINAL GATE DECISION")
+    print("="*60)
+    print(f"  Criterion 1 (ratio > {NMAD_RATIO_THRESHOLD}) : {r_ind_arith['ratio_pass']}")
+    print(f"  Criterion 2 (Wilcoxon p < {P_VALUE_THRESHOLD}) : {r_ind_arith['wilcoxon_pass']}")
+    print(f"  Criterion 3 (Mann-Whitney specificity)   : {mwu_pass}")
+    print(f"  Criterion 4 (NIAH cross-task)            : {niah_pass}")
+    print(f"  Control correctly does NOT pass          : {not r_ctl_arith['gate']}")
+
+    if core_pass and niah_pass:
+        gate_result = "FULL PASS — proceed to Experiments 1-3 across all tasks."
+    elif core_pass and not niah_pass:
+        gate_result = "PARTIAL PASS — arithmetic domain only. Restrict Experiments 1-3 to arithmetic until NIAH replication succeeds."
     else:
-        mwu_p, mwu_pass = 1.0, False
+        gate_result = "FAILED — do NOT proceed to Experiments 1-3. Reassess hypothesis."
 
-    # Criterion D: Induction on NIAH
-    result_induction_niah = evaluate_gate(
-        "Induction Decode-Dominance (NIAH) — Cross-task check",
-        induction_decode_niah, induction_prefill_niah,
-        INDUCTION_DECODE_PREFILL_THRESHOLD,
-        "Decode", "Prefill"
-    )
+    print(f"\n  HARD GATE: {gate_result}")
 
-    # Final Gate Decision
-    print("\n========== FINAL GATE DECISION ==========")
-    induction_gate = result_induction["gate"] and mwu_pass
-    print(f"  Induction Decode-Dominance (Arith): ratio_pass={result_induction['ratio_pass']}, wilcoxon_pass={result_induction['wilcoxon_pass']}, mwu_specificity_pass={mwu_pass}")
-    print(f"  Induction Decode-Dominance (NIAH):  ratio_pass={result_induction_niah['ratio_pass']}, wilcoxon_pass={result_induction_niah['wilcoxon_pass']}")
-    print(f"  Control group correctly weaker: {not result_control['gate']}")
-    print(f"\n  HARD GATE: {'PASSED' if induction_gate else 'FAILED'}")
-
-    if not induction_gate:
-        print("\n  >>> Gate FAILED. Do NOT proceed to Experiments 1-3. Reassess hypothesis. <<<")
-
-    def make_serializable(obj):
-        """Recursively convert numpy/bool_ types to Python native."""
-        if isinstance(obj, dict):
-            return {k: make_serializable(v) for k, v in obj.items()}
-        elif isinstance(obj, list):
-            return [make_serializable(i) for i in obj]
-        elif isinstance(obj, (np.bool_, bool)):
-            return bool(obj)
-        elif isinstance(obj, (np.integer,)):
-            return int(obj)
-        elif isinstance(obj, (np.floating,)):
-            return float(obj)
+    # Persist results
+    def to_python(obj):
+        if isinstance(obj, dict):  return {k: to_python(v) for k, v in obj.items()}
+        if isinstance(obj, list):  return [to_python(i) for i in obj]
+        if isinstance(obj, (np.bool_, bool)):    return bool(obj)
+        if isinstance(obj, np.integer):          return int(obj)
+        if isinstance(obj, np.floating):         return float(obj)
+        if isinstance(obj, np.ndarray):          return obj.tolist()
         return obj
 
-    results = make_serializable({
+    results = to_python({
         "model": model_key,
         "pre_registered_thresholds": {
-            "induction_decode_prefill_ratio": INDUCTION_DECODE_PREFILL_THRESHOLD,
-            "retrieval_prefill_decode_ratio": RETRIEVAL_PREFILL_DECODE_THRESHOLD,
-            "p_value": P_VALUE_THRESHOLD,
+            "nmad_ratio": NMAD_RATIO_THRESHOLD,
+            "p_value":    P_VALUE_THRESHOLD,
         },
         "induction_heads": induction_heads,
-        "control_heads": control_heads,
+        "control_heads":   control_heads,
         "results": {
-            "induction_arith": result_induction,
-            "control_arith": result_control,
-            "induction_niah": result_induction_niah,
-            "mann_whitney_p": float(mwu_p),
-            "mann_whitney_pass": bool(mwu_pass),
+            "induction_arith": r_ind_arith,
+            "control_arith":   r_ctl_arith,
+            "induction_niah":  r_ind_niah,
+            "mann_whitney_p":  float(mwu_p),
+            "mann_whitney_pass": mwu_pass,
         },
-        "gate_passed": bool(induction_gate)
+        "gate_result":    gate_result,
+        "core_pass":      core_pass,
+        "niah_pass":      niah_pass,
+        "full_gate_pass": core_pass and niah_pass,
     })
 
-    out_path = os.path.join(OUTPUT_DIR, f"exp0_temporal_handoff_v2_{model_key}.json")
+    out_path = os.path.join(OUTPUT_DIR, f"exp0_nmad_{model_key}.json")
     with open(out_path, "w") as f:
         json.dump(results, f, indent=2)
     print(f"\nResults saved to {out_path}")
+
 
 if __name__ == "__main__":
     run_experiment_0("qwen-0.5b")
