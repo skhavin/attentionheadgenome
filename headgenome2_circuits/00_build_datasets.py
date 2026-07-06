@@ -24,37 +24,51 @@ def generate_uuid_dataset():
         json.dump(data, f, indent=2)
     print(f"Generated {N} UUID copying prompts.")
 
-def generate_counting_dataset():
-    """Generates counting tasks for the Counting Circuit test."""
+def build_counting():
     data = []
-    items = ["Apple", "Banana", "Cherry", "Date", "Elderberry", "Fig", "Grape", "Honeydew", "Kiwi", "Lemon"]
-    for _ in range(N):
-        count = random.randint(3, 8)
-        selected = random.sample(items, count)
+    fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry", "Fig", "Grape", "Honeydew", "Kiwi", "Lemon", "Mango", "Nectarine", "Orange", "Papaya", "Quince", "Raspberry", "Strawberry", "Tangerine", "Ugli", "Watermelon"]
+    
+    # Generate 500 prompts
+    for _ in range(500):
+        length = random.randint(3, 15)
+        selected = random.sample(fruits, length)
         
-        # e.g., "1. Apple\n2. Banana\n3. Cherry\nTotal items:"
-        list_str = "\n".join([f"{i+1}. {item}" for i, item in enumerate(selected)])
-        prompt = f"Inventory List:\n{list_str}\n\nThe total number of items in the list above is "
+        prompt = "Inventory List:\n"
+        for i, f in enumerate(selected):
+            prompt += f"{i+1}. {f}\n"
+            
+        prompt += "\nThe total number of items in the list above is "
         data.append({
             "prompt": prompt,
-            "target": str(count),
-            "count": count
+            "target": str(length),
+            "count": length
         })
-    with open(os.path.join(DATA_DIR, "counting.json"), "w") as f:
+        
+    with open("headgenome2_circuits/datasets/counting.json", "w") as f:
         json.dump(data, f, indent=2)
-    print(f"Generated {N} counting prompts.")
 
-def generate_json_dataset():
-    """Generates deeply nested JSON structure prompts for Structured Output test."""
+def build_json_brackets():
     data = []
-    for i in range(N):
-        prompt = f'{{"user_{i}": {{"metadata": {{"id": {random.randint(1000,9999)}, "active": true, "roles": ["admin", "user"]'
-        # Expecting the model to close the structures correctly: }}}, etc.
+    # Make JSON nesting much deeper (5-7 levels) and add distractors to avoid ceiling effect
+    for i in range(100):
+        depth = random.randint(5, 7)
+        prompt = f'{{"payload_{i}": '
+        closures = "}"
+        for d in range(depth):
+            key_name = f"level_{d}"
+            prompt += f'{{"{key_name}": '
+            closures += "}"
+            
+        # Add some arrays and distractors inside the deepest level
+        prompt += f'{{"id": {random.randint(1000,9999)}, "tags": ["tag1", "tag2"], "nested_array": [1, 2, 3], "data": "value"'
+        closures += "}"
+        
         data.append({
             "prompt": prompt,
-            "target_closures": "}}}" # Just tracking what closing brackets are expected
+            "target_closures": closures
         })
-    with open(os.path.join(DATA_DIR, "json_brackets.json"), "w") as f:
+        
+    with open("headgenome2_circuits/datasets/json_brackets.json", "w") as f:
         json.dump(data, f, indent=2)
     print(f"Generated {N} JSON structural prompts.")
 
@@ -76,7 +90,7 @@ def generate_wikitext_dataset():
 if __name__ == "__main__":
     random.seed(42) # For reproducibility
     generate_uuid_dataset()
-    generate_counting_dataset()
-    generate_json_dataset()
+    build_counting()
+    build_json_brackets()
     generate_wikitext_dataset()
     print(f"All datasets generated in {DATA_DIR}")

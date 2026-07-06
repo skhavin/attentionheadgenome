@@ -1,202 +1,402 @@
 [
   {
-    "prompt": "{\"user_0\": {\"metadata\": {\"id\": 9565, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_0\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 9542, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_1\": {\"metadata\": {\"id\": 6183, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_1\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 5480, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_2\": {\"metadata\": {\"id\": 5272, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_2\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 5314, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_3\": {\"metadata\": {\"id\": 4346, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_3\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 9918, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_4\": {\"metadata\": {\"id\": 6147, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_4\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 3848, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_5\": {\"metadata\": {\"id\": 4910, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_5\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 7201, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
   },
   {
-    "prompt": "{\"user_6\": {\"metadata\": {\"id\": 5351, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_6\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 2275, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
   },
   {
-    "prompt": "{\"user_7\": {\"metadata\": {\"id\": 7484, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_7\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 5121, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_8\": {\"metadata\": {\"id\": 3144, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_8\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 4651, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
   },
   {
-    "prompt": "{\"user_9\": {\"metadata\": {\"id\": 5915, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_9\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 7649, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_10\": {\"metadata\": {\"id\": 8491, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_10\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 6653, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
   },
   {
-    "prompt": "{\"user_11\": {\"metadata\": {\"id\": 6180, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_11\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 8898, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
   },
   {
-    "prompt": "{\"user_12\": {\"metadata\": {\"id\": 2188, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_12\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 1108, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_13\": {\"metadata\": {\"id\": 1152, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_13\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 3276, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_14\": {\"metadata\": {\"id\": 8508, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_14\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 3713, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
   },
   {
-    "prompt": "{\"user_15\": {\"metadata\": {\"id\": 2638, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_15\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 2263, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
   },
   {
-    "prompt": "{\"user_16\": {\"metadata\": {\"id\": 2200, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_16\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 5600, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_17\": {\"metadata\": {\"id\": 9808, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_17\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 3461, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
   },
   {
-    "prompt": "{\"user_18\": {\"metadata\": {\"id\": 4492, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_18\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 3578, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
   },
   {
-    "prompt": "{\"user_19\": {\"metadata\": {\"id\": 9288, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_19\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 2938, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
   },
   {
-    "prompt": "{\"user_20\": {\"metadata\": {\"id\": 5345, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_20\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 4773, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_21\": {\"metadata\": {\"id\": 3170, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_21\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 6410, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
   },
   {
-    "prompt": "{\"user_22\": {\"metadata\": {\"id\": 6718, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_22\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 2856, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_23\": {\"metadata\": {\"id\": 2127, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_23\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 8844, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
   },
   {
-    "prompt": "{\"user_24\": {\"metadata\": {\"id\": 5002, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_24\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 4452, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
   },
   {
-    "prompt": "{\"user_25\": {\"metadata\": {\"id\": 7054, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_25\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 3641, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_26\": {\"metadata\": {\"id\": 5669, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_26\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 7732, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_27\": {\"metadata\": {\"id\": 3584, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_27\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 4992, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
   },
   {
-    "prompt": "{\"user_28\": {\"metadata\": {\"id\": 8179, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_28\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 3095, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
   },
   {
-    "prompt": "{\"user_29\": {\"metadata\": {\"id\": 9900, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_29\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 3639, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_30\": {\"metadata\": {\"id\": 5956, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_30\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 9399, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
   },
   {
-    "prompt": "{\"user_31\": {\"metadata\": {\"id\": 9666, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_31\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 3406, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
   },
   {
-    "prompt": "{\"user_32\": {\"metadata\": {\"id\": 1128, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_32\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 3725, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
   },
   {
-    "prompt": "{\"user_33\": {\"metadata\": {\"id\": 5905, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_33\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 3949, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
   },
   {
-    "prompt": "{\"user_34\": {\"metadata\": {\"id\": 2697, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_34\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 7642, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_35\": {\"metadata\": {\"id\": 3200, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_35\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 1305, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_36\": {\"metadata\": {\"id\": 5333, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_36\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 5644, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_37\": {\"metadata\": {\"id\": 2891, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_37\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 4548, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
   },
   {
-    "prompt": "{\"user_38\": {\"metadata\": {\"id\": 2753, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_38\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 8723, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
   },
   {
-    "prompt": "{\"user_39\": {\"metadata\": {\"id\": 3546, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_39\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 3794, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
   },
   {
-    "prompt": "{\"user_40\": {\"metadata\": {\"id\": 5462, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_40\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 7730, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
   },
   {
-    "prompt": "{\"user_41\": {\"metadata\": {\"id\": 5616, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_41\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 3338, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_42\": {\"metadata\": {\"id\": 4450, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_42\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 3979, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_43\": {\"metadata\": {\"id\": 6617, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_43\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 9369, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_44\": {\"metadata\": {\"id\": 4335, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_44\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 3747, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
   },
   {
-    "prompt": "{\"user_45\": {\"metadata\": {\"id\": 5325, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_45\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 6614, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
   },
   {
-    "prompt": "{\"user_46\": {\"metadata\": {\"id\": 9280, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_46\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 2127, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
   },
   {
-    "prompt": "{\"user_47\": {\"metadata\": {\"id\": 9004, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_47\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 7196, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
   },
   {
-    "prompt": "{\"user_48\": {\"metadata\": {\"id\": 5114, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_48\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 3166, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
   },
   {
-    "prompt": "{\"user_49\": {\"metadata\": {\"id\": 1832, \"active\": true, \"roles\": [\"admin\", \"user\"]",
-    "target_closures": "}}}"
+    "prompt": "{\"payload_49\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 1271, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_50\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 9564, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_51\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 7877, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_52\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 2577, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_53\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 8796, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_54\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 1639, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_55\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 9246, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_56\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 2526, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_57\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 3135, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_58\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 9835, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_59\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 8069, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_60\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 7892, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_61\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 1711, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_62\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 9680, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_63\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 4759, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_64\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 7246, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_65\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 2600, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_66\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 3193, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_67\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 8817, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_68\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 2373, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_69\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 9908, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_70\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 5223, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_71\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 1089, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_72\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 1116, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_73\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 9561, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_74\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 9515, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_75\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 7144, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_76\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 4365, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_77\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 6175, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_78\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 6935, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_79\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 3535, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_80\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 5155, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_81\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 9783, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_82\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 6990, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_83\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 5514, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_84\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 7511, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_85\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 7770, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_86\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 8904, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_87\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 7065, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_88\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 8925, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_89\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 6024, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_90\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 6641, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_91\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 7522, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_92\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 3262, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_93\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 2951, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_94\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 4764, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_95\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 3650, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_96\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 4513, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_97\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"level_6\": {\"id\": 7562, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_98\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"level_5\": {\"id\": 1852, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}}"
+  },
+  {
+    "prompt": "{\"payload_99\": {\"level_0\": {\"level_1\": {\"level_2\": {\"level_3\": {\"level_4\": {\"id\": 7375, \"tags\": [\"tag1\", \"tag2\"], \"nested_array\": [1, 2, 3], \"data\": \"value\"",
+    "target_closures": "}}}}}}}"
   }
 ]

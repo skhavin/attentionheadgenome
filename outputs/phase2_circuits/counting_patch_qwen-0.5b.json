@@ -1,7 +1,7 @@
 {
   "model": "qwen-0.5b",
-  "avg_null_shift": 0.6923076923076923,
-  "avg_target_shift": 1.9615384615384615,
-  "wilcoxon_p": 0.04251518661087823,
+  "avg_null_shift": 1.38,
+  "avg_target_shift": 5.68,
+  "wilcoxon_p": 2.2077706132055327e-07,
   "falsification_passed": true
 }

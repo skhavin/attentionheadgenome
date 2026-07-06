@@ -1,252 +1,2502 @@
 [
   {
-    "prompt": "Inventory List:\n1. Banana\n2. Apple\n3. Elderberry\n4. Lemon\n5. Grape\n6. Fig\n7. Kiwi\n8. Cherry\n\nThe total number of items in the list above is ",
-    "target": "8",
-    "count": 8
+    "prompt": "Inventory List:\n1. Date\n2. Apple\n3. Kiwi\n4. Honeydew\n5. Strawberry\n6. Cherry\n7. Nectarine\n8. Banana\n9. Mango\n10. Tangerine\n11. Orange\n12. Grape\n13. Ugli\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
   },
   {
-    "prompt": "Inventory List:\n1. Kiwi\n2. Banana\n3. Grape\n4. Apple\n5. Honeydew\n6. Fig\n7. Lemon\n8. Elderberry\n\nThe total number of items in the list above is ",
-    "target": "8",
-    "count": 8
+    "prompt": "Inventory List:\n1. Cherry\n2. Grape\n3. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
   },
   {
-    "prompt": "Inventory List:\n1. Lemon\n2. Apple\n3. Date\n4. Fig\n5. Grape\n6. Elderberry\n7. Honeydew\n\nThe total number of items in the list above is ",
+    "prompt": "Inventory List:\n1. Watermelon\n2. Apple\n3. Tangerine\n4. Grape\n5. Papaya\n6. Date\n7. Honeydew\n8. Lemon\n9. Elderberry\n10. Ugli\n11. Cherry\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Mango\n3. Kiwi\n4. Elderberry\n5. Grape\n6. Orange\n7. Fig\n8. Banana\n9. Quince\n10. Raspberry\n11. Nectarine\n12. Watermelon\n13. Tangerine\n14. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Quince\n3. Tangerine\n4. Date\n5. Orange\n6. Watermelon\n7. Kiwi\n\nThe total number of items in the list above is ",
     "target": "7",
     "count": 7
   },
   {
-    "prompt": "Inventory List:\n1. Honeydew\n2. Elderberry\n3. Apple\n4. Grape\n\nThe total number of items in the list above is ",
-    "target": "4",
-    "count": 4
-  },
-  {
-    "prompt": "Inventory List:\n1. Grape\n2. Fig\n3. Elderberry\n4. Banana\n\nThe total number of items in the list above is ",
-    "target": "4",
-    "count": 4
-  },
-  {
-    "prompt": "Inventory List:\n1. Fig\n2. Banana\n3. Kiwi\n4. Date\n\nThe total number of items in the list above is ",
-    "target": "4",
-    "count": 4
-  },
-  {
-    "prompt": "Inventory List:\n1. Fig\n2. Lemon\n3. Elderberry\n\nThe total number of items in the list above is ",
-    "target": "3",
-    "count": 3
-  },
-  {
-    "prompt": "Inventory List:\n1. Honeydew\n2. Kiwi\n3. Banana\n\nThe total number of items in the list above is ",
-    "target": "3",
-    "count": 3
-  },
-  {
-    "prompt": "Inventory List:\n1. Banana\n2. Kiwi\n3. Elderberry\n4. Grape\n5. Fig\n6. Honeydew\n\nThe total number of items in the list above is ",
-    "target": "6",
-    "count": 6
-  },
-  {
-    "prompt": "Inventory List:\n1. Lemon\n2. Date\n3. Banana\n4. Apple\n5. Fig\n\nThe total number of items in the list above is ",
-    "target": "5",
-    "count": 5
-  },
-  {
-    "prompt": "Inventory List:\n1. Elderberry\n2. Banana\n3. Date\n4. Grape\n\nThe total number of items in the list above is ",
-    "target": "4",
-    "count": 4
-  },
-  {
-    "prompt": "Inventory List:\n1. Grape\n2. Elderberry\n3. Honeydew\n\nThe total number of items in the list above is ",
-    "target": "3",
-    "count": 3
-  },
-  {
-    "prompt": "Inventory List:\n1. Fig\n2. Cherry\n3. Lemon\n4. Kiwi\n5. Banana\n6. Grape\n7. Apple\n8. Elderberry\n\nThe total number of items in the list above is ",
-    "target": "8",
-    "count": 8
-  },
-  {
-    "prompt": "Inventory List:\n1. Cherry\n2. Kiwi\n3. Date\n4. Banana\n5. Honeydew\n6. Fig\n7. Lemon\n8. Elderberry\n\nThe total number of items in the list above is ",
-    "target": "8",
-    "count": 8
-  },
-  {
-    "prompt": "Inventory List:\n1. Kiwi\n2. Date\n3. Fig\n4. Grape\n5. Apple\n6. Banana\n7. Honeydew\n8. Elderberry\n\nThe total number of items in the list above is ",
-    "target": "8",
-    "count": 8
-  },
-  {
-    "prompt": "Inventory List:\n1. Elderberry\n2. Banana\n3. Date\n4. Lemon\n5. Fig\n6. Cherry\n\nThe total number of items in the list above is ",
-    "target": "6",
-    "count": 6
-  },
-  {
-    "prompt": "Inventory List:\n1. Honeydew\n2. Grape\n3. Lemon\n4. Banana\n\nThe total number of items in the list above is ",
-    "target": "4",
-    "count": 4
-  },
-  {
-    "prompt": "Inventory List:\n1. Cherry\n2. Date\n3. Elderberry\n4. Fig\n5. Honeydew\n\nThe total number of items in the list above is ",
-    "target": "5",
-    "count": 5
-  },
-  {
-    "prompt": "Inventory List:\n1. Lemon\n2. Grape\n3. Fig\n4. Banana\n5. Kiwi\n6. Elderberry\n\nThe total number of items in the list above is ",
-    "target": "6",
-    "count": 6
-  },
-  {
-    "prompt": "Inventory List:\n1. Banana\n2. Apple\n3. Lemon\n4. Honeydew\n5. Fig\n6. Grape\n\nThe total number of items in the list above is ",
-    "target": "6",
-    "count": 6
-  },
-  {
-    "prompt": "Inventory List:\n1. Grape\n2. Banana\n3. Lemon\n4. Date\n5. Elderberry\n6. Honeydew\n7. Cherry\n8. Fig\n\nThe total number of items in the list above is ",
-    "target": "8",
-    "count": 8
-  },
-  {
-    "prompt": "Inventory List:\n1. Banana\n2. Kiwi\n3. Elderberry\n\nThe total number of items in the list above is ",
-    "target": "3",
-    "count": 3
-  },
-  {
-    "prompt": "Inventory List:\n1. Fig\n2. Banana\n3. Elderberry\n4. Date\n5. Kiwi\n6. Grape\n7. Apple\n8. Cherry\n\nThe total number of items in the list above is ",
-    "target": "8",
-    "count": 8
-  },
-  {
-    "prompt": "Inventory List:\n1. Elderberry\n2. Kiwi\n3. Cherry\n4. Lemon\n5. Apple\n6. Honeydew\n7. Banana\n8. Fig\n\nThe total number of items in the list above is ",
-    "target": "8",
-    "count": 8
-  },
-  {
-    "prompt": "Inventory List:\n1. Cherry\n2. Kiwi\n3. Apple\n4. Elderberry\n5. Lemon\n\nThe total number of items in the list above is ",
-    "target": "5",
-    "count": 5
-  },
-  {
-    "prompt": "Inventory List:\n1. Apple\n2. Banana\n3. Fig\n4. Grape\n5. Cherry\n6. Kiwi\n\nThe total number of items in the list above is ",
-    "target": "6",
-    "count": 6
-  },
-  {
-    "prompt": "Inventory List:\n1. Date\n2. Banana\n3. Kiwi\n\nThe total number of items in the list above is ",
-    "target": "3",
-    "count": 3
-  },
-  {
-    "prompt": "Inventory List:\n1. Honeydew\n2. Banana\n3. Cherry\n4. Kiwi\n5. Fig\n6. Date\n7. Grape\n8. Elderberry\n\nThe total number of items in the list above is ",
-    "target": "8",
-    "count": 8
-  },
-  {
-    "prompt": "Inventory List:\n1. Lemon\n2. Grape\n3. Date\n4. Elderberry\n5. Fig\n6. Banana\n7. Cherry\n\nThe total number of items in the list above is ",
+    "prompt": "Inventory List:\n1. Watermelon\n2. Nectarine\n3. Grape\n4. Cherry\n5. Banana\n6. Mango\n7. Date\n\nThe total number of items in the list above is ",
     "target": "7",
     "count": 7
   },
   {
-    "prompt": "Inventory List:\n1. Fig\n2. Honeydew\n3. Kiwi\n4. Apple\n5. Banana\n6. Lemon\n\nThe total number of items in the list above is ",
-    "target": "6",
-    "count": 6
+    "prompt": "Inventory List:\n1. Lemon\n2. Cherry\n3. Honeydew\n4. Date\n5. Orange\n6. Elderberry\n7. Tangerine\n8. Mango\n9. Fig\n10. Ugli\n11. Nectarine\n12. Watermelon\n13. Strawberry\n14. Kiwi\n15. Raspberry\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
   },
   {
-    "prompt": "Inventory List:\n1. Fig\n2. Apple\n3. Date\n\nThe total number of items in the list above is ",
+    "prompt": "Inventory List:\n1. Cherry\n2. Fig\n3. Tangerine\n4. Honeydew\n5. Ugli\n6. Strawberry\n7. Grape\n8. Elderberry\n9. Mango\n10. Kiwi\n11. Date\n12. Raspberry\n13. Apple\n14. Banana\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Orange\n3. Kiwi\n\nThe total number of items in the list above is ",
     "target": "3",
     "count": 3
   },
   {
-    "prompt": "Inventory List:\n1. Date\n2. Apple\n3. Banana\n4. Fig\n5. Grape\n6. Kiwi\n7. Honeydew\n\nThe total number of items in the list above is ",
-    "target": "7",
-    "count": 7
-  },
-  {
-    "prompt": "Inventory List:\n1. Apple\n2. Fig\n3. Banana\n\nThe total number of items in the list above is ",
-    "target": "3",
-    "count": 3
-  },
-  {
-    "prompt": "Inventory List:\n1. Date\n2. Elderberry\n3. Honeydew\n4. Banana\n5. Kiwi\n6. Grape\n7. Lemon\n\nThe total number of items in the list above is ",
-    "target": "7",
-    "count": 7
-  },
-  {
-    "prompt": "Inventory List:\n1. Honeydew\n2. Grape\n3. Date\n4. Apple\n\nThe total number of items in the list above is ",
+    "prompt": "Inventory List:\n1. Grape\n2. Ugli\n3. Mango\n4. Watermelon\n\nThe total number of items in the list above is ",
     "target": "4",
     "count": 4
   },
   {
-    "prompt": "Inventory List:\n1. Grape\n2. Fig\n3. Lemon\n\nThe total number of items in the list above is ",
-    "target": "3",
-    "count": 3
+    "prompt": "Inventory List:\n1. Raspberry\n2. Orange\n3. Quince\n4. Elderberry\n5. Kiwi\n6. Cherry\n7. Date\n8. Nectarine\n9. Watermelon\n10. Ugli\n11. Strawberry\n12. Grape\n13. Mango\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
   },
   {
-    "prompt": "Inventory List:\n1. Honeydew\n2. Apple\n3. Banana\n4. Kiwi\n5. Date\n6. Cherry\n\nThe total number of items in the list above is ",
-    "target": "6",
-    "count": 6
+    "prompt": "Inventory List:\n1. Honeydew\n2. Elderberry\n3. Strawberry\n4. Raspberry\n5. Cherry\n6. Orange\n7. Apple\n8. Banana\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
   },
   {
-    "prompt": "Inventory List:\n1. Date\n2. Lemon\n3. Kiwi\n\nThe total number of items in the list above is ",
-    "target": "3",
-    "count": 3
-  },
-  {
-    "prompt": "Inventory List:\n1. Honeydew\n2. Cherry\n3. Grape\n4. Banana\n5. Kiwi\n6. Date\n7. Lemon\n\nThe total number of items in the list above is ",
-    "target": "7",
-    "count": 7
-  },
-  {
-    "prompt": "Inventory List:\n1. Honeydew\n2. Kiwi\n3. Banana\n\nThe total number of items in the list above is ",
-    "target": "3",
-    "count": 3
-  },
-  {
-    "prompt": "Inventory List:\n1. Kiwi\n2. Apple\n3. Banana\n\nThe total number of items in the list above is ",
-    "target": "3",
-    "count": 3
-  },
-  {
-    "prompt": "Inventory List:\n1. Cherry\n2. Grape\n3. Honeydew\n4. Date\n\nThe total number of items in the list above is ",
-    "target": "4",
-    "count": 4
-  },
-  {
-    "prompt": "Inventory List:\n1. Grape\n2. Apple\n3. Cherry\n4. Date\n\nThe total number of items in the list above is ",
-    "target": "4",
-    "count": 4
-  },
-  {
-    "prompt": "Inventory List:\n1. Grape\n2. Elderberry\n3. Honeydew\n\nThe total number of items in the list above is ",
-    "target": "3",
-    "count": 3
-  },
-  {
-    "prompt": "Inventory List:\n1. Grape\n2. Kiwi\n3. Honeydew\n4. Banana\n5. Lemon\n\nThe total number of items in the list above is ",
+    "prompt": "Inventory List:\n1. Fig\n2. Papaya\n3. Cherry\n4. Orange\n5. Strawberry\n\nThe total number of items in the list above is ",
     "target": "5",
     "count": 5
   },
   {
-    "prompt": "Inventory List:\n1. Date\n2. Apple\n3. Kiwi\n4. Fig\n5. Cherry\n\nThe total number of items in the list above is ",
+    "prompt": "Inventory List:\n1. Quince\n2. Strawberry\n3. Kiwi\n4. Apple\n5. Date\n6. Mango\n7. Tangerine\n8. Orange\n9. Elderberry\n10. Watermelon\n11. Fig\n12. Banana\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Fig\n3. Quince\n4. Apple\n5. Kiwi\n6. Raspberry\n7. Orange\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Date\n3. Lemon\n4. Watermelon\n5. Grape\n\nThe total number of items in the list above is ",
     "target": "5",
     "count": 5
   },
   {
-    "prompt": "Inventory List:\n1. Apple\n2. Honeydew\n3. Cherry\n\nThe total number of items in the list above is ",
+    "prompt": "Inventory List:\n1. Nectarine\n2. Fig\n3. Tangerine\n4. Strawberry\n5. Apple\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Raspberry\n3. Apple\n4. Date\n5. Nectarine\n6. Quince\n7. Papaya\n8. Orange\n9. Elderberry\n10. Strawberry\n11. Tangerine\n12. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Watermelon\n3. Raspberry\n4. Ugli\n5. Elderberry\n6. Strawberry\n7. Mango\n8. Honeydew\n9. Kiwi\n10. Quince\n11. Tangerine\n12. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Grape\n3. Tangerine\n4. Ugli\n5. Lemon\n6. Strawberry\n7. Mango\n8. Watermelon\n9. Fig\n10. Honeydew\n11. Kiwi\n12. Orange\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Watermelon\n3. Cherry\n4. Mango\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Tangerine\n3. Honeydew\n\nThe total number of items in the list above is ",
     "target": "3",
     "count": 3
   },
   {
-    "prompt": "Inventory List:\n1. Kiwi\n2. Banana\n3. Cherry\n\nThe total number of items in the list above is ",
-    "target": "3",
-    "count": 3
+    "prompt": "Inventory List:\n1. Honeydew\n2. Apple\n3. Cherry\n4. Banana\n5. Watermelon\n6. Strawberry\n7. Ugli\n8. Fig\n9. Quince\n10. Kiwi\n11. Date\n12. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
   },
   {
-    "prompt": "Inventory List:\n1. Lemon\n2. Banana\n3. Date\n\nThe total number of items in the list above is ",
-    "target": "3",
-    "count": 3
+    "prompt": "Inventory List:\n1. Raspberry\n2. Grape\n3. Tangerine\n4. Elderberry\n5. Watermelon\n6. Date\n7. Orange\n8. Honeydew\n9. Ugli\n10. Quince\n11. Banana\n12. Lemon\n13. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
   },
   {
-    "prompt": "Inventory List:\n1. Banana\n2. Date\n3. Apple\n4. Elderberry\n5. Honeydew\n6. Kiwi\n\nThe total number of items in the list above is ",
+    "prompt": "Inventory List:\n1. Papaya\n2. Watermelon\n3. Quince\n4. Banana\n5. Date\n6. Apple\n7. Grape\n8. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Honeydew\n3. Grape\n4. Tangerine\n5. Quince\n6. Cherry\n7. Strawberry\n8. Raspberry\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Honeydew\n3. Cherry\n4. Watermelon\n5. Date\n6. Apple\n7. Mango\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Cherry\n3. Honeydew\n4. Fig\n5. Papaya\n6. Tangerine\n7. Quince\n8. Date\n9. Grape\n10. Watermelon\n11. Ugli\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Orange\n3. Kiwi\n4. Quince\n5. Lemon\n6. Grape\n7. Nectarine\n8. Papaya\n9. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Elderberry\n3. Grape\n4. Lemon\n5. Tangerine\n6. Apple\n7. Strawberry\n8. Nectarine\n9. Kiwi\n10. Quince\n11. Fig\n12. Mango\n13. Orange\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Strawberry\n3. Ugli\n4. Fig\n5. Banana\n6. Kiwi\n7. Watermelon\n8. Cherry\n9. Papaya\n10. Lemon\n11. Nectarine\n12. Date\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Ugli\n3. Honeydew\n4. Banana\n5. Cherry\n6. Grape\n7. Mango\n8. Lemon\n9. Orange\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Kiwi\n3. Grape\n4. Watermelon\n5. Honeydew\n6. Elderberry\n7. Tangerine\n8. Cherry\n9. Strawberry\n10. Nectarine\n11. Quince\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Cherry\n3. Apple\n4. Quince\n5. Date\n6. Banana\n7. Kiwi\n8. Raspberry\n9. Papaya\n10. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Cherry\n3. Honeydew\n4. Watermelon\n5. Lemon\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Tangerine\n3. Lemon\n4. Strawberry\n5. Apple\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Lemon\n3. Date\n4. Elderberry\n5. Kiwi\n6. Banana\n7. Quince\n8. Nectarine\n9. Raspberry\n10. Cherry\n11. Strawberry\n12. Ugli\n13. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Grape\n3. Kiwi\n4. Strawberry\n5. Raspberry\n6. Elderberry\n7. Papaya\n8. Apple\n9. Banana\n10. Watermelon\n11. Ugli\n12. Quince\n13. Orange\n14. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Kiwi\n3. Fig\n4. Quince\n5. Papaya\n6. Ugli\n7. Apple\n8. Banana\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Tangerine\n3. Banana\n4. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Elderberry\n3. Papaya\n4. Ugli\n5. Banana\n6. Strawberry\n7. Fig\n8. Orange\n9. Apple\n10. Watermelon\n11. Date\n12. Lemon\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Nectarine\n3. Tangerine\n4. Papaya\n5. Elderberry\n6. Quince\n7. Watermelon\n8. Cherry\n9. Orange\n10. Grape\n11. Apple\n12. Ugli\n13. Fig\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Honeydew\n3. Kiwi\n4. Fig\n5. Date\n6. Grape\n7. Watermelon\n8. Apple\n9. Ugli\n10. Raspberry\n11. Mango\n12. Nectarine\n13. Strawberry\n14. Cherry\n15. Banana\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Grape\n3. Orange\n4. Mango\n5. Kiwi\n6. Papaya\n\nThe total number of items in the list above is ",
     "target": "6",
     "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Nectarine\n3. Strawberry\n4. Orange\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Mango\n3. Apple\n4. Date\n5. Kiwi\n6. Cherry\n7. Lemon\n8. Elderberry\n9. Watermelon\n10. Banana\n11. Papaya\n12. Grape\n13. Fig\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Papaya\n3. Strawberry\n4. Date\n5. Orange\n6. Quince\n7. Lemon\n8. Tangerine\n9. Elderberry\n10. Apple\n11. Grape\n12. Watermelon\n13. Raspberry\n14. Cherry\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Mango\n3. Ugli\n4. Date\n5. Lemon\n6. Kiwi\n7. Elderberry\n8. Tangerine\n9. Grape\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Lemon\n3. Tangerine\n4. Elderberry\n5. Grape\n6. Raspberry\n7. Mango\n8. Quince\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Ugli\n3. Lemon\n4. Orange\n5. Apple\n6. Elderberry\n7. Quince\n8. Date\n9. Grape\n10. Tangerine\n11. Mango\n12. Watermelon\n13. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Grape\n3. Strawberry\n4. Raspberry\n5. Fig\n6. Mango\n7. Banana\n8. Elderberry\n9. Kiwi\n10. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Mango\n3. Cherry\n4. Honeydew\n5. Lemon\n6. Date\n7. Orange\n8. Quince\n9. Tangerine\n10. Apple\n11. Ugli\n12. Papaya\n13. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Quince\n3. Papaya\n4. Grape\n5. Orange\n6. Honeydew\n7. Strawberry\n8. Date\n9. Watermelon\n10. Mango\n11. Apple\n12. Banana\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Honeydew\n3. Fig\n4. Strawberry\n5. Quince\n6. Apple\n7. Kiwi\n8. Date\n9. Banana\n10. Ugli\n11. Cherry\n12. Mango\n13. Tangerine\n14. Grape\n15. Orange\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Papaya\n3. Tangerine\n4. Quince\n5. Fig\n6. Nectarine\n7. Ugli\n8. Honeydew\n9. Orange\n10. Elderberry\n11. Date\n12. Mango\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Raspberry\n3. Honeydew\n4. Kiwi\n5. Quince\n6. Banana\n7. Nectarine\n8. Elderberry\n9. Date\n10. Orange\n11. Fig\n12. Lemon\n13. Ugli\n14. Tangerine\n15. Grape\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Elderberry\n3. Grape\n4. Cherry\n5. Papaya\n6. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Quince\n3. Papaya\n4. Banana\n5. Grape\n6. Watermelon\n7. Raspberry\n8. Ugli\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Apple\n3. Orange\n4. Raspberry\n5. Watermelon\n6. Fig\n7. Elderberry\n8. Tangerine\n9. Grape\n10. Nectarine\n11. Kiwi\n12. Lemon\n13. Date\n14. Honeydew\n15. Banana\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Raspberry\n3. Apple\n4. Orange\n5. Mango\n6. Ugli\n7. Quince\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Fig\n3. Quince\n4. Elderberry\n5. Apple\n6. Tangerine\n7. Grape\n8. Lemon\n9. Watermelon\n10. Mango\n11. Raspberry\n12. Banana\n13. Papaya\n14. Kiwi\n15. Date\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Kiwi\n3. Orange\n4. Mango\n5. Grape\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Watermelon\n3. Orange\n4. Kiwi\n5. Papaya\n6. Elderberry\n7. Raspberry\n8. Banana\n9. Honeydew\n10. Apple\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Banana\n3. Nectarine\n4. Honeydew\n5. Cherry\n6. Orange\n7. Mango\n8. Apple\n9. Quince\n10. Date\n11. Papaya\n12. Watermelon\n13. Raspberry\n14. Ugli\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Date\n3. Grape\n4. Quince\n5. Kiwi\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Fig\n3. Date\n4. Ugli\n5. Lemon\n6. Banana\n7. Raspberry\n8. Apple\n9. Elderberry\n10. Papaya\n11. Grape\n12. Mango\n13. Tangerine\n14. Orange\n15. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Date\n3. Lemon\n4. Ugli\n5. Banana\n6. Fig\n7. Kiwi\n8. Grape\n9. Mango\n10. Quince\n11. Raspberry\n12. Papaya\n13. Nectarine\n14. Apple\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Date\n3. Papaya\n4. Nectarine\n5. Quince\n6. Strawberry\n7. Cherry\n8. Grape\n9. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Kiwi\n3. Tangerine\n4. Raspberry\n5. Quince\n6. Grape\n7. Papaya\n8. Nectarine\n9. Lemon\n10. Elderberry\n11. Fig\n12. Date\n13. Banana\n14. Cherry\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Quince\n3. Orange\n4. Mango\n5. Apple\n6. Watermelon\n7. Papaya\n8. Fig\n9. Cherry\n10. Ugli\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Kiwi\n3. Mango\n4. Ugli\n5. Strawberry\n6. Raspberry\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Grape\n3. Cherry\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Raspberry\n3. Tangerine\n4. Honeydew\n5. Ugli\n6. Mango\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Quince\n3. Apple\n4. Cherry\n5. Lemon\n6. Date\n7. Grape\n8. Nectarine\n9. Ugli\n10. Elderberry\n11. Watermelon\n12. Fig\n13. Honeydew\n14. Mango\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Papaya\n3. Tangerine\n4. Mango\n5. Watermelon\n6. Raspberry\n7. Honeydew\n8. Elderberry\n9. Orange\n10. Quince\n11. Date\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Grape\n2. Mango\n3. Date\n4. Fig\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Grape\n2. Raspberry\n3. Kiwi\n4. Strawberry\n5. Lemon\n6. Banana\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Honeydew\n3. Nectarine\n4. Fig\n5. Watermelon\n6. Apple\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Elderberry\n3. Kiwi\n4. Banana\n5. Strawberry\n6. Watermelon\n7. Ugli\n8. Nectarine\n9. Cherry\n10. Mango\n11. Honeydew\n12. Raspberry\n13. Apple\n14. Papaya\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Watermelon\n3. Quince\n4. Mango\n5. Fig\n6. Apple\n7. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Cherry\n3. Orange\n4. Raspberry\n5. Ugli\n6. Lemon\n7. Mango\n8. Papaya\n9. Apple\n10. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Lemon\n3. Cherry\n4. Honeydew\n5. Date\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Honeydew\n3. Strawberry\n4. Orange\n5. Quince\n6. Raspberry\n7. Ugli\n8. Elderberry\n9. Lemon\n10. Grape\n11. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Banana\n3. Date\n4. Grape\n5. Strawberry\n6. Elderberry\n7. Mango\n8. Ugli\n9. Cherry\n10. Tangerine\n11. Nectarine\n12. Kiwi\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Apple\n3. Papaya\n4. Quince\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Raspberry\n3. Lemon\n4. Banana\n5. Honeydew\n6. Elderberry\n7. Nectarine\n8. Quince\n9. Papaya\n10. Ugli\n11. Strawberry\n12. Date\n13. Orange\n14. Grape\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Grape\n3. Papaya\n4. Date\n5. Honeydew\n6. Mango\n7. Cherry\n8. Elderberry\n9. Tangerine\n10. Banana\n11. Apple\n12. Nectarine\n13. Orange\n14. Raspberry\n15. Fig\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Quince\n3. Date\n4. Ugli\n5. Watermelon\n6. Nectarine\n7. Grape\n8. Elderberry\n9. Kiwi\n10. Strawberry\n11. Honeydew\n12. Raspberry\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Banana\n3. Papaya\n4. Mango\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Apple\n3. Cherry\n4. Honeydew\n5. Ugli\n6. Orange\n7. Mango\n8. Elderberry\n9. Lemon\n10. Raspberry\n11. Tangerine\n12. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Kiwi\n3. Fig\n4. Papaya\n5. Raspberry\n6. Banana\n7. Honeydew\n8. Tangerine\n9. Grape\n10. Orange\n11. Mango\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Fig\n3. Mango\n4. Papaya\n5. Raspberry\n6. Elderberry\n7. Tangerine\n8. Grape\n9. Kiwi\n10. Apple\n11. Honeydew\n12. Banana\n13. Ugli\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Date\n3. Orange\n4. Strawberry\n5. Apple\n6. Watermelon\n7. Papaya\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Papaya\n3. Banana\n4. Grape\n5. Nectarine\n6. Lemon\n7. Orange\n8. Honeydew\n9. Mango\n10. Ugli\n11. Apple\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Tangerine\n3. Elderberry\n4. Lemon\n5. Quince\n6. Raspberry\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Date\n3. Apple\n4. Honeydew\n5. Fig\n6. Elderberry\n7. Kiwi\n8. Tangerine\n9. Papaya\n10. Grape\n11. Banana\n12. Ugli\n13. Lemon\n14. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Raspberry\n3. Lemon\n4. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Papaya\n3. Raspberry\n4. Tangerine\n5. Honeydew\n6. Strawberry\n7. Watermelon\n8. Cherry\n9. Grape\n10. Date\n11. Lemon\n12. Ugli\n13. Orange\n14. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Papaya\n3. Mango\n4. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Lemon\n3. Ugli\n4. Raspberry\n5. Elderberry\n6. Honeydew\n7. Kiwi\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Mango\n3. Tangerine\n4. Orange\n5. Quince\n6. Raspberry\n7. Fig\n8. Date\n9. Watermelon\n10. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Honeydew\n3. Papaya\n4. Banana\n5. Mango\n6. Nectarine\n7. Ugli\n8. Quince\n9. Grape\n10. Watermelon\n11. Cherry\n12. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Strawberry\n3. Mango\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Date\n3. Strawberry\n4. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Papaya\n3. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Kiwi\n3. Mango\n4. Orange\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Mango\n3. Tangerine\n4. Orange\n5. Ugli\n6. Raspberry\n7. Nectarine\n8. Strawberry\n9. Honeydew\n10. Kiwi\n11. Apple\n12. Banana\n13. Date\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Honeydew\n3. Cherry\n4. Papaya\n5. Date\n6. Orange\n7. Mango\n8. Nectarine\n9. Banana\n10. Ugli\n11. Tangerine\n12. Elderberry\n13. Apple\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Banana\n3. Lemon\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Papaya\n3. Elderberry\n4. Honeydew\n5. Ugli\n6. Lemon\n7. Mango\n8. Orange\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Watermelon\n3. Cherry\n4. Orange\n5. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Elderberry\n3. Honeydew\n4. Quince\n5. Kiwi\n6. Tangerine\n7. Watermelon\n8. Mango\n9. Apple\n10. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Fig\n3. Cherry\n4. Quince\n5. Nectarine\n6. Lemon\n7. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Kiwi\n3. Quince\n4. Lemon\n5. Grape\n6. Raspberry\n7. Watermelon\n8. Honeydew\n9. Banana\n10. Date\n11. Tangerine\n12. Fig\n13. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Apple\n3. Orange\n4. Kiwi\n5. Ugli\n6. Watermelon\n7. Papaya\n8. Mango\n9. Nectarine\n10. Raspberry\n11. Quince\n12. Honeydew\n13. Elderberry\n14. Grape\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Nectarine\n3. Watermelon\n4. Grape\n5. Kiwi\n6. Mango\n7. Orange\n8. Ugli\n9. Quince\n10. Papaya\n11. Cherry\n12. Banana\n13. Apple\n14. Lemon\n15. Date\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Nectarine\n3. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Mango\n3. Papaya\n4. Fig\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Tangerine\n3. Nectarine\n4. Strawberry\n5. Kiwi\n6. Papaya\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Raspberry\n3. Lemon\n4. Mango\n5. Date\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Elderberry\n3. Honeydew\n4. Orange\n5. Nectarine\n6. Banana\n7. Strawberry\n8. Grape\n9. Apple\n10. Ugli\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Quince\n3. Nectarine\n4. Kiwi\n5. Orange\n6. Papaya\n7. Mango\n8. Fig\n9. Banana\n10. Ugli\n11. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Tangerine\n3. Mango\n4. Honeydew\n5. Cherry\n6. Ugli\n7. Papaya\n8. Strawberry\n9. Nectarine\n10. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Date\n3. Elderberry\n4. Banana\n5. Strawberry\n6. Tangerine\n7. Honeydew\n8. Raspberry\n9. Orange\n10. Ugli\n11. Kiwi\n12. Cherry\n13. Grape\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Tangerine\n3. Papaya\n4. Elderberry\n5. Ugli\n6. Mango\n7. Banana\n8. Honeydew\n9. Lemon\n10. Grape\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Nectarine\n3. Grape\n4. Quince\n5. Strawberry\n6. Date\n7. Papaya\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Nectarine\n3. Tangerine\n4. Ugli\n5. Banana\n6. Grape\n7. Elderberry\n8. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Cherry\n3. Grape\n4. Apple\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Honeydew\n3. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Grape\n3. Cherry\n4. Watermelon\n5. Strawberry\n6. Papaya\n7. Quince\n8. Date\n9. Fig\n10. Tangerine\n11. Lemon\n12. Apple\n13. Elderberry\n14. Raspberry\n15. Banana\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Kiwi\n3. Fig\n4. Date\n5. Apple\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Nectarine\n3. Honeydew\n4. Mango\n5. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Banana\n3. Elderberry\n4. Papaya\n5. Date\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Raspberry\n3. Quince\n4. Nectarine\n5. Date\n6. Honeydew\n7. Kiwi\n8. Ugli\n9. Lemon\n10. Apple\n11. Papaya\n12. Elderberry\n13. Tangerine\n14. Fig\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Raspberry\n3. Orange\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Raspberry\n3. Quince\n4. Cherry\n5. Strawberry\n6. Fig\n7. Lemon\n8. Ugli\n9. Banana\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Ugli\n3. Tangerine\n4. Mango\n5. Orange\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Lemon\n3. Quince\n4. Watermelon\n5. Papaya\n6. Banana\n7. Orange\n8. Nectarine\n9. Tangerine\n10. Mango\n11. Kiwi\n12. Date\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Honeydew\n3. Papaya\n4. Mango\n5. Watermelon\n6. Grape\n7. Raspberry\n8. Nectarine\n9. Banana\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Mango\n3. Kiwi\n4. Nectarine\n5. Elderberry\n6. Ugli\n7. Honeydew\n8. Banana\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Watermelon\n3. Papaya\n4. Date\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Elderberry\n3. Tangerine\n4. Banana\n5. Mango\n6. Raspberry\n7. Strawberry\n8. Grape\n9. Fig\n10. Quince\n11. Orange\n12. Apple\n13. Ugli\n14. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Date\n3. Strawberry\n4. Grape\n5. Elderberry\n6. Mango\n7. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Nectarine\n3. Tangerine\n4. Ugli\n5. Watermelon\n6. Orange\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Honeydew\n3. Papaya\n4. Apple\n5. Kiwi\n6. Strawberry\n7. Cherry\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Mango\n3. Nectarine\n4. Apple\n5. Fig\n6. Papaya\n7. Cherry\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Cherry\n3. Elderberry\n4. Apple\n5. Ugli\n6. Nectarine\n7. Kiwi\n8. Date\n9. Grape\n10. Quince\n11. Honeydew\n12. Fig\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Lemon\n3. Mango\n4. Cherry\n5. Banana\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Banana\n3. Cherry\n4. Kiwi\n5. Quince\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Raspberry\n3. Quince\n4. Watermelon\n5. Kiwi\n6. Date\n7. Orange\n8. Ugli\n9. Banana\n10. Fig\n11. Grape\n12. Nectarine\n13. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Raspberry\n3. Strawberry\n4. Lemon\n5. Banana\n6. Date\n7. Grape\n8. Tangerine\n9. Apple\n10. Nectarine\n11. Quince\n12. Elderberry\n13. Orange\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Kiwi\n3. Lemon\n4. Mango\n5. Date\n6. Apple\n7. Honeydew\n8. Nectarine\n9. Grape\n10. Cherry\n11. Strawberry\n12. Orange\n13. Raspberry\n14. Watermelon\n15. Ugli\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Cherry\n3. Orange\n4. Banana\n5. Papaya\n6. Apple\n7. Honeydew\n8. Strawberry\n9. Fig\n10. Lemon\n11. Grape\n12. Mango\n13. Kiwi\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Orange\n3. Apple\n4. Mango\n5. Fig\n6. Ugli\n7. Lemon\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Cherry\n3. Papaya\n4. Date\n5. Honeydew\n6. Grape\n7. Lemon\n8. Quince\n9. Kiwi\n10. Banana\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Mango\n3. Honeydew\n4. Ugli\n5. Fig\n6. Banana\n7. Kiwi\n8. Strawberry\n9. Quince\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Grape\n3. Nectarine\n4. Tangerine\n5. Elderberry\n6. Date\n7. Banana\n8. Cherry\n9. Raspberry\n10. Quince\n11. Orange\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Cherry\n3. Fig\n4. Raspberry\n5. Quince\n6. Orange\n7. Lemon\n8. Strawberry\n9. Papaya\n10. Honeydew\n11. Nectarine\n12. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Elderberry\n3. Quince\n4. Cherry\n5. Raspberry\n6. Honeydew\n7. Watermelon\n8. Ugli\n9. Orange\n10. Lemon\n11. Apple\n12. Fig\n13. Banana\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Watermelon\n3. Banana\n4. Tangerine\n5. Nectarine\n6. Papaya\n7. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Strawberry\n3. Orange\n4. Quince\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Banana\n3. Quince\n4. Grape\n5. Mango\n6. Lemon\n7. Honeydew\n8. Kiwi\n9. Cherry\n10. Apple\n11. Papaya\n12. Ugli\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Cherry\n3. Strawberry\n4. Fig\n5. Banana\n6. Date\n7. Nectarine\n8. Honeydew\n9. Orange\n10. Kiwi\n11. Watermelon\n12. Ugli\n13. Tangerine\n14. Lemon\n15. Grape\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Mango\n3. Banana\n4. Ugli\n5. Cherry\n6. Fig\n7. Tangerine\n8. Kiwi\n9. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Kiwi\n3. Elderberry\n4. Mango\n5. Cherry\n6. Watermelon\n7. Strawberry\n8. Raspberry\n9. Fig\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Elderberry\n3. Cherry\n4. Lemon\n5. Watermelon\n6. Mango\n7. Raspberry\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Strawberry\n3. Cherry\n4. Papaya\n5. Nectarine\n6. Apple\n7. Fig\n8. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Grape\n2. Mango\n3. Raspberry\n4. Watermelon\n5. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Cherry\n3. Lemon\n4. Date\n5. Banana\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Elderberry\n3. Orange\n4. Ugli\n5. Fig\n6. Cherry\n7. Papaya\n8. Nectarine\n9. Lemon\n10. Quince\n11. Honeydew\n12. Apple\n13. Grape\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Quince\n3. Lemon\n4. Ugli\n5. Watermelon\n6. Kiwi\n7. Date\n8. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Grape\n3. Nectarine\n4. Quince\n5. Strawberry\n6. Orange\n7. Elderberry\n8. Watermelon\n9. Ugli\n10. Kiwi\n11. Mango\n12. Tangerine\n13. Cherry\n14. Lemon\n15. Banana\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Elderberry\n3. Kiwi\n4. Banana\n5. Raspberry\n6. Papaya\n7. Fig\n8. Tangerine\n9. Strawberry\n10. Orange\n11. Nectarine\n12. Ugli\n13. Lemon\n14. Grape\n15. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Strawberry\n3. Elderberry\n4. Papaya\n5. Cherry\n6. Watermelon\n7. Date\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Apple\n3. Papaya\n4. Banana\n5. Orange\n6. Kiwi\n7. Fig\n8. Date\n9. Grape\n10. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Apple\n3. Mango\n4. Date\n5. Tangerine\n6. Orange\n7. Cherry\n8. Papaya\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Raspberry\n3. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Quince\n3. Apple\n4. Cherry\n5. Tangerine\n6. Elderberry\n7. Date\n8. Strawberry\n9. Kiwi\n10. Lemon\n11. Nectarine\n12. Grape\n13. Banana\n14. Mango\n15. Orange\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Date\n3. Banana\n4. Honeydew\n5. Papaya\n6. Mango\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Quince\n3. Cherry\n4. Date\n5. Raspberry\n6. Lemon\n7. Kiwi\n8. Apple\n9. Mango\n10. Papaya\n11. Ugli\n12. Strawberry\n13. Tangerine\n14. Honeydew\n15. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Nectarine\n3. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Fig\n3. Cherry\n4. Strawberry\n5. Nectarine\n6. Banana\n7. Kiwi\n8. Watermelon\n9. Orange\n10. Raspberry\n11. Mango\n12. Apple\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Banana\n3. Orange\n4. Nectarine\n5. Kiwi\n6. Strawberry\n7. Apple\n8. Fig\n9. Ugli\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Date\n3. Mango\n4. Elderberry\n5. Banana\n6. Fig\n7. Kiwi\n8. Quince\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Quince\n3. Raspberry\n4. Watermelon\n5. Elderberry\n6. Banana\n7. Nectarine\n8. Orange\n9. Honeydew\n10. Apple\n11. Tangerine\n12. Date\n13. Mango\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Grape\n2. Banana\n3. Mango\n4. Lemon\n5. Orange\n6. Papaya\n7. Kiwi\n8. Honeydew\n9. Elderberry\n10. Apple\n11. Date\n12. Nectarine\n13. Fig\n14. Watermelon\n15. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Kiwi\n3. Date\n4. Nectarine\n5. Papaya\n6. Quince\n7. Grape\n8. Strawberry\n9. Honeydew\n10. Raspberry\n11. Fig\n12. Cherry\n13. Orange\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Nectarine\n3. Strawberry\n4. Kiwi\n5. Cherry\n6. Ugli\n7. Grape\n8. Banana\n9. Papaya\n10. Lemon\n11. Watermelon\n12. Tangerine\n13. Elderberry\n14. Mango\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Mango\n3. Lemon\n4. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Papaya\n3. Fig\n4. Quince\n5. Nectarine\n6. Honeydew\n7. Apple\n8. Raspberry\n9. Tangerine\n10. Lemon\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Banana\n3. Cherry\n4. Orange\n5. Nectarine\n6. Watermelon\n7. Strawberry\n8. Raspberry\n9. Mango\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Elderberry\n3. Quince\n4. Banana\n5. Ugli\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Nectarine\n3. Ugli\n4. Orange\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Elderberry\n3. Quince\n4. Nectarine\n5. Strawberry\n6. Honeydew\n7. Orange\n8. Watermelon\n9. Lemon\n10. Cherry\n11. Kiwi\n12. Fig\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Kiwi\n3. Honeydew\n4. Date\n5. Apple\n6. Nectarine\n7. Cherry\n8. Tangerine\n9. Ugli\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Date\n3. Kiwi\n4. Watermelon\n5. Quince\n6. Ugli\n7. Lemon\n8. Elderberry\n9. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Grape\n2. Date\n3. Elderberry\n4. Cherry\n5. Quince\n6. Strawberry\n7. Nectarine\n8. Honeydew\n9. Banana\n10. Mango\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Cherry\n3. Tangerine\n4. Lemon\n5. Strawberry\n6. Papaya\n7. Ugli\n8. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Nectarine\n3. Strawberry\n4. Honeydew\n5. Date\n6. Raspberry\n7. Orange\n8. Cherry\n9. Quince\n10. Tangerine\n11. Apple\n12. Watermelon\n13. Kiwi\n14. Ugli\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Elderberry\n3. Cherry\n4. Watermelon\n5. Lemon\n6. Grape\n7. Nectarine\n8. Papaya\n9. Honeydew\n10. Kiwi\n11. Quince\n12. Raspberry\n13. Banana\n14. Orange\n15. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Quince\n3. Ugli\n4. Strawberry\n5. Nectarine\n6. Watermelon\n7. Papaya\n8. Orange\n9. Kiwi\n10. Mango\n11. Lemon\n12. Tangerine\n13. Raspberry\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Banana\n3. Date\n4. Watermelon\n5. Elderberry\n6. Raspberry\n7. Cherry\n8. Papaya\n9. Fig\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Nectarine\n3. Strawberry\n4. Lemon\n5. Cherry\n6. Elderberry\n7. Date\n8. Mango\n9. Kiwi\n10. Quince\n11. Raspberry\n12. Orange\n13. Banana\n14. Ugli\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Ugli\n3. Elderberry\n4. Watermelon\n5. Mango\n6. Papaya\n7. Lemon\n8. Apple\n9. Orange\n10. Banana\n11. Nectarine\n12. Tangerine\n13. Date\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Papaya\n3. Apple\n4. Raspberry\n5. Lemon\n6. Mango\n7. Elderberry\n8. Honeydew\n9. Date\n10. Quince\n11. Grape\n12. Watermelon\n13. Orange\n14. Tangerine\n15. Fig\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Quince\n3. Papaya\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Grape\n3. Mango\n4. Elderberry\n5. Tangerine\n6. Papaya\n7. Nectarine\n8. Fig\n9. Watermelon\n10. Orange\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Nectarine\n3. Strawberry\n4. Date\n5. Mango\n6. Tangerine\n7. Honeydew\n8. Banana\n9. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Elderberry\n3. Date\n4. Banana\n5. Lemon\n6. Grape\n7. Papaya\n8. Raspberry\n9. Quince\n10. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Ugli\n3. Watermelon\n4. Grape\n5. Fig\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Quince\n3. Raspberry\n4. Lemon\n5. Tangerine\n6. Apple\n7. Banana\n8. Grape\n9. Kiwi\n10. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Grape\n2. Ugli\n3. Nectarine\n4. Banana\n5. Strawberry\n6. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Raspberry\n3. Lemon\n4. Apple\n5. Date\n6. Grape\n7. Cherry\n8. Elderberry\n9. Nectarine\n10. Fig\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Nectarine\n3. Banana\n4. Watermelon\n5. Tangerine\n6. Lemon\n7. Kiwi\n8. Date\n9. Fig\n10. Papaya\n11. Elderberry\n12. Raspberry\n13. Grape\n14. Quince\n15. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Kiwi\n3. Date\n4. Elderberry\n5. Watermelon\n6. Grape\n7. Fig\n8. Orange\n9. Papaya\n10. Ugli\n11. Nectarine\n12. Cherry\n13. Raspberry\n14. Strawberry\n15. Quince\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Banana\n3. Ugli\n4. Tangerine\n5. Elderberry\n6. Nectarine\n7. Fig\n8. Orange\n9. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Elderberry\n3. Strawberry\n4. Ugli\n5. Mango\n6. Watermelon\n7. Lemon\n8. Fig\n9. Cherry\n10. Grape\n11. Papaya\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Ugli\n3. Mango\n4. Strawberry\n5. Raspberry\n6. Nectarine\n7. Watermelon\n8. Elderberry\n9. Honeydew\n10. Apple\n11. Fig\n12. Papaya\n13. Banana\n14. Date\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Apple\n3. Raspberry\n4. Kiwi\n5. Honeydew\n6. Nectarine\n7. Ugli\n8. Watermelon\n9. Tangerine\n10. Cherry\n11. Strawberry\n12. Grape\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Banana\n3. Date\n4. Grape\n5. Apple\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Papaya\n3. Elderberry\n4. Ugli\n5. Grape\n6. Raspberry\n7. Kiwi\n8. Orange\n9. Lemon\n10. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Elderberry\n3. Strawberry\n4. Grape\n5. Mango\n6. Raspberry\n7. Honeydew\n8. Kiwi\n9. Tangerine\n10. Fig\n11. Cherry\n12. Papaya\n13. Quince\n14. Ugli\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Raspberry\n3. Grape\n4. Honeydew\n5. Watermelon\n6. Ugli\n7. Elderberry\n8. Date\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Grape\n3. Raspberry\n4. Mango\n5. Tangerine\n6. Fig\n7. Kiwi\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Lemon\n3. Date\n4. Orange\n5. Strawberry\n6. Papaya\n7. Fig\n8. Raspberry\n9. Cherry\n10. Elderberry\n11. Apple\n12. Mango\n13. Banana\n14. Nectarine\n15. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Raspberry\n3. Grape\n4. Tangerine\n5. Watermelon\n6. Quince\n7. Ugli\n8. Nectarine\n9. Elderberry\n10. Cherry\n11. Banana\n12. Date\n13. Papaya\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Honeydew\n3. Ugli\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Papaya\n3. Mango\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Date\n3. Elderberry\n4. Apple\n5. Fig\n6. Grape\n7. Mango\n8. Honeydew\n9. Orange\n10. Papaya\n11. Ugli\n12. Tangerine\n13. Watermelon\n14. Cherry\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Cherry\n3. Honeydew\n4. Watermelon\n5. Fig\n6. Grape\n7. Papaya\n8. Ugli\n9. Apple\n10. Quince\n11. Tangerine\n12. Orange\n13. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Lemon\n3. Date\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Quince\n3. Tangerine\n4. Strawberry\n5. Raspberry\n6. Ugli\n7. Cherry\n8. Kiwi\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Grape\n3. Date\n4. Mango\n5. Fig\n6. Nectarine\n7. Honeydew\n8. Strawberry\n9. Elderberry\n10. Cherry\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Lemon\n3. Grape\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Orange\n3. Papaya\n4. Strawberry\n5. Mango\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Date\n3. Fig\n4. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Honeydew\n3. Apple\n4. Kiwi\n5. Orange\n6. Date\n7. Ugli\n8. Raspberry\n9. Elderberry\n10. Fig\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Watermelon\n3. Apple\n4. Kiwi\n5. Nectarine\n6. Raspberry\n7. Date\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Quince\n3. Lemon\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Strawberry\n3. Lemon\n4. Date\n5. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Honeydew\n3. Ugli\n4. Elderberry\n5. Raspberry\n6. Cherry\n7. Tangerine\n8. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Papaya\n3. Tangerine\n4. Raspberry\n5. Grape\n6. Orange\n7. Date\n8. Mango\n9. Lemon\n10. Banana\n11. Kiwi\n12. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Cherry\n3. Date\n4. Banana\n5. Grape\n6. Lemon\n7. Kiwi\n8. Ugli\n9. Orange\n10. Fig\n11. Papaya\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Grape\n3. Raspberry\n4. Cherry\n5. Quince\n6. Orange\n7. Apple\n8. Honeydew\n9. Strawberry\n10. Kiwi\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Ugli\n3. Banana\n4. Watermelon\n5. Lemon\n6. Nectarine\n7. Apple\n8. Grape\n9. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Grape\n2. Ugli\n3. Cherry\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Nectarine\n3. Cherry\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Cherry\n3. Raspberry\n4. Watermelon\n5. Lemon\n6. Grape\n7. Ugli\n8. Orange\n9. Papaya\n10. Mango\n11. Quince\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Quince\n3. Watermelon\n4. Tangerine\n5. Cherry\n6. Mango\n7. Ugli\n8. Kiwi\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Date\n3. Fig\n4. Orange\n5. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Apple\n3. Ugli\n4. Lemon\n5. Quince\n6. Mango\n7. Nectarine\n8. Kiwi\n9. Grape\n10. Orange\n11. Papaya\n12. Date\n13. Raspberry\n14. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Kiwi\n3. Grape\n4. Date\n5. Banana\n6. Orange\n7. Mango\n8. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Honeydew\n3. Grape\n4. Cherry\n5. Date\n6. Lemon\n7. Watermelon\n8. Ugli\n9. Quince\n10. Mango\n11. Papaya\n12. Raspberry\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Orange\n3. Quince\n4. Honeydew\n5. Grape\n6. Ugli\n7. Papaya\n8. Tangerine\n9. Apple\n10. Cherry\n11. Kiwi\n12. Elderberry\n13. Date\n14. Raspberry\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Mango\n3. Watermelon\n4. Honeydew\n5. Lemon\n6. Quince\n7. Cherry\n8. Tangerine\n9. Kiwi\n10. Date\n11. Grape\n12. Elderberry\n13. Nectarine\n14. Apple\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Fig\n3. Papaya\n4. Raspberry\n5. Banana\n6. Watermelon\n7. Mango\n8. Tangerine\n9. Grape\n10. Kiwi\n11. Quince\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Watermelon\n3. Elderberry\n4. Lemon\n5. Orange\n6. Cherry\n7. Raspberry\n8. Kiwi\n9. Honeydew\n10. Date\n11. Mango\n12. Tangerine\n13. Quince\n14. Grape\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Tangerine\n3. Papaya\n4. Ugli\n5. Elderberry\n6. Grape\n7. Date\n8. Raspberry\n9. Strawberry\n10. Fig\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Quince\n3. Nectarine\n4. Watermelon\n5. Grape\n6. Apple\n7. Elderberry\n8. Raspberry\n9. Mango\n10. Lemon\n11. Tangerine\n12. Ugli\n13. Banana\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Tangerine\n3. Grape\n4. Raspberry\n5. Watermelon\n6. Papaya\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Apple\n3. Grape\n4. Tangerine\n5. Date\n6. Nectarine\n7. Orange\n8. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Grape\n3. Orange\n4. Honeydew\n5. Mango\n6. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Quince\n3. Tangerine\n4. Nectarine\n5. Lemon\n6. Elderberry\n7. Fig\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Quince\n3. Date\n4. Watermelon\n5. Mango\n6. Ugli\n7. Tangerine\n8. Fig\n9. Orange\n10. Grape\n11. Apple\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Elderberry\n3. Apple\n4. Kiwi\n5. Papaya\n6. Ugli\n7. Cherry\n8. Date\n9. Fig\n10. Orange\n11. Grape\n12. Mango\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Mango\n3. Kiwi\n4. Raspberry\n5. Strawberry\n6. Honeydew\n7. Cherry\n8. Nectarine\n9. Fig\n10. Papaya\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Raspberry\n3. Fig\n4. Banana\n5. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Apple\n3. Papaya\n4. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Cherry\n3. Elderberry\n4. Apple\n5. Grape\n6. Kiwi\n7. Watermelon\n8. Fig\n9. Strawberry\n10. Lemon\n11. Mango\n12. Papaya\n13. Quince\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Tangerine\n3. Ugli\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Watermelon\n3. Strawberry\n4. Kiwi\n5. Lemon\n6. Ugli\n7. Tangerine\n8. Nectarine\n9. Mango\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Date\n3. Ugli\n4. Strawberry\n5. Elderberry\n6. Tangerine\n7. Quince\n8. Lemon\n9. Kiwi\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Kiwi\n3. Orange\n4. Cherry\n5. Watermelon\n6. Grape\n7. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Watermelon\n3. Lemon\n4. Cherry\n5. Banana\n6. Raspberry\n7. Grape\n8. Papaya\n9. Orange\n10. Kiwi\n11. Ugli\n12. Apple\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Fig\n3. Cherry\n4. Raspberry\n5. Papaya\n6. Mango\n7. Orange\n8. Ugli\n9. Lemon\n10. Banana\n11. Kiwi\n12. Watermelon\n13. Date\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Raspberry\n3. Kiwi\n4. Banana\n5. Cherry\n6. Mango\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Ugli\n3. Banana\n4. Fig\n5. Mango\n6. Apple\n7. Date\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Orange\n3. Cherry\n4. Lemon\n5. Fig\n6. Strawberry\n7. Date\n8. Quince\n9. Grape\n10. Mango\n11. Kiwi\n12. Raspberry\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Cherry\n3. Strawberry\n4. Nectarine\n5. Banana\n6. Raspberry\n7. Grape\n8. Date\n9. Quince\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Orange\n3. Mango\n4. Apple\n5. Kiwi\n6. Ugli\n7. Honeydew\n8. Papaya\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Tangerine\n3. Orange\n4. Papaya\n5. Fig\n6. Mango\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Cherry\n3. Lemon\n4. Honeydew\n5. Ugli\n6. Banana\n7. Elderberry\n8. Raspberry\n9. Grape\n10. Mango\n11. Watermelon\n12. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Date\n3. Cherry\n4. Apple\n5. Lemon\n6. Honeydew\n7. Fig\n8. Orange\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Elderberry\n3. Cherry\n4. Fig\n5. Papaya\n6. Honeydew\n7. Kiwi\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Papaya\n3. Date\n4. Apple\n5. Cherry\n6. Fig\n7. Kiwi\n8. Banana\n9. Lemon\n10. Nectarine\n11. Quince\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Lemon\n3. Papaya\n4. Orange\n5. Cherry\n6. Nectarine\n7. Kiwi\n8. Date\n9. Ugli\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Orange\n3. Watermelon\n4. Elderberry\n5. Kiwi\n6. Strawberry\n7. Quince\n8. Honeydew\n9. Cherry\n10. Banana\n11. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Papaya\n3. Lemon\n4. Raspberry\n5. Cherry\n6. Fig\n7. Elderberry\n8. Date\n9. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Grape\n3. Quince\n4. Date\n5. Elderberry\n6. Watermelon\n7. Apple\n8. Ugli\n9. Fig\n10. Lemon\n11. Orange\n12. Nectarine\n13. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Elderberry\n3. Lemon\n4. Mango\n5. Grape\n6. Honeydew\n7. Fig\n8. Cherry\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Lemon\n3. Raspberry\n4. Honeydew\n5. Watermelon\n6. Grape\n7. Elderberry\n8. Orange\n9. Quince\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Ugli\n3. Grape\n4. Fig\n5. Apple\n6. Nectarine\n7. Honeydew\n8. Quince\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Lemon\n3. Cherry\n4. Papaya\n5. Raspberry\n6. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Honeydew\n3. Kiwi\n4. Elderberry\n5. Papaya\n6. Orange\n7. Grape\n8. Banana\n9. Ugli\n10. Watermelon\n11. Nectarine\n12. Raspberry\n13. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Nectarine\n3. Tangerine\n4. Cherry\n5. Date\n6. Orange\n7. Raspberry\n8. Mango\n9. Quince\n10. Fig\n11. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Banana\n3. Orange\n4. Mango\n5. Papaya\n6. Ugli\n7. Apple\n8. Quince\n9. Elderberry\n10. Date\n11. Kiwi\n12. Lemon\n13. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Orange\n3. Quince\n4. Strawberry\n5. Elderberry\n6. Fig\n7. Apple\n8. Honeydew\n9. Banana\n10. Raspberry\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Date\n3. Elderberry\n4. Nectarine\n5. Lemon\n6. Fig\n7. Honeydew\n8. Orange\n9. Ugli\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Nectarine\n3. Watermelon\n4. Date\n5. Quince\n6. Ugli\n7. Tangerine\n8. Honeydew\n9. Fig\n10. Banana\n11. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Apple\n3. Mango\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Fig\n3. Honeydew\n4. Strawberry\n5. Ugli\n6. Kiwi\n7. Cherry\n8. Raspberry\n9. Quince\n10. Grape\n11. Tangerine\n12. Watermelon\n13. Mango\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Watermelon\n3. Papaya\n4. Orange\n5. Apple\n6. Nectarine\n7. Lemon\n8. Date\n9. Honeydew\n10. Tangerine\n11. Grape\n12. Mango\n13. Raspberry\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Grape\n2. Watermelon\n3. Kiwi\n4. Cherry\n5. Date\n6. Orange\n7. Papaya\n8. Tangerine\n9. Strawberry\n10. Fig\n11. Mango\n12. Raspberry\n13. Honeydew\n14. Apple\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Strawberry\n3. Mango\n4. Orange\n5. Ugli\n6. Lemon\n7. Banana\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Quince\n3. Fig\n4. Lemon\n5. Cherry\n6. Mango\n7. Raspberry\n8. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Lemon\n3. Date\n4. Fig\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Strawberry\n3. Orange\n4. Papaya\n5. Watermelon\n6. Lemon\n7. Grape\n8. Ugli\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Tangerine\n3. Fig\n4. Ugli\n5. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Fig\n3. Mango\n4. Quince\n5. Banana\n6. Papaya\n7. Ugli\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Elderberry\n3. Grape\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Strawberry\n3. Raspberry\n4. Papaya\n5. Watermelon\n6. Grape\n7. Nectarine\n8. Honeydew\n9. Orange\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Ugli\n3. Apple\n4. Honeydew\n5. Lemon\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Honeydew\n3. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Quince\n3. Raspberry\n4. Strawberry\n5. Date\n6. Lemon\n7. Banana\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Nectarine\n3. Watermelon\n4. Banana\n5. Quince\n6. Kiwi\n7. Date\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Honeydew\n3. Lemon\n4. Banana\n5. Quince\n6. Elderberry\n7. Fig\n8. Strawberry\n9. Ugli\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Grape\n3. Nectarine\n4. Papaya\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Elderberry\n3. Grape\n4. Tangerine\n5. Banana\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Tangerine\n3. Kiwi\n4. Fig\n5. Mango\n6. Watermelon\n7. Elderberry\n8. Papaya\n9. Lemon\n10. Orange\n11. Ugli\n12. Banana\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Banana\n3. Kiwi\n4. Elderberry\n5. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Mango\n3. Honeydew\n4. Orange\n5. Raspberry\n6. Cherry\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Papaya\n3. Orange\n4. Quince\n5. Cherry\n6. Mango\n7. Tangerine\n8. Ugli\n9. Banana\n10. Grape\n11. Watermelon\n12. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Quince\n3. Raspberry\n4. Mango\n5. Apple\n6. Papaya\n7. Orange\n8. Watermelon\n9. Banana\n10. Honeydew\n11. Fig\n12. Ugli\n13. Grape\n14. Kiwi\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Grape\n2. Raspberry\n3. Kiwi\n4. Mango\n5. Lemon\n6. Fig\n7. Tangerine\n8. Ugli\n9. Cherry\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Mango\n3. Banana\n4. Tangerine\n5. Date\n6. Ugli\n7. Orange\n8. Honeydew\n9. Apple\n10. Strawberry\n11. Cherry\n12. Papaya\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Papaya\n3. Grape\n4. Elderberry\n5. Lemon\n6. Cherry\n7. Ugli\n8. Strawberry\n9. Banana\n10. Mango\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Cherry\n3. Nectarine\n4. Fig\n5. Banana\n6. Grape\n7. Mango\n8. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Papaya\n3. Cherry\n4. Date\n5. Apple\n6. Strawberry\n7. Watermelon\n8. Banana\n9. Tangerine\n10. Lemon\n11. Quince\n12. Kiwi\n13. Ugli\n14. Raspberry\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Date\n3. Papaya\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Raspberry\n3. Cherry\n4. Honeydew\n5. Orange\n6. Banana\n7. Nectarine\n8. Ugli\n9. Quince\n10. Papaya\n11. Fig\n12. Lemon\n13. Watermelon\n14. Mango\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Watermelon\n3. Cherry\n4. Strawberry\n5. Apple\n6. Lemon\n7. Mango\n8. Tangerine\n9. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Grape\n2. Elderberry\n3. Papaya\n4. Quince\n5. Watermelon\n6. Banana\n7. Strawberry\n8. Cherry\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Ugli\n3. Orange\n4. Nectarine\n5. Papaya\n6. Fig\n7. Tangerine\n8. Cherry\n9. Watermelon\n10. Elderberry\n11. Banana\n12. Strawberry\n13. Mango\n14. Grape\n15. Quince\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Grape\n3. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Grape\n3. Orange\n4. Lemon\n5. Banana\n6. Tangerine\n7. Quince\n8. Date\n9. Honeydew\n10. Ugli\n11. Raspberry\n12. Papaya\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Cherry\n3. Strawberry\n4. Apple\n5. Nectarine\n6. Quince\n7. Fig\n8. Ugli\n9. Grape\n10. Lemon\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Tangerine\n3. Fig\n4. Raspberry\n5. Cherry\n6. Apple\n7. Lemon\n8. Banana\n9. Quince\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Grape\n2. Banana\n3. Ugli\n4. Orange\n5. Lemon\n6. Mango\n7. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Watermelon\n3. Orange\n4. Cherry\n5. Elderberry\n6. Raspberry\n7. Banana\n8. Quince\n9. Ugli\n10. Kiwi\n11. Date\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Tangerine\n3. Mango\n4. Orange\n5. Cherry\n6. Watermelon\n7. Nectarine\n8. Grape\n9. Papaya\n10. Date\n11. Apple\n12. Ugli\n13. Banana\n14. Kiwi\n15. Lemon\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Banana\n3. Lemon\n4. Fig\n5. Date\n6. Apple\n7. Nectarine\n8. Cherry\n9. Papaya\n10. Quince\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Nectarine\n3. Strawberry\n4. Tangerine\n5. Kiwi\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Elderberry\n3. Kiwi\n4. Date\n5. Apple\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Kiwi\n3. Strawberry\n4. Cherry\n5. Ugli\n6. Nectarine\n7. Lemon\n8. Mango\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Quince\n3. Strawberry\n4. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Ugli\n3. Fig\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Kiwi\n3. Date\n4. Tangerine\n5. Honeydew\n6. Nectarine\n7. Ugli\n8. Apple\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Honeydew\n3. Banana\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Orange\n3. Elderberry\n4. Fig\n5. Banana\n6. Kiwi\n7. Ugli\n8. Watermelon\n9. Papaya\n10. Mango\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Mango\n3. Watermelon\n4. Papaya\n5. Ugli\n6. Elderberry\n7. Strawberry\n8. Banana\n9. Lemon\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Strawberry\n3. Banana\n4. Fig\n5. Honeydew\n6. Orange\n7. Kiwi\n8. Apple\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Quince\n3. Lemon\n4. Tangerine\n5. Mango\n6. Banana\n7. Kiwi\n8. Honeydew\n9. Apple\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Grape\n2. Lemon\n3. Ugli\n4. Honeydew\n5. Quince\n6. Fig\n7. Tangerine\n8. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Grape\n2. Tangerine\n3. Honeydew\n4. Elderberry\n5. Apple\n6. Quince\n7. Watermelon\n8. Raspberry\n9. Date\n10. Kiwi\n11. Fig\n12. Orange\n13. Lemon\n14. Mango\n15. Ugli\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Date\n3. Grape\n4. Strawberry\n5. Honeydew\n6. Tangerine\n7. Raspberry\n8. Apple\n9. Cherry\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Cherry\n3. Banana\n4. Honeydew\n5. Papaya\n6. Nectarine\n7. Fig\n8. Strawberry\n9. Quince\n10. Tangerine\n11. Lemon\n12. Mango\n13. Ugli\n14. Raspberry\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Ugli\n3. Banana\n4. Papaya\n5. Elderberry\n6. Date\n7. Raspberry\n8. Strawberry\n9. Fig\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Mango\n3. Ugli\n4. Quince\n5. Kiwi\n6. Date\n7. Banana\n8. Strawberry\n9. Cherry\n10. Lemon\n11. Papaya\n12. Nectarine\n13. Tangerine\n14. Honeydew\n15. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Papaya\n3. Date\n4. Nectarine\n5. Grape\n6. Honeydew\n7. Elderberry\n8. Quince\n9. Ugli\n10. Banana\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Lemon\n3. Banana\n4. Grape\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Cherry\n3. Honeydew\n4. Nectarine\n5. Orange\n6. Kiwi\n7. Apple\n8. Mango\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Fig\n3. Apple\n4. Orange\n5. Quince\n6. Watermelon\n7. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Date\n3. Quince\n4. Ugli\n5. Elderberry\n6. Banana\n7. Apple\n8. Papaya\n9. Strawberry\n10. Cherry\n11. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Cherry\n3. Kiwi\n4. Ugli\n5. Apple\n6. Banana\n7. Date\n8. Mango\n9. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Cherry\n3. Mango\n4. Date\n5. Banana\n6. Honeydew\n7. Apple\n8. Ugli\n9. Lemon\n10. Grape\n11. Tangerine\n12. Quince\n13. Papaya\n14. Strawberry\n15. Fig\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Nectarine\n3. Grape\n4. Watermelon\n5. Kiwi\n6. Elderberry\n7. Honeydew\n8. Cherry\n9. Apple\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Honeydew\n3. Lemon\n4. Raspberry\n5. Papaya\n6. Quince\n7. Kiwi\n8. Ugli\n9. Apple\n10. Banana\n11. Elderberry\n12. Grape\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Grape\n3. Strawberry\n4. Honeydew\n5. Apple\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Raspberry\n3. Tangerine\n4. Ugli\n5. Watermelon\n6. Quince\n7. Lemon\n8. Kiwi\n9. Fig\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Fig\n3. Apple\n4. Mango\n5. Honeydew\n6. Tangerine\n7. Orange\n8. Papaya\n9. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Strawberry\n3. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Honeydew\n3. Fig\n4. Date\n5. Watermelon\n6. Mango\n7. Strawberry\n8. Elderberry\n9. Kiwi\n10. Apple\n11. Papaya\n12. Grape\n13. Tangerine\n14. Nectarine\n15. Banana\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Ugli\n3. Mango\n4. Nectarine\n5. Apple\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Ugli\n3. Elderberry\n4. Grape\n5. Raspberry\n6. Kiwi\n7. Tangerine\n8. Cherry\n9. Honeydew\n10. Apple\n11. Banana\n12. Mango\n13. Date\n14. Papaya\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Strawberry\n3. Raspberry\n4. Watermelon\n5. Mango\n6. Quince\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Grape\n2. Elderberry\n3. Mango\n4. Fig\n5. Tangerine\n6. Apple\n7. Quince\n8. Cherry\n9. Lemon\n10. Orange\n11. Banana\n12. Kiwi\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Nectarine\n3. Orange\n4. Date\n5. Mango\n6. Elderberry\n7. Fig\n8. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Raspberry\n3. Mango\n4. Fig\n5. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Fig\n3. Orange\n4. Lemon\n5. Strawberry\n6. Cherry\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Ugli\n3. Orange\n4. Banana\n5. Fig\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Honeydew\n3. Date\n4. Raspberry\n5. Elderberry\n6. Fig\n7. Nectarine\n8. Banana\n9. Tangerine\n10. Quince\n11. Watermelon\n12. Cherry\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Mango\n3. Quince\n4. Apple\n5. Kiwi\n6. Date\n7. Tangerine\n8. Nectarine\n9. Banana\n10. Fig\n11. Elderberry\n12. Orange\n13. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Quince\n3. Papaya\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Raspberry\n3. Orange\n4. Nectarine\n5. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Ugli\n3. Honeydew\n4. Fig\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Banana\n3. Lemon\n4. Apple\n5. Mango\n6. Elderberry\n7. Ugli\n8. Papaya\n9. Fig\n10. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Cherry\n3. Tangerine\n4. Ugli\n5. Mango\n6. Lemon\n7. Quince\n8. Honeydew\n9. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Fig\n3. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Date\n3. Mango\n4. Grape\n5. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Watermelon\n3. Kiwi\n4. Lemon\n5. Strawberry\n6. Date\n7. Banana\n8. Apple\n9. Grape\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Raspberry\n3. Elderberry\n4. Banana\n5. Nectarine\n6. Apple\n7. Grape\n8. Strawberry\n9. Watermelon\n10. Mango\n11. Lemon\n12. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Apple\n3. Grape\n4. Fig\n5. Lemon\n6. Banana\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Lemon\n3. Orange\n4. Raspberry\n5. Strawberry\n6. Quince\n7. Mango\n8. Elderberry\n9. Banana\n10. Papaya\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Fig\n3. Nectarine\n4. Watermelon\n5. Tangerine\n6. Cherry\n7. Honeydew\n8. Apple\n9. Elderberry\n10. Papaya\n11. Mango\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Kiwi\n3. Banana\n4. Elderberry\n5. Date\n6. Tangerine\n7. Mango\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Papaya\n3. Honeydew\n4. Banana\n5. Orange\n6. Ugli\n7. Kiwi\n8. Grape\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Ugli\n3. Honeydew\n4. Watermelon\n5. Lemon\n6. Banana\n7. Grape\n8. Nectarine\n9. Apple\n10. Kiwi\n11. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Elderberry\n3. Date\n4. Quince\n5. Fig\n6. Cherry\n7. Tangerine\n8. Orange\n9. Papaya\n10. Strawberry\n11. Apple\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Papaya\n3. Grape\n4. Elderberry\n5. Kiwi\n6. Fig\n7. Nectarine\n8. Orange\n9. Banana\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Tangerine\n3. Watermelon\n4. Mango\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Quince\n3. Apple\n4. Watermelon\n5. Papaya\n6. Banana\n7. Grape\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Ugli\n3. Date\n4. Tangerine\n5. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Tangerine\n3. Nectarine\n4. Papaya\n5. Kiwi\n6. Grape\n7. Mango\n8. Honeydew\n9. Watermelon\n10. Ugli\n11. Orange\n12. Apple\n13. Cherry\n14. Strawberry\n15. Date\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Orange\n3. Banana\n4. Ugli\n5. Mango\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Banana\n3. Raspberry\n4. Kiwi\n5. Nectarine\n6. Apple\n7. Fig\n8. Orange\n9. Elderberry\n10. Tangerine\n11. Mango\n12. Watermelon\n13. Ugli\n14. Grape\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Lemon\n3. Quince\n4. Mango\n5. Kiwi\n6. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Cherry\n3. Grape\n4. Quince\n5. Tangerine\n6. Strawberry\n7. Papaya\n8. Raspberry\n9. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Nectarine\n3. Banana\n4. Watermelon\n5. Fig\n6. Tangerine\n7. Elderberry\n8. Ugli\n9. Kiwi\n10. Grape\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Ugli\n3. Apple\n4. Fig\n5. Grape\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Honeydew\n3. Watermelon\n4. Quince\n5. Tangerine\n6. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Grape\n2. Kiwi\n3. Nectarine\n4. Quince\n5. Orange\n6. Mango\n7. Banana\n8. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Nectarine\n3. Raspberry\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Fig\n3. Raspberry\n4. Nectarine\n5. Strawberry\n6. Cherry\n7. Papaya\n8. Elderberry\n9. Tangerine\n10. Banana\n11. Orange\n12. Apple\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Fig\n3. Grape\n4. Honeydew\n5. Strawberry\n6. Mango\n7. Date\n8. Elderberry\n9. Quince\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Apple\n3. Ugli\n4. Raspberry\n5. Elderberry\n6. Mango\n7. Cherry\n8. Lemon\n9. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Lemon\n3. Watermelon\n4. Papaya\n5. Orange\n6. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Kiwi\n3. Grape\n4. Watermelon\n5. Lemon\n6. Mango\n7. Ugli\n8. Raspberry\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Date\n3. Apple\n4. Strawberry\n5. Nectarine\n6. Kiwi\n7. Mango\n8. Lemon\n9. Orange\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Date\n3. Raspberry\n4. Cherry\n5. Mango\n6. Elderberry\n7. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Watermelon\n3. Lemon\n4. Grape\n5. Elderberry\n6. Ugli\n7. Orange\n8. Date\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Orange\n3. Mango\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Apple\n3. Raspberry\n4. Lemon\n5. Kiwi\n6. Quince\n7. Grape\n8. Papaya\n9. Orange\n10. Ugli\n11. Strawberry\n12. Date\n13. Fig\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Tangerine\n3. Raspberry\n4. Nectarine\n5. Lemon\n6. Papaya\n7. Cherry\n8. Mango\n9. Kiwi\n10. Quince\n11. Elderberry\n12. Banana\n13. Watermelon\n14. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Tangerine\n3. Fig\n4. Mango\n5. Cherry\n6. Date\n7. Ugli\n8. Quince\n9. Nectarine\n10. Elderberry\n11. Grape\n12. Papaya\n13. Watermelon\n14. Raspberry\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Quince\n3. Date\n4. Raspberry\n5. Banana\n6. Papaya\n7. Mango\n8. Watermelon\n9. Orange\n10. Nectarine\n11. Strawberry\n12. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Date\n3. Orange\n4. Watermelon\n5. Lemon\n6. Grape\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Watermelon\n3. Grape\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Ugli\n3. Quince\n4. Elderberry\n5. Mango\n6. Watermelon\n7. Nectarine\n8. Cherry\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Raspberry\n3. Mango\n4. Fig\n5. Tangerine\n6. Ugli\n7. Apple\n8. Papaya\n9. Honeydew\n10. Elderberry\n11. Date\n12. Watermelon\n13. Kiwi\n14. Lemon\n15. Orange\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Papaya\n3. Ugli\n4. Orange\n5. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Apple\n3. Banana\n4. Grape\n5. Nectarine\n6. Ugli\n7. Fig\n8. Watermelon\n9. Kiwi\n10. Date\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Honeydew\n3. Ugli\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Lemon\n3. Elderberry\n4. Date\n5. Orange\n6. Kiwi\n7. Ugli\n8. Tangerine\n9. Cherry\n10. Banana\n11. Apple\n12. Raspberry\n13. Quince\n14. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Watermelon\n3. Mango\n4. Papaya\n5. Elderberry\n6. Fig\n7. Honeydew\n8. Quince\n9. Date\n10. Cherry\n11. Grape\n12. Apple\n13. Nectarine\n14. Banana\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Elderberry\n2. Grape\n3. Apple\n4. Strawberry\n5. Fig\n6. Banana\n7. Raspberry\n8. Nectarine\n9. Mango\n10. Tangerine\n11. Ugli\n12. Watermelon\n13. Orange\n14. Kiwi\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Apple\n3. Banana\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Papaya\n3. Quince\n4. Orange\n5. Watermelon\n6. Kiwi\n7. Elderberry\n8. Honeydew\n9. Nectarine\n10. Cherry\n11. Raspberry\n12. Apple\n13. Ugli\n14. Lemon\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Strawberry\n3. Kiwi\n4. Elderberry\n5. Papaya\n6. Raspberry\n7. Banana\n8. Tangerine\n9. Nectarine\n10. Lemon\n11. Quince\n12. Ugli\n13. Mango\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Raspberry\n3. Grape\n4. Tangerine\n5. Kiwi\n6. Papaya\n7. Ugli\n8. Watermelon\n9. Fig\n10. Strawberry\n11. Elderberry\n12. Cherry\n13. Apple\n14. Lemon\n15. Orange\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Mango\n3. Honeydew\n4. Apple\n5. Strawberry\n6. Ugli\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Ugli\n3. Raspberry\n4. Elderberry\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Cherry\n3. Date\n4. Kiwi\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Quince\n3. Lemon\n4. Kiwi\n5. Ugli\n6. Apple\n7. Banana\n8. Cherry\n9. Raspberry\n10. Elderberry\n11. Fig\n12. Tangerine\n13. Grape\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Watermelon\n3. Banana\n4. Apple\n5. Elderberry\n6. Mango\n7. Quince\n8. Cherry\n9. Fig\n10. Nectarine\n11. Honeydew\n12. Raspberry\n13. Tangerine\n14. Orange\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Date\n3. Orange\n4. Tangerine\n5. Quince\n6. Elderberry\n7. Papaya\n8. Grape\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Papaya\n3. Fig\n4. Date\n5. Elderberry\n6. Nectarine\n7. Quince\n8. Apple\n9. Cherry\n10. Banana\n11. Grape\n12. Honeydew\n13. Kiwi\n14. Mango\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Nectarine\n3. Apple\n4. Elderberry\n5. Raspberry\n6. Quince\n7. Honeydew\n8. Banana\n9. Grape\n10. Papaya\n11. Tangerine\n12. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Apple\n3. Strawberry\n4. Honeydew\n5. Watermelon\n6. Kiwi\n7. Quince\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Date\n3. Papaya\n4. Honeydew\n5. Raspberry\n6. Fig\n7. Mango\n8. Tangerine\n9. Orange\n10. Grape\n11. Cherry\n12. Kiwi\n13. Apple\n14. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Strawberry\n3. Raspberry\n4. Tangerine\n5. Watermelon\n6. Banana\n7. Orange\n8. Honeydew\n9. Ugli\n10. Date\n11. Nectarine\n12. Elderberry\n13. Apple\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Tangerine\n3. Orange\n4. Ugli\n5. Watermelon\n6. Banana\n7. Raspberry\n8. Papaya\n9. Lemon\n10. Strawberry\n11. Quince\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Mango\n3. Date\n4. Raspberry\n5. Apple\n6. Banana\n7. Grape\n8. Papaya\n9. Strawberry\n10. Kiwi\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Cherry\n3. Lemon\n4. Strawberry\n5. Grape\n6. Mango\n7. Quince\n8. Honeydew\n9. Fig\n10. Nectarine\n11. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Mango\n3. Tangerine\n4. Raspberry\n5. Nectarine\n6. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Date\n2. Watermelon\n3. Honeydew\n4. Apple\n5. Mango\n6. Fig\n7. Papaya\n8. Raspberry\n9. Elderberry\n10. Kiwi\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Date\n3. Banana\n4. Fig\n5. Raspberry\n6. Cherry\n7. Papaya\n8. Watermelon\n9. Orange\n10. Grape\n11. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Grape\n3. Ugli\n4. Date\n5. Orange\n6. Strawberry\n7. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Grape\n2. Mango\n3. Date\n4. Papaya\n5. Banana\n6. Quince\n7. Ugli\n8. Strawberry\n9. Lemon\n10. Raspberry\n11. Honeydew\n12. Nectarine\n13. Cherry\n14. Tangerine\n15. Apple\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Tangerine\n3. Papaya\n4. Raspberry\n5. Fig\n6. Nectarine\n7. Lemon\n8. Cherry\n9. Quince\n10. Orange\n11. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Mango\n3. Strawberry\n4. Orange\n5. Papaya\n6. Lemon\n7. Nectarine\n8. Tangerine\n9. Date\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Mango\n3. Lemon\n4. Quince\n5. Elderberry\n6. Cherry\n7. Grape\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Lemon\n3. Tangerine\n4. Mango\n5. Grape\n6. Date\n7. Quince\n8. Ugli\n9. Nectarine\n10. Elderberry\n11. Fig\n12. Cherry\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Fig\n2. Strawberry\n3. Tangerine\n4. Mango\n5. Date\n6. Orange\n7. Watermelon\n8. Kiwi\n9. Honeydew\n10. Lemon\n11. Ugli\n12. Grape\n13. Elderberry\n14. Quince\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Strawberry\n3. Date\n4. Watermelon\n5. Orange\n6. Cherry\n7. Ugli\n8. Mango\n9. Papaya\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Fig\n3. Lemon\n4. Watermelon\n5. Elderberry\n6. Papaya\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Lemon\n2. Grape\n3. Tangerine\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Quince\n3. Date\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Honeydew\n3. Watermelon\n4. Orange\n5. Ugli\n6. Kiwi\n7. Strawberry\n8. Papaya\n9. Nectarine\n10. Elderberry\n11. Apple\n12. Grape\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Mango\n3. Tangerine\n4. Banana\n5. Apple\n6. Nectarine\n7. Elderberry\n8. Date\n9. Lemon\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Honeydew\n3. Nectarine\n4. Grape\n5. Strawberry\n6. Elderberry\n7. Ugli\n8. Cherry\n9. Mango\n10. Banana\n11. Orange\n12. Lemon\n13. Tangerine\n14. Date\n15. Apple\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Tangerine\n3. Watermelon\n4. Elderberry\n5. Fig\n6. Lemon\n7. Papaya\n8. Strawberry\n9. Apple\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Quince\n2. Elderberry\n3. Banana\n4. Ugli\n5. Mango\n6. Lemon\n7. Apple\n8. Orange\n\nThe total number of items in the list above is ",
+    "target": "8",
+    "count": 8
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Lemon\n3. Raspberry\n4. Nectarine\n5. Cherry\n6. Orange\n7. Strawberry\n8. Fig\n9. Kiwi\n10. Date\n11. Tangerine\n12. Papaya\n13. Banana\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Fig\n3. Papaya\n4. Orange\n5. Cherry\n6. Ugli\n7. Date\n8. Tangerine\n9. Mango\n10. Quince\n11. Nectarine\n12. Lemon\n13. Elderberry\n14. Banana\n15. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Raspberry\n2. Tangerine\n3. Apple\n4. Date\n5. Nectarine\n6. Honeydew\n7. Strawberry\n8. Mango\n9. Lemon\n10. Watermelon\n11. Papaya\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Orange\n3. Date\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Kiwi\n2. Tangerine\n3. Lemon\n4. Apple\n5. Nectarine\n6. Watermelon\n7. Orange\n8. Quince\n9. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "9",
+    "count": 9
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Lemon\n3. Grape\n4. Mango\n5. Cherry\n6. Watermelon\n7. Raspberry\n8. Orange\n9. Kiwi\n10. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "10",
+    "count": 10
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Grape\n3. Ugli\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Papaya\n2. Date\n3. Grape\n4. Watermelon\n5. Cherry\n6. Nectarine\n7. Mango\n8. Raspberry\n9. Apple\n10. Honeydew\n11. Fig\n12. Quince\n13. Banana\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Fig\n3. Kiwi\n4. Cherry\n\nThe total number of items in the list above is ",
+    "target": "4",
+    "count": 4
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Kiwi\n3. Papaya\n4. Orange\n5. Quince\n6. Mango\n7. Grape\n8. Tangerine\n9. Fig\n10. Apple\n11. Strawberry\n12. Banana\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Apple\n2. Cherry\n3. Banana\n4. Ugli\n5. Nectarine\n6. Quince\n7. Kiwi\n8. Tangerine\n9. Elderberry\n10. Mango\n11. Raspberry\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Lemon\n3. Quince\n4. Orange\n5. Strawberry\n6. Papaya\n7. Mango\n8. Apple\n9. Honeydew\n10. Watermelon\n11. Kiwi\n12. Date\n\nThe total number of items in the list above is ",
+    "target": "12",
+    "count": 12
+  },
+  {
+    "prompt": "Inventory List:\n1. Orange\n2. Tangerine\n3. Lemon\n4. Elderberry\n5. Ugli\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Nectarine\n2. Apple\n3. Tangerine\n4. Elderberry\n5. Date\n6. Ugli\n7. Quince\n8. Lemon\n9. Orange\n10. Grape\n11. Kiwi\n12. Watermelon\n13. Banana\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Grape\n2. Nectarine\n3. Watermelon\n4. Papaya\n5. Elderberry\n6. Cherry\n7. Quince\n\nThe total number of items in the list above is ",
+    "target": "7",
+    "count": 7
+  },
+  {
+    "prompt": "Inventory List:\n1. Watermelon\n2. Kiwi\n3. Grape\n4. Date\n5. Fig\n6. Mango\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Banana\n3. Tangerine\n4. Quince\n5. Cherry\n6. Elderberry\n7. Mango\n8. Watermelon\n9. Strawberry\n10. Orange\n11. Date\n12. Honeydew\n13. Fig\n14. Raspberry\n15. Papaya\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Honeydew\n2. Date\n3. Lemon\n4. Cherry\n5. Grape\n6. Fig\n7. Watermelon\n8. Papaya\n9. Quince\n10. Tangerine\n11. Elderberry\n12. Strawberry\n13. Nectarine\n\nThe total number of items in the list above is ",
+    "target": "13",
+    "count": 13
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Papaya\n3. Fig\n4. Apple\n5. Watermelon\n6. Date\n7. Orange\n8. Quince\n9. Nectarine\n10. Raspberry\n11. Grape\n12. Elderberry\n13. Tangerine\n14. Banana\n15. Honeydew\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Mango\n2. Raspberry\n3. Quince\n4. Tangerine\n5. Nectarine\n6. Orange\n7. Elderberry\n8. Honeydew\n9. Kiwi\n10. Banana\n11. Cherry\n12. Watermelon\n13. Papaya\n14. Grape\n\nThe total number of items in the list above is ",
+    "target": "14",
+    "count": 14
+  },
+  {
+    "prompt": "Inventory List:\n1. Tangerine\n2. Grape\n3. Kiwi\n4. Cherry\n5. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "5",
+    "count": 5
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Apple\n3. Orange\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
+  },
+  {
+    "prompt": "Inventory List:\n1. Ugli\n2. Grape\n3. Banana\n4. Kiwi\n5. Raspberry\n6. Mango\n7. Orange\n8. Cherry\n9. Fig\n10. Watermelon\n11. Date\n12. Elderberry\n13. Papaya\n14. Lemon\n15. Strawberry\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Orange\n3. Nectarine\n4. Strawberry\n5. Apple\n6. Mango\n7. Date\n8. Ugli\n9. Lemon\n10. Quince\n11. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "11",
+    "count": 11
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Elderberry\n3. Quince\n4. Fig\n5. Watermelon\n6. Lemon\n7. Tangerine\n8. Mango\n9. Cherry\n10. Honeydew\n11. Raspberry\n12. Apple\n13. Date\n14. Grape\n15. Orange\n\nThe total number of items in the list above is ",
+    "target": "15",
+    "count": 15
+  },
+  {
+    "prompt": "Inventory List:\n1. Cherry\n2. Kiwi\n3. Nectarine\n4. Honeydew\n5. Banana\n6. Mango\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Strawberry\n2. Nectarine\n3. Orange\n4. Raspberry\n5. Quince\n6. Watermelon\n\nThe total number of items in the list above is ",
+    "target": "6",
+    "count": 6
+  },
+  {
+    "prompt": "Inventory List:\n1. Banana\n2. Mango\n3. Date\n\nThe total number of items in the list above is ",
+    "target": "3",
+    "count": 3
   }
 ]

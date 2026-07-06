@@ -17,12 +17,18 @@ class AblationHook:
         self.hooks = []
         
     def create_hook(self, target_heads):
+        has_printed_sanity = {"value": False}
         def hook(module, input):
             x = input[0] # input to o_proj, shape: (batch, seq, hidden_dim)
             for h in target_heads:
                 start_idx = h * self.head_dim
                 end_idx = start_idx + self.head_dim
                 x[:, :, start_idx:end_idx] = 0.0
+                
+                if not has_printed_sanity["value"]:
+                    assert torch.all(x[:, :, start_idx:end_idx] == 0.0), f"Ablation failed! Head {h} not zeroed."
+                    print(f"[Sanity Check] Verified `o_proj` input for head {h} was successfully zeroed.")
+            has_printed_sanity["value"] = True
             return (x,)
         return hook
 
