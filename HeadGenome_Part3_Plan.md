@@ -97,9 +97,22 @@ $S > 0.40$ means a single layer accounts for >40% of the total probability gain.
 
 ---
 
-## Category C: Universal Stages (Exploratory) — PENDING
+## Category C: Universal Stages (Cross-Architecture Law) — PENDING
 
-Not pre-registered. Runs after Category B. Uses the Logit Lens $L^*$ layers as anchors to identify whether early layers (1 to $L^*/2$) show qualitatively different residual stream content (syntax-heavy) vs. late layers ($L^*/2$ to $L$) (semantics-heavy). Explicitly exploratory — no hard gate, no claim stronger than "suggestive pattern."
+**Hypothesis:** The transformer pipeline is spatially organized by depth, dedicating specific relative depths to specific cognitive functions universally across architectures.
+- Early layers (Syntax/Shallow Logic): Arithmetic tasks resolve here.
+- Late layers (Deep Memory/Retrieval): Long-context NIAH tasks resolve here.
+
+**Pre-Registered Universality Criteria (The Anchor Gate):**
+To elevate this from a single-model observation to a cross-architecture law, the relative emergence layers ($L^*_{norm} = L^* / \text{total\_layers}$) must satisfy these rigid bounds across **Qwen-0.5B, Qwen-1.5B, and Llama-3.2-1B**:
+1. **Arithmetic Early Anchor:** Mean $L^*_{norm}$ must fall in the **first 20%** of the network ($L^*_{norm} < 0.20$).
+2. **NIAH Late Anchor:** Mean $L^*_{norm}$ must fall in the **last 20%** of the network ($L^*_{norm} > 0.80$).
+3. **Artifact Sanity Checks (must pass to count as emergence):**
+   - *Accuracy Check:* The real prompts must achieve high final-layer accuracy (target token rank 0 or 1 at layer $L$) to prove the early $L^*$ isn't just a shallow prior that gets overwritten.
+   - *Null Position Check:* If shuffled (null) prompts achieve top-1 rank, their mean $L^*$ must NOT cluster at the same depth as the real prompts (ruling out structural Logit Lens artifacts).
+
+**Pre-Registered GPT-2 (APE) Fracture Risk:**
+Consistent with our findings in Paper I (where Absolute Positional Encodings broke late-stage KV-eviction), we predict that GPT-2 may fail the NIAH Late Anchor criterion due to absolute position noise accumulating over long contexts. If GPT-2 fails while the RoPE models pass, it will be classified as an architectural fracture (APE vs RoPE), not a falsification of the universal law.
 
 ---
 

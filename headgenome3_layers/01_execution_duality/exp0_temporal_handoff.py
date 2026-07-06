@@ -104,19 +104,20 @@ class NMADHook:
             if attn_weights is None:
                 return  # model was called without output_attentions; skip
 
-            _, num_heads, seq_len, _ = attn_weights.shape
-            t = seq_len - 1                   # last active token index
+            _, num_heads, q_len, k_len = attn_weights.shape
+            t = k_len - 1                   # absolute position of the current token
             if t == 0:
                 return                        # single-token edge case: distance is 0
 
-            phase = "prefill" if seq_len > 1 else "decode"
+            phase = "prefill" if q_len > 1 else "decode"
 
-            # distances shape: (seq_len,)  — distance of each past token from t
+            # distances shape: (k_len,)  — distance of each past token from t
             distances = torch.arange(t, -1, -1, dtype=attn_weights.dtype,
                                      device=attn_weights.device)  # [t, t-1, ..., 0]
 
-            # alpha[:, :, t, :] shape: (batch=1, heads, seq_len)
-            alpha = attn_weights[0, :, t, :]  # (heads, seq_len)
+            # The query we care about is the last token in the Q sequence
+            q_idx = q_len - 1
+            alpha = attn_weights[0, :, q_idx, :]  # (heads, k_len)
 
             # raw_mad per head: (heads,)
             raw_mad = (alpha * distances).sum(dim=-1)
@@ -189,14 +190,16 @@ def classify_heads(model, tokenizer, dataset: list,
 
         for l, attn in enumerate(out.attentions):
             a = attn[0, :, t, :]  # (heads, seq)
-            # Induction: mass on tokens more than 3 positions back
-            far_mass = a[:, :max(0, t - 3)].sum(-1)
+            # Induction: mass on tokens more than 3 positions back, EXCLUDING tokens 0 and 1 (Sink)
+            far_mass = a[:, 2:max(2, t - 3)].sum(-1) if max(2, t - 3) > 2 else torch.zeros(num_heads, device=device)
             induction_scores[l] += far_mass.cpu().numpy()
+            
             # Local: mass on the 3 immediately preceding tokens
             near = a[:, max(0, t-3):t]
             local_scores[l]     += near.sum(-1).cpu().numpy() if near.shape[-1] > 0 else 0
-            # Sink: mass on position 0
-            sink_scores[l]      += a[:, 0].cpu().numpy()
+            
+            # Sink: mass on position 0 and 1
+            sink_scores[l]      += a[:, :2].sum(-1).cpu().numpy()
 
     induction_scores /= count
     local_scores     /= count
@@ -332,10 +335,10 @@ def run_experiment_0(model_key: str = "qwen-0.5b", n_prompts: int = 50) -> None:
         arith_dataset = json.load(f)[:n_prompts]
     niah_dataset = build_niah_dataset(n_prompts)
 
-    # Step 1: Classify head populations
-    print("\n--- Step 1: Classifying Head Populations (arithmetic prompts) ---")
+    # Step 1: Classify head populations on the long-context NIAH dataset
+    print("\n--- Step 1: Classifying Head Populations (NIAH prompts) ---")
     induction_heads, control_heads = classify_heads(
-        model, tokenizer, arith_dataset, num_heads, device
+        model, tokenizer, niah_dataset, num_heads, device
     )
     print(f"  Induction candidates : {induction_heads[:5]}")
     print(f"  Control (Local/Sink) : {control_heads[:5]}")

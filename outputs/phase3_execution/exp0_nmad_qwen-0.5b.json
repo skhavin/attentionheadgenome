@@ -1,0 +1,132 @@
+{
+  "model": "qwen-0.5b",
+  "pre_registered_thresholds": {
+    "nmad_ratio": 1.5,
+    "p_value": 0.05
+  },
+  "induction_heads": [
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      22,
+      5
+    ],
+    [
+      22,
+      7
+    ],
+    [
+      22,
+      13
+    ],
+    [
+      23,
+      9
+    ],
+    [
+      23,
+      10
+    ]
+  ],
+  "control_heads": [
+    [
+      9,
+      7
+    ],
+    [
+      9,
+      8
+    ],
+    [
+      9,
+      9
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      0,
+      11
+    ],
+    [
+      0,
+      13
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      11,
+      7
+    ]
+  ],
+  "results": {
+    "induction_arith": {
+      "name": "Induction / Arithmetic",
+      "mean_prefill": 0.44543041992187504,
+      "mean_decode": 0.46982458496093754,
+      "mean_ratio": 1.0547913700163363,
+      "std_ratio": 0.016962563150287713,
+      "wilcoxon_p": 3.735116503506067e-10,
+      "ratio_pass": false,
+      "wilcoxon_pass": true,
+      "gate": false
+    },
+    "control_arith": {
+      "name": "Control / Arithmetic  [should NOT pass]",
+      "mean_prefill": 0.5389305419921874,
+      "mean_decode": 0.5445257568359375,
+      "mean_ratio": 1.0103827630878324,
+      "std_ratio": 0.00094577838799524,
+      "wilcoxon_p": 3.713189781074029e-10,
+      "ratio_pass": false,
+      "wilcoxon_pass": true,
+      "gate": false
+    },
+    "induction_niah": {
+      "name": "Induction / NIAH (cross-task)",
+      "mean_prefill": 0.46596777343750007,
+      "mean_decode": 0.48017822265625,
+      "mean_ratio": 1.0314614280523424,
+      "std_ratio": 0.04269465867653335,
+      "wilcoxon_p": 1.0132659416906162e-05,
+      "ratio_pass": false,
+      "wilcoxon_pass": true,
+      "gate": false
+    },
+    "mann_whitney_p": 7.52473191513347e-18,
+    "mann_whitney_pass": true
+  },
+  "gate_result": "FAILED \u2014 do NOT proceed to Experiments 1-3. Reassess hypothesis.",
+  "core_pass": false,
+  "niah_pass": false,
+  "full_gate_pass": false
+}

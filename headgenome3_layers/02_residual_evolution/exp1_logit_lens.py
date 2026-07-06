@@ -202,6 +202,12 @@ def evaluate_gate(results_real: list, results_null: list, task_label: str,
     s_null  = [r["s_score"] for r in results_null  if r["delta_total"] > 1e-6]
 
     l_stars = [r["l_star"] for r in results_real if r["l_star"] is not None]
+    l_stars_null = [r["l_star"] for r in results_null if r["l_star"] is not None]
+    
+    # Accuracy check: how many prompts maintain rank 0 at the final layer?
+    final_correct = sum(1 for r in results_real if len(r["ranks"]) > 0 and r["ranks"][-1] == 0)
+    final_acc = final_correct / len(results_real) if results_real else 0.0
+
     coverage = len(l_stars) / len(results_real)
     mean_s   = float(np.mean(s_real)) if s_real else 0.0
     mean_s_null = float(np.mean(s_null)) if s_null else 0.0
@@ -223,25 +229,31 @@ def evaluate_gate(results_real: list, results_null: list, task_label: str,
     # Average L* (normalized)
     mean_l_star = float(np.mean(l_stars)) if l_stars else None
     mean_l_star_norm = (mean_l_star / n_layers) if mean_l_star is not None else None
+    mean_l_star_null = float(np.mean(l_stars_null)) if l_stars_null else None
 
     print(f"\n  [{task_label}]")
-    print(f"    Coverage (L* defined)  : {coverage:.2%}  (threshold ≥{COVERAGE_THRESHOLD:.0%})  {'PASS' if coverage_pass else 'FAIL'}")
-    print(f"    Mean S (real)          : {mean_s:.3f}  (threshold ≥{SUDDEN_THRESHOLD})  {'PASS' if sudden_pass else 'FAIL'}")
+    print(f"    Coverage (L* defined)  : {coverage:.2%}  (threshold >={COVERAGE_THRESHOLD:.0%})  {'PASS' if coverage_pass else 'FAIL'}")
+    print(f"    Final Layer Accuracy   : {final_acc:.2%}  (Sanity check)")
+    print(f"    Mean S (real)          : {mean_s:.3f}  (threshold >={SUDDEN_THRESHOLD})  {'PASS' if sudden_pass else 'FAIL'}")
     print(f"    Mean S (null/shuffled) : {mean_s_null:.3f}")
     print(f"    Wilcoxon p             : {wil_p:.4f}  (threshold <{P_VALUE_THRESHOLD})  {'PASS' if wilcoxon_pass else 'FAIL'}")
     if mean_l_star is not None:
-        print(f"    Mean L* (absolute)     : {mean_l_star:.1f}/{n_layers}  ({mean_l_star_norm:.1%} of depth)")
+        print(f"    Mean L* (real)         : {mean_l_star:.1f}/{n_layers}  ({mean_l_star_norm:.1%} of depth)")
+    if mean_l_star_null is not None:
+        print(f"    Mean L* (null)         : {mean_l_star_null:.1f}/{n_layers}  (Sanity check: should differ from real)")
     print(f"    GATE: {'PASS ✓' if gate else 'FAIL ✗'}")
 
     return {
         "task":              task_label,
         "n_prompts":         len(results_real),
         "coverage":          float(coverage),
+        "final_acc":         float(final_acc),
         "mean_s_real":       mean_s,
         "mean_s_null":       mean_s_null,
         "wilcoxon_p":        float(wil_p),
         "mean_l_star":       mean_l_star,
         "mean_l_star_norm":  mean_l_star_norm,
+        "mean_l_star_null":  mean_l_star_null,
         "l_stars":           l_stars,
         "coverage_pass":     bool(coverage_pass),
         "sudden_pass":       bool(sudden_pass),
@@ -256,7 +268,7 @@ def run_experiment_1(model_key: str = "qwen-0.5b", n_prompts: int = 50) -> None:
     print(f"\n{'='*60}")
     print(f"Experiment 1: Logit Lens — Sudden vs. Gradual Emergence")
     print(f"Model: {model_key} | N={n_prompts}")
-    print(f"Thresholds: coverage≥{COVERAGE_THRESHOLD}, S≥{SUDDEN_THRESHOLD}, p<{P_VALUE_THRESHOLD}")
+    print(f"Thresholds: coverage>={COVERAGE_THRESHOLD}, S>={SUDDEN_THRESHOLD}, p<{P_VALUE_THRESHOLD}")
     print(f"{'='*60}")
 
     model, tokenizer = load_model_and_tokenizer(model_key,
