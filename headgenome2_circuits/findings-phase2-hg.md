@@ -114,18 +114,21 @@ The structural probe identified **MLP 21** as having the overwhelmingly stronges
 ### The Empirical Causal Test
 To verify if this structural connectivity governs actual causal routing, we implemented a targeted inter-layer causal patch (Count=X patched into Count=X+2). We measured the shift in the target MLP's pre-activation state ($\Delta MLP_{target}$).
 
-To establish a strict empirical noise floor, we ran the exact same patch across 5 distinct Null Head groups, measuring their pre-activation shifts to generate a null distribution ($\mu_{null}$ and $\sigma_{null}$).
+To establish a strict empirical noise floor, we ran the exact same patch across 5 distinct Null Head groups. Critically, these null heads were strictly depth-matched: they were drawn exclusively from the same layer (Layer 16) as the Counting Heads. By matching depth, we guarantee that the null distribution is not artificially deflated by comparing against early-layer heads (which have vastly different output magnitudes), ensuring a fair and rigorous causal baseline.
 
 The causal reality was striking:
-* **Null Distribution:** $\mu = 27.530$, $\sigma = 18.437$
+* **Null Distribution (L16 Heads):** $\mu = 27.530$, $\sigma = 18.437$
 * **Empirical 2-Sigma Threshold:** $64.404$
 * **Target (Counting Head) Shift on MLP 21:** **$117.835$**
 
 ### The Statistical Correlation
-The structural Frobenius Interaction Norms across all downstream MLPs predicted the measured causal activation shift with near-perfect linear correlation:
+The structural Frobenius Interaction Norms across the downstream MLPs predicted the measured causal activation shift with near-perfect linear correlation:
 * **Pearson r:** $0.996$
 * **p-value:** $0.0000$
+* **Sample Size (N):** $7$ (Downstream MLPs L17-L23)
 
-**Falsification Passed: `TRUE`.**
+**Falsification Passed: `TRUE` (With Caution).**
+
+While the targeted shift on MLP 21 definitively proves causal routing, the correlation of $r=0.996$ must be treated with caution. Because there are only 7 downstream layers to correlate across ($N=7$), this near-perfect linearity is statistically fragile; a single outlier could easily skew it. We confidently claim that the *top-ranked structural connection matches the top causal route*, but we temper the claim that parameter norms perfectly map to causal flow across *all* layers until tested on deeper architectures with a higher $N$.
 
 For this specific semantic counting circuit, the structural Frobenius norm of the fused SwiGLU matrices flawlessly predicted the causal routing path. The Counting Heads explicitly and causally broadcast their integer accumulations directly into the deep semantic processing block of MLP 21.
