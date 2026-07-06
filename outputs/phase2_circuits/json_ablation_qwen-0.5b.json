@@ -1,0 +1,44 @@
+{
+  "model": "qwen-0.5b",
+  "k_heads": 4,
+  "baseline_acc": 1.0,
+  "null_acc": 1.0,
+  "target_acc": 1.0,
+  "target_heads": [
+    [
+      11,
+      13
+    ],
+    [
+      11,
+      11
+    ],
+    [
+      9,
+      7
+    ],
+    [
+      9,
+      9
+    ]
+  ],
+  "null_heads": [
+    [
+      11,
+      7
+    ],
+    [
+      11,
+      9
+    ],
+    [
+      8,
+      3
+    ],
+    [
+      9,
+      8
+    ]
+  ],
+  "falsification_passed": false
+}

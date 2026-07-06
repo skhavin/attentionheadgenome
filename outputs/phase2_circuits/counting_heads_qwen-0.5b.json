@@ -1,0 +1,57 @@
+{
+  "model": "qwen-0.5b",
+  "metric": "Average attention mass to list item numbers",
+  "samples": 50,
+  "top_heads": [
+    {
+      "layer": 16,
+      "head": 11,
+      "mass": 0.7830370664596558
+    },
+    {
+      "layer": 16,
+      "head": 8,
+      "mass": 0.7685351371765137
+    },
+    {
+      "layer": 16,
+      "head": 7,
+      "mass": 0.760424792766571
+    },
+    {
+      "layer": 0,
+      "head": 5,
+      "mass": 0.5096301436424255
+    },
+    {
+      "layer": 16,
+      "head": 0,
+      "mass": 0.4571313261985779
+    },
+    {
+      "layer": 0,
+      "head": 4,
+      "mass": 0.435453325510025
+    },
+    {
+      "layer": 14,
+      "head": 13,
+      "mass": 0.39991697669029236
+    },
+    {
+      "layer": 16,
+      "head": 13,
+      "mass": 0.34273436665534973
+    },
+    {
+      "layer": 14,
+      "head": 9,
+      "mass": 0.3357910215854645
+    },
+    {
+      "layer": 7,
+      "head": 7,
+      "mass": 0.30491209030151367
+    }
+  ]
+}

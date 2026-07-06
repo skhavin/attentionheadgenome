@@ -1,0 +1,57 @@
+{
+  "model": "qwen-0.5b",
+  "metric": "Average attention mass to open braces '{'",
+  "samples": 50,
+  "top_heads": [
+    {
+      "layer": 11,
+      "head": 13,
+      "mass": 1.0
+    },
+    {
+      "layer": 11,
+      "head": 11,
+      "mass": 1.0
+    },
+    {
+      "layer": 9,
+      "head": 7,
+      "mass": 1.0
+    },
+    {
+      "layer": 9,
+      "head": 9,
+      "mass": 1.0
+    },
+    {
+      "layer": 11,
+      "head": 7,
+      "mass": 1.0
+    },
+    {
+      "layer": 16,
+      "head": 1,
+      "mass": 1.0
+    },
+    {
+      "layer": 11,
+      "head": 9,
+      "mass": 0.9995312094688416
+    },
+    {
+      "layer": 9,
+      "head": 8,
+      "mass": 0.9985253810882568
+    },
+    {
+      "layer": 9,
+      "head": 10,
+      "mass": 0.9916406273841858
+    },
+    {
+      "layer": 3,
+      "head": 5,
+      "mass": 0.9909276962280273
+    }
+  ]
+}

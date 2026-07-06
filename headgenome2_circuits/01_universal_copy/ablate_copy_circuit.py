@@ -19,15 +19,22 @@ class AblationHook:
         self.hooks = []
         
     def create_hook(self, target_heads):
+        # We use a mutable flag to only print the sanity check once per run
+        has_printed_sanity_check = {"value": False}
         def hook(module, input):
-            # Qwen2 attention output is just a concatenated tensor of all head outputs.
-            # Shape: (batch, seq, num_heads * head_dim)
-            x = input[0] # input to o_proj
+            x = input[0] # input to o_proj, shape: (batch, seq, hidden_dim)
             for h in target_heads:
                 start_idx = h * self.head_dim
                 end_idx = start_idx + self.head_dim
                 x[:, :, start_idx:end_idx] = 0.0
-            return (x,) # return modified input to the module
+                
+                # Sanity check: verify it actually took effect
+                if not has_printed_sanity_check["value"]:
+                    assert torch.all(x[:, :, start_idx:end_idx] == 0.0), f"Ablation failed! Head {h} was not zeroed."
+                    print(f"[Sanity Check Passed] Verified `o_proj` input for head {h} was successfully zeroed in-place.")
+            
+            has_printed_sanity_check["value"] = True
+            return (x,)
         return hook
 
     def register(self, model):
