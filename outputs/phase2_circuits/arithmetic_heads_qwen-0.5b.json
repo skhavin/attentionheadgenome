@@ -1,0 +1,106 @@
+{
+  "model": "qwen-0.5b",
+  "metric": "attention_mass_on_operands",
+  "top_heads": [
+    {
+      "layer": 17,
+      "head": 8,
+      "operand_attention_mass": 0.6991943120956421
+    },
+    {
+      "layer": 14,
+      "head": 13,
+      "operand_attention_mass": 0.6563891172409058
+    },
+    {
+      "layer": 16,
+      "head": 8,
+      "operand_attention_mass": 0.5715917944908142
+    },
+    {
+      "layer": 16,
+      "head": 7,
+      "operand_attention_mass": 0.5644994974136353
+    },
+    {
+      "layer": 16,
+      "head": 11,
+      "operand_attention_mass": 0.520825207233429
+    },
+    {
+      "layer": 14,
+      "head": 5,
+      "operand_attention_mass": 0.4595116972923279
+    },
+    {
+      "layer": 15,
+      "head": 13,
+      "operand_attention_mass": 0.3709057569503784
+    },
+    {
+      "layer": 15,
+      "head": 8,
+      "operand_attention_mass": 0.35240232944488525
+    },
+    {
+      "layer": 14,
+      "head": 3,
+      "operand_attention_mass": 0.33290526270866394
+    },
+    {
+      "layer": 19,
+      "head": 6,
+      "operand_attention_mass": 0.28376340866088867
+    },
+    {
+      "layer": 16,
+      "head": 0,
+      "operand_attention_mass": 0.2630590796470642
+    },
+    {
+      "layer": 15,
+      "head": 7,
+      "operand_attention_mass": 0.26047608256340027
+    },
+    {
+      "layer": 1,
+      "head": 3,
+      "operand_attention_mass": 0.2319970577955246
+    },
+    {
+      "layer": 17,
+      "head": 4,
+      "operand_attention_mass": 0.2306481897830963
+    },
+    {
+      "layer": 15,
+      "head": 6,
+      "operand_attention_mass": 0.22666503489017487
+    },
+    {
+      "layer": 14,
+      "head": 0,
+      "operand_attention_mass": 0.21184813976287842
+    },
+    {
+      "layer": 10,
+      "head": 13,
+      "operand_attention_mass": 0.18174926936626434
+    },
+    {
+      "layer": 10,
+      "head": 10,
+      "operand_attention_mass": 0.1809411644935608
+    },
+    {
+      "layer": 16,
+      "head": 10,
+      "operand_attention_mass": 0.1795007288455963
+    },
+    {
+      "layer": 15,
+      "head": 9,
+      "operand_attention_mass": 0.17807738482952118
+    }
+  ]
+}
