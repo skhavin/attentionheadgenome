@@ -1,0 +1,53 @@
+{
+  "retrieval_heads": [
+    [
+      8,
+      7
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      8,
+      10
+    ],
+    [
+      1,
+      9
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "induction_heads": [
+    [
+      17,
+      8
+    ],
+    [
+      14,
+      13
+    ],
+    [
+      16,
+      7
+    ],
+    [
+      16,
+      8
+    ],
+    [
+      16,
+      11
+    ]
+  ],
+  "metrics": {
+    "retrieval_prefill_norm": 0.9628814697265625,
+    "retrieval_decode_norm": 0.8557615966796875,
+    "induction_prefill_norm": 1.078125,
+    "induction_decode_norm": 4.0398203125
+  },
+  "gate_passed": true
+}
