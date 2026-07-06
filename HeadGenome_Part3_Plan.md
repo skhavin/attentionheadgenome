@@ -1,84 +1,120 @@
 # HeadGenome III: Computational Development of Layers
-**Core Question:** Why do transformers have layers, and how does a thought evolve from Token 1 to Token N?
 
-This phase treats the **entire layer** as the fundamental unit of computation. We enforce a strict falsification-first methodology, pre-registering null baselines and explicit failure criteria for every experiment to avoid structural confounds.
+## Quick Reference
 
-## Relationship to Paper I
-
-**Entropy collapse formula (Paper I):** The entropy-based head taxonomy (Sink, Local, Retrieval, Induction) is a *static structural* classifier measured on a single forward pass. It is phase-agnostic and is NOT affected by Experiment 0's falsification. The taxonomy remains valid as the population-identifier feeding into Phase III.
-
-**Circuit 2 (Counting):** The causal efficacy of Counting Heads was established via mechanically zeroing head outputs and measuring downstream logit shift (Wilcoxon p≈0.0000, N=50). This was not based on output norms and is completely unaffected by Experiment 0's falsification.
-
-## Proposed Directory Structure: `headgenome3_layers/`
-```text
-headgenome3_layers/
-├── 01_execution_duality/       # Prefill vs. Decode execution pipeline mapping (PRIORITY 1)
-├── 02_residual_evolution/      # Information birth/death via Logit Lens
-└── 03_universal_stages/        # Exploratory observation of layer phases
-```
-
-## Category A: The Transformer Execution Duality (ICLR Flagship Thesis) ⭐⭐⭐⭐⭐
-
-*Prior Context (Finding 4):* Paper I identified a depth-based split between Early Induction (prefix-matching, lower V/Q) and Late Induction (payload-copy, higher V/Q) heads. Phase III tests whether this structural depth split is a symptom of a **temporal** execution split (Prefill vs. Decode).
+| Category | Status | Scope |
+|---|---|---|
+| **A: Execution Duality (Prefill vs. Decode)** | ❌ TOMBSTONED | Falsified (nMAD gate failed) |
+| **B: Residual Evolution (Logit Lens)** | 🟡 ACTIVE | Experiment 1 — pre-registered |
+| **C: Universal Stages** | ⏳ PENDING | After Category B lands |
 
 ---
 
-## Experiment 0: The Temporal Handoff — THE HARD GATE (Revised: MAD-Based)
+## Category A: The Transformer Execution Duality — TOMBSTONED
 
-### Prior Falsification
-The original norm-based approach (v1 and v2) was falsified:
-* Induction Decode/Prefill norm ratio: **1.27x** — identical to Local/Sink control (1.27x).
-* Mann-Whitney p = 0.68 — Induction indistinguishable from control heads.
-* Root cause: Output L2 norm is an architecture-wide artifact of single-token vs multi-token softmax averaging. It is not a signal of functional specialization.
+### Full Arc (Preserved for Paper/Appendix)
 
-### Revised Metric: Normalized Mean Attention Distance (nMAD)
+The "Execution Duality" hypothesis was that Prefill and Decode represent functionally distinct computational regimes, operationalized as: Induction/Retrieval heads should allocate attention dramatically differently depending on which phase is running.
 
-**Precise Definition:**
-* At each forward pass, identify the *final active token index* `t = last_idx`. In Prefill, `t = seq_len - 1` (last prompt token). In Decode, `t = prompt_len + num_generated_so_far - 1` (the single newly-generated token's position).
-* Compute raw attention distance: $\text{rawMAD}_h = \sum_j \alpha_{h,t,j} \cdot (t - j)$, where $\alpha_{h,t,j}$ is the attention weight from token $t$ to position $j$.
-* **Normalize by current sequence length:** $\text{nMAD}_h = \text{rawMAD}_h / t$. This maps nMAD to $[0, 1]$ regardless of absolute context length, making Prefill and Decode values directly comparable.
-* A head with nMAD near 1.0 attends exclusively to position 0 (Sink). A head near 0.0 attends to the immediately adjacent token (Local). Induction/Retrieval heads attending to distant content have intermediate-to-high nMAD.
+**Measurement v1 (norm-based, May 2026):**
+Used head output L2 norm ($\|W_O x_h\|_2$) as a proxy for phase activation. Found a 3.75× Decode/Prefill ratio for Induction heads.
 
-**Why this escapes the norm artifact:** nMAD measures *where* a head looks, normalized to be length-invariant. If Induction heads truly shift from co-present spatial routing (Prefill, where context is nearby) to deep history retrieval (Decode, where they must reach far back into the frozen KV prefix), their nMAD will increase. Local/Sink heads will not show this shift.
+**Artifact identification:**
+The 3.75× result was a measurement bug: with `max_new_tokens=1`, HuggingFace's `generate()` places the full prompt in the "Decode" bucket when the hook fires on the single generation step. Single-token softmax normalization differs from multi-token row-averaged Prefill norms by construction, regardless of what the heads are doing. The 3.75× was a normalization artifact, not a functional signal.
 
-**Control:** Local/Sink heads should show **no significant nMAD shift** between Prefill and Decode.
+**Redesigned metric (nMAD):**
+$\text{nMAD}_h = \frac{\sum_j \alpha_{h,t,j} \cdot (t - j)}{t}$
 
-### Pre-Registered Pass Criteria
+where $t = k\_len - 1$ (absolute current token position), $\alpha$ is drawn from the last query row only, and the division by $t$ maps the result to $[0,1]$ regardless of context length. This metric is mathematically invariant to phase-induced length differences and directly comparable across Prefill and Decode passes.
 
-All four must pass. There is no partial pass. If criteria 1–3 pass and NIAH (criterion 4) fails, the outcome is classified as "task-specific, requires cross-task extension" — the result is published as arithmetic-domain-only and **Experiments 1–3 must be restricted to the arithmetic domain** until NIAH replication succeeds.
+**Results (pre-registered thresholds, N=50, qwen-0.5b):**
 
-1. **Induction Decode nMAD / Prefill nMAD > 1.5** (per-prompt mean, N=50)
-2. **Wilcoxon signed-rank** (Decode nMAD > Prefill nMAD per prompt): $p < 0.05$
-3. **Mann-Whitney U** (Induction nMAD shift > Control nMAD shift): $p < 0.05$
-4. **NIAH cross-task validation:** Induction nMAD shift > 1.5 on N=50 NIAH prompts.
+| Condition | Prefill nMAD | Decode nMAD | Ratio | Wilcoxon p | Gate |
+|---|---|---|---|---|---|
+| Induction / Arithmetic | 0.4454 | 0.4698 | 1.05× | <0.0001 | FAIL (need >1.5) |
+| Control (Local/Sink) | 0.5389 | 0.5445 | 1.01× | <0.0001 | — |
+| Induction / NIAH | 0.4660 | 0.4802 | 1.03× | <0.0001 | FAIL (need >1.5) |
+| Mann-Whitney (Ind > Ctl) | — | — | — | <0.0001 | PASS |
+
+The direction was correct (Induction shifts slightly more than Control, $p < 0.001$ Mann-Whitney). The magnitude is negligible (1.05× vs threshold 1.5×). The hypothesis fails even after fixing the measurement.
+
+**What is and is not falsified:**
+
+> **Dead:** The attention-routing half of the duality. Induction/Retrieval heads do not redistribute their attention mass across the Prefill/Decode boundary in any functionally meaningful way. The nMAD distribution in Prefill (~0.45) is near-identical to Decode (~0.47). Prefill is not just "forging" — it is heavily retrieving throughout.
+
+> **Not tested:** The MLP half. Whether MLP residual-stream update magnitudes ($\Delta x_{mlp}^{(l)}$) differ by phase was gated on Experiment 0 passing. That test was never run. The MLP story ("MLPs forge in Prefill, Decode context-sustains") is unresolved, not falsified. If the MLP side is to be fully retired, Experiment 1 (from the original plan) must be run as an **ungated standalone** test.
+
+> **Open question:** Systems-level sparsification methods (sparse Prefill, decode-only KV eviction) do produce very different efficiency gains in the two phases, which seems to conflict with the null result here. The reconciliation: those methods exploit causal masking + cache mechanics (where Prefill processes the entire prompt in a single dense forward pass and Decode processes one token at a time), not head-level attention specialization. Our null result says **heads don't care which phase they're in**; the systems-level divergence is a property of the KV cache mechanics, not of learned head behavior. This is worth a sentence in the paper — it explains why the systems literature treats Prefill and Decode differently without implying heads are functionally specialized by phase.
+
+**Methodological contribution:**
+This arc — plausible signal → identified measurement artifact → redesigned invariant metric → pre-registered gate → clean failure — is a worked example of the kind of falsification-first methodology the interpretability literature needs. The control group (Local/Sink heads showing 1.01× ratio alongside Induction's 1.05×) was the decisive evidence. Reviewers who have been burned by unfalsifiable mechanistic claims should find this valuable.
 
 ---
 
-## Experiment 1: Information Weight Shift (Attention vs. MLP Norms)
+## Category B: Residual Evolution (Logit Lens) — ACTIVE
 
-**May only begin after Experiment 0 passes.**
+### Background and Motivation
+Following the Category A falsification, we know heads do not bifurcate by phase. The next natural question is: how does the *residual stream* evolve across depth? At what layer does the correct answer "emerge" as the top prediction? Is this emergence sudden (circuit-completion-style) or gradual (ensemble of weak votes)?
 
-* **Hypothesis:** Residual stream updates ($\Delta x$) are Attention-heavy early and MLP-heavy late during Prefill, but this symmetry breaks during Decode.
-* **Measurement:** $\Delta x_{attn}^{(l)} = \|x_{after\_attn}^{(l)} - x_{before\_attn}^{(l)}\|_2$ and $\Delta x_{mlp}^{(l)} = \|x_{after\_mlp}^{(l)} - x_{before\_mlp}^{(l)}\|_2$ at each layer $l$, for N=50 prompts.
-* **Phase Separation:** Computed separately for Prefill pass and Decode step.
-* **Statistical Test:** **Paired Wilcoxon signed-rank** on per-layer (Attn $\Delta x$ / MLP $\Delta x$) ratio between Prefill and Decode. Layers are paired (same layer, same prompt, two phases). Mann-Whitney is NOT used here because layers are not independent samples.
-* **Falsification:** If the Wilcoxon test on the Prefill-vs-Decode ratio profile finds $p \geq 0.05$, the Execution Duality hypothesis is falsified at the layer level.
-* **Frobenius Disambiguation:** This $\Delta x$ measurement is conceptually distinct from the within-attention V/Q Frobenius ratio in Paper I Finding 2. It will be labeled explicitly in any writeup.
+This is the closest thing to a hard, falsifiable binary-outcome experiment remaining. Category C ("Universal Stages") is explicitly exploratory and runs after Category B to use the Logit Lens result as an anchor.
 
-## Experiment 2: Decode Symmetry Breaking
+### Experiment 1: Sudden vs. Gradual Emergence (THE GATE)
 
-* **Hypothesis:** The crossover layer $L^*$ (where MLP updates dominate Attention updates) occurs significantly earlier in the layer stack during Decode than during Prefill.
-* **Measurement:** For each prompt, find $L^*_{Prefill}$ and $L^*_{Decode}$ as the first layer where $\Delta x_{mlp}^{(l)} > \Delta x_{attn}^{(l)}$.
-* **Statistical Test:** Paired Wilcoxon on per-prompt $(L^*_{Decode} - L^*_{Prefill})$ — must be significantly negative ($p < 0.05$).
+**Task continuity:** Reuse exactly the N=50 arithmetic prompts and N=50 NIAH prompts from Experiment 0. Same inputs → cross-referenceable against the head-level nMAD measurements already in hand.
 
-## Experiment 3: The Cross-Phase Intervention (The Ultimate Causal Test)
+**Metric:** Per-layer Logit Lens probability. At each layer $l$, pass the residual stream $x^{(l)}$ through the final LayerNorm and unembedding matrix to get a probability distribution over vocabulary. Extract the probability assigned to the *correct answer token* (e.g., the digit `7` for `4+3=`, or the UUID digits for NIAH).
 
-* **Hypothesis:** MLPs forge concepts in Prefill, and Decode strictly retrieves them.
-* **Probe Task Spec:**
-  * Template: `Question: What is X plus Y? Answer: The sum is`
-  * N: 50 distinct `(X, Y)` pairs, single-digit sums 2–9, no pair repeated.
-  * Success Metric: `argmax(logits)` shifts to the target sum.
-  * **Pre-registered Pass Threshold:** Success rate $\geq 50\%$.
-* **Causal Patch:** Ablate L16 Counting Heads (from `counting_heads_qwen-0.5b.json`) during Prefill. Patch a healthy Layer-12 MLP hidden state from a normal Prefill into Layer-12 of the broken Decode.
-* **Null Control:** Same patch applied at Layer-5 (depth-matched non-critical). McNemar's test comparing Layer-12 vs Layer-5 success rates, $p < 0.05$ required.
-* **Failure Structure:** If $\geq 50\%$ threshold is not met, our Prefill-forge/Decode-retrieve mapping is wrong for this task and must be revised.
+$P^{(l)} = \text{softmax}(\text{LN}(x^{(l)}) W_U)[\text{target}]$
+
+**Emergence layer $L^*$:** The first layer where the target token reaches **top-1 rank** (overtakes all competitors). Binary and unambiguous.
+
+**Sudden emergence metric:**
+Compute $\delta^{(l)} = P^{(l)} - P^{(l-1)}$ for each layer. Let $\delta_{max} = \max_l \delta^{(l)}$ and $\Delta_{total} = P^{(L)} - P^{(0)}$ (total probability gain from first to last layer). Define:
+
+$$S = \frac{\delta_{max}}{\Delta_{total}}$$
+
+$S > 0.40$ means a single layer accounts for >40% of the total probability gain. This is the pre-registered threshold for "sudden."
+
+**Null control: Shuffled-Prompt Permutation Null.** Take the same N=50 prompts, randomly permute the token order within each prompt (destroying semantic content but preserving token distribution and sequence length). Run the same pipeline. Track the trajectory of the *same target token* (the original correct answer). This tests whether the sharp emergence jump is real or a structural artifact of how Logit Lens trajectories look under any input.
+
+### Pre-Registered Pass Criteria (Locked — Do Not Modify After Running)
+
+**PASS requires ALL four:**
+1. **Coverage:** $L^*$ is defined (top-1 rank achieved before the final layer) for ≥80% of prompts.
+2. **Sudden magnitude:** $S > 0.40$ — the single largest layer-to-layer jump accounts for >40% of total probability gain, averaged across prompts that have a defined $L^*$.
+3. **Wilcoxon specificity:** $S_{\text{real}} > S_{\text{shuffled}}$ per-prompt, Wilcoxon signed-rank $p < 0.05$.
+4. **Cross-task replication:** Criteria 1–3 hold independently on both arithmetic and NIAH prompt families.
+
+**Partial-pass rule (pre-registered):**
+- If 1–3 pass on arithmetic but not NIAH: "arithmetic-domain finding." Proceed to Category C on arithmetic only.
+- If any of 1–3 fail on arithmetic: **hard stop**, reassess hypothesis.
+
+**What "sudden" would mean:** The residual stream undergoes a discrete state transition at a specific layer — consistent with the "circuit-completion" model of transformer computation. Individual attention heads or MLP blocks at that layer are causal targets worth investigating.
+
+**What "gradual" would mean:** The transformer operates as a smooth ensemble accumulator. No single layer is privileged; interpretability must be done at the ensemble level.
+
+**Per-architecture plan:** Run independently on qwen-0.5b, qwen-1.5b, gpt2. Llama-1b and gemma-2b added if resources allow. Cross-architecture universality is a secondary analysis only after per-architecture results are in.
+
+---
+
+## Category C: Universal Stages (Exploratory) — PENDING
+
+Not pre-registered. Runs after Category B. Uses the Logit Lens $L^*$ layers as anchors to identify whether early layers (1 to $L^*/2$) show qualitatively different residual stream content (syntax-heavy) vs. late layers ($L^*/2$ to $L$) (semantics-heavy). Explicitly exploratory — no hard gate, no claim stronger than "suggestive pattern."
+
+---
+
+## Visualizer Plan
+
+**Goal:** A real-time Streamlit app where a user types a prompt and sees the full internal computation of the model: per-layer attention maps, per-layer Logit Lens probability trajectories, residual stream norms, and head-type annotations — all synchronized to the same forward pass.
+
+**Interface:** Streamlit (not tkinter — runs in browser, shareable, supports interactive Plotly charts). Chat-style prompt input on the left; visualization panels on the right, each collapsible.
+
+**Panels (in priority order):**
+1. **Logit Lens Panel:** Line chart of $P^{(l)}[\text{top-5 tokens}]$ across all layers. Highlights $L^*$ with a vertical marker. Correct token (if known) shown in a distinct color.
+2. **Attention Heatmap Panel:** Per-layer, per-head attention matrix (softmax weights) for the last token. Head-type label (Induction / Local / Sink / Unknown) shown as color-coded badge from Paper I's taxonomy.
+3. **Residual Stream Norm Panel:** $\|x^{(l)}\|_2$ plotted per layer, split into pre-Attention, post-Attention, post-MLP contribution ($\Delta x_{attn}$ and $\Delta x_{mlp}$ stacked bar chart).
+4. **nMAD Panel:** Per-head nMAD for Prefill pass, displayed as a heatmap (layer × head) with color encoding 0 (Local) → 1 (Far-reaching).
+5. **Token Probability Table:** At the final layer, a ranked list of top-10 predicted tokens with log-probabilities.
+
+**Script location:** `headgenome3_layers/visualizer/app.py`
+**Dependencies:** streamlit, plotly, transformers, torch (already installed)
