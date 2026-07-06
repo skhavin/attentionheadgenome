@@ -1,0 +1,59 @@
+{
+  "model": "qwen-0.5b",
+  "pre_registered_thresholds": {
+    "induction_decode_prefill_ratio": 2.0,
+    "retrieval_prefill_decode_ratio": 1.5,
+    "p_value": 0.05
+  },
+  "induction_heads": [[8, 7], [0, 5], [8, 10], [1, 9], [2, 3]],
+  "control_heads": [[11, 7], [0, 4], [9, 9], [11, 13], [5, 4]],
+  "results": {
+    "induction_arith": {
+      "name": "Induction Decode-Dominance (Arithmetic)",
+      "mean_a": 2.0404,
+      "mean_b": 1.6021,
+      "mean_ratio": 1.27,
+      "std_ratio": 0.10,
+      "wilcoxon_p": 0.0000,
+      "ratio_threshold": 2.0,
+      "ratio_pass": false,
+      "wilcoxon_pass": true,
+      "gate": false
+    },
+    "control_arith": {
+      "name": "Control Decode-Dominance (Arithmetic) - Should FAIL",
+      "mean_a": 0.3995,
+      "mean_b": 0.3136,
+      "mean_ratio": 1.27,
+      "std_ratio": 0.04,
+      "wilcoxon_p": 0.0000,
+      "ratio_threshold": 2.0,
+      "ratio_pass": false,
+      "wilcoxon_pass": true,
+      "gate": false
+    },
+    "induction_niah": {
+      "name": "Induction Decode-Dominance (NIAH) - Cross-task check",
+      "mean_a": 1.9567,
+      "mean_b": 2.0224,
+      "mean_ratio": 0.97,
+      "std_ratio": 0.06,
+      "wilcoxon_p": 0.9999,
+      "ratio_threshold": 2.0,
+      "ratio_pass": false,
+      "wilcoxon_pass": false,
+      "gate": false
+    },
+    "mann_whitney_p": 0.6817,
+    "mann_whitney_pass": false
+  },
+  "gate_passed": false,
+  "interpretation": {
+    "finding": "FALSIFICATION OF NORM-BASED TEMPORAL HANDOFF HYPOTHESIS",
+    "induction_ratio": "1.27x — identical to control, architecture-wide artifact not Induction-specific",
+    "control_ratio": "1.27x — Mann-Whitney p=0.68, Induction indistinguishable from control",
+    "niah_ratio": "0.97x — no Decode dominance on the task that actually engages Retrieval heads",
+    "conclusion": "Head output L2 norm is NOT the correct signal for temporal phase dominance. The 3.75x result from v1 was a measurement artifact. The Execution Duality hypothesis requires a revised measurement: attention pattern analysis (WHERE heads attend) across phases, not activation magnitude (HOW MUCH they output).",
+    "action": "Revise Experiment 0 to measure cross-phase attention distribution shift, not output norm magnitude."
+  }
+}
