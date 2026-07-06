@@ -1,0 +1,17 @@
+{
+  "model": "qwen-0.5b",
+  "falsification_passed": true,
+  "correlation": {
+    "r_value": 0.9958612717034442,
+    "p_value": 2.1118231338284027e-06,
+    "passed": true
+  },
+  "empirical_effect": {
+    "top_mlp": 21,
+    "target_shift": 117.835,
+    "null_mean": 27.53040625,
+    "null_std": 18.437299531394935,
+    "threshold": 64.40500531278987,
+    "passed": true
+  }
+}
