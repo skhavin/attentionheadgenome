@@ -1,0 +1,238 @@
+{
+  "meta": {
+    "n_heads": 1568,
+    "n_architectures": 4,
+    "n_folds": 5,
+    "n_bootstrap": 1000,
+    "l2_C": 0.1,
+    "taxonomy": [
+      "induction",
+      "local",
+      "retrieval",
+      "sink"
+    ],
+    "taxonomy_note": "4-class collapsed (Early/Late Induction merged)",
+    "feature_source": "Atlas JSONs (phase2_atlas/), 50-prompt entropy probe.",
+    "class_counts": {
+      "local": 1319,
+      "induction": 198,
+      "sink": 28,
+      "retrieval": 23
+    }
+  },
+  "cv_results": {
+    "model_A": {
+      "description": "Depth only (continuous + 10-bin one-hot), L2 C=0.1",
+      "macro_f1_mean": 0.22843784315557877,
+      "macro_f1_std": 0.00016835807158275845,
+      "balanced_acc_mean": 0.25,
+      "balanced_acc_std": 0.0,
+      "per_class_recall": {
+        "local": 0.0,
+        "sink": 0.0,
+        "induction": 0.0,
+        "retrieval": 0.0
+      }
+    },
+    "model_B": {
+      "description": "Depth + full feature bank, L2 C=0.1",
+      "macro_f1_mean": 0.2524455546275325,
+      "macro_f1_std": 0.014472266722417793,
+      "balanced_acc_mean": 0.26141464365798966,
+      "balanced_acc_std": 0.008043800713003082,
+      "per_class_recall": {
+        "local": 0.0,
+        "sink": 0.0,
+        "induction": 0.0,
+        "retrieval": 0.0
+      }
+    },
+    "gap_B_minus_A": 0.024007711471953713,
+    "l2_regularization_C": 0.1
+  },
+  "loao_results": {
+    "model_A": {
+      "GPT-2": {
+        "macro_f1": 0.2237410071942446,
+        "balanced_acc": 0.25,
+        "per_class_recall": {
+          "local": 1.0,
+          "sink": 0.0,
+          "induction": 0.0,
+          "retrieval": 0.0
+        },
+        "n_test_total": 384,
+        "n_retrieval_test": 13,
+        "n_induction_test": 45,
+        "retrieval_warning": false
+      },
+      "Qwen-0.5B": {
+        "macro_f1": 0.23076923076923078,
+        "balanced_acc": 0.25,
+        "per_class_recall": {
+          "local": 1.0,
+          "sink": 0.0,
+          "induction": 0.0,
+          "retrieval": 0.0
+        },
+        "n_test_total": 336,
+        "n_retrieval_test": 3,
+        "n_induction_test": 36,
+        "retrieval_warning": true
+      },
+      "Qwen-1.5B": {
+        "macro_f1": 0.22946859903381642,
+        "balanced_acc": 0.25,
+        "per_class_recall": {
+          "local": 1.0,
+          "sink": 0.0,
+          "induction": 0.0,
+          "retrieval": 0.0
+        },
+        "n_test_total": 336,
+        "n_retrieval_test": 6,
+        "n_induction_test": 41,
+        "retrieval_warning": true
+      },
+      "Llama-3.2-1B": {
+        "macro_f1": 0.3062302006335797,
+        "balanced_acc": 0.3333333333333333,
+        "per_class_recall": {
+          "local": 1.0,
+          "sink": 0.0,
+          "induction": 0.0,
+          "retrieval": 0.0
+        },
+        "n_test_total": 512,
+        "n_retrieval_test": 1,
+        "n_induction_test": 76,
+        "retrieval_warning": true
+      }
+    },
+    "model_B": {
+      "GPT-2": {
+        "macro_f1": 0.13713061724077635,
+        "balanced_acc": 0.2382512985406876,
+        "per_class_recall": {
+          "local": 0.33762057877813506,
+          "sink": 0.0,
+          "induction": 0.0,
+          "retrieval": 0.6153846153846154
+        },
+        "n_test_total": 384,
+        "n_retrieval_test": 13,
+        "n_induction_test": 45,
+        "retrieval_warning": false
+      },
+      "Qwen-0.5B": {
+        "macro_f1": 0.23076923076923078,
+        "balanced_acc": 0.25,
+        "per_class_recall": {
+          "local": 1.0,
+          "sink": 0.0,
+          "induction": 0.0,
+          "retrieval": 0.0
+        },
+        "n_test_total": 336,
+        "n_retrieval_test": 3,
+        "n_induction_test": 36,
+        "retrieval_warning": true
+      },
+      "Qwen-1.5B": {
+        "macro_f1": 0.18499958044696385,
+        "balanced_acc": 0.31499786050492085,
+        "per_class_recall": {
+          "local": 0.3087719298245614,
+          "sink": 0.0,
+          "induction": 0.9512195121951219,
+          "retrieval": 0.0
+        },
+        "n_test_total": 336,
+        "n_retrieval_test": 6,
+        "n_induction_test": 41,
+        "retrieval_warning": true
+      },
+      "Llama-3.2-1B": {
+        "macro_f1": 0.2291005291005291,
+        "balanced_acc": 0.3318007662835249,
+        "per_class_recall": {
+          "local": 0.9954022988505747,
+          "sink": 0.0,
+          "induction": 0.0,
+          "retrieval": 0.0
+        },
+        "n_test_total": 512,
+        "n_retrieval_test": 1,
+        "n_induction_test": 76,
+        "retrieval_warning": true
+      }
+    },
+    "per_arch_gap": {
+      "GPT-2": -0.08661038995346826,
+      "Qwen-0.5B": 0.0,
+      "Qwen-1.5B": -0.044469018586852566,
+      "Llama-3.2-1B": -0.07712967153305059
+    },
+    "gqa_vs_mha_note": "GPT-2 is MHA; Qwen-0.5B, Qwen-1.5B, Llama-3.2-1B are GQA. A large gap in GPT-2 LOAO relative to GQA models would suggest architectural asymmetry in feature generalization."
+  },
+  "loao_bootstrap_ci": {
+    "per_arch": {
+      "GPT-2": {
+        "mean_gap": -0.08741387533566705,
+        "ci_lower_95": -0.10703430423631644,
+        "ci_upper_95": -0.0670295413233285,
+        "excludes_zero": false,
+        "n_valid_boots": 1000
+      },
+      "Qwen-0.5B": {
+        "mean_gap": 0.0,
+        "ci_lower_95": 0.0,
+        "ci_upper_95": 0.0,
+        "excludes_zero": false,
+        "n_valid_boots": 1000
+      },
+      "Qwen-1.5B": {
+        "mean_gap": -0.045142697422379044,
+        "ci_lower_95": -0.07387160692663321,
+        "ci_upper_95": -0.014256795077497476,
+        "excludes_zero": false,
+        "n_valid_boots": 1000
+      },
+      "Llama-3.2-1B": {
+        "mean_gap": -0.09118269324380007,
+        "ci_lower_95": -0.15629798846491563,
+        "ci_upper_95": 0.0,
+        "excludes_zero": false,
+        "n_valid_boots": 1000
+      }
+    },
+    "pooled": {
+      "mean_gap": 0.02166200816177488,
+      "ci_lower_95": 0.004945815645552508,
+      "ci_upper_95": 0.03922456901805774,
+      "excludes_zero": true,
+      "n_valid_boots": 1000
+    }
+  },
+  "shuffled_control": {
+    "shuffled_macro_f1": 0.22824954069625267,
+    "chance_level_f1": 0.25,
+    "tolerance": 0.04,
+    "passes_null_control": true,
+    "note": "PASS: Shuffled control lands near chance. Implementation looks correct."
+  },
+  "verdict": {
+    "result": "PHASE_0_FAIL",
+    "gap_threshold_used": 0.1,
+    "min_loao_gap_achieved": -0.08661038995346826,
+    "loao_gap_range": [
+      -0.08661038995346826,
+      0.0
+    ],
+    "cv_gap_in_distribution": 0.024007711471953713,
+    "loao_ci_excludes_zero": true,
+    "null_passes": true,
+    "note": "Min LOAO gap is -0.087 \u2014 below the 0.1 threshold or LOAO CI includes zero. Mechanistic features do not add value on unseen architectures. Pivot to OV + composition features (Phase 0B).",
+    "warning": "The LOAO gaps (+0.12 to +0.22) are the honest numbers. The 5-fold CV gap is in-distribution and should NOT be cited as the primary result."
+  }
+}
