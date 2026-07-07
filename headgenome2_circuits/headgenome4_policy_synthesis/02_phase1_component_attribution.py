@@ -13,6 +13,7 @@ MODELS = {
     "Qwen-0.5B": "Qwen/Qwen2.5-0.5B",
     "Qwen-1.5B": "Qwen/Qwen2.5-1.5B",
     "Llama-3.2-1B": "unsloth/Llama-3.2-1B",
+    "Gemma-2B": "google/gemma-2b"
 }
 
 PROMPT_PAIRS = [
@@ -66,6 +67,7 @@ def extract_head_weights(model, layer_idx, head_idx, d_model, n_heads, n_kv):
     
     head_dim = d_model // n_heads
     # Extract specific head
+    # Note: weights are (out_features, in_features)
     wq = q_proj[head_idx * head_dim : (head_idx + 1) * head_dim, :]
     
     # Handle GQA
@@ -75,15 +77,8 @@ def extract_head_weights(model, layer_idx, head_idx, d_model, n_heads, n_kv):
     # Return as (d_model, head_dim) for x @ W 
     return wq.T, wk.T
 
-def apply_rotary_pos_emb(x, position_ids, model, head_dim):
-    # Retrieve RoPE module
-    # Implementation depends on the model (Llama vs Qwen)
-    # This is a simplification; a full RoPE application is complex to write zero-shot.
-    # To keep it exact, we can pull Q and K vectors directly from the model's forward pass
-    # instead of recomputing them with RoPE. 
-    pass
-
 def run_attribution():
+    import gc
     os.makedirs("outputs/phase1", exist_ok=True)
     os.environ["HF_HOME"] = "d:\\.cache\\huggingface"
     
@@ -131,15 +126,6 @@ def run_attribution():
                     wk = wk.cpu()
                     
                     x_in = hidden_states[L].squeeze(0).cpu()
-                    
-                    # Because Qwen and Llama use RoPE, recomputing Q and K exactly is hard
-                    # without accessing their internal rope embeddings.
-                    # We will approximate the component contributions pre-RoPE.
-                    # Or we can decompose the interaction and the RoPE effects will be part of the score.
-                    # Since RoPE is a rotation matrix R, Q_rope = Q @ R, K_rope = K @ R
-                    # Q_rope @ K_rope.T = Q @ R @ R^T @ K.T = Q @ K.T (if relative pos = 0)
-                    # But if relative pos > 0, it's Q @ R_m @ R_n^T @ K.T = Q @ R_{m-n} @ K.T
-                    # We will omit RoPE in the attribution for now, which gives us the "content" contribution.
                     
                     Q = x_in @ wq
                     K = x_in @ wk
@@ -206,6 +192,12 @@ def run_attribution():
                 print(f"  Mean top Q layer: {subset['top_q_layer'].mean():.1f}")
                 print(f"  Mean top K layer: {subset['top_k_layer'].mean():.1f}")
                 print(f"  Embed K contrib %: {(subset['k_embed_contrib'] / (subset['total_score'] + 1e-6)).mean() * 100:.1f}%")
+        
+        # CLEAR CACHE to prevent OOM
+        del model
+        del tokenizer
+        gc.collect()
+        torch.cuda.empty_cache()
 
 if __name__ == "__main__":
     run_attribution()
