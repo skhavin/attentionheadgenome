@@ -186,3 +186,27 @@ To test this natively across architectures (Qwen, Llama, Phi, GPT-2), we impleme
 > **Why?** Attention scores are incredibly noisy. Unnormalized $Q \cdot K$ scores routinely spike above 15.0 for irrelevant tokens (such as punctuation or highly frequent subwords). When searching backward, Early Exit encounters these random noise spikes *before* it reaches the true distant needle. The threshold triggers, the search aborts prematurely, and the model is permanently blinded to the true needle.
 >
 > **Scientific Conclusion:** Dynamic routing via an absolute $Q \cdot K$ threshold ($\tau$) is a mathematical dead-end. The noise floor of unnormalized attention is too volatile, causing catastrophic premature termination of long-range retrieval circuits.
+
+---
+
+# Executive Summary: Did the Routing Fail?
+To definitively answer the core thesis of this paper: **Yes and No.**
+
+1. **For Local Modeling (Success):** The Phase 1 Static Router was an overwhelming success. Bounding 60% of the attention network to a $W=256$ sliding window preserved Perplexity perfectly across 5 different architectures zero-shot. For tasks that do not require explicit long-range retrieval (like code completion, chat, and localized generation), the router provides a massive, lossless $\mathcal{O}(N)$ acceleration.
+2. **For Long-Context Retrieval (Failure):** Both Phase 1 (Static Attribution) and Phase 2 (Dynamic Early-Exit Softmax) **completely failed** to preserve long-range retrieval circuits, scoring 0.0% on the Needle-In-A-Haystack benchmark. 
+   - *Phase 1 failed* because static weight geometry cannot reliably isolate dynamic retrieval circuits.
+   - *Phase 2 failed* because dynamic Early Exit is hypersensitive to the unnormalized noise floor of attention matrices, causing premature termination before the needle is reached.
+
+The ultimate conclusion of this research is that achieving a lossless, $\mathcal{O}(N)$ Universal Router for infinite-context retrieval requires a fundamentally new algorithmic paradigm that goes beyond static bounds and noisy early-exit thresholds.
+
+---
+
+# Repository Code Index
+To reproduce the findings in this report, reference the following benchmark scripts pushed to the `master` branch:
+
+*   **`02_phase1_component_attribution.py`**: The baseline script used to statically extract Local/Retrieval features from the model weights.
+*   **`08_real_speedup.py`**: Phase 1 static routing injected into the Qwen architectures via SDPA masking (demonstrating zero-shot PPL).
+*   **`11_research_paper_proof.py`**: The mathematical FLOP and algorithmic complexity proof calculating the exact $\mathcal{O}(N)$ reductions.
+*   **`12_phi_gpt_benchmark.py`**: Phase 1 cross-architecture evaluation (verifying PPL for Phi-1.5 and GPT-2).
+*   **`13_niah_benchmark.py`**: The script that empirically proved Phase 1 destroys long-context retrieval across 5 models.
+*   **`15_official_ruler_phase2.py`**: The global SDPA patch that proved Phase 2 (Dynamic Early Exit) also destroys retrieval due to the attention noise floor.
