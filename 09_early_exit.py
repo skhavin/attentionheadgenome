@@ -96,7 +96,7 @@ def monkeypatch_early_exit(model, head_classes):
     def get_custom_forward(layer_idx, original_forward):
         def custom_forward(
             hidden_states, attention_mask=None, position_ids=None, past_key_value=None, 
-            output_attentions=False, use_cache=False, cache_position=None, **kwargs
+            output_attentions=False, use_cache=False, cache_position=None, position_embeddings=None, **kwargs
         ):
             module = model.model.layers[layer_idx].self_attn
             bsz, q_len, _ = hidden_states.size()
@@ -113,13 +113,23 @@ def monkeypatch_early_exit(model, head_classes):
             key_states = key_states.view(bsz, q_len, num_kv_heads, head_dim).transpose(1, 2)
             value_states = value_states.view(bsz, q_len, num_kv_heads, head_dim).transpose(1, 2)
 
-            cos, sin = module.rotary_emb(value_states, position_ids)
+            if position_embeddings is not None:
+                cos, sin = position_embeddings
+            else:
+                cos, sin = module.rotary_emb(value_states, position_ids)
+                
             query_states, key_states = apply_rotary_pos_emb(query_states, key_states, cos, sin)
 
             if past_key_value is not None:
                 key_states, value_states = past_key_value.update(key_states, value_states, layer_idx, cache_position)
                 
             kv_len = key_states.shape[2]
+            
+            # GQA Fix: Repeat KV heads to match Query heads before slicing
+            n_rep = num_heads // num_kv_heads
+            if n_rep > 1:
+                key_states = torch.repeat_interleave(key_states, n_rep, dim=1)
+                value_states = torch.repeat_interleave(value_states, n_rep, dim=1)
             
             attn_weights = torch.full((bsz, num_heads, q_len, kv_len), float('-inf'), device=query_states.device, dtype=query_states.dtype)
             
