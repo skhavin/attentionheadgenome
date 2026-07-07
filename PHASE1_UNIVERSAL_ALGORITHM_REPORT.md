@@ -242,3 +242,20 @@ To reproduce the findings in this report, reference the following scripts and ou
 *   **`niah_log.txt`**: Raw outputs of the Phase 1 RULER collapse.
 *   **`phase2_eval_log.txt`**: Raw outputs of the Phase 2 Early-Exit noise floor failure.
 *   **`phase3_log_bulletproof.txt`**: Raw outputs of the final Phase 3 Hybrid Dense triumph (including exact PPL and 70% RULER scores).
+
+---
+
+# Appendix: Architecting the Open-Source "Universal Router" Library
+To productize this research into a pip-installable repository that accelerates the prefill phase of **any HuggingFace model** out-of-the-box, you do not need to modify individual model architectures (`modeling_llama.py`, `modeling_qwen2.py`, etc.). Because all modern HuggingFace models funnel their attention through PyTorch 2's SDPA backend, the entire library can be built with just two core files:
+
+### 1. `calibrator.py` (The 1-Shot Profiler)
+This file exposes a single function `calibrate_model(model, tokenizer, threshold=0.05)`.
+*   **Mechanism:** It forces the model into `attn_implementation="eager"` temporarily, passes a standardized 1000-token NIAH prompt, and extracts the raw `output_attentions`. 
+*   **Output:** It returns a serialized JSON configuration (e.g., `router_config.json`) containing the exact layer and head indices of the true Retrieval circuits for that specific model.
+
+### 2. `patch.py` (The Universal SDPA Interceptor)
+This file exposes `enable_hybrid_routing(model, config_path)`.
+*   **Mechanism:** It globally monkeypatches PyTorch's native SDPA function (`torch.nn.functional.scaled_dot_product_attention`).
+*   **The Intercept:** When `q_len > 1` (identifying the computationally heavy Prefill phase), the wrapper intercepts the `query` and `key` tensors. 
+*   **The Mask Injection:** It dynamically generates the 4D Hybrid Dense mask `[batch, n_heads, q_len, kv_len]` based on the JSON config. Crucially, it applies the $W=256$ window to Local heads, leaves Retrieval heads Dense, and **unconditionally unmasks the first 4 tokens (Attention Sinks)**.
+*   **The Hand-off:** It merges this custom mask with the standard causal mask and hands execution directly back to the hyper-optimized C++ PyTorch SDPA kernel for blazingly fast $\mathcal{O}(N)$ computation. During generation (`q_len == 1`), it simply passes the tensors through untouched, ensuring zero generation overhead.
