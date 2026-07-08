@@ -49,4 +49,9 @@ To definitively prove that this mathematical pruning natively bounds execution o
   <img src="universal_router_experiments/all_models_speedup.png" width="100%">
 </p>
 
-*(More plots incoming...)*
+### Reproduction & Artifacts
+The entire zero-shot algorithmic bounding and evaluation pipeline is natively reproducible via the enclosed repository tools:
+- **Theoretical Multi-Model Speedup Simulator:** [`universal_router_experiments/23_generate_all_speedups.py`](universal_router_experiments/23_generate_all_speedups.py) (Generates the overarching O(N) bounded charts above).
+- **Native Triton C++ Compiler Benchmark:** [`universal_router_experiments/19_flex_attention_implementation.py`](universal_router_experiments/19_flex_attention_implementation.py) (Verifies the memory and latency bounds natively on the GPU without Python execution overhead).
+- **Hardware JSON Benchmark Logs:** [`universal_router_experiments/flex_ttft_results.json`](universal_router_experiments/flex_ttft_results.json) (Exact raw ms recordings mapped across Sequence Lengths).
+- **Consolidated Speedup Plot:** [`universal_router_experiments/all_models_speedup.png`](universal_router_experiments/all_models_speedup.png)
