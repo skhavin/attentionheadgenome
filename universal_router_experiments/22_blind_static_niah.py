@@ -3,7 +3,7 @@ import torch.nn.functional as F
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import time
 
-model_ids = ["Qwen/Qwen2.5-0.5B", "Qwen/Qwen2.5-1.5B", "microsoft/Phi-3-mini-4k-instruct"]
+model_ids = ["Qwen/Qwen2.5-0.5B", "TinyLlama/TinyLlama-1.1B-Chat-v1.0", "microsoft/Phi-3-mini-4k-instruct"]
 # We will just test Qwen-0.5B first as requested, but the rule is universal!
 
 def generate_static_mask(model, n_layers, n_heads, num_kv_heads, head_dim):

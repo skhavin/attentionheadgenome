@@ -4,9 +4,9 @@ import numpy as np
 from transformers import AutoModelForCausalLM
 import gc
 
-model_ids = ["Qwen/Qwen2.5-0.5B", "Qwen/Qwen2.5-1.5B"]
-colors = ['#1f77b4', '#ff7f0e']
-titles = ["Qwen2.5 (0.5B)", "Qwen2.5 (1.5B)"]
+model_ids = ["Qwen/Qwen2.5-0.5B", "TinyLlama/TinyLlama-1.1B-Chat-v1.0", "microsoft/Phi-3-mini-4k-instruct"]
+colors = ['#1f77b4', '#ff7f0e', '#2ca02c']
+titles = ["Qwen2.5 (0.5B)", "TinyLlama (1.1B)", "Phi-3 (3.8B)"]
 
 def measure_ttft(model, N, device):
     dummy_input_ids = torch.randint(0, model.config.vocab_size, (1, N)).to(device)
@@ -81,7 +81,7 @@ def extract_percentage_local(model):
     total_heads = n_layers * n_heads
     return 1.0 - (dense_count / total_heads)
 
-fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+fig, axes = plt.subplots(1, 3, figsize=(18, 5))
 seq_lens = [500, 1000, 1500, 2000, 3000, 4000]
 
 for idx, model_id in enumerate(model_ids):
