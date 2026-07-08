@@ -43,7 +43,16 @@ from scipy import stats
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from datasets import load_dataset
 
-sys.path.insert(0, os.path.dirname(__file__))
+import importlib.util
+
+spec = importlib.util.spec_from_file_location(
+    "triage_and_schema", 
+    os.path.join(os.path.dirname(__file__), "01_triage_and_schema.py")
+)
+triage_and_schema = importlib.util.module_from_spec(spec)
+sys.modules["triage_and_schema"] = triage_and_schema
+spec.loader.exec_module(triage_and_schema)
+
 from triage_and_schema import assert_no_bin3_leak
 
 # ============================================================
@@ -327,7 +336,8 @@ def run_ablation(debug=False):
 
         n_layers = model.config.num_hidden_layers
         n_heads = model.config.num_attention_heads
-        model_labels = canonical_labels.get(label_key, {})
+        model_data = canonical_labels.get("models", {}).get(model_name, {})
+        model_labels_dict = model_data.get("heads", {})
 
         # Build eval prompts
         eval_prompts = load_eval_prompts(tokenizer, n=3 if debug else NUM_EVAL_PROMPTS)
@@ -346,8 +356,9 @@ def run_ablation(debug=False):
 
         for layer_idx in range(n_layers):
             for head_idx in range(n_heads_to_test):
-                label_key_head = f"L{layer_idx}H{head_idx}"
-                head_label = model_labels.get(label_key_head, "unknown")
+                label_key_head = f"{layer_idx}_{head_idx}"
+                head_entry = model_labels_dict.get(label_key_head, {})
+                head_label = head_entry.get("label", "unknown")
 
                 if head_label == "unknown":
                     continue

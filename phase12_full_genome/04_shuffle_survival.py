@@ -37,7 +37,16 @@ from scipy import stats
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from datasets import load_dataset
 
-sys.path.insert(0, os.path.dirname(__file__))
+import importlib.util
+
+spec = importlib.util.spec_from_file_location(
+    "triage_and_schema", 
+    os.path.join(os.path.dirname(__file__), "01_triage_and_schema.py")
+)
+triage_and_schema = importlib.util.module_from_spec(spec)
+sys.modules["triage_and_schema"] = triage_and_schema
+spec.loader.exec_module(triage_and_schema)
+
 from triage_and_schema import assert_no_bin3_leak
 
 CANONICAL_LABELS_PATH = os.path.join(
@@ -199,7 +208,9 @@ def run_shuffle(debug=False):
         )
         model.eval()
 
-        model_labels = canonical_labels.get(label_key, {})
+        model_data = canonical_labels.get("models", {}).get(model_name, {})
+        model_labels_dict = model_data.get("heads", {})
+        model_labels = {k: v.get("label", "unknown") for k, v in model_labels_dict.items()}
         eval_prompts = load_eval_prompts(tokenizer, n=3 if debug else NUM_PROMPTS)
 
         # Baseline PPL (original prompts, no intervention)

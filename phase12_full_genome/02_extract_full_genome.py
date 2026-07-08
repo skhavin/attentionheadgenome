@@ -27,8 +27,16 @@ import torch
 from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-# Import our schema — single source of truth
-sys.path.insert(0, os.path.dirname(__file__))
+import importlib.util
+
+spec = importlib.util.spec_from_file_location(
+    "triage_and_schema", 
+    os.path.join(os.path.dirname(__file__), "01_triage_and_schema.py")
+)
+triage_and_schema = importlib.util.module_from_spec(spec)
+sys.modules["triage_and_schema"] = triage_and_schema
+spec.loader.exec_module(triage_and_schema)
+
 from triage_and_schema import (
     extract_bin1_features, assert_no_bin3_leak,
     APPROVED_FEATURES, BIN_3_FEATURES, compute_gini, compute_entropy
@@ -73,7 +81,7 @@ MODELS = [
 # Held-out prompt config
 # We use a fresh slice of wikitext that was never used in Phase 1
 WIKITEXT_SPLIT = "test"
-NUM_PROMPTS = 50
+NUM_PROMPTS = 10
 PROMPT_SEQ_LEN = 512  # tokens per prompt
 
 # NIAH prompts: synthesize fresh ones (different needles from Phase 1)
@@ -345,20 +353,24 @@ def get_head_weights(model, layer_idx, head_idx, n_heads, n_kv_heads, head_dim):
     if attn_module is None:
         return None, None, None, None
 
-    # GPT-2 style: fused c_attn [3 * hidden, hidden]
+    # GPT-2 style: fused c_attn [hidden, 3*hidden]
     if hasattr(attn_module, "c_attn"):
-        W_fused = attn_module.c_attn.weight.detach()  # [3*hidden, hidden]
-        hidden = W_fused.shape[1]
-        W_Q_full = W_fused[:hidden]
-        W_K_full = W_fused[hidden:2*hidden]
-        W_V_full = W_fused[2*hidden:]
+        W_fused = attn_module.c_attn.weight.detach()  # [hidden, 3*hidden]
+        hidden = W_fused.shape[0]
+        
+        # Slicing the columns
+        W_Q_full = W_fused[:, :hidden].T       # [hidden, hidden]
+        W_K_full = W_fused[:, hidden:2*hidden].T # [hidden, hidden]
+        W_V_full = W_fused[:, 2*hidden:].T     # [hidden, hidden]
 
-        # Slice out head
+        # Slice out head (head_dim, hidden)
         start = head_idx * head_dim
         end = start + head_dim
         W_Q = W_Q_full[start:end]
         W_K = W_K_full[start:end]
         W_V = W_V_full[start:end]
+        
+        # c_proj weight is [hidden, hidden]
         W_O = attn_module.c_proj.weight.detach()[:, start:end].T
 
     # Qwen/Llama style: separate q_proj, k_proj, v_proj
@@ -483,7 +495,8 @@ def run_extraction(debug=False):
 
         # Now extract Bin-1 features and combine with averaged Bin-2 features
         print(f"  Extracting Bin-1 static weight features...")
-        model_labels = canonical_labels.get(label_key, {})
+        model_data = canonical_labels.get("models", {}).get(model_name, {})
+        model_labels_dict = model_data.get("heads", {})
 
         for layer_idx in range(n_layers):
             for head_idx in range(n_heads):
@@ -493,8 +506,9 @@ def run_extraction(debug=False):
                 }
 
                 # Get label
-                label_key_head = f"L{layer_idx}H{head_idx}"
-                row["canonical_label"] = model_labels.get(label_key_head, "unknown")
+                label_key_head = f"{layer_idx}_{head_idx}"
+                head_entry = model_labels_dict.get(label_key_head, {})
+                row["canonical_label"] = head_entry.get("label", "unknown")
 
                 # Skip heads with no label in debug mode
                 if debug and row["canonical_label"] == "unknown":
