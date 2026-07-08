@@ -230,18 +230,18 @@ To bridge the gap from 70% to 100%, future work simply needs to lower the 1-Shot
 To reproduce the findings in this report, reference the following scripts and output logs pushed to the `master` branch:
 
 ### Code Scripts
-*   **`02_phase1_component_attribution.py`**: Static extraction of Local/Retrieval features.
-*   **`08_real_speedup.py`**: Phase 1 static routing injected into the Qwen architectures via SDPA masking.
-*   **`11_research_paper_proof.py`**: FLOP and algorithmic complexity mathematical proof.
-*   **`12_phi_gpt_benchmark.py`**: Phase 1 cross-architecture evaluation (Phi-1.5, GPT-2).
-*   **`13_niah_benchmark.py`**: Empirically proved Phase 1 destroys long-context retrieval.
-*   **`15_official_ruler_phase2.py`**: Global SDPA patch proving Phase 2 (Early Exit) destroys retrieval due to the attention noise floor.
-*   **`16_phase3_hybrid_dense.py`**: The definitive Phase 3 Hybrid Router proving 1-Shot Probing and Attention Sink Preservation.
+*   **`headgenome2_circuits/headgenome4_policy_synthesis/02_phase1_component_attribution.py`**: Static extraction of Local/Retrieval features.
+*   **`universal_router_experiments/08_real_speedup.py`**: Phase 1 static routing injected into the Qwen architectures via SDPA masking.
+*   **`universal_router_experiments/11_research_paper_proof.py`**: FLOP and algorithmic complexity mathematical proof.
+*   **`universal_router_experiments/12_phi_gpt_benchmark.py`**: Phase 1 cross-architecture evaluation (Phi-1.5, GPT-2).
+*   **`universal_router_experiments/13_niah_benchmark.py`**: Empirically proved Phase 1 destroys long-context retrieval.
+*   **`universal_router_experiments/15_official_ruler_phase2.py`**: Global SDPA patch proving Phase 2 (Early Exit) destroys retrieval due to the attention noise floor.
+*   **`universal_router_experiments/16_phase3_hybrid_dense.py`**: The definitive Phase 3 Hybrid Router proving 1-Shot Probing and Attention Sink Preservation.
 
 ### Empirical Output Logs
-*   **`niah_log.txt`**: Raw outputs of the Phase 1 RULER collapse.
-*   **`phase2_eval_log.txt`**: Raw outputs of the Phase 2 Early-Exit noise floor failure.
-*   **`phase3_log_bulletproof.txt`**: Raw outputs of the final Phase 3 Hybrid Dense triumph (including exact PPL and 70% RULER scores).
+*   **`universal_router_experiments/niah_log.txt`**: Raw outputs of the Phase 1 RULER collapse.
+*   **`universal_router_experiments/phase2_eval_log.txt`**: Raw outputs of the Phase 2 Early-Exit noise floor failure.
+*   **`universal_router_experiments/phase3_log_bulletproof.txt`**: Raw outputs of the final Phase 3 Hybrid Dense triumph (including exact PPL and 70% RULER scores).
 
 ---
 

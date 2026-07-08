@@ -28,7 +28,9 @@ This repository has been carefully structured for research reproducibility and n
 ```text
 attentionheadgenome/
 ├── consolidated_research_report.md       # The consolidated technical summary of all findings
+├── PHASE1_UNIVERSAL_ALGORITHM_REPORT.md  # Detailed technical report on the O(N) Universal Hybrid Dense Router
 ├── README.md                             # You are here
+├── universal_router_experiments/         # Code and benchmarks for the Hybrid Dense Router (Phase 3)
 ├── lib/
 │   └── headgenome/                       # Core analytical framework, sparse routing masks, and evaluation benchmarks
 ├── scripts/                              # Experimental scripts and visualization tools
