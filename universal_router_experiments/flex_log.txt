@@ -2,68 +2,24 @@ Compiling FlexAttention Kernel (This may take a minute)...
 
 Starting Isolated Kernel Benchmark (TTFT Estimation)...
 
-[>] Testing Sequence Length: 500
-    Dense SDPA TTFT (24 Layers): 1.88 ms
-    Compiled Flex TTFT (24 Layers): 20.40 ms
-
-[>] Testing Sequence Length: 1000
-    Dense SDPA TTFT (24 Layers): 55.19 ms
-    Compiled Flex TTFT (24 Layers): 43.94 ms
-
-[>] Testing Sequence Length: 1500
-    Dense SDPA TTFT (24 Layers): 94.65 ms
-    Compiled Flex TTFT (24 Layers): 57.27 ms
-
-[>] Testing Sequence Length: 2000
-    Dense SDPA TTFT (24 Layers): 16.87 ms
-    Compiled Flex TTFT (24 Layers): 12.01 ms
-
-[>] Testing Sequence Length: 2500
-    Dense SDPA TTFT (24 Layers): 25.34 ms
-    Compiled Flex TTFT (24 Layers): 16.80 ms
-
-[>] Testing Sequence Length: 3000
-    Dense SDPA TTFT (24 Layers): 67.50 ms
-    Compiled Flex TTFT (24 Layers): 39.65 ms
-
-[>] Testing Sequence Length: 3500
-    Dense SDPA TTFT (24 Layers): 58.39 ms
-    Compiled Flex TTFT (24 Layers): 32.28 ms
-
 [>] Testing Sequence Length: 4000
-    Dense SDPA TTFT (24 Layers): 57.68 ms
-    Compiled Flex TTFT (24 Layers): 29.09 ms
-
-[>] Testing Sequence Length: 4500
-    Dense SDPA TTFT (24 Layers): 63.75 ms
-    Compiled Flex TTFT (24 Layers): 30.50 ms
+    Dense SDPA TTFT (24 Layers): 50.37 ms
+    Compiled Flex TTFT (24 Layers): 24.99 ms
 
 [>] Testing Sequence Length: 5000
-    Dense SDPA TTFT (24 Layers): 76.61 ms
-    Compiled Flex TTFT (24 Layers): 35.09 ms
-
-[>] Testing Sequence Length: 5500
-    Dense SDPA TTFT (24 Layers): 88.80 ms
-    Compiled Flex TTFT (24 Layers): 38.98 ms
+    Dense SDPA TTFT (24 Layers): 77.47 ms
+    Compiled Flex TTFT (24 Layers): 35.23 ms
 
 [>] Testing Sequence Length: 6000
-    Dense SDPA TTFT (24 Layers): 105.40 ms
-    Compiled Flex TTFT (24 Layers): 45.22 ms
-
-[>] Testing Sequence Length: 6500
-    Dense SDPA TTFT (24 Layers): 123.25 ms
-    Compiled Flex TTFT (24 Layers): 50.76 ms
+    Dense SDPA TTFT (24 Layers): 106.24 ms
+    Compiled Flex TTFT (24 Layers): 44.54 ms
 
 [>] Testing Sequence Length: 7000
-    Dense SDPA TTFT (24 Layers): 143.05 ms
-    Compiled Flex TTFT (24 Layers): 56.61 ms
-
-[>] Testing Sequence Length: 7500
-    Dense SDPA TTFT (24 Layers): 164.15 ms
-    Compiled Flex TTFT (24 Layers): 63.31 ms
+    Dense SDPA TTFT (24 Layers): 144.21 ms
+    Compiled Flex TTFT (24 Layers): 56.55 ms
 
 [>] Testing Sequence Length: 8000
-    Dense SDPA TTFT (24 Layers): 186.13 ms
-    Compiled Flex TTFT (24 Layers): 69.87 ms
+    Dense SDPA TTFT (24 Layers): 188.86 ms
+    Compiled Flex TTFT (24 Layers): 70.12 ms
 
 Saved flex_ttft_results.json

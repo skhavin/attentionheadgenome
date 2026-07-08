@@ -232,7 +232,7 @@ By tracking the exact microsecond execution bounds on the GPU, we isolated the r
 
 This represents a definitive **2.66x acceleration in absolute hardware execution time**, verifying that the VRAM memory bounds are fundamentally suppressed.
 
-![C++ Kernel Hardware Speedup](file:///C:/Users/KHAVIN%20S/.gemini/antigravity-ide/brain/ac4fb06c-0c32-4ac1-b02d-4c64822e35ec/figure15_real_hardware_speedup.png)
+![C++ Kernel Hardware Speedup](figure15_real_hardware_speedup.png)
 
 ### The Path to 100% Retrieval Accuracy
 The 1-Shot probe achieved 70% accuracy because it only traced **1-hop circuits** (heads that look *directly* from the final query token to the needle). Transformer circuits are naturally multi-hop (e.g., Head A moves the needle to a comma, Head B moves the comma to the final query). 
@@ -262,6 +262,16 @@ To reproduce the findings in this report, reference the following scripts and ou
 *   **`universal_router_experiments/niah_log.txt`**: Raw outputs of the Phase 1 RULER collapse.
 *   **`universal_router_experiments/phase2_eval_log.txt`**: Raw outputs of the Phase 2 Early-Exit noise floor failure.
 *   **`universal_router_experiments/phase3_log_bulletproof.txt`**: Raw outputs of the final Phase 3 Hybrid Dense triumph (including exact PPL and 70% RULER scores).
+
+---
+
+# Phase 4: Zero-Shot Universality (The 100% Fix)
+*Planned Workstream*
+
+To bridge the gap from 70% to 100% Retrieval Accuracy across all models without executing dynamic inference probing, we theorize a **Zero-Shot Universality Protocol**:
+1. **The Ground Truth Extraction:** We will probe Qwen-0.5B once using a highly sensitive 1% threshold to capture the complete set of indirect, multi-hop retrieval circuits.
+2. **Static Synthesis:** We will trace these exact heads back to their original Phase 1 structural geometry (layer depths, embedding correlations, V/Q norms) to synthesize a deterministic `if/else` taxonomic rule.
+3. **Blind Validation:** We will blindly enforce this static rule across massively divergent architectures (Qwen, Llama, Gemma, Phi) to prove that the fundamental geometric signature of 100% Retrieval capacity is universally hardcoded in transformer architecture.
 
 ---
 

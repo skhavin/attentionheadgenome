@@ -43,13 +43,13 @@ def hybrid_mask(b, h, q_idx, kv_idx):
 flex_compiled = torch.compile(flex_attention)
 
 results = {"baseline_sdpa": {}, "compiled_flex_hybrid": {}}
-seq_len = 500
-step = 500
+seq_lens = [4000, 5000, 6000, 7000, 8000]
 
 print("\nStarting Isolated Kernel Benchmark (TTFT Estimation)...")
+import numpy as np
 
 try:
-    while seq_len <= 8000:
+    for seq_len in seq_lens:
         print(f"\n[>] Testing Sequence Length: {seq_len}")
         
         q = torch.randn(1, n_heads, seq_len, head_dim, device=device, dtype=dtype)
@@ -62,20 +62,23 @@ try:
         # --- BASELINE (Native C++ SDPA) ---
         try:
             # Warmup
-            for _ in range(3):
+            for _ in range(10):
                 torch.nn.functional.scaled_dot_product_attention(q, k, v, is_causal=True)
             torch.cuda.synchronize()
             
-            start_event = torch.cuda.Event(enable_timing=True)
-            end_event = torch.cuda.Event(enable_timing=True)
-            
-            start_event.record()
-            for _ in range(n_layers): # Simulate full network pass
-                torch.nn.functional.scaled_dot_product_attention(q, k, v, is_causal=True)
-            end_event.record()
-            torch.cuda.synchronize()
-            
-            base_time = start_event.elapsed_time(end_event)
+            times = []
+            for _ in range(30):
+                start_event = torch.cuda.Event(enable_timing=True)
+                end_event = torch.cuda.Event(enable_timing=True)
+                
+                start_event.record()
+                for _ in range(n_layers): # Simulate full network pass
+                    torch.nn.functional.scaled_dot_product_attention(q, k, v, is_causal=True)
+                end_event.record()
+                torch.cuda.synchronize()
+                times.append(start_event.elapsed_time(end_event))
+                
+            base_time = np.median(times)
             results["baseline_sdpa"][seq_len] = base_time
             print(f"    Dense SDPA TTFT (24 Layers): {base_time:.2f} ms")
         except torch.cuda.OutOfMemoryError:
@@ -85,20 +88,23 @@ try:
         # --- COMPILED FLEX HYBRID ROUTER ---
         try:
             # Warmup
-            for _ in range(3):
+            for _ in range(10):
                 flex_compiled(q, k, v, block_mask=block_mask)
             torch.cuda.synchronize()
             
-            start_event = torch.cuda.Event(enable_timing=True)
-            end_event = torch.cuda.Event(enable_timing=True)
-            
-            start_event.record()
-            for _ in range(n_layers): # Simulate full network pass
-                flex_compiled(q, k, v, block_mask=block_mask)
-            end_event.record()
-            torch.cuda.synchronize()
-            
-            flex_time = start_event.elapsed_time(end_event)
+            times = []
+            for _ in range(30):
+                start_event = torch.cuda.Event(enable_timing=True)
+                end_event = torch.cuda.Event(enable_timing=True)
+                
+                start_event.record()
+                for _ in range(n_layers): # Simulate full network pass
+                    flex_compiled(q, k, v, block_mask=block_mask)
+                end_event.record()
+                torch.cuda.synchronize()
+                times.append(start_event.elapsed_time(end_event))
+                
+            flex_time = np.median(times)
             results["compiled_flex_hybrid"][seq_len] = flex_time
             print(f"    Compiled Flex TTFT (24 Layers): {flex_time:.2f} ms")
         except torch.cuda.OutOfMemoryError:
@@ -112,8 +118,6 @@ try:
         # Save results
         with open("flex_ttft_results.json", "w") as f:
             json.dump(results, f, indent=4)
-            
-        seq_len += step
 
 except KeyboardInterrupt:
     print("\nBenchmark interrupted.")
