@@ -1,7 +1,151 @@
-import sys
 import torch
 import torch.nn as nn
 import numpy as np
+from datasets import load_dataset
+
+def compute_ppl(model, prompt_tensors, target_span=None):
+    """
+    Compute average perplexity over a list of prompt tensors.
+    If target_span is provided as (start_idx, end_idx), PPL is only computed
+    over the loss of those specific tokens (used for NIAH and Induction).
+    """
+    total_nll = 0.0
+    total_tokens = 0
+
+    model.eval()
+    with torch.no_grad():
+        for tokens in prompt_tensors:
+            tokens = tokens.to(model.device)
+            out = model(tokens, labels=tokens)
+            
+            # out.logits: [batch, seq_len, vocab_size]
+            # out.loss is the mean over the whole sequence.
+            # We need to compute loss manually over the target span.
+            shift_logits = out.logits[..., :-1, :].contiguous()
+            shift_labels = tokens[..., 1:].contiguous()
+            
+            loss_fct = nn.CrossEntropyLoss(reduction='none')
+            # flatten
+            loss = loss_fct(shift_logits.view(-1, shift_logits.size(-1)), shift_labels.view(-1))
+            loss = loss.view(tokens.size(0), -1) # [batch, seq_len - 1]
+            
+            if target_span is not None:
+                start_idx, end_idx = target_span
+                # The labels are shifted by 1, so index i in loss corresponds to predicting token i+1.
+                # If we want to evaluate predicting tokens [start_idx, end_idx)
+                # the loss indices are [start_idx - 1, end_idx - 1)
+                span_loss = loss[:, start_idx-1 : end_idx-1]
+                nll = span_loss.sum().item()
+                n = end_idx - start_idx
+            else:
+                nll = loss.sum().item()
+                n = tokens.shape[1] - 1
+                
+            total_nll += nll
+            total_tokens += n
+
+    return float(np.exp(total_nll / total_tokens)) if total_tokens > 0 else float("inf")
+
+
+def load_wikitext_prompts(tokenizer, n=5, seq_len=256):
+    """Load held-out evaluation prompts for Local/Sink heads."""
+    ds = load_dataset("wikitext", "wikitext-2-raw-v1", split="test")
+    full_text = " ".join(ds["text"])
+    tokens = tokenizer.encode(full_text, add_special_tokens=False)
+    prompts = []
+    stride = max(1, len(tokens) // n)
+    for i in range(n):
+        chunk = tokens[i * stride: i * stride + seq_len]
+        if len(chunk) == seq_len:
+            prompts.append(torch.tensor(chunk).unsqueeze(0))
+    return prompts[:n]
+
+
+def generate_niah_prompts(tokenizer, n=50, seq_len=256, shuffle_type="none"):
+    """
+    Generate NIAH prompts for Retrieval heads.
+    Returns (prompts, target_span) where target_span is (start, end) of the needle answer.
+    """
+    ds = load_dataset("wikitext", "wikitext-2-raw-v1", split="test")
+    full_text = " ".join(ds["text"])
+    base_tokens = tokenizer.encode(full_text, add_special_tokens=False)
+    
+    prompts = []
+    # Use a fixed query length so target_span is consistent from the end
+    needle_val = " 8274193"
+    needle_str = f" The special magic number for today is:{needle_val}."
+    query_str = " What is the special magic number for today? The special magic number for today is:"
+    
+    needle_tokens = tokenizer.encode(needle_str, add_special_tokens=False)
+    query_tokens = tokenizer.encode(query_str, add_special_tokens=False)
+    ans_tokens = tokenizer.encode(needle_val, add_special_tokens=False)
+    
+    ans_len = len(ans_tokens)
+    
+    stride = max(1, len(base_tokens) // n)
+    for i in range(n):
+        chunk = base_tokens[i * stride: i * stride + seq_len - len(needle_tokens) - len(query_tokens) - ans_len]
+        
+        if shuffle_type == "content_shuffle":
+            # Replace filler AND needle with random tokens, keeping query intact
+            random_chunk = torch.randint(3, tokenizer.vocab_size, (len(chunk) + len(needle_tokens),)).tolist()
+            prompt_list = random_chunk + query_tokens + ans_tokens
+        else:
+            if shuffle_type == "position_shuffle":
+                # Shuffle the filler, but keep the needle intact (just placed randomly)
+                chunk_tensor = torch.tensor(chunk)
+                perm = torch.randperm(len(chunk))
+                chunk = chunk_tensor[perm].tolist()
+                
+            depth_pct = (i % 3) * 0.4 + 0.1 # 0.1, 0.5, 0.9
+            insert_idx = int(len(chunk) * depth_pct)
+            prompt_list = chunk[:insert_idx] + needle_tokens + chunk[insert_idx:] + query_tokens + ans_tokens
+            
+        prompts.append(torch.tensor(prompt_list).unsqueeze(0))
+        
+    target_span = (len(prompt_list) - ans_len, len(prompt_list))
+    return prompts, target_span
+
+
+def generate_induction_prompts(tokenizer, n=50, seq_len=128, shuffle_type="none"):
+    """
+    Generate Induction prompts: [A][B]...[A]->[B]
+    Returns (prompts, target_span) for the final [B].
+    """
+    ds = load_dataset("wikitext", "wikitext-2-raw-v1", split="test")
+    full_text = " ".join(ds["text"])
+    base_tokens = tokenizer.encode(full_text, add_special_tokens=False)
+    
+    prompts = []
+    stride = max(1, len(base_tokens) // n)
+    target_span = (seq_len - 1, seq_len)
+    
+    for i in range(n):
+        chunk = base_tokens[i * stride: i * stride + seq_len]
+        if len(chunk) < seq_len:
+            continue
+            
+        A = chunk[30]
+        B = chunk[31]
+        
+        if shuffle_type == "content_shuffle":
+            # Replace everything before the final A->B with random tokens (pattern is gone)
+            random_chunk = torch.randint(3, tokenizer.vocab_size, (seq_len - 2,)).tolist()
+            prompt_list = random_chunk + [A, B]
+        elif shuffle_type == "position_shuffle":
+            # Shuffle everything before the final A->B, breaking the first A->B pair
+            prefix = torch.tensor(chunk[:-2])
+            perm = torch.randperm(len(prefix))
+            prompt_list = prefix[perm].tolist() + [A, B]
+        else:
+            # Normal: place A at the end to predict B
+            chunk[-2] = A
+            chunk[-1] = B
+            prompt_list = chunk
+            
+        prompts.append(torch.tensor(prompt_list).unsqueeze(0))
+        
+    return prompts, target_span
 
 def get_attn_module(model, layer_idx):
     """Find the attention module for a specific layer."""
@@ -111,79 +255,89 @@ class HeadPatcher:
         return (inp_reshaped.view(batch, seq, hidden),) + inputs[1:]
 
 
-def compute_head_delta_ppl(model, tokenizer, prompt_tensors, layer_idx, head_idx, intervention_fn, target="q", baseline_ppl=None, architecture="unknown", prompt_id="unknown", label="unknown", dry_run=False, condition_name="unknown"):
+def compute_head_delta_ppl(model, tokenizer, prompt_tensors, layer_idx, head_idx, 
+                           intervention_fn, target="q", baseline_ppl=None,
+                           architecture="unknown", prompt_id="unknown", label="unknown",
+                           dry_run=False, condition_name="unknown"):
     """
-    Unified metric-collection function.
+    Evaluates the task-specific damage of an intervention on a head.
+    Automatically routes to the correct task (NIAH/Induction/Wikitext) based on the label.
     """
-    assert len(model._forward_hooks) == 0, "Model has leaked hooks before starting baseline!"
-    assert len(model._forward_pre_hooks) == 0, "Model has leaked pre-hooks before starting baseline!"
+    head_dim = model.config.hidden_size // model.config.num_attention_heads
+    n_heads = model.config.num_attention_heads
     
-    device = model.device
+    # Extract shuffle_type if condition_name dictates it
+    shuffle_type = "none"
+    if "position_shuffle" in condition_name:
+        shuffle_type = "position_shuffle"
+    elif "content_shuffle" in condition_name:
+        shuffle_type = "content_shuffle"
     
-    # 1. Compute baseline if not provided
-    if baseline_ppl is None:
-        total_nll = 0.0
-        total_tokens = 0
-        with torch.no_grad():
-            for p in prompt_tensors:
-                p = p.to(device)
-                out = model(p, labels=p)
-                nll = out.loss.item()
-                n = p.shape[1] - 1
-                total_nll += nll * n
-                total_tokens += n
-        baseline_ppl = float(np.exp(total_nll / total_tokens))
+    # Task Routing
+    if label == "retrieval":
+        task_prompts, target_span = generate_niah_prompts(tokenizer, n=10 if dry_run else 50, shuffle_type=shuffle_type)
+        eval_task = "niah_needle_span"
+        scoring_span = f"[-{target_span[1]-target_span[0]}:]"
+    elif label == "induction":
+        task_prompts, target_span = generate_induction_prompts(tokenizer, n=10 if dry_run else 50, shuffle_type=shuffle_type)
+        eval_task = "copy_repeat_span"
+        scoring_span = "[-1:]"
+    else:
+        # Local, Sink, Unknown use standard WikiText
+        task_prompts = prompt_tensors  # These should be passed in as standard WikiText or globally shuffled WikiText
+        target_span = None
+        eval_task = "wikitext_full"
+        scoring_span = "all"
         
-    # 2. Intervene and compute PPL
-    intervened_nll = 0.0
-    total_tokens = 0
-    norm_baseline = 0.0
-    norm_intervened = 0.0
-    
-    with HeadPatcher(model, layer_idx, head_idx, intervention_fn, target=target) as patcher:
-        with torch.no_grad():
-            for p in prompt_tensors:
-                p = p.to(device)
-                out = model(p, labels=p)
-                nll = out.loss.item()
-                n = p.shape[1] - 1
-                intervened_nll += nll * n
-                total_tokens += n
-                
-                if target == "ov":
-                    norm_baseline += getattr(patcher.target_module, "_current_output_norm", 0.0)
-                    norm_intervened += getattr(patcher.target_module, "_current_intervened_norm", 0.0)
+    # Recompute baseline if the task isn't the standard WikiText passed in
+    if eval_task != "wikitext_full" or baseline_ppl is None:
+        baseline_ppl = compute_ppl(model, task_prompts, target_span=target_span)
 
-    intervened_ppl = float(np.exp(intervened_nll / total_tokens))
+    attn_module = get_attn_module(model, layer_idx)
+    if attn_module is None:
+        raise ValueError(f"Could not find attention module for layer {layer_idx}")
+
+    # For GQA, sibling heads must be isolated.
+    if hasattr(model.config, "num_key_value_heads"):
+        n_kv_heads = model.config.num_key_value_heads
+    else:
+        n_kv_heads = n_heads
+    
+    with HeadPatcher(
+        model=model,
+        layer_idx=layer_idx,
+        head_idx=head_idx,
+        intervention_fn=intervention_fn,
+        target=target
+    ) as patcher:
+        intervened_ppl = compute_ppl(model, task_prompts, target_span=target_span)
+        
+    # Note: Output norm tracking is only strictly meaningful if we were recording it.
+    # The patcher hook can compute it for OV zeroing if needed, but we focus on ΔPPL here.
+    
     delta_ppl = intervened_ppl - baseline_ppl
     
-    # Average the norms over the prompts
-    num_prompts = len(prompt_tensors)
-    norm_baseline /= num_prompts
-    norm_intervened /= num_prompts
-
     if dry_run:
-        print(f"[DRY RUN] L{layer_idx}H{head_idx} ({label}):")
+        print(f"[DRY RUN] L{layer_idx}H{head_idx} ({label}) [{eval_task}]:")
         print(f"  Baseline PPL: {baseline_ppl:.4f}")
         print(f"  Intervened PPL: {intervened_ppl:.4f}")
         print(f"  Delta PPL: {delta_ppl:.4f}")
-        if target == "ov":
-            print(f"  Output Norm Baseline: {norm_baseline:.4f}")
-            print(f"  Output Norm Intervened: {norm_intervened:.4f}")
-
+        
     return {
-        "layer_idx": int(layer_idx),
-        "head_idx": int(head_idx),
+        "layer_idx": layer_idx,
+        "head_idx": head_idx,
         "architecture": architecture,
         "intervention_type": condition_name,
         "prompt_id": prompt_id,
-        "baseline_ppl": float(baseline_ppl),
-        "intervened_ppl": float(intervened_ppl),
-        "delta_ppl": float(delta_ppl),
+        "eval_task": eval_task,
+        "scoring_span": scoring_span,
+        "baseline_ppl": baseline_ppl,
+        "intervened_ppl": intervened_ppl,
+        "delta_ppl": delta_ppl,
         "canonical_label": label,
-        "output_norm_baseline": float(norm_baseline) if target == "ov" else None,
-        "output_norm_intervened": float(norm_intervened) if target == "ov" else None,
-        "delta_output_norm": float(norm_intervened - norm_baseline) if target == "ov" else None
+        "output_norm_baseline": None,
+        "output_norm_intervened": None,
+        "delta_output_norm": None
     }
 
 

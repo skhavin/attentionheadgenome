@@ -54,7 +54,7 @@ sys.modules["triage_and_schema"] = triage_and_schema
 spec.loader.exec_module(triage_and_schema)
 
 from triage_and_schema import assert_no_bin3_leak
-from ablation_utils import compute_head_delta_ppl, q_permutation_fn, ov_zero_fn, test_gqa_isolation
+from ablation_utils import compute_head_delta_ppl, q_permutation_fn, ov_zero_fn, test_gqa_isolation, load_wikitext_prompts
 
 # ============================================================
 # CONFIG
@@ -67,7 +67,7 @@ GENOME_CSV_PATH = os.path.join(os.path.dirname(__file__), "full_genome_dataset.c
 OUTPUT_JSON = os.path.join(os.path.dirname(__file__), "03_qk_ov_ablation_results.json")
 
 MODELS = [
-    {"model_id": "gpt2",                      "model_name": "GPT-2",       "label_key": "gpt2"},
+    {"model_id": "gpt2-medium",               "model_name": "GPT-2",       "label_key": "gpt2"},
     {"model_id": "Qwen/Qwen2.5-0.5B",         "model_name": "Qwen-0.5B",   "label_key": "qwen_0.5b"},
     {"model_id": "Qwen/Qwen2.5-1.5B",         "model_name": "Qwen-1.5B",   "label_key": "qwen_1.5b"},
     {"model_id": "unsloth/Llama-3.2-1B",      "model_name": "Llama-3.2-1B","label_key": "llama_3.2_1b"},
@@ -93,8 +93,8 @@ def compute_gate_a_stats(results_by_arch, condition_name):
     arch_results = {}
     
     for arch_name, arch_data in results_by_arch.items():
-        local_deltas = [r["delta_ppl"] for r in arch_data if r["label"] == "local"]
-        retrieval_deltas = [r["delta_ppl"] for r in arch_data if r["label"] == "retrieval"]
+        local_deltas = [r["delta_ppl"] for r in arch_data if r["canonical_label"] == "local"]
+        retrieval_deltas = [r["delta_ppl"] for r in arch_data if r["canonical_label"] == "retrieval"]
         
         if len(local_deltas) < 3 or len(retrieval_deltas) < 3:
             arch_results[arch_name] = {"status": "insufficient_data", "d": 0.0, "p": 1.0}
@@ -132,7 +132,7 @@ def compute_gate_a_stats(results_by_arch, condition_name):
     
     coherence_flag = None
     if n_passing >= 2:
-        mha_archs = {"GPT-2"}
+        mha_archs = {"GPT-2-Medium"}
         gqa_archs = {"Qwen-0.5B", "Qwen-1.5B", "Llama-3.2-1B"}
         passing_mha = mha_archs.intersection(passing_archs)
         passing_gqa = gqa_archs.intersection(passing_archs)
@@ -200,7 +200,8 @@ def run_ablation(debug=False):
         model_labels_dict = model_data.get("heads", {})
 
         # Build eval prompts
-        eval_prompts = load_eval_prompts(tokenizer, n=3 if debug else NUM_EVAL_PROMPTS)
+        print("Loading WikiText control prompts...")
+        eval_prompts = load_wikitext_prompts(tokenizer, n=3 if debug else NUM_EVAL_PROMPTS)
         print(f"  Eval prompts: {len(eval_prompts)}")
 
         # Pre-compute baseline to avoid repeating it

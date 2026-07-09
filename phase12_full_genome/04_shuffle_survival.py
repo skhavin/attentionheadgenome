@@ -48,6 +48,7 @@ sys.modules["triage_and_schema"] = triage_and_schema
 spec.loader.exec_module(triage_and_schema)
 
 from triage_and_schema import assert_no_bin3_leak
+from ablation_utils import compute_head_delta_ppl, ov_zero_fn, test_gqa_isolation, load_wikitext_prompts, compute_ppl
 
 CANONICAL_LABELS_PATH = os.path.join(
     os.path.dirname(__file__), "..", "outputs", "canonical_labels.json"
@@ -55,7 +56,7 @@ CANONICAL_LABELS_PATH = os.path.join(
 OUTPUT_JSON = os.path.join(os.path.dirname(__file__), "04_shuffle_survival_results.json")
 
 MODELS = [
-    {"model_id": "gpt2",                     "model_name": "GPT-2",       "label_key": "gpt2"},
+    {"model_id": "gpt2-medium",              "model_name": "GPT-2",       "label_key": "gpt2"},
     {"model_id": "Qwen/Qwen2.5-0.5B",        "model_name": "Qwen-0.5B",   "label_key": "qwen_0.5b"},
     {"model_id": "Qwen/Qwen2.5-1.5B",        "model_name": "Qwen-1.5B",   "label_key": "qwen_1.5b"},
     {"model_id": "unsloth/Llama-3.2-1B",     "model_name": "Llama-3.2-1B","label_key": "llama_3.2_1b"},
@@ -106,52 +107,8 @@ def content_shuffle(token_ids: torch.Tensor, vocab_size: int) -> torch.Tensor:
 
 
 # ============================================================
-# PPL COMPUTATION
-# ============================================================
-
-def compute_ppl(model, prompt_tokens):
-    """Compute PPL for a single prompt tensor."""
-    with torch.no_grad():
-        out = model(prompt_tokens.to(DEVICE), labels=prompt_tokens.to(DEVICE))
-    return float(torch.exp(out.loss).item())
-
-
-def load_eval_prompts(tokenizer, n=NUM_PROMPTS, seq_len=SEQ_LEN):
-    ds = load_dataset("wikitext", "wikitext-2-raw-v1", split="test")
-    full_text = " ".join(ds["text"])
-    tokens = tokenizer.encode(full_text, add_special_tokens=False)
-    prompts = []
-    stride = max(1, len(tokens) // n)
-    for i in range(n):
-        chunk = tokens[i * stride: i * stride + seq_len]
-        if len(chunk) == seq_len:
-            prompts.append(torch.tensor(chunk).unsqueeze(0))
-    return prompts[:n]
-
-
-# ============================================================
 # GATE A STATISTICS
 # ============================================================
-
-def compute_separation(all_deltas_by_class, condition_name, arch_name):
-    """
-    Test whether ΔPPL distributions differ between Retrieval and Local heads.
-    Returns (passed, d, p_value).
-    """
-    local = [d for d in all_deltas_by_class.get("local", []) if np.isfinite(d)]
-    retrieval = [d for d in all_deltas_by_class.get("retrieval", []) if np.isfinite(d)]
-
-    if len(local) < 3 or len(retrieval) < 3:
-        return False, 0.0, 1.0
-
-    u_stat, p_value = stats.mannwhitneyu(retrieval, local, alternative="two-sided")
-    mean_diff = np.mean(retrieval) - np.mean(local)
-    pooled_std = np.sqrt((np.std(retrieval)**2 + np.std(local)**2) / 2) + 1e-10
-    d = abs(mean_diff / pooled_std)
-
-    passed = (p_value < 0.01) and (d > 0.5)
-    return passed, float(d), float(p_value)
-
 
 def coherent_pattern_check(arch_pass_results, condition_name):
     """
@@ -181,6 +138,8 @@ def coherent_pattern_check(arch_pass_results, condition_name):
 # ============================================================
 
 def run_shuffle(debug=False):
+    import sys
+    sys.stdout.reconfigure(encoding='utf-8')
     with open(CANONICAL_LABELS_PATH, "r") as f:
         canonical_labels = json.load(f)
 
@@ -220,56 +179,81 @@ def run_shuffle(debug=False):
         model_data = canonical_labels.get("models", {}).get(model_name, {})
         model_labels_dict = model_data.get("heads", {})
         model_labels = {k: v.get("label", "unknown") for k, v in model_labels_dict.items()}
-        eval_prompts = load_eval_prompts(tokenizer, n=3 if debug else NUM_PROMPTS)
+        eval_prompts = load_wikitext_prompts(tokenizer, n=3 if debug else NUM_PROMPTS)
 
-        # Baseline PPL (original prompts, no intervention)
-        print("  Computing baseline PPLs...")
-        baseline_ppls = [compute_ppl(model, p) for p in eval_prompts]
-        mean_baseline = float(np.mean(baseline_ppls))
-        print(f"  Mean baseline PPL: {mean_baseline:.2f}")
-
-        # Position Shuffle PPLs
-        print("  Computing position-shuffled PPLs...")
+        # Pre-compute baselines for both shuffle conditions
+        print("  Computing position-shuffled baseline...")
         pos_shuffled = [position_shuffle(p) for p in eval_prompts]
-        pos_ppls = [compute_ppl(model, p) for p in pos_shuffled]
-        mean_pos_ppl = float(np.mean(pos_ppls))
-        print(f"  Mean position-shuffle PPL: {mean_pos_ppl:.2f} "
-              f"(dPPL = {mean_pos_ppl - mean_baseline:+.2f})")
-
-        # Content Shuffle PPLs
-        print("  Computing content-shuffled PPLs...")
+        pos_baseline_ppl = compute_ppl(model, pos_shuffled)
+        
+        print("  Computing content-shuffled baseline...")
         content_shuffled = [content_shuffle(p, vocab_size) for p in eval_prompts]
-        content_ppls = [compute_ppl(model, p) for p in content_shuffled]
-        mean_content_ppl = float(np.mean(content_ppls))
-        print(f"  Mean content-shuffle PPL: {mean_content_ppl:.2f} "
-              f"(dPPL = {mean_content_ppl - mean_baseline:+.2f})")
+        content_baseline_ppl = compute_ppl(model, content_shuffled)
+        
+        print(f"  Pos-shuffle baseline PPL: {pos_baseline_ppl:.2f}")
+        print(f"  Content-shuffle baseline PPL: {content_baseline_ppl:.2f}")
 
-        # Store model-level results
-        if "position_shuffle" not in all_arch_results:
-            all_arch_results["position_shuffle"] = {}
-        if "content_shuffle" not in all_arch_results:
-            all_arch_results["content_shuffle"] = {}
-            
-        all_arch_results["position_shuffle"][model_name] = {
-            "baseline_ppl": mean_baseline,
-            "shuffled_ppl": mean_pos_ppl,
-            "delta_ppl": mean_pos_ppl - mean_baseline,
-            "n_retrieval_heads": sum(1 for v in model_labels.values() if v == "retrieval"),
-            "n_local_heads": sum(1 for v in model_labels.values() if v == "local"),
-        }
+        arch_results_pos = []
+        arch_results_content = []
 
-        all_arch_results["content_shuffle"][model_name] = {
-            "baseline_ppl": mean_baseline,
-            "shuffled_ppl": mean_content_ppl,
-            "delta_ppl": mean_content_ppl - mean_baseline,
-            "n_retrieval_heads": sum(1 for v in model_labels.values() if v == "retrieval"),
-            "n_local_heads": sum(1 for v in model_labels.values() if v == "local"),
-        }
+        targets = []
+        if debug:
+            retrieval_head = next((k for k, v in model_labels_dict.items() if v.get("label") == "retrieval"), None)
+            local_head = next((k for k, v in model_labels_dict.items() if v.get("label") == "local"), None)
+            sink_head = next((k for k, v in model_labels_dict.items() if v.get("label") == "sink"), None)
+            if retrieval_head: targets.append(retrieval_head)
+            if local_head: targets.append(local_head)
+            if sink_head: targets.append(sink_head)
+            print(f"  [DRY RUN] Running exactly 3 heads: {targets}")
+            test_gqa_isolation(model, tokenizer)
 
+        n_layers = model.config.num_hidden_layers
+        n_heads = model.config.num_attention_heads
+
+        for layer_idx in range(n_layers):
+            for head_idx in range(n_heads):
+                label_key_head = f"{layer_idx}_{head_idx}"
+                head_label = model_labels_dict.get(label_key_head, {}).get("label", "unknown")
+
+                if head_label == "unknown":
+                    continue
+                    
+                if debug and label_key_head not in targets:
+                    continue
+
+                # Position Shuffle: zero OV on pos-shuffled prompt
+                res_pos = compute_head_delta_ppl(
+                    model, tokenizer, pos_shuffled, layer_idx, head_idx,
+                    intervention_fn=ov_zero_fn, target="ov",
+                    baseline_ppl=pos_baseline_ppl, architecture=model_name,
+                    prompt_id="wikitext-test", label=head_label, dry_run=debug,
+                    condition_name="position_shuffle"
+                )
+                arch_results_pos.append(res_pos)
+
+                # Content Shuffle: zero OV on content-shuffled prompt
+                res_content = compute_head_delta_ppl(
+                    model, tokenizer, content_shuffled, layer_idx, head_idx,
+                    intervention_fn=ov_zero_fn, target="ov",
+                    baseline_ppl=content_baseline_ppl, architecture=model_name,
+                    prompt_id="wikitext-test", label=head_label, dry_run=debug,
+                    condition_name="content_shuffle"
+                )
+                arch_results_content.append(res_content)
+
+            if debug and len(arch_results_pos) >= len(targets):
+                break
+
+        if "position_shuffle" not in all_arch_results: all_arch_results["position_shuffle"] = {}
+        if "content_shuffle" not in all_arch_results: all_arch_results["content_shuffle"] = {}
+        
+        all_arch_results["position_shuffle"][model_name] = arch_results_pos
+        all_arch_results["content_shuffle"][model_name] = arch_results_content
+        
         # Save checkpoint after each model
         with open(OUTPUT_JSON, "w") as f:
             json.dump(all_arch_results, f, indent=2)
-            
+
         del model
         torch.cuda.empty_cache()
         gc.collect()
@@ -278,15 +262,18 @@ def run_shuffle(debug=False):
     # SUMMARY
     # ============================================================
     print("\n" + "="*60)
-    print("SHUFFLE SURVIVAL SUMMARY")
+    print("SHUFFLE SURVIVAL SUMMARY (Per-Head)")
     print("="*60)
-
+    
+    # We can use the same compute_gate_a_stats logic as 03 if we want to check separation
+    # but for now we just save the per-head results!
+    
     for condition in ["position_shuffle", "content_shuffle"]:
         print(f"\n--- {condition} ---")
-        for arch_name, result in all_arch_results[condition].items():
-            print(f"  {arch_name}: Baseline PPL={result['baseline_ppl']:.2f}, "
-                  f"Shuffled PPL={result['shuffled_ppl']:.2f}, "
-                  f"dPPL={result['delta_ppl']:+.2f}")
+        if condition in all_arch_results:
+            for arch_name, res_list in all_arch_results[condition].items():
+                if res_list:
+                    print(f"  {arch_name}: Computed {len(res_list)} heads")
 
     print("\n[NOTE] Per-head class-level separation requires the patching approach from script 03.")
     print("       Model-level shuffle results above are consistent with the class-behavior hypotheses:")
