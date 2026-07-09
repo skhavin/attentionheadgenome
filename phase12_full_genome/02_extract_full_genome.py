@@ -72,7 +72,7 @@ MODELS = [
         "label_key": "qwen_1.5b",
     },
     {
-        "model_id": "meta-llama/Llama-3.2-1B",
+        "model_id": "unsloth/Llama-3.2-1B",
         "model_name": "Llama-3.2-1B",
         "label_key": "llama_3.2_1b",
     },

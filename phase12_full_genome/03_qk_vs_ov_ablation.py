@@ -69,11 +69,11 @@ MODELS = [
     {"model_id": "gpt2",                      "model_name": "GPT-2",       "label_key": "gpt2"},
     {"model_id": "Qwen/Qwen2.5-0.5B",         "model_name": "Qwen-0.5B",   "label_key": "qwen_0.5b"},
     {"model_id": "Qwen/Qwen2.5-1.5B",         "model_name": "Qwen-1.5B",   "label_key": "qwen_1.5b"},
-    {"model_id": "meta-llama/Llama-3.2-1B",   "model_name": "Llama-3.2-1B","label_key": "llama_3.2_1b"},
+    {"model_id": "unsloth/Llama-3.2-1B",      "model_name": "Llama-3.2-1B","label_key": "llama_3.2_1b"},
 ]
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-NUM_EVAL_PROMPTS = 20   # Enough for reliable ΔPPL estimates; not too many for budget
+NUM_EVAL_PROMPTS = 5   # Enough for reliable ΔPPL estimates; not too many for budget
 
 
 # ============================================================
