@@ -54,6 +54,7 @@ sys.modules["triage_and_schema"] = triage_and_schema
 spec.loader.exec_module(triage_and_schema)
 
 from triage_and_schema import assert_no_bin3_leak
+from ablation_utils import compute_head_delta_ppl, q_permutation_fn, ov_zero_fn, test_gqa_isolation
 
 # ============================================================
 # CONFIG
@@ -74,153 +75,6 @@ MODELS = [
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 NUM_EVAL_PROMPTS = 5   # Enough for reliable ΔPPL estimates; not too many for budget
-
-
-# ============================================================
-# INTERVENTION HOOKS
-# ============================================================
-
-class QKZeroHook:
-    """
-    Hook that intercepts the attention weights just before they multiply V,
-    and replaces them with a uniform distribution (all-equal attention).
-
-    Only active for a specific head (head_idx).
-    On architectures where attn_weights are computed inside the module,
-    we patch the forward pass to detect and replace the distribution.
-    """
-    def __init__(self, head_idx):
-        self.head_idx = head_idx
-        self.handle = None
-        self.triggered = False
-
-    def hook_fn(self, module, input, output):
-        # output is typically (attn_output, attn_weights, ...) or just attn_output
-        # We need to recompute with uniform attention and replace the output
-        # This is a best-effort hook — exact behavior depends on model architecture
-        self.triggered = True
-        return output  # Return unmodified (uniform patching happens via model patch below)
-
-
-class AttentionPatcher:
-    """
-    Patches a model's attention computation to replace specific heads'
-    attention patterns with either:
-    - Uniform: all tokens receive equal attention
-    - Zero OV: attention is preserved but output is zeroed out
-    
-    Works by temporarily overriding forward methods during eval.
-    """
-    def __init__(self, model, layer_idx, head_idx, n_heads, mode="uniform_qk"):
-        self.model = model
-        self.layer_idx = layer_idx
-        self.head_idx = head_idx
-        self.n_heads = n_heads
-        self.mode = mode  # "uniform_qk" or "zero_ov"
-        self.original_forwards = {}
-        self.hooks = []
-
-    def install(self):
-        """Install the patch for the target layer/head."""
-        attn_module = self._get_attn_module()
-        if attn_module is None:
-            return False
-
-        if self.mode == "uniform_qk":
-            # We hook the output and reconstruct with uniform attention
-            def hook(module, input, output):
-                # output[0] = final hidden state, output[1] = attn_weights (if returned)
-                if isinstance(output, tuple) and len(output) > 1 and output[1] is not None:
-                    attn_weights = output[1]  # [batch, n_heads, seq, seq]
-                    batch, n_h, seq_q, seq_k = attn_weights.shape
-                    
-                    # Replace target head's attention with uniform
-                    uniform = torch.ones(batch, 1, seq_q, seq_k, device=attn_weights.device)
-                    # Mask: causal (upper triangle = 0)
-                    mask = torch.tril(torch.ones(seq_q, seq_k, device=attn_weights.device))
-                    uniform = uniform * mask
-                    uniform = uniform / (uniform.sum(dim=-1, keepdim=True) + 1e-10)
-                    
-                    patched = attn_weights.clone()
-                    patched[:, self.head_idx:self.head_idx+1, :, :] = uniform
-                    return (output[0], patched) + output[2:]
-                return output
-
-            h = attn_module.register_forward_hook(hook)
-            self.hooks.append(h)
-
-        elif self.mode == "zero_ov":
-            # We zero out this head's contribution to the output
-            # by zeroing the slice of the output projection weight
-            # NOTE: This is a weight-level intervention, not a hook
-            # We save and restore afterwards
-            if hasattr(attn_module, "o_proj"):
-                head_dim = attn_module.o_proj.weight.shape[1] // self.n_heads
-                start = self.head_idx * head_dim
-                end = start + head_dim
-                self._saved_weight = attn_module.o_proj.weight.data[:, start:end].clone()
-                attn_module.o_proj.weight.data[:, start:end] = 0.0
-                self._attn_module_ref = attn_module
-                self._ov_start = start
-                self._ov_end = end
-
-        return True
-
-    def remove(self):
-        """Remove all patches and restore original weights."""
-        for h in self.hooks:
-            h.remove()
-        self.hooks = []
-
-        # Restore OV weights if they were zeroed
-        if self.mode == "zero_ov" and hasattr(self, "_saved_weight"):
-            self._attn_module_ref.o_proj.weight.data[
-                :, self._ov_start:self._ov_end
-            ] = self._saved_weight
-
-    def _get_attn_module(self):
-        for name, module in self.model.named_modules():
-            if f"layers.{self.layer_idx}" in name or f"h.{self.layer_idx}" in name:
-                if any(t in type(module).__name__ for t in ["Attention", "attention"]):
-                    if hasattr(module, "q_proj") or hasattr(module, "c_attn"):
-                        return module
-        return None
-
-
-# ============================================================
-# PPL COMPUTATION
-# ============================================================
-
-def compute_ppl(model, tokenizer, prompts, device=DEVICE):
-    """Compute average perplexity over a list of prompt tensors."""
-    total_nll = 0.0
-    total_tokens = 0
-
-    model.eval()
-    with torch.no_grad():
-        for tokens in prompts:
-            tokens = tokens.to(device)
-            out = model(tokens, labels=tokens)
-            nll = out.loss.item()
-            n = tokens.shape[1] - 1
-            total_nll += nll * n
-            total_tokens += n
-
-    return float(np.exp(total_nll / total_tokens)) if total_tokens > 0 else float("inf")
-
-
-def load_eval_prompts(tokenizer, n=NUM_EVAL_PROMPTS, seq_len=256):
-    """Load held-out evaluation prompts (same source as 02, test split)."""
-    ds = load_dataset("wikitext", "wikitext-2-raw-v1", split="test")
-    full_text = " ".join(ds["text"])
-    tokens = tokenizer.encode(full_text, add_special_tokens=False)
-    prompts = []
-    stride = max(1, len(tokens) // n)
-    for i in range(n):
-        chunk = tokens[i * stride: i * stride + seq_len]
-        if len(chunk) == seq_len:
-            prompts.append(torch.tensor(chunk).unsqueeze(0))
-    return prompts[:n]
 
 
 # ============================================================
@@ -260,7 +114,7 @@ def compute_gate_a_stats(results_by_arch, condition_name):
         
         passed = (p_value < 0.01) and (d > 0.5)
         arch_results[arch_name] = {
-            "passed": passed,
+            "passed": bool(passed),
             "d": float(d),
             "p": float(p_value),
             "n_local": len(local_deltas),
@@ -308,14 +162,16 @@ def compute_gate_a_stats(results_by_arch, condition_name):
 # ============================================================
 
 def run_ablation(debug=False):
+    import sys
+    sys.stdout.reconfigure(encoding='utf-8')
     # Load canonical labels
     with open(CANONICAL_LABELS_PATH, "r") as f:
         canonical_labels = json.load(f)
-
-    all_results = {
-        "condition_A_uniform_qk": {},
-        "condition_B_zero_ov": {},
-    }
+    output = {}
+    if os.path.exists(OUTPUT_JSON):
+        print(f"Found existing results at {OUTPUT_JSON}. Resuming...")
+        with open(OUTPUT_JSON, "r") as f:
+            output = json.load(f)
 
     models_to_run = MODELS[:1] if debug else MODELS
 
@@ -327,6 +183,10 @@ def run_ablation(debug=False):
         print(f"\n{'='*60}")
         print(f"Model: {model_name}")
         print(f"{'='*60}")
+        
+        if model_name in output.get("condition_A_q_permute", {}) and model_name in output.get("condition_B_zero_ov", {}):
+            print(f"  Skipping {model_name}, already processed.")
+            continue
 
         tokenizer = AutoTokenizer.from_pretrained(model_id)
         model = AutoModelForCausalLM.from_pretrained(
@@ -343,59 +203,77 @@ def run_ablation(debug=False):
         eval_prompts = load_eval_prompts(tokenizer, n=3 if debug else NUM_EVAL_PROMPTS)
         print(f"  Eval prompts: {len(eval_prompts)}")
 
-        # Baseline PPL (no intervention)
-        print("  Computing baseline PPL...")
-        baseline_ppl = compute_ppl(model, tokenizer, eval_prompts)
+        # Pre-compute baseline to avoid repeating it
+        total_nll = 0.0
+        total_tokens = 0
+        with torch.no_grad():
+            for p in eval_prompts:
+                p = p.to(DEVICE)
+                out = model(p, labels=p)
+                nll = out.loss.item()
+                n = p.shape[1] - 1
+                total_nll += nll * n
+                total_tokens += n
+        baseline_ppl = float(np.exp(total_nll / total_tokens))
         print(f"  Baseline PPL: {baseline_ppl:.2f}")
 
         arch_results_A = []
         arch_results_B = []
 
-        # Loop over layers and heads
-        n_heads_to_test = 2 if debug else n_heads
+        # Find our 3-head sanity check targets (only on first model)
+        # If debug is true, we ONLY run these 3 targets
+        targets = []
+        if debug:
+            retrieval_head = next((k for k, v in model_labels_dict.items() if v.get("label") == "retrieval"), None)
+            local_head = next((k for k, v in model_labels_dict.items() if v.get("label") == "local"), None)
+            sink_head = next((k for k, v in model_labels_dict.items() if v.get("label") == "sink"), None)
+            if retrieval_head: targets.append(retrieval_head)
+            if local_head: targets.append(local_head)
+            if sink_head: targets.append(sink_head)
+            print(f"  [DRY RUN] Running exactly 3 heads: {targets}")
+            
+            # GQA Test
+            test_gqa_isolation(model, tokenizer)
 
         for layer_idx in range(n_layers):
-            for head_idx in range(n_heads_to_test):
+            for head_idx in range(n_heads):
                 label_key_head = f"{layer_idx}_{head_idx}"
                 head_entry = model_labels_dict.get(label_key_head, {})
                 head_label = head_entry.get("label", "unknown")
 
                 if head_label == "unknown":
                     continue
+                    
+                if debug and label_key_head not in targets:
+                    continue
 
-                head_info = {
-                    "layer": layer_idx,
-                    "head": head_idx,
-                    "label": head_label,
-                }
+                # Condition A: Q Permutation
+                res_A = compute_head_delta_ppl(
+                    model, tokenizer, eval_prompts, layer_idx, head_idx,
+                    intervention_fn=q_permutation_fn, target="q",
+                    baseline_ppl=baseline_ppl, architecture=model_name,
+                    prompt_id="wikitext-test", label=head_label, dry_run=debug,
+                    condition_name="q_permutation"
+                )
+                arch_results_A.append(res_A)
 
-                # ---- Condition A: Uniform QK ----
-                patcher_A = AttentionPatcher(model, layer_idx, head_idx, n_heads, mode="uniform_qk")
-                if patcher_A.install():
-                    ppl_A = compute_ppl(model, tokenizer, eval_prompts)
-                    patcher_A.remove()
-                    arch_results_A.append({
-                        **head_info,
-                        "ppl": ppl_A,
-                        "delta_ppl": ppl_A - baseline_ppl,
-                    })
+                # Condition B: Zero OV
+                res_B = compute_head_delta_ppl(
+                    model, tokenizer, eval_prompts, layer_idx, head_idx,
+                    intervention_fn=ov_zero_fn, target="ov",
+                    baseline_ppl=baseline_ppl, architecture=model_name,
+                    prompt_id="wikitext-test", label=head_label, dry_run=debug,
+                    condition_name="ov_zero"
+                )
+                arch_results_B.append(res_B)
 
-                # ---- Condition B: Zero OV ----
-                patcher_B = AttentionPatcher(model, layer_idx, head_idx, n_heads, mode="zero_ov")
-                if patcher_B.install():
-                    ppl_B = compute_ppl(model, tokenizer, eval_prompts)
-                    patcher_B.remove()
-                    arch_results_B.append({
-                        **head_info,
-                        "ppl": ppl_B,
-                        "delta_ppl": ppl_B - baseline_ppl,
-                    })
+            if debug and len(arch_results_A) >= len(targets):
+                break
 
-            if debug:
-                break  # Only test layer 0 in debug
-
-        all_results["condition_A_uniform_qk"][model_name] = arch_results_A
-        all_results["condition_B_zero_ov"][model_name] = arch_results_B
+        if "condition_A_q_permute" not in output: output["condition_A_q_permute"] = {}
+        if "condition_B_zero_ov" not in output: output["condition_B_zero_ov"] = {}
+        output["condition_A_q_permute"][model_name] = arch_results_A
+        output["condition_B_zero_ov"][model_name] = arch_results_B
 
         del model
         torch.cuda.empty_cache()
@@ -409,26 +287,22 @@ def run_ablation(debug=False):
     print("="*60)
 
     gate_a_condition_A = compute_gate_a_stats(
-        all_results["condition_A_uniform_qk"], "Condition A (Uniform QK)"
+        output["condition_A_q_permute"], "Condition A (Q Permute)"
     )
     gate_a_condition_B = compute_gate_a_stats(
-        all_results["condition_B_zero_ov"], "Condition B (Zero OV)"
+        output["condition_B_zero_ov"], "Condition B (Zero OV)"
     )
 
     # Sanity check for Condition A: class variance
-    # If all classes show near-identical ΔPPL under uniform attention,
-    # the intervention is too blunt — flag for retry with permutation
-    for model_name, arch_data in all_results["condition_A_uniform_qk"].items():
+    for model_name, arch_data in output["condition_A_q_permute"].items():
         if arch_data:
             by_class = {}
             for r in arch_data:
-                by_class.setdefault(r["label"], []).append(r["delta_ppl"])
+                by_class.setdefault(r["canonical_label"], []).append(r["delta_ppl"])
             class_means = {k: np.mean(v) for k, v in by_class.items()}
             class_variance = np.var(list(class_means.values())) if len(class_means) > 1 else 0.0
             if class_variance < 0.05 and len(class_means) > 1:
                 print(f"\n[!!] DESIGN FLAG for {model_name}: Condition A class variance = {class_variance:.4f} < 0.05")
-                print("     Uniform attention may be washing out class distinctions before OV is tested.")
-                print("     Consider re-running Condition A with random PERMUTATION of attention weights instead.")
 
     # Print Gate A summary
     for gate_result in [gate_a_condition_A, gate_a_condition_B]:
@@ -445,14 +319,14 @@ def run_ablation(debug=False):
                       f"| n_retrieval={arch_result.get('n_retrieval', 0)}")
 
     # Save all results
-    output = {
+    output_final = {
         "gate_a_condition_A": gate_a_condition_A,
         "gate_a_condition_B": gate_a_condition_B,
-        "raw_results": all_results,
+        "raw_results": output,
     }
 
     with open(OUTPUT_JSON, "w") as f:
-        json.dump(output, f, indent=2)
+        json.dump(output_final, f, indent=2)
 
     print(f"\n[DONE] Results saved to: {OUTPUT_JSON}")
 

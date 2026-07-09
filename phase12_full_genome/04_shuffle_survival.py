@@ -188,6 +188,11 @@ def run_shuffle(debug=False):
         "position_shuffle": {},
         "content_shuffle": {},
     }
+    
+    if os.path.exists(OUTPUT_JSON):
+        print(f"Found existing results at {OUTPUT_JSON}. Resuming...")
+        with open(OUTPUT_JSON, "r") as f:
+            all_arch_results = json.load(f)
 
     models_to_run = MODELS[:1] if debug else MODELS
 
@@ -199,6 +204,10 @@ def run_shuffle(debug=False):
         print(f"\n{'='*60}")
         print(f"Model: {model_name}")
         print(f"{'='*60}")
+        
+        if model_name in all_arch_results.get("position_shuffle", {}) and model_name in all_arch_results.get("content_shuffle", {}):
+            print(f"  Skipping {model_name}, already processed.")
+            continue
 
         tokenizer = AutoTokenizer.from_pretrained(model_id)
         vocab_size = tokenizer.vocab_size
@@ -225,7 +234,7 @@ def run_shuffle(debug=False):
         pos_ppls = [compute_ppl(model, p) for p in pos_shuffled]
         mean_pos_ppl = float(np.mean(pos_ppls))
         print(f"  Mean position-shuffle PPL: {mean_pos_ppl:.2f} "
-              f"(ΔPPL = {mean_pos_ppl - mean_baseline:+.2f})")
+              f"(dPPL = {mean_pos_ppl - mean_baseline:+.2f})")
 
         # Content Shuffle PPLs
         print("  Computing content-shuffled PPLs...")
@@ -233,20 +242,14 @@ def run_shuffle(debug=False):
         content_ppls = [compute_ppl(model, p) for p in content_shuffled]
         mean_content_ppl = float(np.mean(content_ppls))
         print(f"  Mean content-shuffle PPL: {mean_content_ppl:.2f} "
-              f"(ΔPPL = {mean_content_ppl - mean_baseline:+.2f})")
-
-        # NOTE: The above gives model-level PPL. For head-level analysis,
-        # we would need per-head ablations like in script 03. However, model-level
-        # shuffle tests tell us whether the model (and thus any head operating on
-        # positional vs semantic signals) is broadly affected.
-        #
-        # For class-level separation, we use the canonical label distribution
-        # as the proxy: heads labeled "retrieval" in models that survive
-        # content shuffle better than local heads = retrieval is content-driven.
-        # This is a model-level observation, not per-head — per-head would require
-        # the same patching approach as script 03.
+              f"(dPPL = {mean_content_ppl - mean_baseline:+.2f})")
 
         # Store model-level results
+        if "position_shuffle" not in all_arch_results:
+            all_arch_results["position_shuffle"] = {}
+        if "content_shuffle" not in all_arch_results:
+            all_arch_results["content_shuffle"] = {}
+            
         all_arch_results["position_shuffle"][model_name] = {
             "baseline_ppl": mean_baseline,
             "shuffled_ppl": mean_pos_ppl,
@@ -263,6 +266,10 @@ def run_shuffle(debug=False):
             "n_local_heads": sum(1 for v in model_labels.values() if v == "local"),
         }
 
+        # Save checkpoint after each model
+        with open(OUTPUT_JSON, "w") as f:
+            json.dump(all_arch_results, f, indent=2)
+            
         del model
         torch.cuda.empty_cache()
         gc.collect()
@@ -279,12 +286,12 @@ def run_shuffle(debug=False):
         for arch_name, result in all_arch_results[condition].items():
             print(f"  {arch_name}: Baseline PPL={result['baseline_ppl']:.2f}, "
                   f"Shuffled PPL={result['shuffled_ppl']:.2f}, "
-                  f"ΔPPL={result['delta_ppl']:+.2f}")
+                  f"dPPL={result['delta_ppl']:+.2f}")
 
     print("\n[NOTE] Per-head class-level separation requires the patching approach from script 03.")
     print("       Model-level shuffle results above are consistent with the class-behavior hypotheses:")
-    print("       - Large ΔPPL under content shuffle → content-driven heads (Retrieval, Induction) matter")
-    print("       - Large ΔPPL under position shuffle → position-driven heads (Local, Sink) matter")
+    print("       - Large dPPL under content shuffle → content-driven heads (Retrieval, Induction) matter")
+    print("       - Large dPPL under position shuffle → position-driven heads (Local, Sink) matter")
 
     with open(OUTPUT_JSON, "w") as f:
         json.dump(all_arch_results, f, indent=2)
