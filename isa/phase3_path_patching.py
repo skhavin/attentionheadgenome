@@ -51,6 +51,14 @@ def main():
             
     print(f"Loaded {len(pairs)} pairs for Phase 3.")
 
+    n_layers = model.config.num_hidden_layers
+    test_layers = list(range(10, n_layers))
+    layer_restorations = {l: [] for l in test_layers}
+    layer_placebo_restorations = {l: [] for l in test_layers}
+
+    def get_logit_diff(logits, target_id, corrupted_id):
+        return (logits[0, -1, target_id] - logits[0, -1, corrupted_id]).item()
+
     for clean_prompt, corrupted_prompt, t_clean, t_corr in tqdm(pairs, desc=f"Phase 3 ({args.mode})"):
         
         tok_clean = tokenizer(clean_prompt, return_tensors="pt").to(DEVICE)

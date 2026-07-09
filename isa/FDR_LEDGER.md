@@ -13,6 +13,6 @@ This ledger tracks all phase-level statistical tests to enforce the Global False
 | **Phase 1** | Qwen2.5-1.5B | Wilcoxon (Confirmation, N=20) | $4.94 \times 10^{-4}$ | $\Delta_{median} \approx 4$ layers | <span style="color:green">Significant</span> | *Pending Global End* |
 | **Phase 2** | Qwen2.5-1.5B | Paired t-test vs Uniform (Conf, Pooled N=35) | $4.25 \times 10^{-7}$ | Cliff's $\delta = 0.75$ | <span style="color:green">Significant</span> | *Pending Global End* |
 | **Phase 2** | Qwen2.5-1.5B | Paired t-test vs Positional (Conf, Pooled N=35) | $1.14 \times 10^{-12}$ | Cliff's $\delta = 0.99$ | <span style="color:green">Significant</span> | *Pending Global End* |
-| **Phase 3** | Qwen2.5-1.5B | Wilcoxon (True vs Placebo, L23, N=7) | $7.81 \times 10^{-3}$ | $\Delta = +25.0\%$ restoration | <span style="color:green">Significant</span> | *Pending Global End* |
-| **Phase 3** | Qwen2.5-1.5B | Wilcoxon (True vs Placebo, L22, N=7) | $7.81 \times 10^{-3}$ | $\Delta = +21.0\%$ restoration | <span style="color:green">Significant</span> | *Pending Global End* |
-| **Phase 3** | Qwen2.5-1.5B | Wilcoxon (True vs Placebo, L24, N=7) | $1.56 \times 10^{-2}$ | $\Delta = +11.1\%$ restoration | <span style="color:green">Significant</span> | *Pending Global End* |
+| **Phase 3** | Qwen2.5-1.5B | Wilcoxon (True vs Placebo, L22, N=20) | $2.85 \times 10^{-1}$ | $\Delta = -7.7\%$ restoration | <span style="color:gray">Null Result</span> | *Pending Global End* |
+| **Phase 3** | Qwen2.5-1.5B | Wilcoxon (True vs Placebo, L25, N=20) | $6.44 \times 10^{-2}$ | $\Delta = +4.3\%$ restoration | <span style="color:gray">Null Result</span> | *Pending Global End* |
+| **Phase 3** | Qwen2.5-1.5B | Wilcoxon (True vs Placebo, L27, N=20) | $8.08 \times 10^{-1}$ | $\Delta = +30.8\%$ restoration | <span style="color:gray">Null Result</span> | *Pending Global End* |
