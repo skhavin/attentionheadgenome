@@ -14,26 +14,26 @@
 
 ## Phase 1: The Life of a Token
 *Claim: Residual stream evolves through identifiable stages.* (Descriptive Phase)
-- `[ ]` **Test:** Logit-lens + cosine similarity of $r_l$ vs $r_L$ across all Discovery prompts.
-- `[ ]` **Metric:** Layer at which `cosine(r_l, r_L) > 0.9`.
-- `[ ]` **Control:** Shuffle target tokens (wrong answers) to ensure crossover layer does not falsely reproduce.
-- `[ ]` **Stat:** Wilcoxon signed-rank (real vs. shuffled crossover layer).
+- `[x]` **Test:** Logit-lens + cosine similarity of $r_l$ vs $r_L$ across all Discovery prompts.
+- `[x]` **Metric:** Layer at which `cosine(r_l, r_L) > 0.9`.
+- `[x]` **Control:** Shuffle target tokens (wrong answers) to ensure crossover layer does not falsely reproduce.
+- `[x]` **Stat:** Wilcoxon signed-rank (real vs. shuffled crossover layer).
 
 ## Phase 2: Head Dissection (Q/K/V/OV)
 *Claim: Heads split cleanly into interpretable circuit roles.*
-- `[ ]` **Discovery:** Compute OV and QK metrics on Discovery Set (N=40). Label roles.
-- `[ ]` **Test (Confirmation):** Validate the attention-weight effect size on Confirmation Set (N=20).
-- `[ ]` **Metric:** Attention weight on causally relevant token vs. mean attention weight (uniform).
-- `[ ]` **Control:** Random token position of equal distance (rules out "recent token" bias).
-- `[ ]` **Stat:** One-sample t-test (attention - uniform).
+- `[x]` **Discovery:** Compute OV and QK metrics on Discovery Set (N=40). Label roles.
+- `[x]` **Test (Confirmation):** Validate the attention-weight effect size on Confirmation Set (N=20).
+- `[x]` **Metric:** Attention weight on causally relevant token vs. mean attention weight (uniform).
+- `[x]` **Control:** Random token position of equal distance (rules out "recent token" bias).
+- `[x]` **Stat:** One-sample t-test (attention - uniform).
 
 ## Phase 3: The Birth of a Retrieval
 *Claim: Specific MLP layer creates the query feature for the retrieval head.*
-- `[ ]` **Discovery:** Identify candidate query-generating MLPs on Discovery Set.
-- `[ ]` **Test (Confirmation):** Path patch MLP outputs (clean → corrupted) on Confirmation Set (N=20).
-- `[ ]` **Metric:** Logit-diff restoration (%) per layer.
-- `[ ]` **Control:** Patch a random non-adjacent layer's MLP output as a placebo.
-- `[ ]` **Stat:** Wilcoxon signed-rank of restoration vs placebo, **FDR corrected across all network layers**.
+- `[x]` **Discovery:** Identify candidate query-generating MLPs on Discovery Set.
+- `[x]` **Test (Confirmation):** Path patch MLP outputs (clean → corrupted) on Confirmation Set (N=20).
+- `[x]` **Metric:** Logit-diff restoration (%) per layer.
+- `[x]` **Control:** Patch a random non-adjacent layer's MLP output as a placebo.
+- `[x]` **Stat:** Wilcoxon signed-rank of restoration vs placebo, **FDR corrected across all network layers**.
 
 ## Phase 4: The Birth of a Word (Logit Attribution)
 *Claim: Attention heads gather semantic features, not exact facts.*

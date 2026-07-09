@@ -1,0 +1,149 @@
+{
+  "stats": {
+    "mean_real": 22.25,
+    "mean_shuffled": 26.15,
+    "p_val": 0.0004949221109119155
+  },
+  "raw": [
+    {
+      "prompt": "The capital of the United Kingdom is London. The capital of Australia is",
+      "real_target": " Canberra",
+      "shuffled_target": " Canberra",
+      "real_crossover_layer": 22,
+      "shuffled_crossover_layer": 27
+    },
+    {
+      "prompt": "The capital of the United Kingdom is London. The capital of Japan is",
+      "real_target": " Tokyo",
+      "shuffled_target": " 'PW_1314X'",
+      "real_crossover_layer": 22,
+      "shuffled_crossover_layer": 27
+    },
+    {
+      "prompt": "The capital of the United Kingdom is London. The capital of Finland is",
+      "real_target": " Helsinki",
+      "shuffled_target": " 'PW_73X'",
+      "real_crossover_layer": 22,
+      "shuffled_crossover_layer": 27
+    },
+    {
+      "prompt": "The capital of the United Kingdom is London. The capital of India is",
+      "real_target": " New Delhi",
+      "shuffled_target": " Tokyo",
+      "real_crossover_layer": 25,
+      "shuffled_crossover_layer": 24
+    },
+    {
+      "prompt": "The capital of the United Kingdom is London. The capital of Brazil is",
+      "real_target": " Bras\u00edlia",
+      "shuffled_target": " K",
+      "real_crossover_layer": 23,
+      "shuffled_crossover_layer": 27
+    },
+    {
+      "prompt": "The capital of the United Kingdom is London. The capital of France is",
+      "real_target": " Paris",
+      "shuffled_target": " Paris",
+      "real_crossover_layer": 22,
+      "shuffled_crossover_layer": 27
+    },
+    {
+      "prompt": "The capital of the United Kingdom is London. The capital of Italy is",
+      "real_target": " Rome",
+      "shuffled_target": " J",
+      "real_crossover_layer": 22,
+      "shuffled_crossover_layer": 27
+    },
+    {
+      "prompt": "1: A, 2: B, 3: C. 19:",
+      "real_target": " S",
+      "shuffled_target": " New Delhi",
+      "real_crossover_layer": 21,
+      "shuffled_crossover_layer": 27
+    },
+    {
+      "prompt": "1: A, 2: B, 3: C. 11:",
+      "real_target": " K",
+      "shuffled_target": " 'PW_803X'",
+      "real_crossover_layer": 24,
+      "shuffled_crossover_layer": 26
+    },
+    {
+      "prompt": "1: A, 2: B, 3: C. 17:",
+      "real_target": " Q",
+      "shuffled_target": " 'PW_584X'",
+      "real_crossover_layer": 25,
+      "shuffled_crossover_layer": 20
+    },
+    {
+      "prompt": "1: A, 2: B, 3: C. 23:",
+      "real_target": " W",
+      "shuffled_target": " 'PW_511X'",
+      "real_crossover_layer": 26,
+      "shuffled_crossover_layer": 23
+    },
+    {
+      "prompt": "1: A, 2: B, 3: C. 10:",
+      "real_target": " J",
+      "shuffled_target": " Helsinki",
+      "real_crossover_layer": 25,
+      "shuffled_crossover_layer": 27
+    },
+    {
+      "prompt": "1: A, 2: B, 3: C. 21:",
+      "real_target": " U",
+      "shuffled_target": " Q",
+      "real_crossover_layer": 26,
+      "shuffled_crossover_layer": 25
+    },
+    {
+      "prompt": "The secret password to unlock the matrix is 'PW_511X'. The study of artificial intelligence has progressed rapidly over the past decade, with significant advancements in natural language processing and computer vision. Machine learning models are now capable of performing complex tasks that were once thought impossible for computers. The study of artificial intelligence has progressed rapidly over the past decade, with significant advancements in natural language processing and computer vision. Machine learning models are now capable of performing complex tasks that were once thought impossible for computers. To proceed, please provide the secret password: The secret password to unlock the matrix is",
+      "real_target": " 'PW_511X'",
+      "shuffled_target": " 'PW_219X'",
+      "real_crossover_layer": 20,
+      "shuffled_crossover_layer": 27
+    },
+    {
+      "prompt": "The secret password to unlock the matrix is 'PW_1241X'. The study of artificial intelligence has progressed rapidly over the past decade, with significant advancements in natural language processing and computer vision. Machine learning models are now capable of performing complex tasks that were once thought impossible for computers. The study of artificial intelligence has progressed rapidly over the past decade, with significant advancements in natural language processing and computer vision. Machine learning models are now capable of performing complex tasks that were once thought impossible for computers. The study of artificial intelligence has progressed rapidly over the past decade, with significant advancements in natural language processing and computer vision. Machine learning models are now capable of performing complex tasks that were once thought impossible for computers. To proceed, please provide the secret password: The secret password to unlock the matrix is",
+      "real_target": " 'PW_1241X'",
+      "shuffled_target": " Bras\u00edlia",
+      "real_crossover_layer": 20,
+      "shuffled_crossover_layer": 27
+    },
+    {
+      "prompt": "The secret password to unlock the matrix is 'PW_73X'. The study of artificial intelligence has progressed rapidly over the past decade, with significant advancements in natural language processing and computer vision. Machine learning models are now capable of performing complex tasks that were once thought impossible for computers. The study of artificial intelligence has progressed rapidly over the past decade, with significant advancements in natural language processing and computer vision. Machine learning models are now capable of performing complex tasks that were once thought impossible for computers. To proceed, please provide the secret password: The secret password to unlock the matrix is",
+      "real_target": " 'PW_73X'",
+      "shuffled_target": " U",
+      "real_crossover_layer": 20,
+      "shuffled_crossover_layer": 27
+    },
+    {
+      "prompt": "The secret password to unlock the matrix is 'PW_584X'. The study of artificial intelligence has progressed rapidly over the past decade, with significant advancements in natural language processing and computer vision. Machine learning models are now capable of performing complex tasks that were once thought impossible for computers. The study of artificial intelligence has progressed rapidly over the past decade, with significant advancements in natural language processing and computer vision. Machine learning models are now capable of performing complex tasks that were once thought impossible for computers. The study of artificial intelligence has progressed rapidly over the past decade, with significant advancements in natural language processing and computer vision. Machine learning models are now capable of performing complex tasks that were once thought impossible for computers. To proceed, please provide the secret password: The secret password to unlock the matrix is",
+      "real_target": " 'PW_584X'",
+      "shuffled_target": " S",
+      "real_crossover_layer": 20,
+      "shuffled_crossover_layer": 27
+    },
+    {
+      "prompt": "The secret password to unlock the matrix is 'PW_1314X'. The study of artificial intelligence has progressed rapidly over the past decade, with significant advancements in natural language processing and computer vision. Machine learning models are now capable of performing complex tasks that were once thought impossible for computers. To proceed, please provide the secret password: The secret password to unlock the matrix is",
+      "real_target": " 'PW_1314X'",
+      "shuffled_target": " W",
+      "real_crossover_layer": 20,
+      "shuffled_crossover_layer": 27
+    },
+    {
+      "prompt": "The secret password to unlock the matrix is 'PW_803X'. The study of artificial intelligence has progressed rapidly over the past decade, with significant advancements in natural language processing and computer vision. Machine learning models are now capable of performing complex tasks that were once thought impossible for computers. The study of artificial intelligence has progressed rapidly over the past decade, with significant advancements in natural language processing and computer vision. Machine learning models are now capable of performing complex tasks that were once thought impossible for computers. The study of artificial intelligence has progressed rapidly over the past decade, with significant advancements in natural language processing and computer vision. Machine learning models are now capable of performing complex tasks that were once thought impossible for computers. To proceed, please provide the secret password: The secret password to unlock the matrix is",
+      "real_target": " 'PW_803X'",
+      "shuffled_target": " 'PW_1241X'",
+      "real_crossover_layer": 20,
+      "shuffled_crossover_layer": 27
+    },
+    {
+      "prompt": "The secret password to unlock the matrix is 'PW_219X'. The study of artificial intelligence has progressed rapidly over the past decade, with significant advancements in natural language processing and computer vision. Machine learning models are now capable of performing complex tasks that were once thought impossible for computers. To proceed, please provide the secret password: The secret password to unlock the matrix is",
+      "real_target": " 'PW_219X'",
+      "shuffled_target": " Rome",
+      "real_crossover_layer": 20,
+      "shuffled_crossover_layer": 27
+    }
+  ]
+}
