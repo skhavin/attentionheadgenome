@@ -1,0 +1,2711 @@
+{
+  "fact_retrieval_01": {
+    "prompt": "The capital of France is Paris. The capital of Germany is",
+    "target": " Berlin",
+    "final_generated_token": " Berlin",
+    "layer_logs": [
+      {
+        "layer": 0,
+        "top_predictions": [
+          {
+            "token": "nt",
+            "prob": 0.451171875
+          },
+          {
+            "token": "otope",
+            "prob": 0.1884765625
+          },
+          {
+            "token": "/is",
+            "prob": 0.166015625
+          },
+          {
+            "token": " likely",
+            "prob": 0.0306396484375
+          },
+          {
+            "token": " now",
+            "prob": 0.025390625
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 1,
+          "induction": 0,
+          "sink": 1,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 1,
+        "top_predictions": [
+          {
+            "token": " indeed",
+            "prob": 0.203125
+          },
+          {
+            "token": "nt",
+            "prob": 0.1396484375
+          },
+          {
+            "token": "/is",
+            "prob": 0.0546875
+          },
+          {
+            "token": " one",
+            "prob": 0.042724609375
+          },
+          {
+            "token": " now",
+            "prob": 0.0400390625
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 2,
+        "top_predictions": [
+          {
+            "token": " indeed",
+            "prob": 0.5234375
+          },
+          {
+            "token": "/is",
+            "prob": 0.2177734375
+          },
+          {
+            "token": "nt",
+            "prob": 0.037841796875
+          },
+          {
+            "token": " now",
+            "prob": 0.020263671875
+          },
+          {
+            "token": " ",
+            "prob": 0.009521484375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 1,
+          "sink": 0,
+          "local": 11,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 3,
+        "top_predictions": [
+          {
+            "token": "n",
+            "prob": 0.052734375
+          },
+          {
+            "token": " ",
+            "prob": 0.052734375
+          },
+          {
+            "token": "s",
+            "prob": 0.049560546875
+          },
+          {
+            "token": " indeed",
+            "prob": 0.033935546875
+          },
+          {
+            "token": ",",
+            "prob": 0.031982421875
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 4,
+        "top_predictions": [
+          {
+            "token": " indeed",
+            "prob": 0.046142578125
+          },
+          {
+            "token": " represented",
+            "prob": 0.03369140625
+          },
+          {
+            "token": " Fl",
+            "prob": 0.02978515625
+          },
+          {
+            "token": "\ufffd",
+            "prob": 0.02978515625
+          },
+          {
+            "token": " P",
+            "prob": 0.0279541015625
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 5,
+        "top_predictions": [
+          {
+            "token": "otope",
+            "prob": 0.1328125
+          },
+          {
+            "token": " Secret",
+            "prob": 0.0380859375
+          },
+          {
+            "token": "/is",
+            "prob": 0.03564453125
+          },
+          {
+            "token": "\u6b22\u8fce\u60a8",
+            "prob": 0.033447265625
+          },
+          {
+            "token": " represented",
+            "prob": 0.0245361328125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 1,
+          "induction": 1,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 6,
+        "top_predictions": [
+          {
+            "token": " also",
+            "prob": 0.255859375
+          },
+          {
+            "token": "otope",
+            "prob": 0.03466796875
+          },
+          {
+            "token": " among",
+            "prob": 0.032470703125
+          },
+          {
+            "token": " P",
+            "prob": 0.0306396484375
+          },
+          {
+            "token": " N",
+            "prob": 0.01361083984375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 1,
+          "sink": 1,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 7,
+        "top_predictions": [
+          {
+            "token": " Fan",
+            "prob": 0.1259765625
+          },
+          {
+            "token": " approximately",
+            "prob": 0.041015625
+          },
+          {
+            "token": "otope",
+            "prob": 0.031982421875
+          },
+          {
+            "token": " N",
+            "prob": 0.030029296875
+          },
+          {
+            "token": " represented",
+            "prob": 0.0281982421875
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 1,
+          "sink": 0,
+          "local": 11,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 8,
+        "top_predictions": [
+          {
+            "token": "\u00a0",
+            "prob": 0.078125
+          },
+          {
+            "token": " therefore",
+            "prob": 0.060791015625
+          },
+          {
+            "token": " among",
+            "prob": 0.041748046875
+          },
+          {
+            "token": " also",
+            "prob": 0.041748046875
+          },
+          {
+            "token": " \"\",",
+            "prob": 0.0286865234375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 2,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 9,
+        "top_predictions": [
+          {
+            "token": "\u00a0",
+            "prob": 0.046875
+          },
+          {
+            "token": " either",
+            "prob": 0.041259765625
+          },
+          {
+            "token": "n",
+            "prob": 0.0341796875
+          },
+          {
+            "token": ",",
+            "prob": 0.0341796875
+          },
+          {
+            "token": "s",
+            "prob": 0.0302734375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 1,
+          "sink": 0,
+          "local": 11,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 10,
+        "top_predictions": [
+          {
+            "token": "located",
+            "prob": 0.04638671875
+          },
+          {
+            "token": " located",
+            "prob": 0.043701171875
+          },
+          {
+            "token": " cities",
+            "prob": 0.0281982421875
+          },
+          {
+            "token": " also",
+            "prob": 0.0281982421875
+          },
+          {
+            "token": "abelle",
+            "prob": 0.01507568359375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 2,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 11,
+        "top_predictions": [
+          {
+            "token": " also",
+            "prob": 0.1025390625
+          },
+          {
+            "token": "/is",
+            "prob": 0.048583984375
+          },
+          {
+            "token": " located",
+            "prob": 0.0294189453125
+          },
+          {
+            "token": " either",
+            "prob": 0.017822265625
+          },
+          {
+            "token": " dig",
+            "prob": 0.0167236328125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 2,
+          "induction": 0,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 12,
+        "top_predictions": [
+          {
+            "token": "/is",
+            "prob": 0.2119140625
+          },
+          {
+            "token": " also",
+            "prob": 0.041748046875
+          },
+          {
+            "token": " _______,",
+            "prob": 0.0223388671875
+          },
+          {
+            "token": "\u06e5",
+            "prob": 0.016357421875
+          },
+          {
+            "token": "\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014",
+            "prob": 0.01531982421875
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 1,
+          "induction": 3,
+          "sink": 0,
+          "local": 8,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 13,
+        "top_predictions": [
+          {
+            "token": " also",
+            "prob": 0.2890625
+          },
+          {
+            "token": "\u2026\\n",
+            "prob": 0.11328125
+          },
+          {
+            "token": "\u2026",
+            "prob": 0.05712890625
+          },
+          {
+            "token": "\u2026\\n\\n",
+            "prob": 0.0269775390625
+          },
+          {
+            "token": "\u4e5f\u662f",
+            "prob": 0.0238037109375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 2,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 14,
+        "top_predictions": [
+          {
+            "token": "\u2026",
+            "prob": 0.12255859375
+          },
+          {
+            "token": "\u2026\\n",
+            "prob": 0.09521484375
+          },
+          {
+            "token": "\u2026\\n\\n",
+            "prob": 0.09521484375
+          },
+          {
+            "token": " also",
+            "prob": 0.0615234375
+          },
+          {
+            "token": " cities",
+            "prob": 0.02001953125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 3,
+          "sink": 1,
+          "local": 8,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 15,
+        "top_predictions": [
+          {
+            "token": " also",
+            "prob": 0.10546875
+          },
+          {
+            "token": "\u2026\\n\\n",
+            "prob": 0.09912109375
+          },
+          {
+            "token": "\u2026\\n",
+            "prob": 0.08203125
+          },
+          {
+            "token": "\u2026",
+            "prob": 0.0439453125
+          },
+          {
+            "token": " ______",
+            "prob": 0.0341796875
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 2,
+          "sink": 1,
+          "local": 9,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 16,
+        "top_predictions": [
+          {
+            "token": " ______",
+            "prob": 0.2294921875
+          },
+          {
+            "token": " _______,",
+            "prob": 0.12255859375
+          },
+          {
+            "token": "____",
+            "prob": 0.054443359375
+          },
+          {
+            "token": " ____",
+            "prob": 0.039794921875
+          },
+          {
+            "token": "\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026",
+            "prob": 0.032958984375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 7,
+          "sink": 0,
+          "local": 5,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 17,
+        "top_predictions": [
+          {
+            "token": " also",
+            "prob": 0.2138671875
+          },
+          {
+            "token": " ______",
+            "prob": 0.1298828125
+          },
+          {
+            "token": "____",
+            "prob": 0.037109375
+          },
+          {
+            "token": " __",
+            "prob": 0.037109375
+          },
+          {
+            "token": " ____",
+            "prob": 0.034912109375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 3,
+          "sink": 0,
+          "local": 9,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 18,
+        "top_predictions": [
+          {
+            "token": " also",
+            "prob": 0.306640625
+          },
+          {
+            "token": " ______",
+            "prob": 0.099609375
+          },
+          {
+            "token": "____",
+            "prob": 0.0732421875
+          },
+          {
+            "token": " ____",
+            "prob": 0.047119140625
+          },
+          {
+            "token": "...",
+            "prob": 0.04150390625
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 2,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 19,
+        "top_predictions": [
+          {
+            "token": "____",
+            "prob": 0.291015625
+          },
+          {
+            "token": " ______",
+            "prob": 0.2265625
+          },
+          {
+            "token": " ____",
+            "prob": 0.12109375
+          },
+          {
+            "token": " __",
+            "prob": 0.06884765625
+          },
+          {
+            "token": "...",
+            "prob": 0.036865234375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 3,
+          "sink": 0,
+          "local": 9,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 20,
+        "top_predictions": [
+          {
+            "token": " ______",
+            "prob": 0.07958984375
+          },
+          {
+            "token": "...",
+            "prob": 0.0703125
+          },
+          {
+            "token": "____",
+            "prob": 0.04833984375
+          },
+          {
+            "token": "\u2026",
+            "prob": 0.042724609375
+          },
+          {
+            "token": " \u2026",
+            "prob": 0.0400390625
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 4,
+          "sink": 0,
+          "local": 8,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 21,
+        "top_predictions": [
+          {
+            "token": "____",
+            "prob": 0.173828125
+          },
+          {
+            "token": " ______",
+            "prob": 0.1533203125
+          },
+          {
+            "token": " cities",
+            "prob": 0.11962890625
+          },
+          {
+            "token": " __",
+            "prob": 0.09912109375
+          },
+          {
+            "token": " ____",
+            "prob": 0.08203125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 2,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 22,
+        "top_predictions": [
+          {
+            "token": " Berlin",
+            "prob": 0.98828125
+          },
+          {
+            "token": " Paris",
+            "prob": 0.003570556640625
+          },
+          {
+            "token": "Berlin",
+            "prob": 0.00148773193359375
+          },
+          {
+            "token": " Germany",
+            "prob": 0.001312255859375
+          },
+          {
+            "token": " __",
+            "prob": 0.00115966796875
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 23,
+        "top_predictions": [
+          {
+            "token": " Berlin",
+            "prob": 0.99609375
+          },
+          {
+            "token": " Germany",
+            "prob": 0.001922607421875
+          },
+          {
+            "token": "Berlin",
+            "prob": 0.0006256103515625
+          },
+          {
+            "token": " Munich",
+            "prob": 0.0004863739013671875
+          },
+          {
+            "token": " Frankfurt",
+            "prob": 0.0001583099365234375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 1,
+          "sink": 0,
+          "local": 11,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 24,
+        "top_predictions": [
+          {
+            "token": " Berlin",
+            "prob": 1.0
+          },
+          {
+            "token": "Berlin",
+            "prob": 0.0003795623779296875
+          },
+          {
+            "token": "\u67cf\u6797",
+            "prob": 9.584426879882812e-05
+          },
+          {
+            "token": " Frankfurt",
+            "prob": 1.895427703857422e-05
+          },
+          {
+            "token": " Germany",
+            "prob": 1.2993812561035156e-05
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 25,
+        "top_predictions": [
+          {
+            "token": " Berlin",
+            "prob": 1.0
+          },
+          {
+            "token": "Berlin",
+            "prob": 0.0003795623779296875
+          },
+          {
+            "token": "\u67cf\u6797",
+            "prob": 0.00014019012451171875
+          },
+          {
+            "token": " Paris",
+            "prob": 0.00012302398681640625
+          },
+          {
+            "token": " Frankfurt",
+            "prob": 7.486343383789062e-05
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 26,
+        "top_predictions": [
+          {
+            "token": " Berlin",
+            "prob": 0.97265625
+          },
+          {
+            "token": " __",
+            "prob": 0.01226806640625
+          },
+          {
+            "token": " ____",
+            "prob": 0.0027313232421875
+          },
+          {
+            "token": " ______",
+            "prob": 0.0018768310546875
+          },
+          {
+            "token": "Berlin",
+            "prob": 0.00165557861328125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 1,
+          "induction": 0,
+          "sink": 0,
+          "local": 11,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 27,
+        "top_predictions": [
+          {
+            "token": " Berlin",
+            "prob": 0.87890625
+          },
+          {
+            "token": " __",
+            "prob": 0.018310546875
+          },
+          {
+            "token": " ____",
+            "prob": 0.0111083984375
+          },
+          {
+            "token": " Bon",
+            "prob": 0.00762939453125
+          },
+          {
+            "token": " ______",
+            "prob": 0.0052490234375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      }
+    ]
+  },
+  "induction_01": {
+    "prompt": "Color: Red, Shape: Square. Color: Blue, Shape: Circle. Color: Red, Shape:",
+    "target": " Square",
+    "final_generated_token": " Circle",
+    "layer_logs": [
+      {
+        "layer": 0,
+        "top_predictions": [
+          {
+            "token": " [",
+            "prob": 0.244140625
+          },
+          {
+            "token": " Sim",
+            "prob": 0.115234375
+          },
+          {
+            "token": " ",
+            "prob": 0.08984375
+          },
+          {
+            "token": "Sim",
+            "prob": 0.054443359375
+          },
+          {
+            "token": " A",
+            "prob": 0.045166015625
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 1,
+          "induction": 0,
+          "sink": 1,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 1,
+        "top_predictions": [
+          {
+            "token": "\u7eaa\u59d4\u76d1",
+            "prob": 0.1943359375
+          },
+          {
+            "token": "rm",
+            "prob": 0.07177734375
+          },
+          {
+            "token": " Sim",
+            "prob": 0.07177734375
+          },
+          {
+            "token": " Ins",
+            "prob": 0.038330078125
+          },
+          {
+            "token": " Mod",
+            "prob": 0.0299072265625
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 2,
+        "top_predictions": [
+          {
+            "token": " Gen",
+            "prob": 0.2890625
+          },
+          {
+            "token": " A",
+            "prob": 0.03466796875
+          },
+          {
+            "token": "yn\u0131",
+            "prob": 0.0286865234375
+          },
+          {
+            "token": " Type",
+            "prob": 0.017333984375
+          },
+          {
+            "token": " An",
+            "prob": 0.01531982421875
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 1,
+          "sink": 0,
+          "local": 11,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 3,
+        "top_predictions": [
+          {
+            "token": "\u00a0",
+            "prob": 0.1953125
+          },
+          {
+            "token": " pre",
+            "prob": 0.040771484375
+          },
+          {
+            "token": "\u0625\u0635",
+            "prob": 0.0263671875
+          },
+          {
+            "token": "ize",
+            "prob": 0.0205078125
+          },
+          {
+            "token": " x",
+            "prob": 0.01806640625
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 4,
+        "top_predictions": [
+          {
+            "token": "\u0623\u0648\u0636\u0627\u0639",
+            "prob": 0.03857421875
+          },
+          {
+            "token": "@\",",
+            "prob": 0.02197265625
+          },
+          {
+            "token": "\uc7e4",
+            "prob": 0.01708984375
+          },
+          {
+            "token": "dish",
+            "prob": 0.01708984375
+          },
+          {
+            "token": "emsp",
+            "prob": 0.01611328125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 5,
+        "top_predictions": [
+          {
+            "token": "\u00a0",
+            "prob": 0.06103515625
+          },
+          {
+            "token": "\uc7e4",
+            "prob": 0.053955078125
+          },
+          {
+            "token": " Gen",
+            "prob": 0.047607421875
+          },
+          {
+            "token": " Map",
+            "prob": 0.039306640625
+          },
+          {
+            "token": "\u0623\u0648\u0636\u0627\u0639",
+            "prob": 0.037109375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 1,
+          "induction": 1,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 6,
+        "top_predictions": [
+          {
+            "token": " B",
+            "prob": 0.19921875
+          },
+          {
+            "token": " Gen",
+            "prob": 0.06884765625
+          },
+          {
+            "token": " \ufffd",
+            "prob": 0.036865234375
+          },
+          {
+            "token": " P",
+            "prob": 0.036865234375
+          },
+          {
+            "token": " None",
+            "prob": 0.02880859375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 1,
+          "sink": 1,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 7,
+        "top_predictions": [
+          {
+            "token": " P",
+            "prob": 0.1689453125
+          },
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.0703125
+          },
+          {
+            "token": " R",
+            "prob": 0.02587890625
+          },
+          {
+            "token": " B",
+            "prob": 0.0228271484375
+          },
+          {
+            "token": " Original",
+            "prob": 0.021484375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 1,
+          "sink": 0,
+          "local": 11,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 8,
+        "top_predictions": [
+          {
+            "token": "\u00a0",
+            "prob": 0.076171875
+          },
+          {
+            "token": "\ub0a1",
+            "prob": 0.0673828125
+          },
+          {
+            "token": "\u0625\u0635",
+            "prob": 0.033935546875
+          },
+          {
+            "token": "\ub299",
+            "prob": 0.03173828125
+          },
+          {
+            "token": "\uc7a6",
+            "prob": 0.0299072265625
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 2,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 9,
+        "top_predictions": [
+          {
+            "token": "\ub0a1",
+            "prob": 0.11474609375
+          },
+          {
+            "token": "\u0623\u0648\u0636\u0627\u0639",
+            "prob": 0.09521484375
+          },
+          {
+            "token": "\u00a0",
+            "prob": 0.07861328125
+          },
+          {
+            "token": "\ud143",
+            "prob": 0.0478515625
+          },
+          {
+            "token": "\uc7a6",
+            "prob": 0.03955078125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 1,
+          "sink": 0,
+          "local": 11,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 10,
+        "top_predictions": [
+          {
+            "token": "\ub0a1",
+            "prob": 0.294921875
+          },
+          {
+            "token": "\ub299",
+            "prob": 0.08984375
+          },
+          {
+            "token": "\uc7e4",
+            "prob": 0.0654296875
+          },
+          {
+            "token": "\uc7a6",
+            "prob": 0.057861328125
+          },
+          {
+            "token": "\ud143",
+            "prob": 0.031005859375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 2,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 11,
+        "top_predictions": [
+          {
+            "token": "\ub0a1",
+            "prob": 0.1806640625
+          },
+          {
+            "token": "\ud143",
+            "prob": 0.10986328125
+          },
+          {
+            "token": "\uc7e4",
+            "prob": 0.03564453125
+          },
+          {
+            "token": "\uc7a6",
+            "prob": 0.033447265625
+          },
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.031494140625
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 2,
+          "induction": 0,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 12,
+        "top_predictions": [
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.04296875
+          },
+          {
+            "token": "\ub135",
+            "prob": 0.04052734375
+          },
+          {
+            "token": "\ud143",
+            "prob": 0.033447265625
+          },
+          {
+            "token": "\ub0a1",
+            "prob": 0.033447265625
+          },
+          {
+            "token": "\uc7a6",
+            "prob": 0.01904296875
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 1,
+          "induction": 3,
+          "sink": 0,
+          "local": 8,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 13,
+        "top_predictions": [
+          {
+            "token": "\ub0a1",
+            "prob": 0.330078125
+          },
+          {
+            "token": "\ud143",
+            "prob": 0.1376953125
+          },
+          {
+            "token": "\ub299",
+            "prob": 0.03466796875
+          },
+          {
+            "token": "\ub135",
+            "prob": 0.0306396484375
+          },
+          {
+            "token": "\uc7a6",
+            "prob": 0.0185546875
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 2,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 14,
+        "top_predictions": [
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.205078125
+          },
+          {
+            "token": "\ub0a1",
+            "prob": 0.08544921875
+          },
+          {
+            "token": "\ud143",
+            "prob": 0.080078125
+          },
+          {
+            "token": "\ub135",
+            "prob": 0.026123046875
+          },
+          {
+            "token": "\r\\n\r\\n\r\\n",
+            "prob": 0.026123046875
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 3,
+          "sink": 1,
+          "local": 8,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 15,
+        "top_predictions": [
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.1591796875
+          },
+          {
+            "token": "\ub0a1",
+            "prob": 0.1240234375
+          },
+          {
+            "token": "\ud143",
+            "prob": 0.0277099609375
+          },
+          {
+            "token": "\uc7a6",
+            "prob": 0.0130615234375
+          },
+          {
+            "token": "/Dk",
+            "prob": 0.0108642578125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 2,
+          "sink": 1,
+          "local": 9,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 16,
+        "top_predictions": [
+          {
+            "token": "\ub0a1",
+            "prob": 0.271484375
+          },
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.1650390625
+          },
+          {
+            "token": "\uc7a6",
+            "prob": 0.0390625
+          },
+          {
+            "token": "\ub135",
+            "prob": 0.0252685546875
+          },
+          {
+            "token": "\ud143",
+            "prob": 0.0223388671875
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 7,
+          "sink": 0,
+          "local": 5,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 17,
+        "top_predictions": [
+          {
+            "token": "\ub0a1",
+            "prob": 0.2138671875
+          },
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.1572265625
+          },
+          {
+            "token": "\uc7a6",
+            "prob": 0.029052734375
+          },
+          {
+            "token": "\uc7e4",
+            "prob": 0.0186767578125
+          },
+          {
+            "token": "\ud143",
+            "prob": 0.017578125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 3,
+          "sink": 0,
+          "local": 9,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 18,
+        "top_predictions": [
+          {
+            "token": " None",
+            "prob": 0.052734375
+          },
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.049560546875
+          },
+          {
+            "token": "\ub0a1",
+            "prob": 0.041015625
+          },
+          {
+            "token": " Bar",
+            "prob": 0.02490234375
+          },
+          {
+            "token": "\ud143",
+            "prob": 0.0206298828125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 2,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 19,
+        "top_predictions": [
+          {
+            "token": " None",
+            "prob": 0.2041015625
+          },
+          {
+            "token": "\ub0a1",
+            "prob": 0.04833984375
+          },
+          {
+            "token": "\uc7e4",
+            "prob": 0.033203125
+          },
+          {
+            "token": "\u0645\u0631\u0627\u0643",
+            "prob": 0.027587890625
+          },
+          {
+            "token": " Class",
+            "prob": 0.02587890625
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 3,
+          "sink": 0,
+          "local": 9,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 20,
+        "top_predictions": [
+          {
+            "token": " Circle",
+            "prob": 0.1455078125
+          },
+          {
+            "token": " rectangular",
+            "prob": 0.09423828125
+          },
+          {
+            "token": " Rectangle",
+            "prob": 0.078125
+          },
+          {
+            "token": " triangle",
+            "prob": 0.0732421875
+          },
+          {
+            "token": " circle",
+            "prob": 0.0732421875
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 4,
+          "sink": 0,
+          "local": 8,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 21,
+        "top_predictions": [
+          {
+            "token": " Rectangle",
+            "prob": 0.279296875
+          },
+          {
+            "token": " circle",
+            "prob": 0.2041015625
+          },
+          {
+            "token": " Circle",
+            "prob": 0.109375
+          },
+          {
+            "token": " triangle",
+            "prob": 0.0849609375
+          },
+          {
+            "token": " square",
+            "prob": 0.05859375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 2,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 22,
+        "top_predictions": [
+          {
+            "token": " rectangle",
+            "prob": 0.2060546875
+          },
+          {
+            "token": " Rectangle",
+            "prob": 0.1826171875
+          },
+          {
+            "token": "\u5706\u5f62",
+            "prob": 0.1611328125
+          },
+          {
+            "token": " circle",
+            "prob": 0.1103515625
+          },
+          {
+            "token": " triangle",
+            "prob": 0.06689453125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 23,
+        "top_predictions": [
+          {
+            "token": " square",
+            "prob": 0.212890625
+          },
+          {
+            "token": " triangle",
+            "prob": 0.166015625
+          },
+          {
+            "token": " rectangle",
+            "prob": 0.12890625
+          },
+          {
+            "token": " circle",
+            "prob": 0.12890625
+          },
+          {
+            "token": " Square",
+            "prob": 0.1005859375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 1,
+          "sink": 0,
+          "local": 11,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 24,
+        "top_predictions": [
+          {
+            "token": " triangle",
+            "prob": 0.82421875
+          },
+          {
+            "token": " Triangle",
+            "prob": 0.0986328125
+          },
+          {
+            "token": " rectangle",
+            "prob": 0.036376953125
+          },
+          {
+            "token": " square",
+            "prob": 0.01708984375
+          },
+          {
+            "token": " triangles",
+            "prob": 0.006317138671875
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 25,
+        "top_predictions": [
+          {
+            "token": " triangle",
+            "prob": 0.68359375
+          },
+          {
+            "token": " Triangle",
+            "prob": 0.251953125
+          },
+          {
+            "token": " rectangle",
+            "prob": 0.0234375
+          },
+          {
+            "token": " circle",
+            "prob": 0.01422119140625
+          },
+          {
+            "token": " Circle",
+            "prob": 0.005218505859375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 26,
+        "top_predictions": [
+          {
+            "token": " Triangle",
+            "prob": 0.73828125
+          },
+          {
+            "token": " Square",
+            "prob": 0.1279296875
+          },
+          {
+            "token": " triangle",
+            "prob": 0.060546875
+          },
+          {
+            "token": " Circle",
+            "prob": 0.0196533203125
+          },
+          {
+            "token": " square",
+            "prob": 0.01348876953125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 1,
+          "induction": 0,
+          "sink": 0,
+          "local": 11,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 27,
+        "top_predictions": [
+          {
+            "token": " Circle",
+            "prob": 0.28515625
+          },
+          {
+            "token": " Triangle",
+            "prob": 0.28515625
+          },
+          {
+            "token": " Square",
+            "prob": 0.1728515625
+          },
+          {
+            "token": " Rectangle",
+            "prob": 0.072265625
+          },
+          {
+            "token": " Oval",
+            "prob": 0.049560546875
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      }
+    ]
+  },
+  "niah_mini": {
+    "prompt": "The secret password to unlock the HeadGenome matrix is 'TritonIsFast42'. The study of artificial intelligence has progressed rapidly over the past decade, with significant advancements in natural language processing and computer vision. Machine learning models are now capable of performing complex tasks that were once thought impossible for computers. To proceed, please provide the secret password: The secret password to unlock the HeadGenome matrix is",
+    "target": " 'Triton",
+    "final_generated_token": " '",
+    "layer_logs": [
+      {
+        "layer": 0,
+        "top_predictions": [
+          {
+            "token": "nt",
+            "prob": 0.68359375
+          },
+          {
+            "token": "otope",
+            "prob": 0.1044921875
+          },
+          {
+            "token": "/is",
+            "prob": 0.0595703125
+          },
+          {
+            "token": " not",
+            "prob": 0.0181884765625
+          },
+          {
+            "token": " often",
+            "prob": 0.01104736328125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 1,
+          "induction": 0,
+          "sink": 1,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 1,
+        "top_predictions": [
+          {
+            "token": "nt",
+            "prob": 0.228515625
+          },
+          {
+            "token": " indeed",
+            "prob": 0.1572265625
+          },
+          {
+            "token": "/is",
+            "prob": 0.1474609375
+          },
+          {
+            "token": "rael",
+            "prob": 0.08935546875
+          },
+          {
+            "token": " well",
+            "prob": 0.083984375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 2,
+        "top_predictions": [
+          {
+            "token": "/is",
+            "prob": 0.390625
+          },
+          {
+            "token": " indeed",
+            "prob": 0.197265625
+          },
+          {
+            "token": "otope",
+            "prob": 0.10546875
+          },
+          {
+            "token": "rael",
+            "prob": 0.0235595703125
+          },
+          {
+            "token": "nt",
+            "prob": 0.01519775390625
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 1,
+          "sink": 0,
+          "local": 11,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 3,
+        "top_predictions": [
+          {
+            "token": " indeed",
+            "prob": 0.44921875
+          },
+          {
+            "token": "otope",
+            "prob": 0.240234375
+          },
+          {
+            "token": "/is",
+            "prob": 0.13671875
+          },
+          {
+            "token": " likely",
+            "prob": 0.00640869140625
+          },
+          {
+            "token": " therefore",
+            "prob": 0.005645751953125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 4,
+        "top_predictions": [
+          {
+            "token": " indeed",
+            "prob": 0.953125
+          },
+          {
+            "token": "\u3082\u3061\u308d",
+            "prob": 0.016357421875
+          },
+          {
+            "token": "otope",
+            "prob": 0.00994873046875
+          },
+          {
+            "token": "/is",
+            "prob": 0.0028533935546875
+          },
+          {
+            "token": " likely",
+            "prob": 0.0013427734375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 5,
+        "top_predictions": [
+          {
+            "token": " indeed",
+            "prob": 0.5859375
+          },
+          {
+            "token": "otope",
+            "prob": 0.115234375
+          },
+          {
+            "token": " likely",
+            "prob": 0.07421875
+          },
+          {
+            "token": "/is",
+            "prob": 0.031005859375
+          },
+          {
+            "token": "\u3082\u3061\u308d",
+            "prob": 0.0166015625
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 1,
+          "induction": 1,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 6,
+        "top_predictions": [
+          {
+            "token": " likely",
+            "prob": 0.3515625
+          },
+          {
+            "token": " indeed",
+            "prob": 0.12109375
+          },
+          {
+            "token": "otope",
+            "prob": 0.1005859375
+          },
+          {
+            "token": "nt",
+            "prob": 0.0224609375
+          },
+          {
+            "token": " now",
+            "prob": 0.01544189453125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 1,
+          "sink": 1,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 7,
+        "top_predictions": [
+          {
+            "token": " indeed",
+            "prob": 0.32421875
+          },
+          {
+            "token": " likely",
+            "prob": 0.072265625
+          },
+          {
+            "token": " exactly",
+            "prob": 0.046630859375
+          },
+          {
+            "token": "otope",
+            "prob": 0.03857421875
+          },
+          {
+            "token": "nt",
+            "prob": 0.026611328125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 1,
+          "sink": 0,
+          "local": 11,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 8,
+        "top_predictions": [
+          {
+            "token": " indeed",
+            "prob": 0.076171875
+          },
+          {
+            "token": "alto",
+            "prob": 0.04345703125
+          },
+          {
+            "token": " therefore",
+            "prob": 0.0299072265625
+          },
+          {
+            "token": " among",
+            "prob": 0.0218505859375
+          },
+          {
+            "token": " also",
+            "prob": 0.01708984375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 2,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 9,
+        "top_predictions": [
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.423828125
+          },
+          {
+            "token": " indeed",
+            "prob": 0.12890625
+          },
+          {
+            "token": ":\\n",
+            "prob": 0.03271484375
+          },
+          {
+            "token": ":\\n\\n",
+            "prob": 0.03076171875
+          },
+          {
+            "token": ":",
+            "prob": 0.01544189453125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 1,
+          "sink": 0,
+          "local": 11,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 10,
+        "top_predictions": [
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.10400390625
+          },
+          {
+            "token": " indeed",
+            "prob": 0.06689453125
+          },
+          {
+            "token": " guess",
+            "prob": 0.03369140625
+          },
+          {
+            "token": ":\\n",
+            "prob": 0.0279541015625
+          },
+          {
+            "token": " </>\\n",
+            "prob": 0.024658203125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 2,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 11,
+        "top_predictions": [
+          {
+            "token": " indeed",
+            "prob": 0.37890625
+          },
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.0703125
+          },
+          {
+            "token": ":\\n\\n",
+            "prob": 0.0189208984375
+          },
+          {
+            "token": "\u62fc\u97f3",
+            "prob": 0.0166015625
+          },
+          {
+            "token": ":\\n",
+            "prob": 0.01470947265625
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 2,
+          "induction": 0,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 12,
+        "top_predictions": [
+          {
+            "token": " indeed",
+            "prob": 0.62109375
+          },
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.1474609375
+          },
+          {
+            "token": " None",
+            "prob": 0.03271484375
+          },
+          {
+            "token": ":\\n\\n",
+            "prob": 0.013671875
+          },
+          {
+            "token": ":",
+            "prob": 0.010009765625
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 1,
+          "induction": 3,
+          "sink": 0,
+          "local": 8,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 13,
+        "top_predictions": [
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.416015625
+          },
+          {
+            "token": " indeed",
+            "prob": 0.1533203125
+          },
+          {
+            "token": ":\\n",
+            "prob": 0.0869140625
+          },
+          {
+            "token": " None",
+            "prob": 0.046630859375
+          },
+          {
+            "token": ":\\n\\n",
+            "prob": 0.036376953125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 2,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 14,
+        "top_predictions": [
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.380859375
+          },
+          {
+            "token": " indeed",
+            "prob": 0.1591796875
+          },
+          {
+            "token": " None",
+            "prob": 0.058349609375
+          },
+          {
+            "token": "    \\n    \\n    \\n    \\n",
+            "prob": 0.021484375
+          },
+          {
+            "token": ":\\n\\n",
+            "prob": 0.0167236328125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 3,
+          "sink": 1,
+          "local": 8,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 15,
+        "top_predictions": [
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.423828125
+          },
+          {
+            "token": " indeed",
+            "prob": 0.3515625
+          },
+          {
+            "token": " None",
+            "prob": 0.03271484375
+          },
+          {
+            "token": ":\\n\\n",
+            "prob": 0.0174560546875
+          },
+          {
+            "token": " NOT",
+            "prob": 0.01129150390625
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 2,
+          "sink": 1,
+          "local": 9,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 16,
+        "top_predictions": [
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.77734375
+          },
+          {
+            "token": " None",
+            "prob": 0.041259765625
+          },
+          {
+            "token": " indeed",
+            "prob": 0.01519775390625
+          },
+          {
+            "token": ".\\n\\n",
+            "prob": 0.0052490234375
+          },
+          {
+            "token": "    \\n    \\n    \\n    \\n",
+            "prob": 0.004364013671875
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 7,
+          "sink": 0,
+          "local": 5,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 17,
+        "top_predictions": [
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.9765625
+          },
+          {
+            "token": ":",
+            "prob": 0.00579833984375
+          },
+          {
+            "token": ":\\n\\n",
+            "prob": 0.0035247802734375
+          },
+          {
+            "token": " None",
+            "prob": 0.00311279296875
+          },
+          {
+            "token": " indeed",
+            "prob": 0.00177001953125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 3,
+          "sink": 0,
+          "local": 9,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 18,
+        "top_predictions": [
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.91796875
+          },
+          {
+            "token": " indeed",
+            "prob": 0.05859375
+          },
+          {
+            "token": ":\\n\\n",
+            "prob": 0.005126953125
+          },
+          {
+            "token": ".\\n\\n",
+            "prob": 0.0024261474609375
+          },
+          {
+            "token": ":",
+            "prob": 0.00146484375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 2,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 19,
+        "top_predictions": [
+          {
+            "token": " indeed",
+            "prob": 0.455078125
+          },
+          {
+            "token": " \"",
+            "prob": 0.27734375
+          },
+          {
+            "token": "<|endoftext|>",
+            "prob": 0.16796875
+          },
+          {
+            "token": ":",
+            "prob": 0.037353515625
+          },
+          {
+            "token": " '",
+            "prob": 0.022705078125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 3,
+          "sink": 0,
+          "local": 9,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 20,
+        "top_predictions": [
+          {
+            "token": " '",
+            "prob": 0.90625
+          },
+          {
+            "token": " \"",
+            "prob": 0.045166015625
+          },
+          {
+            "token": " \u2018",
+            "prob": 0.02734375
+          },
+          {
+            "token": " indeed",
+            "prob": 0.0146484375
+          },
+          {
+            "token": " \u201c",
+            "prob": 0.001983642578125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 4,
+          "sink": 0,
+          "local": 8,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 21,
+        "top_predictions": [
+          {
+            "token": " '",
+            "prob": 0.85546875
+          },
+          {
+            "token": " \"",
+            "prob": 0.1318359375
+          },
+          {
+            "token": " \u2018",
+            "prob": 0.00653076171875
+          },
+          {
+            "token": " indeed",
+            "prob": 0.0021209716796875
+          },
+          {
+            "token": " \u201c",
+            "prob": 0.00145721435546875
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 2,
+          "sink": 0,
+          "local": 10,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 22,
+        "top_predictions": [
+          {
+            "token": " '",
+            "prob": 0.75390625
+          },
+          {
+            "token": " \"",
+            "prob": 0.244140625
+          },
+          {
+            "token": " indeed",
+            "prob": 0.0014495849609375
+          },
+          {
+            "token": " \u2018",
+            "prob": 0.001129150390625
+          },
+          {
+            "token": " \u201c",
+            "prob": 0.000415802001953125
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 23,
+        "top_predictions": [
+          {
+            "token": " '",
+            "prob": 0.97265625
+          },
+          {
+            "token": " \"",
+            "prob": 0.02587890625
+          },
+          {
+            "token": " indeed",
+            "prob": 0.0004749298095703125
+          },
+          {
+            "token": " \u2018",
+            "prob": 0.000370025634765625
+          },
+          {
+            "token": ":",
+            "prob": 8.249282836914062e-05
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 1,
+          "sink": 0,
+          "local": 11,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 24,
+        "top_predictions": [
+          {
+            "token": " '",
+            "prob": 0.9609375
+          },
+          {
+            "token": " \"",
+            "prob": 0.025634765625
+          },
+          {
+            "token": " indeed",
+            "prob": 0.0064697265625
+          },
+          {
+            "token": " \u2018",
+            "prob": 0.0034637451171875
+          },
+          {
+            "token": ":",
+            "prob": 0.00127410888671875
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 25,
+        "top_predictions": [
+          {
+            "token": " '",
+            "prob": 0.99609375
+          },
+          {
+            "token": " \"",
+            "prob": 0.0035858154296875
+          },
+          {
+            "token": " \u2018",
+            "prob": 4.5299530029296875e-05
+          },
+          {
+            "token": " indeed",
+            "prob": 3.981590270996094e-05
+          },
+          {
+            "token": " `",
+            "prob": 7.3909759521484375e-06
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 26,
+        "top_predictions": [
+          {
+            "token": " '",
+            "prob": 0.98046875
+          },
+          {
+            "token": " \"",
+            "prob": 0.00848388671875
+          },
+          {
+            "token": " indeed",
+            "prob": 0.0037689208984375
+          },
+          {
+            "token": " \u2018",
+            "prob": 0.0024261474609375
+          },
+          {
+            "token": ":",
+            "prob": 0.0008392333984375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 1,
+          "induction": 0,
+          "sink": 0,
+          "local": 11,
+          "unknown": 0
+        }
+      },
+      {
+        "layer": 27,
+        "top_predictions": [
+          {
+            "token": " '",
+            "prob": 0.93359375
+          },
+          {
+            "token": " indeed",
+            "prob": 0.0194091796875
+          },
+          {
+            "token": ":",
+            "prob": 0.01708984375
+          },
+          {
+            "token": " \"",
+            "prob": 0.0091552734375
+          },
+          {
+            "token": ":\\n\\n",
+            "prob": 0.002044677734375
+          }
+        ],
+        "taxonomy": {
+          "retrieval": 0,
+          "induction": 0,
+          "sink": 0,
+          "local": 12,
+          "unknown": 0
+        }
+      }
+    ]
+  }
+}

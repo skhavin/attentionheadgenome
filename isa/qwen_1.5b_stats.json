@@ -1,0 +1,393 @@
+{
+  "stats": {
+    "fact_recall": {
+      "total": 20,
+      "success_rate": "20/20",
+      "true_positives (Success + Head)": 19,
+      "false_positives (Fail + Head)": 0,
+      "false_negatives (Success + No Head)": 1
+    },
+    "pattern_induction": {
+      "total": 20,
+      "success_rate": "1/20",
+      "true_positives (Success + Head)": 1,
+      "false_positives (Fail + Head)": 0,
+      "false_negatives (Success + No Head)": 0
+    },
+    "niah": {
+      "total": 20,
+      "success_rate": "20/20",
+      "true_positives (Success + Head)": 20,
+      "false_positives (Fail + Head)": 0,
+      "false_negatives (Success + No Head)": 0
+    }
+  },
+  "raw": {
+    "fact_recall": [
+      {
+        "id": "fact_00",
+        "success": true,
+        "shift_layer": 22,
+        "target_heads_present": true
+      },
+      {
+        "id": "fact_01",
+        "success": true,
+        "shift_layer": 22,
+        "target_heads_present": true
+      },
+      {
+        "id": "fact_02",
+        "success": true,
+        "shift_layer": 22,
+        "target_heads_present": true
+      },
+      {
+        "id": "fact_03",
+        "success": true,
+        "shift_layer": 22,
+        "target_heads_present": true
+      },
+      {
+        "id": "fact_04",
+        "success": true,
+        "shift_layer": 22,
+        "target_heads_present": true
+      },
+      {
+        "id": "fact_05",
+        "success": true,
+        "shift_layer": 24,
+        "target_heads_present": true
+      },
+      {
+        "id": "fact_06",
+        "success": true,
+        "shift_layer": 22,
+        "target_heads_present": true
+      },
+      {
+        "id": "fact_07",
+        "success": true,
+        "shift_layer": 26,
+        "target_heads_present": true
+      },
+      {
+        "id": "fact_08",
+        "success": true,
+        "shift_layer": 25,
+        "target_heads_present": false
+      },
+      {
+        "id": "fact_09",
+        "success": true,
+        "shift_layer": 23,
+        "target_heads_present": true
+      },
+      {
+        "id": "fact_10",
+        "success": true,
+        "shift_layer": 22,
+        "target_heads_present": true
+      },
+      {
+        "id": "fact_11",
+        "success": true,
+        "shift_layer": 24,
+        "target_heads_present": true
+      },
+      {
+        "id": "fact_12",
+        "success": true,
+        "shift_layer": 22,
+        "target_heads_present": true
+      },
+      {
+        "id": "fact_13",
+        "success": true,
+        "shift_layer": 22,
+        "target_heads_present": true
+      },
+      {
+        "id": "fact_14",
+        "success": true,
+        "shift_layer": 22,
+        "target_heads_present": true
+      },
+      {
+        "id": "fact_15",
+        "success": true,
+        "shift_layer": 22,
+        "target_heads_present": true
+      },
+      {
+        "id": "fact_16",
+        "success": true,
+        "shift_layer": 22,
+        "target_heads_present": true
+      },
+      {
+        "id": "fact_17",
+        "success": true,
+        "shift_layer": 23,
+        "target_heads_present": true
+      },
+      {
+        "id": "fact_18",
+        "success": true,
+        "shift_layer": 24,
+        "target_heads_present": true
+      },
+      {
+        "id": "fact_19",
+        "success": true,
+        "shift_layer": 22,
+        "target_heads_present": true
+      }
+    ],
+    "pattern_induction": [
+      {
+        "id": "induction_00",
+        "success": true,
+        "shift_layer": 22,
+        "target_heads_present": true
+      },
+      {
+        "id": "induction_01",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      },
+      {
+        "id": "induction_02",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      },
+      {
+        "id": "induction_03",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      },
+      {
+        "id": "induction_04",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      },
+      {
+        "id": "induction_05",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      },
+      {
+        "id": "induction_06",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      },
+      {
+        "id": "induction_07",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      },
+      {
+        "id": "induction_08",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      },
+      {
+        "id": "induction_09",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      },
+      {
+        "id": "induction_10",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      },
+      {
+        "id": "induction_11",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      },
+      {
+        "id": "induction_12",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      },
+      {
+        "id": "induction_13",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      },
+      {
+        "id": "induction_14",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      },
+      {
+        "id": "induction_15",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      },
+      {
+        "id": "induction_16",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      },
+      {
+        "id": "induction_17",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      },
+      {
+        "id": "induction_18",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      },
+      {
+        "id": "induction_19",
+        "success": false,
+        "shift_layer": -1,
+        "target_heads_present": false
+      }
+    ],
+    "niah": [
+      {
+        "id": "niah_00",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_01",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_02",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_03",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_04",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_05",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_06",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_07",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_08",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_09",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_10",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_11",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_12",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_13",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_14",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_15",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_16",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_17",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_18",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      },
+      {
+        "id": "niah_19",
+        "success": true,
+        "shift_layer": 20,
+        "target_heads_present": true
+      }
+    ]
+  }
+}

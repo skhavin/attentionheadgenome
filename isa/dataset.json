@@ -1,0 +1,17 @@
+[
+  {
+    "id": "fact_retrieval_01",
+    "prompt": "The capital of France is Paris. The capital of Germany is",
+    "target": " Berlin"
+  },
+  {
+    "id": "induction_01",
+    "prompt": "Color: Red, Shape: Square. Color: Blue, Shape: Circle. Color: Red, Shape:",
+    "target": " Square"
+  },
+  {
+    "id": "niah_mini",
+    "prompt": "The secret password to unlock the HeadGenome matrix is 'TritonIsFast42'. The study of artificial intelligence has progressed rapidly over the past decade, with significant advancements in natural language processing and computer vision. Machine learning models are now capable of performing complex tasks that were once thought impossible for computers. To proceed, please provide the secret password: The secret password to unlock the HeadGenome matrix is",
+    "target": " 'Triton"
+  }
+]

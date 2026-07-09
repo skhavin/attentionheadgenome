@@ -19,7 +19,7 @@ dtype = torch.bfloat16
 n_layers = 24
 n_heads = 14
 head_dim = 64
-window_size = 256
+window_size = 512
 
 print("Compiling FlexAttention Kernel (This may take a minute)...")
 
@@ -34,9 +34,9 @@ def hybrid_mask(b, h, q_idx, kv_idx):
     # Dense heads just need causal
     dense_cond = (q_idx >= kv_idx)
     
-    # We simulate 78% local heads by using the head index
-    # (Since there are 14 heads, 11 heads are local, 3 are dense)
-    is_local_head = h < 11 
+    # We simulate 85.7% local+sink heads by using the head index
+    # (Since there are 14 heads per layer, 12 heads are restricted, 2 are dense)
+    is_local_head = h < 12
     
     return torch.where(is_local_head, local_cond, dense_cond)
 

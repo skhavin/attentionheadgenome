@@ -11,15 +11,10 @@ from datasets import load_dataset
 from torch.nn.attention.flex_attention import flex_attention, create_block_mask
 
 MODELS = [
-    "Qwen/Qwen2.5-0.5B",
-    "Qwen/Qwen2.5-1.5B",
-    "unsloth/Llama-3.2-1B",
-    "google/gemma-2b",
-    "microsoft/phi-1_5",
-    "openai-community/gpt2-medium"
+    "Qwen/Qwen2.5-0.5B"
 ]
 
-WINDOW = 256
+WINDOW = 512
 SEQ_LEN = 4000
 NIAH_PROMPTS = 50
 
