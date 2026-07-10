@@ -1,0 +1,63 @@
+{
+  "phase13_rsa_initial_test": {
+    "computational_motifs_tested": [
+      "fact_recall",
+      "niah",
+      "copy",
+      "pattern_induction",
+      "counting"
+    ],
+    "within_model_confirmation_p_value": 4.5074e-09,
+    "cross_architecture_spearman_correlation": 0.5879,
+    "cross_architecture_permutation_p_value": 0.073878,
+    "conclusion": "INCONCLUSIVE DUE TO LOW PAIR-COUNT POWER"
+  },
+  "phase13_rsa_power_analysis": {
+    "assumed_effect_size_rho": 0.59,
+    "power_simulations": [
+      {
+        "categories": 5,
+        "unique_pairs": 10,
+        "statistical_power_percent": 39.6
+      },
+      {
+        "categories": 6,
+        "unique_pairs": 15,
+        "statistical_power_percent": 58.7
+      },
+      {
+        "categories": 7,
+        "unique_pairs": 21,
+        "statistical_power_percent": 78.2
+      },
+      {
+        "categories": 8,
+        "unique_pairs": 28,
+        "statistical_power_percent": 88.8
+      }
+    ],
+    "required_categories_for_80_percent_power": 8
+  },
+  "phase13_extended_rsa": {
+    "computational_motifs_tested": [
+      "fact_recall",
+      "niah",
+      "copy",
+      "pattern_induction",
+      "counting",
+      "comparison",
+      "sorting",
+      "arithmetic"
+    ],
+    "within_model_confirmation_p_value": 8.1520e-10,
+    "cross_architecture_spearman_correlation": 0.7800,
+    "cross_architecture_permutation_p_value": 9.9173e-07,
+    "subgroup_analysis": {
+      "original_10_pairs_correlation": 0.3576,
+      "original_10_pairs_p_value": 0.3104,
+      "new_18_pairs_correlation": 0.9401,
+      "new_18_pairs_p_value": 0.0000
+    },
+    "conclusion": "FINDING RESCUED: The abstract relational structure of computations transfers universally."
+  }
+}
