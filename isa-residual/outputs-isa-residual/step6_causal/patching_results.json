@@ -1,0 +1,18 @@
+{
+  "baseline": 0.0019995461604139565,
+  "alpha_10.0": {
+    "comparison_patch": 0.0016900179658932758,
+    "fact_recall_patch": 0.0020529572479063064,
+    "random_patch": 0.002374028602935141
+  },
+  "alpha_30.0": {
+    "comparison_patch": 0.0013014590835609852,
+    "fact_recall_patch": 0.0029749465182703715,
+    "random_patch": 0.003113129340135856
+  },
+  "alpha_50.0": {
+    "comparison_patch": 0.0009939244215047438,
+    "fact_recall_patch": 0.006419747628387995,
+    "random_patch": 0.00411415512116946
+  }
+}

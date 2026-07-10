@@ -1,0 +1,50 @@
+{
+  "phase1_sufficiency": {
+    "metric": "summed_comparison_token_mass",
+    "baseline": 0.0020,
+    "layer_5_18pct": {
+      "patch_comparison": 0.0027,
+      "patch_fact_recall": 0.0020,
+      "patch_random": 0.0023
+    },
+    "layer_11_39pct": {
+      "patch_comparison": 0.0016,
+      "patch_fact_recall": 0.0022,
+      "patch_random": 0.0016
+    },
+    "layer_16_57pct": {
+      "patch_comparison": 0.0008,
+      "patch_fact_recall": 0.0007,
+      "patch_random": 0.0039
+    },
+    "layer_22_79pct": {
+      "patch_comparison": 0.0013,
+      "patch_fact_recall": 0.0030,
+      "patch_random": 0.0031
+    }
+  },
+  "phase2_necessity": {
+    "metric": "true_target_probability",
+    "baseline": 0.7728,
+    "layer_5_18pct": {
+      "ablate_fact_recall": 0.7724,
+      "ablate_comparison": 0.7588,
+      "ablate_random": 0.7728
+    },
+    "layer_11_39pct": {
+      "ablate_fact_recall": 0.7747,
+      "ablate_comparison": 0.7691,
+      "ablate_random": 0.7723
+    },
+    "layer_16_57pct": {
+      "ablate_fact_recall": 0.7644,
+      "ablate_comparison": 0.7833,
+      "ablate_random": 0.7736
+    },
+    "layer_22_79pct": {
+      "ablate_fact_recall": 0.2669,
+      "ablate_comparison": 0.7880,
+      "ablate_random": 0.7730
+    }
+  }
+}
