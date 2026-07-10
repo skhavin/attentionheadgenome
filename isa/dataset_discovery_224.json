@@ -1,0 +1,1346 @@
+[
+  {
+    "id": "niah_0",
+    "task_type": "niah",
+    "prompt": "The secret code is 36. The pig is orange. The pig is green. The secret code is",
+    "target": " 36"
+  },
+  {
+    "id": "fact_3",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Malaysia is Kuala Lumpur. The capital of Colombia is Bogota. The capital of Italy is",
+    "target": " Rome"
+  },
+  {
+    "id": "copy_11",
+    "task_type": "copy",
+    "prompt": "Input: Apple -> Output: Apple\nInput: Nectarine -> Output:",
+    "target": " Nectarine"
+  },
+  {
+    "id": "sort_14",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Date, Cherry, Mango ->",
+    "target": " Cherry"
+  },
+  {
+    "id": "copy_2",
+    "task_type": "copy",
+    "prompt": "Input: Egg -> Output: Egg\nInput: Cherry -> Output:",
+    "target": " Cherry"
+  },
+  {
+    "id": "sort_22",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Yam, Apple, Ugli ->",
+    "target": " Apple"
+  },
+  {
+    "id": "copy_19",
+    "task_type": "copy",
+    "prompt": "Input: Broccoli -> Output: Broccoli\nInput: Vanilla -> Output:",
+    "target": " Vanilla"
+  },
+  {
+    "id": "count_5",
+    "task_type": "counting",
+    "prompt": "Nine, Ten, Eleven, Twelve,",
+    "target": " Thirteen"
+  },
+  {
+    "id": "comp_7",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 30 or 66? ",
+    "target": "66"
+  },
+  {
+    "id": "pattern_23",
+    "task_type": "pattern_induction",
+    "prompt": "H M E H M E H M",
+    "target": " E"
+  },
+  {
+    "id": "count_23",
+    "task_type": "counting",
+    "prompt": "Four, Five, Six, Seven,",
+    "target": " Eight"
+  },
+  {
+    "id": "count_24",
+    "task_type": "counting",
+    "prompt": "Five, Six, Seven, Eight,",
+    "target": " Nine"
+  },
+  {
+    "id": "niah_11",
+    "task_type": "niah",
+    "prompt": "The secret code is 20. The horse is green. The cat is green. The secret code is",
+    "target": " 20"
+  },
+  {
+    "id": "copy_21",
+    "task_type": "copy",
+    "prompt": "Input: Rice -> Output: Rice\nInput: Xigua -> Output:",
+    "target": " Xigua"
+  },
+  {
+    "id": "copy_3",
+    "task_type": "copy",
+    "prompt": "Input: Lemon -> Output: Lemon\nInput: Date -> Output:",
+    "target": " Date"
+  },
+  {
+    "id": "fact_10",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Colombia is Bogota. The capital of Norway is Oslo. The capital of Russia is",
+    "target": " Moscow"
+  },
+  {
+    "id": "niah_2",
+    "task_type": "niah",
+    "prompt": "The secret code is 77. The sheep is brown. The cat is black. The secret code is",
+    "target": " 77"
+  },
+  {
+    "id": "sort_16",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Vanilla, Strawberry, Papaya ->",
+    "target": " Papaya"
+  },
+  {
+    "id": "sort_26",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Grape, Yam, Watermelon ->",
+    "target": " Grape"
+  },
+  {
+    "id": "niah_26",
+    "task_type": "niah",
+    "prompt": "The secret code is 94. The chicken is orange. The goat is green. The secret code is",
+    "target": " 94"
+  },
+  {
+    "id": "arith_7",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 11 and 7 is",
+    "target": " 18"
+  },
+  {
+    "id": "sort_1",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Carrot, Date, Nectarine ->",
+    "target": " Carrot"
+  },
+  {
+    "id": "sort_9",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Potato, Tomato, Kiwi ->",
+    "target": " Kiwi"
+  },
+  {
+    "id": "count_7",
+    "task_type": "counting",
+    "prompt": "Thirty-two, Thirty-three, Thirty-four, Thirty-five,",
+    "target": " Thirty-six"
+  },
+  {
+    "id": "pattern_12",
+    "task_type": "pattern_induction",
+    "prompt": "A J U A J U A J",
+    "target": " U"
+  },
+  {
+    "id": "count_0",
+    "task_type": "counting",
+    "prompt": "Sixteen, Seventeen, Eighteen, Nineteen,",
+    "target": " Twenty"
+  },
+  {
+    "id": "count_17",
+    "task_type": "counting",
+    "prompt": "Seven, Eight, Nine, Ten,",
+    "target": " Eleven"
+  },
+  {
+    "id": "pattern_27",
+    "task_type": "pattern_induction",
+    "prompt": "I T S I T S I T",
+    "target": " S"
+  },
+  {
+    "id": "arith_0",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 18 and 11 is",
+    "target": " 29"
+  },
+  {
+    "id": "fact_14",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Greece is Athens. The capital of Austria is Vienna. The capital of South Korea is",
+    "target": " Seoul"
+  },
+  {
+    "id": "niah_17",
+    "task_type": "niah",
+    "prompt": "The secret code is 11. The pig is brown. The chicken is orange. The secret code is",
+    "target": " 11"
+  },
+  {
+    "id": "count_21",
+    "task_type": "counting",
+    "prompt": "Three, Four, Five, Six,",
+    "target": " Seven"
+  },
+  {
+    "id": "count_19",
+    "task_type": "counting",
+    "prompt": "Twenty-seven, Twenty-eight, Twenty-nine, Thirty,",
+    "target": " Thirty-one"
+  },
+  {
+    "id": "pattern_13",
+    "task_type": "pattern_induction",
+    "prompt": "I Y H I Y H I Y",
+    "target": " H"
+  },
+  {
+    "id": "fact_12",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Vietnam is Hanoi. The capital of Philippines is Manila. The capital of Egypt is",
+    "target": " Cairo"
+  },
+  {
+    "id": "pattern_17",
+    "task_type": "pattern_induction",
+    "prompt": "A N V A N V A N",
+    "target": " V"
+  },
+  {
+    "id": "count_22",
+    "task_type": "counting",
+    "prompt": "Thirty-seven, Thirty-eight, Thirty-nine, Forty,",
+    "target": " Forty-one"
+  },
+  {
+    "id": "fact_20",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Vietnam is Hanoi. The capital of Canada is Ottawa. The capital of Norway is",
+    "target": " Oslo"
+  },
+  {
+    "id": "comp_18",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 53 or 98? ",
+    "target": "98"
+  },
+  {
+    "id": "count_1",
+    "task_type": "counting",
+    "prompt": "Twenty-three, Twenty-four, Twenty-five, Twenty-six,",
+    "target": " Twenty-seven"
+  },
+  {
+    "id": "sort_6",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Date, Quince, Potato ->",
+    "target": " Date"
+  },
+  {
+    "id": "count_9",
+    "task_type": "counting",
+    "prompt": "One, Two, Three, Four,",
+    "target": " Five"
+  },
+  {
+    "id": "fact_11",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Switzerland is Bern. The capital of New Zealand is Wellington. The capital of UK is",
+    "target": " London"
+  },
+  {
+    "id": "copy_4",
+    "task_type": "copy",
+    "prompt": "Input: Papaya -> Output: Papaya\nInput: Elderberry -> Output:",
+    "target": " Elderberry"
+  },
+  {
+    "id": "pattern_14",
+    "task_type": "pattern_induction",
+    "prompt": "Q A P Q A P Q A",
+    "target": " P"
+  },
+  {
+    "id": "sort_2",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Zucchini, Spinach, Lemon ->",
+    "target": " Lemon"
+  },
+  {
+    "id": "fact_18",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Brazil is Brasilia. The capital of Russia is Moscow. The capital of Thailand is",
+    "target": " Bangkok"
+  },
+  {
+    "id": "niah_22",
+    "task_type": "niah",
+    "prompt": "The secret code is 76. The bird is black. The fish is blue. The secret code is",
+    "target": " 76"
+  },
+  {
+    "id": "sort_4",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Kiwi, Orange, Yam ->",
+    "target": " Kiwi"
+  },
+  {
+    "id": "arith_16",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 18 and 9 is",
+    "target": " 27"
+  },
+  {
+    "id": "fact_0",
+    "task_type": "fact_recall",
+    "prompt": "The capital of South Africa is Pretoria. The capital of Philippines is Manila. The capital of France is",
+    "target": " Paris"
+  },
+  {
+    "id": "sort_7",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Potato, Orange, Vanilla ->",
+    "target": " Orange"
+  },
+  {
+    "id": "niah_21",
+    "task_type": "niah",
+    "prompt": "The secret code is 11. The horse is brown. The goat is yellow. The secret code is",
+    "target": " 11"
+  },
+  {
+    "id": "pattern_7",
+    "task_type": "pattern_induction",
+    "prompt": "P D X P D X P D",
+    "target": " X"
+  },
+  {
+    "id": "sort_10",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Apple, Orange, Zucchini ->",
+    "target": " Apple"
+  },
+  {
+    "id": "fact_17",
+    "task_type": "fact_recall",
+    "prompt": "The capital of New Zealand is Wellington. The capital of Egypt is Cairo. The capital of Greece is",
+    "target": " Athens"
+  },
+  {
+    "id": "copy_26",
+    "task_type": "copy",
+    "prompt": "Input: Orange -> Output: Orange\nInput: Spinach -> Output:",
+    "target": " Spinach"
+  },
+  {
+    "id": "fact_6",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Canada is Ottawa. The capital of Venezuela is Caracas. The capital of Australia is",
+    "target": " Canberra"
+  },
+  {
+    "id": "comp_17",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 33 or 86? ",
+    "target": "86"
+  },
+  {
+    "id": "count_10",
+    "task_type": "counting",
+    "prompt": "Thirty-five, Thirty-six, Thirty-seven, Thirty-eight,",
+    "target": " Thirty-nine"
+  },
+  {
+    "id": "comp_3",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 55 or 69? ",
+    "target": "69"
+  },
+  {
+    "id": "fact_15",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Austria is Vienna. The capital of Kenya is Nairobi. The capital of Argentina is",
+    "target": " Buenos Aires"
+  },
+  {
+    "id": "arith_22",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 16 and 17 is",
+    "target": " 33"
+  },
+  {
+    "id": "fact_7",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Australia is Canberra. The capital of Brazil is Brasilia. The capital of China is",
+    "target": " Beijing"
+  },
+  {
+    "id": "fact_22",
+    "task_type": "fact_recall",
+    "prompt": "The capital of New Zealand is Wellington. The capital of Mexico is Mexico City. The capital of Denmark is",
+    "target": " Copenhagen"
+  },
+  {
+    "id": "fact_13",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Germany is Berlin. The capital of Russia is Moscow. The capital of Mexico is",
+    "target": " Mexico City"
+  },
+  {
+    "id": "sort_12",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Vanilla, Nectarine, Strawberry ->",
+    "target": " Nectarine"
+  },
+  {
+    "id": "niah_14",
+    "task_type": "niah",
+    "prompt": "The secret code is 13. The bird is pink. The pig is blue. The secret code is",
+    "target": " 13"
+  },
+  {
+    "id": "sort_23",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Quince, Date, Xigua ->",
+    "target": " Date"
+  },
+  {
+    "id": "comp_16",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 96 or 65? ",
+    "target": "96"
+  },
+  {
+    "id": "niah_13",
+    "task_type": "niah",
+    "prompt": "The secret code is 26. The bird is blue. The chicken is yellow. The secret code is",
+    "target": " 26"
+  },
+  {
+    "id": "count_12",
+    "task_type": "counting",
+    "prompt": "Ten, Eleven, Twelve, Thirteen,",
+    "target": " Fourteen"
+  },
+  {
+    "id": "copy_9",
+    "task_type": "copy",
+    "prompt": "Input: Bread -> Output: Bread\nInput: Lemon -> Output:",
+    "target": " Lemon"
+  },
+  {
+    "id": "fact_24",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Thailand is Bangkok. The capital of Australia is Canberra. The capital of Portugal is",
+    "target": " Lisbon"
+  },
+  {
+    "id": "count_8",
+    "task_type": "counting",
+    "prompt": "Twenty-one, Twenty-two, Twenty-three, Twenty-four,",
+    "target": " Twenty-five"
+  },
+  {
+    "id": "niah_20",
+    "task_type": "niah",
+    "prompt": "The secret code is 60. The horse is red. The cow is black. The secret code is",
+    "target": " 60"
+  },
+  {
+    "id": "comp_24",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 33 or 76? ",
+    "target": "76"
+  },
+  {
+    "id": "niah_3",
+    "task_type": "niah",
+    "prompt": "The secret code is 66. The goat is orange. The goat is blue. The secret code is",
+    "target": " 66"
+  },
+  {
+    "id": "pattern_16",
+    "task_type": "pattern_induction",
+    "prompt": "G M W G M W G M",
+    "target": " W"
+  },
+  {
+    "id": "pattern_26",
+    "task_type": "pattern_induction",
+    "prompt": "W L Z W L Z W L",
+    "target": " Z"
+  },
+  {
+    "id": "count_3",
+    "task_type": "counting",
+    "prompt": "Eight, Nine, Ten, Eleven,",
+    "target": " Twelve"
+  },
+  {
+    "id": "comp_20",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 19 or 93? ",
+    "target": "93"
+  },
+  {
+    "id": "count_25",
+    "task_type": "counting",
+    "prompt": "Twenty-one, Twenty-two, Twenty-three, Twenty-four,",
+    "target": " Twenty-five"
+  },
+  {
+    "id": "sort_3",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Apple, Tomato, Cherry ->",
+    "target": " Apple"
+  },
+  {
+    "id": "fact_2",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Cuba is Havana. The capital of Germany is Berlin. The capital of Japan is",
+    "target": " Tokyo"
+  },
+  {
+    "id": "comp_26",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 65 or 15? ",
+    "target": "65"
+  },
+  {
+    "id": "niah_6",
+    "task_type": "niah",
+    "prompt": "The secret code is 64. The horse is black. The chicken is yellow. The secret code is",
+    "target": " 64"
+  },
+  {
+    "id": "comp_13",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 84 or 82? ",
+    "target": "84"
+  },
+  {
+    "id": "count_11",
+    "task_type": "counting",
+    "prompt": "Thirty-nine, Forty, Forty-one, Forty-two,",
+    "target": " Forty-three"
+  },
+  {
+    "id": "pattern_5",
+    "task_type": "pattern_induction",
+    "prompt": "F E R F E R F E",
+    "target": " R"
+  },
+  {
+    "id": "comp_22",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 24 or 75? ",
+    "target": "75"
+  },
+  {
+    "id": "sort_25",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Ugli, Tomato, Yam ->",
+    "target": " Tomato"
+  },
+  {
+    "id": "copy_14",
+    "task_type": "copy",
+    "prompt": "Input: Pea -> Output: Pea\nInput: Quince -> Output:",
+    "target": " Quince"
+  },
+  {
+    "id": "copy_8",
+    "task_type": "copy",
+    "prompt": "Input: Bread -> Output: Bread\nInput: Kiwi -> Output:",
+    "target": " Kiwi"
+  },
+  {
+    "id": "comp_15",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 51 or 20? ",
+    "target": "51"
+  },
+  {
+    "id": "arith_26",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 10 and 11 is",
+    "target": " 21"
+  },
+  {
+    "id": "sort_24",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Zucchini, Xigua, Orange ->",
+    "target": " Orange"
+  },
+  {
+    "id": "niah_27",
+    "task_type": "niah",
+    "prompt": "The secret code is 42. The goat is green. The sheep is brown. The secret code is",
+    "target": " 42"
+  },
+  {
+    "id": "comp_9",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 42 or 59? ",
+    "target": "59"
+  },
+  {
+    "id": "pattern_3",
+    "task_type": "pattern_induction",
+    "prompt": "K N T K N T K N",
+    "target": " T"
+  },
+  {
+    "id": "pattern_19",
+    "task_type": "pattern_induction",
+    "prompt": "E Z B E Z B E Z",
+    "target": " B"
+  },
+  {
+    "id": "copy_0",
+    "task_type": "copy",
+    "prompt": "Input: Cheese -> Output: Cheese\nInput: Apple -> Output:",
+    "target": " Apple"
+  },
+  {
+    "id": "count_4",
+    "task_type": "counting",
+    "prompt": "Seven, Eight, Nine, Ten,",
+    "target": " Eleven"
+  },
+  {
+    "id": "pattern_2",
+    "task_type": "pattern_induction",
+    "prompt": "P F E P F E P F",
+    "target": " E"
+  },
+  {
+    "id": "pattern_1",
+    "task_type": "pattern_induction",
+    "prompt": "L A Y L A Y L A",
+    "target": " Y"
+  },
+  {
+    "id": "sort_15",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Tangerine, Mango, Apple ->",
+    "target": " Apple"
+  },
+  {
+    "id": "arith_1",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 18 and 12 is",
+    "target": " 30"
+  },
+  {
+    "id": "sort_18",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Mango, Apple, Banana ->",
+    "target": " Apple"
+  },
+  {
+    "id": "niah_1",
+    "task_type": "niah",
+    "prompt": "The secret code is 15. The sheep is orange. The cat is red. The secret code is",
+    "target": " 15"
+  },
+  {
+    "id": "arith_24",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 11 and 6 is",
+    "target": " 17"
+  },
+  {
+    "id": "sort_5",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Nectarine, Spinach, Raspberry ->",
+    "target": " Nectarine"
+  },
+  {
+    "id": "fact_5",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Chile is Santiago. The capital of New Zealand is Wellington. The capital of Canada is",
+    "target": " Ottawa"
+  },
+  {
+    "id": "comp_19",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 98 or 52? ",
+    "target": "98"
+  },
+  {
+    "id": "pattern_15",
+    "task_type": "pattern_induction",
+    "prompt": "Z K E Z K E Z K",
+    "target": " E"
+  },
+  {
+    "id": "arith_18",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 15 and 5 is",
+    "target": " 20"
+  },
+  {
+    "id": "arith_6",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 18 and 4 is",
+    "target": " 22"
+  },
+  {
+    "id": "count_20",
+    "task_type": "counting",
+    "prompt": "Fifteen, Sixteen, Seventeen, Eighteen,",
+    "target": " Nineteen"
+  },
+  {
+    "id": "copy_12",
+    "task_type": "copy",
+    "prompt": "Input: Xigua -> Output: Xigua\nInput: Orange -> Output:",
+    "target": " Orange"
+  },
+  {
+    "id": "arith_20",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 17 and 15 is",
+    "target": " 32"
+  },
+  {
+    "id": "arith_2",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 6 and 16 is",
+    "target": " 22"
+  },
+  {
+    "id": "count_15",
+    "task_type": "counting",
+    "prompt": "Thirty-seven, Thirty-eight, Thirty-nine, Forty,",
+    "target": " Forty-one"
+  },
+  {
+    "id": "arith_21",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 2 and 5 is",
+    "target": " 7"
+  },
+  {
+    "id": "sort_20",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Quince, Onion, Elderberry ->",
+    "target": " Elderberry"
+  },
+  {
+    "id": "niah_9",
+    "task_type": "niah",
+    "prompt": "The secret code is 71. The sheep is blue. The horse is black. The secret code is",
+    "target": " 71"
+  },
+  {
+    "id": "pattern_25",
+    "task_type": "pattern_induction",
+    "prompt": "G E I G E I G E",
+    "target": " I"
+  },
+  {
+    "id": "niah_23",
+    "task_type": "niah",
+    "prompt": "The secret code is 75. The dog is blue. The pig is pink. The secret code is",
+    "target": " 75"
+  },
+  {
+    "id": "arith_19",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 8 and 19 is",
+    "target": " 27"
+  },
+  {
+    "id": "copy_25",
+    "task_type": "copy",
+    "prompt": "Input: Ginger -> Output: Ginger\nInput: Broccoli -> Output:",
+    "target": " Broccoli"
+  },
+  {
+    "id": "fact_25",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Nigeria is Abuja. The capital of Germany is Berlin. The capital of Ireland is",
+    "target": " Dublin"
+  },
+  {
+    "id": "sort_27",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Mango, Lemon, Apple ->",
+    "target": " Apple"
+  },
+  {
+    "id": "comp_25",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 18 or 16? ",
+    "target": "18"
+  },
+  {
+    "id": "pattern_8",
+    "task_type": "pattern_induction",
+    "prompt": "G C O G C O G C",
+    "target": " O"
+  },
+  {
+    "id": "copy_7",
+    "task_type": "copy",
+    "prompt": "Input: Oat -> Output: Oat\nInput: Honeydew -> Output:",
+    "target": " Honeydew"
+  },
+  {
+    "id": "niah_16",
+    "task_type": "niah",
+    "prompt": "The secret code is 19. The goat is blue. The goat is orange. The secret code is",
+    "target": " 19"
+  },
+  {
+    "id": "comp_21",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 59 or 97? ",
+    "target": "97"
+  },
+  {
+    "id": "niah_12",
+    "task_type": "niah",
+    "prompt": "The secret code is 28. The cow is yellow. The bird is black. The secret code is",
+    "target": " 28"
+  },
+  {
+    "id": "fact_21",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Sweden is Stockholm. The capital of Cuba is Havana. The capital of Finland is",
+    "target": " Helsinki"
+  },
+  {
+    "id": "comp_23",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 84 or 65? ",
+    "target": "84"
+  },
+  {
+    "id": "count_16",
+    "task_type": "counting",
+    "prompt": "Thirty-six, Thirty-seven, Thirty-eight, Thirty-nine,",
+    "target": " Forty"
+  },
+  {
+    "id": "fact_9",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Turkey is Ankara. The capital of Japan is Tokyo. The capital of Brazil is",
+    "target": " Brasilia"
+  },
+  {
+    "id": "copy_1",
+    "task_type": "copy",
+    "prompt": "Input: Wheat -> Output: Wheat\nInput: Banana -> Output:",
+    "target": " Banana"
+  },
+  {
+    "id": "fact_4",
+    "task_type": "fact_recall",
+    "prompt": "The capital of South Africa is Pretoria. The capital of Germany is Berlin. The capital of Spain is",
+    "target": " Madrid"
+  },
+  {
+    "id": "count_18",
+    "task_type": "counting",
+    "prompt": "Thirty-seven, Thirty-eight, Thirty-nine, Forty,",
+    "target": " Forty-one"
+  },
+  {
+    "id": "sort_11",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Grape, Zucchini, Nectarine ->",
+    "target": " Grape"
+  },
+  {
+    "id": "sort_8",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Strawberry, Nectarine, Tangerine ->",
+    "target": " Nectarine"
+  },
+  {
+    "id": "comp_10",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 93 or 42? ",
+    "target": "93"
+  },
+  {
+    "id": "arith_14",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 15 and 13 is",
+    "target": " 28"
+  },
+  {
+    "id": "arith_3",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 3 and 11 is",
+    "target": " 14"
+  },
+  {
+    "id": "copy_10",
+    "task_type": "copy",
+    "prompt": "Input: Apple -> Output: Apple\nInput: Mango -> Output:",
+    "target": " Mango"
+  },
+  {
+    "id": "copy_6",
+    "task_type": "copy",
+    "prompt": "Input: Quince -> Output: Quince\nInput: Grape -> Output:",
+    "target": " Grape"
+  },
+  {
+    "id": "arith_5",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 4 and 5 is",
+    "target": " 9"
+  },
+  {
+    "id": "copy_17",
+    "task_type": "copy",
+    "prompt": "Input: Papaya -> Output: Papaya\nInput: Tangerine -> Output:",
+    "target": " Tangerine"
+  },
+  {
+    "id": "comp_27",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 46 or 35? ",
+    "target": "46"
+  },
+  {
+    "id": "niah_7",
+    "task_type": "niah",
+    "prompt": "The secret code is 74. The chicken is green. The dog is orange. The secret code is",
+    "target": " 74"
+  },
+  {
+    "id": "count_13",
+    "task_type": "counting",
+    "prompt": "Thirty-five, Thirty-six, Thirty-seven, Thirty-eight,",
+    "target": " Thirty-nine"
+  },
+  {
+    "id": "comp_8",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 39 or 54? ",
+    "target": "54"
+  },
+  {
+    "id": "niah_5",
+    "task_type": "niah",
+    "prompt": "The secret code is 55. The chicken is blue. The cow is green. The secret code is",
+    "target": " 55"
+  },
+  {
+    "id": "niah_10",
+    "task_type": "niah",
+    "prompt": "The secret code is 69. The horse is purple. The fish is green. The secret code is",
+    "target": " 69"
+  },
+  {
+    "id": "count_27",
+    "task_type": "counting",
+    "prompt": "Twenty, Twenty-one, Twenty-two, Twenty-three,",
+    "target": " Twenty-four"
+  },
+  {
+    "id": "sort_17",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Lemon, Quince, Tomato ->",
+    "target": " Lemon"
+  },
+  {
+    "id": "pattern_21",
+    "task_type": "pattern_induction",
+    "prompt": "K F L K F L K F",
+    "target": " L"
+  },
+  {
+    "id": "arith_8",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 16 and 4 is",
+    "target": " 20"
+  },
+  {
+    "id": "pattern_11",
+    "task_type": "pattern_induction",
+    "prompt": "O I P O I P O I",
+    "target": " P"
+  },
+  {
+    "id": "arith_10",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 9 and 15 is",
+    "target": " 24"
+  },
+  {
+    "id": "fact_8",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Chile is Santiago. The capital of France is Paris. The capital of India is",
+    "target": " New Delhi"
+  },
+  {
+    "id": "fact_27",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Ireland is Dublin. The capital of Finland is Helsinki. The capital of Switzerland is",
+    "target": " Bern"
+  },
+  {
+    "id": "niah_4",
+    "task_type": "niah",
+    "prompt": "The secret code is 90. The chicken is orange. The cat is black. The secret code is",
+    "target": " 90"
+  },
+  {
+    "id": "niah_24",
+    "task_type": "niah",
+    "prompt": "The secret code is 40. The chicken is blue. The goat is black. The secret code is",
+    "target": " 40"
+  },
+  {
+    "id": "arith_15",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 2 and 17 is",
+    "target": " 19"
+  },
+  {
+    "id": "comp_0",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 91 or 77? ",
+    "target": "91"
+  },
+  {
+    "id": "sort_21",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Potato, Honeydew, Tangerine ->",
+    "target": " Honeydew"
+  },
+  {
+    "id": "count_14",
+    "task_type": "counting",
+    "prompt": "Twenty-three, Twenty-four, Twenty-five, Twenty-six,",
+    "target": " Twenty-seven"
+  },
+  {
+    "id": "comp_2",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 46 or 83? ",
+    "target": "83"
+  },
+  {
+    "id": "comp_6",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 13 or 21? ",
+    "target": "21"
+  },
+  {
+    "id": "arith_4",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 5 and 3 is",
+    "target": " 8"
+  },
+  {
+    "id": "comp_4",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 89 or 90? ",
+    "target": "90"
+  },
+  {
+    "id": "copy_16",
+    "task_type": "copy",
+    "prompt": "Input: Orange -> Output: Orange\nInput: Strawberry -> Output:",
+    "target": " Strawberry"
+  },
+  {
+    "id": "copy_18",
+    "task_type": "copy",
+    "prompt": "Input: Orange -> Output: Orange\nInput: Ugli -> Output:",
+    "target": " Ugli"
+  },
+  {
+    "id": "copy_15",
+    "task_type": "copy",
+    "prompt": "Input: Apple -> Output: Apple\nInput: Raspberry -> Output:",
+    "target": " Raspberry"
+  },
+  {
+    "id": "count_26",
+    "task_type": "counting",
+    "prompt": "Thirty-one, Thirty-two, Thirty-three, Thirty-four,",
+    "target": " Thirty-five"
+  },
+  {
+    "id": "count_2",
+    "task_type": "counting",
+    "prompt": "Fourteen, Fifteen, Sixteen, Seventeen,",
+    "target": " Eighteen"
+  },
+  {
+    "id": "fact_16",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Indonesia is Jakarta. The capital of Peru is Lima. The capital of Turkey is",
+    "target": " Ankara"
+  },
+  {
+    "id": "arith_23",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 17 and 13 is",
+    "target": " 30"
+  },
+  {
+    "id": "niah_8",
+    "task_type": "niah",
+    "prompt": "The secret code is 15. The pig is purple. The fish is blue. The secret code is",
+    "target": " 15"
+  },
+  {
+    "id": "arith_17",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 2 and 3 is",
+    "target": " 5"
+  },
+  {
+    "id": "niah_25",
+    "task_type": "niah",
+    "prompt": "The secret code is 74. The goat is yellow. The chicken is purple. The secret code is",
+    "target": " 74"
+  },
+  {
+    "id": "fact_23",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Thailand is Bangkok. The capital of Germany is Berlin. The capital of Poland is",
+    "target": " Warsaw"
+  },
+  {
+    "id": "comp_12",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 37 or 38? ",
+    "target": "38"
+  },
+  {
+    "id": "arith_12",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 18 and 14 is",
+    "target": " 32"
+  },
+  {
+    "id": "pattern_24",
+    "task_type": "pattern_induction",
+    "prompt": "B O A B O A B O",
+    "target": " A"
+  },
+  {
+    "id": "pattern_4",
+    "task_type": "pattern_induction",
+    "prompt": "R U V R U V R U",
+    "target": " V"
+  },
+  {
+    "id": "sort_0",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Fig, Strawberry, Mango ->",
+    "target": " Fig"
+  },
+  {
+    "id": "fact_26",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Sweden is Stockholm. The capital of Portugal is Lisbon. The capital of Austria is",
+    "target": " Vienna"
+  },
+  {
+    "id": "pattern_0",
+    "task_type": "pattern_induction",
+    "prompt": "W P J W P J W P",
+    "target": " J"
+  },
+  {
+    "id": "copy_22",
+    "task_type": "copy",
+    "prompt": "Input: Apple -> Output: Apple\nInput: Yam -> Output:",
+    "target": " Yam"
+  },
+  {
+    "id": "arith_27",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 19 and 12 is",
+    "target": " 31"
+  },
+  {
+    "id": "copy_27",
+    "task_type": "copy",
+    "prompt": "Input: Butter -> Output: Butter\nInput: Potato -> Output:",
+    "target": " Potato"
+  },
+  {
+    "id": "arith_13",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 15 and 17 is",
+    "target": " 32"
+  },
+  {
+    "id": "pattern_20",
+    "task_type": "pattern_induction",
+    "prompt": "K E L K E L K E",
+    "target": " L"
+  },
+  {
+    "id": "comp_11",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 86 or 91? ",
+    "target": "91"
+  },
+  {
+    "id": "pattern_9",
+    "task_type": "pattern_induction",
+    "prompt": "U Y C U Y C U Y",
+    "target": " C"
+  },
+  {
+    "id": "fact_19",
+    "task_type": "fact_recall",
+    "prompt": "The capital of New Zealand is Wellington. The capital of Nigeria is Abuja. The capital of Sweden is",
+    "target": " Stockholm"
+  },
+  {
+    "id": "pattern_22",
+    "task_type": "pattern_induction",
+    "prompt": "A G L A G L A G",
+    "target": " L"
+  },
+  {
+    "id": "pattern_6",
+    "task_type": "pattern_induction",
+    "prompt": "B K R B K R B K",
+    "target": " R"
+  },
+  {
+    "id": "comp_5",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 98 or 79? ",
+    "target": "98"
+  },
+  {
+    "id": "niah_19",
+    "task_type": "niah",
+    "prompt": "The secret code is 94. The fish is brown. The cat is pink. The secret code is",
+    "target": " 94"
+  },
+  {
+    "id": "count_6",
+    "task_type": "counting",
+    "prompt": "Three, Four, Five, Six,",
+    "target": " Seven"
+  },
+  {
+    "id": "arith_9",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 18 and 15 is",
+    "target": " 33"
+  },
+  {
+    "id": "copy_5",
+    "task_type": "copy",
+    "prompt": "Input: Yam -> Output: Yam\nInput: Fig -> Output:",
+    "target": " Fig"
+  },
+  {
+    "id": "copy_24",
+    "task_type": "copy",
+    "prompt": "Input: Orange -> Output: Orange\nInput: Carrot -> Output:",
+    "target": " Carrot"
+  },
+  {
+    "id": "copy_13",
+    "task_type": "copy",
+    "prompt": "Input: Tangerine -> Output: Tangerine\nInput: Papaya -> Output:",
+    "target": " Papaya"
+  },
+  {
+    "id": "comp_14",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 24 or 48? ",
+    "target": "48"
+  },
+  {
+    "id": "fact_1",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Indonesia is Jakarta. The capital of Japan is Tokyo. The capital of Germany is",
+    "target": " Berlin"
+  },
+  {
+    "id": "pattern_18",
+    "task_type": "pattern_induction",
+    "prompt": "D F O D F O D F",
+    "target": " O"
+  },
+  {
+    "id": "comp_1",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 18 or 27? ",
+    "target": "27"
+  },
+  {
+    "id": "niah_15",
+    "task_type": "niah",
+    "prompt": "The secret code is 34. The cat is brown. The bird is purple. The secret code is",
+    "target": " 34"
+  },
+  {
+    "id": "pattern_10",
+    "task_type": "pattern_induction",
+    "prompt": "I W S I W S I W",
+    "target": " S"
+  },
+  {
+    "id": "copy_23",
+    "task_type": "copy",
+    "prompt": "Input: Xigua -> Output: Xigua\nInput: Zucchini -> Output:",
+    "target": " Zucchini"
+  },
+  {
+    "id": "sort_13",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Xigua, Lemon, Elderberry ->",
+    "target": " Elderberry"
+  },
+  {
+    "id": "sort_19",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Tangerine, Elderberry, Papaya ->",
+    "target": " Elderberry"
+  },
+  {
+    "id": "arith_11",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 16 and 18 is",
+    "target": " 34"
+  },
+  {
+    "id": "arith_25",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 4 and 9 is",
+    "target": " 13"
+  },
+  {
+    "id": "copy_20",
+    "task_type": "copy",
+    "prompt": "Input: Orange -> Output: Orange\nInput: Watermelon -> Output:",
+    "target": " Watermelon"
+  },
+  {
+    "id": "niah_18",
+    "task_type": "niah",
+    "prompt": "The secret code is 15. The horse is white. The pig is pink. The secret code is",
+    "target": " 15"
+  }
+]

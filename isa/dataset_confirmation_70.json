@@ -1,0 +1,422 @@
+[
+  {
+    "id": "niah_33",
+    "task_type": "niah",
+    "prompt": "The secret code is 72. The pig is blue. The horse is white. The secret code is",
+    "target": " 72"
+  },
+  {
+    "id": "pattern_39",
+    "task_type": "pattern_induction",
+    "prompt": "Q D E Q D E Q D",
+    "target": " E"
+  },
+  {
+    "id": "fact_34",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Ireland is Dublin. The capital of Nigeria is Abuja. The capital of Cuba is",
+    "target": " Havana"
+  },
+  {
+    "id": "niah_39",
+    "task_type": "niah",
+    "prompt": "The secret code is 36. The horse is red. The goat is black. The secret code is",
+    "target": " 36"
+  },
+  {
+    "id": "pattern_31",
+    "task_type": "pattern_induction",
+    "prompt": "V U W V U W V U",
+    "target": " W"
+  },
+  {
+    "id": "niah_40",
+    "task_type": "niah",
+    "prompt": "The secret code is 59. The dog is orange. The goat is orange. The secret code is",
+    "target": " 59"
+  },
+  {
+    "id": "count_29",
+    "task_type": "counting",
+    "prompt": "Two, Three, Four, Five,",
+    "target": " Six"
+  },
+  {
+    "id": "fact_29",
+    "task_type": "fact_recall",
+    "prompt": "The capital of France is Paris. The capital of Sweden is Stockholm. The capital of Netherlands is",
+    "target": " Amsterdam"
+  },
+  {
+    "id": "count_32",
+    "task_type": "counting",
+    "prompt": "Eight, Nine, Ten, Eleven,",
+    "target": " Twelve"
+  },
+  {
+    "id": "pattern_29",
+    "task_type": "pattern_induction",
+    "prompt": "B A I B A I B A",
+    "target": " I"
+  },
+  {
+    "id": "count_36",
+    "task_type": "counting",
+    "prompt": "Seven, Eight, Nine, Ten,",
+    "target": " Eleven"
+  },
+  {
+    "id": "pattern_32",
+    "task_type": "pattern_induction",
+    "prompt": "C L P C L P C L",
+    "target": " P"
+  },
+  {
+    "id": "copy_40",
+    "task_type": "copy",
+    "prompt": "Input: Pepper -> Output: Pepper\nInput: Bread -> Output:",
+    "target": " Bread"
+  },
+  {
+    "id": "niah_37",
+    "task_type": "niah",
+    "prompt": "The secret code is 13. The goat is purple. The pig is orange. The secret code is",
+    "target": " 13"
+  },
+  {
+    "id": "count_38",
+    "task_type": "counting",
+    "prompt": "Seven, Eight, Nine, Ten,",
+    "target": " Eleven"
+  },
+  {
+    "id": "copy_39",
+    "task_type": "copy",
+    "prompt": "Input: Pepper -> Output: Pepper\nInput: Egg -> Output:",
+    "target": " Egg"
+  },
+  {
+    "id": "niah_38",
+    "task_type": "niah",
+    "prompt": "The secret code is 16. The cat is yellow. The cat is white. The secret code is",
+    "target": " 16"
+  },
+  {
+    "id": "fact_38",
+    "task_type": "fact_recall",
+    "prompt": "The capital of New Zealand is Wellington. The capital of Indonesia is Jakarta. The capital of Philippines is",
+    "target": " Manila"
+  },
+  {
+    "id": "fact_33",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Philippines is Manila. The capital of Canada is Ottawa. The capital of Venezuela is",
+    "target": " Caracas"
+  },
+  {
+    "id": "pattern_38",
+    "task_type": "pattern_induction",
+    "prompt": "R V S R V S R V",
+    "target": " S"
+  },
+  {
+    "id": "copy_37",
+    "task_type": "copy",
+    "prompt": "Input: Potato -> Output: Potato\nInput: Cheese -> Output:",
+    "target": " Cheese"
+  },
+  {
+    "id": "copy_28",
+    "task_type": "copy",
+    "prompt": "Input: Rice -> Output: Rice\nInput: Tomato -> Output:",
+    "target": " Tomato"
+  },
+  {
+    "id": "copy_32",
+    "task_type": "copy",
+    "prompt": "Input: Pea -> Output: Pea\nInput: Pepper -> Output:",
+    "target": " Pepper"
+  },
+  {
+    "id": "fact_37",
+    "task_type": "fact_recall",
+    "prompt": "The capital of India is New Delhi. The capital of Vietnam is Hanoi. The capital of Indonesia is",
+    "target": " Jakarta"
+  },
+  {
+    "id": "niah_30",
+    "task_type": "niah",
+    "prompt": "The secret code is 45. The dog is pink. The goat is green. The secret code is",
+    "target": " 45"
+  },
+  {
+    "id": "pattern_41",
+    "task_type": "pattern_induction",
+    "prompt": "R W O R W O R W",
+    "target": " O"
+  },
+  {
+    "id": "copy_35",
+    "task_type": "copy",
+    "prompt": "Input: Tangerine -> Output: Tangerine\nInput: Flour -> Output:",
+    "target": " Flour"
+  },
+  {
+    "id": "copy_33",
+    "task_type": "copy",
+    "prompt": "Input: Egg -> Output: Egg\nInput: Salt -> Output:",
+    "target": " Salt"
+  },
+  {
+    "id": "niah_34",
+    "task_type": "niah",
+    "prompt": "The secret code is 35. The fish is brown. The pig is green. The secret code is",
+    "target": " 35"
+  },
+  {
+    "id": "copy_38",
+    "task_type": "copy",
+    "prompt": "Input: Kiwi -> Output: Kiwi\nInput: Milk -> Output:",
+    "target": " Milk"
+  },
+  {
+    "id": "count_39",
+    "task_type": "counting",
+    "prompt": "Seventeen, Eighteen, Nineteen, Twenty,",
+    "target": " Twenty-one"
+  },
+  {
+    "id": "count_30",
+    "task_type": "counting",
+    "prompt": "Twenty-two, Twenty-three, Twenty-four, Twenty-five,",
+    "target": " Twenty-six"
+  },
+  {
+    "id": "fact_28",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Mexico is Mexico City. The capital of Argentina is Buenos Aires. The capital of Belgium is",
+    "target": " Brussels"
+  },
+  {
+    "id": "count_35",
+    "task_type": "counting",
+    "prompt": "Thirty-one, Thirty-two, Thirty-three, Thirty-four,",
+    "target": " Thirty-five"
+  },
+  {
+    "id": "fact_40",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Turkey is Ankara. The capital of Greece is Athens. The capital of Kenya is",
+    "target": " Nairobi"
+  },
+  {
+    "id": "pattern_35",
+    "task_type": "pattern_induction",
+    "prompt": "Z X C Z X C Z X",
+    "target": " C"
+  },
+  {
+    "id": "count_33",
+    "task_type": "counting",
+    "prompt": "Twenty-five, Twenty-six, Twenty-seven, Twenty-eight,",
+    "target": " Twenty-nine"
+  },
+  {
+    "id": "pattern_33",
+    "task_type": "pattern_induction",
+    "prompt": "N C V N C V N C",
+    "target": " V"
+  },
+  {
+    "id": "copy_41",
+    "task_type": "copy",
+    "prompt": "Input: Carrot -> Output: Carrot\nInput: Rice -> Output:",
+    "target": " Rice"
+  },
+  {
+    "id": "niah_28",
+    "task_type": "niah",
+    "prompt": "The secret code is 46. The sheep is black. The fish is red. The secret code is",
+    "target": " 46"
+  },
+  {
+    "id": "count_28",
+    "task_type": "counting",
+    "prompt": "Eleven, Twelve, Thirteen, Fourteen,",
+    "target": " Fifteen"
+  },
+  {
+    "id": "niah_35",
+    "task_type": "niah",
+    "prompt": "The secret code is 84. The cat is blue. The dog is pink. The secret code is",
+    "target": " 84"
+  },
+  {
+    "id": "copy_29",
+    "task_type": "copy",
+    "prompt": "Input: Lentil -> Output: Lentil\nInput: Onion -> Output:",
+    "target": " Onion"
+  },
+  {
+    "id": "niah_31",
+    "task_type": "niah",
+    "prompt": "The secret code is 61. The pig is pink. The cow is pink. The secret code is",
+    "target": " 61"
+  },
+  {
+    "id": "count_37",
+    "task_type": "counting",
+    "prompt": "Forty-one, Forty-two, Forty-three, Forty-four,",
+    "target": " Forty-five"
+  },
+  {
+    "id": "fact_41",
+    "task_type": "fact_recall",
+    "prompt": "The capital of China is Beijing. The capital of Russia is Moscow. The capital of South Africa is",
+    "target": " Pretoria"
+  },
+  {
+    "id": "niah_41",
+    "task_type": "niah",
+    "prompt": "The secret code is 97. The dog is yellow. The cow is blue. The secret code is",
+    "target": " 97"
+  },
+  {
+    "id": "pattern_36",
+    "task_type": "pattern_induction",
+    "prompt": "T Z S T Z S T Z",
+    "target": " S"
+  },
+  {
+    "id": "copy_31",
+    "task_type": "copy",
+    "prompt": "Input: Potato -> Output: Potato\nInput: Ginger -> Output:",
+    "target": " Ginger"
+  },
+  {
+    "id": "fact_31",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Vietnam is Hanoi. The capital of Mexico is Mexico City. The capital of Chile is",
+    "target": " Santiago"
+  },
+  {
+    "id": "niah_32",
+    "task_type": "niah",
+    "prompt": "The secret code is 94. The sheep is pink. The horse is black. The secret code is",
+    "target": " 94"
+  },
+  {
+    "id": "count_31",
+    "task_type": "counting",
+    "prompt": "Thirty-seven, Thirty-eight, Thirty-nine, Forty,",
+    "target": " Forty-one"
+  },
+  {
+    "id": "pattern_40",
+    "task_type": "pattern_induction",
+    "prompt": "E I V E I V E I",
+    "target": " V"
+  },
+  {
+    "id": "fact_36",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Austria is Vienna. The capital of Japan is Tokyo. The capital of Malaysia is",
+    "target": " Kuala Lumpur"
+  },
+  {
+    "id": "pattern_34",
+    "task_type": "pattern_induction",
+    "prompt": "P T A P T A P T",
+    "target": " A"
+  },
+  {
+    "id": "fact_35",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Egypt is Cairo. The capital of Canada is Ottawa. The capital of Vietnam is",
+    "target": " Hanoi"
+  },
+  {
+    "id": "count_40",
+    "task_type": "counting",
+    "prompt": "Twenty-nine, Thirty, Thirty-one, Thirty-two,",
+    "target": " Thirty-three"
+  },
+  {
+    "id": "niah_29",
+    "task_type": "niah",
+    "prompt": "The secret code is 44. The dog is green. The cow is brown. The secret code is",
+    "target": " 44"
+  },
+  {
+    "id": "copy_30",
+    "task_type": "copy",
+    "prompt": "Input: Ginger -> Output: Ginger\nInput: Garlic -> Output:",
+    "target": " Garlic"
+  },
+  {
+    "id": "fact_39",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Chile is Santiago. The capital of Netherlands is Amsterdam. The capital of New Zealand is",
+    "target": " Wellington"
+  },
+  {
+    "id": "count_41",
+    "task_type": "counting",
+    "prompt": "One, Two, Three, Four,",
+    "target": " Five"
+  },
+  {
+    "id": "fact_32",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Egypt is Cairo. The capital of Philippines is Manila. The capital of Colombia is",
+    "target": " Bogota"
+  },
+  {
+    "id": "copy_34",
+    "task_type": "copy",
+    "prompt": "Input: Flour -> Output: Flour\nInput: Sugar -> Output:",
+    "target": " Sugar"
+  },
+  {
+    "id": "count_34",
+    "task_type": "counting",
+    "prompt": "Four, Five, Six, Seven,",
+    "target": " Eight"
+  },
+  {
+    "id": "pattern_28",
+    "task_type": "pattern_induction",
+    "prompt": "N S M N S M N S",
+    "target": " M"
+  },
+  {
+    "id": "fact_30",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Portugal is Lisbon. The capital of Egypt is Cairo. The capital of Peru is",
+    "target": " Lima"
+  },
+  {
+    "id": "pattern_37",
+    "task_type": "pattern_induction",
+    "prompt": "S H Y S H Y S H",
+    "target": " Y"
+  },
+  {
+    "id": "pattern_30",
+    "task_type": "pattern_induction",
+    "prompt": "L S F L S F L S",
+    "target": " F"
+  },
+  {
+    "id": "copy_36",
+    "task_type": "copy",
+    "prompt": "Input: Oat -> Output: Oat\nInput: Butter -> Output:",
+    "target": " Butter"
+  },
+  {
+    "id": "niah_36",
+    "task_type": "niah",
+    "prompt": "The secret code is 49. The cat is blue. The bird is red. The secret code is",
+    "target": " 49"
+  }
+]
