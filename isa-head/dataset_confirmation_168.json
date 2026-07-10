@@ -1,0 +1,1010 @@
+[
+  {
+    "id": "sort_40",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Lemon, Mango, Quince ->",
+    "target": " Lemon"
+  },
+  {
+    "id": "arith_33",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 3 and 7 is",
+    "target": " 10"
+  },
+  {
+    "id": "fact_29",
+    "task_type": "fact_recall",
+    "prompt": "The capital of France is Paris. The capital of Sweden is Stockholm. The capital of Netherlands is",
+    "target": " Amsterdam"
+  },
+  {
+    "id": "fact_36",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Austria is Vienna. The capital of Japan is Tokyo. The capital of Malaysia is",
+    "target": " Kuala Lumpur"
+  },
+  {
+    "id": "copy_32",
+    "task_type": "copy",
+    "prompt": "Input: Pea -> Output: Pea\nInput: Pepper -> Output:",
+    "target": " Pepper"
+  },
+  {
+    "id": "comp_41",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 67 or 73? ",
+    "target": "73"
+  },
+  {
+    "id": "pattern_33",
+    "task_type": "pattern_induction",
+    "prompt": "N C V N C V N C",
+    "target": " V"
+  },
+  {
+    "id": "arith_41",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 3 and 12 is",
+    "target": " 15"
+  },
+  {
+    "id": "comp_30",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 51 or 76? ",
+    "target": "76"
+  },
+  {
+    "id": "count_33",
+    "task_type": "counting",
+    "prompt": "Twenty-five, Twenty-six, Twenty-seven, Twenty-eight,",
+    "target": " Twenty-nine"
+  },
+  {
+    "id": "pattern_28",
+    "task_type": "pattern_induction",
+    "prompt": "N S M N S M N S",
+    "target": " M"
+  },
+  {
+    "id": "sort_33",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Nectarine, Raspberry, Vanilla ->",
+    "target": " Nectarine"
+  },
+  {
+    "id": "fact_28",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Mexico is Mexico City. The capital of Argentina is Buenos Aires. The capital of Belgium is",
+    "target": " Brussels"
+  },
+  {
+    "id": "count_41",
+    "task_type": "counting",
+    "prompt": "One, Two, Three, Four,",
+    "target": " Five"
+  },
+  {
+    "id": "niah_40",
+    "task_type": "niah",
+    "prompt": "The secret code is 59. The dog is orange. The goat is orange. The secret code is",
+    "target": " 59"
+  },
+  {
+    "id": "fact_35",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Egypt is Cairo. The capital of Canada is Ottawa. The capital of Vietnam is",
+    "target": " Hanoi"
+  },
+  {
+    "id": "count_29",
+    "task_type": "counting",
+    "prompt": "Two, Three, Four, Five,",
+    "target": " Six"
+  },
+  {
+    "id": "fact_39",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Chile is Santiago. The capital of Netherlands is Amsterdam. The capital of New Zealand is",
+    "target": " Wellington"
+  },
+  {
+    "id": "count_34",
+    "task_type": "counting",
+    "prompt": "Four, Five, Six, Seven,",
+    "target": " Eight"
+  },
+  {
+    "id": "niah_28",
+    "task_type": "niah",
+    "prompt": "The secret code is 46. The sheep is black. The fish is red. The secret code is",
+    "target": " 46"
+  },
+  {
+    "id": "sort_35",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Nectarine, Papaya, Fig ->",
+    "target": " Fig"
+  },
+  {
+    "id": "arith_36",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 15 and 3 is",
+    "target": " 18"
+  },
+  {
+    "id": "copy_28",
+    "task_type": "copy",
+    "prompt": "Input: Rice -> Output: Rice\nInput: Tomato -> Output:",
+    "target": " Tomato"
+  },
+  {
+    "id": "count_36",
+    "task_type": "counting",
+    "prompt": "Seven, Eight, Nine, Ten,",
+    "target": " Eleven"
+  },
+  {
+    "id": "sort_38",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Fig, Kiwi, Honeydew ->",
+    "target": " Fig"
+  },
+  {
+    "id": "niah_35",
+    "task_type": "niah",
+    "prompt": "The secret code is 84. The cat is blue. The dog is pink. The secret code is",
+    "target": " 84"
+  },
+  {
+    "id": "niah_38",
+    "task_type": "niah",
+    "prompt": "The secret code is 16. The cat is yellow. The cat is white. The secret code is",
+    "target": " 16"
+  },
+  {
+    "id": "arith_40",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 4 and 8 is",
+    "target": " 12"
+  },
+  {
+    "id": "count_39",
+    "task_type": "counting",
+    "prompt": "Seventeen, Eighteen, Nineteen, Twenty,",
+    "target": " Twenty-one"
+  },
+  {
+    "id": "pattern_41",
+    "task_type": "pattern_induction",
+    "prompt": "R W O R W O R W",
+    "target": " O"
+  },
+  {
+    "id": "count_35",
+    "task_type": "counting",
+    "prompt": "Thirty-one, Thirty-two, Thirty-three, Thirty-four,",
+    "target": " Thirty-five"
+  },
+  {
+    "id": "pattern_39",
+    "task_type": "pattern_induction",
+    "prompt": "Q D E Q D E Q D",
+    "target": " E"
+  },
+  {
+    "id": "comp_28",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 88 or 11? ",
+    "target": "88"
+  },
+  {
+    "id": "fact_40",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Turkey is Ankara. The capital of Greece is Athens. The capital of Kenya is",
+    "target": " Nairobi"
+  },
+  {
+    "id": "pattern_35",
+    "task_type": "pattern_induction",
+    "prompt": "Z X C Z X C Z X",
+    "target": " C"
+  },
+  {
+    "id": "pattern_38",
+    "task_type": "pattern_induction",
+    "prompt": "R V S R V S R V",
+    "target": " S"
+  },
+  {
+    "id": "copy_30",
+    "task_type": "copy",
+    "prompt": "Input: Ginger -> Output: Ginger\nInput: Garlic -> Output:",
+    "target": " Garlic"
+  },
+  {
+    "id": "sort_30",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Onion, Carrot, Apple ->",
+    "target": " Apple"
+  },
+  {
+    "id": "niah_37",
+    "task_type": "niah",
+    "prompt": "The secret code is 13. The goat is purple. The pig is orange. The secret code is",
+    "target": " 13"
+  },
+  {
+    "id": "fact_32",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Egypt is Cairo. The capital of Philippines is Manila. The capital of Colombia is",
+    "target": " Bogota"
+  },
+  {
+    "id": "arith_28",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 16 and 4 is",
+    "target": " 20"
+  },
+  {
+    "id": "arith_39",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 11 and 12 is",
+    "target": " 23"
+  },
+  {
+    "id": "copy_36",
+    "task_type": "copy",
+    "prompt": "Input: Oat -> Output: Oat\nInput: Butter -> Output:",
+    "target": " Butter"
+  },
+  {
+    "id": "fact_38",
+    "task_type": "fact_recall",
+    "prompt": "The capital of New Zealand is Wellington. The capital of Indonesia is Jakarta. The capital of Philippines is",
+    "target": " Manila"
+  },
+  {
+    "id": "count_40",
+    "task_type": "counting",
+    "prompt": "Twenty-nine, Thirty, Thirty-one, Thirty-two,",
+    "target": " Thirty-three"
+  },
+  {
+    "id": "niah_29",
+    "task_type": "niah",
+    "prompt": "The secret code is 44. The dog is green. The cow is brown. The secret code is",
+    "target": " 44"
+  },
+  {
+    "id": "niah_39",
+    "task_type": "niah",
+    "prompt": "The secret code is 36. The horse is red. The goat is black. The secret code is",
+    "target": " 36"
+  },
+  {
+    "id": "arith_35",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 10 and 8 is",
+    "target": " 18"
+  },
+  {
+    "id": "count_31",
+    "task_type": "counting",
+    "prompt": "Thirty-seven, Thirty-eight, Thirty-nine, Forty,",
+    "target": " Forty-one"
+  },
+  {
+    "id": "pattern_40",
+    "task_type": "pattern_induction",
+    "prompt": "E I V E I V E I",
+    "target": " V"
+  },
+  {
+    "id": "pattern_34",
+    "task_type": "pattern_induction",
+    "prompt": "P T A P T A P T",
+    "target": " A"
+  },
+  {
+    "id": "fact_33",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Philippines is Manila. The capital of Canada is Ottawa. The capital of Venezuela is",
+    "target": " Caracas"
+  },
+  {
+    "id": "copy_39",
+    "task_type": "copy",
+    "prompt": "Input: Pepper -> Output: Pepper\nInput: Egg -> Output:",
+    "target": " Egg"
+  },
+  {
+    "id": "niah_31",
+    "task_type": "niah",
+    "prompt": "The secret code is 61. The pig is pink. The cow is pink. The secret code is",
+    "target": " 61"
+  },
+  {
+    "id": "niah_33",
+    "task_type": "niah",
+    "prompt": "The secret code is 72. The pig is blue. The horse is white. The secret code is",
+    "target": " 72"
+  },
+  {
+    "id": "comp_37",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 26 or 53? ",
+    "target": "53"
+  },
+  {
+    "id": "arith_34",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 2 and 4 is",
+    "target": " 6"
+  },
+  {
+    "id": "fact_30",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Portugal is Lisbon. The capital of Egypt is Cairo. The capital of Peru is",
+    "target": " Lima"
+  },
+  {
+    "id": "comp_40",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 48 or 61? ",
+    "target": "61"
+  },
+  {
+    "id": "niah_34",
+    "task_type": "niah",
+    "prompt": "The secret code is 35. The fish is brown. The pig is green. The secret code is",
+    "target": " 35"
+  },
+  {
+    "id": "count_28",
+    "task_type": "counting",
+    "prompt": "Eleven, Twelve, Thirteen, Fourteen,",
+    "target": " Fifteen"
+  },
+  {
+    "id": "comp_39",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 75 or 52? ",
+    "target": "75"
+  },
+  {
+    "id": "fact_37",
+    "task_type": "fact_recall",
+    "prompt": "The capital of India is New Delhi. The capital of Vietnam is Hanoi. The capital of Indonesia is",
+    "target": " Jakarta"
+  },
+  {
+    "id": "pattern_32",
+    "task_type": "pattern_induction",
+    "prompt": "C L P C L P C L",
+    "target": " P"
+  },
+  {
+    "id": "comp_32",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 23 or 28? ",
+    "target": "28"
+  },
+  {
+    "id": "fact_41",
+    "task_type": "fact_recall",
+    "prompt": "The capital of China is Beijing. The capital of Russia is Moscow. The capital of South Africa is",
+    "target": " Pretoria"
+  },
+  {
+    "id": "copy_41",
+    "task_type": "copy",
+    "prompt": "Input: Carrot -> Output: Carrot\nInput: Rice -> Output:",
+    "target": " Rice"
+  },
+  {
+    "id": "copy_35",
+    "task_type": "copy",
+    "prompt": "Input: Tangerine -> Output: Tangerine\nInput: Flour -> Output:",
+    "target": " Flour"
+  },
+  {
+    "id": "comp_38",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 45 or 84? ",
+    "target": "84"
+  },
+  {
+    "id": "count_38",
+    "task_type": "counting",
+    "prompt": "Seven, Eight, Nine, Ten,",
+    "target": " Eleven"
+  },
+  {
+    "id": "arith_30",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 16 and 15 is",
+    "target": " 31"
+  },
+  {
+    "id": "count_32",
+    "task_type": "counting",
+    "prompt": "Eight, Nine, Ten, Eleven,",
+    "target": " Twelve"
+  },
+  {
+    "id": "sort_29",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Onion, Xigua, Mango ->",
+    "target": " Mango"
+  },
+  {
+    "id": "count_37",
+    "task_type": "counting",
+    "prompt": "Forty-one, Forty-two, Forty-three, Forty-four,",
+    "target": " Forty-five"
+  },
+  {
+    "id": "copy_40",
+    "task_type": "copy",
+    "prompt": "Input: Pepper -> Output: Pepper\nInput: Bread -> Output:",
+    "target": " Bread"
+  },
+  {
+    "id": "comp_35",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 73 or 80? ",
+    "target": "80"
+  },
+  {
+    "id": "arith_32",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 19 and 7 is",
+    "target": " 26"
+  },
+  {
+    "id": "comp_34",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 44 or 24? ",
+    "target": "44"
+  },
+  {
+    "id": "pattern_31",
+    "task_type": "pattern_induction",
+    "prompt": "V U W V U W V U",
+    "target": " W"
+  },
+  {
+    "id": "count_30",
+    "task_type": "counting",
+    "prompt": "Twenty-two, Twenty-three, Twenty-four, Twenty-five,",
+    "target": " Twenty-six"
+  },
+  {
+    "id": "sort_41",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Yam, Zucchini, Elderberry ->",
+    "target": " Elderberry"
+  },
+  {
+    "id": "arith_38",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 2 and 9 is",
+    "target": " 11"
+  },
+  {
+    "id": "sort_34",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Spinach, Mango, Honeydew ->",
+    "target": " Honeydew"
+  },
+  {
+    "id": "comp_29",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 15 or 71? ",
+    "target": "71"
+  },
+  {
+    "id": "niah_32",
+    "task_type": "niah",
+    "prompt": "The secret code is 94. The sheep is pink. The horse is black. The secret code is",
+    "target": " 94"
+  },
+  {
+    "id": "arith_37",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 20 and 10 is",
+    "target": " 30"
+  },
+  {
+    "id": "niah_36",
+    "task_type": "niah",
+    "prompt": "The secret code is 49. The cat is blue. The bird is red. The secret code is",
+    "target": " 49"
+  },
+  {
+    "id": "copy_38",
+    "task_type": "copy",
+    "prompt": "Input: Kiwi -> Output: Kiwi\nInput: Milk -> Output:",
+    "target": " Milk"
+  },
+  {
+    "id": "sort_39",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Cherry, Onion, Strawberry ->",
+    "target": " Cherry"
+  },
+  {
+    "id": "fact_34",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Ireland is Dublin. The capital of Nigeria is Abuja. The capital of Cuba is",
+    "target": " Havana"
+  },
+  {
+    "id": "pattern_29",
+    "task_type": "pattern_induction",
+    "prompt": "B A I B A I B A",
+    "target": " I"
+  },
+  {
+    "id": "pattern_37",
+    "task_type": "pattern_induction",
+    "prompt": "S H Y S H Y S H",
+    "target": " Y"
+  },
+  {
+    "id": "sort_31",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Kiwi, Carrot, Raspberry ->",
+    "target": " Carrot"
+  },
+  {
+    "id": "comp_33",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 50 or 23? ",
+    "target": "50"
+  },
+  {
+    "id": "sort_28",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Tangerine, Carrot, Xigua ->",
+    "target": " Carrot"
+  },
+  {
+    "id": "copy_33",
+    "task_type": "copy",
+    "prompt": "Input: Egg -> Output: Egg\nInput: Salt -> Output:",
+    "target": " Salt"
+  },
+  {
+    "id": "niah_41",
+    "task_type": "niah",
+    "prompt": "The secret code is 97. The dog is yellow. The cow is blue. The secret code is",
+    "target": " 97"
+  },
+  {
+    "id": "sort_37",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Lemon, Yam, Xigua ->",
+    "target": " Lemon"
+  },
+  {
+    "id": "copy_29",
+    "task_type": "copy",
+    "prompt": "Input: Lentil -> Output: Lentil\nInput: Onion -> Output:",
+    "target": " Onion"
+  },
+  {
+    "id": "comp_31",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 60 or 44? ",
+    "target": "60"
+  },
+  {
+    "id": "pattern_30",
+    "task_type": "pattern_induction",
+    "prompt": "L S F L S F L S",
+    "target": " F"
+  },
+  {
+    "id": "arith_29",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 17 and 8 is",
+    "target": " 25"
+  },
+  {
+    "id": "copy_31",
+    "task_type": "copy",
+    "prompt": "Input: Potato -> Output: Potato\nInput: Ginger -> Output:",
+    "target": " Ginger"
+  },
+  {
+    "id": "copy_37",
+    "task_type": "copy",
+    "prompt": "Input: Potato -> Output: Potato\nInput: Cheese -> Output:",
+    "target": " Cheese"
+  },
+  {
+    "id": "arith_31",
+    "task_type": "arithmetic",
+    "prompt": "The sum of 16 and 13 is",
+    "target": " 29"
+  },
+  {
+    "id": "pattern_36",
+    "task_type": "pattern_induction",
+    "prompt": "T Z S T Z S T Z",
+    "target": " S"
+  },
+  {
+    "id": "sort_32",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Orange, Potato, Tangerine ->",
+    "target": " Orange"
+  },
+  {
+    "id": "copy_34",
+    "task_type": "copy",
+    "prompt": "Input: Flour -> Output: Flour\nInput: Sugar -> Output:",
+    "target": " Sugar"
+  },
+  {
+    "id": "niah_30",
+    "task_type": "niah",
+    "prompt": "The secret code is 45. The dog is pink. The goat is green. The secret code is",
+    "target": " 45"
+  },
+  {
+    "id": "comp_36",
+    "task_type": "comparison",
+    "prompt": "Which is larger, 11 or 71? ",
+    "target": "71"
+  },
+  {
+    "id": "sort_36",
+    "task_type": "sorting",
+    "prompt": "Sort alphabetically: Broccoli, Kiwi, Yam ->",
+    "target": " Broccoli"
+  },
+  {
+    "id": "fact_31",
+    "task_type": "fact_recall",
+    "prompt": "The capital of Vietnam is Hanoi. The capital of Mexico is Mexico City. The capital of Chile is",
+    "target": " Santiago"
+  },
+  {
+    "prompt": "Front is the opposite of back. Start is the opposite of",
+    "target": " stop",
+    "task_type": "negation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "Boy is the opposite of girl. Good is the opposite of",
+    "target": " bad",
+    "task_type": "negation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "True is the opposite of false. In is the opposite of",
+    "target": " out",
+    "task_type": "negation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "Wet is the opposite of dry. High is the opposite of",
+    "target": " low",
+    "task_type": "negation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "Good is the opposite of bad. Strong is the opposite of",
+    "target": " weak",
+    "task_type": "negation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "Rich is the opposite of poor. High is the opposite of",
+    "target": " low",
+    "task_type": "negation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "Black is the opposite of white. Front is the opposite of",
+    "target": " back",
+    "task_type": "negation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "High is the opposite of low. Wet is the opposite of",
+    "target": " dry",
+    "task_type": "negation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "Up is the opposite of down. Black is the opposite of",
+    "target": " white",
+    "task_type": "negation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "Up is the opposite of down. In is the opposite of",
+    "target": " out",
+    "task_type": "negation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "Black is the opposite of white. Start is the opposite of",
+    "target": " stop",
+    "task_type": "negation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "High is the opposite of low. Good is the opposite of",
+    "target": " bad",
+    "task_type": "negation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "Boy is the opposite of girl. Strong is the opposite of",
+    "target": " weak",
+    "task_type": "negation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "Front is the opposite of back. Strong is the opposite of",
+    "target": " weak",
+    "task_type": "negation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "A apple is a type of fruit. A blue is a type of",
+    "target": " color",
+    "task_type": "set_membership",
+    "domain": "logic"
+  },
+  {
+    "prompt": "A grape is a type of fruit. A circle is a type of",
+    "target": " shape",
+    "task_type": "set_membership",
+    "domain": "logic"
+  },
+  {
+    "prompt": "A blue is a type of color. A pear is a type of",
+    "target": " fruit",
+    "task_type": "set_membership",
+    "domain": "logic"
+  },
+  {
+    "prompt": "A blue is a type of color. A dog is a type of",
+    "target": " animal",
+    "task_type": "set_membership",
+    "domain": "logic"
+  },
+  {
+    "prompt": "A apple is a type of fruit. A dog is a type of",
+    "target": " animal",
+    "task_type": "set_membership",
+    "domain": "logic"
+  },
+  {
+    "prompt": "A banana is a type of fruit. A red is a type of",
+    "target": " color",
+    "task_type": "set_membership",
+    "domain": "logic"
+  },
+  {
+    "prompt": "A star is a type of shape. A cow is a type of",
+    "target": " animal",
+    "task_type": "set_membership",
+    "domain": "logic"
+  },
+  {
+    "prompt": "A oval is a type of shape. A bird is a type of",
+    "target": " animal",
+    "task_type": "set_membership",
+    "domain": "logic"
+  },
+  {
+    "prompt": "A blue is a type of color. A cat is a type of",
+    "target": " animal",
+    "task_type": "set_membership",
+    "domain": "logic"
+  },
+  {
+    "prompt": "A orange is a type of color. A China is a type of",
+    "target": " country",
+    "task_type": "set_membership",
+    "domain": "logic"
+  },
+  {
+    "prompt": "A Italy is a type of country. A banana is a type of",
+    "target": " fruit",
+    "task_type": "set_membership",
+    "domain": "logic"
+  },
+  {
+    "prompt": "A horse is a type of animal. A France is a type of",
+    "target": " country",
+    "task_type": "set_membership",
+    "domain": "logic"
+  },
+  {
+    "prompt": "A banana is a type of fruit. A bird is a type of",
+    "target": " animal",
+    "task_type": "set_membership",
+    "domain": "logic"
+  },
+  {
+    "prompt": "A Italy is a type of country. A green is a type of",
+    "target": " color",
+    "task_type": "set_membership",
+    "domain": "logic"
+  },
+  {
+    "prompt": "All bachelors are unmarried. John is a bachelor. Therefore John is ",
+    "target": " unmarried",
+    "task_type": "entailment",
+    "domain": "logic"
+  },
+  {
+    "prompt": "Every square is a rectangle. Shape X is a square. Therefore Shape X is a  ",
+    "target": " rectangle",
+    "task_type": "entailment",
+    "domain": "logic"
+  },
+  {
+    "prompt": "Every square is a rectangle. Shape X is a square. Therefore Shape X is a ",
+    "target": " rectangle",
+    "task_type": "entailment",
+    "domain": "logic"
+  },
+  {
+    "prompt": "All bachelors are unmarried. John is a bachelor. Therefore John is",
+    "target": " unmarried",
+    "task_type": "entailment",
+    "domain": "logic"
+  },
+  {
+    "prompt": "All mammals are warm-blooded. A dog is a mammal. Therefore a dog is",
+    "target": " warm-blooded",
+    "task_type": "entailment",
+    "domain": "logic"
+  },
+  {
+    "prompt": "All squares have four sides. A shape is a square. Therefore it has four",
+    "target": " sides",
+    "task_type": "entailment",
+    "domain": "logic"
+  },
+  {
+    "prompt": "All bachelors are unmarried. John is a bachelor. Therefore John is ",
+    "target": " unmarried",
+    "task_type": "entailment",
+    "domain": "logic"
+  },
+  {
+    "prompt": "All squares have four sides. A shape is a square. Therefore it has four",
+    "target": " sides",
+    "task_type": "entailment",
+    "domain": "logic"
+  },
+  {
+    "prompt": "If x=y and y=z, then x= ",
+    "target": "z",
+    "task_type": "entailment",
+    "domain": "logic"
+  },
+  {
+    "prompt": "If A equals B, then B equals ",
+    "target": " A",
+    "task_type": "entailment",
+    "domain": "logic"
+  },
+  {
+    "prompt": "All planets orbit a star. Earth is a planet. Therefore Earth orbits a",
+    "target": " star",
+    "task_type": "entailment",
+    "domain": "logic"
+  },
+  {
+    "prompt": "All squares have four sides. A shape is a square. Therefore it has four",
+    "target": " sides",
+    "task_type": "entailment",
+    "domain": "logic"
+  },
+  {
+    "prompt": "All mammals are warm-blooded. A dog is a mammal. Therefore a dog is  ",
+    "target": " warm-blooded",
+    "task_type": "entailment",
+    "domain": "logic"
+  },
+  {
+    "prompt": "If it is raining, the ground is wet. It is raining. Therefore the ground is  ",
+    "target": " wet",
+    "task_type": "entailment",
+    "domain": "logic"
+  },
+  {
+    "prompt": "The letters N and P make NP. The letters Z and V make",
+    "target": " ZV",
+    "task_type": "concatenation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "The letters S and B make SB. The letters F and J make",
+    "target": " FJ",
+    "task_type": "concatenation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "The letters X and B make XB. The letters F and T make",
+    "target": " FT",
+    "task_type": "concatenation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "The letters E and A make EA. The letters Y and P make",
+    "target": " YP",
+    "task_type": "concatenation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "The letters J and V make JV. The letters V and P make",
+    "target": " VP",
+    "task_type": "concatenation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "The letters Z and I make ZI. The letters G and U make",
+    "target": " GU",
+    "task_type": "concatenation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "The letters W and O make WO. The letters Z and C make",
+    "target": " ZC",
+    "task_type": "concatenation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "The letters C and N make CN. The letters V and S make",
+    "target": " VS",
+    "task_type": "concatenation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "The letters K and V make KV. The letters Q and X make",
+    "target": " QX",
+    "task_type": "concatenation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "The letters W and Q make WQ. The letters A and C make",
+    "target": " AC",
+    "task_type": "concatenation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "The letters A and Z make AZ. The letters D and A make",
+    "target": " DA",
+    "task_type": "concatenation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "The letters L and U make LU. The letters Y and J make",
+    "target": " YJ",
+    "task_type": "concatenation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "The letters I and N make IN. The letters I and R make",
+    "target": " IR",
+    "task_type": "concatenation",
+    "domain": "logic"
+  },
+  {
+    "prompt": "The letters W and F make WF. The letters L and G make",
+    "target": " LG",
+    "task_type": "concatenation",
+    "domain": "logic"
+  }
+]

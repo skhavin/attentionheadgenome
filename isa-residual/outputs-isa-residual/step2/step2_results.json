@@ -1,0 +1,16 @@
+{
+  "qwen": {
+    "within_comp_sims_mean": 0.06660894360393285,
+    "comp_to_copy_sims_mean": -0.5015672087669373,
+    "cliffs_delta": 1.0,
+    "permutation_p_value": 0.1673,
+    "discriminability_accuracy": 1.0
+  },
+  "llama": {
+    "within_comp_sims_mean": 0.08391573876142502,
+    "comp_to_copy_sims_mean": -0.5153613805770874,
+    "cliffs_delta": 1.0,
+    "permutation_p_value": 0.1698,
+    "discriminability_accuracy": 1.0
+  }
+}

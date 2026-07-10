@@ -1,0 +1,10 @@
+{
+  "step0_deconfounded": {
+    "overall_spearman_rho": 0.9644225506294472,
+    "mantel_permutation_p_value": 0.0,
+    "subgroups": {
+      "original_10_pairs_rho": 0.9757575757575757,
+      "new_18_pairs_rho": 0.9484004127966976
+    }
+  }
+}

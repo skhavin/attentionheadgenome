@@ -1,0 +1,14 @@
+{
+  "sorting": {
+    "mean_spearman_rho": 0.9198228571428574,
+    "ci_95_lower": 0.7714285714285715,
+    "ci_95_upper": 1.0,
+    "supports_generalization": true
+  },
+  "arithmetic": {
+    "mean_spearman_rho": 0.9419542857142859,
+    "ci_95_lower": 0.942857142857143,
+    "ci_95_upper": 0.942857142857143,
+    "supports_generalization": true
+  }
+}
