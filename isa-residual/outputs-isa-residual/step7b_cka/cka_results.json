@@ -1,0 +1,16 @@
+{
+  "deconfounded_centroids": {
+    "qwen_llama": {
+      "cka": 0.7781000137329102,
+      "p_value": 0.0001
+    },
+    "qwen_phi": {
+      "cka": 0.9030842185020447,
+      "p_value": 0.0001
+    },
+    "llama_phi": {
+      "cka": 0.8274204730987549,
+      "p_value": 0.0001
+    }
+  }
+}

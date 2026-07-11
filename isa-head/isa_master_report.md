@@ -27,6 +27,23 @@ This document serves as an index for all scripts, datasets, and output results g
 | :--- | :--- |
 | `isa/ISA_LOGIT_LENS_REPORT.md` | The initial consolidated statistical findings and roadmap (now merged here). |
 
+## 4.5 Phase Goals & Code Mapping
+
+This section maps each experimental phase to its specific goal, the Python scripts that execute it, and the high-level findings.
+
+| Phase | Goal | Code Files | Findings |
+| :--- | :--- | :--- | :--- |
+| **Phase 1: Life of a Token** | Track the residual stream layer by layer to see when the model commits to the factual target vs. a shuffled target. | `phase1_life_of_token.py` | The residual stream geometrically converges towards the true target word late in the network (Layer 21+). Shuffled targets fail to converge entirely. |
+| **Phase 2: Head Dissection** | Split "Retrieval Heads" into core computational paths (Q/K/V/OV) to test if they perform genuine semantic lookups. | `phase2_head_dissection.py`, `phase2_cliffs.py` | Validated that Retrieval Heads execute genuine semantic Q/K lookups on held-out data, outperforming both uniform and positional baselines. |
+| **Phase 3: Path Patching** | Find the specific MLP that creates the query feature for the Retrieval Heads. | `phase3_path_patching.py`, `phase3_fact_check.py` | Null Result. Single-MLP path patching works for Fact Recall but completely fails to generalize to other tasks. Mechanisms are highly task-dependent. |
+| **Phase 4: Direct Logit Attribution** | Multiply head outputs by `lm_head` to see if Attention Heads literally output the target factual word. | `phase4_dla.py`, `phase4_mlp_dla.py` | Validated the "Intersection Circuit." Attention heads output semantic features (e.g., "City"), but the MLPs dominate the DLA and write the final factual target token. |
+| **Phase 6/7: A2A Edges** | Path-patch Attention-to-Attention (A2A) edges to find Subject/Pointer heads. | `phase6_7_a2a.py`, `phase6_7_power.py` | Underpowered Null. Edges failed to survive significance on the hold-out set, proving that A2A circuitry is fragile and requires massive sample sizes ($N>80$) to verify. |
+| **Phase 8: MLP Genome** | Categorize all MLPs into taxonomy labels (Boost-Correct, Suppress-Distractor). | `phase8_power.py` | Structurally unconfirmable at $N=20$. Backup-MLP redundancy creates massive variance, rendering fine-grained MLP taxonomy impossible to confirm at small scales. |
+| **Phase 9: Generation Timeline** | Track temporal shifts across the network depth (Grammar $\rightarrow$ Concept $\rightarrow$ Confidence). | `phase9_timeline.py`, `phase9_check_l0.py` | The network relies on shallow n-grams early, structures syntax/grammar in the middle layers, and spikes answer confidence exclusively at the very end. |
+| **Phase 11: Transformer OS** | Test if coarse computational roles (Memory vs. Routing) hold across different architectures (Qwen vs Llama). | `phase11_os.py` | Falsified. The "Transformer OS" is not universal. Qwen uses MLPs to write factual answers; Llama heavily uses Attention Heads. Total structural fragmentation. |
+| **Phase 12: Head ISA** | Assign fixed primitive operations (`LOAD`, `SEARCH`, `COPY`) to specific heads. | `phase12_isa.py` | Falsified. The taxonomy collapsed on unseen prompts (0.31 Recall). Heads do not have fixed operations; they dynamically change roles based on the prompt. |
+| **Phase 13: Computation Consistency** | Test if abstract computational motifs exist as dynamic geometric signatures in the residual stream (The Residual ISA). | `phase13_data*.py`, `phase13_rsa*.py`, `phase13_power.py` | Shifted focus from "Heads" to the "Residual Stream". Confirmed that computation is a dynamic geometric state, paving the way for the `isa-residual` codebase. |
+
 ---
 
 ## 5. Experimental Results: The Life of a Token
