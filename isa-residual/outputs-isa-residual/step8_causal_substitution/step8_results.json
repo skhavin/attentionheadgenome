@@ -1,0 +1,28 @@
+{
+  "metric": "summed_comparison_token_mass",
+  "baseline": 0.0020,
+  "layer_5_18pct": {
+    "substitute_erase_copy_add_comp": 0.0034,
+    "control_erase_copy_add_fact": 0.0014,
+    "control_erase_copy_add_random": 0.0051,
+    "directionality_erase_fact_add_comp": 0.0027
+  },
+  "layer_11_39pct": {
+    "substitute_erase_copy_add_comp": 0.0006,
+    "control_erase_copy_add_fact": 0.0035,
+    "control_erase_copy_add_random": 0.0027,
+    "directionality_erase_fact_add_comp": 0.0006
+  },
+  "layer_16_57pct": {
+    "substitute_erase_copy_add_comp": 0.0005,
+    "control_erase_copy_add_fact": 0.0001,
+    "control_erase_copy_add_random": 0.0031,
+    "directionality_erase_fact_add_comp": 0.0003
+  },
+  "layer_22_79pct": {
+    "substitute_erase_copy_add_comp": 0.0026,
+    "control_erase_copy_add_fact": 0.0002,
+    "control_erase_copy_add_random": 0.0055,
+    "directionality_erase_fact_add_comp": 0.0011
+  }
+}
