@@ -117,7 +117,10 @@ To elevate this finding from a strong correlation to a methodologically bulletpr
 * **Goal:** Defend against the critique that RSA might just be a mathematical artifact by re-verifying the structural alignment using a completely orthogonal mathematical method: Centered Kernel Alignment (Linear CKA).
 * **Execution:** We extracted the representations for all 336 Discovery prompts across Qwen, Llama, and Phi-1.5, applying full 5-covariate deconfounding (Length, Target, Density, Entropy, Confidence). To ensure a mathematically valid comparison to the RSA (which used a $12 \times 12$ distance matrix), we collapsed the prompts into 12 computational category centroids. We then computed Linear CKA and calculated significance via a 10,000-shuffle permutation test.
 * **Result:**
-  * **Qwen $\leftrightarrow$ Llama: CKA = 0.7781 ($p = 0.0001$)**
-  * **Qwen $\leftrightarrow$ Phi-1.5: CKA = 0.9031 ($p = 0.0001$)**
-  * **Llama $\leftrightarrow$ Phi-1.5: CKA = 0.8274 ($p = 0.0001$)**
-* **Conclusion:** The cross-architecture structural alignment is mathematically undeniable. Computing CKA over the category centroids yields massive correlations ($0.77 - 0.90$) that max out the significance test floor ($p=0.0001$). This proves that the raw activation similarities of the computations are universally conserved, cleanly insulating the core finding against any "RSA artifact" critiques.
+  * **Qwen $\leftrightarrow$ Llama: CKA = 0.7781 ($p < 0.0001$)**
+  * **Qwen $\leftrightarrow$ Phi-1.5: CKA = 0.9031 ($p < 0.0001$)**
+  * **Llama $\leftrightarrow$ Phi-1.5: CKA = 0.8274 ($p < 0.0001$)**
+* **Conclusion:** The cross-architecture structural alignment is mathematically undeniable. Note that $p < 0.0001$ is a permutation-test floor artifact, meaning no shuffled replicate matched or exceeded the observed CKA value across 10,000 permutations. 
+
+> [!NOTE]
+> **On Magnitude Differences:** CKA and RSA are not expected to yield numerically identical values, as they capture different aspects of representational alignment. CKA (on centroid Gram matrices) captures overall representational similarity, while Spearman RSA captures the rank-order alignment of pairwise distances. We report both because they answer the same qualitative question—is the geometry conserved?—through independent mathematical routes. Their agreement in significance and relative ordering is the corroborating evidence, not their absolute magnitude.
