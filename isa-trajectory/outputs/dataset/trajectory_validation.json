@@ -1,0 +1,1082 @@
+[
+  {
+    "prompt": "Determine the older creature: owl is 7, elephant is 10. The oldest is",
+    "target": " elephant",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you have a cat that is 3 years old and a elephant that is 19 years old, the senior animal is",
+    "target": " elephant",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is older? cat (age 40) or squid (age 7)? Answer:",
+    "target": " cat",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is older? owl (age 37) or dolphin (age 9)? Answer:",
+    "target": " owl",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Determine the older creature: squid is 25, owl is 6. The oldest is",
+    "target": " squid",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is older? dog (age 1) or squid (age 32)? Answer:",
+    "target": " squid",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Determine the older creature: dog is 1, dolphin is 14. The oldest is",
+    "target": " dolphin",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is older? dog (age 31) or cat (age 8)? Answer:",
+    "target": " dog",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is older? squid (age 6) or elephant (age 31)? Answer:",
+    "target": " elephant",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is older? dolphin (age 16) or elephant (age 3)? Answer:",
+    "target": " dolphin",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Determine the older creature: dolphin is 8, elephant is 14. The oldest is",
+    "target": " elephant",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you have a cat that is 7 years old and a dolphin that is 23 years old, the senior animal is",
+    "target": " dolphin",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is older? dolphin (age 25) or owl (age 7)? Answer:",
+    "target": " dolphin",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is older? elephant (age 2) or squid (age 39)? Answer:",
+    "target": " squid",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you have a dolphin that is 1 years old and a elephant that is 34 years old, the senior animal is",
+    "target": " elephant",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is older? dog (age 8) or squid (age 20)? Answer:",
+    "target": " squid",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Determine the older creature: elephant is 23, cat is 2. The oldest is",
+    "target": " elephant",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you have a elephant that is 50 years old and a dog that is 4 years old, the senior animal is",
+    "target": " elephant",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Determine the older creature: squid is 32, elephant is 7. The oldest is",
+    "target": " squid",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Determine the older creature: owl is 35, cat is 2. The oldest is",
+    "target": " owl",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you have a dolphin that is 38 years old and a dog that is 3 years old, the senior animal is",
+    "target": " dolphin",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Determine the older creature: elephant is 29, owl is 5. The oldest is",
+    "target": " elephant",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Determine the older creature: elephant is 15, owl is 1. The oldest is",
+    "target": " elephant",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is older? squid (age 13) or dog (age 7)? Answer:",
+    "target": " squid",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you have a owl that is 24 years old and a elephant that is 4 years old, the senior animal is",
+    "target": " owl",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you have a owl that is 2 years old and a cat that is 49 years old, the senior animal is",
+    "target": " cat",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is older? cat (age 47) or dolphin (age 7)? Answer:",
+    "target": " cat",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you have a elephant that is 36 years old and a cat that is 9 years old, the senior animal is",
+    "target": " elephant",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you have a dog that is 6 years old and a squid that is 25 years old, the senior animal is",
+    "target": " squid",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you have a cat that is 8 years old and a elephant that is 37 years old, the senior animal is",
+    "target": " elephant",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Just say cat over and over, 6 times: cat cat",
+    "target": " cat",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Just say frog over and over, 9 times: frog frog",
+    "target": " frog",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Task: copy. Item: water. Times: 4. Output: water water",
+    "target": " water",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Just say yacht over and over, 9 times: yacht yacht",
+    "target": " yacht",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "I need 3 exact copies of the word sun: sun sun",
+    "target": " sun",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "I need 6 exact copies of the word cat: cat cat",
+    "target": " cat",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Just say cat over and over, 3 times: cat cat",
+    "target": " cat",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Task: copy. Item: sun. Times: 9. Output: sun sun",
+    "target": " sun",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "I need 9 exact copies of the word cat: cat cat",
+    "target": " cat",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Task: copy. Item: frog. Times: 5. Output: frog frog",
+    "target": " frog",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Task: copy. Item: frog. Times: 3. Output: frog frog",
+    "target": " frog",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Task: copy. Item: frog. Times: 7. Output: frog frog",
+    "target": " frog",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Just say sun over and over, 5 times: sun sun",
+    "target": " sun",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Task: copy. Item: violin. Times: 6. Output: violin violin",
+    "target": " violin",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Task: copy. Item: cat. Times: 3. Output: cat cat",
+    "target": " cat",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Just say xylophone over and over, 4 times: xylophone xylophone",
+    "target": " xylophone",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "I need 9 exact copies of the word sun: sun sun",
+    "target": " sun",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "I need 6 exact copies of the word sun: sun sun",
+    "target": " sun",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "I need 6 exact copies of the word kite: kite kite",
+    "target": " kite",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "I need 7 exact copies of the word yacht: yacht yacht",
+    "target": " yacht",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Just say kite over and over, 9 times: kite kite",
+    "target": " kite",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Just say frog over and over, 4 times: frog frog",
+    "target": " frog",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Task: copy. Item: yacht. Times: 8. Output: yacht yacht",
+    "target": " yacht",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Just say water over and over, 7 times: water water",
+    "target": " water",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Just say water over and over, 5 times: water water",
+    "target": " water",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Just say frog over and over, 6 times: frog frog",
+    "target": " frog",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Just say xylophone over and over, 5 times: xylophone xylophone",
+    "target": " xylophone",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Task: copy. Item: violin. Times: 7. Output: violin violin",
+    "target": " violin",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "I need 4 exact copies of the word violin: violin violin",
+    "target": " violin",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Task: copy. Item: kite. Times: 4. Output: kite kite",
+    "target": " kite",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "How many are here? one pens, one pens, one pens. Total:",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count up the following array of items: one pens, one pens, one pens, one pens, one pens. There are",
+    "target": " five",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "How many are here? one birds, one birds, one birds, one birds, one birds, one birds. Total:",
+    "target": " six",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "How many are here? one pens, one pens, one pens, one pens. Total:",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count up the following array of items: one trees, one trees, one trees, one trees, one trees, one trees. There are",
+    "target": " six",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count up the following array of items: one trees, one trees, one trees, one trees. There are",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Evaluating the list: one trees, one trees, one trees, one trees, one trees. Total number:",
+    "target": " five",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Evaluating the list: one boxes, one boxes. Total number:",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count up the following array of items: one keys, one keys, one keys, one keys, one keys, one keys. There are",
+    "target": " six",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Evaluating the list: one cars, one cars, one cars. Total number:",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "How many are here? one boxes, one boxes, one boxes, one boxes. Total:",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count up the following array of items: one pens, one pens, one pens, one pens. There are",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count up the following array of items: one boxes, one boxes. There are",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "How many are here? one keys, one keys, one keys, one keys. Total:",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Evaluating the list: one keys, one keys, one keys, one keys. Total number:",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count up the following array of items: one pens, one pens, one pens, one pens, one pens, one pens. There are",
+    "target": " six",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count up the following array of items: one birds, one birds, one birds. There are",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count up the following array of items: one pens, one pens, one pens. There are",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "How many are here? one keys, one keys. Total:",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count up the following array of items: one cars, one cars, one cars. There are",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Evaluating the list: one trees, one trees, one trees, one trees. Total number:",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "How many are here? one trees, one trees, one trees. Total:",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "How many are here? one birds, one birds, one birds, one birds, one birds. Total:",
+    "target": " five",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Evaluating the list: one birds, one birds, one birds, one birds, one birds. Total number:",
+    "target": " five",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Evaluating the list: one keys, one keys. Total number:",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Evaluating the list: one birds, one birds. Total number:",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count up the following array of items: one boxes, one boxes, one boxes, one boxes. There are",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count up the following array of items: one birds, one birds, one birds, one birds, one birds, one birds. There are",
+    "target": " six",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count up the following array of items: one pens, one pens. There are",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count up the following array of items: one keys, one keys, one keys. There are",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The national capital of Nigeria is widely known to be",
+    "target": " Abuja",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The national capital of India is widely known to be",
+    "target": " New",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the capital city of Venezuela? Answer:",
+    "target": " Caracas",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which city is the capital of Nigeria? Answer:",
+    "target": " Abuja",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Name the capital city of India:",
+    "target": " New",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Identify the capital city for France: it is",
+    "target": " Paris",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The seat of government in India is located at",
+    "target": " New",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the capital city of Turkey? Answer:",
+    "target": " Ankara",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Name the capital city of Nigeria:",
+    "target": " Abuja",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Name the capital city of Japan:",
+    "target": " Tokyo",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the capital city of China? Answer:",
+    "target": " Beijing",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Name the capital city of Egypt:",
+    "target": " Cairo",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which city is the capital of Venezuela? Answer:",
+    "target": " Caracas",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Name the capital city of China:",
+    "target": " Beijing",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Identify the capital city for Venezuela: it is",
+    "target": " Caracas",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Name the capital city of South Africa:",
+    "target": " Pretoria",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The national capital of China is widely known to be",
+    "target": " Beijing",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which city is the capital of Jamaica? Answer:",
+    "target": " Kingston",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which city is the capital of Brazil? Answer:",
+    "target": " Brasilia",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Identify the capital city for Egypt: it is",
+    "target": " Cairo",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The seat of government in South Africa is located at",
+    "target": " Pretoria",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which city is the capital of France? Answer:",
+    "target": " Paris",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the capital city of Russia? Answer:",
+    "target": " Moscow",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The seat of government in Brazil is located at",
+    "target": " Brasilia",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Identify the capital city for China: it is",
+    "target": " Beijing",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which city is the capital of Turkey? Answer:",
+    "target": " Ankara",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Name the capital city of Brazil:",
+    "target": " Brasilia",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Name the capital city of Russia:",
+    "target": " Moscow",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the capital city of France? Answer:",
+    "target": " Paris",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the capital city of Brazil? Answer:",
+    "target": " Brasilia",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Of the numbers 82, 99, and 88, the least is",
+    "target": " 82",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the minimum value among 69, 87, 94? Answer:",
+    "target": " 69",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Of the numbers 61, 52, and 59, the least is",
+    "target": " 52",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the minimum value among 93, 96, 78? Answer:",
+    "target": " 78",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Of the numbers 85, 57, and 54, the least is",
+    "target": " 54",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Of the numbers 90, 53, and 66, the least is",
+    "target": " 53",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the minimum value among 80, 97, 70? Answer:",
+    "target": " 70",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Order ascending: 52, 82, 83. The sequence begins with",
+    "target": " 52",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Of the numbers 74, 84, and 66, the least is",
+    "target": " 66",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Of the numbers 85, 73, and 68, the least is",
+    "target": " 68",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the minimum value among 60, 84, 73? Answer:",
+    "target": " 60",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the minimum value among 56, 99, 89? Answer:",
+    "target": " 56",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Order ascending: 60, 94, 86. The sequence begins with",
+    "target": " 60",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Order ascending: 55, 93, 78. The sequence begins with",
+    "target": " 55",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the minimum value among 73, 97, 60? Answer:",
+    "target": " 60",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the minimum value among 90, 61, 81? Answer:",
+    "target": " 61",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the minimum value among 64, 61, 67? Answer:",
+    "target": " 61",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the minimum value among 51, 87, 95? Answer:",
+    "target": " 51",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the minimum value among 63, 65, 56? Answer:",
+    "target": " 56",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Of the numbers 72, 67, and 66, the least is",
+    "target": " 66",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Of the numbers 95, 83, and 72, the least is",
+    "target": " 72",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Of the numbers 76, 89, and 59, the least is",
+    "target": " 59",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Of the numbers 56, 58, and 95, the least is",
+    "target": " 56",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the minimum value among 73, 51, 98? Answer:",
+    "target": " 51",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Order ascending: 71, 64, 99. The sequence begins with",
+    "target": " 64",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Order ascending: 81, 56, 90. The sequence begins with",
+    "target": " 56",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Order ascending: 89, 62, 52. The sequence begins with",
+    "target": " 52",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Order ascending: 83, 67, 98. The sequence begins with",
+    "target": " 67",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Order ascending: 51, 98, 55. The sequence begins with",
+    "target": " 51",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Of the numbers 86, 56, and 57, the least is",
+    "target": " 56",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Calculate 34 + 21 and output the result:",
+    "target": " 55",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What does 25 - 21 equal? Answer:",
+    "target": " 4",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What does 23 + 36 equal? Answer:",
+    "target": " 59",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What does 22 + 22 equal? Answer:",
+    "target": " 44",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Calculate 32 + 28 and output the result:",
+    "target": " 60",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Please solve 31 - 25. The value is",
+    "target": " 6",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Calculate 26 + 22 and output the result:",
+    "target": " 48",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What does 34 + 36 equal? Answer:",
+    "target": " 70",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Calculate 34 + 33 and output the result:",
+    "target": " 67",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What does 21 + 38 equal? Answer:",
+    "target": " 59",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What does 33 - 26 equal? Answer:",
+    "target": " 7",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What does 36 + 30 equal? Answer:",
+    "target": " 66",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Calculate 38 - 34 and output the result:",
+    "target": " 4",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Calculate 33 - 28 and output the result:",
+    "target": " 5",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What does 35 + 26 equal? Answer:",
+    "target": " 61",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Calculate 34 + 23 and output the result:",
+    "target": " 57",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What does 34 - 25 equal? Answer:",
+    "target": " 9",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What does 34 - 24 equal? Answer:",
+    "target": " 10",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Please solve 31 - 30. The value is",
+    "target": " 1",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Calculate 25 + 34 and output the result:",
+    "target": " 59",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Please solve 27 + 30. The value is",
+    "target": " 57",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Please solve 24 + 31. The value is",
+    "target": " 55",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Calculate 37 - 26 and output the result:",
+    "target": " 11",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What does 28 + 30 equal? Answer:",
+    "target": " 58",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Please solve 29 + 32. The value is",
+    "target": " 61",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Please solve 36 - 34. The value is",
+    "target": " 2",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Calculate 30 - 27 and output the result:",
+    "target": " 3",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What does 23 + 28 equal? Answer:",
+    "target": " 51",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What does 34 + 38 equal? Answer:",
+    "target": " 72",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What does 34 - 31 equal? Answer:",
+    "target": " 3",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  }
+]

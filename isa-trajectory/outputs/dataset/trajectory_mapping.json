@@ -1,0 +1,2522 @@
+[
+  {
+    "prompt": "Between shark at age 12 and bear at age 9, the older one is",
+    "target": " shark",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Between snake at age 43 and bear at age 5, the older one is",
+    "target": " snake",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The cow is 3 years old. The tiger is 37 years old. The older animal is the",
+    "target": " tiger",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Compare the ages: lizard is 9 and horse is 16. The oldest is",
+    "target": " horse",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Given a 40-year-old snake and a 1-year-old eagle, the oldest is the",
+    "target": " snake",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Evaluating longevity: shark is 4, eagle is 45. The oldest is the",
+    "target": " eagle",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Between falcon at age 5 and tiger at age 44, the older one is",
+    "target": " tiger",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The rhino reached 45 years of age, while the eagle reached 1. The older creature is the",
+    "target": " rhino",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Compare the ages: snake is 24 and bear is 5. The oldest is",
+    "target": " snake",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Evaluating longevity: tiger is 37, eagle is 9. The oldest is the",
+    "target": " tiger",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If a rhino is 5 and a shark is 49, the older of the two is definitely the",
+    "target": " shark",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Evaluating longevity: shark is 2, falcon is 27. The oldest is the",
+    "target": " falcon",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Age comparison: wolf(45), falcon(5). The senior is the",
+    "target": " wolf",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is older between a cow (34 yrs) and a whale (5 yrs)? The",
+    "target": " cow",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Consider two animals. First, a shark aged 42. Second, a lizard aged 5. The one with the greater age is the",
+    "target": " shark",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The rhino is 2 years old. The snake is 27 years old. The older animal is the",
+    "target": " snake",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Age comparison: whale(21), bear(8). The senior is the",
+    "target": " whale",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The wolf reached 2 years of age, while the lizard reached 17. The older creature is the",
+    "target": " lizard",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Given a 6-year-old eagle and a 25-year-old tiger, the oldest is the",
+    "target": " tiger",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Consider two animals. First, a wolf aged 8. Second, a snake aged 11. The one with the greater age is the",
+    "target": " snake",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Consider two animals. First, a cow aged 6. Second, a shark aged 22. The one with the greater age is the",
+    "target": " shark",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The lion reached 2 years of age, while the snake reached 27. The older creature is the",
+    "target": " snake",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The shark is 33 years old. The wolf is 6 years old. The older animal is the",
+    "target": " shark",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Given a 1-year-old horse and a 49-year-old wolf, the oldest is the",
+    "target": " wolf",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Consider two animals. First, a bear aged 26. Second, a hawk aged 9. The one with the greater age is the",
+    "target": " bear",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Compare the ages: falcon is 5 and lizard is 25. The oldest is",
+    "target": " lizard",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The eagle reached 2 years of age, while the rhino reached 40. The older creature is the",
+    "target": " rhino",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The falcon has an age of 32. The lion has an age of 7. The elder is the",
+    "target": " falcon",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The bear has an age of 5. The wolf has an age of 40. The elder is the",
+    "target": " wolf",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The hawk is 15 years old. The snake is 2 years old. The older animal is the",
+    "target": " hawk",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Evaluating longevity: rhino is 30, lion is 2. The oldest is the",
+    "target": " rhino",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "An lion lived for 6 years. An shark lived for 45 years. Which lived longer? The",
+    "target": " shark",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The shark is 4 years old. The rhino is 44 years old. The older animal is the",
+    "target": " rhino",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is older between a falcon (29 yrs) and a hawk (6 yrs)? The",
+    "target": " falcon",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The horse is 33 years old. The tiger is 7 years old. The older animal is the",
+    "target": " horse",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Consider two animals. First, a bear aged 34. Second, a falcon aged 2. The one with the greater age is the",
+    "target": " bear",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The bear is 29 years old. The hawk is 2 years old. The older animal is the",
+    "target": " bear",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Evaluating longevity: whale is 16, eagle is 5. The oldest is the",
+    "target": " whale",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The cow has an age of 26. The wolf has an age of 3. The elder is the",
+    "target": " cow",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The shark is 31 years old. The eagle is 3 years old. The older animal is the",
+    "target": " shark",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The lizard has an age of 4. The bear has an age of 44. The elder is the",
+    "target": " bear",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The lizard is 8 years old. The whale is 35 years old. The older animal is the",
+    "target": " whale",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Age comparison: rhino(2), falcon(48). The senior is the",
+    "target": " falcon",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Age comparison: rhino(26), tiger(4). The senior is the",
+    "target": " rhino",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Compare the ages: lion is 7 and wolf is 48. The oldest is",
+    "target": " wolf",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Given a 15-year-old whale and a 9-year-old shark, the oldest is the",
+    "target": " whale",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is older between a wolf (4 yrs) and a rhino (40 yrs)? The",
+    "target": " rhino",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The eagle reached 14 years of age, while the wolf reached 6. The older creature is the",
+    "target": " eagle",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Given a 8-year-old lizard and a 10-year-old wolf, the oldest is the",
+    "target": " wolf",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If a tiger is 18 and a bear is 6, the older of the two is definitely the",
+    "target": " tiger",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If a wolf is 7 and a falcon is 15, the older of the two is definitely the",
+    "target": " falcon",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Between eagle at age 30 and whale at age 9, the older one is",
+    "target": " eagle",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The shark is 23 years old. The wolf is 9 years old. The older animal is the",
+    "target": " shark",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Given a 2-year-old cow and a 21-year-old eagle, the oldest is the",
+    "target": " eagle",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Evaluating longevity: lion is 9, bear is 31. The oldest is the",
+    "target": " bear",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Between rhino at age 42 and bear at age 3, the older one is",
+    "target": " rhino",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Given a 41-year-old falcon and a 4-year-old bear, the oldest is the",
+    "target": " falcon",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Age comparison: lion(10), bear(2). The senior is the",
+    "target": " lion",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "An lizard lived for 28 years. An rhino lived for 2 years. Which lived longer? The",
+    "target": " lizard",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Evaluating longevity: hawk is 35, horse is 8. The oldest is the",
+    "target": " hawk",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is older between a tiger (18 yrs) and a lizard (9 yrs)? The",
+    "target": " tiger",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Between rhino at age 4 and eagle at age 26, the older one is",
+    "target": " eagle",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Consider two animals. First, a falcon aged 35. Second, a hawk aged 3. The one with the greater age is the",
+    "target": " falcon",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The hawk reached 31 years of age, while the shark reached 7. The older creature is the",
+    "target": " hawk",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Given a 41-year-old snake and a 5-year-old lion, the oldest is the",
+    "target": " snake",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "An rhino lived for 20 years. An horse lived for 4 years. Which lived longer? The",
+    "target": " rhino",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The hawk has an age of 36. The rhino has an age of 3. The elder is the",
+    "target": " hawk",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is older between a tiger (1 yrs) and a horse (18 yrs)? The",
+    "target": " horse",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "An falcon lived for 7 years. An whale lived for 33 years. Which lived longer? The",
+    "target": " whale",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Given a 23-year-old tiger and a 4-year-old lizard, the oldest is the",
+    "target": " tiger",
+    "task_type": "comparison",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Print 'ninja' 6 times consecutively. Output: ninja ninja",
+    "target": " ninja",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Copy task: word is lemon, count is 3. Go: lemon lemon",
+    "target": " lemon",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Duplicate 'lemon' until there are 3. Start: lemon lemon",
+    "target": " lemon",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Say the word 'umbrella' 6 times in a row: umbrella umbrella",
+    "target": " umbrella",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Output the following string exactly 8 times - ninja: ninja ninja",
+    "target": " ninja",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Output the following string exactly 8 times - jungle: jungle jungle",
+    "target": " jungle",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Repeat the word ocean exactly 6 times: ocean ocean",
+    "target": " ocean",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Say the word 'monkey' 4 times in a row: monkey monkey",
+    "target": " monkey",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Generation request: 7 copies of queen. Result: queen queen",
+    "target": " queen",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Produce the token 'monkey' 4 times. Sequence: monkey monkey",
+    "target": " monkey",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Copy task: word is apple, count is 7. Go: apple apple",
+    "target": " apple",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Output the following string exactly 7 times - house: house house",
+    "target": " house",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Duplicate 'jungle' until there are 3. Start: jungle jungle",
+    "target": " jungle",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Copy task: word is zebra, count is 8. Go: zebra zebra",
+    "target": " zebra",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Repeat the word jungle exactly 8 times: jungle jungle",
+    "target": " jungle",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Copy task: word is zebra, count is 4. Go: zebra zebra",
+    "target": " zebra",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Echo this text: ocean, repeat it 8 times total: ocean ocean",
+    "target": " ocean",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Echo this text: zebra, repeat it 4 times total: zebra zebra",
+    "target": " zebra",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Produce the token 'zebra' 9 times. Sequence: zebra zebra",
+    "target": " zebra",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Say the word 'apple' 6 times in a row: apple apple",
+    "target": " apple",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Generation request: 4 copies of queen. Result: queen queen",
+    "target": " queen",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Replicate the string ocean exactly 7 times: ocean ocean",
+    "target": " ocean",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Produce the token 'queen' 9 times. Sequence: queen queen",
+    "target": " queen",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Print 'lemon' 4 times consecutively. Output: lemon lemon",
+    "target": " lemon",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Output the following string exactly 5 times - guitar: guitar guitar",
+    "target": " guitar",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Echo this text: jungle, repeat it 4 times total: jungle jungle",
+    "target": " jungle",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Say the word 'lemon' 8 times in a row: lemon lemon",
+    "target": " lemon",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Output the following string exactly 5 times - umbrella: umbrella umbrella",
+    "target": " umbrella",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Duplicate 'igloo' until there are 6. Start: igloo igloo",
+    "target": " igloo",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Say the word 'banana' 5 times in a row: banana banana",
+    "target": " banana",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Say the word 'ninja' 6 times in a row: ninja ninja",
+    "target": " ninja",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Copy task: word is guitar, count is 4. Go: guitar guitar",
+    "target": " guitar",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Output the following string exactly 4 times - guitar: guitar guitar",
+    "target": " guitar",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Output the following string exactly 5 times - tree: tree tree",
+    "target": " tree",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Generation request: 6 copies of banana. Result: banana banana",
+    "target": " banana",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Print 'banana' 8 times consecutively. Output: banana banana",
+    "target": " banana",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Duplicate 'queen' until there are 9. Start: queen queen",
+    "target": " queen",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Print 'lemon' 6 times consecutively. Output: lemon lemon",
+    "target": " lemon",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Repeat the word monkey exactly 6 times: monkey monkey",
+    "target": " monkey",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Replicate the string jungle exactly 6 times: jungle jungle",
+    "target": " jungle",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Copy task: word is umbrella, count is 4. Go: umbrella umbrella",
+    "target": " umbrella",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Generation request: 3 copies of ninja. Result: ninja ninja",
+    "target": " ninja",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Echo this text: ocean, repeat it 7 times total: ocean ocean",
+    "target": " ocean",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Produce the token 'elephant' 4 times. Sequence: elephant elephant",
+    "target": " elephant",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Copy task: word is queen, count is 3. Go: queen queen",
+    "target": " queen",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Please type queen a total of 8 times: queen queen",
+    "target": " queen",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Repeat the word guitar exactly 5 times: guitar guitar",
+    "target": " guitar",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Output the following string exactly 5 times - jungle: jungle jungle",
+    "target": " jungle",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Repeat the word zebra exactly 3 times: zebra zebra",
+    "target": " zebra",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Echo this text: ocean, repeat it 3 times total: ocean ocean",
+    "target": " ocean",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Please type piano a total of 9 times: piano piano",
+    "target": " piano",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Duplicate 'elephant' until there are 4. Start: elephant elephant",
+    "target": " elephant",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Duplicate 'house' until there are 8. Start: house house",
+    "target": " house",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Echo this text: lemon, repeat it 8 times total: lemon lemon",
+    "target": " lemon",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Write monkey repeatedly. Give me exactly 7 of them: monkey monkey",
+    "target": " monkey",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Duplicate 'guitar' until there are 5. Start: guitar guitar",
+    "target": " guitar",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Print 'tree' 3 times consecutively. Output: tree tree",
+    "target": " tree",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Copy task: word is zebra, count is 7. Go: zebra zebra",
+    "target": " zebra",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Replicate the string queen exactly 7 times: queen queen",
+    "target": " queen",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Echo this text: queen, repeat it 6 times total: queen queen",
+    "target": " queen",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Produce the token 'river' 5 times. Sequence: river river",
+    "target": " river",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Produce the token 'lemon' 9 times. Sequence: lemon lemon",
+    "target": " lemon",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Duplicate 'queen' until there are 8. Start: queen queen",
+    "target": " queen",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Print 'monkey' 6 times consecutively. Output: monkey monkey",
+    "target": " monkey",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Say the word 'monkey' 8 times in a row: monkey monkey",
+    "target": " monkey",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Please type lemon a total of 5 times: lemon lemon",
+    "target": " lemon",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Duplicate 'house' until there are 6. Start: house house",
+    "target": " house",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Repeat the word elephant exactly 7 times: elephant elephant",
+    "target": " elephant",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Write piano repeatedly. Give me exactly 7 of them: piano piano",
+    "target": " piano",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Say the word 'igloo' 4 times in a row: igloo igloo",
+    "target": " igloo",
+    "task_type": "copy",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you count one coins, one coins, one coins, you get exactly",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Quantity check for one phones, one phones, one phones, one phones. The quantity is",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "There is one dogs, one dogs. The number of items is",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Item enumeration: one apples, one apples, one apples, one apples. Total equals",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "There is one apples, one apples, one apples, one apples. The number of items is",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "I see one bags, one bags, one bags, one bags. In total, I see",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "I see one phones, one phones. In total, I see",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you count one rings, one rings, you get exactly",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you count one desks, one desks, one desks, one desks, one desks, you get exactly",
+    "target": " five",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Observe the following: one books, one books, one books, one books, one books, one books. The final tally is",
+    "target": " six",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "We have one shoes, one shoes, one shoes, one shoes, one shoes. The total amount is",
+    "target": " five",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "We have one shoes, one shoes. The total amount is",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Tallying items: one desks, one desks, one desks. Final count is",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count the objects present: one shoes, one shoes, one shoes. Result:",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "We have one bags, one bags, one bags, one bags, one bags. The total amount is",
+    "target": " five",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Add them up: one cups, one cups, one cups, one cups. The sum is",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Tallying items: one shoes, one shoes, one shoes, one shoes. Final count is",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "There is one hats, one hats, one hats, one hats. The number of items is",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "List: one stars, one stars, one stars. How many? Answer:",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "List: one desks, one desks, one desks. How many? Answer:",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you count one phones, one phones, one phones, one phones, you get exactly",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count these items: one hats, one hats, one hats, one hats, one hats, one hats. Total count:",
+    "target": " six",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "I see one shoes, one shoes, one shoes, one shoes. In total, I see",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Item enumeration: one coins, one coins, one coins, one coins, one coins. Total equals",
+    "target": " five",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Item enumeration: one desks, one desks, one desks, one desks, one desks, one desks. Total equals",
+    "target": " six",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you count one cats, one cats, one cats, you get exactly",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Item enumeration: one chairs, one chairs, one chairs, one chairs, one chairs, one chairs. Total equals",
+    "target": " six",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Item enumeration: one bags, one bags. Total equals",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Add them up: one hats, one hats, one hats, one hats. The sum is",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you count one shoes, one shoes, one shoes, one shoes, you get exactly",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Quantity check for one books, one books, one books. The quantity is",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you count one apples, one apples, one apples, you get exactly",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Tallying items: one phones, one phones. Final count is",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Observe the following: one cats, one cats, one cats, one cats, one cats. The final tally is",
+    "target": " five",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Add them up: one stars, one stars, one stars. The sum is",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "We have one chairs, one chairs, one chairs, one chairs. The total amount is",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "I see one apples, one apples, one apples, one apples. In total, I see",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count these items: one dogs, one dogs. Total count:",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Observe the following: one shoes, one shoes, one shoes, one shoes, one shoes. The final tally is",
+    "target": " five",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "I see one chairs, one chairs, one chairs, one chairs, one chairs, one chairs. In total, I see",
+    "target": " six",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count the objects present: one bags, one bags, one bags, one bags. Result:",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count these items: one desks, one desks. Total count:",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Tallying items: one apples, one apples, one apples, one apples, one apples, one apples. Final count is",
+    "target": " six",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "We have one coins, one coins, one coins, one coins, one coins, one coins. The total amount is",
+    "target": " six",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you count one bags, one bags, one bags, you get exactly",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "List: one rings, one rings, one rings. How many? Answer:",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you count one hats, one hats, one hats, one hats, one hats, you get exactly",
+    "target": " five",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "I see one shoes, one shoes, one shoes, one shoes, one shoes. In total, I see",
+    "target": " five",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Tallying items: one bags, one bags, one bags, one bags. Final count is",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Add them up: one rings, one rings. The sum is",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count the objects present: one phones, one phones. Result:",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Tallying items: one stars, one stars, one stars, one stars, one stars, one stars. Final count is",
+    "target": " six",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "List: one chairs, one chairs. How many? Answer:",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Add them up: one stars, one stars. The sum is",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Tallying items: one hats, one hats, one hats, one hats. Final count is",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Item enumeration: one cats, one cats, one cats, one cats, one cats. Total equals",
+    "target": " five",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "We have one cups, one cups, one cups, one cups, one cups. The total amount is",
+    "target": " five",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Add them up: one coins, one coins, one coins, one coins, one coins. The sum is",
+    "target": " five",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "I see one books, one books. In total, I see",
+    "target": " two",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Add them up: one books, one books, one books, one books. The sum is",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Observe the following: one apples, one apples, one apples. The final tally is",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Count the objects present: one apples, one apples, one apples, one apples, one apples, one apples. Result:",
+    "target": " six",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "List: one rings, one rings, one rings, one rings, one rings, one rings. How many? Answer:",
+    "target": " six",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you count one dogs, one dogs, one dogs, one dogs, one dogs, one dogs, you get exactly",
+    "target": " six",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Add them up: one apples, one apples, one apples, one apples, one apples. The sum is",
+    "target": " five",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "I see one apples, one apples, one apples. In total, I see",
+    "target": " three",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Tallying items: one cups, one cups, one cups, one cups, one cups, one cups. Final count is",
+    "target": " six",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Tallying items: one stars, one stars, one stars, one stars, one stars. Final count is",
+    "target": " five",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Tallying items: one hats, one hats, one hats, one hats, one hats. Final count is",
+    "target": " five",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you count one books, one books, one books, one books, you get exactly",
+    "target": " four",
+    "task_type": "counting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The government of Denmark is located in the capital,",
+    "target": " Copenhagen",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The government of Fiji is located in the capital,",
+    "target": " Suva",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The primary capital city of Canada is",
+    "target": " Ottawa",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Name the capital of Greece. The answer is",
+    "target": " Athens",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Cuba's capital city is named",
+    "target": " Havana",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Name the capital of Norway. The answer is",
+    "target": " Oslo",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you travel to the capital of Ireland, you are in",
+    "target": " Dublin",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The capital of Portugal is",
+    "target": " Lisbon",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Name the capital of Vietnam. The answer is",
+    "target": " Hanoi",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the capital of Spain? It is",
+    "target": " Madrid",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The political center and capital of Mexico is",
+    "target": " Mexico",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The primary capital city of Kenya is",
+    "target": " Nairobi",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you travel to the capital of Poland, you are in",
+    "target": " Warsaw",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "When visiting Ireland, you might fly into its capital,",
+    "target": " Dublin",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The capital of Fiji is",
+    "target": " Suva",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Chile's capital city is named",
+    "target": " Santiago",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Name the capital of Denmark. The answer is",
+    "target": " Copenhagen",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Name the capital of New Zealand. The answer is",
+    "target": " Wellington",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Australia's capital city is named",
+    "target": " Canberra",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "For the country Chile, the capital city is",
+    "target": " Santiago",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the capital of Fiji? It is",
+    "target": " Suva",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The capital of Poland is",
+    "target": " Warsaw",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The capital of the nation of Kenya is",
+    "target": " Nairobi",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The capital of Germany is",
+    "target": " Berlin",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "When visiting Chile, you might fly into its capital,",
+    "target": " Santiago",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "When visiting Thailand, you might fly into its capital,",
+    "target": " Bangkok",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the capital of Peru? It is",
+    "target": " Lima",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Geographically, the capital of Kenya is known as",
+    "target": " Nairobi",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "When visiting Cuba, you might fly into its capital,",
+    "target": " Havana",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "USA's capital city is named",
+    "target": " Washington",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The capital of Mexico is",
+    "target": " Mexico",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The primary capital city of Vietnam is",
+    "target": " Hanoi",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the capital of Denmark? It is",
+    "target": " Copenhagen",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The primary capital city of Mexico is",
+    "target": " Mexico",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The capital of New Zealand is",
+    "target": " Wellington",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The capital of the nation of UK is",
+    "target": " London",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The primary capital city of Colombia is",
+    "target": " Bogota",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The primary capital city of Thailand is",
+    "target": " Bangkok",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The capital of Argentina is",
+    "target": " Buenos",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Geographically, the capital of Spain is known as",
+    "target": " Madrid",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the capital of Morocco? It is",
+    "target": " Rabat",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The capital of the nation of Cuba is",
+    "target": " Havana",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "When visiting Fiji, you might fly into its capital,",
+    "target": " Suva",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The capital of the nation of Norway is",
+    "target": " Oslo",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The government of Vietnam is located in the capital,",
+    "target": " Hanoi",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The political center and capital of Canada is",
+    "target": " Ottawa",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "For the country Canada, the capital city is",
+    "target": " Ottawa",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Geographically, the capital of UK is known as",
+    "target": " London",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "When visiting Vietnam, you might fly into its capital,",
+    "target": " Hanoi",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the capital of Thailand? It is",
+    "target": " Bangkok",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Name the capital of Canada. The answer is",
+    "target": " Ottawa",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "When visiting New Zealand, you might fly into its capital,",
+    "target": " Wellington",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "For the country Greece, the capital city is",
+    "target": " Athens",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you travel to the capital of Germany, you are in",
+    "target": " Berlin",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "For the country Sweden, the capital city is",
+    "target": " Stockholm",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Geographically, the capital of Cuba is known as",
+    "target": " Havana",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The government of Australia is located in the capital,",
+    "target": " Canberra",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The government of Canada is located in the capital,",
+    "target": " Ottawa",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The primary capital city of Ireland is",
+    "target": " Dublin",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Geographically, the capital of Peru is known as",
+    "target": " Lima",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The primary capital city of Fiji is",
+    "target": " Suva",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The political center and capital of Cuba is",
+    "target": " Havana",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "New Zealand's capital city is named",
+    "target": " Wellington",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Portugal's capital city is named",
+    "target": " Lisbon",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The government of Greece is located in the capital,",
+    "target": " Athens",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is the capital of Poland? It is",
+    "target": " Warsaw",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Geographically, the capital of USA is known as",
+    "target": " Washington",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The political center and capital of USA is",
+    "target": " Washington",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Geographically, the capital of Poland is known as",
+    "target": " Warsaw",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The capital of the nation of Fiji is",
+    "target": " Suva",
+    "task_type": "fact_recall",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arrange 9, 15, 45 from low to high. The lowest is",
+    "target": " 9",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Given 24, 37, and 47, the lowest value is",
+    "target": " 24",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Finding the minimum: 33, 21, 12. The answer is",
+    "target": " 12",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arrange 14, 28, 3 from low to high. The lowest is",
+    "target": " 3",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arrange 41, 39, 44 from low to high. The lowest is",
+    "target": " 39",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is smallest: 21, 45, or 9? It is",
+    "target": " 9",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Given 14, 12, and 23, the lowest value is",
+    "target": " 12",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Given 24, 5, and 3, the lowest value is",
+    "target": " 3",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The smallest number out of 13, 31, and 16 is",
+    "target": " 13",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Identify the minimum of the set [45, 3, 17]:",
+    "target": " 3",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Rank by size, smallest first: 23, 31, 47. Starts with",
+    "target": " 23",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Identify the minimum of the set [42, 29, 1]:",
+    "target": " 1",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arrange 10, 3, 41 from low to high. The lowest is",
+    "target": " 3",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Rank by size, smallest first: 45, 11, 27. Starts with",
+    "target": " 11",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Rank by size, smallest first: 42, 36, 45. Starts with",
+    "target": " 36",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Given 2, 37, and 38, the lowest value is",
+    "target": " 2",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Rank by size, smallest first: 21, 12, 38. Starts with",
+    "target": " 12",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Put in ascending order: 15, 39, 5. It starts with",
+    "target": " 5",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Sort ascending: 11, 2, 9. The first number is",
+    "target": " 2",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Rank by size, smallest first: 9, 47, 11. Starts with",
+    "target": " 9",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The smallest number out of 28, 29, and 45 is",
+    "target": " 28",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is smallest: 11, 37, or 5? It is",
+    "target": " 5",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Sort sequence 12, 30, 37. Minimum value:",
+    "target": " 12",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Finding the minimum: 45, 4, 17. The answer is",
+    "target": " 4",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Sort these numbers from smallest to largest: 44, 48, 9 ->",
+    "target": " 9",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Sort these numbers from smallest to largest: 1, 43, 9 ->",
+    "target": " 1",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Rank by size, smallest first: 13, 46, 29. Starts with",
+    "target": " 13",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Sort sequence 48, 42, 5. Minimum value:",
+    "target": " 5",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arrange 23, 35, 8 from low to high. The lowest is",
+    "target": " 8",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Sort ascending: 42, 40, 14. The first number is",
+    "target": " 14",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The smallest number out of 34, 28, and 13 is",
+    "target": " 13",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is smallest: 2, 29, or 34? It is",
+    "target": " 2",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is smallest: 14, 9, or 17? It is",
+    "target": " 9",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Given 14, 31, and 13, the lowest value is",
+    "target": " 13",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Sort sequence 43, 9, 39. Minimum value:",
+    "target": " 9",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Rank by size, smallest first: 18, 25, 45. Starts with",
+    "target": " 18",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arrange 4, 35, 33 from low to high. The lowest is",
+    "target": " 4",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Sort these numbers from smallest to largest: 42, 39, 21 ->",
+    "target": " 21",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Identify the minimum of the set [39, 45, 42]:",
+    "target": " 39",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Given 2, 30, and 28, the lowest value is",
+    "target": " 2",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Sort ascending: 23, 27, 34. The first number is",
+    "target": " 23",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Order these from minimum to maximum: 24, 9, 21. The smallest is",
+    "target": " 9",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Finding the minimum: 20, 7, 42. The answer is",
+    "target": " 7",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arrange 16, 13, 36 from low to high. The lowest is",
+    "target": " 13",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arrange 10, 35, 2 from low to high. The lowest is",
+    "target": " 2",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Rank by size, smallest first: 21, 44, 46. Starts with",
+    "target": " 21",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Sort ascending: 25, 30, 28. The first number is",
+    "target": " 25",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is smallest: 42, 12, or 21? It is",
+    "target": " 12",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Order these from minimum to maximum: 14, 18, 48. The smallest is",
+    "target": " 14",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Sort these numbers from smallest to largest: 1, 27, 12 ->",
+    "target": " 1",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The smallest number out of 45, 38, and 42 is",
+    "target": " 38",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Identify the minimum of the set [9, 32, 26]:",
+    "target": " 9",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Sort these numbers from smallest to largest: 48, 5, 34 ->",
+    "target": " 5",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Given 41, 43, and 29, the lowest value is",
+    "target": " 29",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The smallest number out of 17, 11, and 39 is",
+    "target": " 11",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Sort ascending: 3, 35, 26. The first number is",
+    "target": " 3",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Rank by size, smallest first: 7, 34, 21. Starts with",
+    "target": " 7",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arrange 48, 46, 1 from low to high. The lowest is",
+    "target": " 1",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Sort these numbers from smallest to largest: 35, 42, 33 ->",
+    "target": " 33",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Put in ascending order: 5, 33, 30. It starts with",
+    "target": " 5",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Which is smallest: 43, 28, or 49? It is",
+    "target": " 28",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Rank by size, smallest first: 48, 5, 7. Starts with",
+    "target": " 5",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The smallest number out of 48, 29, and 36 is",
+    "target": " 29",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Put in ascending order: 37, 32, 36. It starts with",
+    "target": " 32",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Sort sequence 39, 41, 27. Minimum value:",
+    "target": " 27",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Rank by size, smallest first: 24, 35, 21. Starts with",
+    "target": " 21",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arrange 37, 42, 35 from low to high. The lowest is",
+    "target": " 35",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Given 28, 35, and 23, the lowest value is",
+    "target": " 23",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Sort ascending: 42, 7, 34. The first number is",
+    "target": " 7",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arrange 34, 35, 11 from low to high. The lowest is",
+    "target": " 11",
+    "task_type": "sorting",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Solving 8 - 2 yields",
+    "target": " 6",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Math problem: 11 - 8 =",
+    "target": " 3",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arithmetic: 16 - 13. Equals",
+    "target": " 3",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The sum or difference of 12 - 5 is",
+    "target": " 7",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Calculate the result of 15 + 18:",
+    "target": " 33",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Solve this equation: 2 + 10. Result:",
+    "target": " 12",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Solve this equation: 14 + 13. Result:",
+    "target": " 27",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Solve this equation: 19 - 10. Result:",
+    "target": " 9",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "What is 15 + 2? The answer is",
+    "target": " 17",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Math problem: 18 - 13 =",
+    "target": " 5",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Solving 11 + 15 yields",
+    "target": " 26",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you evaluate 8 + 15, you get",
+    "target": " 23",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Find the value of 12 + 6. It is",
+    "target": " 18",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Calculate the result of 4 + 18:",
+    "target": " 22",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Find the value of 6 + 18. It is",
+    "target": " 24",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The sum or difference of 2 + 18 is",
+    "target": " 20",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Math problem: 2 + 4 =",
+    "target": " 6",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Calculate the result of 14 + 6:",
+    "target": " 20",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arithmetic: 17 - 7. Equals",
+    "target": " 10",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Calculate the result of 13 - 7:",
+    "target": " 6",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Math problem: 17 + 12 =",
+    "target": " 29",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you evaluate 13 + 17, you get",
+    "target": " 30",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Solve this equation: 15 - 13. Result:",
+    "target": " 2",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Calculate the result of 3 + 18:",
+    "target": " 21",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Math problem: 11 - 5 =",
+    "target": " 6",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you evaluate 13 + 10, you get",
+    "target": " 23",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arithmetic: 17 - 5. Equals",
+    "target": " 12",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arithmetic: 2 + 2. Equals",
+    "target": " 4",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The mathematical result of 2 + 7 is",
+    "target": " 9",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you evaluate 9 + 17, you get",
+    "target": " 26",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you evaluate 18 + 8, you get",
+    "target": " 26",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you evaluate 3 + 5, you get",
+    "target": " 8",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Compute 4 + 17. Answer:",
+    "target": " 21",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The sum or difference of 11 - 4 is",
+    "target": " 7",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you evaluate 13 + 8, you get",
+    "target": " 21",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Compute 15 + 19. Answer:",
+    "target": " 34",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Solving 9 + 4 yields",
+    "target": " 13",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Calculate the result of 5 + 8:",
+    "target": " 13",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The sum or difference of 13 - 3 is",
+    "target": " 10",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Find the value of 15 - 8. It is",
+    "target": " 7",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The sum or difference of 10 + 10 is",
+    "target": " 20",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Evaluate the expression 19 + 3 ->",
+    "target": " 22",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Solving 16 - 8 yields",
+    "target": " 8",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Compute 12 + 16. Answer:",
+    "target": " 28",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Find the value of 15 + 15. It is",
+    "target": " 30",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Solve this equation: 16 - 11. Result:",
+    "target": " 5",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arithmetic: 16 + 4. Equals",
+    "target": " 20",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Math problem: 16 - 5 =",
+    "target": " 11",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Compute 15 + 8. Answer:",
+    "target": " 23",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you evaluate 11 - 10, you get",
+    "target": " 1",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Math problem: 18 + 15 =",
+    "target": " 33",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arithmetic: 10 + 5. Equals",
+    "target": " 15",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arithmetic: 19 + 2. Equals",
+    "target": " 21",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arithmetic: 8 + 6. Equals",
+    "target": " 14",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The sum or difference of 10 - 9 is",
+    "target": " 1",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Calculate the result of 19 - 4:",
+    "target": " 15",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Solve this equation: 8 + 7. Result:",
+    "target": " 15",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Compute 14 - 3. Answer:",
+    "target": " 11",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arithmetic: 4 + 2. Equals",
+    "target": " 6",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Evaluate the expression 10 - 5 ->",
+    "target": " 5",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Math problem: 11 - 7 =",
+    "target": " 4",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Solving 17 - 7 yields",
+    "target": " 10",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Compute 7 + 6. Answer:",
+    "target": " 13",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "If you evaluate 18 - 3, you get",
+    "target": " 15",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The sum or difference of 5 + 12 is",
+    "target": " 17",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "The sum or difference of 18 + 11 is",
+    "target": " 29",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Find the value of 8 + 7. It is",
+    "target": " 15",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Math problem: 18 - 5 =",
+    "target": " 13",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Solving 15 - 9 yields",
+    "target": " 6",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  },
+  {
+    "prompt": "Arithmetic: 9 - 6. Equals",
+    "target": " 3",
+    "task_type": "arithmetic",
+    "domain": "mixed"
+  }
+]
