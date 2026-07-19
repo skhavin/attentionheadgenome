@@ -44,6 +44,22 @@ The plots clearly visualize the "Trunk vs Branch" hypothesis quantified by the F
 ## Next Steps
 We have proven that computation is a geometrically expanding trajectory. The next step (Section 3: Cross-Architecture Alignment) will test the universal conservation hypothesis: Do entirely different architectures follow the *same* developmental path to construct these operations?
 
+---
+
+## 4. Output Artifacts and Code References
+
+### Code
+- **Validation Extraction Code**: [`code/step1b_extract_validation.py`](../code/step1b_extract_validation.py)
+- **Intra-Mapping & PCA Code**: [`code/step2_intra_mapping.py`](../code/step2_intra_mapping.py)
+
+### Result Artifacts
+- **F-Statistic Data JSON**: [`outputs/intra_mapping/f_statistic_data.json`](intra_mapping/f_statistic_data.json)
+- **Divergence Plot**: [`outputs/intra_mapping/f_statistic_divergence.png`](intra_mapping/f_statistic_divergence.png)
+- **PCA Trajectory Plots**: 
+  - [`outputs/intra_mapping/pca_trajectory_Qwen2.5-1.5B.png`](intra_mapping/pca_trajectory_Qwen2.5-1.5B.png)
+  - [`outputs/intra_mapping/pca_trajectory_Llama-3.2-1B.png`](intra_mapping/pca_trajectory_Llama-3.2-1B.png)
+  - [`outputs/intra_mapping/pca_trajectory_phi-1_5.png`](intra_mapping/pca_trajectory_phi-1_5.png)
+
 <details>
 <summary><b>Raw F-Statistic and PCA Explained Variance Data JSON</b></summary>
 
