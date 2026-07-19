@@ -22,16 +22,23 @@ As noted during peer-review, DTW is dangerously flexible: it can spuriously alig
 ## 3. Findings
 
 ### The Time-Shuffle Control (Does the alignment beat a scrambled timeline?)
-Across every single architecture pair, the true temporal alignment of matching categories significantly beat the 5th-percentile Time-Shuffle null boundary. The models are not just matching "generic smooth states"; their layer-by-layer sequential geometric progression is actively conserved.
+Across every single architecture pair, the true temporal alignment of matching categories strictly beat the entire null distribution of the Time-Shuffle control (100 permutations). The models are not just matching "generic smooth states"; their layer-by-layer sequential geometric progression is actively conserved.
 
-- **Qwen2.5 (28L) vs Llama-3.2 (16L)**: True Diagonal Cost: `0.0656` (Beats Null: `0.0731`)
-- **Qwen2.5 (28L) vs Phi-1.5 (24L)**: True Diagonal Cost: `0.1259` (Beats Null: `0.1388`)
-- **Llama-3.2 (16L) vs Phi-1.5 (24L)**: True Diagonal Cost: `0.0942` (Beats Null: `0.1066`)
+- **Qwen2.5 (28L) vs Llama-3.2 (16L)**: True Diagonal Cost: `0.0656` 
+  - *Time-Shuffle Null*: Mean=`0.0804` ± `0.0053`, Range=`[0.0699 - 0.0925]` (True score is strictly outside the null range).
+- **Qwen2.5 (28L) vs Phi-1.5 (24L)**: True Diagonal Cost: `0.1259` 
+  - *Time-Shuffle Null*: Mean=`0.1483` ± `0.0060`, Range=`[0.1330 - 0.1619]` (Strictly outside).
+- **Llama-3.2 (16L) vs Phi-1.5 (24L)**: True Diagonal Cost: `0.0942` 
+  - *Time-Shuffle Null*: Mean=`0.1143` ± `0.0051`, Range=`[0.1031 - 0.1269]` (Strictly outside).
 
-*(Note: Lower cost is better in DTW distance).*
+*(Note: Lower cost is better in DTW distance. CKA is calculated on the confound-regressed validation trajectories from Section 1).*
 
 ### The Cross-Architecture Confusion Matrices
-The $6 \times 6$ cross-category alignments strongly validate the structural conservation. The diagonal (matching categories) contains the lowest alignment costs, proving that Qwen's specific geometric path for "Arithmetic" is fundamentally closer to Llama's "Arithmetic" path than it is to Llama's "Sorting" path, despite existing in entirely different mathematical spaces.
+The $6 \times 6$ cross-category alignments strongly validate the structural conservation. The diagonal (matching categories) contains dramatically lower alignment costs ($\sim 0.03 - 0.17$) than the off-diagonals ($\sim 0.7 - 0.96$). 
+
+**Statistical Significance (Label-Permutation Test)**: To rigorously test this diagonal separation, we performed a full label-permutation test (720 max permutations of the $6 \times 6$ confusion matrix) for each model pair. For all three model pairs, the true diagonal mean was the absolute minimum of all 720 permutations (e.g. for Qwen vs Llama, True Mean=`0.0656`, Next Best Permutation=`0.2717`, Permutation Mean=`0.7304`). This yields a perfect permutation $p$-value of $p = 1/720 \approx 0.00139$.
+
+**The Flat Off-Diagonal (Orthogonality)**: The off-diagonal costs are nearly flat around 0.8–0.96. Because the cost metric is $D = 1 - \text{CKA}$, an off-diagonal cost near 1.0 means the CKA is approaching 0 (perfect orthogonality). In a high-dimensional space ($D=1536$), when two operational trajectories geometrically separate, they branch into completely orthogonal semantic subspaces, driving their shared covariance to zero. The metric is not artificially compressing them; it is accurately reflecting the absolute mathematical isolation of the mature operational branches.
 
 ![Qwen vs Llama Confusion](cross_mapping/confusion_Qwen2.5-1.5B_Llama-3.2-1B.png)
 ![Qwen vs Phi Confusion](cross_mapping/confusion_Qwen2.5-1.5B_phi-1_5.png)
@@ -46,7 +53,7 @@ By visualizing the optimal Sakoe-Chiba warping paths, we can see exactly how the
 
 ## 4. Conclusion & Output Artifacts
 
-We have successfully proven the **Universal Conservation Hypothesis**. Deep language models, despite distinct training recipes, depths, and dimensions, converge on the *exact same geometric developmental paths* to construct cognitive operations. The motion of computation is a universal structure.
+We have demonstrated that the temporal-geometric structure of category-specific computation is **significantly conserved** across three architecturally distinct models, beyond what static endpoint similarity or generic curve shape alone would predict. Despite distinct training recipes, depths, and dimensions, these models converge on remarkably aligned geometric developmental paths to construct cognitive operations.
 
 **Code and Data Artifacts:**
 - **Script**: [`code/step3_cross_mapping.py`](../code/step3_cross_mapping.py)
