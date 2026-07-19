@@ -141,6 +141,10 @@ def main():
         # 2. Time-Shuffle Control (on the diagonal matching categories)
         print("Computing Time-Shuffle Null Baseline...")
         shuffle_5ths = []
+        shuffle_means = []
+        shuffle_stds = []
+        shuffle_mins = []
+        shuffle_maxes = []
         for i, c1 in enumerate(categories):
             D_mat = paths[c1][0] # Retrieve precomputed distance matrix
             
@@ -155,10 +159,16 @@ def main():
                 
             if len(shuffle_costs) > 0:
                 shuffle_5ths.append(np.percentile(shuffle_costs, 5))
+                shuffle_means.append(np.mean(shuffle_costs))
+                shuffle_stds.append(np.std(shuffle_costs))
+                shuffle_mins.append(np.min(shuffle_costs))
+                shuffle_maxes.append(np.max(shuffle_costs))
             
         avg_shuffle_threshold = np.mean(shuffle_5ths) if len(shuffle_5ths) > 0 else np.inf
         diag_mean = np.diag(confusion).mean()
+        
         print(f"[{m1} vs {m2}] Mean True Diagonal Cost: {diag_mean:.4f}")
+        print(f"[{m1} vs {m2}] Time-Shuffle Distribution: Mean={np.mean(shuffle_means):.4f}, Std={np.mean(shuffle_stds):.4f}, Range=[{np.mean(shuffle_mins):.4f} - {np.mean(shuffle_maxes):.4f}]")
         print(f"[{m1} vs {m2}] 5th Percentile Time-Shuffle Threshold: {avg_shuffle_threshold:.4f} (Lower is better)")
         
         results_json[f"{m1}_vs_{m2}"] = {
