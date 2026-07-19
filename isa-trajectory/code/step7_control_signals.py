@@ -221,5 +221,112 @@ def main():
     print(f"\nRandom Control (3 matched heads) Ablated Accuracy: {rand_acc*100:.1f}%")
     print(f"Random Control Uniqueness: {rand_uniq*100:.1f}%")
 
+    print("\n--- 4. MLP Necessity Test on OOD Dataset ---")
+    np.random.seed(42)
+    ood_prompts = []
+    for _ in range(80):
+        x = np.random.randint(10, 99)
+        y = np.random.randint(10, 99)
+        ood_prompts.append(f"What is {x} + {y}?\nAnswer:")
+        
+    ood_inputs = tokenizer(ood_prompts, return_tensors="pt", padding=True).to(model.device)
+    
+    # We need to know the correct targets to compute accuracy
+    # For a naive check, let's re-run the greedy generation of the unablated model to establish the "ceiling"
+    def evaluate_ood(model_eval):
+        with torch.no_grad():
+            gen = model_eval.generate(**ood_inputs, max_new_tokens=10, do_sample=False, pad_token_id=tokenizer.pad_token_id)
+        outputs = tokenizer.batch_decode(gen[:, ood_inputs.input_ids.shape[1]:], skip_special_tokens=True)
+        return outputs
+        
+    base_ood_outs = evaluate_ood(model)
+    # The true answer is just x + y
+    correct = 0
+    np.random.seed(42) # reset seed to re-generate targets
+    for o_str in base_ood_outs:
+        x = np.random.randint(10, 99)
+        y = np.random.randint(10, 99)
+        ans = str(x + y)
+        if ans in o_str:
+            correct += 1
+    base_ood_acc = correct / len(base_ood_outs)
+    print(f"Baseline OOD Accuracy: {base_ood_acc*100:.1f}%")
+    
+    # We need to compute the mean activation of MLPs on the OOD set first!
+    # Let's hook all MLPs for the OOD set
+    ood_mlp_outputs = {l: [] for l in range(num_layers)}
+    def get_ood_mlp_hook(layer_idx):
+        def hook(module, input, output):
+            ood_mlp_outputs[layer_idx].append(output[:, -1, :].detach().cpu())
+        return hook
+        
+    ood_handles = []
+    for l in range(num_layers):
+        ood_handles.append(model.model.layers[l].mlp.register_forward_hook(get_ood_mlp_hook(l)))
+    with torch.no_grad():
+        model(**ood_inputs)
+    for h in ood_handles: h.remove()
+    
+    ood_mlp_means = {}
+    for l in range(num_layers):
+        mo = torch.cat(ood_mlp_outputs[l], dim=0) # [80, hidden]
+        ood_mlp_means[l] = mo.mean(dim=0).to(model.device)
+        
+    def get_mlp_ablation_hook(mean_vec):
+        def hook(module, input, output):
+            # output is [batch, seq, hidden]
+            # mean_vec is [hidden]
+            ablation = mean_vec.unsqueeze(0).unsqueeze(0) - output
+            return output + ablation
+        return hook
+        
+    # Top 3 MLPs from DLA: L27, L26, L22
+    top_mlps = [27, 26, 22]
+    
+    # Group Ablation (Top 3)
+    mlp_group_handles = []
+    for l in top_mlps:
+        mlp_group_handles.append(model.model.layers[l].mlp.register_forward_hook(get_mlp_ablation_hook(ood_mlp_means[l])))
+        
+    group_ood_outs = evaluate_ood(model)
+    for h in mlp_group_handles: h.remove()
+    
+    group_correct = 0
+    np.random.seed(42)
+    for o_str in group_ood_outs:
+        x = np.random.randint(10, 99)
+        y = np.random.randint(10, 99)
+        if str(x + y) in o_str: group_correct += 1
+    print(f"Top-3 MLPs Group Ablation OOD Accuracy: {group_correct/len(group_ood_outs)*100:.1f}%")
+    
+    # Individual Ablation (Top 1: L27)
+    ind_handle = model.model.layers[27].mlp.register_forward_hook(get_mlp_ablation_hook(ood_mlp_means[27]))
+    ind_ood_outs = evaluate_ood(model)
+    ind_handle.remove()
+    
+    ind_correct = 0
+    np.random.seed(42)
+    for o_str in ind_ood_outs:
+        x = np.random.randint(10, 99)
+        y = np.random.randint(10, 99)
+        if str(x + y) in o_str: ind_correct += 1
+    print(f"Top-1 MLP (L27) Individual Ablation OOD Accuracy: {ind_correct/len(ind_ood_outs)*100:.1f}%")
+    
+    # Random Control (3 MLPs)
+    rand_mlps = [21, 23, 24]
+    rand_group_handles = []
+    for l in rand_mlps:
+        rand_group_handles.append(model.model.layers[l].mlp.register_forward_hook(get_mlp_ablation_hook(ood_mlp_means[l])))
+    rand_ood_outs = evaluate_ood(model)
+    for h in rand_group_handles: h.remove()
+    
+    rand_correct = 0
+    np.random.seed(42)
+    for o_str in rand_ood_outs:
+        x = np.random.randint(10, 99)
+        y = np.random.randint(10, 99)
+        if str(x + y) in o_str: rand_correct += 1
+    print(f"Random 3 MLPs Control OOD Accuracy: {rand_correct/len(rand_ood_outs)*100:.1f}%")
+
 if __name__ == "__main__":
     main()

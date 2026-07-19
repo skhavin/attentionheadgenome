@@ -19,17 +19,13 @@ def main():
         val_prompts = json.load(f)
         
     categories_all = ["comparison", "copy", "counting", "fact_recall", "sorting", "arithmetic"]
-    cat_indices = {c: [] for c in categories_all}
-    for i, p in enumerate(val_prompts):
-        cat_indices[p["task_type"]].append(i)
+    src_idx = [i for i, p in enumerate(val_prompts) if p["task_type"] == "fact_recall"]
+    tgt_idx = [i for i, p in enumerate(val_prompts) if p["task_type"] == "comparison"]
 
     # 1. Define Trajectory Direction
     raw_T = torch.load("../outputs/trajectories/Qwen2.5-1.5B/val_raw_trajectories.pt", map_location="cpu")
     
-    src_cat, tgt_cat = "arithmetic", "sorting"
-    src_idx = cat_indices[src_cat]
-    tgt_idx = cat_indices[tgt_cat]
-    
+
     src_centroids = raw_T[src_idx].mean(dim=0).to(model.device) # [num_layers, hidden_size]
     tgt_centroids = raw_T[tgt_idx].mean(dim=0).to(model.device)
     
@@ -149,7 +145,7 @@ def main():
     }
     
     os.makedirs("../outputs/generator_analysis", exist_ok=True)
-    with open("../outputs/generator_analysis/dta_results.json", "w") as f:
+    with open("../outputs/generator_analysis/dta_results_fact.json", "w") as f:
         json.dump(results, f, indent=2)
         
     print("DTA computation complete. Saved to outputs/generator_analysis/dta_results.json")

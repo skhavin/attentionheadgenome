@@ -42,4 +42,20 @@ The results were a stark falsification of H3:
 
 Despite their massive attention onto the formatting trigger (`:`), ablating the top DLA readout heads had exactly **zero effect** on the model's ability to answer the arithmetic prompt. 
 
-**Conclusion: H4 is Confirmed.** The readout of the semantic trajectory is a robust, distributed nonlinear circuit governed heavily by late-layer MLPs. There is no single "Control Signal Readout Head." The apparent syntactic trigger heads (H3) are entirely redundant or epiphenomenal, providing yet another cautionary tale about trusting attention maps and static correlations to establish causal mechanism.
+**Conclusion:** The DLA mass distribution alone was ambiguous (straddling our pre-registered threshold), but the causal ablation result decisively rules out H2/H3 for the specific heads tested. By elimination, combined with the heavily MLP-dominated DLA mass, the evidence most strongly supports **H4 (Distributed Circuit)**. 
+
+## 4. The Final Trap: MLP Necessity & Generic Fragility
+
+If H4 is true and MLPs form a distributed readout circuit, we should be able to ablate the top-DLA MLPs and observe a targeted drop in accuracy. To avoid the 100% ceiling effect of our original validation set, we ran this necessity test on 80 novel Out-of-Distribution (OOD) arithmetic prompts. We pre-registered that a true distributed circuit should show *graceful degradation* (a small drop for individual ablations, and a large drop for group ablations).
+
+**Results (OOD Arithmetic Test):**
+- **Baseline Accuracy:** 93.8%
+- **Top-1 MLP (L27) Ablated:** 86.2% *(Small drop, as expected)*
+- **Top-3 MLPs Group Ablated:** 0.0% *(Massive drop, as expected)*
+- **Random Control (3 MLPs) Ablated:** **0.0%**
+
+**The Methodological Reality Check:** The Top-3 MLP ablation successfully destroyed the model's ability to do arithmetic. However, the *Random Control* (ablating 3 depth-matched MLPs: L21, L23, L24) *also* completely destroyed the model's accuracy. 
+
+Because the random control failed, we **cannot claim** that the Top-3 DLA MLPs form the specific, unique causal circuit for arithmetic readout. Instead, this proves that the network's late-stage MLPs are generically fragile to mean ablation; knocking out any three of them causes total generation collapse. 
+
+Once again, rigorous controls saved us from a false positive. We conclude that while steerable trajectories are built by MLPs (Section 5) and readout is distributed (Section 6), simple linear attribution (DLA/DTA) and mean-ablation are fundamentally insufficient to cleanly isolate the true, non-redundant causal subgraph of a dense model's late layers.

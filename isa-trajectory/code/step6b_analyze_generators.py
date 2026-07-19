@@ -2,7 +2,7 @@ import json
 import numpy as np
 
 def main():
-    with open("../outputs/generator_analysis/dta_results.json", "r") as f:
+    with open("../outputs/generator_analysis/dta_results_fact.json", "r") as f:
         dta = json.load(f)
         
     static_heads = np.array(dta["static_heads"]) # [num_layers, num_heads]
@@ -38,6 +38,12 @@ def main():
     
     for i in range(15):
         name, stat, trans = flat_trans[i]
+        print(f"{i+1}. {name:10s} | Transition: {trans*100:6.2f}% | Static: {stat:6.3f}")
+
+    print("\n--- Top Trajectory OPPONENTS (Negative Transition DTA, Rise Phase L10-20) ---")
+    flat_trans_opp = sorted(flat_trans, key=lambda x: x[2]) # Most negative first
+    for i in range(10):
+        name, stat, trans = flat_trans_opp[i]
         print(f"{i+1}. {name:10s} | Transition: {trans*100:6.2f}% | Static: {stat:6.3f}")
 
 if __name__ == "__main__":
