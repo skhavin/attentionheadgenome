@@ -36,9 +36,9 @@ Across every single architecture pair, the true temporal alignment of matching c
 ### The Cross-Architecture Confusion Matrices
 The $6 \times 6$ cross-category alignments strongly validate the structural conservation. The diagonal (matching categories) contains dramatically lower alignment costs ($\sim 0.03 - 0.17$) than the off-diagonals ($\sim 0.7 - 0.96$). 
 
-**Statistical Significance (Label-Permutation Test)**: To rigorously test this diagonal separation, we performed a full label-permutation test (720 max permutations of the $6 \times 6$ confusion matrix) for each model pair. For all three model pairs, the true diagonal mean was the absolute minimum of all 720 permutations (e.g. for Qwen vs Llama, True Mean=`0.0656`, Next Best Permutation=`0.2717`, Permutation Mean=`0.7304`). This yields a perfect permutation $p$-value of $p = 1/720 \approx 0.00139$.
+**Statistical Significance (Label-Permutation Test)**: To rigorously test this diagonal separation, we performed a full label-permutation test (720 max permutations of the $6 \times 6$ confusion matrix) for each model pair. Strikingly, the true diagonal mean was the absolute minimum of all 720 permutations independently for *all three* architecture pairs (e.g. for Qwen vs Llama, True Mean=`0.0656`, Next Best Permutation=`0.2717`, Permutation Mean=`0.7304`). This yields a perfect permutation $p$-value of $p = 1/720 \approx 0.00139$, replicated cleanly across three independent model pairs.
 
-**The Flat Off-Diagonal (Orthogonality)**: The off-diagonal costs are nearly flat around 0.8–0.96. Because the cost metric is $D = 1 - \text{CKA}$, an off-diagonal cost near 1.0 means the CKA is approaching 0 (perfect orthogonality). In a high-dimensional space ($D=1536$), when two operational trajectories geometrically separate, they branch into completely orthogonal semantic subspaces, driving their shared covariance to zero. The metric is not artificially compressing them; it is accurately reflecting the absolute mathematical isolation of the mature operational branches.
+**The Flat Off-Diagonal (CKA Floor Effect)**: The off-diagonal costs are nearly flat around 0.8–0.96. We empirically tested whether this reflects true progressive orthogonalization over network depth, or a metric floor effect. When we computed raw cross-model CKA for mismatched categories at Layer 0 (before structural branching), the average CKA was already near zero (`0.09`, or a cost of `0.91`), and it remained near zero at the F-ratio peak (`0.13`, or a cost of `0.87`). This proves the metric suffers from a floor effect for off-diagonal comparisons: even at the embedding layer, distinct operational categories exist in mutually orthogonal subspaces. Because CKA is saturated at its floor ($\approx 0$) for mismatched categories across all depths, we cannot use it to make fine-grained claims about relative off-diagonal similarities (e.g., we cannot claim "Comparison is closer to Sorting than to Copy"). The metric is blind to graded dissimilarities outside the matching diagonal.
 
 ![Qwen vs Llama Confusion](cross_mapping/confusion_Qwen2.5-1.5B_Llama-3.2-1B.png)
 ![Qwen vs Phi Confusion](cross_mapping/confusion_Qwen2.5-1.5B_phi-1_5.png)
@@ -53,7 +53,12 @@ By visualizing the optimal Sakoe-Chiba warping paths, we can see exactly how the
 
 ## 4. Conclusion & Output Artifacts
 
-We have demonstrated that the temporal-geometric structure of category-specific computation is **significantly conserved** across three architecturally distinct models, beyond what static endpoint similarity or generic curve shape alone would predict. Despite distinct training recipes, depths, and dimensions, these models converge on remarkably aligned geometric developmental paths to construct cognitive operations.
+We have demonstrated that the temporal-geometric structure of category-specific computation is **significantly conserved** across three architecturally distinct models. 
+
+**What is (and is not) established:**
+This result establishes strong conservation of relative geometric arrangement over depth. However, the strengths of evidence differ across axes. We observe an enormous (~10x) margin in category confusion, strongly confirming that operational relationships are conserved. Conversely, the temporal matching (the time-shuffle control) passed by a real, strictly robust, but much narrower margin (~15-20%). Furthermore, due to the CKA floor effect on orthogonal subspaces, this analysis only establishes identity matching (diagonal), and cannot establish graded relational geometries between distinct categories (off-diagonal). 
+
+Despite distinct training recipes, depths, and dimensions, these models converge on remarkably aligned geometric developmental paths to construct cognitive operations.
 
 **Code and Data Artifacts:**
 - **Script**: [`code/step3_cross_mapping.py`](../code/step3_cross_mapping.py)
