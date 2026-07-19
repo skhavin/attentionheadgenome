@@ -119,20 +119,20 @@ def process_model(model_name, mapping_prompts, out_dir):
         
         for l in range(L):
             mean_vec = deconfounded_trajectories[cat_indices, l, :].mean(dim=0)
-            mean_vec = clean_T[cat_indices, l, :].mean(dim=0)
             centroids[c_idx, l, :] = mean_vec
             normalized_centroids[c_idx, l, :] = mean_vec / (mean_vec.norm() + 1e-8)
             
     m_name = model_name.split("/")[-1]
     m_dir = os.path.join(out_dir, m_name)
     os.makedirs(m_dir, exist_ok=True)
-    torch.save(raw_T, os.path.join(out_dir, "val_raw_trajectories.pt"))
-    torch.save(clean_T, os.path.join(out_dir, "val_deconfounded_trajectories.pt"))
-    torch.save(centroids, os.path.join(out_dir, "val_centroids.pt"))
-    torch.save(normalized_centroids, os.path.join(out_dir, "val_normalized_centroids.pt"))
     
-    with open(os.path.join(out_dir, "val_r2_values.json"), "w") as f:
-        json.dump(r2_vals.tolist(), f, indent=2)
+    torch.save(raw_trajectories, os.path.join(m_dir, "val_raw_trajectories.pt"))
+    torch.save(deconfounded_trajectories, os.path.join(m_dir, "val_deconfounded_trajectories.pt"))
+    torch.save(centroids, os.path.join(m_dir, "val_centroids.pt"))
+    torch.save(normalized_centroids, os.path.join(m_dir, "val_normalized_centroids.pt"))
+    
+    with open(os.path.join(m_dir, "val_r2_values.json"), "w") as f:
+        json.dump(r2_values, f, indent=2)
         
     print(f"Successfully saved all tensors and stats to {m_dir}")
     
@@ -155,7 +155,7 @@ def main():
     ]
     
     for m in models:
-        process_model(m, mapping_prompts, out_dir)
+        process_model(m, prompts, out_dir)
         
     print("\nExtraction Complete. All data perfectly formatted for Section 2 (DTW Mapping).")
 
