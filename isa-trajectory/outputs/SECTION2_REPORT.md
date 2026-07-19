@@ -15,17 +15,19 @@ To avoid the dimensionality-reduction leakage common in visualization studies, w
 
 To mathematically quantify whether the operational trajectories structurally diverge from a shared trunk into distinct branches, we computed a layer-wise **F-Statistic Analog** (the ratio of Between-Category Centroid Variance to Within-Category Spread) strictly in the full-dimensional space of the validation fold.
 
-We compared this divergence to a **95th-Percentile Shuffle Control** (computed by shuffling the 180 trajectory category labels 100 times at each layer).
+We compared this divergence to a **95th-Percentile Shuffle Control**. To ensure a robust null baseline, the 180 trajectory category labels were independently randomly shuffled 100 times at *each* layer (preventing accidental flat-lining from reusing a single shuffle).
 
 ### Key Observations
 *   **The Null Baseline**: Across all models, the random shuffle control hovered extremely cleanly at an F-ratio of `~1.2` to `~1.4`.
 *   **The Genuine Lexical Trunk**: Even at Layer 0, the real F-ratio begins well above chance (e.g., `4.38` for Qwen, `4.84` for Phi). This confirms our Section 1 finding: structural lexical differences exist at embedding, but they are not fully separated operations.
-*   **The Structural Climb**: The geometric divergence curves beautifully mirror the monotonic emergence of the linear probes. 
-    *   **Qwen2.5-1.5B**: Divergence climbs smoothly from `4.38` (L0), accelerating through the middle layers to peak at `9.40` around Layer 21—precisely aligning with the Layer 20 probe "click-point" established in Section 1.
-    *   **Phi-1.5**: Climbs continuously from `4.84` (L0) to a massive peak of `11.29` around Layer 14, perfectly mapping the Layer 10-14 probe saturation window.
-    *   **Llama-3.2-1B**: Spikes rapidly to `14.91` by Layer 10 before exhibiting a slight plateau, aligning with the "slower, flatter monotonic curve" and right-censored onset we observed in probing.
+*   **The Structural Climb & Probe Correlation**: The geometric divergence curves strongly track the monotonic emergence of the linear probes for models that reach saturation:
+    *   **Qwen2.5-1.5B**: Divergence climbs smoothly from `4.38` (L0) to peak at `9.40` around Layer 21. This occurs in the same broad depth region as the probe saturation (Pearson $r = 0.793, p < 10^{-6}$).
+    *   **Phi-1.5**: Climbs continuously from `4.84` (L0) to a massive peak of `11.29` around Layer 14. This strongly mirrors the Layer 10-14 probe saturation window (Pearson $r = 0.892, p < 10^{-8}$).
+    *   **Llama-3.2-1B**: Spikes rapidly to `14.91` by Layer 10 before declining. Because Llama's probe accuracy exhibits a slower, right-censored climb (never cleanly hitting 1.000), the correlation between its F-ratio and probe accuracy is notably weaker ($r = 0.323, p = 0.22$).
 
-**Conclusion**: The separation of cognitive operations is not a rapid, single-layer state injection. It is an organized geometric expansion—a developmental tree where operations gradually branch away from each other across network depth.
+*   **The Post-Peak Decline (The Unembedding Funnel)**: Across all three models, the F-ratio declines after reaching its peak (e.g., Qwen drops from 9.40 to 7.69 near the end). This implies the trajectories do not infinitely branch outward. Instead, in the final layers, the categories partially geometrically reconverge. This is structurally expected: late layers in transformers are known to compress representations toward output-token-predictive directions (the "unembedding funnel"). Categories that predict similar-shaped answer distributions (e.g. single-token numerical outputs) compress back together as the network finalizes the exact token probabilities.
+
+**Conclusion**: The separation of cognitive operations is not a rapid, single-layer state injection. It is an organized geometric expansion—a developmental tree where operations gradually branch away from each other across network depth, before ultimately entering the compression funnel of the unembedding layer.
 
 ![F-Statistic Divergence Curves](intra_mapping/f_statistic_divergence.png)
 
