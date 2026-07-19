@@ -29,19 +29,21 @@ Instead of a smooth causal gradient tracing the geometric divergence, the interv
 - For `Fact Recall -> Comparison`, the hijack rate sits at $0\%$ until **Layer 11**, where it suddenly spikes to **$83\%$** (Real $B=0.83$, Random $B=0.00$, $p=0.0000$). By Layer 13, it instantly collapses back to $0\%$.
 - For `Arithmetic -> Sorting`, it flashes briefly at **Layer 17**, while remaining completely robust everywhere else in the mid-network.
 
-**Robustness, Generalization, and Multiple Comparisons:** 
-To ensure these isolated spikes are not just random chance across 168 tests, we verified three things:
-1. **Multiple Comparisons**: Applying a strict Bonferroni correction ($\alpha = 0.05 / 168 \approx 0.0003$), the Layer 11 flash ($p=0.0000$) and the end-of-network flashes ($p=0.0000$) comfortably survive. 
-2. **Random-Vector Stability**: We replicated the massive Layer 11 spike across 4 independent random-vector seeds. While the deterministic true vector hit 83%, all 4 random-vector draws yielded exactly $0\%$ hijack.
-3. **Out-of-Distribution Prompt Generalization**: Because deterministic generation ($T=0$) yields a fixed 83% for the true vector on the original 30 validation prompts, we rigorously tested whether the true vector had merely overfit those specific prompts. We synthesized 4 completely independent, disjoint batches of 20 *novel* prompts (e.g., 80 new countries for Fact Recall, 80 new addition pairs for Arithmetic) and injected the original steering vector.
-   - For `Fact Recall -> Comparison`, the causal gate proved **incredibly robust**. The hijack rate at Layer 11 ($c=5.0$) actually *rose* to **$90\%-95\%$** across the 4 unseen batches. The end-of-network spike at Layer 27 ($c=3.0$) hit **$85\%-100\%$**. 
-   - However, for `Arithmetic -> Sorting`, the previously significant $43\%$ hijack rate at Layer 27 collapsed to **$0\%$** across all novel batches. This reveals that the `Arithmetic` spike was a brittle overfit to the specific validation prompts, while the `Fact Recall` spike is a genuinely universal causal vulnerability.
+**Robustness, Generalization, and The Degenerate Collapse:** 
+To ensure these isolated spikes were not random chance across 168 tests, we subjected them to a brutal out-of-distribution (OOD) generalization test. The true steering vector is deterministic ($T=0$), yielding exactly 83% hijack every time on the validation set. We synthesized 4 completely independent, disjoint batches of 20 *novel* prompts (e.g., 80 new countries for Fact Recall, 80 new addition pairs for Arithmetic) and injected the original steering vector.
 
-**Multiplier Consistency:**
-Crucially, the validated "flash" layers do not move around depending on the multiplier $c$. At Layer 11 for Fact$\rightarrow$Comparison, $c=1.5$ yields $0\%$, $c=3.0$ yields $33\%$, and $c=5.0$ yields $83\%$. The causal vulnerability is locked to a specific layer (the "gate"), and scaling the multiplier simply forces that specific gate open wider.
+1. **Arithmetic -> Sorting (The Brittle Overfit)**: The previously significant $43\%$ hijack rate at Layer 27 collapsed to exactly **$0.0\%$** across all 4 novel batches. The vector had merely overfit to some narrow, unidentified formatting artifact in the original 30 validation prompts. It failed entirely to generalize to unseen data.
+2. **Fact Recall -> Comparison (The Degenerate Artifact)**: The causal gate at Layer 11 initially appeared incredibly robust, with the hijack rate actually *rising* to **$90\%-95\%$** on the 4 unseen batches. Furthermore, a magnitude-matched random control tested on those same 80 novel prompts yielded exactly **$0.0\%$** hijack. However, a manual and quantitative check of the actual generated output diversity revealed a fatal flaw:
+   - **Fraction Unique**: Only 16.2% of the 80 generated outputs were unique strings.
+   - **Degenerate Generation**: Instead of producing diverse, context-sensitive comparative answers, the model fell into a degenerate token loop: `not the bigger, bigger, bigger, bigger`. 
+   
+The Regex bucket successfully caught the word "bigger", scoring it as a successful hijack. But mechanistically, the steering vector did not activate a mature "Comparison" cognitive operation. It acted as an aggressive logit-lens projection, destroying the generation token's logits to force a specific comparative word, which then triggered a repetitive generation loop.
 
 ### The "End-of-Network" Logit Injection Effect
 As predicted by our third pre-registered outcome mode, hijack success spikes massively again at the very end of the network for both pairs (Layers 25-27), right before generation. At Layer 27, `Fact->Comp` hits **$73\%$** hijack success, and `Arith->Sort` hits **$43\%$** success. Injecting the target centroid right before the Language Modeling head bypasses the internal trajectory maturation entirely and acts as a direct injection into the output vocabulary logits.
+
+**Conclusion: A Hard Null Result**
+The macroscopic hypothesis (that causal efficacy perfectly tracks the geometric F-Ratio curve) is cleanly falsified ($r \approx 0$). Furthermore, the localized "sparse flash" spikes are not genuine cognitive gates; they are brittle dataset overfits (Arithmetic) or degenerate token-collapse artifacts (Fact Recall). Geometric maturation is a conserved property of the manifold, but single-layer additive steering based on these geometric centroids is causally inert or destructive, failing to produce robust target behavior.
 
 ---
 
