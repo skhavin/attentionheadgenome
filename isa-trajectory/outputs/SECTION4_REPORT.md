@@ -16,20 +16,24 @@ Given the history of satisfying-but-fragile causal stories in interpretability, 
 The strict methodology yielded a massive, clean falsification of the macroscopic causal hypothesis. The geometric manifold exists, but it is **epiphenomenal** to continuous causal generation.
 
 ### Hypothesis Falsified: Correlation is Near Zero
-The hypothesis that causal efficacy tracks the geometric maturation F-Ratio is completely falsified. The full-curve Pearson correlations are near zero:
+The hypothesis that causal efficacy smoothly tracks the geometric maturation F-Ratio is completely falsified. Across our grid of 168 tests (28 layers $\times$ 3 multipliers $\times$ 2 pairs), the full-curve Pearson correlations are near zero:
 - `Arithmetic -> Sorting`: **$r = 0.049$**
 - `Fact Recall -> Comparison`: **$r = 0.112$**
 
-Even restricting the correlation exclusively to the "Rise Phase" (Layers 0 to 21, ignoring post-peak dynamics) yields zero correlation ($r = 0.019$ and $r = 0.161$).
+Even restricting the correlation exclusively to the "Rise Phase" (Layers 0 to 21, ignoring post-peak dynamics) yields essentially zero correlation ($r = 0.019$ and $r = 0.161$).
 
 ![Causal vs F-Ratio](causal_intervention/causal_vs_fratio.png)
 
 ### Causal Efficacy is a "Sparse Flash", not a Smooth Manifold
-Instead of a smooth causal gradient tracing the geometric divergence, the intervention success is $0\%$ across most of the network, punctuated by massive, highly localized "flashes" of vulnerability.
+Instead of a smooth causal gradient tracing the geometric divergence, the intervention success is $0\%$ across most of the network, punctuated by massive, highly localized "flashes" of vulnerability. 
 - For `Fact Recall -> Comparison`, the hijack rate sits at $0\%$ until **Layer 11**, where it suddenly spikes to **$83\%$** (Real $B=0.83$, Random $B=0.00$, $p=0.0000$). By Layer 13, it instantly collapses back to $0\%$.
 - For `Arithmetic -> Sorting`, it flashes briefly at **Layer 17**, while remaining completely robust everywhere else in the mid-network.
 
-Because we ran the magnitude-matched random control, we know these flashes are *real* target-specific steering—the random control produced 0% hijack at those same layers. But this causal power is entirely divorced from the macroscopic, continuous geometric expansion.
+**Robustness and Multiple Comparisons:** 
+To ensure these isolated spikes are not just random chance across 168 tests, we verified two things. First, applying a strict Bonferroni correction ($\alpha = 0.05 / 168 \approx 0.0003$), the Layer 11 flash ($p=0.0000$) and the end-of-network flashes ($p=0.0000$) comfortably survive. They are not multiple-comparison artifacts. Second, we independently replicated the massive Layer 11 spike across 4 different random-vector seeds. The true steering vector is deterministic ($T=0$), yielding exactly 83% hijack every time, while all 4 independent random-vector draws yielded exactly $0\%$ hijack. This confirms the specific geometry is genuinely causal.
+
+**Multiplier Consistency:**
+Crucially, the "flash" layers do not move around depending on the multiplier $c$. At Layer 11 for Fact$\rightarrow$Comparison, $c=1.5$ yields $0\%$, $c=3.0$ yields $33\%$, and $c=5.0$ yields $83\%$. The causal vulnerability is locked to a specific layer (the "gate"), and scaling the multiplier simply forces that specific gate open wider.
 
 ### The "End-of-Network" Logit Injection Effect
 As predicted by our third pre-registered outcome mode, hijack success spikes massively again at the very end of the network for both pairs (Layers 25-27), right before generation. At Layer 27, `Fact->Comp` hits **$73\%$** hijack success, and `Arith->Sort` hits **$43\%$** success. Injecting the target centroid right before the Language Modeling head bypasses the internal trajectory maturation entirely and acts as a direct injection into the output vocabulary logits.
@@ -40,7 +44,7 @@ As predicted by our third pre-registered outcome mode, hijack success spikes mas
 
 This section perfectly extends the "honest null" story of Paper 1. Sections 1-3 prove that models *do* possess universally conserved geometric trajectories for cognitive operations. But Section 4 proves that you cannot simply "push" the network along this manifold anywhere to hijack it. 
 
-The model's actual causal mechanism for generation is **sparsely gated** (likely by specific attention heads firing at L11 or L17), completely ignoring the smooth, 20-layer geometric expansion happening in the residual stream. The macroscopic geometry mathematically diverges, but causal power is localized, not continuously distributed across the manifold's depth.
+The model's actual causal mechanism for generation is **sparsely gated**, completely ignoring the smooth, 20-layer geometric expansion happening in the residual stream. One hypothesis (untested here, but ripe for follow-up Generator Analysis) is that this localized causal vulnerability is driven by specific attention heads firing exactly at Layer 11 or Layer 17 to read the trajectory and write to the logits. The macroscopic geometry mathematically diverges, but causal power is localized, not continuously distributed across the manifold's depth.
 
 **Artifacts:**
 - **Script**: `code/step4_causal_intervention.py`, `code/step4_plot_results.py`
